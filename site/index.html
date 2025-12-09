@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#220126">
+    <meta name="msapplication-TileColor" content="#220126">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks | Matthew Lukin Smawfield</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks | Matthew Lukin Smawfield">
+    <meta name="description" content="Independent confirmation of TEP signatures using raw RINEX observations and Single Point Positioning. Analysis of 440 globally distributed stations (172M pairs) demonstrates TEP signals exist in unprocessed GNSS data.">
+    <meta name="keywords" content="TEP-GNSS, RINEX, raw GNSS, Single Point Positioning, SPP, RTKLIB, temporal equivalence principle, phase coherence, CDDIS, IGS">
+    <meta name="author" content="Matthew Lukin Smawfield">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="language" content="English">
+    <meta name="subject" content="Theoretical Physics">
+    <meta name="coverage" content="Worldwide">
+    <meta name="classification" content="Education, Science, Research, Physics">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://matthewsmawfield.github.io/TEP-GNSS-RINEX/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://matthewsmawfield.github.io/TEP-GNSS-RINEX/">
+    <meta property="og:title" content="Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks">
+    <meta property="og:description" content="Independent confirmation of TEP signatures using raw RINEX observations and Single Point Positioning. Analysis of 440 globally distributed stations (172M pairs) demonstrates TEP signals exist in unprocessed GNSS data.">
+    <meta property="og:image" content="https://matthewsmawfield.github.io/TEP-GNSS-RINEX/public/og-image.jpg">
+    <meta property="og:image:alt" content="TEP-GNSS-RINEX Raw Validation">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="TEP-GNSS-RINEX">
+    <meta property="article:author" content="Matthew Lukin Smawfield">
+    <meta property="article:published_time" content="2025-12-09T00:00:00Z">
+    <meta property="article:modified_time" content="2025-12-09T00:00:00Z">
+    <meta property="og:updated_time" content="2025-12-09T00:00:00Z">
+    <meta property="article:section" content="Physics">
+    <meta property="article:tag" content="GNSS">
+    <meta property="article:tag" content="RINEX">
+    <meta property="article:tag" content="Raw Observations">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://matthewsmawfield.github.io/TEP-GNSS-RINEX/">
+    <meta name="twitter:title" content="Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks">
+    <meta name="twitter:description" content="Independent confirmation of TEP signatures using raw RINEX observations and Single Point Positioning. Analysis of 440 stations (172M pairs).">
+    <meta name="twitter:image" content="https://matthewsmawfield.github.io/TEP-GNSS-RINEX/public/twitter-image.jpg">
+    <meta name="twitter:image:alt" content="TEP-GNSS-RINEX Raw Validation">
+    <meta name="twitter:creator" content="@matthewsmawfield">
+    <meta name="twitter:site" content="@matthewsmawfield">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
+    <link rel="alternate icon" href="public/favicon.ico">
+    <link rel="shortcut icon" href="public/favicon.ico">
+    <link rel="apple-touch-icon" href="public/favicon.ico">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Additional SEO -->
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Google Scholar Meta Tags -->
+    <meta name="citation_title" content="Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks">
+    <meta name="citation_author" content="Smawfield, Matthew Lukin">
+    <meta name="citation_author_institution" content="Independent Researcher">
+    <meta name="citation_author_email" content="matthewsmawfield@gmail.com">
+    <meta name="citation_publication_date" content="2025/12/09">
+    <meta name="citation_online_date" content="2025/12/09">
+    <meta name="citation_journal_title" content="Preprint">
+    <meta name="citation_doi" content="10.5281/zenodo.17860167">
+    <meta name="citation_abstract_html_url" content="https://matthewsmawfield.github.io/TEP-GNSS-RINEX/">
+    <meta name="citation_pdf_url" content="https://zenodo.org/records/17860167/files/Smawfield_2025_GlobalTimeEchoes_Rinex_v0.1_Kathmandu.pdf?download=1">
+    <meta name="citation_language" content="en">
+    <meta name="citation_keywords" content="TEP-GNSS; RINEX; raw GNSS; Single Point Positioning; temporal equivalence principle">
+    
+    <!-- Research Classification -->
+    <meta name="citation_technical_report_institution" content="Independent Research">
+    
+    <!-- Subject Classification -->
+    <meta name="citation_subject" content="Physics">
+    <meta name="citation_subject" content="GNSS">
+    <meta name="citation_subject" content="Raw Observations">
+    <meta name="citation_subject" content="Theoretical Physics">
+    
+    <!-- Dublin Core Metadata -->
+    <meta name="dc.title" content="Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks">
+    <meta name="dc.creator" content="Smawfield, Matthew Lukin">
+    <meta name="dc.subject" content="Physics; GNSS; RINEX; Raw Observations; Temporal Equivalence Principle">
+    <meta name="dc.description" content="Independent confirmation of TEP signatures using raw RINEX observations and Single Point Positioning.">
+    <meta name="dc.publisher" content="Independent Research">
+    <meta name="dc.date" content="2025-12-09">
+    <meta name="dc.type" content="Text.Article">
+    <meta name="dc.format" content="text/html">
+    <meta name="dc.identifier" content="https://matthewsmawfield.github.io/TEP-GNSS-RINEX/">
+    <meta name="dc.identifier.doi" content="10.5281/zenodo.17860167">
+    <meta name="dc.language" content="en">
+    <meta name="dc.rights" content="Creative Commons Attribution 4.0 International License">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    
+    <!-- DNS prefetch for performance -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TGNEGZ67NX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TGNEGZ67NX', { 'anonymize_ip': true });
+    </script>
+    
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks",
+      "alternativeHeadline": "Independent Validation Using Raw Observations and Single Point Positioning",
+      "description": "Independent confirmation of TEP signatures using raw RINEX observations and Single Point Positioning. Analysis of 440 globally distributed stations (172M pairs) demonstrates TEP signals exist in unprocessed GNSS data.",
+      "author": {
+        "@type": "Person",
+        "name": "Matthew Lukin Smawfield",
+        "email": "matthewsmawfield@gmail.com",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Independent Researcher"
+        },
+        "sameAs": [
+          "https://github.com/matthewsmawfield",
+          "https://orcid.org/0009-0003-8219-3159"
+        ]
+      },
+      "datePublished": "2025-12-09",
+      "dateModified": "2025-12-09",
+      "version": "v0.1 (Kathmandu)",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Independent Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://matthewsmawfield.github.io/TEP-GNSS-RINEX/public/og-image.jpg"
+        }
+      },
+      "keywords": [
+        "TEP-GNSS",
+        "RINEX",
+        "raw GNSS",
+        "Single Point Positioning",
+        "SPP",
+        "RTKLIB",
+        "temporal equivalence principle",
+        "phase coherence",
+        "CDDIS",
+        "IGS"
+      ],
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "GNSS"
+        },
+        {
+          "@type": "Thing",
+          "name": "Raw Observations"
+        },
+        {
+          "@type": "Thing",
+          "name": "Theoretical Physics"
+        }
+      ],
+      "researchField": [
+        "Physics",
+        "GNSS",
+        "Precision Timing",
+        "Theoretical Physics",
+        "Geodesy"
+      ],
+      "methodology": [
+        "Single Point Positioning",
+        "Raw RINEX Processing",
+        "Phase-Coherent Analysis",
+        "Cross-Spectral Density",
+        "Statistical Validation"
+      ],
+      "isBasedOn": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Global Time Echoes: Distance-Structured Correlations in GNSS Clocks",
+          "url": "https://matthewsmawfield.github.io/TEP-GNSS/",
+          "identifier": "10.5281/zenodo.17127229"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Global Time Echoes: 25-Year Temporal Evolution",
+          "url": "https://matthewsmawfield.github.io/TEP-GNSS/code-longspan/",
+          "identifier": "10.5281/zenodo.17517141"
+        },
+        {
+          "@type": "Dataset",
+          "name": "Raw RINEX GNSS Observations",
+          "description": "440 IGS/MGEX stations processed with RTKLIB SPP from NASA CDDIS archive (172M station pairs)",
+          "creator": {
+            "@type": "Organization",
+            "name": "NASA CDDIS / IGS",
+            "url": "https://cddis.nasa.gov"
+          }
+        }
+      ],
+      "isPartOf": {
+        "@type": "CreativeWorkSeries",
+        "name": "TEP-GNSS Research Series",
+        "url": "https://matthewsmawfield.github.io/TEP-GNSS/"
+      },
+      "inLanguage": "en",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "isAccessibleForFree": true,
+      "creativeWorkStatus": "Preprint",
+      "identifier": "10.5281/zenodo.17860167",
+      "sameAs": [
+        "https://doi.org/10.5281/zenodo.17860167"
+      ],
+      "url": "https://matthewsmawfield.github.io/TEP-GNSS-RINEX/",
+      "mainEntityOfPage": "https://matthewsmawfield.github.io/TEP-GNSS-RINEX/"
+    }
+    </script>
+    
+    <!-- MathJax for mathematical formulas -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/core-js-bundle@3/minified.js" integrity="sha384-a+6gkIz38wPEHKjTR3Nor/RhImyKCidfx586MNngKZKboaVzK58PLoXu37V9o+yl" crossorigin="anonymous"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6/1Nxveei" crossorigin="anonymous"></script>
+    
+    <style>
+        /* Prevent horizontal scrolling */
+        * {
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            overflow-x: hidden !important;
+            width: 100% !important;
+        }
+        
+        /* Force long URLs and text to wrap */
+        a {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-all;
+        }
+        
+        /* Code blocks and preformatted text */
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-x: auto;
+            max-width: 100%;
+        }
+        
+        /* Academic paper styling */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            color: #220126;
+            overflow-x: hidden;
+            word-wrap: break-word;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #220126;
+            padding-bottom: 20px;
+        }
+        
+        .header-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(42, 47, 53, 0.1);
+        }
+        
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            font-weight: normal;
+            color: #495773;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .author {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .author .email-icon { 
+            display: inline-block; 
+            margin-left: 2px; 
+            font-size: 18px; 
+            color: #495773; 
+            text-decoration: none; 
+        }
+        
+        .author .email-icon:hover { 
+            color: #4A90C2; 
+        }
+        
+        /* Link styling */
+        a {
+            color: #2D0140;
+            text-decoration: none;
+        }
+        
+        a:visited {
+            color: #495773;
+        }
+        
+        a:hover {
+            color: #4A90C2;
+            text-decoration: underline;
+        }
+        
+        .contact-section { 
+            margin-top: 40px; 
+            padding: 20px; 
+            background-color: rgba(107, 115, 161, 0.05); 
+            border-left: 4px solid #2D0140; 
+            font-style: italic; 
+        }
+        
+        .contact-section h2 { 
+            margin-top: 0; 
+            font-size: 18px; 
+            font-weight: bold; 
+            font-style: normal; 
+            color: #220126; 
+        }
+        
+        .version, .date, .status-chip, .doi {
+            font-size: 14px;
+            color: #495773;
+            margin-bottom: 5px;
+        }
+        
+        .paper-series {
+            font-size: 13px;
+            color: #2D0140;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .abstract {
+            background-color: rgba(73, 87, 115, 0.06);
+            padding: 20px;
+            margin: 30px 0;
+            border-left: 4px solid #2D0140;
+            font-style: italic;
+        }
+        
+        .abstract h2 {
+            margin-top: 0;
+            font-size: 18px;
+            font-weight: bold;
+            font-style: normal;
+        }
+        
+        h1 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #220126;
+            border-bottom: 1px solid #495773;
+            padding-bottom: 5px;
+        }
+        
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #220126;
+        }
+        
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #220126;
+        }
+        
+        h4 {
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            color: #220126;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            overflow-x: auto;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .theorem, .principle {
+            background-color: rgba(34, 1, 38, 0.03);
+            border: 1px solid #495773;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .theorem h3, .principle h3 {
+            margin-top: 0;
+            color: #2D0140;
+        }
+        
+        .proof {
+            font-style: italic;
+            margin-left: 20px;
+            color: #495773;
+        }
+        
+        .experimental-section {
+            background-color: rgba(107, 115, 161, 0.04);
+            border: 1px solid #495773;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .experimental-section h1:first-of-type, .experimental-section h2:first-of-type, .experimental-section h3:first-of-type {
+            margin-top: 4px;
+        }
+        
+        .key-finding {
+            background-color: rgba(45, 1, 64, 0.06);
+            border: 2px solid #2D0140;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .key-finding h3 {
+            margin-top: 0;
+            color: #2D0140;
+        }
+        
+        .validation-box {
+            background-color: rgba(34, 139, 34, 0.08);
+            border: 1px solid rgba(34, 139, 34, 0.4);
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .warning-box {
+            background-color: rgba(255, 165, 0, 0.08);
+            border: 1px solid rgba(255, 165, 0, 0.4);
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .error-budget {
+            font-family: 'Courier New', monospace;
+            background-color: rgba(73, 87, 115, 0.03);
+            padding: 10px;
+            border-radius: 3px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        
+        .references {
+            font-size: 14px;
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+        
+        .references h1 {
+            font-size: 18px;
+        }
+        
+        .ref-item {
+            margin-bottom: 8px;
+            text-indent: -20px;
+            margin-left: 20px;
+        }
+        
+        .appendix {
+            margin-top: 40px;
+            page-break-before: always;
+            border-top: 2px solid #495773;
+            padding-top: 20px;
+        }
+        
+        .significance {
+            background-color: rgba(73, 87, 115, 0.08);
+            border: 1px solid #495773;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .critical-analysis {
+            background-color: rgba(45, 1, 64, 0.04);
+            border: 2px solid #495773;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .critical-analysis h2 {
+            margin-top: 0;
+            color: #495773;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 2px solid #495773;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .critical-analysis h3 {
+            color: #495773;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+        
+        .critical-analysis ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .critical-analysis li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .critical-analysis strong {
+            color: #495773;
+        }
+        
+        /* Data tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        
+        th, td {
+            border: 1px solid #495773;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: rgba(73, 87, 115, 0.1);
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(73, 87, 115, 0.03);
+        }
+        
+        /* Figure styling */
+        figure {
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        figcaption {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #495773;
+            font-style: italic;
+            text-align: justify;
+        }
+        
+        /* Math styling */
+        .MathJax {
+            font-size: 1.1em !important;
+        }
+        
+        /* Loading indicator */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #495773;
+            font-style: italic;
+        }
+        
+        /* Code blocks */
+        code {
+            font-family: 'Courier New', monospace;
+            background-color: rgba(73, 87, 115, 0.08);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 13px;
+        }
+        
+        pre code {
+            display: block;
+            padding: 15px;
+            overflow-x: auto;
+        }
+        
+        /* Mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 20px 15px;
+                font-size: 16px;
+                overflow-x: hidden;
+            }
+            
+            .title {
+                font-size: 20px;
+                word-wrap: break-word;
+                hyphens: auto;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .header-image {
+                margin-bottom: 15px;
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            h1 {
+                font-size: 18px;
+                word-wrap: break-word;
+            }
+            
+            h2 {
+                font-size: 16px;
+                word-wrap: break-word;
+            }
+            
+            .abstract, .theorem, .principle, .experimental-section {
+                padding: 15px;
+                margin: 15px 0;
+                overflow-x: hidden;
+            }
+            
+            .equation {
+                overflow-x: auto;
+                font-size: 14px;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            
+            .doi a {
+                word-break: break-all;
+                overflow-wrap: break-word;
+            }
+            
+            figure {
+                max-width: 100%;
+                overflow: hidden;
+            }
+            
+            figure img {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            table {
+                font-size: 12px !important;
+            }
+            
+            table th, table td {
+                padding: 4px !important;
+                word-wrap: break-word;
+                hyphens: auto;
+                min-width: 0;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 15px 10px;
+                font-size: 15px;
+                overflow-x: hidden;
+            }
+            
+            .title {
+                font-size: 18px;
+                line-height: 1.2;
+                word-wrap: break-word;
+                hyphens: auto;
+            }
+            
+            .abstract, .theorem, .principle, .experimental-section {
+                padding: 12px;
+                margin: 12px 0;
+                overflow-x: hidden;
+            }
+            
+            .equation {
+                font-size: 12px;
+                padding: 5px;
+            }
+            
+            .doi a {
+                font-size: 13px;
+                word-break: break-all;
+            }
+            
+            table {
+                font-size: 10px !important;
+            }
+            
+            table th, table td {
+                padding: 2px !important;
+                line-height: 1.2;
+            }
+        }
+
+        header .title { border-bottom: none; padding-bottom: 0; }
+        .doi .pdf-link { display: inline-flex; align-items: center; margin-left: 8px; color: #495773; opacity: 0.8; }
+        .doi .pdf-link:hover { color: #2D0140; opacity: 1; text-decoration: none; }
+        .doi .pdf-link svg { width: 14px; height: 14px; vertical-align: middle; }
+        
+        /* Print styles */
+        @media print {
+            body {
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+            .no-print { display: none !important; }
+            
+            .abstract, .theorem, .principle {
+                break-inside: avoid;
+            }
+            .abstract {
+                break-inside: auto;
+            }
+            .abstract h2 {
+                break-after: avoid;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <header class="header" role="banner">
+        <img src="public/image.webp" alt="Global Time Echoes: Conceptual Visualization of Temporal Correlations" class="header-image">
+        <h1 class="title">Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks</h1>
+        <div class="author">Matthew Lukin Smawfield</div>
+        <div class="paper-series">Paper 3 of the TEP-GNSS Research Series</div>
+        <div class="version">Version: v0.1 (Kathmandu)</div>
+        <div class="date">First published: 9 December 2025 · Last updated: 9 December 2025</div>
+        <div class="doi">DOI: <a href="https://doi.org/10.5281/zenodo.17860167">10.5281/zenodo.17860167</a></div>
+        <div class="doi">
+            Download PDF: <a href="https://zenodo.org/records/17860167/files/Smawfield_2025_GlobalTimeEchoes_Rinex_v0.1_Kathmandu.pdf?download=1" class="pdf-link">Smawfield_2025_GlobalTimeEchoes_Rinex_v0.1_Kathmandu.pdf</a>
+        </div>
+        <div class="doi">Code Availability: <a href="https://github.com/matthewsmawfield/TEP-GNSS-RINEX">github.com/matthewsmawfield/TEP-GNSS-RINEX</a></div>
+        <div class="doi" style="margin-top: 10px;">
+            Related Papers: 
+            <a href="https://matthewsmawfield.github.io/TEP/">Theory</a> · 
+            <a href="https://matthewsmawfield.github.io/TEP-GNSS/">Paper 1 (Multi-Center)</a> · 
+            <a href="https://matthewsmawfield.github.io/TEP-GNSS/code-longspan/">Paper 2 (25-Year CODE)</a>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <div id="loading" class="loading">
+            Loading manuscript components...
+        </div>
+        <div id="manuscript-content" style="display: none;">
+            <!-- Components will be loaded here -->
+        </div>
+    </main>
+
+    <!-- Component Loading Script -->
+    <script>
+        // Component loading system
+        async function loadManuscriptComponents() {
+            try {
+                // Load manifest
+                const manifest = await fetch('manifest.json').then(r => r.json());
+                
+                // Get container elements
+                const loadingDiv = document.getElementById('loading');
+                const contentDiv = document.getElementById('manuscript-content');
+                
+                // Load each section in order
+                for (const section of manifest.sections.sort((a, b) => a.order - b.order)) {
+                    try {
+                        const html = await fetch(`components/${section.file}`).then(r => r.text());
+                        
+                        // Create section container
+                        const sectionDiv = document.createElement('div');
+                        sectionDiv.id = section.id;
+                        sectionDiv.className = 'manuscript-section';
+                        sectionDiv.setAttribute('data-section', section.title);
+                        sectionDiv.innerHTML = html;
+                        
+                        // Append to content container
+                        contentDiv.appendChild(sectionDiv);
+                        
+                        console.log(`Loaded section: ${section.title}`);
+                    } catch (error) {
+                        console.error(`Failed to load section ${section.title}:`, error);
+                        
+                        // Create error placeholder
+                        const errorDiv = document.createElement('div');
+                        errorDiv.innerHTML = `<div style="background-color: #ffe6e6; border: 1px solid #ff9999; padding: 15px; margin: 20px 0; border-radius: 5px;">
+                            <h3 style="color: #cc0000; margin-top: 0;">Error Loading Section: ${section.title}</h3>
+                            <p>Failed to load <code>components/${section.file}</code></p>
+                            <p style="font-size: 12px; color: #666;">Check console for details</p>
+                        </div>`;
+                        contentDiv.appendChild(errorDiv);
+                    }
+                }
+                
+                // Hide loading, show content
+                loadingDiv.style.display = 'none';
+                contentDiv.style.display = 'block';
+                
+                // Re-initialize features that depend on content being loaded
+                initializePageFeatures();
+                
+                console.log('Manuscript loading complete');
+                
+            } catch (error) {
+                console.error('Failed to load manuscript:', error);
+                document.getElementById('loading').innerHTML = `
+                    <div style="background-color: #ffe6e6; border: 1px solid #ff9999; padding: 20px; border-radius: 5px;">
+                        <h3 style="color: #cc0000; margin-top: 0;">Error Loading Manuscript</h3>
+                        <p>Failed to load the manuscript components. Please check your network connection and try again.</p>
+                        <p style="font-size: 12px; color: #666;">Error: ${error.message}</p>
+                        <button onclick="location.reload()" style="background: #4A90C2; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Retry</button>
+                    </div>
+                `;
+            }
+        }
+        
+        // Initialize page features after content is loaded
+        function initializePageFeatures() {
+            // Re-render MathJax if present
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise().catch(err => console.warn('MathJax rendering error:', err));
+            }
+        }
+        
+        // Copy to clipboard function (for code examples)
+        function copyToClipboard(text, button) {
+            navigator.clipboard.writeText(text).then(() => {
+                button.style.color = '#2D0140';
+                button.style.opacity = '1';
+                button.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    button.style.color = '#495773';
+                    button.style.opacity = '0.7';
+                    button.style.transform = 'scale(1)';
+                }, 800);
+            });
+        }
+        
+        // Load components when page is ready
+        document.addEventListener('DOMContentLoaded', loadManuscriptComponents);
+        
+        // Change title for PDF filename when printing
+        const originalTitle = document.title;
+        const pdfTitle = 'Smawfield_2025_GlobalTimeEchoes_Rinex_v0.1_Kathmandu';
+        window.addEventListener('beforeprint', () => { document.title = pdfTitle; });
+        window.addEventListener('afterprint', () => { document.title = originalTitle; });
+    </script>
+  </body>
+</html>

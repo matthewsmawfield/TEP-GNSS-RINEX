@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+title: "Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks"
+message: "If you use this software, please cite it as below."
+type: article
+authors:
+  - family-names: "Smawfield"
+    given-names: "Matthew Lukin"
+    orcid: "https://orcid.org/0009-0003-8219-3159"
+abstract: >
+  This study validates Temporal Equivalence Principle (TEP) signatures using raw RINEX observations and Single Point Positioning (SPP), analyzing 440 globally distributed stations over 3 years (2022-2024; 172 million station pairs). As the capstone of the TEP-GNSS trilogy, this work addresses the critical question of whether previously observed correlations are artifacts of precise post-processing (PPP). By processing raw pseudorange and carrier-phase measurements with only broadcast ephemerides, this analysis demonstrates that TEP signatures exist in the fundamental unprocessed GNSS observables.
+
+  The primary contribution is the robust detection of distance-structured correlations in raw data that match the 25-year benchmark established in Paper 2. Key findings include: (1) exponential decay with correlation lengths lambda = 727-1,072 km (R2 > 0.97); (2) directional anisotropy where East-West correlations exceed North-South by 2-5% (MSC) to 15-28% (Phase Alignment) at short distances (p < 10^-300); and (3) a geometry-corrected anisotropy ratio of 1.79-1.86, agreeing with CODE's reference value (2.16) within 17%. The signal is detected across three independent processing modes - GPS L1, dual-frequency ionofree, and multi-GNSS - ruling out ionospheric or constellation-specific artifacts.
+
+  Four critical physical signatures validate the signal's origin:
+  1. Orbital Velocity Coupling: The anisotropy ratio anti-correlates with Earth's orbital velocity (r = -0.515, 3.3 sigma), independently replicating CODE's 25-year finding.
+  2. CMB Frame Alignment: A full-sky grid search identifies a preferred direction at RA = 157 deg, Dec = +9 deg (19.3 deg from the CMB dipole), matching CODE's benchmark (18.2 deg) and strongly disfavoring the Solar Apex.
+  3. Spacetime Symmetry: Position jitter and clock bias exhibit identical orbital coupling (Delta = 2%), consistent with a spacetime metric fluctuation rather than a purely temporal clock error.
+  4. Planetary Modulation: Coherence modulation is detected around 37 planetary events with 2.1x higher significance than null controls, but with no mass scaling (p = 0.457), ruling out direct tidal forcing in favor of geometric alignment.
+license: CC-BY-4.0
+version: 0.1
+date-released: 2025-12-09
+keywords:
+  - physics
+  - GNSS
+  - RINEX
+  - raw observations
+  - Single Point Positioning
+  - SPP
+  - RTKLIB
+  - atomic clocks
+  - distance correlations
+  - phase coherence
+  - temporal equivalence principle
+  - TEP-GNSS
+repository-code: "https://github.com/matthewsmawfield/TEP-GNSS-RINEX"
+url: "https://github.com/matthewsmawfield/TEP-GNSS-RINEX"
+doi: 10.5281/zenodo.17860167
+
+preferred-citation:
+  type: article
+  title: "Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks (Kathmandu v0.1)"
+  authors:
+    - family-names: Smawfield
+      given-names: Matthew Lukin
+      orcid: "https://orcid.org/0009-0003-8219-3159"
+  year: 2025
+  journal: Zenodo
+  doi: 10.5281/zenodo.17860167
+  url: "https://doi.org/10.5281/zenodo.17860167"
+  notes: "Preprint"
