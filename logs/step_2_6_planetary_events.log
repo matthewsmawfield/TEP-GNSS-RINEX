@@ -1,0 +1,952 @@
+[17:59:43] [INFO] 
+[17:59:43] [INFO] ================================================================================
+[17:59:43] [INFO] STARTING MULTI-METRIC PLANETARY EVENT ANALYSIS
+[17:59:43] [INFO] ================================================================================
+[17:59:43] [INFO] 
+[17:59:43] [INFO] 
+[17:59:43] [INFO] ================================================================================
+[17:59:43] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.6: Planetary Event Analysis
+[17:59:43] [INFO] ================================================================================
+[17:59:43] [INFO] 
+[17:59:43] [INFO] Metric: clock_bias, Coherence: msc
+[17:59:43] [INFO] METHODOLOGY: CODE LONGSPAN (daily coherence + Gaussian pulse fitting)
+[17:59:43] [INFO] CODE Longspan: 56/156 events significant, NO mass scaling
+[17:59:43] [INFO] 
+[17:59:43] [PROCESS] [1/5] Loading station data...
+[17:59:43] [INFO]   Loaded 538 station coordinates
+[17:59:43] [INFO]   Using filter: optimal_100_metadata.json
+[17:59:43] [INFO]     Description: Optimal 100 stations for 3-year TEP analysis - Enhanced with IGS metadata
+[17:59:43] [INFO]     Stations: 100
+[17:59:50] [INFO]   Found data for 1096 unique dates, 82 stations
+[18:02:26] [INFO]     baseline: 82 stations
+[18:02:26] [INFO]     precise: 0 stations
+[18:02:26] [INFO]     ionofree: 80 stations
+[18:02:26] [INFO]   Data coverage: DOYs 1-366 (366 days)
+[18:02:26] [PROCESS] [2/5] Loading daily coherence time series...
+[18:02:26] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[18:02:30] [INFO]   Loaded 1.7M pairs...
+[18:02:34] [INFO]   Loaded 3.4M pairs...
+[18:02:38] [INFO]   Loaded 5.0M pairs...
+[18:02:42] [INFO]   Loaded 6.7M pairs...
+[18:02:46] [INFO]   Loaded 8.3M pairs...
+[18:02:50] [INFO]   Loaded 10.0M pairs...
+[18:02:54] [INFO]   Loaded 11.7M pairs...
+[18:02:58] [INFO]   Loaded 13.4M pairs...
+[18:03:03] [INFO]   Loaded 15.0M pairs...
+[18:03:07] [INFO]   Loaded 16.7M pairs...
+[18:03:11] [INFO]   Loaded 18.4M pairs...
+[18:03:15] [INFO]   Loaded 20.0M pairs...
+[18:03:19] [INFO]   Loaded 21.7M pairs...
+[18:03:23] [INFO]   Loaded 23.4M pairs...
+[18:03:27] [INFO]   Loaded 25.0M pairs...
+[18:03:32] [INFO]   Loaded 26.7M pairs...
+[18:03:36] [INFO]   Loaded 28.4M pairs...
+[18:03:40] [INFO]   Loaded 30.0M pairs...
+[18:03:44] [INFO]   Loaded 31.7M pairs...
+[18:03:49] [INFO]   Loaded 33.4M pairs...
+[18:03:53] [INFO]   Loaded 35.0M pairs...
+[18:03:57] [INFO]   Loaded 36.7M pairs...
+[18:04:01] [INFO]   Loaded 38.3M pairs...
+[18:04:06] [INFO]   Loaded 40.0M pairs...
+[18:04:10] [INFO]   Loaded 41.7M pairs...
+[18:04:14] [INFO]   Loaded 43.3M pairs...
+[18:04:19] [INFO]   Loaded 45.0M pairs...
+[18:04:23] [INFO]   Loaded 46.7M pairs...
+[18:04:27] [INFO]   Loaded 48.3M pairs...
+[18:04:32] [INFO]   Loaded 50.0M pairs...
+[18:04:36] [INFO]   Loaded 51.7M pairs...
+[18:04:41] [INFO]   Loaded 53.4M pairs...
+[18:04:45] [INFO]   Loaded 55.0M pairs...
+[18:04:49] [INFO]   Loaded 56.7M pairs...
+[18:04:54] [INFO]   Loaded 58.4M pairs...
+[18:04:57] [INFO]   Total pairs: 59,600,372
+[18:05:02] [SUCCESS]   Valid days: 1096
+[18:05:03] [SUCCESS]   Baseline coherence: 0.5547 ± 0.0078
+[18:05:03] [PROCESS] [3/5] Analyzing planetary events...
+[18:05:03] [INFO]   Building multi-year event catalog (2022-2024)...
+[18:05:03] [INFO]   Total events across 3 years: 37
+[18:05:03] [INFO]   Unique DOYs to analyze: 37
+[18:05:03] [INFO]   Event coverage: 37/37 (100%)
+[18:14:10] [INFO]   Mercury: 10/19 significant (mean σ=2.6)
+[18:16:07] [INFO]   Venus: 2/4 significant (mean σ=2.1)
+[18:17:23] [INFO]   Mars: 1/2 significant (mean σ=4.6)
+[18:20:21] [INFO]   Jupiter: 2/6 significant (mean σ=2.5)
+[18:23:12] [INFO]   Saturn: 3/6 significant (mean σ=2.3)
+[18:23:12] [PROCESS] [4/5] Running null control and mass scaling tests...
+[18:23:12] [INFO]   Null control: permutation test (5 shuffles)
+[18:23:14] [INFO]   Permuted null: 3.8/20 significant (real: 10/20)
+[18:23:14] [INFO]   Mann-Whitney (σ levels): p = 0.000 (EVENTS > RANDOM)
+[18:23:14] [INFO] 
+[18:23:14] [INFO]   MASS SCALING TESTS (JPL ephemeris):
+[18:23:14] [INFO]   --------------------------------------------------
+[18:23:14] [INFO] 
+[18:23:14] [INFO]   JPL Ephemeris Earth-Planet Distances:
+[18:23:14] [INFO]     Mercury DOY7: 0.673 AU, GM/r² = 1.22e-01
+[18:23:14] [INFO]     Mercury DOY23: 0.665 AU, GM/r² = 1.25e-01
+[18:23:14] [INFO]     Mercury DOY59: 1.373 AU, GM/r² = 2.93e-02
+[18:23:14] [INFO]     Mercury DOY76: 1.356 AU, GM/r² = 3.01e-02
+[18:23:14] [INFO]     Mercury DOY92: 1.344 AU, GM/r² = 3.06e-02
+[18:23:14] [INFO]     Mercury DOY103: 0.584 AU, GM/r² = 1.62e-01
+[18:23:14] [INFO]     Mercury DOY122: 0.563 AU, GM/r² = 1.74e-01
+[18:23:14] [INFO]     Mercury DOY141: 0.552 AU, GM/r² = 1.81e-01
+[18:23:14] [INFO]     Mercury DOY166: 1.322 AU, GM/r² = 3.16e-02
+[18:23:14] [INFO]     Mercury DOY182: 1.326 AU, GM/r² = 3.14e-02
+[18:23:14] [INFO]     Mercury DOY197: 1.330 AU, GM/r² = 3.13e-02
+[18:23:14] [INFO]     Mercury DOY232: 0.616 AU, GM/r² = 1.46e-01
+[18:23:14] [INFO]     Mercury DOY249: 0.633 AU, GM/r² = 1.38e-01
+[18:23:14] [INFO]     Mercury DOY266: 0.649 AU, GM/r² = 1.31e-01
+[18:23:14] [INFO]     Mercury DOY274: 1.394 AU, GM/r² = 2.84e-02
+[18:23:14] [INFO]     Mercury DOY293: 1.420 AU, GM/r² = 2.74e-02
+[18:23:14] [INFO]     Mercury DOY312: 1.438 AU, GM/r² = 2.67e-02
+[18:23:14] [INFO]     Mercury DOY341: 0.678 AU, GM/r² = 1.20e-01
+[18:23:14] [INFO]     Mercury DOY356: 0.678 AU, GM/r² = 1.20e-01
+[18:23:14] [INFO]     Venus DOY8: 0.266 AU, GM/r² = 1.15e+01
+[18:23:14] [INFO]     Venus DOY156: 1.735 AU, GM/r² = 2.71e-01
+[18:23:14] [INFO]     Venus DOY225: 0.289 AU, GM/r² = 9.77e+00
+[18:23:14] [INFO]     Venus DOY295: 1.717 AU, GM/r² = 2.76e-01
+[18:23:14] [INFO]     Mars DOY322: 2.526 AU, GM/r² = 1.68e-02
+[18:23:14] [INFO]     Mars DOY342: 0.549 AU, GM/r² = 3.55e-01
+[18:23:14] [INFO]     Jupiter DOY64: 5.972 AU, GM/r² = 8.91e+00
+[18:23:14] [INFO]     Jupiter DOY101: 5.954 AU, GM/r² = 8.96e+00
+[18:23:14] [INFO]     Jupiter DOY139: 6.027 AU, GM/r² = 8.75e+00
+[18:23:14] [INFO]     Jupiter DOY269: 3.953 AU, GM/r² = 2.03e+01
+[18:23:14] [INFO]     Jupiter DOY307: 3.983 AU, GM/r² = 2.00e+01
+[18:23:14] [INFO]     Jupiter DOY342: 4.089 AU, GM/r² = 1.90e+01
+[18:23:14] [INFO]     Saturn DOY35: 10.898 AU, GM/r² = 8.02e-01
+[18:23:14] [INFO]     Saturn DOY47: 10.811 AU, GM/r² = 8.14e-01
+[18:23:14] [INFO]     Saturn DOY59: 10.711 AU, GM/r² = 8.30e-01
+[18:23:14] [INFO]     Saturn DOY226: 8.857 AU, GM/r² = 1.21e+00
+[18:23:14] [INFO]     Saturn DOY239: 8.763 AU, GM/r² = 1.24e+00
+[18:23:14] [INFO]     Saturn DOY252: 8.658 AU, GM/r² = 1.27e+00
+[18:23:14] [INFO] 
+[18:23:14] [INFO]   TEST A: Clock Amplitude vs GM/r² (classical gravitational):
+[18:23:14] [INFO]     GM/r² vs clock RMS:  r = -0.049, p = 0.774
+[18:23:14] [INFO]     GM vs clock RMS:     r = -0.001, p = 0.997
+[18:23:14] [INFO]     → No classical amplitude scaling (expected: common-mode removed)
+[18:23:14] [INFO] 
+[18:23:14] [INFO]   TEST B: Coherence Modulation vs GM/r² (TEP geometric):
+[18:23:14] [INFO]     GM/r² vs |coherence mod|: r = -0.114, p = 0.500
+[18:23:14] [INFO]     GM vs |coherence mod|:    r = -0.028, p = 0.868
+[18:23:14] [INFO]     GM/r² vs σ-level:         r = -0.188, p = 0.265
+[18:23:14] [INFO]     GM vs σ-level:            r = -0.075, p = 0.661
+[18:23:14] [SUCCESS]     → NO coherence scaling (consistent with CODE: geometric effect)
+[18:23:14] [INFO] 
+[18:23:14] [INFO]   --------------------------------------------------
+[18:23:14] [INFO]   INTERPRETATION:
+[18:23:14] [INFO]     • Classical GM/r² amplitude scaling: Common-mode, removed in SPP
+[18:23:14] [INFO]     • TEP coherence effect: Geometric (phase structure), no mass scaling
+[18:23:14] [INFO]     • CODE longspan (25yr): NO mass scaling detected (p > 0.5)
+[18:23:14] [PROCESS] [5/5] Creating visualizations...
+[18:23:15] [SUCCESS]   Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_6_planetary_events.png
+[18:23:15] [INFO] 
+[18:23:15] [INFO] ============================================================
+[18:23:15] [INFO] PLANETARY EVENT ANALYSIS SUMMARY
+[18:23:15] [INFO] ============================================================
+[18:23:15] [INFO]   Methodology: CODE LONGSPAN (daily coherence + Gaussian pulse)
+[18:23:15] [INFO]   Data coverage: DOY 1-366 (366 days)
+[18:23:15] [INFO]   Events analyzed: 37/37
+[18:23:15] [INFO]   Significant detections: 18/37 (48.6%)
+[18:23:15] [INFO]   Permutation null: 3.8/20 vs real: 10/20
+[18:23:15] [INFO] 
+[18:23:15] [INFO] KEY FINDINGS:
+[18:23:15] [WARNING]   ⚠ Similar detection rate for events and random dates
+[18:23:15] [INFO]   • No classical amplitude scaling (r=-0.049, p=0.774) - expected
+[18:23:15] [SUCCESS]   ✓ NO coherence scaling (r=-0.114, p=0.500) - consistent with CODE
+[18:23:15] [SUCCESS]   ✓ Events significantly stronger than random (p=0.000)
+[18:23:15] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_6_planetary_events.json
+[18:23:15] [INFO] 
+[18:23:15] [INFO] ================================================================================
+[18:23:15] [INFO] Step 2.6 Complete
+[18:23:15] [INFO] ================================================================================
+[18:23:15] [INFO] 
+[18:23:15] [INFO] ================================================================================
+[18:23:15] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.6: Planetary Event Analysis
+[18:23:15] [INFO] ================================================================================
+[18:23:15] [INFO] 
+[18:23:15] [INFO] Metric: clock_bias, Coherence: phase_alignment
+[18:23:15] [INFO] METHODOLOGY: CODE LONGSPAN (daily coherence + Gaussian pulse fitting)
+[18:23:15] [INFO] CODE Longspan: 56/156 events significant, NO mass scaling
+[18:23:15] [INFO] 
+[18:23:15] [PROCESS] [1/5] Loading station data...
+[18:23:15] [INFO]   Loaded 538 station coordinates
+[18:23:15] [INFO]   Using filter: optimal_100_metadata.json
+[18:23:15] [INFO]     Description: Optimal 100 stations for 3-year TEP analysis - Enhanced with IGS metadata
+[18:23:15] [INFO]     Stations: 100
+[18:23:22] [INFO]   Found data for 1096 unique dates, 82 stations
+[18:25:59] [INFO]     baseline: 82 stations
+[18:25:59] [INFO]     precise: 0 stations
+[18:25:59] [INFO]     ionofree: 80 stations
+[18:25:59] [INFO]   Data coverage: DOYs 1-366 (366 days)
+[18:25:59] [PROCESS] [2/5] Loading daily coherence time series...
+[18:25:59] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[18:26:03] [INFO]   Loaded 1.7M pairs...
+[18:26:07] [INFO]   Loaded 3.4M pairs...
+[18:26:10] [INFO]   Loaded 5.0M pairs...
+[18:26:14] [INFO]   Loaded 6.7M pairs...
+[18:26:18] [INFO]   Loaded 8.3M pairs...
+[18:26:22] [INFO]   Loaded 10.0M pairs...
+[18:26:26] [INFO]   Loaded 11.7M pairs...
+[18:26:30] [INFO]   Loaded 13.4M pairs...
+[18:26:34] [INFO]   Loaded 15.0M pairs...
+[18:26:38] [INFO]   Loaded 16.7M pairs...
+[18:26:42] [INFO]   Loaded 18.4M pairs...
+[18:26:46] [INFO]   Loaded 20.0M pairs...
+[18:26:50] [INFO]   Loaded 21.7M pairs...
+[18:26:54] [INFO]   Loaded 23.4M pairs...
+[18:26:58] [INFO]   Loaded 25.0M pairs...
+[18:27:03] [INFO]   Loaded 26.7M pairs...
+[18:27:07] [INFO]   Loaded 28.4M pairs...
+[18:27:11] [INFO]   Loaded 30.0M pairs...
+[18:27:15] [INFO]   Loaded 31.7M pairs...
+[18:27:19] [INFO]   Loaded 33.4M pairs...
+[18:27:24] [INFO]   Loaded 35.0M pairs...
+[18:27:28] [INFO]   Loaded 36.7M pairs...
+[18:27:32] [INFO]   Loaded 38.3M pairs...
+[18:27:37] [INFO]   Loaded 40.0M pairs...
+[18:27:41] [INFO]   Loaded 41.7M pairs...
+[18:27:46] [INFO]   Loaded 43.3M pairs...
+[18:27:50] [INFO]   Loaded 45.0M pairs...
+[18:27:55] [INFO]   Loaded 46.7M pairs...
+[18:27:59] [INFO]   Loaded 48.3M pairs...
+[18:28:04] [INFO]   Loaded 50.0M pairs...
+[18:28:08] [INFO]   Loaded 51.7M pairs...
+[18:28:13] [INFO]   Loaded 53.4M pairs...
+[18:28:17] [INFO]   Loaded 55.0M pairs...
+[18:28:22] [INFO]   Loaded 56.7M pairs...
+[18:28:27] [INFO]   Loaded 58.4M pairs...
+[18:28:30] [INFO]   Total pairs: 59,600,372
+[18:28:35] [SUCCESS]   Valid days: 1096
+[18:28:36] [SUCCESS]   Baseline coherence: 0.0454 ± 0.0280
+[18:28:36] [PROCESS] [3/5] Analyzing planetary events...
+[18:28:36] [INFO]   Building multi-year event catalog (2022-2024)...
+[18:28:36] [INFO]   Total events across 3 years: 37
+[18:28:36] [INFO]   Unique DOYs to analyze: 37
+[18:28:36] [INFO]   Event coverage: 37/37 (100%)
+[18:37:40] [INFO]   Mercury: 11/19 significant (mean σ=2.8)
+[18:39:34] [INFO]   Venus: 3/4 significant (mean σ=3.4)
+[18:40:47] [INFO]   Mars: 0/2 significant (mean σ=0.8)
+[18:43:39] [INFO]   Jupiter: 2/6 significant (mean σ=1.7)
+[18:46:26] [INFO]   Saturn: 5/6 significant (mean σ=3.6)
+[18:46:26] [PROCESS] [4/5] Running null control and mass scaling tests...
+[18:46:26] [INFO]   Null control: permutation test (5 shuffles)
+[18:46:28] [INFO]   Permuted null: 5.2/20 significant (real: 12/20)
+[18:46:28] [INFO]   Mann-Whitney (σ levels): p = 0.005 (EVENTS > RANDOM)
+[18:46:28] [INFO] 
+[18:46:28] [INFO]   MASS SCALING TESTS (JPL ephemeris):
+[18:46:28] [INFO]   --------------------------------------------------
+[18:46:28] [INFO] 
+[18:46:28] [INFO]   JPL Ephemeris Earth-Planet Distances:
+[18:46:28] [INFO]     Mercury DOY7: 0.673 AU, GM/r² = 1.22e-01
+[18:46:28] [INFO]     Mercury DOY23: 0.665 AU, GM/r² = 1.25e-01
+[18:46:28] [INFO]     Mercury DOY59: 1.373 AU, GM/r² = 2.93e-02
+[18:46:28] [INFO]     Mercury DOY76: 1.356 AU, GM/r² = 3.01e-02
+[18:46:28] [INFO]     Mercury DOY92: 1.344 AU, GM/r² = 3.06e-02
+[18:46:28] [INFO]     Mercury DOY103: 0.584 AU, GM/r² = 1.62e-01
+[18:46:28] [INFO]     Mercury DOY122: 0.563 AU, GM/r² = 1.74e-01
+[18:46:28] [INFO]     Mercury DOY141: 0.552 AU, GM/r² = 1.81e-01
+[18:46:28] [INFO]     Mercury DOY166: 1.322 AU, GM/r² = 3.16e-02
+[18:46:28] [INFO]     Mercury DOY182: 1.326 AU, GM/r² = 3.14e-02
+[18:46:28] [INFO]     Mercury DOY197: 1.330 AU, GM/r² = 3.13e-02
+[18:46:28] [INFO]     Mercury DOY232: 0.616 AU, GM/r² = 1.46e-01
+[18:46:28] [INFO]     Mercury DOY249: 0.633 AU, GM/r² = 1.38e-01
+[18:46:28] [INFO]     Mercury DOY266: 0.649 AU, GM/r² = 1.31e-01
+[18:46:28] [INFO]     Mercury DOY274: 1.394 AU, GM/r² = 2.84e-02
+[18:46:28] [INFO]     Mercury DOY293: 1.420 AU, GM/r² = 2.74e-02
+[18:46:28] [INFO]     Mercury DOY312: 1.438 AU, GM/r² = 2.67e-02
+[18:46:28] [INFO]     Mercury DOY341: 0.678 AU, GM/r² = 1.20e-01
+[18:46:28] [INFO]     Mercury DOY356: 0.678 AU, GM/r² = 1.20e-01
+[18:46:28] [INFO]     Venus DOY8: 0.266 AU, GM/r² = 1.15e+01
+[18:46:28] [INFO]     Venus DOY156: 1.735 AU, GM/r² = 2.71e-01
+[18:46:28] [INFO]     Venus DOY225: 0.289 AU, GM/r² = 9.77e+00
+[18:46:28] [INFO]     Venus DOY295: 1.717 AU, GM/r² = 2.76e-01
+[18:46:28] [INFO]     Mars DOY322: 2.526 AU, GM/r² = 1.68e-02
+[18:46:28] [INFO]     Mars DOY342: 0.549 AU, GM/r² = 3.55e-01
+[18:46:28] [INFO]     Jupiter DOY64: 5.972 AU, GM/r² = 8.91e+00
+[18:46:28] [INFO]     Jupiter DOY101: 5.954 AU, GM/r² = 8.96e+00
+[18:46:28] [INFO]     Jupiter DOY139: 6.027 AU, GM/r² = 8.75e+00
+[18:46:28] [INFO]     Jupiter DOY269: 3.953 AU, GM/r² = 2.03e+01
+[18:46:28] [INFO]     Jupiter DOY307: 3.983 AU, GM/r² = 2.00e+01
+[18:46:28] [INFO]     Jupiter DOY342: 4.089 AU, GM/r² = 1.90e+01
+[18:46:28] [INFO]     Saturn DOY35: 10.898 AU, GM/r² = 8.02e-01
+[18:46:28] [INFO]     Saturn DOY47: 10.811 AU, GM/r² = 8.14e-01
+[18:46:28] [INFO]     Saturn DOY59: 10.711 AU, GM/r² = 8.30e-01
+[18:46:28] [INFO]     Saturn DOY226: 8.857 AU, GM/r² = 1.21e+00
+[18:46:28] [INFO]     Saturn DOY239: 8.763 AU, GM/r² = 1.24e+00
+[18:46:28] [INFO]     Saturn DOY252: 8.658 AU, GM/r² = 1.27e+00
+[18:46:28] [INFO] 
+[18:46:28] [INFO]   TEST A: Clock Amplitude vs GM/r² (classical gravitational):
+[18:46:28] [INFO]     GM/r² vs clock RMS:  r = -0.049, p = 0.774
+[18:46:28] [INFO]     GM vs clock RMS:     r = -0.001, p = 0.997
+[18:46:28] [INFO]     → No classical amplitude scaling (expected: common-mode removed)
+[18:46:28] [INFO] 
+[18:46:28] [INFO]   TEST B: Coherence Modulation vs GM/r² (TEP geometric):
+[18:46:28] [INFO]     GM/r² vs |coherence mod|: r = +0.054, p = 0.750
+[18:46:28] [INFO]     GM vs |coherence mod|:    r = +0.133, p = 0.433
+[18:46:28] [INFO]     GM/r² vs σ-level:         r = +0.059, p = 0.729
+[18:46:28] [INFO]     GM vs σ-level:            r = -0.024, p = 0.886
+[18:46:28] [SUCCESS]     → NO coherence scaling (consistent with CODE: geometric effect)
+[18:46:28] [INFO] 
+[18:46:28] [INFO]   --------------------------------------------------
+[18:46:28] [INFO]   INTERPRETATION:
+[18:46:28] [INFO]     • Classical GM/r² amplitude scaling: Common-mode, removed in SPP
+[18:46:28] [INFO]     • TEP coherence effect: Geometric (phase structure), no mass scaling
+[18:46:28] [INFO]     • CODE longspan (25yr): NO mass scaling detected (p > 0.5)
+[18:46:28] [PROCESS] [5/5] Creating visualizations...
+[18:46:29] [SUCCESS]   Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_6_planetary_events.png
+[18:46:29] [INFO] 
+[18:46:29] [INFO] ============================================================
+[18:46:29] [INFO] PLANETARY EVENT ANALYSIS SUMMARY
+[18:46:29] [INFO] ============================================================
+[18:46:29] [INFO]   Methodology: CODE LONGSPAN (daily coherence + Gaussian pulse)
+[18:46:29] [INFO]   Data coverage: DOY 1-366 (366 days)
+[18:46:29] [INFO]   Events analyzed: 37/37
+[18:46:29] [INFO]   Significant detections: 21/37 (56.8%)
+[18:46:29] [INFO]   Permutation null: 5.2/20 vs real: 12/20
+[18:46:29] [INFO] 
+[18:46:29] [INFO] KEY FINDINGS:
+[18:46:29] [WARNING]   ⚠ Similar detection rate for events and random dates
+[18:46:29] [INFO]   • No classical amplitude scaling (r=-0.049, p=0.774) - expected
+[18:46:29] [SUCCESS]   ✓ NO coherence scaling (r=0.054, p=0.750) - consistent with CODE
+[18:46:29] [SUCCESS]   ✓ Events significantly stronger than random (p=0.005)
+[18:46:29] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_6_planetary_events_clock_bias_phase_alignment.json
+[18:46:29] [INFO] 
+[18:46:29] [INFO] ================================================================================
+[18:46:29] [INFO] Step 2.6 Complete
+[18:46:29] [INFO] ================================================================================
+[18:46:29] [INFO] 
+[18:46:29] [INFO] ================================================================================
+[18:46:29] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.6: Planetary Event Analysis
+[18:46:29] [INFO] ================================================================================
+[18:46:29] [INFO] 
+[18:46:29] [INFO] Metric: pos_jitter, Coherence: msc
+[18:46:29] [INFO] METHODOLOGY: CODE LONGSPAN (daily coherence + Gaussian pulse fitting)
+[18:46:29] [INFO] CODE Longspan: 56/156 events significant, NO mass scaling
+[18:46:29] [INFO] 
+[18:46:29] [PROCESS] [1/5] Loading station data...
+[18:46:29] [INFO]   Loaded 538 station coordinates
+[18:46:29] [INFO]   Using filter: optimal_100_metadata.json
+[18:46:29] [INFO]     Description: Optimal 100 stations for 3-year TEP analysis - Enhanced with IGS metadata
+[18:46:29] [INFO]     Stations: 100
+[18:46:36] [INFO]   Found data for 1096 unique dates, 82 stations
+[18:49:12] [INFO]     baseline: 82 stations
+[18:49:12] [INFO]     precise: 0 stations
+[18:49:12] [INFO]     ionofree: 80 stations
+[18:49:12] [INFO]   Data coverage: DOYs 1-366 (366 days)
+[18:49:12] [PROCESS] [2/5] Loading daily coherence time series...
+[18:49:12] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[18:49:16] [INFO]   Loaded 1.7M pairs...
+[18:49:19] [INFO]   Loaded 3.3M pairs...
+[18:49:23] [INFO]   Loaded 5.0M pairs...
+[18:49:27] [INFO]   Loaded 6.7M pairs...
+[18:49:31] [INFO]   Loaded 8.3M pairs...
+[18:49:35] [INFO]   Loaded 10.0M pairs...
+[18:49:39] [INFO]   Loaded 11.7M pairs...
+[18:49:43] [INFO]   Loaded 13.3M pairs...
+[18:49:47] [INFO]   Loaded 15.0M pairs...
+[18:49:51] [INFO]   Loaded 16.7M pairs...
+[18:49:54] [INFO]   Loaded 18.3M pairs...
+[18:49:58] [INFO]   Loaded 20.0M pairs...
+[18:50:02] [INFO]   Loaded 21.7M pairs...
+[18:50:06] [INFO]   Loaded 23.3M pairs...
+[18:50:11] [INFO]   Loaded 25.0M pairs...
+[18:50:15] [INFO]   Loaded 26.7M pairs...
+[18:50:19] [INFO]   Loaded 28.4M pairs...
+[18:50:23] [INFO]   Loaded 30.0M pairs...
+[18:50:27] [INFO]   Loaded 31.6M pairs...
+[18:50:31] [INFO]   Loaded 33.3M pairs...
+[18:50:35] [INFO]   Loaded 35.0M pairs...
+[18:50:39] [INFO]   Loaded 36.6M pairs...
+[18:50:44] [INFO]   Loaded 38.3M pairs...
+[18:50:48] [INFO]   Loaded 40.0M pairs...
+[18:50:52] [INFO]   Loaded 41.7M pairs...
+[18:50:56] [INFO]   Loaded 43.3M pairs...
+[18:51:01] [INFO]   Loaded 45.0M pairs...
+[18:51:05] [INFO]   Loaded 46.7M pairs...
+[18:51:10] [INFO]   Loaded 48.3M pairs...
+[18:51:14] [INFO]   Loaded 50.0M pairs...
+[18:51:19] [INFO]   Loaded 51.7M pairs...
+[18:51:23] [INFO]   Loaded 53.3M pairs...
+[18:51:27] [INFO]   Loaded 55.0M pairs...
+[18:51:32] [INFO]   Loaded 56.7M pairs...
+[18:51:36] [INFO]   Loaded 58.3M pairs...
+[18:51:40] [INFO]   Total pairs: 59,600,372
+[18:51:45] [SUCCESS]   Valid days: 1096
+[18:51:46] [SUCCESS]   Baseline coherence: 0.5587 ± 0.0111
+[18:51:46] [PROCESS] [3/5] Analyzing planetary events...
+[18:51:46] [INFO]   Building multi-year event catalog (2022-2024)...
+[18:51:46] [INFO]   Total events across 3 years: 37
+[18:51:46] [INFO]   Unique DOYs to analyze: 37
+[18:51:46] [INFO]   Event coverage: 37/37 (100%)
+[19:00:37] [INFO]   Mercury: 7/19 significant (mean σ=2.3)
+[19:02:29] [INFO]   Venus: 1/4 significant (mean σ=1.5)
+[19:03:42] [INFO]   Mars: 1/2 significant (mean σ=4.6)
+[19:06:34] [INFO]   Jupiter: 3/6 significant (mean σ=2.9)
+[19:09:21] [INFO]   Saturn: 4/6 significant (mean σ=2.3)
+[19:09:21] [PROCESS] [4/5] Running null control and mass scaling tests...
+[19:09:21] [INFO]   Null control: permutation test (5 shuffles)
+[19:09:22] [INFO]   Permuted null: 4.2/20 significant (real: 7/20)
+[19:09:22] [INFO]   Mann-Whitney (σ levels): p = 0.000 (EVENTS > RANDOM)
+[19:09:22] [INFO] 
+[19:09:22] [INFO]   MASS SCALING TESTS (JPL ephemeris):
+[19:09:22] [INFO]   --------------------------------------------------
+[19:09:22] [INFO] 
+[19:09:22] [INFO]   JPL Ephemeris Earth-Planet Distances:
+[19:09:22] [INFO]     Mercury DOY7: 0.673 AU, GM/r² = 1.22e-01
+[19:09:22] [INFO]     Mercury DOY23: 0.665 AU, GM/r² = 1.25e-01
+[19:09:22] [INFO]     Mercury DOY59: 1.373 AU, GM/r² = 2.93e-02
+[19:09:22] [INFO]     Mercury DOY76: 1.356 AU, GM/r² = 3.01e-02
+[19:09:22] [INFO]     Mercury DOY92: 1.344 AU, GM/r² = 3.06e-02
+[19:09:22] [INFO]     Mercury DOY103: 0.584 AU, GM/r² = 1.62e-01
+[19:09:22] [INFO]     Mercury DOY122: 0.563 AU, GM/r² = 1.74e-01
+[19:09:22] [INFO]     Mercury DOY141: 0.552 AU, GM/r² = 1.81e-01
+[19:09:22] [INFO]     Mercury DOY166: 1.322 AU, GM/r² = 3.16e-02
+[19:09:22] [INFO]     Mercury DOY182: 1.326 AU, GM/r² = 3.14e-02
+[19:09:22] [INFO]     Mercury DOY197: 1.330 AU, GM/r² = 3.13e-02
+[19:09:22] [INFO]     Mercury DOY232: 0.616 AU, GM/r² = 1.46e-01
+[19:09:22] [INFO]     Mercury DOY249: 0.633 AU, GM/r² = 1.38e-01
+[19:09:22] [INFO]     Mercury DOY266: 0.649 AU, GM/r² = 1.31e-01
+[19:09:22] [INFO]     Mercury DOY274: 1.394 AU, GM/r² = 2.84e-02
+[19:09:22] [INFO]     Mercury DOY293: 1.420 AU, GM/r² = 2.74e-02
+[19:09:22] [INFO]     Mercury DOY312: 1.438 AU, GM/r² = 2.67e-02
+[19:09:22] [INFO]     Mercury DOY341: 0.678 AU, GM/r² = 1.20e-01
+[19:09:22] [INFO]     Mercury DOY356: 0.678 AU, GM/r² = 1.20e-01
+[19:09:22] [INFO]     Venus DOY8: 0.266 AU, GM/r² = 1.15e+01
+[19:09:22] [INFO]     Venus DOY156: 1.735 AU, GM/r² = 2.71e-01
+[19:09:22] [INFO]     Venus DOY225: 0.289 AU, GM/r² = 9.77e+00
+[19:09:22] [INFO]     Venus DOY295: 1.717 AU, GM/r² = 2.76e-01
+[19:09:22] [INFO]     Mars DOY322: 2.526 AU, GM/r² = 1.68e-02
+[19:09:22] [INFO]     Mars DOY342: 0.549 AU, GM/r² = 3.55e-01
+[19:09:22] [INFO]     Jupiter DOY64: 5.972 AU, GM/r² = 8.91e+00
+[19:09:22] [INFO]     Jupiter DOY101: 5.954 AU, GM/r² = 8.96e+00
+[19:09:22] [INFO]     Jupiter DOY139: 6.027 AU, GM/r² = 8.75e+00
+[19:09:22] [INFO]     Jupiter DOY269: 3.953 AU, GM/r² = 2.03e+01
+[19:09:22] [INFO]     Jupiter DOY307: 3.983 AU, GM/r² = 2.00e+01
+[19:09:22] [INFO]     Jupiter DOY342: 4.089 AU, GM/r² = 1.90e+01
+[19:09:22] [INFO]     Saturn DOY35: 10.898 AU, GM/r² = 8.02e-01
+[19:09:22] [INFO]     Saturn DOY47: 10.811 AU, GM/r² = 8.14e-01
+[19:09:22] [INFO]     Saturn DOY59: 10.711 AU, GM/r² = 8.30e-01
+[19:09:22] [INFO]     Saturn DOY226: 8.857 AU, GM/r² = 1.21e+00
+[19:09:22] [INFO]     Saturn DOY239: 8.763 AU, GM/r² = 1.24e+00
+[19:09:22] [INFO]     Saturn DOY252: 8.658 AU, GM/r² = 1.27e+00
+[19:09:22] [INFO] 
+[19:09:22] [INFO]   TEST A: Clock Amplitude vs GM/r² (classical gravitational):
+[19:09:22] [INFO]     GM/r² vs clock RMS:  r = -0.049, p = 0.774
+[19:09:22] [INFO]     GM vs clock RMS:     r = -0.001, p = 0.997
+[19:09:22] [INFO]     → No classical amplitude scaling (expected: common-mode removed)
+[19:09:22] [INFO] 
+[19:09:22] [INFO]   TEST B: Coherence Modulation vs GM/r² (TEP geometric):
+[19:09:22] [INFO]     GM/r² vs |coherence mod|: r = -0.069, p = 0.685
+[19:09:22] [INFO]     GM vs |coherence mod|:    r = -0.035, p = 0.837
+[19:09:22] [INFO]     GM/r² vs σ-level:         r = -0.131, p = 0.438
+[19:09:22] [INFO]     GM vs σ-level:            r = +0.038, p = 0.823
+[19:09:22] [SUCCESS]     → NO coherence scaling (consistent with CODE: geometric effect)
+[19:09:22] [INFO] 
+[19:09:22] [INFO]   --------------------------------------------------
+[19:09:22] [INFO]   INTERPRETATION:
+[19:09:22] [INFO]     • Classical GM/r² amplitude scaling: Common-mode, removed in SPP
+[19:09:22] [INFO]     • TEP coherence effect: Geometric (phase structure), no mass scaling
+[19:09:22] [INFO]     • CODE longspan (25yr): NO mass scaling detected (p > 0.5)
+[19:09:22] [PROCESS] [5/5] Creating visualizations...
+[19:09:24] [SUCCESS]   Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_6_planetary_events.png
+[19:09:24] [INFO] 
+[19:09:24] [INFO] ============================================================
+[19:09:24] [INFO] PLANETARY EVENT ANALYSIS SUMMARY
+[19:09:24] [INFO] ============================================================
+[19:09:24] [INFO]   Methodology: CODE LONGSPAN (daily coherence + Gaussian pulse)
+[19:09:24] [INFO]   Data coverage: DOY 1-366 (366 days)
+[19:09:24] [INFO]   Events analyzed: 37/37
+[19:09:24] [INFO]   Significant detections: 16/37 (43.2%)
+[19:09:24] [INFO]   Permutation null: 4.2/20 vs real: 7/20
+[19:09:24] [INFO] 
+[19:09:24] [INFO] KEY FINDINGS:
+[19:09:24] [WARNING]   ⚠ Similar detection rate for events and random dates
+[19:09:24] [INFO]   • No classical amplitude scaling (r=-0.049, p=0.774) - expected
+[19:09:24] [SUCCESS]   ✓ NO coherence scaling (r=-0.069, p=0.685) - consistent with CODE
+[19:09:24] [SUCCESS]   ✓ Events significantly stronger than random (p=0.000)
+[19:09:24] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_6_planetary_events_pos_jitter_msc.json
+[19:09:24] [INFO] 
+[19:09:24] [INFO] ================================================================================
+[19:09:24] [INFO] Step 2.6 Complete
+[19:09:24] [INFO] ================================================================================
+[19:09:24] [INFO] 
+[19:09:24] [INFO] ================================================================================
+[19:09:24] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.6: Planetary Event Analysis
+[19:09:24] [INFO] ================================================================================
+[19:09:24] [INFO] 
+[19:09:24] [INFO] Metric: pos_jitter, Coherence: phase_alignment
+[19:09:24] [INFO] METHODOLOGY: CODE LONGSPAN (daily coherence + Gaussian pulse fitting)
+[19:09:24] [INFO] CODE Longspan: 56/156 events significant, NO mass scaling
+[19:09:24] [INFO] 
+[19:09:24] [PROCESS] [1/5] Loading station data...
+[19:09:24] [INFO]   Loaded 538 station coordinates
+[19:09:24] [INFO]   Using filter: optimal_100_metadata.json
+[19:09:24] [INFO]     Description: Optimal 100 stations for 3-year TEP analysis - Enhanced with IGS metadata
+[19:09:24] [INFO]     Stations: 100
+[19:09:31] [INFO]   Found data for 1096 unique dates, 82 stations
+[19:12:06] [INFO]     baseline: 82 stations
+[19:12:06] [INFO]     precise: 0 stations
+[19:12:06] [INFO]     ionofree: 80 stations
+[19:12:06] [INFO]   Data coverage: DOYs 1-366 (366 days)
+[19:12:06] [PROCESS] [2/5] Loading daily coherence time series...
+[19:12:06] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[19:12:09] [INFO]   Loaded 1.7M pairs...
+[19:12:13] [INFO]   Loaded 3.3M pairs...
+[19:12:17] [INFO]   Loaded 5.0M pairs...
+[19:12:21] [INFO]   Loaded 6.7M pairs...
+[19:12:25] [INFO]   Loaded 8.3M pairs...
+[19:12:29] [INFO]   Loaded 10.0M pairs...
+[19:12:33] [INFO]   Loaded 11.7M pairs...
+[19:12:37] [INFO]   Loaded 13.3M pairs...
+[19:12:41] [INFO]   Loaded 15.0M pairs...
+[19:12:45] [INFO]   Loaded 16.7M pairs...
+[19:12:49] [INFO]   Loaded 18.3M pairs...
+[19:12:53] [INFO]   Loaded 20.0M pairs...
+[19:12:57] [INFO]   Loaded 21.7M pairs...
+[19:13:01] [INFO]   Loaded 23.3M pairs...
+[19:13:05] [INFO]   Loaded 25.0M pairs...
+[19:13:09] [INFO]   Loaded 26.7M pairs...
+[19:13:13] [INFO]   Loaded 28.4M pairs...
+[19:13:17] [INFO]   Loaded 30.0M pairs...
+[19:13:22] [INFO]   Loaded 31.6M pairs...
+[19:13:26] [INFO]   Loaded 33.3M pairs...
+[19:13:30] [INFO]   Loaded 35.0M pairs...
+[19:13:34] [INFO]   Loaded 36.6M pairs...
+[19:13:39] [INFO]   Loaded 38.3M pairs...
+[19:13:43] [INFO]   Loaded 40.0M pairs...
+[19:13:48] [INFO]   Loaded 41.7M pairs...
+[19:13:52] [INFO]   Loaded 43.3M pairs...
+[19:13:56] [INFO]   Loaded 45.0M pairs...
+[19:14:01] [INFO]   Loaded 46.7M pairs...
+[19:14:05] [INFO]   Loaded 48.3M pairs...
+[19:14:10] [INFO]   Loaded 50.0M pairs...
+[19:14:14] [INFO]   Loaded 51.7M pairs...
+[19:14:19] [INFO]   Loaded 53.3M pairs...
+[19:14:23] [INFO]   Loaded 55.0M pairs...
+[19:14:28] [INFO]   Loaded 56.7M pairs...
+[19:14:32] [INFO]   Loaded 58.3M pairs...
+[19:14:36] [INFO]   Total pairs: 59,600,372
+[19:14:41] [SUCCESS]   Valid days: 1096
+[19:14:41] [SUCCESS]   Baseline coherence: 0.1062 ± 0.0579
+[19:14:41] [PROCESS] [3/5] Analyzing planetary events...
+[19:14:41] [INFO]   Building multi-year event catalog (2022-2024)...
+[19:14:41] [INFO]   Total events across 3 years: 37
+[19:14:41] [INFO]   Unique DOYs to analyze: 37
+[19:14:41] [INFO]   Event coverage: 37/37 (100%)
+[19:23:33] [INFO]   Mercury: 13/19 significant (mean σ=3.0)
+[19:25:27] [INFO]   Venus: 3/4 significant (mean σ=4.2)
+[19:26:40] [INFO]   Mars: 2/2 significant (mean σ=2.3)
+[19:29:31] [INFO]   Jupiter: 4/6 significant (mean σ=3.1)
+[19:32:16] [INFO]   Saturn: 6/6 significant (mean σ=4.6)
+[19:32:16] [PROCESS] [4/5] Running null control and mass scaling tests...
+[19:32:16] [INFO]   Null control: permutation test (5 shuffles)
+[19:32:18] [INFO]   Permuted null: 5.6/20 significant (real: 13/20)
+[19:32:18] [INFO]   Mann-Whitney (σ levels): p = 0.000 (EVENTS > RANDOM)
+[19:32:18] [INFO] 
+[19:32:18] [INFO]   MASS SCALING TESTS (JPL ephemeris):
+[19:32:18] [INFO]   --------------------------------------------------
+[19:32:18] [INFO] 
+[19:32:18] [INFO]   JPL Ephemeris Earth-Planet Distances:
+[19:32:18] [INFO]     Mercury DOY7: 0.673 AU, GM/r² = 1.22e-01
+[19:32:18] [INFO]     Mercury DOY23: 0.665 AU, GM/r² = 1.25e-01
+[19:32:18] [INFO]     Mercury DOY59: 1.373 AU, GM/r² = 2.93e-02
+[19:32:18] [INFO]     Mercury DOY76: 1.356 AU, GM/r² = 3.01e-02
+[19:32:18] [INFO]     Mercury DOY92: 1.344 AU, GM/r² = 3.06e-02
+[19:32:18] [INFO]     Mercury DOY103: 0.584 AU, GM/r² = 1.62e-01
+[19:32:18] [INFO]     Mercury DOY122: 0.563 AU, GM/r² = 1.74e-01
+[19:32:18] [INFO]     Mercury DOY141: 0.552 AU, GM/r² = 1.81e-01
+[19:32:18] [INFO]     Mercury DOY166: 1.322 AU, GM/r² = 3.16e-02
+[19:32:18] [INFO]     Mercury DOY182: 1.326 AU, GM/r² = 3.14e-02
+[19:32:18] [INFO]     Mercury DOY197: 1.330 AU, GM/r² = 3.13e-02
+[19:32:18] [INFO]     Mercury DOY232: 0.616 AU, GM/r² = 1.46e-01
+[19:32:18] [INFO]     Mercury DOY249: 0.633 AU, GM/r² = 1.38e-01
+[19:32:18] [INFO]     Mercury DOY266: 0.649 AU, GM/r² = 1.31e-01
+[19:32:18] [INFO]     Mercury DOY274: 1.394 AU, GM/r² = 2.84e-02
+[19:32:18] [INFO]     Mercury DOY293: 1.420 AU, GM/r² = 2.74e-02
+[19:32:18] [INFO]     Mercury DOY312: 1.438 AU, GM/r² = 2.67e-02
+[19:32:18] [INFO]     Mercury DOY341: 0.678 AU, GM/r² = 1.20e-01
+[19:32:18] [INFO]     Mercury DOY356: 0.678 AU, GM/r² = 1.20e-01
+[19:32:18] [INFO]     Venus DOY8: 0.266 AU, GM/r² = 1.15e+01
+[19:32:18] [INFO]     Venus DOY156: 1.735 AU, GM/r² = 2.71e-01
+[19:32:18] [INFO]     Venus DOY225: 0.289 AU, GM/r² = 9.77e+00
+[19:32:18] [INFO]     Venus DOY295: 1.717 AU, GM/r² = 2.76e-01
+[19:32:18] [INFO]     Mars DOY322: 2.526 AU, GM/r² = 1.68e-02
+[19:32:18] [INFO]     Mars DOY342: 0.549 AU, GM/r² = 3.55e-01
+[19:32:18] [INFO]     Jupiter DOY64: 5.972 AU, GM/r² = 8.91e+00
+[19:32:18] [INFO]     Jupiter DOY101: 5.954 AU, GM/r² = 8.96e+00
+[19:32:18] [INFO]     Jupiter DOY139: 6.027 AU, GM/r² = 8.75e+00
+[19:32:18] [INFO]     Jupiter DOY269: 3.953 AU, GM/r² = 2.03e+01
+[19:32:18] [INFO]     Jupiter DOY307: 3.983 AU, GM/r² = 2.00e+01
+[19:32:18] [INFO]     Jupiter DOY342: 4.089 AU, GM/r² = 1.90e+01
+[19:32:18] [INFO]     Saturn DOY35: 10.898 AU, GM/r² = 8.02e-01
+[19:32:18] [INFO]     Saturn DOY47: 10.811 AU, GM/r² = 8.14e-01
+[19:32:18] [INFO]     Saturn DOY59: 10.711 AU, GM/r² = 8.30e-01
+[19:32:18] [INFO]     Saturn DOY226: 8.857 AU, GM/r² = 1.21e+00
+[19:32:18] [INFO]     Saturn DOY239: 8.763 AU, GM/r² = 1.24e+00
+[19:32:18] [INFO]     Saturn DOY252: 8.658 AU, GM/r² = 1.27e+00
+[19:32:18] [INFO] 
+[19:32:18] [INFO]   TEST A: Clock Amplitude vs GM/r² (classical gravitational):
+[19:32:18] [INFO]     GM/r² vs clock RMS:  r = -0.049, p = 0.774
+[19:32:18] [INFO]     GM vs clock RMS:     r = -0.001, p = 0.997
+[19:32:18] [INFO]     → No classical amplitude scaling (expected: common-mode removed)
+[19:32:18] [INFO] 
+[19:32:18] [INFO]   TEST B: Coherence Modulation vs GM/r² (TEP geometric):
+[19:32:18] [INFO]     GM/r² vs |coherence mod|: r = +0.078, p = 0.646
+[19:32:18] [INFO]     GM vs |coherence mod|:    r = +0.297, p = 0.074
+[19:32:18] [INFO]     GM/r² vs σ-level:         r = +0.155, p = 0.359
+[19:32:18] [INFO]     GM vs σ-level:            r = +0.225, p = 0.181
+[19:32:18] [SUCCESS]     → NO coherence scaling (consistent with CODE: geometric effect)
+[19:32:18] [INFO] 
+[19:32:18] [INFO]   --------------------------------------------------
+[19:32:18] [INFO]   INTERPRETATION:
+[19:32:18] [INFO]     • Classical GM/r² amplitude scaling: Common-mode, removed in SPP
+[19:32:18] [INFO]     • TEP coherence effect: Geometric (phase structure), no mass scaling
+[19:32:18] [INFO]     • CODE longspan (25yr): NO mass scaling detected (p > 0.5)
+[19:32:18] [PROCESS] [5/5] Creating visualizations...
+[19:32:19] [SUCCESS]   Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_6_planetary_events.png
+[19:32:19] [INFO] 
+[19:32:19] [INFO] ============================================================
+[19:32:19] [INFO] PLANETARY EVENT ANALYSIS SUMMARY
+[19:32:19] [INFO] ============================================================
+[19:32:19] [INFO]   Methodology: CODE LONGSPAN (daily coherence + Gaussian pulse)
+[19:32:19] [INFO]   Data coverage: DOY 1-366 (366 days)
+[19:32:19] [INFO]   Events analyzed: 37/37
+[19:32:19] [INFO]   Significant detections: 28/37 (75.7%)
+[19:32:19] [INFO]   Permutation null: 5.6/20 vs real: 13/20
+[19:32:19] [INFO] 
+[19:32:19] [INFO] KEY FINDINGS:
+[19:32:19] [WARNING]   ⚠ Similar detection rate for events and random dates
+[19:32:19] [INFO]   • No classical amplitude scaling (r=-0.049, p=0.774) - expected
+[19:32:19] [SUCCESS]   ✓ NO coherence scaling (r=0.078, p=0.646) - consistent with CODE
+[19:32:19] [SUCCESS]   ✓ Events significantly stronger than random (p=0.000)
+[19:32:19] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_6_planetary_events_pos_jitter_phase_alignment.json
+[19:32:19] [INFO] 
+[19:32:19] [INFO] ================================================================================
+[19:32:19] [INFO] Step 2.6 Complete
+[19:32:19] [INFO] ================================================================================
+[19:32:19] [INFO] 
+[19:32:19] [INFO] ================================================================================
+[19:32:19] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.6: Planetary Event Analysis
+[19:32:19] [INFO] ================================================================================
+[19:32:19] [INFO] 
+[19:32:19] [INFO] Metric: clock_drift, Coherence: msc
+[19:32:19] [INFO] METHODOLOGY: CODE LONGSPAN (daily coherence + Gaussian pulse fitting)
+[19:32:19] [INFO] CODE Longspan: 56/156 events significant, NO mass scaling
+[19:32:19] [INFO] 
+[19:32:19] [PROCESS] [1/5] Loading station data...
+[19:32:19] [INFO]   Loaded 538 station coordinates
+[19:32:19] [INFO]   Using filter: optimal_100_metadata.json
+[19:32:19] [INFO]     Description: Optimal 100 stations for 3-year TEP analysis - Enhanced with IGS metadata
+[19:32:19] [INFO]     Stations: 100
+[19:32:27] [INFO]   Found data for 1096 unique dates, 82 stations
+[19:35:01] [INFO]     baseline: 82 stations
+[19:35:01] [INFO]     precise: 0 stations
+[19:35:01] [INFO]     ionofree: 80 stations
+[19:35:01] [INFO]   Data coverage: DOYs 1-366 (366 days)
+[19:35:01] [PROCESS] [2/5] Loading daily coherence time series...
+[19:35:01] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[19:35:05] [INFO]   Loaded 1.7M pairs...
+[19:35:08] [INFO]   Loaded 3.3M pairs...
+[19:35:12] [INFO]   Loaded 5.0M pairs...
+[19:35:16] [INFO]   Loaded 6.6M pairs...
+[19:35:20] [INFO]   Loaded 8.3M pairs...
+[19:35:24] [INFO]   Loaded 10.0M pairs...
+[19:35:28] [INFO]   Loaded 11.7M pairs...
+[19:35:31] [INFO]   Loaded 13.3M pairs...
+[19:35:35] [INFO]   Loaded 15.0M pairs...
+[19:35:39] [INFO]   Loaded 16.7M pairs...
+[19:35:43] [INFO]   Loaded 18.3M pairs...
+[19:35:47] [INFO]   Loaded 20.0M pairs...
+[19:35:51] [INFO]   Loaded 21.6M pairs...
+[19:35:55] [INFO]   Loaded 23.3M pairs...
+[19:35:59] [INFO]   Loaded 25.0M pairs...
+[19:36:03] [INFO]   Loaded 26.6M pairs...
+[19:36:07] [INFO]   Loaded 28.3M pairs...
+[19:36:11] [INFO]   Loaded 30.0M pairs...
+[19:36:15] [INFO]   Loaded 31.6M pairs...
+[19:36:19] [INFO]   Loaded 33.3M pairs...
+[19:36:23] [INFO]   Loaded 35.0M pairs...
+[19:36:28] [INFO]   Loaded 36.6M pairs...
+[19:36:32] [INFO]   Loaded 38.3M pairs...
+[19:36:36] [INFO]   Loaded 40.0M pairs...
+[19:36:40] [INFO]   Loaded 41.6M pairs...
+[19:36:45] [INFO]   Loaded 43.3M pairs...
+[19:36:49] [INFO]   Loaded 45.0M pairs...
+[19:36:53] [INFO]   Loaded 46.7M pairs...
+[19:36:58] [INFO]   Loaded 48.3M pairs...
+[19:37:02] [INFO]   Loaded 50.0M pairs...
+[19:37:06] [INFO]   Loaded 51.6M pairs...
+[19:37:11] [INFO]   Loaded 53.3M pairs...
+[19:37:15] [INFO]   Loaded 55.0M pairs...
+[19:37:20] [INFO]   Loaded 56.7M pairs...
+[19:37:24] [INFO]   Loaded 58.3M pairs...
+[19:37:28] [INFO]   Total pairs: 59,600,372
+[19:37:32] [SUCCESS]   Valid days: 1096
+[19:37:33] [SUCCESS]   Baseline coherence: 0.5535 ± 0.0080
+[19:37:33] [PROCESS] [3/5] Analyzing planetary events...
+[19:37:33] [INFO]   Building multi-year event catalog (2022-2024)...
+[19:37:33] [INFO]   Total events across 3 years: 37
+[19:37:33] [INFO]   Unique DOYs to analyze: 37
+[19:37:33] [INFO]   Event coverage: 37/37 (100%)
+[19:46:23] [INFO]   Mercury: 6/19 significant (mean σ=2.1)
+[19:48:15] [INFO]   Venus: 2/4 significant (mean σ=2.1)
+[19:49:27] [INFO]   Mars: 1/2 significant (mean σ=4.5)
+[19:52:19] [INFO]   Jupiter: 0/6 significant (mean σ=1.2)
+[19:55:03] [INFO]   Saturn: 2/6 significant (mean σ=1.9)
+[19:55:03] [PROCESS] [4/5] Running null control and mass scaling tests...
+[19:55:03] [INFO]   Null control: permutation test (5 shuffles)
+[19:55:05] [INFO]   Permuted null: 3.4/20 significant (real: 6/20)
+[19:55:05] [INFO]   Mann-Whitney (σ levels): p = 0.012 (EVENTS > RANDOM)
+[19:55:05] [INFO] 
+[19:55:05] [INFO]   MASS SCALING TESTS (JPL ephemeris):
+[19:55:05] [INFO]   --------------------------------------------------
+[19:55:05] [INFO] 
+[19:55:05] [INFO]   JPL Ephemeris Earth-Planet Distances:
+[19:55:05] [INFO]     Mercury DOY7: 0.673 AU, GM/r² = 1.22e-01
+[19:55:05] [INFO]     Mercury DOY23: 0.665 AU, GM/r² = 1.25e-01
+[19:55:05] [INFO]     Mercury DOY59: 1.373 AU, GM/r² = 2.93e-02
+[19:55:05] [INFO]     Mercury DOY76: 1.356 AU, GM/r² = 3.01e-02
+[19:55:05] [INFO]     Mercury DOY92: 1.344 AU, GM/r² = 3.06e-02
+[19:55:05] [INFO]     Mercury DOY103: 0.584 AU, GM/r² = 1.62e-01
+[19:55:05] [INFO]     Mercury DOY122: 0.563 AU, GM/r² = 1.74e-01
+[19:55:05] [INFO]     Mercury DOY141: 0.552 AU, GM/r² = 1.81e-01
+[19:55:05] [INFO]     Mercury DOY166: 1.322 AU, GM/r² = 3.16e-02
+[19:55:05] [INFO]     Mercury DOY182: 1.326 AU, GM/r² = 3.14e-02
+[19:55:05] [INFO]     Mercury DOY197: 1.330 AU, GM/r² = 3.13e-02
+[19:55:05] [INFO]     Mercury DOY232: 0.616 AU, GM/r² = 1.46e-01
+[19:55:05] [INFO]     Mercury DOY249: 0.633 AU, GM/r² = 1.38e-01
+[19:55:05] [INFO]     Mercury DOY266: 0.649 AU, GM/r² = 1.31e-01
+[19:55:05] [INFO]     Mercury DOY274: 1.394 AU, GM/r² = 2.84e-02
+[19:55:05] [INFO]     Mercury DOY293: 1.420 AU, GM/r² = 2.74e-02
+[19:55:05] [INFO]     Mercury DOY312: 1.438 AU, GM/r² = 2.67e-02
+[19:55:05] [INFO]     Mercury DOY341: 0.678 AU, GM/r² = 1.20e-01
+[19:55:05] [INFO]     Mercury DOY356: 0.678 AU, GM/r² = 1.20e-01
+[19:55:05] [INFO]     Venus DOY8: 0.266 AU, GM/r² = 1.15e+01
+[19:55:05] [INFO]     Venus DOY156: 1.735 AU, GM/r² = 2.71e-01
+[19:55:05] [INFO]     Venus DOY225: 0.289 AU, GM/r² = 9.77e+00
+[19:55:05] [INFO]     Venus DOY295: 1.717 AU, GM/r² = 2.76e-01
+[19:55:05] [INFO]     Mars DOY322: 2.526 AU, GM/r² = 1.68e-02
+[19:55:05] [INFO]     Mars DOY342: 0.549 AU, GM/r² = 3.55e-01
+[19:55:05] [INFO]     Jupiter DOY64: 5.972 AU, GM/r² = 8.91e+00
+[19:55:05] [INFO]     Jupiter DOY101: 5.954 AU, GM/r² = 8.96e+00
+[19:55:05] [INFO]     Jupiter DOY139: 6.027 AU, GM/r² = 8.75e+00
+[19:55:05] [INFO]     Jupiter DOY269: 3.953 AU, GM/r² = 2.03e+01
+[19:55:05] [INFO]     Jupiter DOY307: 3.983 AU, GM/r² = 2.00e+01
+[19:55:05] [INFO]     Jupiter DOY342: 4.089 AU, GM/r² = 1.90e+01
+[19:55:05] [INFO]     Saturn DOY35: 10.898 AU, GM/r² = 8.02e-01
+[19:55:05] [INFO]     Saturn DOY47: 10.811 AU, GM/r² = 8.14e-01
+[19:55:05] [INFO]     Saturn DOY59: 10.711 AU, GM/r² = 8.30e-01
+[19:55:05] [INFO]     Saturn DOY226: 8.857 AU, GM/r² = 1.21e+00
+[19:55:05] [INFO]     Saturn DOY239: 8.763 AU, GM/r² = 1.24e+00
+[19:55:05] [INFO]     Saturn DOY252: 8.658 AU, GM/r² = 1.27e+00
+[19:55:05] [INFO] 
+[19:55:05] [INFO]   TEST A: Clock Amplitude vs GM/r² (classical gravitational):
+[19:55:05] [INFO]     GM/r² vs clock RMS:  r = -0.049, p = 0.774
+[19:55:05] [INFO]     GM vs clock RMS:     r = -0.001, p = 0.997
+[19:55:05] [INFO]     → No classical amplitude scaling (expected: common-mode removed)
+[19:55:05] [INFO] 
+[19:55:05] [INFO]   TEST B: Coherence Modulation vs GM/r² (TEP geometric):
+[19:55:05] [INFO]     GM/r² vs |coherence mod|: r = -0.318, p = 0.055
+[19:55:05] [INFO]     GM vs |coherence mod|:    r = -0.225, p = 0.182
+[19:55:05] [INFO]     GM/r² vs σ-level:         r = -0.297, p = 0.075
+[19:55:05] [INFO]     GM vs σ-level:            r = -0.211, p = 0.210
+[19:55:05] [SUCCESS]     → NO coherence scaling (consistent with CODE: geometric effect)
+[19:55:05] [INFO] 
+[19:55:05] [INFO]   --------------------------------------------------
+[19:55:05] [INFO]   INTERPRETATION:
+[19:55:05] [INFO]     • Classical GM/r² amplitude scaling: Common-mode, removed in SPP
+[19:55:05] [INFO]     • TEP coherence effect: Geometric (phase structure), no mass scaling
+[19:55:05] [INFO]     • CODE longspan (25yr): NO mass scaling detected (p > 0.5)
+[19:55:05] [PROCESS] [5/5] Creating visualizations...
+[19:55:06] [SUCCESS]   Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_6_planetary_events.png
+[19:55:06] [INFO] 
+[19:55:06] [INFO] ============================================================
+[19:55:06] [INFO] PLANETARY EVENT ANALYSIS SUMMARY
+[19:55:06] [INFO] ============================================================
+[19:55:06] [INFO]   Methodology: CODE LONGSPAN (daily coherence + Gaussian pulse)
+[19:55:06] [INFO]   Data coverage: DOY 1-366 (366 days)
+[19:55:06] [INFO]   Events analyzed: 37/37
+[19:55:06] [INFO]   Significant detections: 11/37 (29.7%)
+[19:55:06] [INFO]   Permutation null: 3.4/20 vs real: 6/20
+[19:55:06] [INFO] 
+[19:55:06] [INFO] KEY FINDINGS:
+[19:55:06] [WARNING]   ⚠ Similar detection rate for events and random dates
+[19:55:06] [INFO]   • No classical amplitude scaling (r=-0.049, p=0.774) - expected
+[19:55:06] [SUCCESS]   ✓ NO coherence scaling (r=-0.318, p=0.055) - consistent with CODE
+[19:55:06] [SUCCESS]   ✓ Events significantly stronger than random (p=0.012)
+[19:55:06] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_6_planetary_events_clock_drift_msc.json
+[19:55:06] [INFO] 
+[19:55:06] [INFO] ================================================================================
+[19:55:06] [INFO] Step 2.6 Complete
+[19:55:06] [INFO] ================================================================================
+[19:55:06] [INFO] 
+[19:55:06] [INFO] ================================================================================
+[19:55:06] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.6: Planetary Event Analysis
+[19:55:06] [INFO] ================================================================================
+[19:55:06] [INFO] 
+[19:55:06] [INFO] Metric: clock_drift, Coherence: phase_alignment
+[19:55:06] [INFO] METHODOLOGY: CODE LONGSPAN (daily coherence + Gaussian pulse fitting)
+[19:55:06] [INFO] CODE Longspan: 56/156 events significant, NO mass scaling
+[19:55:06] [INFO] 
+[19:55:06] [PROCESS] [1/5] Loading station data...
+[19:55:06] [INFO]   Loaded 538 station coordinates
+[19:55:06] [INFO]   Using filter: optimal_100_metadata.json
+[19:55:06] [INFO]     Description: Optimal 100 stations for 3-year TEP analysis - Enhanced with IGS metadata
+[19:55:06] [INFO]     Stations: 100
+[19:55:14] [INFO]   Found data for 1096 unique dates, 82 stations
+[19:57:47] [INFO]     baseline: 82 stations
+[19:57:47] [INFO]     precise: 0 stations
+[19:57:47] [INFO]     ionofree: 80 stations
+[19:57:47] [INFO]   Data coverage: DOYs 1-366 (366 days)
+[19:57:47] [PROCESS] [2/5] Loading daily coherence time series...
+[19:57:47] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[19:57:50] [INFO]   Loaded 1.7M pairs...
+[19:57:54] [INFO]   Loaded 3.3M pairs...
+[19:57:58] [INFO]   Loaded 5.0M pairs...
+[19:58:02] [INFO]   Loaded 6.6M pairs...
+[19:58:06] [INFO]   Loaded 8.3M pairs...
+[19:58:10] [INFO]   Loaded 10.0M pairs...
+[19:58:14] [INFO]   Loaded 11.7M pairs...
+[19:58:18] [INFO]   Loaded 13.3M pairs...
+[19:58:22] [INFO]   Loaded 15.0M pairs...
+[19:58:26] [INFO]   Loaded 16.7M pairs...
+[19:58:30] [INFO]   Loaded 18.3M pairs...
+[19:58:34] [INFO]   Loaded 20.0M pairs...
+[19:58:38] [INFO]   Loaded 21.6M pairs...
+[19:58:42] [INFO]   Loaded 23.3M pairs...
+[19:58:46] [INFO]   Loaded 25.0M pairs...
+[19:58:50] [INFO]   Loaded 26.6M pairs...
+[19:58:54] [INFO]   Loaded 28.3M pairs...
+[19:58:58] [INFO]   Loaded 30.0M pairs...
+[19:59:02] [INFO]   Loaded 31.6M pairs...
+[19:59:06] [INFO]   Loaded 33.3M pairs...
+[19:59:11] [INFO]   Loaded 35.0M pairs...
+[19:59:15] [INFO]   Loaded 36.6M pairs...
+[19:59:19] [INFO]   Loaded 38.3M pairs...
+[19:59:23] [INFO]   Loaded 40.0M pairs...
+[19:59:28] [INFO]   Loaded 41.6M pairs...
+[19:59:32] [INFO]   Loaded 43.3M pairs...
+[19:59:36] [INFO]   Loaded 45.0M pairs...
+[19:59:41] [INFO]   Loaded 46.7M pairs...
+[19:59:45] [INFO]   Loaded 48.3M pairs...
+[19:59:50] [INFO]   Loaded 50.0M pairs...
+[19:59:54] [INFO]   Loaded 51.6M pairs...
+[19:59:59] [INFO]   Loaded 53.3M pairs...
+[20:00:03] [INFO]   Loaded 55.0M pairs...
+[20:00:08] [INFO]   Loaded 56.7M pairs...
+[20:00:12] [INFO]   Loaded 58.3M pairs...
+[20:00:16] [INFO]   Total pairs: 59,600,372
+[20:00:21] [SUCCESS]   Valid days: 1096
+[20:00:21] [SUCCESS]   Baseline coherence: 0.0417 ± 0.0154
+[20:00:21] [PROCESS] [3/5] Analyzing planetary events...
+[20:00:21] [INFO]   Building multi-year event catalog (2022-2024)...
+[20:00:21] [INFO]   Total events across 3 years: 37
+[20:00:21] [INFO]   Unique DOYs to analyze: 37
+[20:00:21] [INFO]   Event coverage: 37/37 (100%)
+[20:09:07] [INFO]   Mercury: 10/19 significant (mean σ=2.6)
+[20:10:59] [INFO]   Venus: 2/4 significant (mean σ=2.8)
+[20:12:11] [INFO]   Mars: 0/2 significant (mean σ=1.5)
+[20:15:02] [INFO]   Jupiter: 3/6 significant (mean σ=2.1)
+[20:17:47] [INFO]   Saturn: 3/6 significant (mean σ=2.2)
+[20:17:47] [PROCESS] [4/5] Running null control and mass scaling tests...
+[20:17:47] [INFO]   Null control: permutation test (5 shuffles)
+[20:17:49] [INFO]   Permuted null: 6.6/20 significant (real: 10/20)
+[20:17:49] [INFO]   Mann-Whitney (σ levels): p = 0.025 (EVENTS > RANDOM)
+[20:17:49] [INFO] 
+[20:17:49] [INFO]   MASS SCALING TESTS (JPL ephemeris):
+[20:17:49] [INFO]   --------------------------------------------------
+[20:17:49] [INFO] 
+[20:17:49] [INFO]   JPL Ephemeris Earth-Planet Distances:
+[20:17:49] [INFO]     Mercury DOY7: 0.673 AU, GM/r² = 1.22e-01
+[20:17:49] [INFO]     Mercury DOY23: 0.665 AU, GM/r² = 1.25e-01
+[20:17:49] [INFO]     Mercury DOY59: 1.373 AU, GM/r² = 2.93e-02
+[20:17:49] [INFO]     Mercury DOY76: 1.356 AU, GM/r² = 3.01e-02
+[20:17:49] [INFO]     Mercury DOY92: 1.344 AU, GM/r² = 3.06e-02
+[20:17:49] [INFO]     Mercury DOY103: 0.584 AU, GM/r² = 1.62e-01
+[20:17:49] [INFO]     Mercury DOY122: 0.563 AU, GM/r² = 1.74e-01
+[20:17:49] [INFO]     Mercury DOY141: 0.552 AU, GM/r² = 1.81e-01
+[20:17:49] [INFO]     Mercury DOY166: 1.322 AU, GM/r² = 3.16e-02
+[20:17:49] [INFO]     Mercury DOY182: 1.326 AU, GM/r² = 3.14e-02
+[20:17:49] [INFO]     Mercury DOY197: 1.330 AU, GM/r² = 3.13e-02
+[20:17:49] [INFO]     Mercury DOY232: 0.616 AU, GM/r² = 1.46e-01
+[20:17:49] [INFO]     Mercury DOY249: 0.633 AU, GM/r² = 1.38e-01
+[20:17:49] [INFO]     Mercury DOY266: 0.649 AU, GM/r² = 1.31e-01
+[20:17:49] [INFO]     Mercury DOY274: 1.394 AU, GM/r² = 2.84e-02
+[20:17:49] [INFO]     Mercury DOY293: 1.420 AU, GM/r² = 2.74e-02
+[20:17:49] [INFO]     Mercury DOY312: 1.438 AU, GM/r² = 2.67e-02
+[20:17:49] [INFO]     Mercury DOY341: 0.678 AU, GM/r² = 1.20e-01
+[20:17:49] [INFO]     Mercury DOY356: 0.678 AU, GM/r² = 1.20e-01
+[20:17:49] [INFO]     Venus DOY8: 0.266 AU, GM/r² = 1.15e+01
+[20:17:49] [INFO]     Venus DOY156: 1.735 AU, GM/r² = 2.71e-01
+[20:17:49] [INFO]     Venus DOY225: 0.289 AU, GM/r² = 9.77e+00
+[20:17:49] [INFO]     Venus DOY295: 1.717 AU, GM/r² = 2.76e-01
+[20:17:49] [INFO]     Mars DOY322: 2.526 AU, GM/r² = 1.68e-02
+[20:17:49] [INFO]     Mars DOY342: 0.549 AU, GM/r² = 3.55e-01
+[20:17:49] [INFO]     Jupiter DOY64: 5.972 AU, GM/r² = 8.91e+00
+[20:17:49] [INFO]     Jupiter DOY101: 5.954 AU, GM/r² = 8.96e+00
+[20:17:49] [INFO]     Jupiter DOY139: 6.027 AU, GM/r² = 8.75e+00
+[20:17:49] [INFO]     Jupiter DOY269: 3.953 AU, GM/r² = 2.03e+01
+[20:17:49] [INFO]     Jupiter DOY307: 3.983 AU, GM/r² = 2.00e+01
+[20:17:49] [INFO]     Jupiter DOY342: 4.089 AU, GM/r² = 1.90e+01
+[20:17:49] [INFO]     Saturn DOY35: 10.898 AU, GM/r² = 8.02e-01
+[20:17:49] [INFO]     Saturn DOY47: 10.811 AU, GM/r² = 8.14e-01
+[20:17:49] [INFO]     Saturn DOY59: 10.711 AU, GM/r² = 8.30e-01
+[20:17:49] [INFO]     Saturn DOY226: 8.857 AU, GM/r² = 1.21e+00
+[20:17:49] [INFO]     Saturn DOY239: 8.763 AU, GM/r² = 1.24e+00
+[20:17:49] [INFO]     Saturn DOY252: 8.658 AU, GM/r² = 1.27e+00
+[20:17:49] [INFO] 
+[20:17:49] [INFO]   TEST A: Clock Amplitude vs GM/r² (classical gravitational):
+[20:17:49] [INFO]     GM/r² vs clock RMS:  r = -0.049, p = 0.774
+[20:17:49] [INFO]     GM vs clock RMS:     r = -0.001, p = 0.997
+[20:17:49] [INFO]     → No classical amplitude scaling (expected: common-mode removed)
+[20:17:49] [INFO] 
+[20:17:49] [INFO]   TEST B: Coherence Modulation vs GM/r² (TEP geometric):
+[20:17:49] [INFO]     GM/r² vs |coherence mod|: r = +0.126, p = 0.457
+[20:17:49] [INFO]     GM vs |coherence mod|:    r = -0.107, p = 0.527
+[20:17:49] [INFO]     GM/r² vs σ-level:         r = -0.091, p = 0.593
+[20:17:49] [INFO]     GM vs σ-level:            r = -0.106, p = 0.534
+[20:17:49] [SUCCESS]     → NO coherence scaling (consistent with CODE: geometric effect)
+[20:17:49] [INFO] 
+[20:17:49] [INFO]   --------------------------------------------------
+[20:17:49] [INFO]   INTERPRETATION:
+[20:17:49] [INFO]     • Classical GM/r² amplitude scaling: Common-mode, removed in SPP
+[20:17:49] [INFO]     • TEP coherence effect: Geometric (phase structure), no mass scaling
+[20:17:49] [INFO]     • CODE longspan (25yr): NO mass scaling detected (p > 0.5)
+[20:17:49] [PROCESS] [5/5] Creating visualizations...
+[20:17:50] [SUCCESS]   Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_6_planetary_events.png
+[20:17:50] [INFO] 
+[20:17:50] [INFO] ============================================================
+[20:17:50] [INFO] PLANETARY EVENT ANALYSIS SUMMARY
+[20:17:50] [INFO] ============================================================
+[20:17:50] [INFO]   Methodology: CODE LONGSPAN (daily coherence + Gaussian pulse)
+[20:17:50] [INFO]   Data coverage: DOY 1-366 (366 days)
+[20:17:50] [INFO]   Events analyzed: 37/37
+[20:17:50] [INFO]   Significant detections: 18/37 (48.6%)
+[20:17:50] [INFO]   Permutation null: 6.6/20 vs real: 10/20
+[20:17:50] [INFO] 
+[20:17:50] [INFO] KEY FINDINGS:
+[20:17:50] [WARNING]   ⚠ Similar detection rate for events and random dates
+[20:17:50] [INFO]   • No classical amplitude scaling (r=-0.049, p=0.774) - expected
+[20:17:50] [SUCCESS]   ✓ NO coherence scaling (r=0.126, p=0.457) - consistent with CODE
+[20:17:50] [SUCCESS]   ✓ Events significantly stronger than random (p=0.025)
+[20:17:50] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_6_planetary_events_clock_drift_phase_alignment.json
+[20:17:50] [INFO] 
+[20:17:50] [INFO] ================================================================================
+[20:17:50] [INFO] Step 2.6 Complete
+[20:17:50] [INFO] ================================================================================
+[20:17:50] [INFO] 
+[20:17:50] [INFO] ================================================================================
+[20:17:50] [INFO] PLANETARY EVENT ANALYSIS COMPARISON SUMMARY
+[20:17:50] [INFO] ================================================================================
+[20:17:50] [INFO] 
+[20:17:50] [INFO] Metric       Coh Type   Events   Signif   Rate     Mean σ  
+[20:17:50] [INFO] ------------------------------------------------------------
+[20:17:50] [INFO] clock_bias   msc        37       18       48.6%    2.57    
+[20:17:50] [INFO] clock_bias   phase_alignment 37       21       56.8%    2.69    
+[20:17:50] [INFO] pos_jitter   msc        37       16       43.2%    2.46    
+[20:17:50] [INFO] pos_jitter   phase_alignment 37       28       75.7%    3.38    
+[20:17:50] [INFO] clock_drift  msc        37       11       29.7%    2.08    
+[20:17:50] [INFO] clock_drift  phase_alignment 37       18       48.6%    2.43    
+[20:17:50] [INFO] ------------------------------------------------------------
+[20:17:50] [INFO] CODE Longspan reference: 56/156 events significant (35.9%)
+[20:17:50] [INFO] 
+[20:17:50] [SUCCESS] MULTI-METRIC PIPELINE COMPLETE

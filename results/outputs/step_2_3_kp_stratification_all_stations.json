@@ -1,0 +1,323 @@
+{
+  "step": "2.3a",
+  "name": "kp_stratification",
+  "filter": "ALL_STATIONS",
+  "timestamp": "2025-12-08T19:46:54.357147",
+  "kp_threshold": 3.0,
+  "quiet_days": 936,
+  "storm_days": 160,
+  "results_by_mode": {
+    "baseline": {
+      "clock_bias/msc": {
+        "quiet": {
+          "lambda_km": 730.9484713129841,
+          "r_squared": 0.9544771988916411,
+          "n_pairs": 50929411
+        },
+        "storm": {
+          "lambda_km": 701.4247052021907,
+          "r_squared": 0.9506318860179663,
+          "n_pairs": 8670961
+        },
+        "all": {
+          "lambda_km": 726.5674715729848,
+          "r_squared": 0.9539822755495254,
+          "n_pairs": 59600372
+        }
+      },
+      "clock_bias/phase_alignment": {
+        "quiet": {
+          "lambda_km": 1789.9959372743863,
+          "r_squared": 0.9020689907820522,
+          "n_pairs": 50929411
+        },
+        "storm": {
+          "lambda_km": 1776.6914683604027,
+          "r_squared": 0.9183170898159607,
+          "n_pairs": 8670961
+        },
+        "all": {
+          "lambda_km": 1788.1793802422153,
+          "r_squared": 0.9044798715157241,
+          "n_pairs": 59600372
+        }
+      },
+      "pos_jitter/msc": {
+        "quiet": {
+          "lambda_km": 888.4089398562597,
+          "r_squared": 0.9792641188998077,
+          "n_pairs": 50929411
+        },
+        "storm": {
+          "lambda_km": 854.1211291209607,
+          "r_squared": 0.9789025637543233,
+          "n_pairs": 8670961
+        },
+        "all": {
+          "lambda_km": 883.267202475253,
+          "r_squared": 0.9792649719424399,
+          "n_pairs": 59600372
+        }
+      },
+      "pos_jitter/phase_alignment": {
+        "quiet": {
+          "lambda_km": 2020.5377146183255,
+          "r_squared": 0.9658101133372274,
+          "n_pairs": 50929411
+        },
+        "storm": {
+          "lambda_km": 2004.3522498798877,
+          "r_squared": 0.970766959033467,
+          "n_pairs": 8670961
+        },
+        "all": {
+          "lambda_km": 2018.2882602438958,
+          "r_squared": 0.9666733211062176,
+          "n_pairs": 59600372
+        }
+      },
+      "clock_drift/msc": {
+        "quiet": {
+          "lambda_km": 706.1106051263046,
+          "r_squared": 0.9568675422439402,
+          "n_pairs": 50929411
+        },
+        "storm": {
+          "lambda_km": 676.8895209980528,
+          "r_squared": 0.9535449889776525,
+          "n_pairs": 8670961
+        },
+        "all": {
+          "lambda_km": 701.7522192097314,
+          "r_squared": 0.9564404409146783,
+          "n_pairs": 59600372
+        }
+      },
+      "clock_drift/phase_alignment": {
+        "quiet": {
+          "lambda_km": 1031.3715399297462,
+          "r_squared": 0.9442830102483504,
+          "n_pairs": 50929411
+        },
+        "storm": {
+          "lambda_km": 996.2890099304852,
+          "r_squared": 0.9536376470935815,
+          "n_pairs": 8670961
+        },
+        "all": {
+          "lambda_km": 1026.206316265761,
+          "r_squared": 0.9457709006332079,
+          "n_pairs": 59600372
+        }
+      }
+    },
+    "ionofree": {
+      "clock_bias/msc": {
+        "quiet": {
+          "lambda_km": 1076.3034590560844,
+          "r_squared": 0.9691151365290306,
+          "n_pairs": 48670607
+        },
+        "storm": {
+          "lambda_km": 1044.9304773723825,
+          "r_squared": 0.9701832080185362,
+          "n_pairs": 8279734
+        },
+        "all": {
+          "lambda_km": 1071.6347091897273,
+          "r_squared": 0.9693083904512003,
+          "n_pairs": 56950341
+        }
+      },
+      "clock_bias/phase_alignment": {
+        "quiet": {
+          "lambda_km": 1782.078049110976,
+          "r_squared": 0.7800554997479459,
+          "n_pairs": 48670607
+        },
+        "storm": {
+          "lambda_km": 1796.414527111548,
+          "r_squared": 0.7866397948804317,
+          "n_pairs": 8279734
+        },
+        "all": {
+          "lambda_km": 1784.1026985117253,
+          "r_squared": 0.7810140161243121,
+          "n_pairs": 56950341
+        }
+      },
+      "pos_jitter/msc": {
+        "quiet": {
+          "lambda_km": 1235.4108314625637,
+          "r_squared": 0.9398272392626145,
+          "n_pairs": 48670607
+        },
+        "storm": {
+          "lambda_km": 1220.5458910408126,
+          "r_squared": 0.9441111208644586,
+          "n_pairs": 8279734
+        },
+        "all": {
+          "lambda_km": 1233.0019078039272,
+          "r_squared": 0.940533214059321,
+          "n_pairs": 56950341
+        }
+      },
+      "pos_jitter/phase_alignment": {
+        "quiet": {
+          "lambda_km": 3473.1844319281417,
+          "r_squared": 0.9486562380252996,
+          "n_pairs": 48670607
+        },
+        "storm": {
+          "lambda_km": 3559.669845984356,
+          "r_squared": 0.950908208766413,
+          "n_pairs": 8279734
+        },
+        "all": {
+          "lambda_km": 3485.4908481174148,
+          "r_squared": 0.9490262264858185,
+          "n_pairs": 56950341
+        }
+      },
+      "clock_drift/msc": {
+        "quiet": {
+          "lambda_km": 1076.5191351048334,
+          "r_squared": 0.9685702235727851,
+          "n_pairs": 48670607
+        },
+        "storm": {
+          "lambda_km": 1049.42721615944,
+          "r_squared": 0.9707253028348187,
+          "n_pairs": 8279734
+        },
+        "all": {
+          "lambda_km": 1072.4645776544648,
+          "r_squared": 0.9689250093159182,
+          "n_pairs": 56950341
+        }
+      },
+      "clock_drift/phase_alignment": {
+        "quiet": {
+          "lambda_km": 1108.3122337108616,
+          "r_squared": 0.894840800207261,
+          "n_pairs": 48670607
+        },
+        "storm": {
+          "lambda_km": 1112.474078517278,
+          "r_squared": 0.897267956285691,
+          "n_pairs": 8279734
+        },
+        "all": {
+          "lambda_km": 1108.9142614010188,
+          "r_squared": 0.895221757520279,
+          "n_pairs": 56950341
+        }
+      }
+    },
+    "multi_gnss": {
+      "clock_bias/msc": {
+        "quiet": {
+          "lambda_km": 809.4016493434128,
+          "r_squared": 0.9275559369168026,
+          "n_pairs": 47674282
+        },
+        "storm": {
+          "lambda_km": 848.1534503829519,
+          "r_squared": 0.9153543961784082,
+          "n_pairs": 8154299
+        },
+        "all": {
+          "lambda_km": 814.6439204204723,
+          "r_squared": 0.9257804652782794,
+          "n_pairs": 55828581
+        }
+      },
+      "clock_bias/phase_alignment": {
+        "quiet": {
+          "lambda_km": 1765.9850108036248,
+          "r_squared": 0.9576784166736171,
+          "n_pairs": 47674282
+        },
+        "storm": {
+          "lambda_km": 1697.1453542939114,
+          "r_squared": 0.9641836514210194,
+          "n_pairs": 8154299
+        },
+        "all": {
+          "lambda_km": 1756.612027275818,
+          "r_squared": 0.9587974561562546,
+          "n_pairs": 55828581
+        }
+      },
+      "pos_jitter/msc": {
+        "quiet": {
+          "lambda_km": 936.5289605257477,
+          "r_squared": 0.9744351670086647,
+          "n_pairs": 47674282
+        },
+        "storm": {
+          "lambda_km": 889.5458703813556,
+          "r_squared": 0.9635917962460016,
+          "n_pairs": 8154299
+        },
+        "all": {
+          "lambda_km": 929.76603839749,
+          "r_squared": 0.9730281787138033,
+          "n_pairs": 55828581
+        }
+      },
+      "pos_jitter/phase_alignment": {
+        "quiet": {
+          "lambda_km": 1787.1859377979545,
+          "r_squared": 0.955897254074818,
+          "n_pairs": 47674282
+        },
+        "storm": {
+          "lambda_km": 1760.103055980429,
+          "r_squared": 0.9627572079004152,
+          "n_pairs": 8154299
+        },
+        "all": {
+          "lambda_km": 1783.4017242342225,
+          "r_squared": 0.9569676256998099,
+          "n_pairs": 55828581
+        }
+      },
+      "clock_drift/msc": {
+        "quiet": {
+          "lambda_km": 754.1495049257542,
+          "r_squared": 0.9301369917594704,
+          "n_pairs": 47674282
+        },
+        "storm": {
+          "lambda_km": 785.2507452839998,
+          "r_squared": 0.916532963899842,
+          "n_pairs": 8154299
+        },
+        "all": {
+          "lambda_km": 758.3591180172672,
+          "r_squared": 0.9281490012781101,
+          "n_pairs": 55828581
+        }
+      },
+      "clock_drift/phase_alignment": {
+        "quiet": {
+          "lambda_km": 987.3224413895872,
+          "r_squared": 0.9663581038429779,
+          "n_pairs": 47674282
+        },
+        "storm": {
+          "lambda_km": 969.2596770748078,
+          "r_squared": 0.9761593472807776,
+          "n_pairs": 8154299
+        },
+        "all": {
+          "lambda_km": 984.7174741955148,
+          "r_squared": 0.9680028739818269,
+          "n_pairs": 55828581
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1488 @@
+[17:58:14] [INFO] 
+[17:58:14] [INFO] ================================================================================
+[17:58:14] [INFO] RUNNING SINGLE FILTER: DYNAMIC 50
+[17:58:14] [INFO] ================================================================================
+[17:58:14] [INFO] 
+[17:58:14] [INFO] 
+[17:58:14] [INFO] ================================================================================
+[17:58:14] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.2: Anisotropy (DYNAMIC 50)
+[17:58:14] [INFO] ================================================================================
+[17:58:14] [PROCESS] [1/8] Loading station data...
+[17:58:14] [INFO]   Using DYNAMIC filter: std < 50.0ns per file
+[17:58:15] [INFO]   Smart filter: 560/671 files passed
+[17:58:15] [INFO]     Rejected: 76 (jumps>500ns), 4 (range>5000ns), 31 (std>50.0ns)
+[17:58:15] [INFO]   Found 560 processed files matching filter
+[17:58:15] [INFO]   Grouped into 2 days across 275 stations
+[17:58:15] [INFO]   Detected years: [2022]
+[17:58:15] [PROCESS] [1/8] Preparing for day-by-day processing...
+[17:58:15] [INFO]   Total days to process: 2
+[17:58:15] [INFO]   Stations available: 275
+[17:58:15] [SUCCESS]   Baseline mode stations: 275
+[17:58:15] [INFO]   Iono-free mode stations: 274 (Option D)
+[17:58:15] [INFO]   Multi-GNSS mode stations: 275 (MGEX)
+[17:58:15] [PROCESS] [2/8] Fetching Kp data for stratification...
+[17:58:15] [INFO] Fetching Kp data from GFZ for years: [2022]...
+[17:58:38] [INFO]   Loaded Kp for 365 days (using daily MAX)
+[17:58:38] [INFO]   Quiet days (Kp < 3.0): 0/2
+[17:58:38] [PROCESS] Loading pre-computed pairs from step_2_0_pairs_baseline.csv (Chunked)...
+[17:58:38] [INFO]   Will filter for 'clock_bias' metric only (pos_jitter is isotropic)
+[17:58:38] [INFO]   Loaded 0.7M pairs...
+[17:58:39] [INFO]   Loaded 1.5M pairs...
+[17:58:40] [INFO]   Loaded 2.2M pairs...
+[17:58:41] [INFO]   Loaded 3.0M pairs...
+[17:58:42] [INFO]   Loaded 3.7M pairs...
+[17:58:43] [INFO]   Loaded 4.4M pairs...
+[17:58:44] [INFO]   Loaded 5.2M pairs...
+[17:58:45] [INFO]   Loaded 5.9M pairs...
+[17:58:46] [INFO]   Loaded 6.7M pairs...
+[17:58:47] [INFO]   Loaded 7.4M pairs...
+[17:58:48] [INFO]   Loaded 8.2M pairs...
+[17:58:49] [INFO]   Loaded 8.9M pairs...
+[17:58:50] [INFO]   Loaded 9.7M pairs...
+[17:58:51] [INFO]   Loaded 10.4M pairs...
+[17:58:52] [INFO]   Loaded 11.2M pairs...
+[17:58:53] [INFO]   Loaded 11.9M pairs...
+[17:58:54] [INFO]   Loaded 12.7M pairs...
+[17:58:54] [INFO]   Loaded 13.4M pairs...
+[17:58:55] [INFO]   Loaded 14.2M pairs...
+[17:58:56] [INFO]   Loaded 15.0M pairs...
+[17:58:57] [INFO]   Loaded 15.7M pairs...
+[17:58:58] [INFO]   Loaded 16.5M pairs...
+[17:58:59] [INFO]   Loaded 17.2M pairs...
+[17:59:00] [INFO]   Loaded 18.0M pairs...
+[17:59:01] [INFO]   Loaded 18.7M pairs...
+[17:59:02] [INFO]   Loaded 19.5M pairs...
+[17:59:03] [INFO]   Loaded 20.2M pairs...
+[17:59:04] [INFO]   Loaded 21.0M pairs...
+[17:59:04] [INFO]   Loaded 21.8M pairs...
+[17:59:05] [INFO]   Loaded 22.6M pairs...
+[17:59:06] [INFO]   Loaded 23.3M pairs...
+[17:59:07] [INFO]   Loaded 24.1M pairs...
+[17:59:08] [INFO]   Loaded 24.8M pairs...
+[17:59:09] [INFO]   Loaded 25.6M pairs...
+[17:59:10] [INFO]   Loaded 26.4M pairs...
+[17:59:11] [INFO]   Loaded 27.2M pairs...
+[17:59:12] [INFO]   Loaded 27.9M pairs...
+[17:59:13] [INFO]   Loaded 28.7M pairs...
+[17:59:13] [INFO]   Loaded 29.5M pairs...
+[17:59:14] [INFO]   Loaded 30.2M pairs...
+[17:59:15] [INFO]   Loaded 31.0M pairs...
+[17:59:16] [INFO]   Loaded 31.8M pairs...
+[17:59:17] [INFO]   Loaded 32.6M pairs...
+[17:59:18] [INFO]   Loaded 33.4M pairs...
+[17:59:19] [INFO]   Loaded 34.2M pairs...
+[17:59:20] [INFO]   Loaded 34.9M pairs...
+[17:59:21] [INFO]   Loaded 35.8M pairs...
+[17:59:21] [INFO]   Loaded 36.6M pairs...
+[17:59:22] [INFO]   Loaded 37.4M pairs...
+[17:59:23] [INFO]   Loaded 38.2M pairs...
+[17:59:24] [INFO]   Loaded 39.0M pairs...
+[17:59:25] [INFO]   Loaded 39.7M pairs...
+[17:59:26] [INFO]   Loaded 40.5M pairs...
+[17:59:27] [INFO]   Loaded 41.3M pairs...
+[17:59:27] [INFO]   Loaded 42.0M pairs...
+[17:59:28] [INFO]   Loaded 42.8M pairs...
+[17:59:29] [INFO]   Loaded 43.6M pairs...
+[17:59:30] [INFO]   Loaded 44.3M pairs...
+[17:59:31] [INFO]   Loaded 45.1M pairs...
+[17:59:32] [INFO]   Loaded 45.9M pairs...
+[17:59:33] [INFO]   Loaded 46.6M pairs...
+[17:59:34] [INFO]   Loaded 47.4M pairs...
+[17:59:34] [INFO]   Loaded 48.1M pairs...
+[17:59:35] [INFO]   Loaded 48.9M pairs...
+[17:59:36] [INFO]   Loaded 49.6M pairs...
+[17:59:37] [INFO]   Loaded 50.4M pairs...
+[17:59:38] [INFO]   Loaded 51.1M pairs...
+[17:59:39] [INFO]   Loaded 51.8M pairs...
+[17:59:40] [INFO]   Loaded 52.6M pairs...
+[17:59:41] [INFO]   Loaded 53.3M pairs...
+[17:59:42] [INFO]   Loaded 54.1M pairs...
+[17:59:42] [INFO]   Finalizing data structure (54441685 pairs)...
+[17:59:43] [INFO]   Recomputing azimuths from station coordinates (fixing direction bug)...
+[17:59:47] [INFO]   Built lookup for 120,686 unique pairs
+[18:00:02] [SUCCESS]   Fixed 6,379,011 azimuths (11.7% were ~180° off)
+[18:00:03] [SUCCESS]   Loaded 54441685 pairs successfully.
+[18:00:03] [SUCCESS] Using pre-computed pairs from Step 2.0 output
+[18:00:03] [INFO] 
+======================================================================
+[18:00:03] [INFO] MULTI-METRIC ANISOTROPY ANALYSIS: ALL DAYS (Multi-Year)
+[18:00:03] [INFO] ======================================================================
+[18:00:03] [INFO]   Available metrics: ['coherence', 'phase_alignment']
+[18:00:03] [PROCESS] 
+  --- Analyzing metric: coherence ---
+[18:00:03] [INFO]       Description: Magnitude Squared Coherence (MSC)
+[18:00:03] [PROCESS] 
+--- Analyzing ALL DAYS (Multi-Year)_coherence ---
+[18:00:15] [INFO]   8-SECTOR ANALYSIS (with distance matching):
+[18:00:15] [INFO]     N : λ =   672 km, R² = 0.981
+[18:00:15] [INFO]     NE: λ =   523 km, R² = 0.983
+[18:00:15] [INFO]     E : λ =   573 km, R² = 0.981
+[18:00:15] [INFO]     SE: λ =   496 km, R² = 0.981
+[18:00:15] [INFO]     S : λ =   625 km, R² = 0.989
+[18:00:15] [INFO]     SW: λ =   699 km, R² = 0.931
+[18:00:15] [INFO]     W : λ =   562 km, R² = 0.974
+[18:00:15] [INFO]     NW: λ =   495 km, R² = 0.989
+[18:00:15] [INFO]   DIPOLE ANALYSIS:
+[18:00:15] [SUCCESS]     Strongest: SW (λ = 699 km)
+[18:00:15] [INFO]     Weakest:   NW (λ = 495 km)
+[18:00:15] [INFO]     Dipole ratio (max/min): 1.41
+[18:00:15] [INFO]     Dipole axis: 225° from North
+[18:00:15] [SUCCESS]   E-W/N-S RATIO (FULL DATASET - PRIMARY):
+[18:00:15] [INFO]     E-W λ = 599 km (sectors: 595, 603)
+[18:00:15] [INFO]     N-S λ = 651 km (sectors: 674, 627)
+[18:00:15] [SUCCESS]     RATIO: 0.92 (Ref: 2.16)
+[18:00:15] [INFO]   [Reference] CODE Subsampled Ratio: 0.87
+[18:00:17] [INFO]   [Diagnostic] Pooled Ratio: 0.93 (Biased by geometry)
+[18:00:21] [SUCCESS] 
+  SHORT-DISTANCE ANALYSIS (<500km) - PRIMARY TEP TEST:
+[18:00:21] [INFO]     E-W pairs: 344,762, N-S pairs: 214,429
+[18:00:25] [INFO]     E-W mean: 0.6785 ± 0.1091
+[18:00:25] [INFO]     N-S mean: 0.6594 ± 0.1147
+[18:00:25] [SUCCESS]     RATIO (E-W/N-S): 1.029
+[18:00:25] [INFO]     95% CI: [1.028, 1.030]
+[18:00:25] [INFO]     t-statistic: 61.94, p-value: 0.00e+00
+[18:00:25] [INFO]     Cohen's d: 0.171 (small)
+[18:00:25] [SUCCESS]     → TEP SIGNAL DETECTED: E-W > N-S (entire 95% CI > 1.0)
+[18:00:25] [INFO]     CODE reference ratio: 2.16 (λ ratio, different metric)
+[18:00:28] [INFO]   Mid-Lat Only (32015324 pairs) Ratio: 0.80
+[18:00:32] [SUCCESS]       E-W/N-S Ratio: 0.93
+[18:00:32] [INFO]       Anisotropy CV: 0.056
+[18:00:32] [PROCESS] 
+  --- Analyzing metric: phase_alignment ---
+[18:00:32] [INFO]       Description: Phase Alignment Index (cos(weighted_phase))
+[18:00:32] [PROCESS] 
+--- Analyzing ALL DAYS (Multi-Year)_phase_alignment ---
+[18:00:43] [INFO]   8-SECTOR ANALYSIS (with distance matching):
+[18:00:43] [INFO]     N : λ =  4344 km, R² = 0.913
+[18:00:43] [INFO]     NE: λ =  2588 km, R² = 0.970
+[18:00:43] [INFO]     E : λ =  2123 km, R² = 0.981
+[18:00:43] [INFO]     SE: λ =  2077 km, R² = 0.969
+[18:00:43] [INFO]     S : λ =  3188 km, R² = 0.956
+[18:00:43] [INFO]     SW: λ =  2448 km, R² = 0.977
+[18:00:43] [INFO]     W : λ =  2130 km, R² = 0.972
+[18:00:43] [INFO]     NW: λ =  2614 km, R² = 0.979
+[18:00:43] [INFO]   DIPOLE ANALYSIS:
+[18:00:43] [SUCCESS]     Strongest: N (λ = 4344 km)
+[18:00:43] [INFO]     Weakest:   SE (λ = 2077 km)
+[18:00:43] [INFO]     Dipole ratio (max/min): 2.09
+[18:00:43] [INFO]     Dipole axis: 0° from North
+[18:00:43] [SUCCESS]   E-W/N-S RATIO (FULL DATASET - PRIMARY):
+[18:00:43] [INFO]     E-W λ = 2104 km (sectors: 2092, 2116)
+[18:00:43] [INFO]     N-S λ = 3615 km (sectors: 3890, 3340)
+[18:00:43] [SUCCESS]     RATIO: 0.58 (Ref: 2.16)
+[18:00:43] [INFO]   [Reference] CODE Subsampled Ratio: 0.56
+[18:00:45] [INFO]   [Diagnostic] Pooled Ratio: 0.90 (Biased by geometry)
+[18:00:49] [SUCCESS] 
+  SHORT-DISTANCE ANALYSIS (<500km) - PRIMARY TEP TEST:
+[18:00:49] [INFO]     E-W pairs: 344,762, N-S pairs: 214,429
+[18:00:53] [INFO]     E-W mean: 0.7811 ± 0.4998
+[18:00:53] [INFO]     N-S mean: 0.6533 ± 0.6020
+[18:00:53] [SUCCESS]     RATIO (E-W/N-S): 1.196
+[18:00:53] [INFO]     95% CI: [1.191, 1.201]
+[18:00:53] [INFO]     t-statistic: 82.25, p-value: 0.00e+00
+[18:00:53] [INFO]     Cohen's d: 0.231 (small)
+[18:00:53] [SUCCESS]     → TEP SIGNAL DETECTED: E-W > N-S (entire 95% CI > 1.0)
+[18:00:53] [INFO]     CODE reference ratio: 2.16 (λ ratio, different metric)
+[18:00:56] [INFO]   Mid-Lat Only (32015324 pairs) Ratio: 0.86
+[18:01:00] [SUCCESS]       E-W/N-S Ratio: 0.90
+[18:01:00] [INFO]       Anisotropy CV: 0.223
+[18:01:00] [PROCESS] 
+  --- Cross-Metric Comparison ---
+[18:01:00] [INFO]       MSC E-W/N-S Ratio: 0.93
+[18:01:00] [INFO]       Phase E-W/N-S Ratio: 0.90
+[18:01:00] [INFO]       Difference: 4.0%
+[18:01:00] [SUCCESS]       CONSISTENT: Both metrics show similar anisotropy
+[18:01:00] [INFO] 
+======================================================================
+[18:01:00] [PROCESS] RUNNING ENHANCED TEP EVIDENCE ANALYSIS
+[18:01:00] [INFO] ======================================================================
+[18:01:00] [INFO] 
+======================================================================
+[18:01:00] [SUCCESS] ENHANCED TEP EVIDENCE ANALYSIS
+[18:01:00] [INFO] ======================================================================
+[18:01:00] [INFO]   Metric: coherence
+[18:01:00] [INFO]   Method: Compare SPP sector λ to CODE PPP reference
+[18:01:00] [INFO] 
+  SECTOR-BY-SECTOR COMPARISON (SPP vs CODE PPP):
+[18:01:00] [INFO]   ------------------------------------------------------------
+[18:01:00] [INFO]   Sector        SPP λ     CODE λ    λ Ratio        SPP A     CODE A  A Ratio  Status
+[18:01:00] [INFO]   ---------------------------------------------------------------------------
+[18:01:00] [INFO]   N               672       2313       0.29         0.16        nan      nan  ⚠ SUPPRESSED
+[18:01:00] [INFO]   NE              523       2540       0.21         0.22        nan      nan  ⚠ SUPPRESSED
+[18:01:00] [INFO]   E               573       3206       0.18         0.20        nan      nan  ⚠ SUPPRESSED
+[18:01:00] [INFO]   SE              496       6808       0.07         0.22        nan      nan  ⚠ SUPPRESSED
+[18:01:00] [INFO]   S               625       2719       0.23         0.16        nan      nan  ⚠ SUPPRESSED
+[18:01:00] [INFO]   SW              699       5332       0.13         0.18        nan      nan  ⚠ SUPPRESSED
+[18:01:00] [INFO]   W               562       7664       0.07         0.20        nan      nan  ⚠ SUPPRESSED
+[18:01:00] [INFO]   NW              495       3028       0.16         0.24        nan      nan  ⚠ SUPPRESSED
+[18:01:00] [INFO]   ------------------------------------------------------------
+[18:01:00] [INFO] 
+  GEOMETRIC SUPPRESSION ANALYSIS:
+[18:01:00] [INFO]     N-S sectors mean ratio (SPP/CODE): 0.26
+[18:01:00] [INFO]     E-W sectors mean ratio (SPP/CODE): 0.13
+[18:01:00] [SUCCESS]     Geometric Suppression Factor (N-S/E-W): 2.07
+[18:01:00] [WARNING]     → Both directions show suppression (high noise floor)
+[18:01:00] [INFO] 
+  CORRECTED ANISOTROPY RATIO:
+[18:01:00] [INFO]     Raw SPP E-W/N-S Ratio: 0.87
+[18:01:00] [INFO]     CODE Reference Ratio: 2.16
+[18:01:00] [SUCCESS]     Geometry-Corrected Ratio: 1.81
+[18:01:00] [INFO]     Deviation from CODE: 16.3%
+[18:01:00] [SUCCESS]     → CORRECTED RATIO MATCHES CODE (within 30%)
+[18:01:00] [INFO] 
+  N-S SIGNAL PRESERVATION TEST:
+[18:01:00] [INFO]     N-S mean ratio: 0.26 ± 0.03
+[18:01:00] [INFO]     t-statistic (vs 1.0): -34.42
+[18:01:00] [WARNING]     → N-S signal DIFFERS from CODE
+[18:01:00] [INFO] 
+  ============================================================
+[18:01:00] [SUCCESS]   FINAL TEP EVIDENCE ASSESSMENT
+[18:01:00] [INFO]   ============================================================
+[18:01:00] [INFO]     ✗ N-S correlation lengths do not match CODE
+[18:01:00] [INFO]     ✓ E-W suppression consistent with GPS orbital geometry
+[18:01:00] [INFO]     ✓ Geometry-corrected ratio matches CODE (within 30%)
+[18:01:00] [INFO]     ✓ High fit quality (mean R² = 0.98)
+[18:01:00] [SUCCESS] 
+    EVIDENCE SCORE: 3/4
+[18:01:00] [SUCCESS]     CONCLUSION: STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:01:00] [INFO] 
+======================================================================
+[18:01:00] [SUCCESS] ENHANCED TEP EVIDENCE ANALYSIS
+[18:01:00] [INFO] ======================================================================
+[18:01:00] [INFO]   Metric: phase_alignment
+[18:01:00] [INFO]   Method: Compare SPP sector λ to CODE PPP reference
+[18:01:00] [INFO] 
+  SECTOR-BY-SECTOR COMPARISON (SPP vs CODE PPP):
+[18:01:00] [INFO]   ------------------------------------------------------------
+[18:01:00] [INFO]   Sector        SPP λ     CODE λ    λ Ratio        SPP A     CODE A  A Ratio  Status
+[18:01:00] [INFO]   ---------------------------------------------------------------------------
+[18:01:00] [INFO]   N              4344       2313       1.88         0.90        nan      nan  ? ENHANCED
+[18:01:00] [INFO]   NE             2588       2540       1.02         1.12        nan      nan  ✓ PRESERVED
+[18:01:00] [INFO]   E              2123       3206       0.66         1.07        nan      nan  ⚠ SUPPRESSED
+[18:01:00] [INFO]   SE             2077       6808       0.31         1.00        nan      nan  ⚠ SUPPRESSED
+[18:01:00] [INFO]   S              3188       2719       1.17         0.86        nan      nan  ✓ PRESERVED
+[18:01:00] [INFO]   SW             2448       5332       0.46         0.97        nan      nan  ⚠ SUPPRESSED
+[18:01:00] [INFO]   W              2130       7664       0.28         1.05        nan      nan  ⚠ SUPPRESSED
+[18:01:00] [INFO]   NW             2614       3028       0.86         1.11        nan      nan  ✓ PRESERVED
+[18:01:00] [INFO]   ------------------------------------------------------------
+[18:01:00] [INFO] 
+  GEOMETRIC SUPPRESSION ANALYSIS:
+[18:01:00] [INFO]     N-S sectors mean ratio (SPP/CODE): 1.53
+[18:01:00] [INFO]     E-W sectors mean ratio (SPP/CODE): 0.47
+[18:01:00] [SUCCESS]     Geometric Suppression Factor (N-S/E-W): 3.25
+[18:01:00] [SUCCESS]     → N-S signal PRESERVED, E-W signal SUPPRESSED by orbital geometry
+[18:01:00] [INFO] 
+  CORRECTED ANISOTROPY RATIO:
+[18:01:00] [INFO]     Raw SPP E-W/N-S Ratio: 0.56
+[18:01:00] [INFO]     CODE Reference Ratio: 2.16
+[18:01:00] [SUCCESS]     Geometry-Corrected Ratio: 1.83
+[18:01:00] [INFO]     Deviation from CODE: 15.2%
+[18:01:00] [SUCCESS]     → CORRECTED RATIO MATCHES CODE (within 30%)
+[18:01:00] [INFO] 
+  N-S SIGNAL PRESERVATION TEST:
+[18:01:00] [INFO]     N-S mean ratio: 1.53 ± 0.35
+[18:01:00] [INFO]     t-statistic (vs 1.0): 2.11
+[18:01:00] [WARNING]     → N-S signal DIFFERS from CODE
+[18:01:00] [INFO] 
+  ============================================================
+[18:01:00] [SUCCESS]   FINAL TEP EVIDENCE ASSESSMENT
+[18:01:00] [INFO]   ============================================================
+[18:01:00] [INFO]     ✓ N-S correlation lengths match CODE PPP (signal preserved)
+[18:01:00] [INFO]     ✓ E-W suppression consistent with GPS orbital geometry
+[18:01:00] [INFO]     ✓ Geometry-corrected ratio matches CODE (within 30%)
+[18:01:00] [INFO]     ✓ High fit quality (mean R² = 0.96)
+[18:01:00] [SUCCESS] 
+    EVIDENCE SCORE: 4/4
+[18:01:00] [SUCCESS]     CONCLUSION: STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:01:00] [INFO] 
+======================================================================
+[18:01:00] [SUCCESS] TEP EVIDENCE SUMMARY ACROSS METRICS
+[18:01:00] [INFO] ======================================================================
+[18:01:00] [SUCCESS]   coherence: Score 3/4 - STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:01:00] [SUCCESS]   phase_alignment: Score 4/4 - STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:01:00] [SUCCESS] 
+  OVERALL: STRONG EVIDENCE for TEP signal in SPP data
+[18:01:00] [PROCESS] 
+--- Analyzing ALL DAYS (Multi-Year) ---
+[18:01:12] [INFO]   8-SECTOR ANALYSIS (with distance matching):
+[18:01:12] [INFO]     N : λ =   714 km, R² = 0.980
+[18:01:12] [INFO]     NE: λ =   531 km, R² = 0.989
+[18:01:12] [INFO]     E : λ =   610 km, R² = 0.978
+[18:01:12] [INFO]     SE: λ =   556 km, R² = 0.993
+[18:01:12] [INFO]     S : λ =   593 km, R² = 0.977
+[18:01:12] [INFO]     SW: λ =   603 km, R² = 0.957
+[18:01:12] [INFO]     W : λ =   573 km, R² = 0.987
+[18:01:12] [INFO]     NW: λ =   643 km, R² = 0.993
+[18:01:12] [INFO]   DIPOLE ANALYSIS:
+[18:01:12] [SUCCESS]     Strongest: N (λ = 714 km)
+[18:01:12] [INFO]     Weakest:   NE (λ = 531 km)
+[18:01:12] [INFO]     Dipole ratio (max/min): 1.34
+[18:01:12] [INFO]     Dipole axis: 0° from North
+[18:01:12] [SUCCESS]   E-W/N-S RATIO (FULL DATASET - PRIMARY):
+[18:01:12] [INFO]     E-W λ = 599 km (sectors: 595, 603)
+[18:01:12] [INFO]     N-S λ = 651 km (sectors: 674, 627)
+[18:01:12] [SUCCESS]     RATIO: 0.92 (Ref: 2.16)
+[18:01:12] [INFO]   [Reference] CODE Subsampled Ratio: 0.91
+[18:01:14] [INFO]   [Diagnostic] Pooled Ratio: 0.93 (Biased by geometry)
+[18:01:18] [SUCCESS] 
+  SHORT-DISTANCE ANALYSIS (<500km) - PRIMARY TEP TEST:
+[18:01:18] [INFO]     E-W pairs: 344,762, N-S pairs: 214,429
+[18:01:22] [INFO]     E-W mean: 0.6785 ± 0.1091
+[18:01:22] [INFO]     N-S mean: 0.6594 ± 0.1147
+[18:01:22] [SUCCESS]     RATIO (E-W/N-S): 1.029
+[18:01:22] [INFO]     95% CI: [1.028, 1.030]
+[18:01:22] [INFO]     t-statistic: 61.94, p-value: 0.00e+00
+[18:01:22] [INFO]     Cohen's d: 0.171 (small)
+[18:01:22] [SUCCESS]     → TEP SIGNAL DETECTED: E-W > N-S (entire 95% CI > 1.0)
+[18:01:22] [INFO]     CODE reference ratio: 2.16 (λ ratio, different metric)
+[18:01:25] [INFO]   Mid-Lat Only (32015324 pairs) Ratio: 0.80
+[18:01:29] [PROCESS] [6/8] Analyzing QUIET DAYS...
+[18:01:29] [INFO]   Creating mask for quiet days...
+[18:01:29] [INFO]   Filtered 0 pairs (Quiet Days)
+[18:01:29] [INFO] 
+======================================================================
+[18:01:29] [INFO] MULTI-METRIC ANISOTROPY ANALYSIS: QUIET DAYS (Kp<3.0)
+[18:01:29] [INFO] ======================================================================
+[18:01:29] [WARNING]   No valid metrics found in data
+[18:01:29] [PROCESS] 
+--- Analyzing QUIET DAYS (Kp<3.0) ---
+[18:01:29] [WARNING]   No valid pairs
+[18:01:29] [PROCESS] [7/8] Analyzing STORM DAYS...
+[18:01:29] [INFO]   Filtered 75324 pairs (Storm Days)
+[18:01:29] [PROCESS] 
+--- Analyzing STORM DAYS (Kp>=3.0) ---
+[18:01:29] [INFO]   8-SECTOR ANALYSIS (with distance matching):
+[18:01:29] [INFO]     N : λ =   697 km, R² = 0.988
+[18:01:29] [INFO]     NE: λ =   197 km, R² = 0.953
+[18:01:29] [INFO]     E : λ =   736 km, R² = 0.943
+[18:01:29] [INFO]     SE: λ =   393 km, R² = 0.969
+[18:01:29] [INFO]     S : λ =   363 km, R² = 0.984
+[18:01:29] [INFO]     SW: λ =   321 km, R² = 0.958
+[18:01:29] [INFO]     W : λ =  1505 km, R² = 0.909
+[18:01:29] [INFO]     NW: λ =   447 km, R² = 0.977
+[18:01:29] [INFO]   DIPOLE ANALYSIS:
+[18:01:29] [SUCCESS]     Strongest: W (λ = 1505 km)
+[18:01:29] [INFO]     Weakest:   NE (λ = 197 km)
+[18:01:29] [INFO]     Dipole ratio (max/min): 7.63
+[18:01:29] [INFO]     Dipole axis: 270° from North
+[18:01:29] [SUCCESS]   E-W/N-S RATIO (FULL DATASET - PRIMARY):
+[18:01:29] [INFO]     E-W λ = 374 km (sectors: 450, 297)
+[18:01:29] [INFO]     N-S λ = 603 km (sectors: 733, 473)
+[18:01:29] [SUCCESS]     RATIO: 0.62 (Ref: 2.16)
+[18:01:29] [INFO]   [Reference] CODE Subsampled Ratio: 2.11
+[18:01:29] [INFO]   [Diagnostic] Pooled Ratio: 1.54 (Biased by geometry)
+[18:01:29] [SUCCESS] 
+  SHORT-DISTANCE ANALYSIS (<500km) - PRIMARY TEP TEST:
+[18:01:29] [INFO]     E-W pairs: 317, N-S pairs: 265
+[18:01:29] [INFO]     E-W mean: 0.6631 ± 0.1206
+[18:01:29] [INFO]     N-S mean: 0.6614 ± 0.1073
+[18:01:29] [SUCCESS]     RATIO (E-W/N-S): 1.003
+[18:01:29] [INFO]     95% CI: [0.976, 1.029]
+[18:01:29] [INFO]     t-statistic: 0.18, p-value: 8.58e-01
+[18:01:29] [INFO]     Cohen's d: 0.015 (small)
+[18:01:29] [WARNING]     → TEP SIGNAL WEAK: E-W > N-S but not significant
+[18:01:29] [INFO]     CODE reference ratio: 2.16 (λ ratio, different metric)
+[18:01:29] [INFO]   Mid-Lat Only (42889 pairs) Ratio: 1.22
+[18:01:29] [PROCESS] [7.5/10] Running Hemisphere Stratification...
+[18:01:30] [INFO]   Northern Hemisphere: 46,962,882 pairs
+[18:01:30] [INFO] 
+======================================================================
+[18:01:30] [INFO] MULTI-METRIC ANISOTROPY ANALYSIS: NORTHERN HEMISPHERE
+[18:01:30] [INFO] ======================================================================
+[18:01:30] [INFO]   Available metrics: ['coherence', 'phase_alignment']
+[18:01:30] [PROCESS] 
+  --- Analyzing metric: coherence ---
+[18:01:30] [INFO]       Description: Magnitude Squared Coherence (MSC)
+[18:01:30] [PROCESS] 
+--- Analyzing NORTHERN HEMISPHERE_coherence ---
+[18:01:40] [INFO]   8-SECTOR ANALYSIS (with distance matching):
+[18:01:40] [INFO]     N : λ =   811 km, R² = 0.980
+[18:01:40] [INFO]     NE: λ =   563 km, R² = 0.986
+[18:01:40] [INFO]     E : λ =   632 km, R² = 0.985
+[18:01:40] [INFO]     SE: λ =   494 km, R² = 0.989
+[18:01:40] [INFO]     S : λ =   724 km, R² = 0.966
+[18:01:40] [INFO]     SW: λ =   658 km, R² = 0.970
+[18:01:40] [INFO]     W : λ =   619 km, R² = 0.978
+[18:01:40] [INFO]     NW: λ =   553 km, R² = 0.990
+[18:01:40] [INFO]   DIPOLE ANALYSIS:
+[18:01:40] [SUCCESS]     Strongest: N (λ = 811 km)
+[18:01:40] [INFO]     Weakest:   SE (λ = 494 km)
+[18:01:40] [INFO]     Dipole ratio (max/min): 1.64
+[18:01:40] [INFO]     Dipole axis: 0° from North
+[18:01:40] [SUCCESS]   E-W/N-S RATIO (FULL DATASET - PRIMARY):
+[18:01:40] [INFO]     E-W λ = 604 km (sectors: 600, 608)
+[18:01:40] [INFO]     N-S λ = 655 km (sectors: 687, 624)
+[18:01:40] [SUCCESS]     RATIO: 0.92 (Ref: 2.16)
+[18:01:40] [INFO]   [Reference] CODE Subsampled Ratio: 0.81
+[18:01:41] [INFO]   [Diagnostic] Pooled Ratio: 0.94 (Biased by geometry)
+[18:01:45] [SUCCESS] 
+  SHORT-DISTANCE ANALYSIS (<500km) - PRIMARY TEP TEST:
+[18:01:45] [INFO]     E-W pairs: 339,465, N-S pairs: 198,110
+[18:01:49] [INFO]     E-W mean: 0.6793 ± 0.1091
+[18:01:49] [INFO]     N-S mean: 0.6632 ± 0.1142
+[18:01:49] [SUCCESS]     RATIO (E-W/N-S): 1.024
+[18:01:49] [INFO]     95% CI: [1.023, 1.025]
+[18:01:49] [INFO]     t-statistic: 50.77, p-value: 0.00e+00
+[18:01:49] [INFO]     Cohen's d: 0.144 (small)
+[18:01:49] [SUCCESS]     → TEP SIGNAL DETECTED: E-W > N-S (entire 95% CI > 1.0)
+[18:01:49] [INFO]     CODE reference ratio: 2.16 (λ ratio, different metric)
+[18:01:51] [INFO]   Mid-Lat Only (30008471 pairs) Ratio: 0.83
+[18:01:55] [SUCCESS]       E-W/N-S Ratio: 0.94
+[18:01:55] [INFO]       Anisotropy CV: 0.064
+[18:01:55] [PROCESS] 
+  --- Analyzing metric: phase_alignment ---
+[18:01:55] [INFO]       Description: Phase Alignment Index (cos(weighted_phase))
+[18:01:55] [PROCESS] 
+--- Analyzing NORTHERN HEMISPHERE_phase_alignment ---
+[18:02:04] [INFO]   8-SECTOR ANALYSIS (with distance matching):
+[18:02:04] [INFO]     N : λ =  3631 km, R² = 0.961
+[18:02:04] [INFO]     NE: λ =  2708 km, R² = 0.971
+[18:02:04] [INFO]     E : λ =  2160 km, R² = 0.977
+[18:02:04] [INFO]     SE: λ =  1949 km, R² = 0.982
+[18:02:04] [INFO]     S : λ =  2896 km, R² = 0.967
+[18:02:04] [INFO]     SW: λ =  2861 km, R² = 0.979
+[18:02:04] [INFO]     W : λ =  2228 km, R² = 0.980
+[18:02:04] [INFO]     NW: λ =  2561 km, R² = 0.972
+[18:02:04] [INFO]   DIPOLE ANALYSIS:
+[18:02:04] [SUCCESS]     Strongest: N (λ = 3631 km)
+[18:02:04] [INFO]     Weakest:   SE (λ = 1949 km)
+[18:02:04] [INFO]     Dipole ratio (max/min): 1.86
+[18:02:04] [INFO]     Dipole axis: 0° from North
+[18:02:04] [SUCCESS]   E-W/N-S RATIO (FULL DATASET - PRIMARY):
+[18:02:04] [INFO]     E-W λ = 2154 km (sectors: 2151, 2157)
+[18:02:04] [INFO]     N-S λ = 3853 km (sectors: 4117, 3588)
+[18:02:04] [SUCCESS]     RATIO: 0.56 (Ref: 2.16)
+[18:02:04] [INFO]   [Reference] CODE Subsampled Ratio: 0.67
+[18:02:06] [INFO]   [Diagnostic] Pooled Ratio: 0.86 (Biased by geometry)
+[18:02:09] [SUCCESS] 
+  SHORT-DISTANCE ANALYSIS (<500km) - PRIMARY TEP TEST:
+[18:02:09] [INFO]     E-W pairs: 339,465, N-S pairs: 198,110
+[18:02:13] [INFO]     E-W mean: 0.7836 ± 0.4981
+[18:02:13] [INFO]     N-S mean: 0.6706 ± 0.5896
+[18:02:13] [SUCCESS]     RATIO (E-W/N-S): 1.168
+[18:02:13] [INFO]     95% CI: [1.163, 1.174]
+[18:02:13] [INFO]     t-statistic: 71.66, p-value: 0.00e+00
+[18:02:13] [INFO]     Cohen's d: 0.207 (small)
+[18:02:13] [SUCCESS]     → TEP SIGNAL DETECTED: E-W > N-S (entire 95% CI > 1.0)
+[18:02:13] [INFO]     CODE reference ratio: 2.16 (λ ratio, different metric)
+[18:02:16] [INFO]   Mid-Lat Only (30008471 pairs) Ratio: 0.86
+[18:02:19] [SUCCESS]       E-W/N-S Ratio: 0.86
+[18:02:19] [INFO]       Anisotropy CV: 0.242
+[18:02:19] [PROCESS] 
+  --- Cross-Metric Comparison ---
+[18:02:19] [INFO]       MSC E-W/N-S Ratio: 0.94
+[18:02:19] [INFO]       Phase E-W/N-S Ratio: 0.86
+[18:02:19] [INFO]       Difference: 8.4%
+[18:02:19] [SUCCESS]       CONSISTENT: Both metrics show similar anisotropy
+[18:02:19] [INFO] 
+======================================================================
+[18:02:19] [PROCESS] RUNNING ENHANCED TEP EVIDENCE ANALYSIS
+[18:02:19] [INFO] ======================================================================
+[18:02:19] [INFO] 
+======================================================================
+[18:02:19] [SUCCESS] ENHANCED TEP EVIDENCE ANALYSIS
+[18:02:19] [INFO] ======================================================================
+[18:02:19] [INFO]   Metric: coherence
+[18:02:19] [INFO]   Method: Compare SPP sector λ to CODE PPP reference
+[18:02:19] [INFO] 
+  SECTOR-BY-SECTOR COMPARISON (SPP vs CODE PPP):
+[18:02:19] [INFO]   ------------------------------------------------------------
+[18:02:19] [INFO]   Sector        SPP λ     CODE λ    λ Ratio        SPP A     CODE A  A Ratio  Status
+[18:02:19] [INFO]   ---------------------------------------------------------------------------
+[18:02:19] [INFO]   N               811       2313       0.35         0.15        nan      nan  ⚠ SUPPRESSED
+[18:02:19] [INFO]   NE              563       2540       0.22         0.21        nan      nan  ⚠ SUPPRESSED
+[18:02:19] [INFO]   E               632       3206       0.20         0.19        nan      nan  ⚠ SUPPRESSED
+[18:02:19] [INFO]   SE              494       6808       0.07         0.23        nan      nan  ⚠ SUPPRESSED
+[18:02:19] [INFO]   S               724       2719       0.27         0.16        nan      nan  ⚠ SUPPRESSED
+[18:02:19] [INFO]   SW              658       5332       0.12         0.19        nan      nan  ⚠ SUPPRESSED
+[18:02:19] [INFO]   W               619       7664       0.08         0.20        nan      nan  ⚠ SUPPRESSED
+[18:02:19] [INFO]   NW              553       3028       0.18         0.22        nan      nan  ⚠ SUPPRESSED
+[18:02:19] [INFO]   ------------------------------------------------------------
+[18:02:19] [INFO] 
+  GEOMETRIC SUPPRESSION ANALYSIS:
+[18:02:19] [INFO]     N-S sectors mean ratio (SPP/CODE): 0.31
+[18:02:19] [INFO]     E-W sectors mean ratio (SPP/CODE): 0.14
+[18:02:19] [SUCCESS]     Geometric Suppression Factor (N-S/E-W): 2.22
+[18:02:19] [WARNING]     → Both directions show suppression (high noise floor)
+[18:02:19] [INFO] 
+  CORRECTED ANISOTROPY RATIO:
+[18:02:19] [INFO]     Raw SPP E-W/N-S Ratio: 0.81
+[18:02:19] [INFO]     CODE Reference Ratio: 2.16
+[18:02:19] [SUCCESS]     Geometry-Corrected Ratio: 1.81
+[18:02:19] [INFO]     Deviation from CODE: 16.2%
+[18:02:19] [SUCCESS]     → CORRECTED RATIO MATCHES CODE (within 30%)
+[18:02:19] [INFO] 
+  N-S SIGNAL PRESERVATION TEST:
+[18:02:19] [INFO]     N-S mean ratio: 0.31 ± 0.04
+[18:02:19] [INFO]     t-statistic (vs 1.0): -23.21
+[18:02:19] [WARNING]     → N-S signal DIFFERS from CODE
+[18:02:19] [INFO] 
+  ============================================================
+[18:02:19] [SUCCESS]   FINAL TEP EVIDENCE ASSESSMENT
+[18:02:19] [INFO]   ============================================================
+[18:02:19] [INFO]     ✗ N-S correlation lengths do not match CODE
+[18:02:19] [INFO]     ✓ E-W suppression consistent with GPS orbital geometry
+[18:02:19] [INFO]     ✓ Geometry-corrected ratio matches CODE (within 30%)
+[18:02:19] [INFO]     ✓ High fit quality (mean R² = 0.98)
+[18:02:19] [SUCCESS] 
+    EVIDENCE SCORE: 3/4
+[18:02:19] [SUCCESS]     CONCLUSION: STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:02:19] [INFO] 
+======================================================================
+[18:02:19] [SUCCESS] ENHANCED TEP EVIDENCE ANALYSIS
+[18:02:19] [INFO] ======================================================================
+[18:02:19] [INFO]   Metric: phase_alignment
+[18:02:19] [INFO]   Method: Compare SPP sector λ to CODE PPP reference
+[18:02:19] [INFO] 
+  SECTOR-BY-SECTOR COMPARISON (SPP vs CODE PPP):
+[18:02:19] [INFO]   ------------------------------------------------------------
+[18:02:19] [INFO]   Sector        SPP λ     CODE λ    λ Ratio        SPP A     CODE A  A Ratio  Status
+[18:02:19] [INFO]   ---------------------------------------------------------------------------
+[18:02:19] [INFO]   N              3631       2313       1.57         0.90        nan      nan  ? ENHANCED
+[18:02:19] [INFO]   NE             2708       2540       1.07         1.14        nan      nan  ✓ PRESERVED
+[18:02:19] [INFO]   E              2160       3206       0.67         1.07        nan      nan  ⚠ SUPPRESSED
+[18:02:19] [INFO]   SE             1949       6808       0.29         1.01        nan      nan  ⚠ SUPPRESSED
+[18:02:19] [INFO]   S              2896       2719       1.07         0.84        nan      nan  ✓ PRESERVED
+[18:02:19] [INFO]   SW             2861       5332       0.54         0.99        nan      nan  ⚠ SUPPRESSED
+[18:02:19] [INFO]   W              2228       7664       0.29         1.06        nan      nan  ⚠ SUPPRESSED
+[18:02:19] [INFO]   NW             2561       3028       0.85         1.11        nan      nan  ✓ PRESERVED
+[18:02:19] [INFO]   ------------------------------------------------------------
+[18:02:19] [INFO] 
+  GEOMETRIC SUPPRESSION ANALYSIS:
+[18:02:19] [INFO]     N-S sectors mean ratio (SPP/CODE): 1.32
+[18:02:19] [INFO]     E-W sectors mean ratio (SPP/CODE): 0.48
+[18:02:19] [SUCCESS]     Geometric Suppression Factor (N-S/E-W): 2.73
+[18:02:19] [SUCCESS]     → N-S signal PRESERVED, E-W signal SUPPRESSED by orbital geometry
+[18:02:19] [INFO] 
+  CORRECTED ANISOTROPY RATIO:
+[18:02:19] [INFO]     Raw SPP E-W/N-S Ratio: 0.67
+[18:02:19] [INFO]     CODE Reference Ratio: 2.16
+[18:02:19] [SUCCESS]     Geometry-Corrected Ratio: 1.84
+[18:02:19] [INFO]     Deviation from CODE: 15.0%
+[18:02:19] [SUCCESS]     → CORRECTED RATIO MATCHES CODE (within 30%)
+[18:02:19] [INFO] 
+  N-S SIGNAL PRESERVATION TEST:
+[18:02:19] [INFO]     N-S mean ratio: 1.32 ± 0.25
+[18:02:19] [INFO]     t-statistic (vs 1.0): 1.78
+[18:02:19] [SUCCESS]     → N-S signal CONSISTENT with CODE (p > 0.05)
+[18:02:19] [INFO] 
+  ============================================================
+[18:02:19] [SUCCESS]   FINAL TEP EVIDENCE ASSESSMENT
+[18:02:19] [INFO]   ============================================================
+[18:02:19] [INFO]     ✓ N-S correlation lengths match CODE PPP (signal preserved)
+[18:02:19] [INFO]     ✓ E-W suppression consistent with GPS orbital geometry
+[18:02:19] [INFO]     ✓ Geometry-corrected ratio matches CODE (within 30%)
+[18:02:19] [INFO]     ✓ High fit quality (mean R² = 0.97)
+[18:02:19] [SUCCESS] 
+    EVIDENCE SCORE: 4/4
+[18:02:19] [SUCCESS]     CONCLUSION: STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:02:19] [INFO] 
+======================================================================
+[18:02:19] [SUCCESS] TEP EVIDENCE SUMMARY ACROSS METRICS
+[18:02:19] [INFO] ======================================================================
+[18:02:19] [SUCCESS]   coherence: Score 3/4 - STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:02:19] [SUCCESS]   phase_alignment: Score 4/4 - STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:02:19] [SUCCESS] 
+  OVERALL: STRONG EVIDENCE for TEP signal in SPP data
+[18:02:20] [INFO]   Southern Hemisphere: 7,478,803 pairs
+[18:02:20] [INFO] 
+======================================================================
+[18:02:20] [INFO] MULTI-METRIC ANISOTROPY ANALYSIS: SOUTHERN HEMISPHERE
+[18:02:20] [INFO] ======================================================================
+[18:02:20] [INFO]   Available metrics: ['coherence', 'phase_alignment']
+[18:02:20] [PROCESS] 
+  --- Analyzing metric: coherence ---
+[18:02:20] [INFO]       Description: Magnitude Squared Coherence (MSC)
+[18:02:20] [PROCESS] 
+--- Analyzing SOUTHERN HEMISPHERE_coherence ---
+[18:02:21] [INFO]   8-SECTOR ANALYSIS (with distance matching):
+[18:02:21] [INFO]     N : λ =  1577 km, R² = 0.658
+[18:02:21] [INFO]     NE: λ =   978 km, R² = 0.985
+[18:02:21] [INFO]     E : λ =   715 km, R² = 0.977
+[18:02:21] [INFO]     SE: λ =   374 km, R² = 0.994
+[18:02:21] [INFO]     S : λ =   809 km, R² = 0.897
+[18:02:21] [INFO]     SW: λ =  1115 km, R² = 0.968
+[18:02:21] [INFO]     W : λ =   751 km, R² = 0.984
+[18:02:21] [INFO]     NW: λ =   368 km, R² = 0.993
+[18:02:21] [INFO]   DIPOLE ANALYSIS:
+[18:02:21] [SUCCESS]     Strongest: N (λ = 1577 km)
+[18:02:21] [INFO]     Weakest:   NW (λ = 368 km)
+[18:02:21] [INFO]     Dipole ratio (max/min): 4.29
+[18:02:21] [INFO]     Dipole axis: 0° from North
+[18:02:21] [SUCCESS]   E-W/N-S RATIO (FULL DATASET - PRIMARY):
+[18:02:21] [INFO]     E-W λ = 762 km (sectors: 738, 786)
+[18:02:21] [INFO]     N-S λ = 729 km (sectors: 759, 699)
+[18:02:21] [SUCCESS]     RATIO: 1.05 (Ref: 2.16)
+[18:02:21] [INFO]   [Reference] CODE Subsampled Ratio: 0.61
+[18:02:22] [INFO]   [Diagnostic] Pooled Ratio: 1.54 (Biased by geometry)
+[18:02:22] [SUCCESS] 
+  SHORT-DISTANCE ANALYSIS (<500km) - PRIMARY TEP TEST:
+[18:02:22] [INFO]     E-W pairs: 5,297, N-S pairs: 16,319
+[18:02:22] [INFO]     E-W mean: 0.6301 ± 0.0959
+[18:02:22] [INFO]     N-S mean: 0.6132 ± 0.1103
+[18:02:22] [SUCCESS]     RATIO (E-W/N-S): 1.028
+[18:02:22] [INFO]     95% CI: [1.022, 1.033]
+[18:02:22] [INFO]     t-statistic: 10.73, p-value: 1.00e-26
+[18:02:22] [INFO]     Cohen's d: 0.164 (small)
+[18:02:22] [SUCCESS]     → TEP SIGNAL DETECTED: E-W > N-S (entire 95% CI > 1.0)
+[18:02:22] [INFO]     CODE reference ratio: 2.16 (λ ratio, different metric)
+[18:02:23] [INFO]   Mid-Lat Only (2006853 pairs) Ratio: 0.46
+[18:02:23] [SUCCESS]       E-W/N-S Ratio: 1.54
+[18:02:23] [INFO]       Anisotropy CV: 0.313
+[18:02:23] [PROCESS] 
+  --- Analyzing metric: phase_alignment ---
+[18:02:23] [INFO]       Description: Phase Alignment Index (cos(weighted_phase))
+[18:02:23] [PROCESS] 
+--- Analyzing SOUTHERN HEMISPHERE_phase_alignment ---
+[18:02:25] [INFO]   8-SECTOR ANALYSIS (with distance matching):
+[18:02:25] [INFO]     N : λ =  2512 km, R² = 0.880
+[18:02:25] [INFO]     NE: λ =  1475 km, R² = 0.993
+[18:02:25] [INFO]     E : λ =  1131 km, R² = 0.975
+[18:02:25] [INFO]     SE: λ =  1499 km, R² = 0.972
+[18:02:25] [INFO]     S : λ =  2095 km, R² = 0.935
+[18:02:25] [INFO]     SW: λ =  2045 km, R² = 0.989
+[18:02:25] [INFO]     W : λ =  1199 km, R² = 0.970
+[18:02:25] [INFO]     NW: λ =  1747 km, R² = 0.982
+[18:02:25] [INFO]   DIPOLE ANALYSIS:
+[18:02:25] [SUCCESS]     Strongest: N (λ = 2512 km)
+[18:02:25] [INFO]     Weakest:   E (λ = 1131 km)
+[18:02:25] [INFO]     Dipole ratio (max/min): 2.22
+[18:02:25] [INFO]     Dipole axis: 0° from North
+[18:02:25] [SUCCESS]   E-W/N-S RATIO (FULL DATASET - PRIMARY):
+[18:02:25] [INFO]     E-W λ = 1473 km (sectors: 1433, 1512)
+[18:02:25] [INFO]     N-S λ = 2844 km (sectors: 2817, 2872)
+[18:02:25] [SUCCESS]     RATIO: 0.52 (Ref: 2.16)
+[18:02:25] [INFO]   [Reference] CODE Subsampled Ratio: 0.51
+[18:02:25] [INFO]   [Diagnostic] Pooled Ratio: 1.09 (Biased by geometry)
+[18:02:26] [SUCCESS] 
+  SHORT-DISTANCE ANALYSIS (<500km) - PRIMARY TEP TEST:
+[18:02:26] [INFO]     E-W pairs: 5,297, N-S pairs: 16,319
+[18:02:26] [INFO]     E-W mean: 0.6200 ± 0.5785
+[18:02:26] [INFO]     N-S mean: 0.4425 ± 0.7036
+[18:02:26] [SUCCESS]     RATIO (E-W/N-S): 1.401
+[18:02:26] [INFO]     95% CI: [1.352, 1.451]
+[18:02:26] [INFO]     t-statistic: 18.35, p-value: 4.08e-74
+[18:02:26] [INFO]     Cohen's d: 0.276 (small)
+[18:02:26] [SUCCESS]     → TEP SIGNAL DETECTED: E-W > N-S (entire 95% CI > 1.0)
+[18:02:26] [INFO]     CODE reference ratio: 2.16 (λ ratio, different metric)
+[18:02:26] [INFO]   Mid-Lat Only (2006853 pairs) Ratio: 0.62
+[18:02:27] [SUCCESS]       E-W/N-S Ratio: 1.09
+[18:02:27] [INFO]       Anisotropy CV: 0.347
+[18:02:27] [PROCESS] 
+  --- Cross-Metric Comparison ---
+[18:02:27] [INFO]       MSC E-W/N-S Ratio: 1.54
+[18:02:27] [INFO]       Phase E-W/N-S Ratio: 1.09
+[18:02:27] [INFO]       Difference: 29.4%
+[18:02:27] [SUCCESS]       CONSISTENT: Both metrics show similar anisotropy
+[18:02:27] [INFO] 
+======================================================================
+[18:02:27] [PROCESS] RUNNING ENHANCED TEP EVIDENCE ANALYSIS
+[18:02:27] [INFO] ======================================================================
+[18:02:27] [INFO] 
+======================================================================
+[18:02:27] [SUCCESS] ENHANCED TEP EVIDENCE ANALYSIS
+[18:02:27] [INFO] ======================================================================
+[18:02:27] [INFO]   Metric: coherence
+[18:02:27] [INFO]   Method: Compare SPP sector λ to CODE PPP reference
+[18:02:27] [INFO] 
+  SECTOR-BY-SECTOR COMPARISON (SPP vs CODE PPP):
+[18:02:27] [INFO]   ------------------------------------------------------------
+[18:02:27] [INFO]   Sector        SPP λ     CODE λ    λ Ratio        SPP A     CODE A  A Ratio  Status
+[18:02:27] [INFO]   ---------------------------------------------------------------------------
+[18:02:27] [INFO]   N              1577       2313       0.68         0.07        nan      nan  ⚠ SUPPRESSED
+[18:02:27] [INFO]   NE              978       2540       0.39         0.11        nan      nan  ⚠ SUPPRESSED
+[18:02:27] [INFO]   E               715       3206       0.22         0.13        nan      nan  ⚠ SUPPRESSED
+[18:02:27] [INFO]   SE              374       6808       0.05         0.51        nan      nan  ⚠ SUPPRESSED
+[18:02:27] [INFO]   S               809       2719       0.30         0.12        nan      nan  ⚠ SUPPRESSED
+[18:02:27] [INFO]   SW             1115       5332       0.21         0.11        nan      nan  ⚠ SUPPRESSED
+[18:02:27] [INFO]   W               751       7664       0.10         0.15        nan      nan  ⚠ SUPPRESSED
+[18:02:27] [INFO]   NW              368       3028       0.12         0.51        nan      nan  ⚠ SUPPRESSED
+[18:02:27] [INFO]   ------------------------------------------------------------
+[18:02:27] [INFO] 
+  GEOMETRIC SUPPRESSION ANALYSIS:
+[18:02:27] [INFO]     N-S sectors mean ratio (SPP/CODE): 0.49
+[18:02:27] [INFO]     E-W sectors mean ratio (SPP/CODE): 0.16
+[18:02:27] [SUCCESS]     Geometric Suppression Factor (N-S/E-W): 3.05
+[18:02:27] [WARNING]     → Both directions show suppression (high noise floor)
+[18:02:27] [INFO] 
+  CORRECTED ANISOTROPY RATIO:
+[18:02:27] [INFO]     Raw SPP E-W/N-S Ratio: 0.61
+[18:02:27] [INFO]     CODE Reference Ratio: 2.16
+[18:02:27] [SUCCESS]     Geometry-Corrected Ratio: 1.87
+[18:02:27] [INFO]     Deviation from CODE: 13.2%
+[18:02:27] [SUCCESS]     → CORRECTED RATIO MATCHES CODE (within 30%)
+[18:02:27] [INFO] 
+  N-S SIGNAL PRESERVATION TEST:
+[18:02:27] [INFO]     N-S mean ratio: 0.49 ± 0.19
+[18:02:27] [INFO]     t-statistic (vs 1.0): -3.76
+[18:02:27] [WARNING]     → N-S signal DIFFERS from CODE
+[18:02:27] [INFO] 
+  ============================================================
+[18:02:27] [SUCCESS]   FINAL TEP EVIDENCE ASSESSMENT
+[18:02:27] [INFO]   ============================================================
+[18:02:27] [INFO]     ✗ N-S correlation lengths do not match CODE
+[18:02:27] [INFO]     ✓ E-W suppression consistent with GPS orbital geometry
+[18:02:27] [INFO]     ✓ Geometry-corrected ratio matches CODE (within 30%)
+[18:02:27] [INFO]     ✓ High fit quality (mean R² = 0.93)
+[18:02:27] [SUCCESS] 
+    EVIDENCE SCORE: 3/4
+[18:02:27] [SUCCESS]     CONCLUSION: STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:02:27] [INFO] 
+======================================================================
+[18:02:27] [SUCCESS] ENHANCED TEP EVIDENCE ANALYSIS
+[18:02:27] [INFO] ======================================================================
+[18:02:27] [INFO]   Metric: phase_alignment
+[18:02:27] [INFO]   Method: Compare SPP sector λ to CODE PPP reference
+[18:02:27] [INFO] 
+  SECTOR-BY-SECTOR COMPARISON (SPP vs CODE PPP):
+[18:02:27] [INFO]   ------------------------------------------------------------
+[18:02:27] [INFO]   Sector        SPP λ     CODE λ    λ Ratio        SPP A     CODE A  A Ratio  Status
+[18:02:27] [INFO]   ---------------------------------------------------------------------------
+[18:02:27] [INFO]   N              2512       2313       1.09         0.76        nan      nan  ✓ PRESERVED
+[18:02:27] [INFO]   NE             1475       2540       0.58         0.93        nan      nan  ⚠ SUPPRESSED
+[18:02:27] [INFO]   E              1131       3206       0.35         1.21        nan      nan  ⚠ SUPPRESSED
+[18:02:27] [INFO]   SE             1499       6808       0.22         1.29        nan      nan  ⚠ SUPPRESSED
+[18:02:27] [INFO]   S              2095       2719       0.77         0.87        nan      nan  ✓ PRESERVED
+[18:02:27] [INFO]   SW             2045       5332       0.38         0.84        nan      nan  ⚠ SUPPRESSED
+[18:02:27] [INFO]   W              1199       7664       0.16         1.20        nan      nan  ⚠ SUPPRESSED
+[18:02:27] [INFO]   NW             1747       3028       0.58         1.09        nan      nan  ⚠ SUPPRESSED
+[18:02:27] [INFO]   ------------------------------------------------------------
+[18:02:27] [INFO] 
+  GEOMETRIC SUPPRESSION ANALYSIS:
+[18:02:27] [INFO]     N-S sectors mean ratio (SPP/CODE): 0.93
+[18:02:27] [INFO]     E-W sectors mean ratio (SPP/CODE): 0.25
+[18:02:27] [SUCCESS]     Geometric Suppression Factor (N-S/E-W): 3.65
+[18:02:27] [SUCCESS]     → N-S signal PRESERVED, E-W signal SUPPRESSED by orbital geometry
+[18:02:27] [INFO] 
+  CORRECTED ANISOTROPY RATIO:
+[18:02:27] [INFO]     Raw SPP E-W/N-S Ratio: 0.51
+[18:02:27] [INFO]     CODE Reference Ratio: 2.16
+[18:02:27] [SUCCESS]     Geometry-Corrected Ratio: 1.84
+[18:02:27] [INFO]     Deviation from CODE: 14.6%
+[18:02:27] [SUCCESS]     → CORRECTED RATIO MATCHES CODE (within 30%)
+[18:02:27] [INFO] 
+  N-S SIGNAL PRESERVATION TEST:
+[18:02:27] [INFO]     N-S mean ratio: 0.93 ± 0.16
+[18:02:27] [INFO]     t-statistic (vs 1.0): -0.64
+[18:02:27] [SUCCESS]     → N-S signal CONSISTENT with CODE (p > 0.05)
+[18:02:27] [INFO] 
+  ============================================================
+[18:02:27] [SUCCESS]   FINAL TEP EVIDENCE ASSESSMENT
+[18:02:27] [INFO]   ============================================================
+[18:02:27] [INFO]     ✓ N-S correlation lengths match CODE PPP (signal preserved)
+[18:02:27] [INFO]     ✓ E-W suppression consistent with GPS orbital geometry
+[18:02:27] [INFO]     ✓ Geometry-corrected ratio matches CODE (within 30%)
+[18:02:27] [INFO]     ✓ High fit quality (mean R² = 0.96)
+[18:02:27] [SUCCESS] 
+    EVIDENCE SCORE: 4/4
+[18:02:27] [SUCCESS]     CONCLUSION: STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:02:27] [INFO] 
+======================================================================
+[18:02:27] [SUCCESS] TEP EVIDENCE SUMMARY ACROSS METRICS
+[18:02:27] [INFO] ======================================================================
+[18:02:27] [SUCCESS]   coherence: Score 3/4 - STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:02:27] [SUCCESS]   phase_alignment: Score 4/4 - STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:02:27] [SUCCESS] 
+  OVERALL: STRONG EVIDENCE for TEP signal in SPP data
+[18:02:27] [PROCESS] [8/10] Running Multi-Mode Comparative Analysis...
+[18:02:27] [INFO] 
+--- IONOFREE MODE (Option D: Dual-Freq Iono-Free) ---
+[18:02:27] [PROCESS] Loading pre-computed pairs from step_2_0_pairs_ionofree.csv (Chunked)...
+[18:02:27] [INFO]   Will filter for 'ionofree_clock_bias' metric only (pos_jitter is isotropic)
+[18:02:28] [INFO]   Loaded 0.8M pairs...
+[18:02:29] [INFO]   Loaded 1.5M pairs...
+[18:02:30] [INFO]   Loaded 2.2M pairs...
+[18:02:31] [INFO]   Loaded 3.0M pairs...
+[18:02:32] [INFO]   Loaded 3.7M pairs...
+[18:02:33] [INFO]   Loaded 4.5M pairs...
+[18:02:34] [INFO]   Loaded 5.2M pairs...
+[18:02:35] [INFO]   Loaded 6.0M pairs...
+[18:02:36] [INFO]   Loaded 6.7M pairs...
+[18:02:37] [INFO]   Loaded 7.5M pairs...
+[18:02:38] [INFO]   Loaded 8.2M pairs...
+[18:02:39] [INFO]   Loaded 9.0M pairs...
+[18:02:40] [INFO]   Loaded 9.7M pairs...
+[18:02:41] [INFO]   Loaded 10.5M pairs...
+[18:02:42] [INFO]   Loaded 11.2M pairs...
+[18:02:43] [INFO]   Loaded 12.0M pairs...
+[18:02:44] [INFO]   Loaded 12.7M pairs...
+[18:02:45] [INFO]   Loaded 13.5M pairs...
+[18:02:46] [INFO]   Loaded 14.3M pairs...
+[18:02:47] [INFO]   Loaded 15.0M pairs...
+[18:02:48] [INFO]   Loaded 15.8M pairs...
+[18:02:49] [INFO]   Loaded 16.6M pairs...
+[18:02:49] [INFO]   Loaded 17.3M pairs...
+[18:02:50] [INFO]   Loaded 18.1M pairs...
+[18:02:51] [INFO]   Loaded 18.9M pairs...
+[18:02:52] [INFO]   Loaded 19.6M pairs...
+[18:02:53] [INFO]   Loaded 20.4M pairs...
+[18:02:54] [INFO]   Loaded 21.1M pairs...
+[18:02:55] [INFO]   Loaded 21.9M pairs...
+[18:02:56] [INFO]   Loaded 22.7M pairs...
+[18:02:57] [INFO]   Loaded 23.5M pairs...
+[18:02:58] [INFO]   Loaded 24.2M pairs...
+[18:02:59] [INFO]   Loaded 25.0M pairs...
+[18:03:00] [INFO]   Loaded 25.8M pairs...
+[18:03:01] [INFO]   Loaded 26.5M pairs...
+[18:03:02] [INFO]   Loaded 27.3M pairs...
+[18:03:02] [INFO]   Loaded 28.1M pairs...
+[18:03:03] [INFO]   Loaded 28.9M pairs...
+[18:03:04] [INFO]   Loaded 29.7M pairs...
+[18:03:05] [INFO]   Loaded 30.4M pairs...
+[18:03:06] [INFO]   Loaded 31.2M pairs...
+[18:03:07] [INFO]   Loaded 32.0M pairs...
+[18:03:08] [INFO]   Loaded 32.8M pairs...
+[18:03:09] [INFO]   Loaded 33.6M pairs...
+[18:03:10] [INFO]   Loaded 34.4M pairs...
+[18:03:11] [INFO]   Loaded 35.2M pairs...
+[18:03:12] [INFO]   Loaded 36.0M pairs...
+[18:03:13] [INFO]   Loaded 36.8M pairs...
+[18:03:14] [INFO]   Loaded 37.6M pairs...
+[18:03:14] [INFO]   Loaded 38.4M pairs...
+[18:03:15] [INFO]   Loaded 39.2M pairs...
+[18:03:16] [INFO]   Loaded 39.9M pairs...
+[18:03:17] [INFO]   Loaded 40.7M pairs...
+[18:03:18] [INFO]   Loaded 41.5M pairs...
+[18:03:19] [INFO]   Loaded 42.3M pairs...
+[18:03:20] [INFO]   Loaded 43.0M pairs...
+[18:03:21] [INFO]   Loaded 43.8M pairs...
+[18:03:22] [INFO]   Loaded 44.5M pairs...
+[18:03:23] [INFO]   Loaded 45.3M pairs...
+[18:03:24] [INFO]   Loaded 46.1M pairs...
+[18:03:25] [INFO]   Loaded 46.8M pairs...
+[18:03:25] [INFO]   Loaded 47.6M pairs...
+[18:03:26] [INFO]   Loaded 48.3M pairs...
+[18:03:27] [INFO]   Loaded 49.1M pairs...
+[18:03:28] [INFO]   Loaded 49.8M pairs...
+[18:03:29] [INFO]   Loaded 50.5M pairs...
+[18:03:30] [INFO]   Loaded 51.3M pairs...
+[18:03:31] [INFO]   Loaded 52.0M pairs...
+[18:03:31] [INFO]   Finalizing data structure (52253444 pairs)...
+[18:03:32] [INFO]   Recomputing azimuths from station coordinates (fixing direction bug)...
+[18:03:37] [INFO]   Built lookup for 118,363 unique pairs
+[18:03:51] [SUCCESS]   Fixed 6,143,579 azimuths (11.8% were ~180° off)
+[18:03:52] [SUCCESS]   Loaded 52253444 pairs successfully.
+[18:03:53] [PROCESS] 
+--- Analyzing IONOFREE (Dual-Freq) ---
+[18:04:03] [INFO]   8-SECTOR ANALYSIS (with distance matching):
+[18:04:03] [INFO]     N : λ =  1319 km, R² = 0.915
+[18:04:03] [INFO]     NE: λ =   665 km, R² = 0.991
+[18:04:03] [INFO]     E : λ =   749 km, R² = 0.977
+[18:04:03] [INFO]     SE: λ =   951 km, R² = 0.981
+[18:04:03] [INFO]     S : λ =  1108 km, R² = 0.969
+[18:04:03] [INFO]     SW: λ =  1004 km, R² = 0.969
+[18:04:03] [INFO]     W : λ =   591 km, R² = 0.981
+[18:04:03] [INFO]     NW: λ =   973 km, R² = 0.991
+[18:04:03] [INFO]   DIPOLE ANALYSIS:
+[18:04:03] [SUCCESS]     Strongest: N (λ = 1319 km)
+[18:04:03] [INFO]     Weakest:   W (λ = 591 km)
+[18:04:03] [INFO]     Dipole ratio (max/min): 2.23
+[18:04:03] [INFO]     Dipole axis: 0° from North
+[18:04:03] [SUCCESS]   E-W/N-S RATIO (FULL DATASET - PRIMARY):
+[18:04:03] [INFO]     E-W λ = 776 km (sectors: 777, 774)
+[18:04:03] [INFO]     N-S λ = 1215 km (sectors: 1256, 1174)
+[18:04:03] [SUCCESS]     RATIO: 0.64 (Ref: 2.16)
+[18:04:03] [INFO]   [Reference] CODE Subsampled Ratio: 0.55
+[18:04:05] [INFO]   [Diagnostic] Pooled Ratio: 0.92 (Biased by geometry)
+[18:04:09] [SUCCESS] 
+  SHORT-DISTANCE ANALYSIS (<500km) - PRIMARY TEP TEST:
+[18:04:09] [INFO]     E-W pairs: 338,515, N-S pairs: 211,482
+[18:04:13] [INFO]     E-W mean: 0.6362 ± 0.0848
+[18:04:13] [INFO]     N-S mean: 0.6251 ± 0.0890
+[18:04:13] [SUCCESS]     RATIO (E-W/N-S): 1.018
+[18:04:13] [INFO]     95% CI: [1.017, 1.019]
+[18:04:13] [INFO]     t-statistic: 45.99, p-value: 0.00e+00
+[18:04:13] [INFO]     Cohen's d: 0.128 (small)
+[18:04:13] [SUCCESS]     → TEP SIGNAL DETECTED: E-W > N-S (entire 95% CI > 1.0)
+[18:04:13] [INFO]     CODE reference ratio: 2.16 (λ ratio, different metric)
+[18:04:16] [INFO]   Mid-Lat Only (30782723 pairs) Ratio: 0.74
+[18:04:20] [INFO] 
+======================================================================
+[18:04:20] [INFO] MULTI-METRIC ANISOTROPY ANALYSIS: IONOFREE
+[18:04:20] [INFO] ======================================================================
+[18:04:20] [INFO]   Available metrics: ['coherence', 'phase_alignment']
+[18:04:20] [PROCESS] 
+  --- Analyzing metric: coherence ---
+[18:04:20] [INFO]       Description: Magnitude Squared Coherence (MSC)
+[18:04:20] [PROCESS] 
+--- Analyzing IONOFREE_coherence ---
+[18:04:30] [INFO]   8-SECTOR ANALYSIS (with distance matching):
+[18:04:30] [INFO]     N : λ =  1184 km, R² = 0.938
+[18:04:30] [INFO]     NE: λ =   703 km, R² = 0.993
+[18:04:30] [INFO]     E : λ =   761 km, R² = 0.981
+[18:04:30] [INFO]     SE: λ =   845 km, R² = 0.991
+[18:04:30] [INFO]     S : λ =  1002 km, R² = 0.948
+[18:04:30] [INFO]     SW: λ =   798 km, R² = 0.989
+[18:04:30] [INFO]     W : λ =   796 km, R² = 0.976
+[18:04:30] [INFO]     NW: λ =   819 km, R² = 0.991
+[18:04:30] [INFO]   DIPOLE ANALYSIS:
+[18:04:30] [SUCCESS]     Strongest: N (λ = 1184 km)
+[18:04:30] [INFO]     Weakest:   NE (λ = 703 km)
+[18:04:30] [INFO]     Dipole ratio (max/min): 1.68
+[18:04:30] [INFO]     Dipole axis: 0° from North
+[18:04:30] [SUCCESS]   E-W/N-S RATIO (FULL DATASET - PRIMARY):
+[18:04:30] [INFO]     E-W λ = 776 km (sectors: 777, 774)
+[18:04:30] [INFO]     N-S λ = 1215 km (sectors: 1256, 1174)
+[18:04:30] [SUCCESS]     RATIO: 0.64 (Ref: 2.16)
+[18:04:30] [INFO]   [Reference] CODE Subsampled Ratio: 0.71
+[18:04:32] [INFO]   [Diagnostic] Pooled Ratio: 0.92 (Biased by geometry)
+[18:04:36] [SUCCESS] 
+  SHORT-DISTANCE ANALYSIS (<500km) - PRIMARY TEP TEST:
+[18:04:36] [INFO]     E-W pairs: 338,515, N-S pairs: 211,482
+[18:04:40] [INFO]     E-W mean: 0.6362 ± 0.0848
+[18:04:40] [INFO]     N-S mean: 0.6251 ± 0.0890
+[18:04:40] [SUCCESS]     RATIO (E-W/N-S): 1.018
+[18:04:40] [INFO]     95% CI: [1.017, 1.019]
+[18:04:40] [INFO]     t-statistic: 45.99, p-value: 0.00e+00
+[18:04:40] [INFO]     Cohen's d: 0.128 (small)
+[18:04:40] [SUCCESS]     → TEP SIGNAL DETECTED: E-W > N-S (entire 95% CI > 1.0)
+[18:04:40] [INFO]     CODE reference ratio: 2.16 (λ ratio, different metric)
+[18:04:43] [INFO]   Mid-Lat Only (30782723 pairs) Ratio: 0.74
+[18:04:47] [SUCCESS]       E-W/N-S Ratio: 0.92
+[18:04:47] [INFO]       Anisotropy CV: 0.206
+[18:04:47] [PROCESS] 
+  --- Analyzing metric: phase_alignment ---
+[18:04:47] [INFO]       Description: Phase Alignment Index (cos(weighted_phase))
+[18:04:47] [PROCESS] 
+--- Analyzing IONOFREE_phase_alignment ---
+[18:04:57] [INFO]   8-SECTOR ANALYSIS (with distance matching):
+[18:04:57] [INFO]     N : λ =  4383 km, R² = 0.845
+[18:04:57] [INFO]     NE: λ =  3079 km, R² = 0.934
+[18:04:57] [INFO]     E : λ =  2535 km, R² = 0.949
+[18:04:57] [INFO]     SE: λ =  3900 km, R² = 0.976
+[18:04:57] [INFO]     S : λ =  4405 km, R² = 0.876
+[18:04:57] [INFO]     SW: λ =  4153 km, R² = 0.982
+[18:04:57] [INFO]     W : λ =  2965 km, R² = 0.971
+[18:04:57] [INFO]     NW: λ =  3291 km, R² = 0.919
+[18:04:57] [INFO]   DIPOLE ANALYSIS:
+[18:04:57] [SUCCESS]     Strongest: S (λ = 4405 km)
+[18:04:57] [INFO]     Weakest:   E (λ = 2535 km)
+[18:04:57] [INFO]     Dipole ratio (max/min): 1.74
+[18:04:57] [INFO]     Dipole axis: 180° from North
+[18:04:57] [SUCCESS]   E-W/N-S RATIO (FULL DATASET - PRIMARY):
+[18:04:57] [INFO]     E-W λ = 2830 km (sectors: 2618, 3042)
+[18:04:57] [INFO]     N-S λ = 4597 km (sectors: 4396, 4797)
+[18:04:57] [SUCCESS]     RATIO: 0.62 (Ref: 2.16)
+[18:04:57] [INFO]   [Reference] CODE Subsampled Ratio: 0.63
+[18:04:59] [INFO]   [Diagnostic] Pooled Ratio: 0.92 (Biased by geometry)
+[18:05:03] [SUCCESS] 
+  SHORT-DISTANCE ANALYSIS (<500km) - PRIMARY TEP TEST:
+[18:05:03] [INFO]     E-W pairs: 338,515, N-S pairs: 211,482
+[18:05:07] [INFO]     E-W mean: 0.7898 ± 0.4780
+[18:05:07] [INFO]     N-S mean: 0.6819 ± 0.5815
+[18:05:07] [SUCCESS]     RATIO (E-W/N-S): 1.158
+[18:05:07] [INFO]     95% CI: [1.153, 1.163]
+[18:05:07] [INFO]     t-statistic: 71.58, p-value: 0.00e+00
+[18:05:07] [INFO]     Cohen's d: 0.203 (small)
+[18:05:07] [SUCCESS]     → TEP SIGNAL DETECTED: E-W > N-S (entire 95% CI > 1.0)
+[18:05:07] [INFO]     CODE reference ratio: 2.16 (λ ratio, different metric)
+[18:05:10] [INFO]   Mid-Lat Only (30782723 pairs) Ratio: 0.84
+[18:05:14] [SUCCESS]       E-W/N-S Ratio: 0.92
+[18:05:14] [INFO]       Anisotropy CV: 0.211
+[18:05:14] [PROCESS] 
+  --- Cross-Metric Comparison ---
+[18:05:14] [INFO]       MSC E-W/N-S Ratio: 0.92
+[18:05:14] [INFO]       Phase E-W/N-S Ratio: 0.92
+[18:05:14] [INFO]       Difference: 0.4%
+[18:05:14] [SUCCESS]       CONSISTENT: Both metrics show similar anisotropy
+[18:05:14] [INFO] 
+======================================================================
+[18:05:14] [PROCESS] RUNNING ENHANCED TEP EVIDENCE ANALYSIS
+[18:05:14] [INFO] ======================================================================
+[18:05:14] [INFO] 
+======================================================================
+[18:05:14] [SUCCESS] ENHANCED TEP EVIDENCE ANALYSIS
+[18:05:14] [INFO] ======================================================================
+[18:05:14] [INFO]   Metric: coherence
+[18:05:14] [INFO]   Method: Compare SPP sector λ to CODE PPP reference
+[18:05:14] [INFO] 
+  SECTOR-BY-SECTOR COMPARISON (SPP vs CODE PPP):
+[18:05:14] [INFO]   ------------------------------------------------------------
+[18:05:14] [INFO]   Sector        SPP λ     CODE λ    λ Ratio        SPP A     CODE A  A Ratio  Status
+[18:05:14] [INFO]   ---------------------------------------------------------------------------
+[18:05:14] [INFO]   N              1184       2313       0.51         0.09        nan      nan  ⚠ SUPPRESSED
+[18:05:14] [INFO]   NE              703       2540       0.28         0.13        nan      nan  ⚠ SUPPRESSED
+[18:05:14] [INFO]   E               761       3206       0.24         0.13        nan      nan  ⚠ SUPPRESSED
+[18:05:14] [INFO]   SE              845       6808       0.12         0.12        nan      nan  ⚠ SUPPRESSED
+[18:05:14] [INFO]   S              1002       2719       0.37         0.10        nan      nan  ⚠ SUPPRESSED
+[18:05:14] [INFO]   SW              798       5332       0.15         0.13        nan      nan  ⚠ SUPPRESSED
+[18:05:14] [INFO]   W               796       7664       0.10         0.12        nan      nan  ⚠ SUPPRESSED
+[18:05:14] [INFO]   NW              819       3028       0.27         0.13        nan      nan  ⚠ SUPPRESSED
+[18:05:14] [INFO]   ------------------------------------------------------------
+[18:05:14] [INFO] 
+  GEOMETRIC SUPPRESSION ANALYSIS:
+[18:05:14] [INFO]     N-S sectors mean ratio (SPP/CODE): 0.44
+[18:05:14] [INFO]     E-W sectors mean ratio (SPP/CODE): 0.17
+[18:05:14] [SUCCESS]     Geometric Suppression Factor (N-S/E-W): 2.58
+[18:05:14] [WARNING]     → Both directions show suppression (high noise floor)
+[18:05:14] [INFO] 
+  CORRECTED ANISOTROPY RATIO:
+[18:05:14] [INFO]     Raw SPP E-W/N-S Ratio: 0.71
+[18:05:14] [INFO]     CODE Reference Ratio: 2.16
+[18:05:14] [SUCCESS]     Geometry-Corrected Ratio: 1.84
+[18:05:14] [INFO]     Deviation from CODE: 14.9%
+[18:05:14] [SUCCESS]     → CORRECTED RATIO MATCHES CODE (within 30%)
+[18:05:14] [INFO] 
+  N-S SIGNAL PRESERVATION TEST:
+[18:05:14] [INFO]     N-S mean ratio: 0.44 ± 0.07
+[18:05:14] [INFO]     t-statistic (vs 1.0): -11.05
+[18:05:14] [WARNING]     → N-S signal DIFFERS from CODE
+[18:05:14] [INFO] 
+  ============================================================
+[18:05:14] [SUCCESS]   FINAL TEP EVIDENCE ASSESSMENT
+[18:05:14] [INFO]   ============================================================
+[18:05:14] [INFO]     ✗ N-S correlation lengths do not match CODE
+[18:05:14] [INFO]     ✓ E-W suppression consistent with GPS orbital geometry
+[18:05:14] [INFO]     ✓ Geometry-corrected ratio matches CODE (within 30%)
+[18:05:14] [INFO]     ✓ High fit quality (mean R² = 0.98)
+[18:05:14] [SUCCESS] 
+    EVIDENCE SCORE: 3/4
+[18:05:14] [SUCCESS]     CONCLUSION: STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:05:14] [INFO] 
+======================================================================
+[18:05:14] [SUCCESS] ENHANCED TEP EVIDENCE ANALYSIS
+[18:05:14] [INFO] ======================================================================
+[18:05:14] [INFO]   Metric: phase_alignment
+[18:05:14] [INFO]   Method: Compare SPP sector λ to CODE PPP reference
+[18:05:14] [INFO] 
+  SECTOR-BY-SECTOR COMPARISON (SPP vs CODE PPP):
+[18:05:14] [INFO]   ------------------------------------------------------------
+[18:05:14] [INFO]   Sector        SPP λ     CODE λ    λ Ratio        SPP A     CODE A  A Ratio  Status
+[18:05:14] [INFO]   ---------------------------------------------------------------------------
+[18:05:14] [INFO]   N              4383       2313       1.89         0.97        nan      nan  ? ENHANCED
+[18:05:14] [INFO]   NE             3079       2540       1.21         1.22        nan      nan  ✓ PRESERVED
+[18:05:14] [INFO]   E              2535       3206       0.79         1.12        nan      nan  ✓ PRESERVED
+[18:05:14] [INFO]   SE             3900       6808       0.57         1.23        nan      nan  ⚠ SUPPRESSED
+[18:05:14] [INFO]   S              4405       2719       1.62         1.02        nan      nan  ? ENHANCED
+[18:05:14] [INFO]   SW             4153       5332       0.78         1.19        nan      nan  ✓ PRESERVED
+[18:05:14] [INFO]   W              2965       7664       0.39         1.28        nan      nan  ⚠ SUPPRESSED
+[18:05:14] [INFO]   NW             3291       3028       1.09         1.21        nan      nan  ✓ PRESERVED
+[18:05:14] [INFO]   ------------------------------------------------------------
+[18:05:14] [INFO] 
+  GEOMETRIC SUPPRESSION ANALYSIS:
+[18:05:14] [INFO]     N-S sectors mean ratio (SPP/CODE): 1.76
+[18:05:14] [INFO]     E-W sectors mean ratio (SPP/CODE): 0.59
+[18:05:14] [SUCCESS]     Geometric Suppression Factor (N-S/E-W): 2.98
+[18:05:14] [WARNING]     → Both directions show suppression (high noise floor)
+[18:05:14] [INFO] 
+  CORRECTED ANISOTROPY RATIO:
+[18:05:14] [INFO]     Raw SPP E-W/N-S Ratio: 0.63
+[18:05:14] [INFO]     CODE Reference Ratio: 2.16
+[18:05:14] [SUCCESS]     Geometry-Corrected Ratio: 1.87
+[18:05:14] [INFO]     Deviation from CODE: 13.5%
+[18:05:14] [SUCCESS]     → CORRECTED RATIO MATCHES CODE (within 30%)
+[18:05:14] [INFO] 
+  N-S SIGNAL PRESERVATION TEST:
+[18:05:14] [INFO]     N-S mean ratio: 1.76 ± 0.14
+[18:05:14] [INFO]     t-statistic (vs 1.0): 7.80
+[18:05:14] [WARNING]     → N-S signal DIFFERS from CODE
+[18:05:14] [INFO] 
+  ============================================================
+[18:05:14] [SUCCESS]   FINAL TEP EVIDENCE ASSESSMENT
+[18:05:14] [INFO]   ============================================================
+[18:05:14] [INFO]     ✓ N-S correlation lengths match CODE PPP (signal preserved)
+[18:05:14] [INFO]     ✗ E-W suppression pattern not as expected
+[18:05:14] [INFO]     ✓ Geometry-corrected ratio matches CODE (within 30%)
+[18:05:14] [INFO]     ✓ High fit quality (mean R² = 0.93)
+[18:05:14] [SUCCESS] 
+    EVIDENCE SCORE: 3/4
+[18:05:14] [SUCCESS]     CONCLUSION: STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:05:14] [INFO] 
+======================================================================
+[18:05:14] [SUCCESS] TEP EVIDENCE SUMMARY ACROSS METRICS
+[18:05:14] [INFO] ======================================================================
+[18:05:14] [SUCCESS]   coherence: Score 3/4 - STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:05:14] [SUCCESS]   phase_alignment: Score 3/4 - STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:05:14] [SUCCESS] 
+  OVERALL: STRONG EVIDENCE for TEP signal in SPP data
+[18:05:14] [INFO] 
+--- MULTI-GNSS MODE (MGEX) ---
+[18:05:14] [PROCESS] Loading pre-computed pairs from step_2_0_pairs_multi_gnss.csv (Chunked)...
+[18:05:14] [INFO]   Will filter for 'mgex_clock_bias' metric only (pos_jitter is isotropic)
+[18:05:15] [INFO]   Loaded 0.8M pairs...
+[18:05:16] [INFO]   Loaded 1.5M pairs...
+[18:05:16] [INFO]   Loaded 2.2M pairs...
+[18:05:17] [INFO]   Loaded 3.0M pairs...
+[18:05:18] [INFO]   Loaded 3.7M pairs...
+[18:05:19] [INFO]   Loaded 4.4M pairs...
+[18:05:20] [INFO]   Loaded 5.2M pairs...
+[18:05:21] [INFO]   Loaded 5.9M pairs...
+[18:05:22] [INFO]   Loaded 6.7M pairs...
+[18:05:23] [INFO]   Loaded 7.5M pairs...
+[18:05:24] [INFO]   Loaded 8.2M pairs...
+[18:05:25] [INFO]   Loaded 9.0M pairs...
+[18:05:26] [INFO]   Loaded 9.7M pairs...
+[18:05:26] [INFO]   Loaded 10.5M pairs...
+[18:05:27] [INFO]   Loaded 11.2M pairs...
+[18:05:28] [INFO]   Loaded 12.0M pairs...
+[18:05:29] [INFO]   Loaded 12.8M pairs...
+[18:05:30] [INFO]   Loaded 13.5M pairs...
+[18:05:31] [INFO]   Loaded 14.3M pairs...
+[18:05:32] [INFO]   Loaded 15.0M pairs...
+[18:05:33] [INFO]   Loaded 15.8M pairs...
+[18:05:34] [INFO]   Loaded 16.5M pairs...
+[18:05:34] [INFO]   Loaded 17.3M pairs...
+[18:05:35] [INFO]   Loaded 18.0M pairs...
+[18:05:36] [INFO]   Loaded 18.8M pairs...
+[18:05:37] [INFO]   Loaded 19.6M pairs...
+[18:05:38] [INFO]   Loaded 20.3M pairs...
+[18:05:39] [INFO]   Loaded 21.1M pairs...
+[18:05:40] [INFO]   Loaded 21.9M pairs...
+[18:05:41] [INFO]   Loaded 22.6M pairs...
+[18:05:41] [INFO]   Loaded 23.4M pairs...
+[18:05:42] [INFO]   Loaded 24.2M pairs...
+[18:05:43] [INFO]   Loaded 24.9M pairs...
+[18:05:44] [INFO]   Loaded 25.7M pairs...
+[18:05:45] [INFO]   Loaded 26.5M pairs...
+[18:05:46] [INFO]   Loaded 27.3M pairs...
+[18:05:47] [INFO]   Loaded 28.0M pairs...
+[18:05:48] [INFO]   Loaded 28.8M pairs...
+[18:05:48] [INFO]   Loaded 29.6M pairs...
+[18:05:49] [INFO]   Loaded 30.3M pairs...
+[18:05:50] [INFO]   Loaded 31.1M pairs...
+[18:05:51] [INFO]   Loaded 31.9M pairs...
+[18:05:52] [INFO]   Loaded 32.7M pairs...
+[18:05:53] [INFO]   Loaded 33.5M pairs...
+[18:05:54] [INFO]   Loaded 34.3M pairs...
+[18:05:54] [INFO]   Loaded 35.1M pairs...
+[18:05:55] [INFO]   Loaded 35.9M pairs...
+[18:05:56] [INFO]   Loaded 36.7M pairs...
+[18:05:57] [INFO]   Loaded 37.5M pairs...
+[18:05:58] [INFO]   Loaded 38.3M pairs...
+[18:05:59] [INFO]   Loaded 39.0M pairs...
+[18:06:00] [INFO]   Loaded 39.8M pairs...
+[18:06:00] [INFO]   Loaded 40.5M pairs...
+[18:06:01] [INFO]   Loaded 41.3M pairs...
+[18:06:02] [INFO]   Loaded 42.1M pairs...
+[18:06:03] [INFO]   Loaded 42.8M pairs...
+[18:06:04] [INFO]   Loaded 43.6M pairs...
+[18:06:05] [INFO]   Loaded 44.3M pairs...
+[18:06:06] [INFO]   Loaded 45.1M pairs...
+[18:06:06] [INFO]   Loaded 45.8M pairs...
+[18:06:07] [INFO]   Loaded 46.6M pairs...
+[18:06:08] [INFO]   Loaded 47.3M pairs...
+[18:06:09] [INFO]   Loaded 48.1M pairs...
+[18:06:10] [INFO]   Loaded 48.8M pairs...
+[18:06:11] [INFO]   Loaded 49.5M pairs...
+[18:06:12] [INFO]   Loaded 50.3M pairs...
+[18:06:12] [INFO]   Loaded 51.0M pairs...
+[18:06:12] [INFO]   Finalizing data structure (50998701 pairs)...
+[18:06:13] [INFO]   Recomputing azimuths from station coordinates (fixing direction bug)...
+[18:06:16] [INFO]   Built lookup for 120,671 unique pairs
+[18:06:29] [SUCCESS]   Fixed 6,019,620 azimuths (11.8% were ~180° off)
+[18:06:30] [SUCCESS]   Loaded 50998701 pairs successfully.
+[18:06:30] [PROCESS] 
+--- Analyzing MULTI-GNSS (MGEX) ---
+[18:06:40] [INFO]   8-SECTOR ANALYSIS (with distance matching):
+[18:06:40] [INFO]     N : λ =   460 km, R² = 0.915
+[18:06:40] [INFO]     NE: λ =   583 km, R² = 0.967
+[18:06:40] [INFO]     E : λ =   586 km, R² = 0.967
+[18:06:40] [INFO]     SE: λ =   425 km, R² = 0.987
+[18:06:40] [INFO]     S : λ =   616 km, R² = 0.941
+[18:06:40] [INFO]     SW: λ =   599 km, R² = 0.967
+[18:06:40] [INFO]     W : λ =   542 km, R² = 0.976
+[18:06:40] [INFO]     NW: λ =   496 km, R² = 0.967
+[18:06:40] [INFO]   DIPOLE ANALYSIS:
+[18:06:40] [SUCCESS]     Strongest: S (λ = 616 km)
+[18:06:40] [INFO]     Weakest:   SE (λ = 425 km)
+[18:06:40] [INFO]     Dipole ratio (max/min): 1.45
+[18:06:40] [INFO]     Dipole axis: 180° from North
+[18:06:40] [SUCCESS]   E-W/N-S RATIO (FULL DATASET - PRIMARY):
+[18:06:40] [INFO]     E-W λ = 593 km (sectors: 580, 605)
+[18:06:40] [INFO]     N-S λ = 607 km (sectors: 647, 567)
+[18:06:40] [SUCCESS]     RATIO: 0.98 (Ref: 2.16)
+[18:06:40] [INFO]   [Reference] CODE Subsampled Ratio: 1.05
+[18:06:42] [INFO]   [Diagnostic] Pooled Ratio: 0.80 (Biased by geometry)
+[18:06:45] [SUCCESS] 
+  SHORT-DISTANCE ANALYSIS (<500km) - PRIMARY TEP TEST:
+[18:06:45] [INFO]     E-W pairs: 327,244, N-S pairs: 205,146
+[18:06:49] [INFO]     E-W mean: 0.6561 ± 0.1028
+[18:06:49] [INFO]     N-S mean: 0.6267 ± 0.1022
+[18:06:49] [SUCCESS]     RATIO (E-W/N-S): 1.047
+[18:06:49] [INFO]     95% CI: [1.046, 1.048]
+[18:06:49] [INFO]     t-statistic: 101.94, p-value: 0.00e+00
+[18:06:49] [INFO]     Cohen's d: 0.287 (small)
+[18:06:49] [SUCCESS]     → TEP SIGNAL DETECTED: E-W > N-S (entire 95% CI > 1.0)
+[18:06:49] [INFO]     CODE reference ratio: 2.16 (λ ratio, different metric)
+[18:06:52] [INFO]   Mid-Lat Only (29896301 pairs) Ratio: 0.68
+[18:06:55] [INFO] 
+======================================================================
+[18:06:55] [INFO] MULTI-METRIC ANISOTROPY ANALYSIS: MULTI-GNSS
+[18:06:55] [INFO] ======================================================================
+[18:06:55] [INFO]   Available metrics: ['coherence', 'phase_alignment']
+[18:06:55] [PROCESS] 
+  --- Analyzing metric: coherence ---
+[18:06:55] [INFO]       Description: Magnitude Squared Coherence (MSC)
+[18:06:55] [PROCESS] 
+--- Analyzing MULTI-GNSS_coherence ---
+[18:07:06] [INFO]   8-SECTOR ANALYSIS (with distance matching):
+[18:07:06] [INFO]     N : λ =   608 km, R² = 0.939
+[18:07:06] [INFO]     NE: λ =   594 km, R² = 0.979
+[18:07:06] [INFO]     E : λ =   510 km, R² = 0.975
+[18:07:06] [INFO]     SE: λ =   450 km, R² = 0.992
+[18:07:06] [INFO]     S : λ =   521 km, R² = 0.918
+[18:07:06] [INFO]     SW: λ =   629 km, R² = 0.908
+[18:07:06] [INFO]     W : λ =   582 km, R² = 0.981
+[18:07:06] [INFO]     NW: λ =   530 km, R² = 0.989
+[18:07:06] [INFO]   DIPOLE ANALYSIS:
+[18:07:06] [SUCCESS]     Strongest: SW (λ = 629 km)
+[18:07:06] [INFO]     Weakest:   SE (λ = 450 km)
+[18:07:06] [INFO]     Dipole ratio (max/min): 1.40
+[18:07:06] [INFO]     Dipole axis: 225° from North
+[18:07:06] [SUCCESS]   E-W/N-S RATIO (FULL DATASET - PRIMARY):
+[18:07:06] [INFO]     E-W λ = 593 km (sectors: 580, 605)
+[18:07:06] [INFO]     N-S λ = 607 km (sectors: 647, 567)
+[18:07:06] [SUCCESS]     RATIO: 0.98 (Ref: 2.16)
+[18:07:06] [INFO]   [Reference] CODE Subsampled Ratio: 0.97
+[18:07:08] [INFO]   [Diagnostic] Pooled Ratio: 0.80 (Biased by geometry)
+[18:07:11] [SUCCESS] 
+  SHORT-DISTANCE ANALYSIS (<500km) - PRIMARY TEP TEST:
+[18:07:11] [INFO]     E-W pairs: 327,244, N-S pairs: 205,146
+[18:07:15] [INFO]     E-W mean: 0.6561 ± 0.1028
+[18:07:15] [INFO]     N-S mean: 0.6267 ± 0.1022
+[18:07:15] [SUCCESS]     RATIO (E-W/N-S): 1.047
+[18:07:15] [INFO]     95% CI: [1.046, 1.048]
+[18:07:15] [INFO]     t-statistic: 101.94, p-value: 0.00e+00
+[18:07:15] [INFO]     Cohen's d: 0.287 (small)
+[18:07:15] [SUCCESS]     → TEP SIGNAL DETECTED: E-W > N-S (entire 95% CI > 1.0)
+[18:07:15] [INFO]     CODE reference ratio: 2.16 (λ ratio, different metric)
+[18:07:18] [INFO]   Mid-Lat Only (29896301 pairs) Ratio: 0.68
+[18:07:21] [SUCCESS]       E-W/N-S Ratio: 0.80
+[18:07:21] [INFO]       Anisotropy CV: 0.084
+[18:07:21] [PROCESS] 
+  --- Analyzing metric: phase_alignment ---
+[18:07:21] [INFO]       Description: Phase Alignment Index (cos(weighted_phase))
+[18:07:21] [PROCESS] 
+--- Analyzing MULTI-GNSS_phase_alignment ---
+[18:07:31] [INFO]   8-SECTOR ANALYSIS (with distance matching):
+[18:07:31] [INFO]     N : λ =  2594 km, R² = 0.981
+[18:07:31] [INFO]     NE: λ =  1883 km, R² = 0.975
+[18:07:31] [INFO]     E : λ =  1781 km, R² = 0.984
+[18:07:31] [INFO]     SE: λ =  1518 km, R² = 0.969
+[18:07:31] [INFO]     S : λ =  1959 km, R² = 0.975
+[18:07:31] [INFO]     SW: λ =  2310 km, R² = 0.959
+[18:07:31] [INFO]     W : λ =  1909 km, R² = 0.987
+[18:07:31] [INFO]     NW: λ =  1859 km, R² = 0.973
+[18:07:31] [INFO]   DIPOLE ANALYSIS:
+[18:07:31] [SUCCESS]     Strongest: N (λ = 2594 km)
+[18:07:31] [INFO]     Weakest:   SE (λ = 1518 km)
+[18:07:31] [INFO]     Dipole ratio (max/min): 1.71
+[18:07:31] [INFO]     Dipole axis: 0° from North
+[18:07:31] [SUCCESS]   E-W/N-S RATIO (FULL DATASET - PRIMARY):
+[18:07:31] [INFO]     E-W λ = 1720 km (sectors: 1686, 1753)
+[18:07:31] [INFO]     N-S λ = 2563 km (sectors: 2851, 2274)
+[18:07:31] [SUCCESS]     RATIO: 0.67 (Ref: 2.16)
+[18:07:31] [INFO]   [Reference] CODE Subsampled Ratio: 0.81
+[18:07:33] [INFO]   [Diagnostic] Pooled Ratio: 0.96 (Biased by geometry)
+[18:07:36] [SUCCESS] 
+  SHORT-DISTANCE ANALYSIS (<500km) - PRIMARY TEP TEST:
+[18:07:36] [INFO]     E-W pairs: 327,244, N-S pairs: 205,146
+[18:07:40] [INFO]     E-W mean: 0.7692 ± 0.5101
+[18:07:40] [INFO]     N-S mean: 0.6013 ± 0.6308
+[18:07:40] [SUCCESS]     RATIO (E-W/N-S): 1.279
+[18:07:40] [INFO]     95% CI: [1.272, 1.286]
+[18:07:40] [INFO]     t-statistic: 101.51, p-value: 0.00e+00
+[18:07:40] [INFO]     Cohen's d: 0.293 (small)
+[18:07:40] [SUCCESS]     → TEP SIGNAL DETECTED: E-W > N-S (entire 95% CI > 1.0)
+[18:07:40] [INFO]     CODE reference ratio: 2.16 (λ ratio, different metric)
+[18:07:43] [INFO]   Mid-Lat Only (29896301 pairs) Ratio: 0.92
+[18:07:46] [SUCCESS]       E-W/N-S Ratio: 0.96
+[18:07:46] [INFO]       Anisotropy CV: 0.215
+[18:07:46] [PROCESS] 
+  --- Cross-Metric Comparison ---
+[18:07:46] [INFO]       MSC E-W/N-S Ratio: 0.80
+[18:07:46] [INFO]       Phase E-W/N-S Ratio: 0.96
+[18:07:46] [INFO]       Difference: 16.4%
+[18:07:46] [SUCCESS]       CONSISTENT: Both metrics show similar anisotropy
+[18:07:46] [INFO] 
+======================================================================
+[18:07:46] [PROCESS] RUNNING ENHANCED TEP EVIDENCE ANALYSIS
+[18:07:46] [INFO] ======================================================================
+[18:07:46] [INFO] 
+======================================================================
+[18:07:46] [SUCCESS] ENHANCED TEP EVIDENCE ANALYSIS
+[18:07:46] [INFO] ======================================================================
+[18:07:46] [INFO]   Metric: coherence
+[18:07:46] [INFO]   Method: Compare SPP sector λ to CODE PPP reference
+[18:07:46] [INFO] 
+  SECTOR-BY-SECTOR COMPARISON (SPP vs CODE PPP):
+[18:07:46] [INFO]   ------------------------------------------------------------
+[18:07:46] [INFO]   Sector        SPP λ     CODE λ    λ Ratio        SPP A     CODE A  A Ratio  Status
+[18:07:46] [INFO]   ---------------------------------------------------------------------------
+[18:07:46] [INFO]   N               608       2313       0.26         0.11        nan      nan  ⚠ SUPPRESSED
+[18:07:46] [INFO]   NE              594       2540       0.23         0.15        nan      nan  ⚠ SUPPRESSED
+[18:07:46] [INFO]   E               510       3206       0.16         0.18        nan      nan  ⚠ SUPPRESSED
+[18:07:46] [INFO]   SE              450       6808       0.07         0.19        nan      nan  ⚠ SUPPRESSED
+[18:07:46] [INFO]   S               521       2719       0.19         0.12        nan      nan  ⚠ SUPPRESSED
+[18:07:46] [INFO]   SW              629       5332       0.12         0.14        nan      nan  ⚠ SUPPRESSED
+[18:07:46] [INFO]   W               582       7664       0.08         0.17        nan      nan  ⚠ SUPPRESSED
+[18:07:46] [INFO]   NW              530       3028       0.17         0.18        nan      nan  ⚠ SUPPRESSED
+[18:07:46] [INFO]   ------------------------------------------------------------
+[18:07:46] [INFO] 
+  GEOMETRIC SUPPRESSION ANALYSIS:
+[18:07:46] [INFO]     N-S sectors mean ratio (SPP/CODE): 0.23
+[18:07:46] [INFO]     E-W sectors mean ratio (SPP/CODE): 0.12
+[18:07:46] [SUCCESS]     Geometric Suppression Factor (N-S/E-W): 1.93
+[18:07:46] [WARNING]     → Both directions show suppression (high noise floor)
+[18:07:46] [INFO] 
+  CORRECTED ANISOTROPY RATIO:
+[18:07:46] [INFO]     Raw SPP E-W/N-S Ratio: 0.97
+[18:07:46] [INFO]     CODE Reference Ratio: 2.16
+[18:07:46] [SUCCESS]     Geometry-Corrected Ratio: 1.87
+[18:07:46] [INFO]     Deviation from CODE: 13.4%
+[18:07:46] [SUCCESS]     → CORRECTED RATIO MATCHES CODE (within 30%)
+[18:07:46] [INFO] 
+  N-S SIGNAL PRESERVATION TEST:
+[18:07:46] [INFO]     N-S mean ratio: 0.23 ± 0.04
+[18:07:46] [INFO]     t-statistic (vs 1.0): -30.81
+[18:07:46] [WARNING]     → N-S signal DIFFERS from CODE
+[18:07:46] [INFO] 
+  ============================================================
+[18:07:46] [SUCCESS]   FINAL TEP EVIDENCE ASSESSMENT
+[18:07:46] [INFO]   ============================================================
+[18:07:46] [INFO]     ✗ N-S correlation lengths do not match CODE
+[18:07:46] [INFO]     ✓ E-W suppression consistent with GPS orbital geometry
+[18:07:46] [INFO]     ✓ Geometry-corrected ratio matches CODE (within 30%)
+[18:07:46] [INFO]     ✓ High fit quality (mean R² = 0.96)
+[18:07:46] [SUCCESS] 
+    EVIDENCE SCORE: 3/4
+[18:07:46] [SUCCESS]     CONCLUSION: STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:07:46] [INFO] 
+======================================================================
+[18:07:46] [SUCCESS] ENHANCED TEP EVIDENCE ANALYSIS
+[18:07:46] [INFO] ======================================================================
+[18:07:46] [INFO]   Metric: phase_alignment
+[18:07:46] [INFO]   Method: Compare SPP sector λ to CODE PPP reference
+[18:07:46] [INFO] 
+  SECTOR-BY-SECTOR COMPARISON (SPP vs CODE PPP):
+[18:07:46] [INFO]   ------------------------------------------------------------
+[18:07:46] [INFO]   Sector        SPP λ     CODE λ    λ Ratio        SPP A     CODE A  A Ratio  Status
+[18:07:46] [INFO]   ---------------------------------------------------------------------------
+[18:07:46] [INFO]   N              2594       2313       1.12         0.72        nan      nan  ✓ PRESERVED
+[18:07:46] [INFO]   NE             1883       2540       0.74         1.00        nan      nan  ✓ PRESERVED
+[18:07:46] [INFO]   E              1781       3206       0.56         1.03        nan      nan  ⚠ SUPPRESSED
+[18:07:46] [INFO]   SE             1518       6808       0.22         0.91        nan      nan  ⚠ SUPPRESSED
+[18:07:46] [INFO]   S              1959       2719       0.72         0.70        nan      nan  ✓ PRESERVED
+[18:07:46] [INFO]   SW             2310       5332       0.43         0.85        nan      nan  ⚠ SUPPRESSED
+[18:07:46] [INFO]   W              1909       7664       0.25         1.00        nan      nan  ⚠ SUPPRESSED
+[18:07:46] [INFO]   NW             1859       3028       0.61         1.01        nan      nan  ⚠ SUPPRESSED
+[18:07:46] [INFO]   ------------------------------------------------------------
+[18:07:46] [INFO] 
+  GEOMETRIC SUPPRESSION ANALYSIS:
+[18:07:46] [INFO]     N-S sectors mean ratio (SPP/CODE): 0.92
+[18:07:46] [INFO]     E-W sectors mean ratio (SPP/CODE): 0.40
+[18:07:46] [SUCCESS]     Geometric Suppression Factor (N-S/E-W): 2.29
+[18:07:46] [SUCCESS]     → N-S signal PRESERVED, E-W signal SUPPRESSED by orbital geometry
+[18:07:46] [INFO] 
+  CORRECTED ANISOTROPY RATIO:
+[18:07:46] [INFO]     Raw SPP E-W/N-S Ratio: 0.81
+[18:07:46] [INFO]     CODE Reference Ratio: 2.16
+[18:07:46] [SUCCESS]     Geometry-Corrected Ratio: 1.86
+[18:07:46] [INFO]     Deviation from CODE: 14.1%
+[18:07:46] [SUCCESS]     → CORRECTED RATIO MATCHES CODE (within 30%)
+[18:07:46] [INFO] 
+  N-S SIGNAL PRESERVATION TEST:
+[18:07:46] [INFO]     N-S mean ratio: 0.92 ± 0.20
+[18:07:46] [INFO]     t-statistic (vs 1.0): -0.56
+[18:07:46] [SUCCESS]     → N-S signal CONSISTENT with CODE (p > 0.05)
+[18:07:46] [INFO] 
+  ============================================================
+[18:07:46] [SUCCESS]   FINAL TEP EVIDENCE ASSESSMENT
+[18:07:46] [INFO]   ============================================================
+[18:07:46] [INFO]     ✓ N-S correlation lengths match CODE PPP (signal preserved)
+[18:07:46] [INFO]     ✓ E-W suppression consistent with GPS orbital geometry
+[18:07:46] [INFO]     ✓ Geometry-corrected ratio matches CODE (within 30%)
+[18:07:46] [INFO]     ✓ High fit quality (mean R² = 0.98)
+[18:07:46] [SUCCESS] 
+    EVIDENCE SCORE: 4/4
+[18:07:46] [SUCCESS]     CONCLUSION: STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:07:46] [INFO] 
+======================================================================
+[18:07:46] [SUCCESS] TEP EVIDENCE SUMMARY ACROSS METRICS
+[18:07:46] [INFO] ======================================================================
+[18:07:46] [SUCCESS]   coherence: Score 3/4 - STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:07:46] [SUCCESS]   phase_alignment: Score 4/4 - STRONG EVIDENCE for TEP signal masked by orbital geometry
+[18:07:46] [SUCCESS] 
+  OVERALL: STRONG EVIDENCE for TEP signal in SPP data
+[18:07:46] [PROCESS] [9/10] Generating Comparison Report...
+[18:07:46] [SUCCESS] 
+================================================================================
+[18:07:46] [SUCCESS] COMPREHENSIVE COMPARISON TABLE
+[18:07:46] [SUCCESS] ================================================================================
+[18:07:46] [INFO] 
+  BY GEOMAGNETIC CONDITION (Kp):
+[18:07:46] [INFO]   ----------------------------------------------------------------------
+[18:07:46] [INFO]   Condition            Short-Dist Ratio   λ Ratio         N Pairs     
+[18:07:46] [INFO]   ----------------------------------------------------------------------
+[18:07:46] [INFO]   All Days             1.029              0.93            54,441,685
+[18:07:46] [INFO]   Storm (Kp≥3)         1.003              1.54            75,324
+[18:07:46] [INFO] 
+  BY PROCESSING MODE:
+[18:07:46] [INFO]   ----------------------------------------------------------------------
+[18:07:46] [INFO]   Mode                 Short-Dist Ratio   λ Ratio         Status      
+[18:07:46] [INFO]   ----------------------------------------------------------------------
+[18:07:46] [INFO]   Baseline (L1)        1.029              0.93            ✓
+[18:07:46] [INFO]   Iono-Free (L1+L2)    1.018              0.92            ✓
+[18:07:46] [INFO]   Multi-GNSS           1.047              0.80            ✓
+[18:07:46] [INFO] 
+  BY PHASE METRIC:
+[18:07:46] [INFO]   ----------------------------------------------------------------------
+[18:07:46] [INFO]   Metric               Short-Dist Ratio   λ Ratio         CV          
+[18:07:46] [INFO]   ----------------------------------------------------------------------
+[18:07:46] [INFO]   coherence            1.029              0.93            0.056
+[18:07:46] [INFO]   phase_alignment      1.196              0.90            0.223
+[18:07:46] [INFO] 
+  BY HEMISPHERE:
+[18:07:46] [INFO]   ----------------------------------------------------------------------
+[18:07:46] [INFO]   Hemisphere           Short-Dist Ratio   λ Ratio         N Pairs     
+[18:07:46] [INFO]   ----------------------------------------------------------------------
+[18:07:46] [INFO]   Northern             1.168              0.86            46,962,882
+[18:07:46] [INFO]   Southern             1.401              1.09            7,478,803
+[18:07:46] [INFO] 
+  CODE Reference: λ ratio = 2.16 (E-W/N-S from 25yr PPP)
+[18:07:46] [INFO]   ======================================================================
+[18:07:46] [PROCESS] 
+[8/8] Computing monthly anisotropy stratification...
+[18:07:54] [INFO]   Baseline - Coherence: mean=1.0282, E-W>36/36 months (100%)
+[18:07:54] [INFO]   Baseline - Phase Align: mean=1.1941, E-W>36/36 months (100%)
+[18:08:02] [INFO]   Ionofree - Coherence: mean=1.0173, E-W>34/36 months (94%)
+[18:08:02] [INFO]   Ionofree - Phase Align: mean=1.1551, E-W>36/36 months (100%)
+[18:08:09] [INFO]   Multi-GNSS - Coherence: mean=1.0457, E-W>36/36 months (100%)
+[18:08:09] [INFO]   Multi-GNSS - Phase Align: mean=1.2785, E-W>36/36 months (100%)
+[18:08:09] [SUCCESS] 
+  MONTHLY ANISOTROPY SUMMARY TABLE:
+[18:08:09] [INFO]   ---------------------------------------------------------------------------
+[18:08:09] [INFO]   Mode         Metric            Mean Ratio      Std    E-W>N-S %   Months
+[18:08:09] [INFO]   ---------------------------------------------------------------------------
+[18:08:09] [INFO]   baseline     Coherence             1.0282   0.0104         100%       36
+[18:08:09] [INFO]   baseline     Phase Align           1.1941   0.0578         100%       36
+[18:08:09] [INFO]   ionofree     Coherence             1.0173   0.0088          94%       36
+[18:08:09] [INFO]   ionofree     Phase Align           1.1551   0.0363         100%       36
+[18:08:09] [INFO]   multi_gnss   Coherence             1.0457   0.0078         100%       36
+[18:08:09] [INFO]   multi_gnss   Phase Align           1.2785   0.0720         100%       36
+[18:08:09] [INFO]   ---------------------------------------------------------------------------
+[18:08:09] [SUCCESS] 
+Results saved: /Users/matthewsmawfield/www/TEP-GNSS-RINEX/results/outputs/step_2_2_anisotropy_analysis_dynamic_50.json
+[18:08:09] [INFO] 
+[18:08:09] [SUCCESS] ================================================================================
+[18:08:09] [SUCCESS] EXECUTIVE SUMMARY
+[18:08:09] [SUCCESS] ================================================================================
+[18:08:09] [SUCCESS] 
+  PRIMARY RESULT: TEP Signal DETECTED
+[18:08:09] [SUCCESS] 
+  Short-Distance (<500km) E-W/N-S Ratio: 1.029
+[18:08:09] [INFO]   95% Confidence Interval: [1.028, 1.030]
+[18:08:09] [INFO] 
+[18:08:09] [INFO] 
+  INTERPRETATION:
+[18:08:09] [SUCCESS]     E-W correlations are 2.9% stronger than N-S at short distances
+[18:08:09] [SUCCESS]     This is consistent with TEP (Earth rotation coupling)
+[18:08:09] [INFO] 
+  CODE Reference:
+[18:08:09] [INFO]     CODE λ ratio (25yr PPP): 2.16
+[18:08:09] [INFO]     Note: Different metric (λ vs mean), different precision (PPP vs SPP)
+[18:08:09] [INFO] 
+[18:08:09] [SUCCESS] ================================================================================
+[18:08:09] [SUCCESS] ANALYSIS COMPLETE
+[18:08:09] [SUCCESS] ================================================================================
+[18:08:09] [SUCCESS] ANALYSIS COMPLETE

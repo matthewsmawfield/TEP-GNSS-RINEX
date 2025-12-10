@@ -1,0 +1,2864 @@
+[18:27:27] [INFO] 
+[18:27:27] [INFO] ================================================================================
+[18:27:27] [INFO] STARTING MULTI-FILTER, MULTI-METRIC ANALYSIS PIPELINE
+[18:27:27] [INFO] ================================================================================
+[18:27:27] [INFO] 
+[18:27:27] [INFO] 
+[18:27:27] [INFO] ================================================================================
+[18:27:27] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (DYNAMIC 100)
+[18:27:27] [INFO] ================================================================================
+[18:27:27] [INFO] 
+[18:27:27] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[18:27:27] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:27:27] [INFO] 
+[18:27:27] [INFO]   Metric: clock_bias, Coherence: msc
+[18:27:27] [INFO] Loaded 538 station coordinates
+[18:27:27] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[18:27:27] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[18:27:32] [INFO]   Loaded 1.7M pairs...
+[18:27:37] [INFO]   Loaded 3.4M pairs...
+[18:27:42] [INFO]   Loaded 5.0M pairs...
+[18:27:47] [INFO]   Loaded 6.7M pairs...
+[18:27:52] [INFO]   Loaded 8.3M pairs...
+[18:27:57] [INFO]   Loaded 10.0M pairs...
+[18:28:02] [INFO]   Loaded 11.7M pairs...
+[18:28:07] [INFO]   Loaded 13.4M pairs...
+[18:28:12] [INFO]   Loaded 15.0M pairs...
+[18:28:17] [INFO]   Loaded 16.7M pairs...
+[18:28:22] [INFO]   Loaded 18.4M pairs...
+[18:28:27] [INFO]   Loaded 20.0M pairs...
+[18:28:32] [INFO]   Loaded 21.7M pairs...
+[18:28:37] [INFO]   Loaded 23.4M pairs...
+[18:28:42] [INFO]   Loaded 25.0M pairs...
+[18:28:47] [INFO]   Loaded 26.7M pairs...
+[18:28:52] [INFO]   Loaded 28.4M pairs...
+[18:28:57] [INFO]   Loaded 30.0M pairs...
+[18:29:02] [INFO]   Loaded 31.7M pairs...
+[18:29:07] [INFO]   Loaded 33.4M pairs...
+[18:29:12] [INFO]   Loaded 35.0M pairs...
+[18:29:17] [INFO]   Loaded 36.7M pairs...
+[18:29:22] [INFO]   Loaded 38.3M pairs...
+[18:29:27] [INFO]   Loaded 40.0M pairs...
+[18:29:32] [INFO]   Loaded 41.7M pairs...
+[18:29:37] [INFO]   Loaded 43.3M pairs...
+[18:29:42] [INFO]   Loaded 45.0M pairs...
+[18:29:47] [INFO]   Loaded 46.7M pairs...
+[18:29:52] [INFO]   Loaded 48.3M pairs...
+[18:29:57] [INFO]   Loaded 50.0M pairs...
+[18:30:02] [INFO]   Loaded 51.7M pairs...
+[18:30:07] [INFO]   Loaded 53.4M pairs...
+[18:30:12] [INFO]   Loaded 55.0M pairs...
+[18:30:17] [INFO]   Loaded 56.7M pairs...
+[18:30:22] [INFO]   Loaded 58.4M pairs...
+[18:30:25] [INFO]   Finalizing 59,600,372 pairs...
+[18:30:28] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[18:30:38] [INFO]   Built lookup for 150,099 unique pairs
+[18:31:10] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[18:31:10] [PROCESS] [3/5] Grouping pairs by year-month...
+[18:31:10] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[18:31:15] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[18:31:15] [INFO]     2022-01: 1,358,914 pairs
+[18:31:15] [INFO]     2022-02: 1,194,247 pairs
+[18:31:15] [INFO]     2022-03: 1,496,717 pairs
+[18:31:15] [INFO]     2022-04: 1,511,449 pairs
+[18:31:15] [INFO]     2022-05: 1,543,395 pairs
+[18:31:15] [INFO]     2022-06: 1,536,713 pairs
+[18:31:15] [INFO]     2022-07: 1,569,647 pairs
+[18:31:15] [INFO]     2022-08: 1,607,002 pairs
+[18:31:15] [INFO]     2022-09: 1,550,824 pairs
+[18:31:15] [INFO]     2022-10: 1,569,662 pairs
+[18:31:15] [INFO]     2022-11: 1,519,788 pairs
+[18:31:15] [INFO]     2022-12: 1,540,990 pairs
+[18:31:15] [INFO]     2023-01: 1,629,197 pairs
+[18:31:15] [INFO]     2023-02: 1,518,164 pairs
+[18:31:15] [INFO]     2023-03: 1,681,595 pairs
+[18:31:15] [INFO]     2023-04: 1,601,886 pairs
+[18:31:15] [INFO]     2023-05: 1,653,659 pairs
+[18:31:15] [INFO]     2023-06: 1,654,619 pairs
+[18:31:15] [INFO]     2023-07: 1,786,303 pairs
+[18:31:15] [INFO]     2023-08: 1,873,339 pairs
+[18:31:15] [INFO]     2023-09: 1,733,816 pairs
+[18:31:15] [INFO]     2023-10: 1,793,138 pairs
+[18:31:15] [INFO]     2023-11: 1,663,909 pairs
+[18:31:15] [INFO]     2023-12: 1,766,054 pairs
+[18:31:15] [INFO]     2024-01: 1,714,009 pairs
+[18:31:15] [INFO]     2024-02: 1,612,781 pairs
+[18:31:15] [INFO]     2024-03: 1,770,989 pairs
+[18:31:15] [INFO]     2024-04: 1,739,239 pairs
+[18:31:15] [INFO]     2024-05: 1,774,128 pairs
+[18:31:15] [INFO]     2024-06: 1,708,794 pairs
+[18:31:15] [INFO]     2024-07: 1,776,684 pairs
+[18:31:15] [INFO]     2024-08: 1,855,358 pairs
+[18:31:15] [INFO]     2024-09: 1,774,334 pairs
+[18:31:15] [INFO]     2024-10: 1,859,497 pairs
+[18:31:15] [INFO]     2024-11: 1,779,789 pairs
+[18:31:15] [INFO]     2024-12: 1,879,743 pairs
+[18:31:15] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[18:31:15] [INFO]   2022-01: EW/NS = 0.772, v = 30.26 km/s, EW_λ=619km, NS_λ=802km (n=1,358,914)
+[18:31:15] [INFO]   2022-02: EW/NS = 0.712, v = 30.15 km/s, EW_λ=619km, NS_λ=869km (n=1,194,247)
+[18:31:16] [INFO]   2022-03: EW/NS = 0.992, v = 29.94 km/s, EW_λ=742km, NS_λ=748km (n=1,496,717)
+[18:31:16] [INFO]   2022-04: EW/NS = 0.992, v = 29.68 km/s, EW_λ=839km, NS_λ=846km (n=1,511,449)
+[18:31:16] [INFO]   2022-05: EW/NS = 0.859, v = 29.45 km/s, EW_λ=654km, NS_λ=761km (n=1,543,395)
+[18:31:16] [INFO]   2022-06: EW/NS = 0.756, v = 29.31 km/s, EW_λ=741km, NS_λ=980km (n=1,536,713)
+[18:31:16] [INFO]   2022-07: EW/NS = 0.848, v = 29.29 km/s, EW_λ=819km, NS_λ=966km (n=1,569,647)
+[18:31:16] [INFO]   2022-08: EW/NS = 1.002, v = 29.41 km/s, EW_λ=940km, NS_λ=938km (n=1,607,002)
+[18:31:16] [INFO]   2022-09: EW/NS = 1.116, v = 29.62 km/s, EW_λ=806km, NS_λ=722km (n=1,550,824)
+[18:31:16] [INFO]   2022-10: EW/NS = 0.929, v = 29.88 km/s, EW_λ=697km, NS_λ=751km (n=1,569,662)
+[18:31:17] [INFO]   2022-11: EW/NS = 1.016, v = 30.11 km/s, EW_λ=725km, NS_λ=714km (n=1,519,788)
+[18:31:17] [INFO]   2022-12: EW/NS = 0.555, v = 30.25 km/s, EW_λ=654km, NS_λ=1179km (n=1,540,990)
+[18:31:17] [INFO]   2023-01: EW/NS = 0.523, v = 30.26 km/s, EW_λ=682km, NS_λ=1304km (n=1,629,197)
+[18:31:17] [INFO]   2023-02: EW/NS = 0.870, v = 30.15 km/s, EW_λ=588km, NS_λ=676km (n=1,518,164)
+[18:31:17] [INFO]   2023-03: EW/NS = 1.136, v = 29.94 km/s, EW_λ=676km, NS_λ=595km (n=1,681,595)
+[18:31:17] [INFO]   2023-04: EW/NS = 1.006, v = 29.68 km/s, EW_λ=679km, NS_λ=675km (n=1,601,886)
+[18:31:17] [INFO]   2023-05: EW/NS = 1.013, v = 29.45 km/s, EW_λ=772km, NS_λ=762km (n=1,653,659)
+[18:31:17] [INFO]   2023-06: EW/NS = 0.916, v = 29.31 km/s, EW_λ=712km, NS_λ=777km (n=1,654,619)
+[18:31:18] [INFO]   2023-07: EW/NS = 0.999, v = 29.29 km/s, EW_λ=1063km, NS_λ=1063km (n=1,786,303)
+[18:31:18] [INFO]   2023-08: EW/NS = 1.194, v = 29.41 km/s, EW_λ=874km, NS_λ=732km (n=1,873,339)
+[18:31:18] [INFO]   2023-09: EW/NS = 1.114, v = 29.62 km/s, EW_λ=749km, NS_λ=672km (n=1,733,816)
+[18:31:18] [INFO]   2023-10: EW/NS = 1.094, v = 29.88 km/s, EW_λ=732km, NS_λ=670km (n=1,793,138)
+[18:31:18] [INFO]   2023-11: EW/NS = 0.780, v = 30.11 km/s, EW_λ=662km, NS_λ=849km (n=1,663,909)
+[18:31:18] [INFO]   2023-12: EW/NS = 0.601, v = 30.25 km/s, EW_λ=633km, NS_λ=1053km (n=1,766,054)
+[18:31:18] [INFO]   2024-01: EW/NS = 0.384, v = 30.26 km/s, EW_λ=668km, NS_λ=1739km (n=1,714,009)
+[18:31:18] [INFO]   2024-02: EW/NS = 0.654, v = 30.15 km/s, EW_λ=839km, NS_λ=1283km (n=1,612,781)
+[18:31:19] [INFO]   2024-03: EW/NS = 1.167, v = 29.93 km/s, EW_λ=1101km, NS_λ=944km (n=1,770,989)
+[18:31:19] [INFO]   2024-04: EW/NS = 1.510, v = 29.68 km/s, EW_λ=1171km, NS_λ=775km (n=1,739,239)
+[18:31:19] [INFO]   2024-05: EW/NS = 1.175, v = 29.45 km/s, EW_λ=753km, NS_λ=641km (n=1,774,128)
+[18:31:19] [INFO]   2024-06: EW/NS = 0.839, v = 29.31 km/s, EW_λ=620km, NS_λ=740km (n=1,708,794)
+[18:31:19] [INFO]   2024-07: EW/NS = 0.893, v = 29.29 km/s, EW_λ=694km, NS_λ=778km (n=1,776,684)
+[18:31:19] [INFO]   2024-08: EW/NS = 1.096, v = 29.41 km/s, EW_λ=756km, NS_λ=690km (n=1,855,358)
+[18:31:19] [INFO]   2024-09: EW/NS = 1.353, v = 29.63 km/s, EW_λ=665km, NS_λ=492km (n=1,774,334)
+[18:31:20] [INFO]   2024-10: EW/NS = 1.200, v = 29.89 km/s, EW_λ=954km, NS_λ=795km (n=1,859,497)
+[18:31:20] [INFO]   2024-11: EW/NS = 0.793, v = 30.12 km/s, EW_λ=1316km, NS_λ=1660km (n=1,779,789)
+[18:31:20] [INFO]   2024-12: EW/NS = 0.309, v = 30.26 km/s, EW_λ=747km, NS_λ=2419km (n=1,879,743)
+[18:31:20] [PROCESS] [5/5] Computing orbital velocity correlation...
+[18:31:20] [INFO]   Pearson r = -0.505
+[18:31:20] [INFO]   p-value = 1.69e-03
+[18:31:20] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[18:31:22] [INFO]   Monte Carlo: 13/10000 exceeded
+[18:31:22] [INFO]   Empirical p-value: 1.40e-03
+[18:31:22] [INFO]   Significance: 3.2σ
+[18:31:22] [PROCESS] [5/5] Creating visualizations...
+[18:31:23] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_dynamic_100_clock_bias_msc.png
+[18:31:23] [INFO] 
+[18:31:23] [INFO] ============================================================
+[18:31:23] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[18:31:23] [INFO] ============================================================
+[18:31:23] [INFO]   Year-months analyzed: 36
+[18:31:23] [INFO]   Pearson r: -0.505
+[18:31:23] [INFO]   p-value: 1.69e-03
+[18:31:23] [INFO]   Monte Carlo p: 1.40e-03
+[18:31:23] [INFO]   Significance: 3.2σ
+[18:31:23] [INFO] 
+[18:31:23] [INFO] Comparison to CODE Longspan:
+[18:31:23] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:31:23] [INFO]   RINEX: r = -0.505, p = 1.40e-03 (3.2σ)
+[18:31:23] [INFO] 
+[18:31:23] [SUCCESS] TEP SIGNATURE: ORBITAL COUPLING DETECTED
+[18:31:23] [SUCCESS]   Direction: NEGATIVE (consistent with CODE)
+[18:31:23] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_dynamic_100_clock_bias_msc.json
+[18:31:23] [INFO] 
+[18:31:23] [INFO] ================================================================================
+[18:31:23] [INFO] Step 2.5 Complete
+[18:31:23] [INFO] ================================================================================
+[18:31:24] [INFO] 
+[18:31:24] [INFO] ================================================================================
+[18:31:24] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (DYNAMIC 100)
+[18:31:24] [INFO] ================================================================================
+[18:31:24] [INFO] 
+[18:31:24] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[18:31:24] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:31:24] [INFO] 
+[18:31:24] [INFO]   Metric: clock_bias, Coherence: phase_alignment
+[18:31:24] [INFO] Loaded 538 station coordinates
+[18:31:24] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[18:31:24] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[18:31:29] [INFO]   Loaded 1.7M pairs...
+[18:31:34] [INFO]   Loaded 3.4M pairs...
+[18:31:39] [INFO]   Loaded 5.0M pairs...
+[18:31:43] [INFO]   Loaded 6.7M pairs...
+[18:31:48] [INFO]   Loaded 8.3M pairs...
+[18:31:53] [INFO]   Loaded 10.0M pairs...
+[18:31:58] [INFO]   Loaded 11.7M pairs...
+[18:32:03] [INFO]   Loaded 13.4M pairs...
+[18:32:07] [INFO]   Loaded 15.0M pairs...
+[18:32:12] [INFO]   Loaded 16.7M pairs...
+[18:32:17] [INFO]   Loaded 18.4M pairs...
+[18:32:22] [INFO]   Loaded 20.0M pairs...
+[18:32:27] [INFO]   Loaded 21.7M pairs...
+[18:32:32] [INFO]   Loaded 23.4M pairs...
+[18:32:36] [INFO]   Loaded 25.0M pairs...
+[18:32:41] [INFO]   Loaded 26.7M pairs...
+[18:32:46] [INFO]   Loaded 28.4M pairs...
+[18:32:51] [INFO]   Loaded 30.0M pairs...
+[18:32:56] [INFO]   Loaded 31.7M pairs...
+[18:33:00] [INFO]   Loaded 33.4M pairs...
+[18:33:05] [INFO]   Loaded 35.0M pairs...
+[18:33:10] [INFO]   Loaded 36.7M pairs...
+[18:33:15] [INFO]   Loaded 38.3M pairs...
+[18:33:19] [INFO]   Loaded 40.0M pairs...
+[18:33:24] [INFO]   Loaded 41.7M pairs...
+[18:33:29] [INFO]   Loaded 43.3M pairs...
+[18:33:34] [INFO]   Loaded 45.0M pairs...
+[18:33:39] [INFO]   Loaded 46.7M pairs...
+[18:33:43] [INFO]   Loaded 48.3M pairs...
+[18:33:48] [INFO]   Loaded 50.0M pairs...
+[18:33:53] [INFO]   Loaded 51.7M pairs...
+[18:33:58] [INFO]   Loaded 53.4M pairs...
+[18:34:03] [INFO]   Loaded 55.0M pairs...
+[18:34:08] [INFO]   Loaded 56.7M pairs...
+[18:34:12] [INFO]   Loaded 58.4M pairs...
+[18:34:16] [INFO]   Finalizing 59,600,372 pairs...
+[18:34:19] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[18:34:28] [INFO]   Built lookup for 150,099 unique pairs
+[18:35:01] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[18:35:02] [PROCESS] [3/5] Grouping pairs by year-month...
+[18:35:02] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[18:35:07] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[18:35:07] [INFO]     2022-01: 1,358,914 pairs
+[18:35:07] [INFO]     2022-02: 1,194,247 pairs
+[18:35:07] [INFO]     2022-03: 1,496,717 pairs
+[18:35:07] [INFO]     2022-04: 1,511,449 pairs
+[18:35:07] [INFO]     2022-05: 1,543,395 pairs
+[18:35:07] [INFO]     2022-06: 1,536,713 pairs
+[18:35:07] [INFO]     2022-07: 1,569,647 pairs
+[18:35:07] [INFO]     2022-08: 1,607,002 pairs
+[18:35:07] [INFO]     2022-09: 1,550,824 pairs
+[18:35:07] [INFO]     2022-10: 1,569,662 pairs
+[18:35:07] [INFO]     2022-11: 1,519,788 pairs
+[18:35:07] [INFO]     2022-12: 1,540,990 pairs
+[18:35:07] [INFO]     2023-01: 1,629,197 pairs
+[18:35:07] [INFO]     2023-02: 1,518,164 pairs
+[18:35:07] [INFO]     2023-03: 1,681,595 pairs
+[18:35:07] [INFO]     2023-04: 1,601,886 pairs
+[18:35:07] [INFO]     2023-05: 1,653,659 pairs
+[18:35:07] [INFO]     2023-06: 1,654,619 pairs
+[18:35:07] [INFO]     2023-07: 1,786,303 pairs
+[18:35:07] [INFO]     2023-08: 1,873,339 pairs
+[18:35:07] [INFO]     2023-09: 1,733,816 pairs
+[18:35:07] [INFO]     2023-10: 1,793,138 pairs
+[18:35:07] [INFO]     2023-11: 1,663,909 pairs
+[18:35:07] [INFO]     2023-12: 1,766,054 pairs
+[18:35:07] [INFO]     2024-01: 1,714,009 pairs
+[18:35:07] [INFO]     2024-02: 1,612,781 pairs
+[18:35:07] [INFO]     2024-03: 1,770,989 pairs
+[18:35:07] [INFO]     2024-04: 1,739,239 pairs
+[18:35:07] [INFO]     2024-05: 1,774,128 pairs
+[18:35:07] [INFO]     2024-06: 1,708,794 pairs
+[18:35:07] [INFO]     2024-07: 1,776,684 pairs
+[18:35:07] [INFO]     2024-08: 1,855,358 pairs
+[18:35:07] [INFO]     2024-09: 1,774,334 pairs
+[18:35:07] [INFO]     2024-10: 1,859,497 pairs
+[18:35:07] [INFO]     2024-11: 1,779,789 pairs
+[18:35:07] [INFO]     2024-12: 1,879,743 pairs
+[18:35:07] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[18:35:07] [INFO]   2022-01: EW/NS = 0.882, v = 30.26 km/s, EW_λ=1638km, NS_λ=1858km (n=1,358,914)
+[18:35:07] [INFO]   2022-02: EW/NS = 0.960, v = 30.15 km/s, EW_λ=1687km, NS_λ=1756km (n=1,194,247)
+[18:35:07] [INFO]   2022-03: EW/NS = 0.962, v = 29.94 km/s, EW_λ=1628km, NS_λ=1691km (n=1,496,717)
+[18:35:08] [INFO]   2022-04: EW/NS = 0.926, v = 29.68 km/s, EW_λ=1713km, NS_λ=1849km (n=1,511,449)
+[18:35:08] [INFO]   2022-05: EW/NS = 0.944, v = 29.45 km/s, EW_λ=1682km, NS_λ=1782km (n=1,543,395)
+[18:35:08] [INFO]   2022-06: EW/NS = 0.889, v = 29.31 km/s, EW_λ=1656km, NS_λ=1863km (n=1,536,713)
+[18:35:08] [INFO]   2022-07: EW/NS = 0.968, v = 29.29 km/s, EW_λ=1745km, NS_λ=1803km (n=1,569,647)
+[18:35:08] [INFO]   2022-08: EW/NS = 0.941, v = 29.41 km/s, EW_λ=1674km, NS_λ=1779km (n=1,607,002)
+[18:35:08] [INFO]   2022-09: EW/NS = 0.885, v = 29.62 km/s, EW_λ=1657km, NS_λ=1873km (n=1,550,824)
+[18:35:08] [INFO]   2022-10: EW/NS = 0.885, v = 29.88 km/s, EW_λ=1727km, NS_λ=1952km (n=1,569,662)
+[18:35:08] [INFO]   2022-11: EW/NS = 0.986, v = 30.11 km/s, EW_λ=1775km, NS_λ=1801km (n=1,519,788)
+[18:35:09] [INFO]   2022-12: EW/NS = 0.696, v = 30.25 km/s, EW_λ=1409km, NS_λ=2025km (n=1,540,990)
+[18:35:09] [INFO]   2023-01: EW/NS = 0.647, v = 30.26 km/s, EW_λ=1490km, NS_λ=2305km (n=1,629,197)
+[18:35:09] [INFO]   2023-02: EW/NS = 0.703, v = 30.15 km/s, EW_λ=1264km, NS_λ=1800km (n=1,518,164)
+[18:35:09] [INFO]   2023-03: EW/NS = 0.998, v = 29.94 km/s, EW_λ=1645km, NS_λ=1648km (n=1,681,595)
+[18:35:09] [INFO]   2023-04: EW/NS = 0.925, v = 29.68 km/s, EW_λ=1709km, NS_λ=1848km (n=1,601,886)
+[18:35:09] [INFO]   2023-05: EW/NS = 0.785, v = 29.45 km/s, EW_λ=1726km, NS_λ=2198km (n=1,653,659)
+[18:35:09] [INFO]   2023-06: EW/NS = 0.712, v = 29.31 km/s, EW_λ=1443km, NS_λ=2026km (n=1,654,619)
+[18:35:09] [INFO]   2023-07: EW/NS = 0.901, v = 29.29 km/s, EW_λ=1608km, NS_λ=1785km (n=1,786,303)
+[18:35:10] [INFO]   2023-08: EW/NS = 1.018, v = 29.41 km/s, EW_λ=1553km, NS_λ=1525km (n=1,873,339)
+[18:35:10] [INFO]   2023-09: EW/NS = 0.905, v = 29.62 km/s, EW_λ=1483km, NS_λ=1640km (n=1,733,816)
+[18:35:10] [INFO]   2023-10: EW/NS = 0.815, v = 29.88 km/s, EW_λ=1553km, NS_λ=1905km (n=1,793,138)
+[18:35:10] [INFO]   2023-11: EW/NS = 0.981, v = 30.11 km/s, EW_λ=1772km, NS_λ=1808km (n=1,663,909)
+[18:35:10] [INFO]   2023-12: EW/NS = 0.679, v = 30.25 km/s, EW_λ=1501km, NS_λ=2211km (n=1,766,054)
+[18:35:10] [INFO]   2024-01: EW/NS = 0.676, v = 30.26 km/s, EW_λ=1308km, NS_λ=1937km (n=1,714,009)
+[18:35:10] [INFO]   2024-02: EW/NS = 0.797, v = 30.15 km/s, EW_λ=1573km, NS_λ=1973km (n=1,612,781)
+[18:35:10] [INFO]   2024-03: EW/NS = 0.870, v = 29.93 km/s, EW_λ=2096km, NS_λ=2409km (n=1,770,989)
+[18:35:11] [INFO]   2024-04: EW/NS = 0.904, v = 29.68 km/s, EW_λ=2085km, NS_λ=2306km (n=1,739,239)
+[18:35:11] [INFO]   2024-05: EW/NS = 0.857, v = 29.45 km/s, EW_λ=1677km, NS_λ=1957km (n=1,774,128)
+[18:35:11] [INFO]   2024-06: EW/NS = 0.855, v = 29.31 km/s, EW_λ=1691km, NS_λ=1977km (n=1,708,794)
+[18:35:11] [INFO]   2024-07: EW/NS = 0.871, v = 29.29 km/s, EW_λ=1662km, NS_λ=1908km (n=1,776,684)
+[18:35:11] [INFO]   2024-08: EW/NS = 1.134, v = 29.41 km/s, EW_λ=2096km, NS_λ=1848km (n=1,855,358)
+[18:35:11] [INFO]   2024-09: EW/NS = 1.207, v = 29.63 km/s, EW_λ=2029km, NS_λ=1682km (n=1,774,334)
+[18:35:11] [INFO]   2024-10: EW/NS = 1.294, v = 29.89 km/s, EW_λ=1955km, NS_λ=1511km (n=1,859,497)
+[18:35:11] [INFO]   2024-11: EW/NS = 1.295, v = 30.12 km/s, EW_λ=2307km, NS_λ=1781km (n=1,779,789)
+[18:35:12] [INFO]   2024-12: EW/NS = 0.862, v = 30.26 km/s, EW_λ=1991km, NS_λ=2311km (n=1,879,743)
+[18:35:12] [PROCESS] [5/5] Computing orbital velocity correlation...
+[18:35:12] [INFO]   Pearson r = -0.190
+[18:35:12] [INFO]   p-value = 2.67e-01
+[18:35:12] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[18:35:14] [INFO]   Monte Carlo: 2674/10000 exceeded
+[18:35:14] [INFO]   Empirical p-value: 2.67e-01
+[18:35:14] [INFO]   Significance: 1.1σ
+[18:35:14] [PROCESS] [5/5] Creating visualizations...
+[18:35:15] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_dynamic_100_clock_bias_phase_alignment.png
+[18:35:15] [INFO] 
+[18:35:15] [INFO] ============================================================
+[18:35:15] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[18:35:15] [INFO] ============================================================
+[18:35:15] [INFO]   Year-months analyzed: 36
+[18:35:15] [INFO]   Pearson r: -0.190
+[18:35:15] [INFO]   p-value: 2.67e-01
+[18:35:15] [INFO]   Monte Carlo p: 2.67e-01
+[18:35:15] [INFO]   Significance: 1.1σ
+[18:35:15] [INFO] 
+[18:35:15] [INFO] Comparison to CODE Longspan:
+[18:35:15] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:35:15] [INFO]   RINEX: r = -0.190, p = 2.67e-01 (1.1σ)
+[18:35:15] [INFO] 
+[18:35:15] [WARNING] TEP SIGNATURE: NO ORBITAL COUPLING DETECTED
+[18:35:15] [WARNING]   May need full year of data
+[18:35:15] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_dynamic_100_clock_bias_phase_alignment.json
+[18:35:15] [INFO] 
+[18:35:15] [INFO] ================================================================================
+[18:35:15] [INFO] Step 2.5 Complete
+[18:35:15] [INFO] ================================================================================
+[18:35:16] [INFO] 
+[18:35:16] [INFO] ================================================================================
+[18:35:16] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (DYNAMIC 100)
+[18:35:16] [INFO] ================================================================================
+[18:35:16] [INFO] 
+[18:35:16] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[18:35:16] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:35:16] [INFO] 
+[18:35:16] [INFO]   Metric: pos_jitter, Coherence: msc
+[18:35:16] [INFO] Loaded 538 station coordinates
+[18:35:16] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[18:35:16] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[18:35:21] [INFO]   Loaded 1.7M pairs...
+[18:35:26] [INFO]   Loaded 3.3M pairs...
+[18:35:31] [INFO]   Loaded 5.0M pairs...
+[18:35:35] [INFO]   Loaded 6.7M pairs...
+[18:35:40] [INFO]   Loaded 8.3M pairs...
+[18:35:45] [INFO]   Loaded 10.0M pairs...
+[18:35:50] [INFO]   Loaded 11.7M pairs...
+[18:35:55] [INFO]   Loaded 13.3M pairs...
+[18:35:59] [INFO]   Loaded 15.0M pairs...
+[18:36:04] [INFO]   Loaded 16.7M pairs...
+[18:36:09] [INFO]   Loaded 18.3M pairs...
+[18:36:13] [INFO]   Loaded 20.0M pairs...
+[18:36:18] [INFO]   Loaded 21.7M pairs...
+[18:36:23] [INFO]   Loaded 23.3M pairs...
+[18:36:28] [INFO]   Loaded 25.0M pairs...
+[18:36:33] [INFO]   Loaded 26.7M pairs...
+[18:36:37] [INFO]   Loaded 28.4M pairs...
+[18:36:42] [INFO]   Loaded 30.0M pairs...
+[18:36:47] [INFO]   Loaded 31.6M pairs...
+[18:36:52] [INFO]   Loaded 33.3M pairs...
+[18:36:56] [INFO]   Loaded 35.0M pairs...
+[18:37:01] [INFO]   Loaded 36.6M pairs...
+[18:37:06] [INFO]   Loaded 38.3M pairs...
+[18:37:11] [INFO]   Loaded 40.0M pairs...
+[18:37:16] [INFO]   Loaded 41.7M pairs...
+[18:37:20] [INFO]   Loaded 43.3M pairs...
+[18:37:25] [INFO]   Loaded 45.0M pairs...
+[18:37:30] [INFO]   Loaded 46.7M pairs...
+[18:37:35] [INFO]   Loaded 48.3M pairs...
+[18:37:40] [INFO]   Loaded 50.0M pairs...
+[18:37:44] [INFO]   Loaded 51.7M pairs...
+[18:37:49] [INFO]   Loaded 53.3M pairs...
+[18:37:54] [INFO]   Loaded 55.0M pairs...
+[18:37:59] [INFO]   Loaded 56.7M pairs...
+[18:38:04] [INFO]   Loaded 58.3M pairs...
+[18:38:08] [INFO]   Finalizing 59,600,372 pairs...
+[18:38:10] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[18:38:19] [INFO]   Built lookup for 150,099 unique pairs
+[18:38:52] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[18:38:52] [PROCESS] [3/5] Grouping pairs by year-month...
+[18:38:52] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[18:38:57] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[18:38:57] [INFO]     2022-01: 1,358,914 pairs
+[18:38:57] [INFO]     2022-02: 1,194,247 pairs
+[18:38:57] [INFO]     2022-03: 1,496,717 pairs
+[18:38:57] [INFO]     2022-04: 1,511,449 pairs
+[18:38:57] [INFO]     2022-05: 1,543,395 pairs
+[18:38:57] [INFO]     2022-06: 1,536,713 pairs
+[18:38:57] [INFO]     2022-07: 1,569,647 pairs
+[18:38:57] [INFO]     2022-08: 1,607,002 pairs
+[18:38:57] [INFO]     2022-09: 1,550,824 pairs
+[18:38:57] [INFO]     2022-10: 1,569,662 pairs
+[18:38:57] [INFO]     2022-11: 1,519,788 pairs
+[18:38:57] [INFO]     2022-12: 1,540,990 pairs
+[18:38:57] [INFO]     2023-01: 1,629,197 pairs
+[18:38:57] [INFO]     2023-02: 1,518,164 pairs
+[18:38:57] [INFO]     2023-03: 1,681,595 pairs
+[18:38:57] [INFO]     2023-04: 1,601,886 pairs
+[18:38:57] [INFO]     2023-05: 1,653,659 pairs
+[18:38:57] [INFO]     2023-06: 1,654,619 pairs
+[18:38:57] [INFO]     2023-07: 1,786,303 pairs
+[18:38:57] [INFO]     2023-08: 1,873,339 pairs
+[18:38:57] [INFO]     2023-09: 1,733,816 pairs
+[18:38:57] [INFO]     2023-10: 1,793,138 pairs
+[18:38:57] [INFO]     2023-11: 1,663,909 pairs
+[18:38:57] [INFO]     2023-12: 1,766,054 pairs
+[18:38:57] [INFO]     2024-01: 1,714,009 pairs
+[18:38:57] [INFO]     2024-02: 1,612,781 pairs
+[18:38:57] [INFO]     2024-03: 1,770,989 pairs
+[18:38:57] [INFO]     2024-04: 1,739,239 pairs
+[18:38:57] [INFO]     2024-05: 1,774,128 pairs
+[18:38:57] [INFO]     2024-06: 1,708,794 pairs
+[18:38:57] [INFO]     2024-07: 1,776,684 pairs
+[18:38:57] [INFO]     2024-08: 1,855,358 pairs
+[18:38:57] [INFO]     2024-09: 1,774,334 pairs
+[18:38:57] [INFO]     2024-10: 1,859,497 pairs
+[18:38:57] [INFO]     2024-11: 1,779,789 pairs
+[18:38:57] [INFO]     2024-12: 1,879,743 pairs
+[18:38:57] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[18:38:57] [INFO]   2022-01: EW/NS = 0.957, v = 30.26 km/s, EW_λ=646km, NS_λ=675km (n=1,358,914)
+[18:38:57] [INFO]   2022-02: EW/NS = 0.857, v = 30.15 km/s, EW_λ=642km, NS_λ=749km (n=1,194,247)
+[18:38:58] [INFO]   2022-03: EW/NS = 1.085, v = 29.94 km/s, EW_λ=793km, NS_λ=731km (n=1,496,717)
+[18:38:58] [INFO]   2022-04: EW/NS = 1.302, v = 29.68 km/s, EW_λ=923km, NS_λ=709km (n=1,511,449)
+[18:38:58] [INFO]   2022-05: EW/NS = 1.303, v = 29.45 km/s, EW_λ=912km, NS_λ=700km (n=1,543,395)
+[18:38:58] [INFO]   2022-06: EW/NS = 1.143, v = 29.31 km/s, EW_λ=1014km, NS_λ=887km (n=1,536,713)
+[18:38:58] [INFO]   2022-07: EW/NS = 1.153, v = 29.29 km/s, EW_λ=1098km, NS_λ=953km (n=1,569,647)
+[18:38:58] [INFO]   2022-08: EW/NS = 1.186, v = 29.41 km/s, EW_λ=1026km, NS_λ=865km (n=1,607,002)
+[18:38:58] [INFO]   2022-09: EW/NS = 1.202, v = 29.62 km/s, EW_λ=839km, NS_λ=698km (n=1,550,824)
+[18:38:58] [INFO]   2022-10: EW/NS = 1.263, v = 29.88 km/s, EW_λ=858km, NS_λ=680km (n=1,569,662)
+[18:38:58] [INFO]   2022-11: EW/NS = 1.109, v = 30.11 km/s, EW_λ=837km, NS_λ=755km (n=1,519,788)
+[18:38:59] [INFO]   2022-12: EW/NS = 0.799, v = 30.25 km/s, EW_λ=763km, NS_λ=954km (n=1,540,990)
+[18:38:59] [INFO]   2023-01: EW/NS = 0.746, v = 30.26 km/s, EW_λ=822km, NS_λ=1103km (n=1,629,197)
+[18:38:59] [INFO]   2023-02: EW/NS = 1.073, v = 30.15 km/s, EW_λ=787km, NS_λ=733km (n=1,518,164)
+[18:38:59] [INFO]   2023-03: EW/NS = 1.162, v = 29.94 km/s, EW_λ=726km, NS_λ=624km (n=1,681,595)
+[18:38:59] [INFO]   2023-04: EW/NS = 1.281, v = 29.68 km/s, EW_λ=796km, NS_λ=622km (n=1,601,886)
+[18:38:59] [INFO]   2023-05: EW/NS = 1.257, v = 29.45 km/s, EW_λ=977km, NS_λ=777km (n=1,653,659)
+[18:38:59] [INFO]   2023-06: EW/NS = 1.128, v = 29.31 km/s, EW_λ=999km, NS_λ=886km (n=1,654,619)
+[18:38:59] [INFO]   2023-07: EW/NS = 1.315, v = 29.29 km/s, EW_λ=1679km, NS_λ=1277km (n=1,786,303)
+[18:39:00] [INFO]   2023-08: EW/NS = 1.478, v = 29.41 km/s, EW_λ=1233km, NS_λ=835km (n=1,873,339)
+[18:39:00] [INFO]   2023-09: EW/NS = 1.234, v = 29.62 km/s, EW_λ=1030km, NS_λ=835km (n=1,733,816)
+[18:39:00] [INFO]   2023-10: EW/NS = 1.292, v = 29.88 km/s, EW_λ=1038km, NS_λ=804km (n=1,793,138)
+[18:39:00] [INFO]   2023-11: EW/NS = 1.130, v = 30.11 km/s, EW_λ=928km, NS_λ=821km (n=1,663,909)
+[18:39:00] [INFO]   2023-12: EW/NS = 0.958, v = 30.25 km/s, EW_λ=901km, NS_λ=941km (n=1,766,054)
+[18:39:00] [INFO]   2024-01: EW/NS = 0.642, v = 30.26 km/s, EW_λ=856km, NS_λ=1334km (n=1,714,009)
+[18:39:00] [INFO]   2024-02: EW/NS = 0.930, v = 30.15 km/s, EW_λ=1072km, NS_λ=1153km (n=1,612,781)
+[18:39:00] [INFO]   2024-03: EW/NS = 1.292, v = 29.93 km/s, EW_λ=1007km, NS_λ=780km (n=1,770,989)
+[18:39:01] [INFO]   2024-04: EW/NS = 1.905, v = 29.68 km/s, EW_λ=1258km, NS_λ=660km (n=1,739,239)
+[18:39:01] [INFO]   2024-05: EW/NS = 1.375, v = 29.45 km/s, EW_λ=999km, NS_λ=726km (n=1,774,128)
+[18:39:01] [INFO]   2024-06: EW/NS = 0.824, v = 29.31 km/s, EW_λ=793km, NS_λ=963km (n=1,708,794)
+[18:39:01] [INFO]   2024-07: EW/NS = 1.181, v = 29.29 km/s, EW_λ=746km, NS_λ=631km (n=1,776,684)
+[18:39:01] [INFO]   2024-08: EW/NS = 1.447, v = 29.41 km/s, EW_λ=887km, NS_λ=613km (n=1,855,358)
+[18:39:01] [INFO]   2024-09: EW/NS = 1.515, v = 29.63 km/s, EW_λ=807km, NS_λ=532km (n=1,774,334)
+[18:39:01] [INFO]   2024-10: EW/NS = 1.436, v = 29.89 km/s, EW_λ=1190km, NS_λ=829km (n=1,859,497)
+[18:39:01] [INFO]   2024-11: EW/NS = 1.296, v = 30.12 km/s, EW_λ=2008km, NS_λ=1549km (n=1,779,789)
+[18:39:02] [INFO]   2024-12: EW/NS = 0.665, v = 30.26 km/s, EW_λ=897km, NS_λ=1349km (n=1,879,743)
+[18:39:02] [PROCESS] [5/5] Computing orbital velocity correlation...
+[18:39:02] [INFO]   Pearson r = -0.515
+[18:39:02] [INFO]   p-value = 1.31e-03
+[18:39:02] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[18:39:04] [INFO]   Monte Carlo: 9/10000 exceeded
+[18:39:04] [INFO]   Empirical p-value: 1.00e-03
+[18:39:04] [INFO]   Significance: 3.3σ
+[18:39:04] [PROCESS] [5/5] Creating visualizations...
+[18:39:05] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_dynamic_100_pos_jitter_msc.png
+[18:39:05] [INFO] 
+[18:39:05] [INFO] ============================================================
+[18:39:05] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[18:39:05] [INFO] ============================================================
+[18:39:05] [INFO]   Year-months analyzed: 36
+[18:39:05] [INFO]   Pearson r: -0.515
+[18:39:05] [INFO]   p-value: 1.31e-03
+[18:39:05] [INFO]   Monte Carlo p: 1.00e-03
+[18:39:05] [INFO]   Significance: 3.3σ
+[18:39:05] [INFO] 
+[18:39:05] [INFO] Comparison to CODE Longspan:
+[18:39:05] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:39:05] [INFO]   RINEX: r = -0.515, p = 1.00e-03 (3.3σ)
+[18:39:05] [INFO] 
+[18:39:05] [SUCCESS] TEP SIGNATURE: ORBITAL COUPLING DETECTED
+[18:39:05] [SUCCESS]   Direction: NEGATIVE (consistent with CODE)
+[18:39:05] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_dynamic_100_pos_jitter_msc.json
+[18:39:05] [INFO] 
+[18:39:05] [INFO] ================================================================================
+[18:39:05] [INFO] Step 2.5 Complete
+[18:39:05] [INFO] ================================================================================
+[18:39:06] [INFO] 
+[18:39:06] [INFO] ================================================================================
+[18:39:06] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (DYNAMIC 100)
+[18:39:06] [INFO] ================================================================================
+[18:39:06] [INFO] 
+[18:39:06] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[18:39:06] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:39:06] [INFO] 
+[18:39:06] [INFO]   Metric: pos_jitter, Coherence: phase_alignment
+[18:39:06] [INFO] Loaded 538 station coordinates
+[18:39:06] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[18:39:06] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[18:39:11] [INFO]   Loaded 1.7M pairs...
+[18:39:16] [INFO]   Loaded 3.3M pairs...
+[18:39:20] [INFO]   Loaded 5.0M pairs...
+[18:39:25] [INFO]   Loaded 6.7M pairs...
+[18:39:30] [INFO]   Loaded 8.3M pairs...
+[18:39:35] [INFO]   Loaded 10.0M pairs...
+[18:39:39] [INFO]   Loaded 11.7M pairs...
+[18:39:44] [INFO]   Loaded 13.3M pairs...
+[18:39:49] [INFO]   Loaded 15.0M pairs...
+[18:39:54] [INFO]   Loaded 16.7M pairs...
+[18:39:58] [INFO]   Loaded 18.3M pairs...
+[18:40:03] [INFO]   Loaded 20.0M pairs...
+[18:40:08] [INFO]   Loaded 21.7M pairs...
+[18:40:12] [INFO]   Loaded 23.3M pairs...
+[18:40:17] [INFO]   Loaded 25.0M pairs...
+[18:40:22] [INFO]   Loaded 26.7M pairs...
+[18:40:27] [INFO]   Loaded 28.4M pairs...
+[18:40:31] [INFO]   Loaded 30.0M pairs...
+[18:40:36] [INFO]   Loaded 31.6M pairs...
+[18:40:41] [INFO]   Loaded 33.3M pairs...
+[18:40:46] [INFO]   Loaded 35.0M pairs...
+[18:40:51] [INFO]   Loaded 36.6M pairs...
+[18:40:55] [INFO]   Loaded 38.3M pairs...
+[18:41:00] [INFO]   Loaded 40.0M pairs...
+[18:41:05] [INFO]   Loaded 41.7M pairs...
+[18:41:10] [INFO]   Loaded 43.3M pairs...
+[18:41:14] [INFO]   Loaded 45.0M pairs...
+[18:41:19] [INFO]   Loaded 46.7M pairs...
+[18:41:24] [INFO]   Loaded 48.3M pairs...
+[18:41:29] [INFO]   Loaded 50.0M pairs...
+[18:41:34] [INFO]   Loaded 51.7M pairs...
+[18:41:38] [INFO]   Loaded 53.3M pairs...
+[18:41:43] [INFO]   Loaded 55.0M pairs...
+[18:41:48] [INFO]   Loaded 56.7M pairs...
+[18:41:53] [INFO]   Loaded 58.3M pairs...
+[18:41:56] [INFO]   Finalizing 59,600,372 pairs...
+[18:41:59] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[18:42:09] [INFO]   Built lookup for 150,099 unique pairs
+[18:42:42] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[18:42:42] [PROCESS] [3/5] Grouping pairs by year-month...
+[18:42:42] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[18:42:47] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[18:42:47] [INFO]     2022-01: 1,358,914 pairs
+[18:42:47] [INFO]     2022-02: 1,194,247 pairs
+[18:42:47] [INFO]     2022-03: 1,496,717 pairs
+[18:42:47] [INFO]     2022-04: 1,511,449 pairs
+[18:42:47] [INFO]     2022-05: 1,543,395 pairs
+[18:42:47] [INFO]     2022-06: 1,536,713 pairs
+[18:42:47] [INFO]     2022-07: 1,569,647 pairs
+[18:42:47] [INFO]     2022-08: 1,607,002 pairs
+[18:42:47] [INFO]     2022-09: 1,550,824 pairs
+[18:42:47] [INFO]     2022-10: 1,569,662 pairs
+[18:42:47] [INFO]     2022-11: 1,519,788 pairs
+[18:42:47] [INFO]     2022-12: 1,540,990 pairs
+[18:42:47] [INFO]     2023-01: 1,629,197 pairs
+[18:42:47] [INFO]     2023-02: 1,518,164 pairs
+[18:42:47] [INFO]     2023-03: 1,681,595 pairs
+[18:42:47] [INFO]     2023-04: 1,601,886 pairs
+[18:42:47] [INFO]     2023-05: 1,653,659 pairs
+[18:42:47] [INFO]     2023-06: 1,654,619 pairs
+[18:42:47] [INFO]     2023-07: 1,786,303 pairs
+[18:42:47] [INFO]     2023-08: 1,873,339 pairs
+[18:42:47] [INFO]     2023-09: 1,733,816 pairs
+[18:42:47] [INFO]     2023-10: 1,793,138 pairs
+[18:42:47] [INFO]     2023-11: 1,663,909 pairs
+[18:42:47] [INFO]     2023-12: 1,766,054 pairs
+[18:42:47] [INFO]     2024-01: 1,714,009 pairs
+[18:42:47] [INFO]     2024-02: 1,612,781 pairs
+[18:42:47] [INFO]     2024-03: 1,770,989 pairs
+[18:42:47] [INFO]     2024-04: 1,739,239 pairs
+[18:42:47] [INFO]     2024-05: 1,774,128 pairs
+[18:42:47] [INFO]     2024-06: 1,708,794 pairs
+[18:42:47] [INFO]     2024-07: 1,776,684 pairs
+[18:42:47] [INFO]     2024-08: 1,855,358 pairs
+[18:42:47] [INFO]     2024-09: 1,774,334 pairs
+[18:42:47] [INFO]     2024-10: 1,859,497 pairs
+[18:42:47] [INFO]     2024-11: 1,779,789 pairs
+[18:42:47] [INFO]     2024-12: 1,879,743 pairs
+[18:42:47] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[18:42:47] [INFO]   2022-01: EW/NS = 1.140, v = 30.26 km/s, EW_λ=2019km, NS_λ=1770km (n=1,358,914)
+[18:42:47] [INFO]   2022-02: EW/NS = 0.575, v = 30.15 km/s, EW_λ=1438km, NS_λ=2501km (n=1,194,247)
+[18:42:48] [INFO]   2022-03: EW/NS = 0.888, v = 29.94 km/s, EW_λ=1744km, NS_λ=1965km (n=1,496,717)
+[18:42:48] [INFO]   2022-04: EW/NS = 1.001, v = 29.68 km/s, EW_λ=1762km, NS_λ=1761km (n=1,511,449)
+[18:42:48] [INFO]   2022-05: EW/NS = 1.055, v = 29.45 km/s, EW_λ=2129km, NS_λ=2017km (n=1,543,395)
+[18:42:48] [INFO]   2022-06: EW/NS = 1.132, v = 29.31 km/s, EW_λ=2409km, NS_λ=2129km (n=1,536,713)
+[18:42:48] [INFO]   2022-07: EW/NS = 1.274, v = 29.29 km/s, EW_λ=3101km, NS_λ=2433km (n=1,569,647)
+[18:42:48] [INFO]   2022-08: EW/NS = 1.368, v = 29.41 km/s, EW_λ=2761km, NS_λ=2019km (n=1,607,002)
+[18:42:48] [INFO]   2022-09: EW/NS = 1.332, v = 29.62 km/s, EW_λ=2364km, NS_λ=1774km (n=1,550,824)
+[18:42:48] [INFO]   2022-10: EW/NS = 1.126, v = 29.88 km/s, EW_λ=2106km, NS_λ=1870km (n=1,569,662)
+[18:42:48] [INFO]   2022-11: EW/NS = 0.813, v = 30.11 km/s, EW_λ=1681km, NS_λ=2069km (n=1,519,788)
+[18:42:49] [INFO]   2022-12: EW/NS = 0.738, v = 30.25 km/s, EW_λ=1587km, NS_λ=2151km (n=1,540,990)
+[18:42:49] [INFO]   2023-01: EW/NS = 0.855, v = 30.26 km/s, EW_λ=1720km, NS_λ=2011km (n=1,629,197)
+[18:42:49] [INFO]   2023-02: EW/NS = 0.993, v = 30.15 km/s, EW_λ=1931km, NS_λ=1944km (n=1,518,164)
+[18:42:49] [INFO]   2023-03: EW/NS = 0.959, v = 29.94 km/s, EW_λ=2052km, NS_λ=2141km (n=1,681,595)
+[18:42:49] [INFO]   2023-04: EW/NS = 1.189, v = 29.68 km/s, EW_λ=2350km, NS_λ=1977km (n=1,601,886)
+[18:42:49] [INFO]   2023-05: EW/NS = 1.209, v = 29.45 km/s, EW_λ=2312km, NS_λ=1912km (n=1,653,659)
+[18:42:49] [INFO]   2023-06: EW/NS = 1.050, v = 29.31 km/s, EW_λ=2382km, NS_λ=2269km (n=1,654,619)
+[18:42:49] [INFO]   2023-07: EW/NS = 1.027, v = 29.29 km/s, EW_λ=2740km, NS_λ=2668km (n=1,786,303)
+[18:42:50] [INFO]   2023-08: EW/NS = 1.383, v = 29.41 km/s, EW_λ=3077km, NS_λ=2224km (n=1,873,339)
+[18:42:50] [INFO]   2023-09: EW/NS = 1.191, v = 29.62 km/s, EW_λ=1926km, NS_λ=1617km (n=1,733,816)
+[18:42:50] [INFO]   2023-10: EW/NS = 1.133, v = 29.88 km/s, EW_λ=2438km, NS_λ=2152km (n=1,793,138)
+[18:42:50] [INFO]   2023-11: EW/NS = 1.203, v = 30.11 km/s, EW_λ=2269km, NS_λ=1887km (n=1,663,909)
+[18:42:50] [INFO]   2023-12: EW/NS = 1.019, v = 30.25 km/s, EW_λ=2037km, NS_λ=1999km (n=1,766,054)
+[18:42:50] [INFO]   2024-01: EW/NS = 0.792, v = 30.26 km/s, EW_λ=2020km, NS_λ=2550km (n=1,714,009)
+[18:42:50] [INFO]   2024-02: EW/NS = 0.932, v = 30.15 km/s, EW_λ=1665km, NS_λ=1786km (n=1,612,781)
+[18:42:51] [INFO]   2024-03: EW/NS = 0.886, v = 29.93 km/s, EW_λ=1516km, NS_λ=1712km (n=1,770,989)
+[18:42:51] [INFO]   2024-04: EW/NS = 1.095, v = 29.68 km/s, EW_λ=1646km, NS_λ=1503km (n=1,739,239)
+[18:42:51] [INFO]   2024-05: EW/NS = 0.847, v = 29.45 km/s, EW_λ=1629km, NS_λ=1924km (n=1,774,128)
+[18:42:51] [INFO]   2024-06: EW/NS = 0.779, v = 29.31 km/s, EW_λ=1777km, NS_λ=2281km (n=1,708,794)
+[18:42:51] [INFO]   2024-07: EW/NS = 0.912, v = 29.29 km/s, EW_λ=1580km, NS_λ=1733km (n=1,776,684)
+[18:42:51] [INFO]   2024-08: EW/NS = 1.069, v = 29.41 km/s, EW_λ=1605km, NS_λ=1501km (n=1,855,358)
+[18:42:51] [INFO]   2024-09: EW/NS = 0.877, v = 29.63 km/s, EW_λ=1570km, NS_λ=1791km (n=1,774,334)
+[18:42:51] [INFO]   2024-10: EW/NS = 0.793, v = 29.89 km/s, EW_λ=1765km, NS_λ=2225km (n=1,859,497)
+[18:42:52] [INFO]   2024-11: EW/NS = 0.797, v = 30.12 km/s, EW_λ=1751km, NS_λ=2196km (n=1,779,789)
+[18:42:52] [INFO]   2024-12: EW/NS = 0.790, v = 30.26 km/s, EW_λ=1458km, NS_λ=1846km (n=1,879,743)
+[18:42:52] [PROCESS] [5/5] Computing orbital velocity correlation...
+[18:42:52] [INFO]   Pearson r = -0.463
+[18:42:52] [INFO]   p-value = 4.47e-03
+[18:42:52] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[18:42:54] [INFO]   Monte Carlo: 52/10000 exceeded
+[18:42:54] [INFO]   Empirical p-value: 5.30e-03
+[18:42:54] [INFO]   Significance: 2.8σ
+[18:42:54] [PROCESS] [5/5] Creating visualizations...
+[18:42:55] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_dynamic_100_pos_jitter_phase_alignment.png
+[18:42:55] [INFO] 
+[18:42:55] [INFO] ============================================================
+[18:42:55] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[18:42:55] [INFO] ============================================================
+[18:42:55] [INFO]   Year-months analyzed: 36
+[18:42:55] [INFO]   Pearson r: -0.463
+[18:42:55] [INFO]   p-value: 4.47e-03
+[18:42:55] [INFO]   Monte Carlo p: 5.30e-03
+[18:42:55] [INFO]   Significance: 2.8σ
+[18:42:55] [INFO] 
+[18:42:55] [INFO] Comparison to CODE Longspan:
+[18:42:55] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:42:55] [INFO]   RINEX: r = -0.463, p = 5.30e-03 (2.8σ)
+[18:42:55] [INFO] 
+[18:42:55] [WARNING] TEP SIGNATURE: WEAK ORBITAL COUPLING
+[18:42:55] [WARNING]   More data needed for confirmation
+[18:42:55] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_dynamic_100_pos_jitter_phase_alignment.json
+[18:42:55] [INFO] 
+[18:42:55] [INFO] ================================================================================
+[18:42:55] [INFO] Step 2.5 Complete
+[18:42:55] [INFO] ================================================================================
+[18:42:56] [INFO] 
+[18:42:56] [INFO] ================================================================================
+[18:42:56] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (DYNAMIC 100)
+[18:42:56] [INFO] ================================================================================
+[18:42:56] [INFO] 
+[18:42:56] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[18:42:56] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:42:56] [INFO] 
+[18:42:56] [INFO]   Metric: clock_drift, Coherence: msc
+[18:42:56] [INFO] Loaded 538 station coordinates
+[18:42:56] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[18:42:56] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[18:43:01] [INFO]   Loaded 1.7M pairs...
+[18:43:06] [INFO]   Loaded 3.3M pairs...
+[18:43:11] [INFO]   Loaded 5.0M pairs...
+[18:43:15] [INFO]   Loaded 6.6M pairs...
+[18:43:20] [INFO]   Loaded 8.3M pairs...
+[18:43:25] [INFO]   Loaded 10.0M pairs...
+[18:43:30] [INFO]   Loaded 11.7M pairs...
+[18:43:34] [INFO]   Loaded 13.3M pairs...
+[18:43:39] [INFO]   Loaded 15.0M pairs...
+[18:43:44] [INFO]   Loaded 16.7M pairs...
+[18:43:48] [INFO]   Loaded 18.3M pairs...
+[18:43:53] [INFO]   Loaded 20.0M pairs...
+[18:43:58] [INFO]   Loaded 21.6M pairs...
+[18:44:03] [INFO]   Loaded 23.3M pairs...
+[18:44:07] [INFO]   Loaded 25.0M pairs...
+[18:44:12] [INFO]   Loaded 26.6M pairs...
+[18:44:17] [INFO]   Loaded 28.3M pairs...
+[18:44:22] [INFO]   Loaded 30.0M pairs...
+[18:44:27] [INFO]   Loaded 31.6M pairs...
+[18:44:31] [INFO]   Loaded 33.3M pairs...
+[18:44:36] [INFO]   Loaded 35.0M pairs...
+[18:44:41] [INFO]   Loaded 36.6M pairs...
+[18:44:46] [INFO]   Loaded 38.3M pairs...
+[18:44:51] [INFO]   Loaded 40.0M pairs...
+[18:44:55] [INFO]   Loaded 41.6M pairs...
+[18:45:00] [INFO]   Loaded 43.3M pairs...
+[18:45:05] [INFO]   Loaded 45.0M pairs...
+[18:45:10] [INFO]   Loaded 46.7M pairs...
+[18:45:15] [INFO]   Loaded 48.3M pairs...
+[18:45:19] [INFO]   Loaded 50.0M pairs...
+[18:45:24] [INFO]   Loaded 51.6M pairs...
+[18:45:29] [INFO]   Loaded 53.3M pairs...
+[18:45:34] [INFO]   Loaded 55.0M pairs...
+[18:45:38] [INFO]   Loaded 56.7M pairs...
+[18:45:43] [INFO]   Loaded 58.3M pairs...
+[18:45:47] [INFO]   Finalizing 59,600,372 pairs...
+[18:45:49] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[18:45:59] [INFO]   Built lookup for 150,099 unique pairs
+[18:46:32] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[18:46:32] [PROCESS] [3/5] Grouping pairs by year-month...
+[18:46:32] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[18:46:37] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[18:46:37] [INFO]     2022-01: 1,358,914 pairs
+[18:46:37] [INFO]     2022-02: 1,194,247 pairs
+[18:46:37] [INFO]     2022-03: 1,496,717 pairs
+[18:46:37] [INFO]     2022-04: 1,511,449 pairs
+[18:46:37] [INFO]     2022-05: 1,543,395 pairs
+[18:46:37] [INFO]     2022-06: 1,536,713 pairs
+[18:46:37] [INFO]     2022-07: 1,569,647 pairs
+[18:46:37] [INFO]     2022-08: 1,607,002 pairs
+[18:46:37] [INFO]     2022-09: 1,550,824 pairs
+[18:46:37] [INFO]     2022-10: 1,569,662 pairs
+[18:46:37] [INFO]     2022-11: 1,519,788 pairs
+[18:46:37] [INFO]     2022-12: 1,540,990 pairs
+[18:46:37] [INFO]     2023-01: 1,629,197 pairs
+[18:46:37] [INFO]     2023-02: 1,518,164 pairs
+[18:46:37] [INFO]     2023-03: 1,681,595 pairs
+[18:46:37] [INFO]     2023-04: 1,601,886 pairs
+[18:46:37] [INFO]     2023-05: 1,653,659 pairs
+[18:46:37] [INFO]     2023-06: 1,654,619 pairs
+[18:46:37] [INFO]     2023-07: 1,786,303 pairs
+[18:46:37] [INFO]     2023-08: 1,873,339 pairs
+[18:46:37] [INFO]     2023-09: 1,733,816 pairs
+[18:46:37] [INFO]     2023-10: 1,793,138 pairs
+[18:46:37] [INFO]     2023-11: 1,663,909 pairs
+[18:46:37] [INFO]     2023-12: 1,766,054 pairs
+[18:46:37] [INFO]     2024-01: 1,714,009 pairs
+[18:46:37] [INFO]     2024-02: 1,612,781 pairs
+[18:46:37] [INFO]     2024-03: 1,770,989 pairs
+[18:46:37] [INFO]     2024-04: 1,739,239 pairs
+[18:46:37] [INFO]     2024-05: 1,774,128 pairs
+[18:46:37] [INFO]     2024-06: 1,708,794 pairs
+[18:46:37] [INFO]     2024-07: 1,776,684 pairs
+[18:46:37] [INFO]     2024-08: 1,855,358 pairs
+[18:46:37] [INFO]     2024-09: 1,774,334 pairs
+[18:46:37] [INFO]     2024-10: 1,859,497 pairs
+[18:46:37] [INFO]     2024-11: 1,779,789 pairs
+[18:46:37] [INFO]     2024-12: 1,879,743 pairs
+[18:46:37] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[18:46:37] [INFO]   2022-01: EW/NS = 0.786, v = 30.26 km/s, EW_λ=588km, NS_λ=748km (n=1,358,914)
+[18:46:37] [INFO]   2022-02: EW/NS = 0.739, v = 30.15 km/s, EW_λ=597km, NS_λ=808km (n=1,194,247)
+[18:46:37] [INFO]   2022-03: EW/NS = 0.988, v = 29.94 km/s, EW_λ=736km, NS_λ=745km (n=1,496,717)
+[18:46:38] [INFO]   2022-04: EW/NS = 0.976, v = 29.68 km/s, EW_λ=808km, NS_λ=828km (n=1,511,449)
+[18:46:38] [INFO]   2022-05: EW/NS = 0.874, v = 29.45 km/s, EW_λ=623km, NS_λ=713km (n=1,543,395)
+[18:46:38] [INFO]   2022-06: EW/NS = 0.754, v = 29.31 km/s, EW_λ=731km, NS_λ=969km (n=1,536,713)
+[18:46:38] [INFO]   2022-07: EW/NS = 0.870, v = 29.29 km/s, EW_λ=818km, NS_λ=941km (n=1,569,647)
+[18:46:38] [INFO]   2022-08: EW/NS = 1.025, v = 29.41 km/s, EW_λ=946km, NS_λ=923km (n=1,607,002)
+[18:46:38] [INFO]   2022-09: EW/NS = 1.083, v = 29.62 km/s, EW_λ=790km, NS_λ=730km (n=1,550,824)
+[18:46:38] [INFO]   2022-10: EW/NS = 0.975, v = 29.88 km/s, EW_λ=679km, NS_λ=696km (n=1,569,662)
+[18:46:38] [INFO]   2022-11: EW/NS = 1.042, v = 30.11 km/s, EW_λ=663km, NS_λ=636km (n=1,519,788)
+[18:46:39] [INFO]   2022-12: EW/NS = 0.618, v = 30.25 km/s, EW_λ=619km, NS_λ=1001km (n=1,540,990)
+[18:46:39] [INFO]   2023-01: EW/NS = 0.585, v = 30.26 km/s, EW_λ=634km, NS_λ=1082km (n=1,629,197)
+[18:46:39] [INFO]   2023-02: EW/NS = 0.899, v = 30.15 km/s, EW_λ=569km, NS_λ=634km (n=1,518,164)
+[18:46:39] [INFO]   2023-03: EW/NS = 1.122, v = 29.94 km/s, EW_λ=651km, NS_λ=580km (n=1,681,595)
+[18:46:39] [INFO]   2023-04: EW/NS = 1.016, v = 29.68 km/s, EW_λ=661km, NS_λ=650km (n=1,601,886)
+[18:46:39] [INFO]   2023-05: EW/NS = 0.997, v = 29.45 km/s, EW_λ=738km, NS_λ=740km (n=1,653,659)
+[18:46:39] [INFO]   2023-06: EW/NS = 0.929, v = 29.31 km/s, EW_λ=716km, NS_λ=771km (n=1,654,619)
+[18:46:39] [INFO]   2023-07: EW/NS = 1.049, v = 29.29 km/s, EW_λ=1095km, NS_λ=1044km (n=1,786,303)
+[18:46:40] [INFO]   2023-08: EW/NS = 1.214, v = 29.41 km/s, EW_λ=917km, NS_λ=755km (n=1,873,339)
+[18:46:40] [INFO]   2023-09: EW/NS = 1.113, v = 29.62 km/s, EW_λ=757km, NS_λ=680km (n=1,733,816)
+[18:46:40] [INFO]   2023-10: EW/NS = 1.166, v = 29.88 km/s, EW_λ=739km, NS_λ=634km (n=1,793,138)
+[18:46:40] [INFO]   2023-11: EW/NS = 0.833, v = 30.11 km/s, EW_λ=624km, NS_λ=749km (n=1,663,909)
+[18:46:40] [INFO]   2023-12: EW/NS = 0.663, v = 30.25 km/s, EW_λ=611km, NS_λ=921km (n=1,766,054)
+[18:46:40] [INFO]   2024-01: EW/NS = 0.410, v = 30.26 km/s, EW_λ=651km, NS_λ=1589km (n=1,714,009)
+[18:46:40] [INFO]   2024-02: EW/NS = 0.785, v = 30.15 km/s, EW_λ=791km, NS_λ=1007km (n=1,612,781)
+[18:46:40] [INFO]   2024-03: EW/NS = 1.287, v = 29.93 km/s, EW_λ=1031km, NS_λ=801km (n=1,770,989)
+[18:46:41] [INFO]   2024-04: EW/NS = 1.517, v = 29.68 km/s, EW_λ=1065km, NS_λ=702km (n=1,739,239)
+[18:46:41] [INFO]   2024-05: EW/NS = 1.144, v = 29.45 km/s, EW_λ=704km, NS_λ=616km (n=1,774,128)
+[18:46:41] [INFO]   2024-06: EW/NS = 0.823, v = 29.31 km/s, EW_λ=611km, NS_λ=742km (n=1,708,794)
+[18:46:41] [INFO]   2024-07: EW/NS = 0.911, v = 29.29 km/s, EW_λ=705km, NS_λ=774km (n=1,776,684)
+[18:46:41] [INFO]   2024-08: EW/NS = 1.094, v = 29.41 km/s, EW_λ=761km, NS_λ=696km (n=1,855,358)
+[18:46:41] [INFO]   2024-09: EW/NS = 1.422, v = 29.63 km/s, EW_λ=668km, NS_λ=470km (n=1,774,334)
+[18:46:41] [INFO]   2024-10: EW/NS = 1.210, v = 29.89 km/s, EW_λ=935km, NS_λ=773km (n=1,859,497)
+[18:46:42] [INFO]   2024-11: EW/NS = 0.942, v = 30.12 km/s, EW_λ=1170km, NS_λ=1242km (n=1,779,789)
+[18:46:42] [INFO]   2024-12: EW/NS = 0.448, v = 30.26 km/s, EW_λ=662km, NS_λ=1479km (n=1,879,743)
+[18:46:42] [PROCESS] [5/5] Computing orbital velocity correlation...
+[18:46:42] [INFO]   Pearson r = -0.438
+[18:46:42] [INFO]   p-value = 7.62e-03
+[18:46:42] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[18:46:44] [INFO]   Monte Carlo: 81/10000 exceeded
+[18:46:44] [INFO]   Empirical p-value: 8.20e-03
+[18:46:44] [INFO]   Significance: 2.6σ
+[18:46:44] [PROCESS] [5/5] Creating visualizations...
+[18:46:45] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_dynamic_100_clock_drift_msc.png
+[18:46:45] [INFO] 
+[18:46:45] [INFO] ============================================================
+[18:46:45] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[18:46:45] [INFO] ============================================================
+[18:46:45] [INFO]   Year-months analyzed: 36
+[18:46:45] [INFO]   Pearson r: -0.438
+[18:46:45] [INFO]   p-value: 7.62e-03
+[18:46:45] [INFO]   Monte Carlo p: 8.20e-03
+[18:46:45] [INFO]   Significance: 2.6σ
+[18:46:45] [INFO] 
+[18:46:45] [INFO] Comparison to CODE Longspan:
+[18:46:45] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:46:45] [INFO]   RINEX: r = -0.438, p = 8.20e-03 (2.6σ)
+[18:46:45] [INFO] 
+[18:46:45] [WARNING] TEP SIGNATURE: WEAK ORBITAL COUPLING
+[18:46:45] [WARNING]   More data needed for confirmation
+[18:46:45] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_dynamic_100_clock_drift_msc.json
+[18:46:45] [INFO] 
+[18:46:45] [INFO] ================================================================================
+[18:46:45] [INFO] Step 2.5 Complete
+[18:46:45] [INFO] ================================================================================
+[18:46:46] [INFO] 
+[18:46:46] [INFO] ================================================================================
+[18:46:46] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (DYNAMIC 100)
+[18:46:46] [INFO] ================================================================================
+[18:46:46] [INFO] 
+[18:46:46] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[18:46:46] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:46:46] [INFO] 
+[18:46:46] [INFO]   Metric: clock_drift, Coherence: phase_alignment
+[18:46:46] [INFO] Loaded 538 station coordinates
+[18:46:46] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[18:46:46] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[18:46:51] [INFO]   Loaded 1.7M pairs...
+[18:46:56] [INFO]   Loaded 3.3M pairs...
+[18:47:01] [INFO]   Loaded 5.0M pairs...
+[18:47:05] [INFO]   Loaded 6.6M pairs...
+[18:47:10] [INFO]   Loaded 8.3M pairs...
+[18:47:15] [INFO]   Loaded 10.0M pairs...
+[18:47:20] [INFO]   Loaded 11.7M pairs...
+[18:47:24] [INFO]   Loaded 13.3M pairs...
+[18:47:29] [INFO]   Loaded 15.0M pairs...
+[18:47:34] [INFO]   Loaded 16.7M pairs...
+[18:47:38] [INFO]   Loaded 18.3M pairs...
+[18:47:43] [INFO]   Loaded 20.0M pairs...
+[18:47:48] [INFO]   Loaded 21.6M pairs...
+[18:47:53] [INFO]   Loaded 23.3M pairs...
+[18:47:58] [INFO]   Loaded 25.0M pairs...
+[18:48:02] [INFO]   Loaded 26.6M pairs...
+[18:48:07] [INFO]   Loaded 28.3M pairs...
+[18:48:12] [INFO]   Loaded 30.0M pairs...
+[18:48:17] [INFO]   Loaded 31.6M pairs...
+[18:48:21] [INFO]   Loaded 33.3M pairs...
+[18:48:26] [INFO]   Loaded 35.0M pairs...
+[18:48:31] [INFO]   Loaded 36.6M pairs...
+[18:48:36] [INFO]   Loaded 38.3M pairs...
+[18:48:41] [INFO]   Loaded 40.0M pairs...
+[18:48:45] [INFO]   Loaded 41.6M pairs...
+[18:48:50] [INFO]   Loaded 43.3M pairs...
+[18:48:55] [INFO]   Loaded 45.0M pairs...
+[18:49:00] [INFO]   Loaded 46.7M pairs...
+[18:49:05] [INFO]   Loaded 48.3M pairs...
+[18:49:09] [INFO]   Loaded 50.0M pairs...
+[18:49:14] [INFO]   Loaded 51.6M pairs...
+[18:49:19] [INFO]   Loaded 53.3M pairs...
+[18:49:24] [INFO]   Loaded 55.0M pairs...
+[18:49:28] [INFO]   Loaded 56.7M pairs...
+[18:49:33] [INFO]   Loaded 58.3M pairs...
+[18:49:37] [INFO]   Finalizing 59,600,372 pairs...
+[18:49:39] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[18:49:49] [INFO]   Built lookup for 150,099 unique pairs
+[18:50:21] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[18:50:22] [PROCESS] [3/5] Grouping pairs by year-month...
+[18:50:22] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[18:50:27] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[18:50:27] [INFO]     2022-01: 1,358,914 pairs
+[18:50:27] [INFO]     2022-02: 1,194,247 pairs
+[18:50:27] [INFO]     2022-03: 1,496,717 pairs
+[18:50:27] [INFO]     2022-04: 1,511,449 pairs
+[18:50:27] [INFO]     2022-05: 1,543,395 pairs
+[18:50:27] [INFO]     2022-06: 1,536,713 pairs
+[18:50:27] [INFO]     2022-07: 1,569,647 pairs
+[18:50:27] [INFO]     2022-08: 1,607,002 pairs
+[18:50:27] [INFO]     2022-09: 1,550,824 pairs
+[18:50:27] [INFO]     2022-10: 1,569,662 pairs
+[18:50:27] [INFO]     2022-11: 1,519,788 pairs
+[18:50:27] [INFO]     2022-12: 1,540,990 pairs
+[18:50:27] [INFO]     2023-01: 1,629,197 pairs
+[18:50:27] [INFO]     2023-02: 1,518,164 pairs
+[18:50:27] [INFO]     2023-03: 1,681,595 pairs
+[18:50:27] [INFO]     2023-04: 1,601,886 pairs
+[18:50:27] [INFO]     2023-05: 1,653,659 pairs
+[18:50:27] [INFO]     2023-06: 1,654,619 pairs
+[18:50:27] [INFO]     2023-07: 1,786,303 pairs
+[18:50:27] [INFO]     2023-08: 1,873,339 pairs
+[18:50:27] [INFO]     2023-09: 1,733,816 pairs
+[18:50:27] [INFO]     2023-10: 1,793,138 pairs
+[18:50:27] [INFO]     2023-11: 1,663,909 pairs
+[18:50:27] [INFO]     2023-12: 1,766,054 pairs
+[18:50:27] [INFO]     2024-01: 1,714,009 pairs
+[18:50:27] [INFO]     2024-02: 1,612,781 pairs
+[18:50:27] [INFO]     2024-03: 1,770,989 pairs
+[18:50:27] [INFO]     2024-04: 1,739,239 pairs
+[18:50:27] [INFO]     2024-05: 1,774,128 pairs
+[18:50:27] [INFO]     2024-06: 1,708,794 pairs
+[18:50:27] [INFO]     2024-07: 1,776,684 pairs
+[18:50:27] [INFO]     2024-08: 1,855,358 pairs
+[18:50:27] [INFO]     2024-09: 1,774,334 pairs
+[18:50:27] [INFO]     2024-10: 1,859,497 pairs
+[18:50:27] [INFO]     2024-11: 1,779,789 pairs
+[18:50:27] [INFO]     2024-12: 1,879,743 pairs
+[18:50:27] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[18:50:27] [INFO]   2022-01: EW/NS = 0.752, v = 30.26 km/s, EW_λ=924km, NS_λ=1229km (n=1,358,914)
+[18:50:27] [INFO]   2022-02: EW/NS = 0.886, v = 30.15 km/s, EW_λ=1067km, NS_λ=1204km (n=1,194,247)
+[18:50:27] [INFO]   2022-03: EW/NS = 1.013, v = 29.94 km/s, EW_λ=1067km, NS_λ=1053km (n=1,496,717)
+[18:50:28] [INFO]   2022-04: EW/NS = 1.261, v = 29.68 km/s, EW_λ=1181km, NS_λ=936km (n=1,511,449)
+[18:50:28] [INFO]   2022-05: EW/NS = 0.919, v = 29.45 km/s, EW_λ=956km, NS_λ=1040km (n=1,543,395)
+[18:50:28] [INFO]   2022-06: EW/NS = 0.856, v = 29.31 km/s, EW_λ=951km, NS_λ=1110km (n=1,536,713)
+[18:50:28] [INFO]   2022-07: EW/NS = 0.939, v = 29.29 km/s, EW_λ=1069km, NS_λ=1138km (n=1,569,647)
+[18:50:28] [INFO]   2022-08: EW/NS = 1.146, v = 29.41 km/s, EW_λ=1182km, NS_λ=1032km (n=1,607,002)
+[18:50:28] [INFO]   2022-09: EW/NS = 1.047, v = 29.62 km/s, EW_λ=1023km, NS_λ=977km (n=1,550,824)
+[18:50:28] [INFO]   2022-10: EW/NS = 0.867, v = 29.88 km/s, EW_λ=1014km, NS_λ=1169km (n=1,569,662)
+[18:50:28] [INFO]   2022-11: EW/NS = 1.118, v = 30.11 km/s, EW_λ=1013km, NS_λ=907km (n=1,519,788)
+[18:50:29] [INFO]   2022-12: EW/NS = 1.021, v = 30.25 km/s, EW_λ=940km, NS_λ=920km (n=1,540,990)
+[18:50:29] [INFO]   2023-01: EW/NS = 0.665, v = 30.26 km/s, EW_λ=861km, NS_λ=1295km (n=1,629,197)
+[18:50:29] [INFO]   2023-02: EW/NS = 0.751, v = 30.15 km/s, EW_λ=820km, NS_λ=1092km (n=1,518,164)
+[18:50:29] [INFO]   2023-03: EW/NS = 0.918, v = 29.94 km/s, EW_λ=857km, NS_λ=934km (n=1,681,595)
+[18:50:29] [INFO]   2023-04: EW/NS = 1.063, v = 29.68 km/s, EW_λ=1032km, NS_λ=971km (n=1,601,886)
+[18:50:29] [INFO]   2023-05: EW/NS = 0.910, v = 29.45 km/s, EW_λ=1020km, NS_λ=1121km (n=1,653,659)
+[18:50:29] [INFO]   2023-06: EW/NS = 0.766, v = 29.31 km/s, EW_λ=837km, NS_λ=1093km (n=1,654,619)
+[18:50:29] [INFO]   2023-07: EW/NS = 0.831, v = 29.29 km/s, EW_λ=927km, NS_λ=1116km (n=1,786,303)
+[18:50:30] [INFO]   2023-08: EW/NS = 0.918, v = 29.41 km/s, EW_λ=941km, NS_λ=1025km (n=1,873,339)
+[18:50:30] [INFO]   2023-09: EW/NS = 0.790, v = 29.62 km/s, EW_λ=771km, NS_λ=976km (n=1,733,816)
+[18:50:30] [INFO]   2023-10: EW/NS = 0.960, v = 29.88 km/s, EW_λ=877km, NS_λ=913km (n=1,793,138)
+[18:50:30] [INFO]   2023-11: EW/NS = 0.930, v = 30.11 km/s, EW_λ=956km, NS_λ=1028km (n=1,663,909)
+[18:50:30] [INFO]   2023-12: EW/NS = 0.664, v = 30.25 km/s, EW_λ=907km, NS_λ=1366km (n=1,766,054)
+[18:50:30] [INFO]   2024-01: EW/NS = 0.752, v = 30.26 km/s, EW_λ=837km, NS_λ=1113km (n=1,714,009)
+[18:50:30] [INFO]   2024-02: EW/NS = 0.951, v = 30.15 km/s, EW_λ=956km, NS_λ=1005km (n=1,612,781)
+[18:50:30] [INFO]   2024-03: EW/NS = 0.848, v = 29.93 km/s, EW_λ=724km, NS_λ=853km (n=1,770,989)
+[18:50:31] [INFO]   2024-04: EW/NS = 0.762, v = 29.68 km/s, EW_λ=766km, NS_λ=1005km (n=1,739,239)
+[18:50:31] [INFO]   2024-05: EW/NS = 0.642, v = 29.45 km/s, EW_λ=718km, NS_λ=1117km (n=1,774,128)
+[18:50:31] [INFO]   2024-06: EW/NS = 0.586, v = 29.31 km/s, EW_λ=663km, NS_λ=1132km (n=1,708,794)
+[18:50:31] [INFO]   2024-07: EW/NS = 0.794, v = 29.29 km/s, EW_λ=794km, NS_λ=1000km (n=1,776,684)
+[18:50:31] [INFO]   2024-08: EW/NS = 1.142, v = 29.41 km/s, EW_λ=900km, NS_λ=788km (n=1,855,358)
+[18:50:31] [INFO]   2024-09: EW/NS = 1.281, v = 29.63 km/s, EW_λ=853km, NS_λ=666km (n=1,774,334)
+[18:50:31] [INFO]   2024-10: EW/NS = 1.023, v = 29.89 km/s, EW_λ=881km, NS_λ=861km (n=1,859,497)
+[18:50:31] [INFO]   2024-11: EW/NS = 0.838, v = 30.12 km/s, EW_λ=821km, NS_λ=980km (n=1,779,789)
+[18:50:32] [INFO]   2024-12: EW/NS = 0.856, v = 30.26 km/s, EW_λ=817km, NS_λ=955km (n=1,879,743)
+[18:50:32] [PROCESS] [5/5] Computing orbital velocity correlation...
+[18:50:32] [INFO]   Pearson r = -0.093
+[18:50:32] [INFO]   p-value = 5.89e-01
+[18:50:32] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[18:50:34] [INFO]   Monte Carlo: 5935/10000 exceeded
+[18:50:34] [INFO]   Empirical p-value: 5.94e-01
+[18:50:34] [INFO]   Significance: 0.5σ
+[18:50:34] [PROCESS] [5/5] Creating visualizations...
+[18:50:35] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_dynamic_100_clock_drift_phase_alignment.png
+[18:50:35] [INFO] 
+[18:50:35] [INFO] ============================================================
+[18:50:35] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[18:50:35] [INFO] ============================================================
+[18:50:35] [INFO]   Year-months analyzed: 36
+[18:50:35] [INFO]   Pearson r: -0.093
+[18:50:35] [INFO]   p-value: 5.89e-01
+[18:50:35] [INFO]   Monte Carlo p: 5.94e-01
+[18:50:35] [INFO]   Significance: 0.5σ
+[18:50:35] [INFO] 
+[18:50:35] [INFO] Comparison to CODE Longspan:
+[18:50:35] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:50:35] [INFO]   RINEX: r = -0.093, p = 5.94e-01 (0.5σ)
+[18:50:35] [INFO] 
+[18:50:35] [WARNING] TEP SIGNATURE: NO ORBITAL COUPLING DETECTED
+[18:50:35] [WARNING]   May need full year of data
+[18:50:35] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_dynamic_100_clock_drift_phase_alignment.json
+[18:50:35] [INFO] 
+[18:50:35] [INFO] ================================================================================
+[18:50:35] [INFO] Step 2.5 Complete
+[18:50:35] [INFO] ================================================================================
+[18:50:36] [INFO] 
+[18:50:36] [INFO] ================================================================================
+[18:50:36] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (OPTIMAL 100)
+[18:50:36] [INFO] ================================================================================
+[18:50:36] [INFO] 
+[18:50:36] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[18:50:36] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:50:36] [INFO] 
+[18:50:36] [INFO]   Metric: clock_bias, Coherence: msc
+[18:50:36] [INFO] Loaded 538 station coordinates
+[18:50:36] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[18:50:36] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[18:50:41] [INFO]   Loaded 1.7M pairs...
+[18:50:46] [INFO]   Loaded 3.4M pairs...
+[18:50:51] [INFO]   Loaded 5.0M pairs...
+[18:50:55] [INFO]   Loaded 6.7M pairs...
+[18:51:00] [INFO]   Loaded 8.3M pairs...
+[18:51:05] [INFO]   Loaded 10.0M pairs...
+[18:51:10] [INFO]   Loaded 11.7M pairs...
+[18:51:15] [INFO]   Loaded 13.4M pairs...
+[18:51:19] [INFO]   Loaded 15.0M pairs...
+[18:51:24] [INFO]   Loaded 16.7M pairs...
+[18:51:29] [INFO]   Loaded 18.4M pairs...
+[18:51:34] [INFO]   Loaded 20.0M pairs...
+[18:51:38] [INFO]   Loaded 21.7M pairs...
+[18:51:43] [INFO]   Loaded 23.4M pairs...
+[18:51:48] [INFO]   Loaded 25.0M pairs...
+[18:51:53] [INFO]   Loaded 26.7M pairs...
+[18:51:58] [INFO]   Loaded 28.4M pairs...
+[18:52:03] [INFO]   Loaded 30.0M pairs...
+[18:52:07] [INFO]   Loaded 31.7M pairs...
+[18:52:12] [INFO]   Loaded 33.4M pairs...
+[18:52:17] [INFO]   Loaded 35.0M pairs...
+[18:52:22] [INFO]   Loaded 36.7M pairs...
+[18:52:27] [INFO]   Loaded 38.3M pairs...
+[18:52:31] [INFO]   Loaded 40.0M pairs...
+[18:52:36] [INFO]   Loaded 41.7M pairs...
+[18:52:41] [INFO]   Loaded 43.3M pairs...
+[18:52:46] [INFO]   Loaded 45.0M pairs...
+[18:52:51] [INFO]   Loaded 46.7M pairs...
+[18:52:56] [INFO]   Loaded 48.3M pairs...
+[18:53:00] [INFO]   Loaded 50.0M pairs...
+[18:53:05] [INFO]   Loaded 51.7M pairs...
+[18:53:10] [INFO]   Loaded 53.4M pairs...
+[18:53:15] [INFO]   Loaded 55.0M pairs...
+[18:53:20] [INFO]   Loaded 56.7M pairs...
+[18:53:25] [INFO]   Loaded 58.4M pairs...
+[18:53:28] [INFO]   Finalizing 59,600,372 pairs...
+[18:53:31] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[18:53:41] [INFO]   Built lookup for 150,099 unique pairs
+[18:54:14] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[18:54:14] [PROCESS] [3/5] Grouping pairs by year-month...
+[18:54:15] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[18:54:19] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[18:54:19] [INFO]     2022-01: 1,358,914 pairs
+[18:54:19] [INFO]     2022-02: 1,194,247 pairs
+[18:54:19] [INFO]     2022-03: 1,496,717 pairs
+[18:54:19] [INFO]     2022-04: 1,511,449 pairs
+[18:54:19] [INFO]     2022-05: 1,543,395 pairs
+[18:54:19] [INFO]     2022-06: 1,536,713 pairs
+[18:54:19] [INFO]     2022-07: 1,569,647 pairs
+[18:54:19] [INFO]     2022-08: 1,607,002 pairs
+[18:54:19] [INFO]     2022-09: 1,550,824 pairs
+[18:54:19] [INFO]     2022-10: 1,569,662 pairs
+[18:54:19] [INFO]     2022-11: 1,519,788 pairs
+[18:54:19] [INFO]     2022-12: 1,540,990 pairs
+[18:54:19] [INFO]     2023-01: 1,629,197 pairs
+[18:54:19] [INFO]     2023-02: 1,518,164 pairs
+[18:54:19] [INFO]     2023-03: 1,681,595 pairs
+[18:54:19] [INFO]     2023-04: 1,601,886 pairs
+[18:54:19] [INFO]     2023-05: 1,653,659 pairs
+[18:54:19] [INFO]     2023-06: 1,654,619 pairs
+[18:54:19] [INFO]     2023-07: 1,786,303 pairs
+[18:54:19] [INFO]     2023-08: 1,873,339 pairs
+[18:54:19] [INFO]     2023-09: 1,733,816 pairs
+[18:54:19] [INFO]     2023-10: 1,793,138 pairs
+[18:54:19] [INFO]     2023-11: 1,663,909 pairs
+[18:54:19] [INFO]     2023-12: 1,766,054 pairs
+[18:54:19] [INFO]     2024-01: 1,714,009 pairs
+[18:54:19] [INFO]     2024-02: 1,612,781 pairs
+[18:54:19] [INFO]     2024-03: 1,770,989 pairs
+[18:54:19] [INFO]     2024-04: 1,739,239 pairs
+[18:54:19] [INFO]     2024-05: 1,774,128 pairs
+[18:54:19] [INFO]     2024-06: 1,708,794 pairs
+[18:54:19] [INFO]     2024-07: 1,776,684 pairs
+[18:54:19] [INFO]     2024-08: 1,855,358 pairs
+[18:54:19] [INFO]     2024-09: 1,774,334 pairs
+[18:54:19] [INFO]     2024-10: 1,859,497 pairs
+[18:54:19] [INFO]     2024-11: 1,779,789 pairs
+[18:54:19] [INFO]     2024-12: 1,879,743 pairs
+[18:54:19] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[18:54:20] [INFO]   2022-01: EW/NS = 0.772, v = 30.26 km/s, EW_λ=619km, NS_λ=802km (n=1,358,914)
+[18:54:20] [INFO]   2022-02: EW/NS = 0.712, v = 30.15 km/s, EW_λ=619km, NS_λ=869km (n=1,194,247)
+[18:54:20] [INFO]   2022-03: EW/NS = 0.992, v = 29.94 km/s, EW_λ=742km, NS_λ=748km (n=1,496,717)
+[18:54:20] [INFO]   2022-04: EW/NS = 0.992, v = 29.68 km/s, EW_λ=839km, NS_λ=846km (n=1,511,449)
+[18:54:20] [INFO]   2022-05: EW/NS = 0.859, v = 29.45 km/s, EW_λ=654km, NS_λ=761km (n=1,543,395)
+[18:54:20] [INFO]   2022-06: EW/NS = 0.756, v = 29.31 km/s, EW_λ=741km, NS_λ=980km (n=1,536,713)
+[18:54:20] [INFO]   2022-07: EW/NS = 0.848, v = 29.29 km/s, EW_λ=819km, NS_λ=966km (n=1,569,647)
+[18:54:20] [INFO]   2022-08: EW/NS = 1.002, v = 29.41 km/s, EW_λ=940km, NS_λ=938km (n=1,607,002)
+[18:54:20] [INFO]   2022-09: EW/NS = 1.116, v = 29.62 km/s, EW_λ=806km, NS_λ=722km (n=1,550,824)
+[18:54:21] [INFO]   2022-10: EW/NS = 0.929, v = 29.88 km/s, EW_λ=697km, NS_λ=751km (n=1,569,662)
+[18:54:21] [INFO]   2022-11: EW/NS = 1.016, v = 30.11 km/s, EW_λ=725km, NS_λ=714km (n=1,519,788)
+[18:54:21] [INFO]   2022-12: EW/NS = 0.555, v = 30.25 km/s, EW_λ=654km, NS_λ=1179km (n=1,540,990)
+[18:54:21] [INFO]   2023-01: EW/NS = 0.523, v = 30.26 km/s, EW_λ=682km, NS_λ=1304km (n=1,629,197)
+[18:54:21] [INFO]   2023-02: EW/NS = 0.870, v = 30.15 km/s, EW_λ=588km, NS_λ=676km (n=1,518,164)
+[18:54:21] [INFO]   2023-03: EW/NS = 1.136, v = 29.94 km/s, EW_λ=676km, NS_λ=595km (n=1,681,595)
+[18:54:21] [INFO]   2023-04: EW/NS = 1.006, v = 29.68 km/s, EW_λ=679km, NS_λ=675km (n=1,601,886)
+[18:54:21] [INFO]   2023-05: EW/NS = 1.013, v = 29.45 km/s, EW_λ=772km, NS_λ=762km (n=1,653,659)
+[18:54:22] [INFO]   2023-06: EW/NS = 0.916, v = 29.31 km/s, EW_λ=712km, NS_λ=777km (n=1,654,619)
+[18:54:22] [INFO]   2023-07: EW/NS = 0.999, v = 29.29 km/s, EW_λ=1063km, NS_λ=1063km (n=1,786,303)
+[18:54:22] [INFO]   2023-08: EW/NS = 1.194, v = 29.41 km/s, EW_λ=874km, NS_λ=732km (n=1,873,339)
+[18:54:22] [INFO]   2023-09: EW/NS = 1.114, v = 29.62 km/s, EW_λ=749km, NS_λ=672km (n=1,733,816)
+[18:54:22] [INFO]   2023-10: EW/NS = 1.094, v = 29.88 km/s, EW_λ=732km, NS_λ=670km (n=1,793,138)
+[18:54:22] [INFO]   2023-11: EW/NS = 0.780, v = 30.11 km/s, EW_λ=662km, NS_λ=849km (n=1,663,909)
+[18:54:22] [INFO]   2023-12: EW/NS = 0.601, v = 30.25 km/s, EW_λ=633km, NS_λ=1053km (n=1,766,054)
+[18:54:22] [INFO]   2024-01: EW/NS = 0.384, v = 30.26 km/s, EW_λ=668km, NS_λ=1739km (n=1,714,009)
+[18:54:23] [INFO]   2024-02: EW/NS = 0.654, v = 30.15 km/s, EW_λ=839km, NS_λ=1283km (n=1,612,781)
+[18:54:23] [INFO]   2024-03: EW/NS = 1.167, v = 29.93 km/s, EW_λ=1101km, NS_λ=944km (n=1,770,989)
+[18:54:23] [INFO]   2024-04: EW/NS = 1.510, v = 29.68 km/s, EW_λ=1171km, NS_λ=775km (n=1,739,239)
+[18:54:23] [INFO]   2024-05: EW/NS = 1.175, v = 29.45 km/s, EW_λ=753km, NS_λ=641km (n=1,774,128)
+[18:54:23] [INFO]   2024-06: EW/NS = 0.839, v = 29.31 km/s, EW_λ=620km, NS_λ=740km (n=1,708,794)
+[18:54:23] [INFO]   2024-07: EW/NS = 0.893, v = 29.29 km/s, EW_λ=694km, NS_λ=778km (n=1,776,684)
+[18:54:23] [INFO]   2024-08: EW/NS = 1.096, v = 29.41 km/s, EW_λ=756km, NS_λ=690km (n=1,855,358)
+[18:54:24] [INFO]   2024-09: EW/NS = 1.353, v = 29.63 km/s, EW_λ=665km, NS_λ=492km (n=1,774,334)
+[18:54:24] [INFO]   2024-10: EW/NS = 1.200, v = 29.89 km/s, EW_λ=954km, NS_λ=795km (n=1,859,497)
+[18:54:24] [INFO]   2024-11: EW/NS = 0.793, v = 30.12 km/s, EW_λ=1316km, NS_λ=1660km (n=1,779,789)
+[18:54:24] [INFO]   2024-12: EW/NS = 0.309, v = 30.26 km/s, EW_λ=747km, NS_λ=2419km (n=1,879,743)
+[18:54:24] [PROCESS] [5/5] Computing orbital velocity correlation...
+[18:54:24] [INFO]   Pearson r = -0.505
+[18:54:24] [INFO]   p-value = 1.69e-03
+[18:54:24] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[18:54:27] [INFO]   Monte Carlo: 22/10000 exceeded
+[18:54:27] [INFO]   Empirical p-value: 2.30e-03
+[18:54:27] [INFO]   Significance: 3.0σ
+[18:54:27] [PROCESS] [5/5] Creating visualizations...
+[18:54:28] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_optimal_100_clock_bias_msc.png
+[18:54:28] [INFO] 
+[18:54:28] [INFO] ============================================================
+[18:54:28] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[18:54:28] [INFO] ============================================================
+[18:54:28] [INFO]   Year-months analyzed: 36
+[18:54:28] [INFO]   Pearson r: -0.505
+[18:54:28] [INFO]   p-value: 1.69e-03
+[18:54:28] [INFO]   Monte Carlo p: 2.30e-03
+[18:54:28] [INFO]   Significance: 3.0σ
+[18:54:28] [INFO] 
+[18:54:28] [INFO] Comparison to CODE Longspan:
+[18:54:28] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:54:28] [INFO]   RINEX: r = -0.505, p = 2.30e-03 (3.0σ)
+[18:54:28] [INFO] 
+[18:54:28] [SUCCESS] TEP SIGNATURE: ORBITAL COUPLING DETECTED
+[18:54:28] [SUCCESS]   Direction: NEGATIVE (consistent with CODE)
+[18:54:28] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_optimal_100_clock_bias_msc.json
+[18:54:28] [INFO] 
+[18:54:28] [INFO] ================================================================================
+[18:54:28] [INFO] Step 2.5 Complete
+[18:54:28] [INFO] ================================================================================
+[18:54:29] [INFO] 
+[18:54:29] [INFO] ================================================================================
+[18:54:29] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (OPTIMAL 100)
+[18:54:29] [INFO] ================================================================================
+[18:54:29] [INFO] 
+[18:54:29] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[18:54:29] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:54:29] [INFO] 
+[18:54:29] [INFO]   Metric: clock_bias, Coherence: phase_alignment
+[18:54:29] [INFO] Loaded 538 station coordinates
+[18:54:29] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[18:54:29] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[18:54:33] [INFO]   Loaded 1.7M pairs...
+[18:54:38] [INFO]   Loaded 3.4M pairs...
+[18:54:43] [INFO]   Loaded 5.0M pairs...
+[18:54:48] [INFO]   Loaded 6.7M pairs...
+[18:54:53] [INFO]   Loaded 8.3M pairs...
+[18:54:57] [INFO]   Loaded 10.0M pairs...
+[18:55:02] [INFO]   Loaded 11.7M pairs...
+[18:55:07] [INFO]   Loaded 13.4M pairs...
+[18:55:12] [INFO]   Loaded 15.0M pairs...
+[18:55:16] [INFO]   Loaded 16.7M pairs...
+[18:55:21] [INFO]   Loaded 18.4M pairs...
+[18:55:26] [INFO]   Loaded 20.0M pairs...
+[18:55:31] [INFO]   Loaded 21.7M pairs...
+[18:55:35] [INFO]   Loaded 23.4M pairs...
+[18:55:40] [INFO]   Loaded 25.0M pairs...
+[18:55:45] [INFO]   Loaded 26.7M pairs...
+[18:55:50] [INFO]   Loaded 28.4M pairs...
+[18:55:55] [INFO]   Loaded 30.0M pairs...
+[18:55:59] [INFO]   Loaded 31.7M pairs...
+[18:56:04] [INFO]   Loaded 33.4M pairs...
+[18:56:09] [INFO]   Loaded 35.0M pairs...
+[18:56:14] [INFO]   Loaded 36.7M pairs...
+[18:56:18] [INFO]   Loaded 38.3M pairs...
+[18:56:23] [INFO]   Loaded 40.0M pairs...
+[18:56:28] [INFO]   Loaded 41.7M pairs...
+[18:56:33] [INFO]   Loaded 43.3M pairs...
+[18:56:38] [INFO]   Loaded 45.0M pairs...
+[18:56:42] [INFO]   Loaded 46.7M pairs...
+[18:56:47] [INFO]   Loaded 48.3M pairs...
+[18:56:52] [INFO]   Loaded 50.0M pairs...
+[18:56:57] [INFO]   Loaded 51.7M pairs...
+[18:57:02] [INFO]   Loaded 53.4M pairs...
+[18:57:06] [INFO]   Loaded 55.0M pairs...
+[18:57:11] [INFO]   Loaded 56.7M pairs...
+[18:57:16] [INFO]   Loaded 58.4M pairs...
+[18:57:20] [INFO]   Finalizing 59,600,372 pairs...
+[18:57:22] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[18:57:32] [INFO]   Built lookup for 150,099 unique pairs
+[18:58:06] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[18:58:06] [PROCESS] [3/5] Grouping pairs by year-month...
+[18:58:06] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[18:58:11] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[18:58:11] [INFO]     2022-01: 1,358,914 pairs
+[18:58:11] [INFO]     2022-02: 1,194,247 pairs
+[18:58:11] [INFO]     2022-03: 1,496,717 pairs
+[18:58:11] [INFO]     2022-04: 1,511,449 pairs
+[18:58:11] [INFO]     2022-05: 1,543,395 pairs
+[18:58:11] [INFO]     2022-06: 1,536,713 pairs
+[18:58:11] [INFO]     2022-07: 1,569,647 pairs
+[18:58:11] [INFO]     2022-08: 1,607,002 pairs
+[18:58:11] [INFO]     2022-09: 1,550,824 pairs
+[18:58:11] [INFO]     2022-10: 1,569,662 pairs
+[18:58:11] [INFO]     2022-11: 1,519,788 pairs
+[18:58:11] [INFO]     2022-12: 1,540,990 pairs
+[18:58:11] [INFO]     2023-01: 1,629,197 pairs
+[18:58:11] [INFO]     2023-02: 1,518,164 pairs
+[18:58:11] [INFO]     2023-03: 1,681,595 pairs
+[18:58:11] [INFO]     2023-04: 1,601,886 pairs
+[18:58:11] [INFO]     2023-05: 1,653,659 pairs
+[18:58:11] [INFO]     2023-06: 1,654,619 pairs
+[18:58:11] [INFO]     2023-07: 1,786,303 pairs
+[18:58:11] [INFO]     2023-08: 1,873,339 pairs
+[18:58:11] [INFO]     2023-09: 1,733,816 pairs
+[18:58:11] [INFO]     2023-10: 1,793,138 pairs
+[18:58:11] [INFO]     2023-11: 1,663,909 pairs
+[18:58:11] [INFO]     2023-12: 1,766,054 pairs
+[18:58:11] [INFO]     2024-01: 1,714,009 pairs
+[18:58:11] [INFO]     2024-02: 1,612,781 pairs
+[18:58:11] [INFO]     2024-03: 1,770,989 pairs
+[18:58:11] [INFO]     2024-04: 1,739,239 pairs
+[18:58:11] [INFO]     2024-05: 1,774,128 pairs
+[18:58:11] [INFO]     2024-06: 1,708,794 pairs
+[18:58:11] [INFO]     2024-07: 1,776,684 pairs
+[18:58:11] [INFO]     2024-08: 1,855,358 pairs
+[18:58:11] [INFO]     2024-09: 1,774,334 pairs
+[18:58:11] [INFO]     2024-10: 1,859,497 pairs
+[18:58:11] [INFO]     2024-11: 1,779,789 pairs
+[18:58:11] [INFO]     2024-12: 1,879,743 pairs
+[18:58:11] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[18:58:11] [INFO]   2022-01: EW/NS = 0.882, v = 30.26 km/s, EW_λ=1638km, NS_λ=1858km (n=1,358,914)
+[18:58:11] [INFO]   2022-02: EW/NS = 0.960, v = 30.15 km/s, EW_λ=1687km, NS_λ=1756km (n=1,194,247)
+[18:58:11] [INFO]   2022-03: EW/NS = 0.962, v = 29.94 km/s, EW_λ=1628km, NS_λ=1691km (n=1,496,717)
+[18:58:12] [INFO]   2022-04: EW/NS = 0.926, v = 29.68 km/s, EW_λ=1713km, NS_λ=1849km (n=1,511,449)
+[18:58:12] [INFO]   2022-05: EW/NS = 0.944, v = 29.45 km/s, EW_λ=1682km, NS_λ=1782km (n=1,543,395)
+[18:58:12] [INFO]   2022-06: EW/NS = 0.889, v = 29.31 km/s, EW_λ=1656km, NS_λ=1863km (n=1,536,713)
+[18:58:12] [INFO]   2022-07: EW/NS = 0.968, v = 29.29 km/s, EW_λ=1745km, NS_λ=1803km (n=1,569,647)
+[18:58:12] [INFO]   2022-08: EW/NS = 0.941, v = 29.41 km/s, EW_λ=1674km, NS_λ=1779km (n=1,607,002)
+[18:58:12] [INFO]   2022-09: EW/NS = 0.885, v = 29.62 km/s, EW_λ=1657km, NS_λ=1873km (n=1,550,824)
+[18:58:12] [INFO]   2022-10: EW/NS = 0.885, v = 29.88 km/s, EW_λ=1727km, NS_λ=1952km (n=1,569,662)
+[18:58:12] [INFO]   2022-11: EW/NS = 0.986, v = 30.11 km/s, EW_λ=1775km, NS_λ=1801km (n=1,519,788)
+[18:58:13] [INFO]   2022-12: EW/NS = 0.696, v = 30.25 km/s, EW_λ=1409km, NS_λ=2025km (n=1,540,990)
+[18:58:13] [INFO]   2023-01: EW/NS = 0.647, v = 30.26 km/s, EW_λ=1490km, NS_λ=2305km (n=1,629,197)
+[18:58:13] [INFO]   2023-02: EW/NS = 0.703, v = 30.15 km/s, EW_λ=1264km, NS_λ=1800km (n=1,518,164)
+[18:58:13] [INFO]   2023-03: EW/NS = 0.998, v = 29.94 km/s, EW_λ=1645km, NS_λ=1648km (n=1,681,595)
+[18:58:13] [INFO]   2023-04: EW/NS = 0.925, v = 29.68 km/s, EW_λ=1709km, NS_λ=1848km (n=1,601,886)
+[18:58:13] [INFO]   2023-05: EW/NS = 0.785, v = 29.45 km/s, EW_λ=1726km, NS_λ=2198km (n=1,653,659)
+[18:58:13] [INFO]   2023-06: EW/NS = 0.712, v = 29.31 km/s, EW_λ=1443km, NS_λ=2026km (n=1,654,619)
+[18:58:14] [INFO]   2023-07: EW/NS = 0.901, v = 29.29 km/s, EW_λ=1608km, NS_λ=1785km (n=1,786,303)
+[18:58:14] [INFO]   2023-08: EW/NS = 1.018, v = 29.41 km/s, EW_λ=1553km, NS_λ=1525km (n=1,873,339)
+[18:58:14] [INFO]   2023-09: EW/NS = 0.905, v = 29.62 km/s, EW_λ=1483km, NS_λ=1640km (n=1,733,816)
+[18:58:14] [INFO]   2023-10: EW/NS = 0.815, v = 29.88 km/s, EW_λ=1553km, NS_λ=1905km (n=1,793,138)
+[18:58:14] [INFO]   2023-11: EW/NS = 0.981, v = 30.11 km/s, EW_λ=1772km, NS_λ=1808km (n=1,663,909)
+[18:58:14] [INFO]   2023-12: EW/NS = 0.679, v = 30.25 km/s, EW_λ=1501km, NS_λ=2211km (n=1,766,054)
+[18:58:14] [INFO]   2024-01: EW/NS = 0.676, v = 30.26 km/s, EW_λ=1308km, NS_λ=1937km (n=1,714,009)
+[18:58:14] [INFO]   2024-02: EW/NS = 0.797, v = 30.15 km/s, EW_λ=1573km, NS_λ=1973km (n=1,612,781)
+[18:58:15] [INFO]   2024-03: EW/NS = 0.870, v = 29.93 km/s, EW_λ=2096km, NS_λ=2409km (n=1,770,989)
+[18:58:15] [INFO]   2024-04: EW/NS = 0.904, v = 29.68 km/s, EW_λ=2085km, NS_λ=2306km (n=1,739,239)
+[18:58:15] [INFO]   2024-05: EW/NS = 0.857, v = 29.45 km/s, EW_λ=1677km, NS_λ=1957km (n=1,774,128)
+[18:58:15] [INFO]   2024-06: EW/NS = 0.855, v = 29.31 km/s, EW_λ=1691km, NS_λ=1977km (n=1,708,794)
+[18:58:15] [INFO]   2024-07: EW/NS = 0.871, v = 29.29 km/s, EW_λ=1662km, NS_λ=1908km (n=1,776,684)
+[18:58:15] [INFO]   2024-08: EW/NS = 1.134, v = 29.41 km/s, EW_λ=2096km, NS_λ=1848km (n=1,855,358)
+[18:58:15] [INFO]   2024-09: EW/NS = 1.207, v = 29.63 km/s, EW_λ=2029km, NS_λ=1682km (n=1,774,334)
+[18:58:16] [INFO]   2024-10: EW/NS = 1.294, v = 29.89 km/s, EW_λ=1955km, NS_λ=1511km (n=1,859,497)
+[18:58:16] [INFO]   2024-11: EW/NS = 1.295, v = 30.12 km/s, EW_λ=2307km, NS_λ=1781km (n=1,779,789)
+[18:58:16] [INFO]   2024-12: EW/NS = 0.862, v = 30.26 km/s, EW_λ=1991km, NS_λ=2311km (n=1,879,743)
+[18:58:16] [PROCESS] [5/5] Computing orbital velocity correlation...
+[18:58:16] [INFO]   Pearson r = -0.190
+[18:58:16] [INFO]   p-value = 2.67e-01
+[18:58:16] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[18:58:19] [INFO]   Monte Carlo: 2714/10000 exceeded
+[18:58:19] [INFO]   Empirical p-value: 2.71e-01
+[18:58:19] [INFO]   Significance: 1.1σ
+[18:58:19] [PROCESS] [5/5] Creating visualizations...
+[18:58:20] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_optimal_100_clock_bias_phase_alignment.png
+[18:58:20] [INFO] 
+[18:58:20] [INFO] ============================================================
+[18:58:20] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[18:58:20] [INFO] ============================================================
+[18:58:20] [INFO]   Year-months analyzed: 36
+[18:58:20] [INFO]   Pearson r: -0.190
+[18:58:20] [INFO]   p-value: 2.67e-01
+[18:58:20] [INFO]   Monte Carlo p: 2.71e-01
+[18:58:20] [INFO]   Significance: 1.1σ
+[18:58:20] [INFO] 
+[18:58:20] [INFO] Comparison to CODE Longspan:
+[18:58:20] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:58:20] [INFO]   RINEX: r = -0.190, p = 2.71e-01 (1.1σ)
+[18:58:20] [INFO] 
+[18:58:20] [WARNING] TEP SIGNATURE: NO ORBITAL COUPLING DETECTED
+[18:58:20] [WARNING]   May need full year of data
+[18:58:20] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_optimal_100_clock_bias_phase_alignment.json
+[18:58:20] [INFO] 
+[18:58:20] [INFO] ================================================================================
+[18:58:20] [INFO] Step 2.5 Complete
+[18:58:20] [INFO] ================================================================================
+[18:58:21] [INFO] 
+[18:58:21] [INFO] ================================================================================
+[18:58:21] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (OPTIMAL 100)
+[18:58:21] [INFO] ================================================================================
+[18:58:21] [INFO] 
+[18:58:21] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[18:58:21] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[18:58:21] [INFO] 
+[18:58:21] [INFO]   Metric: pos_jitter, Coherence: msc
+[18:58:21] [INFO] Loaded 538 station coordinates
+[18:58:21] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[18:58:21] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[18:58:25] [INFO]   Loaded 1.7M pairs...
+[18:58:30] [INFO]   Loaded 3.3M pairs...
+[18:58:35] [INFO]   Loaded 5.0M pairs...
+[18:58:40] [INFO]   Loaded 6.7M pairs...
+[18:58:44] [INFO]   Loaded 8.3M pairs...
+[18:58:49] [INFO]   Loaded 10.0M pairs...
+[18:58:54] [INFO]   Loaded 11.7M pairs...
+[18:58:59] [INFO]   Loaded 13.3M pairs...
+[18:59:04] [INFO]   Loaded 15.0M pairs...
+[18:59:08] [INFO]   Loaded 16.7M pairs...
+[18:59:13] [INFO]   Loaded 18.3M pairs...
+[18:59:18] [INFO]   Loaded 20.0M pairs...
+[18:59:23] [INFO]   Loaded 21.7M pairs...
+[18:59:28] [INFO]   Loaded 23.3M pairs...
+[18:59:32] [INFO]   Loaded 25.0M pairs...
+[18:59:37] [INFO]   Loaded 26.7M pairs...
+[18:59:42] [INFO]   Loaded 28.4M pairs...
+[18:59:47] [INFO]   Loaded 30.0M pairs...
+[18:59:51] [INFO]   Loaded 31.6M pairs...
+[18:59:56] [INFO]   Loaded 33.3M pairs...
+[19:00:01] [INFO]   Loaded 35.0M pairs...
+[19:00:06] [INFO]   Loaded 36.6M pairs...
+[19:00:11] [INFO]   Loaded 38.3M pairs...
+[19:00:15] [INFO]   Loaded 40.0M pairs...
+[19:00:20] [INFO]   Loaded 41.7M pairs...
+[19:00:25] [INFO]   Loaded 43.3M pairs...
+[19:00:30] [INFO]   Loaded 45.0M pairs...
+[19:00:35] [INFO]   Loaded 46.7M pairs...
+[19:00:39] [INFO]   Loaded 48.3M pairs...
+[19:00:44] [INFO]   Loaded 50.0M pairs...
+[19:00:49] [INFO]   Loaded 51.7M pairs...
+[19:00:54] [INFO]   Loaded 53.3M pairs...
+[19:00:59] [INFO]   Loaded 55.0M pairs...
+[19:01:03] [INFO]   Loaded 56.7M pairs...
+[19:01:08] [INFO]   Loaded 58.3M pairs...
+[19:01:12] [INFO]   Finalizing 59,600,372 pairs...
+[19:01:14] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[19:01:24] [INFO]   Built lookup for 150,099 unique pairs
+[19:01:57] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[19:01:58] [PROCESS] [3/5] Grouping pairs by year-month...
+[19:01:58] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[19:02:03] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[19:02:03] [INFO]     2022-01: 1,358,914 pairs
+[19:02:03] [INFO]     2022-02: 1,194,247 pairs
+[19:02:03] [INFO]     2022-03: 1,496,717 pairs
+[19:02:03] [INFO]     2022-04: 1,511,449 pairs
+[19:02:03] [INFO]     2022-05: 1,543,395 pairs
+[19:02:03] [INFO]     2022-06: 1,536,713 pairs
+[19:02:03] [INFO]     2022-07: 1,569,647 pairs
+[19:02:03] [INFO]     2022-08: 1,607,002 pairs
+[19:02:03] [INFO]     2022-09: 1,550,824 pairs
+[19:02:03] [INFO]     2022-10: 1,569,662 pairs
+[19:02:03] [INFO]     2022-11: 1,519,788 pairs
+[19:02:03] [INFO]     2022-12: 1,540,990 pairs
+[19:02:03] [INFO]     2023-01: 1,629,197 pairs
+[19:02:03] [INFO]     2023-02: 1,518,164 pairs
+[19:02:03] [INFO]     2023-03: 1,681,595 pairs
+[19:02:03] [INFO]     2023-04: 1,601,886 pairs
+[19:02:03] [INFO]     2023-05: 1,653,659 pairs
+[19:02:03] [INFO]     2023-06: 1,654,619 pairs
+[19:02:03] [INFO]     2023-07: 1,786,303 pairs
+[19:02:03] [INFO]     2023-08: 1,873,339 pairs
+[19:02:03] [INFO]     2023-09: 1,733,816 pairs
+[19:02:03] [INFO]     2023-10: 1,793,138 pairs
+[19:02:03] [INFO]     2023-11: 1,663,909 pairs
+[19:02:03] [INFO]     2023-12: 1,766,054 pairs
+[19:02:03] [INFO]     2024-01: 1,714,009 pairs
+[19:02:03] [INFO]     2024-02: 1,612,781 pairs
+[19:02:03] [INFO]     2024-03: 1,770,989 pairs
+[19:02:03] [INFO]     2024-04: 1,739,239 pairs
+[19:02:03] [INFO]     2024-05: 1,774,128 pairs
+[19:02:03] [INFO]     2024-06: 1,708,794 pairs
+[19:02:03] [INFO]     2024-07: 1,776,684 pairs
+[19:02:03] [INFO]     2024-08: 1,855,358 pairs
+[19:02:03] [INFO]     2024-09: 1,774,334 pairs
+[19:02:03] [INFO]     2024-10: 1,859,497 pairs
+[19:02:03] [INFO]     2024-11: 1,779,789 pairs
+[19:02:03] [INFO]     2024-12: 1,879,743 pairs
+[19:02:03] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[19:02:03] [INFO]   2022-01: EW/NS = 0.957, v = 30.26 km/s, EW_λ=646km, NS_λ=675km (n=1,358,914)
+[19:02:03] [INFO]   2022-02: EW/NS = 0.857, v = 30.15 km/s, EW_λ=642km, NS_λ=749km (n=1,194,247)
+[19:02:03] [INFO]   2022-03: EW/NS = 1.085, v = 29.94 km/s, EW_λ=793km, NS_λ=731km (n=1,496,717)
+[19:02:03] [INFO]   2022-04: EW/NS = 1.302, v = 29.68 km/s, EW_λ=923km, NS_λ=709km (n=1,511,449)
+[19:02:04] [INFO]   2022-05: EW/NS = 1.303, v = 29.45 km/s, EW_λ=912km, NS_λ=700km (n=1,543,395)
+[19:02:04] [INFO]   2022-06: EW/NS = 1.143, v = 29.31 km/s, EW_λ=1014km, NS_λ=887km (n=1,536,713)
+[19:02:04] [INFO]   2022-07: EW/NS = 1.153, v = 29.29 km/s, EW_λ=1098km, NS_λ=953km (n=1,569,647)
+[19:02:04] [INFO]   2022-08: EW/NS = 1.186, v = 29.41 km/s, EW_λ=1026km, NS_λ=865km (n=1,607,002)
+[19:02:04] [INFO]   2022-09: EW/NS = 1.202, v = 29.62 km/s, EW_λ=839km, NS_λ=698km (n=1,550,824)
+[19:02:04] [INFO]   2022-10: EW/NS = 1.263, v = 29.88 km/s, EW_λ=858km, NS_λ=680km (n=1,569,662)
+[19:02:04] [INFO]   2022-11: EW/NS = 1.109, v = 30.11 km/s, EW_λ=837km, NS_λ=755km (n=1,519,788)
+[19:02:04] [INFO]   2022-12: EW/NS = 0.799, v = 30.25 km/s, EW_λ=763km, NS_λ=954km (n=1,540,990)
+[19:02:05] [INFO]   2023-01: EW/NS = 0.746, v = 30.26 km/s, EW_λ=822km, NS_λ=1103km (n=1,629,197)
+[19:02:05] [INFO]   2023-02: EW/NS = 1.073, v = 30.15 km/s, EW_λ=787km, NS_λ=733km (n=1,518,164)
+[19:02:05] [INFO]   2023-03: EW/NS = 1.162, v = 29.94 km/s, EW_λ=726km, NS_λ=624km (n=1,681,595)
+[19:02:05] [INFO]   2023-04: EW/NS = 1.281, v = 29.68 km/s, EW_λ=796km, NS_λ=622km (n=1,601,886)
+[19:02:05] [INFO]   2023-05: EW/NS = 1.257, v = 29.45 km/s, EW_λ=977km, NS_λ=777km (n=1,653,659)
+[19:02:05] [INFO]   2023-06: EW/NS = 1.128, v = 29.31 km/s, EW_λ=999km, NS_λ=886km (n=1,654,619)
+[19:02:05] [INFO]   2023-07: EW/NS = 1.315, v = 29.29 km/s, EW_λ=1679km, NS_λ=1277km (n=1,786,303)
+[19:02:05] [INFO]   2023-08: EW/NS = 1.478, v = 29.41 km/s, EW_λ=1233km, NS_λ=835km (n=1,873,339)
+[19:02:06] [INFO]   2023-09: EW/NS = 1.234, v = 29.62 km/s, EW_λ=1030km, NS_λ=835km (n=1,733,816)
+[19:02:06] [INFO]   2023-10: EW/NS = 1.292, v = 29.88 km/s, EW_λ=1038km, NS_λ=804km (n=1,793,138)
+[19:02:06] [INFO]   2023-11: EW/NS = 1.130, v = 30.11 km/s, EW_λ=928km, NS_λ=821km (n=1,663,909)
+[19:02:06] [INFO]   2023-12: EW/NS = 0.958, v = 30.25 km/s, EW_λ=901km, NS_λ=941km (n=1,766,054)
+[19:02:06] [INFO]   2024-01: EW/NS = 0.642, v = 30.26 km/s, EW_λ=856km, NS_λ=1334km (n=1,714,009)
+[19:02:06] [INFO]   2024-02: EW/NS = 0.930, v = 30.15 km/s, EW_λ=1072km, NS_λ=1153km (n=1,612,781)
+[19:02:06] [INFO]   2024-03: EW/NS = 1.292, v = 29.93 km/s, EW_λ=1007km, NS_λ=780km (n=1,770,989)
+[19:02:06] [INFO]   2024-04: EW/NS = 1.905, v = 29.68 km/s, EW_λ=1258km, NS_λ=660km (n=1,739,239)
+[19:02:07] [INFO]   2024-05: EW/NS = 1.375, v = 29.45 km/s, EW_λ=999km, NS_λ=726km (n=1,774,128)
+[19:02:07] [INFO]   2024-06: EW/NS = 0.824, v = 29.31 km/s, EW_λ=793km, NS_λ=963km (n=1,708,794)
+[19:02:07] [INFO]   2024-07: EW/NS = 1.181, v = 29.29 km/s, EW_λ=746km, NS_λ=631km (n=1,776,684)
+[19:02:07] [INFO]   2024-08: EW/NS = 1.447, v = 29.41 km/s, EW_λ=887km, NS_λ=613km (n=1,855,358)
+[19:02:07] [INFO]   2024-09: EW/NS = 1.515, v = 29.63 km/s, EW_λ=807km, NS_λ=532km (n=1,774,334)
+[19:02:07] [INFO]   2024-10: EW/NS = 1.436, v = 29.89 km/s, EW_λ=1190km, NS_λ=829km (n=1,859,497)
+[19:02:07] [INFO]   2024-11: EW/NS = 1.296, v = 30.12 km/s, EW_λ=2008km, NS_λ=1549km (n=1,779,789)
+[19:02:07] [INFO]   2024-12: EW/NS = 0.665, v = 30.26 km/s, EW_λ=897km, NS_λ=1349km (n=1,879,743)
+[19:02:07] [PROCESS] [5/5] Computing orbital velocity correlation...
+[19:02:07] [INFO]   Pearson r = -0.515
+[19:02:07] [INFO]   p-value = 1.31e-03
+[19:02:07] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[19:02:10] [INFO]   Monte Carlo: 11/10000 exceeded
+[19:02:10] [INFO]   Empirical p-value: 1.20e-03
+[19:02:10] [INFO]   Significance: 3.2σ
+[19:02:10] [PROCESS] [5/5] Creating visualizations...
+[19:02:11] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_optimal_100_pos_jitter_msc.png
+[19:02:11] [INFO] 
+[19:02:11] [INFO] ============================================================
+[19:02:11] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[19:02:11] [INFO] ============================================================
+[19:02:11] [INFO]   Year-months analyzed: 36
+[19:02:11] [INFO]   Pearson r: -0.515
+[19:02:11] [INFO]   p-value: 1.31e-03
+[19:02:11] [INFO]   Monte Carlo p: 1.20e-03
+[19:02:11] [INFO]   Significance: 3.2σ
+[19:02:11] [INFO] 
+[19:02:11] [INFO] Comparison to CODE Longspan:
+[19:02:11] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:02:11] [INFO]   RINEX: r = -0.515, p = 1.20e-03 (3.2σ)
+[19:02:11] [INFO] 
+[19:02:11] [SUCCESS] TEP SIGNATURE: ORBITAL COUPLING DETECTED
+[19:02:11] [SUCCESS]   Direction: NEGATIVE (consistent with CODE)
+[19:02:11] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_optimal_100_pos_jitter_msc.json
+[19:02:11] [INFO] 
+[19:02:11] [INFO] ================================================================================
+[19:02:11] [INFO] Step 2.5 Complete
+[19:02:11] [INFO] ================================================================================
+[19:02:12] [INFO] 
+[19:02:12] [INFO] ================================================================================
+[19:02:12] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (OPTIMAL 100)
+[19:02:12] [INFO] ================================================================================
+[19:02:12] [INFO] 
+[19:02:12] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[19:02:12] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:02:12] [INFO] 
+[19:02:12] [INFO]   Metric: pos_jitter, Coherence: phase_alignment
+[19:02:12] [INFO] Loaded 538 station coordinates
+[19:02:12] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[19:02:12] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[19:02:17] [INFO]   Loaded 1.7M pairs...
+[19:02:22] [INFO]   Loaded 3.3M pairs...
+[19:02:26] [INFO]   Loaded 5.0M pairs...
+[19:02:31] [INFO]   Loaded 6.7M pairs...
+[19:02:36] [INFO]   Loaded 8.3M pairs...
+[19:02:41] [INFO]   Loaded 10.0M pairs...
+[19:02:46] [INFO]   Loaded 11.7M pairs...
+[19:02:50] [INFO]   Loaded 13.3M pairs...
+[19:02:55] [INFO]   Loaded 15.0M pairs...
+[19:03:00] [INFO]   Loaded 16.7M pairs...
+[19:03:05] [INFO]   Loaded 18.3M pairs...
+[19:03:09] [INFO]   Loaded 20.0M pairs...
+[19:03:14] [INFO]   Loaded 21.7M pairs...
+[19:03:19] [INFO]   Loaded 23.3M pairs...
+[19:03:24] [INFO]   Loaded 25.0M pairs...
+[19:03:29] [INFO]   Loaded 26.7M pairs...
+[19:03:33] [INFO]   Loaded 28.4M pairs...
+[19:03:38] [INFO]   Loaded 30.0M pairs...
+[19:03:43] [INFO]   Loaded 31.6M pairs...
+[19:03:48] [INFO]   Loaded 33.3M pairs...
+[19:03:53] [INFO]   Loaded 35.0M pairs...
+[19:03:57] [INFO]   Loaded 36.6M pairs...
+[19:04:02] [INFO]   Loaded 38.3M pairs...
+[19:04:07] [INFO]   Loaded 40.0M pairs...
+[19:04:12] [INFO]   Loaded 41.7M pairs...
+[19:04:17] [INFO]   Loaded 43.3M pairs...
+[19:04:21] [INFO]   Loaded 45.0M pairs...
+[19:04:26] [INFO]   Loaded 46.7M pairs...
+[19:04:31] [INFO]   Loaded 48.3M pairs...
+[19:04:36] [INFO]   Loaded 50.0M pairs...
+[19:04:41] [INFO]   Loaded 51.7M pairs...
+[19:04:45] [INFO]   Loaded 53.3M pairs...
+[19:04:50] [INFO]   Loaded 55.0M pairs...
+[19:04:55] [INFO]   Loaded 56.7M pairs...
+[19:05:00] [INFO]   Loaded 58.3M pairs...
+[19:05:04] [INFO]   Finalizing 59,600,372 pairs...
+[19:05:06] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[19:05:16] [INFO]   Built lookup for 150,099 unique pairs
+[19:05:49] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[19:05:49] [PROCESS] [3/5] Grouping pairs by year-month...
+[19:05:49] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[19:05:54] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[19:05:54] [INFO]     2022-01: 1,358,914 pairs
+[19:05:54] [INFO]     2022-02: 1,194,247 pairs
+[19:05:54] [INFO]     2022-03: 1,496,717 pairs
+[19:05:54] [INFO]     2022-04: 1,511,449 pairs
+[19:05:54] [INFO]     2022-05: 1,543,395 pairs
+[19:05:54] [INFO]     2022-06: 1,536,713 pairs
+[19:05:54] [INFO]     2022-07: 1,569,647 pairs
+[19:05:54] [INFO]     2022-08: 1,607,002 pairs
+[19:05:54] [INFO]     2022-09: 1,550,824 pairs
+[19:05:54] [INFO]     2022-10: 1,569,662 pairs
+[19:05:54] [INFO]     2022-11: 1,519,788 pairs
+[19:05:54] [INFO]     2022-12: 1,540,990 pairs
+[19:05:54] [INFO]     2023-01: 1,629,197 pairs
+[19:05:54] [INFO]     2023-02: 1,518,164 pairs
+[19:05:54] [INFO]     2023-03: 1,681,595 pairs
+[19:05:54] [INFO]     2023-04: 1,601,886 pairs
+[19:05:54] [INFO]     2023-05: 1,653,659 pairs
+[19:05:54] [INFO]     2023-06: 1,654,619 pairs
+[19:05:54] [INFO]     2023-07: 1,786,303 pairs
+[19:05:54] [INFO]     2023-08: 1,873,339 pairs
+[19:05:54] [INFO]     2023-09: 1,733,816 pairs
+[19:05:54] [INFO]     2023-10: 1,793,138 pairs
+[19:05:54] [INFO]     2023-11: 1,663,909 pairs
+[19:05:54] [INFO]     2023-12: 1,766,054 pairs
+[19:05:54] [INFO]     2024-01: 1,714,009 pairs
+[19:05:54] [INFO]     2024-02: 1,612,781 pairs
+[19:05:54] [INFO]     2024-03: 1,770,989 pairs
+[19:05:54] [INFO]     2024-04: 1,739,239 pairs
+[19:05:54] [INFO]     2024-05: 1,774,128 pairs
+[19:05:54] [INFO]     2024-06: 1,708,794 pairs
+[19:05:54] [INFO]     2024-07: 1,776,684 pairs
+[19:05:54] [INFO]     2024-08: 1,855,358 pairs
+[19:05:54] [INFO]     2024-09: 1,774,334 pairs
+[19:05:54] [INFO]     2024-10: 1,859,497 pairs
+[19:05:54] [INFO]     2024-11: 1,779,789 pairs
+[19:05:54] [INFO]     2024-12: 1,879,743 pairs
+[19:05:54] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[19:05:54] [INFO]   2022-01: EW/NS = 1.140, v = 30.26 km/s, EW_λ=2019km, NS_λ=1770km (n=1,358,914)
+[19:05:54] [INFO]   2022-02: EW/NS = 0.575, v = 30.15 km/s, EW_λ=1438km, NS_λ=2501km (n=1,194,247)
+[19:05:54] [INFO]   2022-03: EW/NS = 0.888, v = 29.94 km/s, EW_λ=1744km, NS_λ=1965km (n=1,496,717)
+[19:05:55] [INFO]   2022-04: EW/NS = 1.001, v = 29.68 km/s, EW_λ=1762km, NS_λ=1761km (n=1,511,449)
+[19:05:55] [INFO]   2022-05: EW/NS = 1.055, v = 29.45 km/s, EW_λ=2129km, NS_λ=2017km (n=1,543,395)
+[19:05:55] [INFO]   2022-06: EW/NS = 1.132, v = 29.31 km/s, EW_λ=2409km, NS_λ=2129km (n=1,536,713)
+[19:05:55] [INFO]   2022-07: EW/NS = 1.274, v = 29.29 km/s, EW_λ=3101km, NS_λ=2433km (n=1,569,647)
+[19:05:55] [INFO]   2022-08: EW/NS = 1.368, v = 29.41 km/s, EW_λ=2761km, NS_λ=2019km (n=1,607,002)
+[19:05:55] [INFO]   2022-09: EW/NS = 1.332, v = 29.62 km/s, EW_λ=2364km, NS_λ=1774km (n=1,550,824)
+[19:05:55] [INFO]   2022-10: EW/NS = 1.126, v = 29.88 km/s, EW_λ=2106km, NS_λ=1870km (n=1,569,662)
+[19:05:55] [INFO]   2022-11: EW/NS = 0.813, v = 30.11 km/s, EW_λ=1681km, NS_λ=2069km (n=1,519,788)
+[19:05:55] [INFO]   2022-12: EW/NS = 0.738, v = 30.25 km/s, EW_λ=1587km, NS_λ=2151km (n=1,540,990)
+[19:05:56] [INFO]   2023-01: EW/NS = 0.855, v = 30.26 km/s, EW_λ=1720km, NS_λ=2011km (n=1,629,197)
+[19:05:56] [INFO]   2023-02: EW/NS = 0.993, v = 30.15 km/s, EW_λ=1931km, NS_λ=1944km (n=1,518,164)
+[19:05:56] [INFO]   2023-03: EW/NS = 0.959, v = 29.94 km/s, EW_λ=2052km, NS_λ=2141km (n=1,681,595)
+[19:05:56] [INFO]   2023-04: EW/NS = 1.189, v = 29.68 km/s, EW_λ=2350km, NS_λ=1977km (n=1,601,886)
+[19:05:56] [INFO]   2023-05: EW/NS = 1.209, v = 29.45 km/s, EW_λ=2312km, NS_λ=1912km (n=1,653,659)
+[19:05:56] [INFO]   2023-06: EW/NS = 1.050, v = 29.31 km/s, EW_λ=2382km, NS_λ=2269km (n=1,654,619)
+[19:05:56] [INFO]   2023-07: EW/NS = 1.027, v = 29.29 km/s, EW_λ=2740km, NS_λ=2668km (n=1,786,303)
+[19:05:56] [INFO]   2023-08: EW/NS = 1.383, v = 29.41 km/s, EW_λ=3077km, NS_λ=2224km (n=1,873,339)
+[19:05:57] [INFO]   2023-09: EW/NS = 1.191, v = 29.62 km/s, EW_λ=1926km, NS_λ=1617km (n=1,733,816)
+[19:05:57] [INFO]   2023-10: EW/NS = 1.133, v = 29.88 km/s, EW_λ=2438km, NS_λ=2152km (n=1,793,138)
+[19:05:57] [INFO]   2023-11: EW/NS = 1.203, v = 30.11 km/s, EW_λ=2269km, NS_λ=1887km (n=1,663,909)
+[19:05:57] [INFO]   2023-12: EW/NS = 1.019, v = 30.25 km/s, EW_λ=2037km, NS_λ=1999km (n=1,766,054)
+[19:05:57] [INFO]   2024-01: EW/NS = 0.792, v = 30.26 km/s, EW_λ=2020km, NS_λ=2550km (n=1,714,009)
+[19:05:57] [INFO]   2024-02: EW/NS = 0.932, v = 30.15 km/s, EW_λ=1665km, NS_λ=1786km (n=1,612,781)
+[19:05:57] [INFO]   2024-03: EW/NS = 0.886, v = 29.93 km/s, EW_λ=1516km, NS_λ=1712km (n=1,770,989)
+[19:05:57] [INFO]   2024-04: EW/NS = 1.095, v = 29.68 km/s, EW_λ=1646km, NS_λ=1503km (n=1,739,239)
+[19:05:58] [INFO]   2024-05: EW/NS = 0.847, v = 29.45 km/s, EW_λ=1629km, NS_λ=1924km (n=1,774,128)
+[19:05:58] [INFO]   2024-06: EW/NS = 0.779, v = 29.31 km/s, EW_λ=1777km, NS_λ=2281km (n=1,708,794)
+[19:05:58] [INFO]   2024-07: EW/NS = 0.912, v = 29.29 km/s, EW_λ=1580km, NS_λ=1733km (n=1,776,684)
+[19:05:58] [INFO]   2024-08: EW/NS = 1.069, v = 29.41 km/s, EW_λ=1605km, NS_λ=1501km (n=1,855,358)
+[19:05:58] [INFO]   2024-09: EW/NS = 0.877, v = 29.63 km/s, EW_λ=1570km, NS_λ=1791km (n=1,774,334)
+[19:05:58] [INFO]   2024-10: EW/NS = 0.793, v = 29.89 km/s, EW_λ=1765km, NS_λ=2225km (n=1,859,497)
+[19:05:58] [INFO]   2024-11: EW/NS = 0.797, v = 30.12 km/s, EW_λ=1751km, NS_λ=2196km (n=1,779,789)
+[19:05:59] [INFO]   2024-12: EW/NS = 0.790, v = 30.26 km/s, EW_λ=1458km, NS_λ=1846km (n=1,879,743)
+[19:05:59] [PROCESS] [5/5] Computing orbital velocity correlation...
+[19:05:59] [INFO]   Pearson r = -0.463
+[19:05:59] [INFO]   p-value = 4.47e-03
+[19:05:59] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[19:06:01] [INFO]   Monte Carlo: 43/10000 exceeded
+[19:06:01] [INFO]   Empirical p-value: 4.40e-03
+[19:06:01] [INFO]   Significance: 2.8σ
+[19:06:01] [PROCESS] [5/5] Creating visualizations...
+[19:06:02] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_optimal_100_pos_jitter_phase_alignment.png
+[19:06:02] [INFO] 
+[19:06:02] [INFO] ============================================================
+[19:06:02] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[19:06:02] [INFO] ============================================================
+[19:06:02] [INFO]   Year-months analyzed: 36
+[19:06:02] [INFO]   Pearson r: -0.463
+[19:06:02] [INFO]   p-value: 4.47e-03
+[19:06:02] [INFO]   Monte Carlo p: 4.40e-03
+[19:06:02] [INFO]   Significance: 2.8σ
+[19:06:02] [INFO] 
+[19:06:02] [INFO] Comparison to CODE Longspan:
+[19:06:02] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:06:02] [INFO]   RINEX: r = -0.463, p = 4.40e-03 (2.8σ)
+[19:06:02] [INFO] 
+[19:06:02] [WARNING] TEP SIGNATURE: WEAK ORBITAL COUPLING
+[19:06:02] [WARNING]   More data needed for confirmation
+[19:06:02] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_optimal_100_pos_jitter_phase_alignment.json
+[19:06:02] [INFO] 
+[19:06:02] [INFO] ================================================================================
+[19:06:02] [INFO] Step 2.5 Complete
+[19:06:02] [INFO] ================================================================================
+[19:06:03] [INFO] 
+[19:06:03] [INFO] ================================================================================
+[19:06:03] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (OPTIMAL 100)
+[19:06:03] [INFO] ================================================================================
+[19:06:03] [INFO] 
+[19:06:03] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[19:06:03] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:06:03] [INFO] 
+[19:06:03] [INFO]   Metric: clock_drift, Coherence: msc
+[19:06:03] [INFO] Loaded 538 station coordinates
+[19:06:03] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[19:06:03] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[19:06:08] [INFO]   Loaded 1.7M pairs...
+[19:06:13] [INFO]   Loaded 3.3M pairs...
+[19:06:17] [INFO]   Loaded 5.0M pairs...
+[19:06:22] [INFO]   Loaded 6.6M pairs...
+[19:06:27] [INFO]   Loaded 8.3M pairs...
+[19:06:32] [INFO]   Loaded 10.0M pairs...
+[19:06:36] [INFO]   Loaded 11.7M pairs...
+[19:06:41] [INFO]   Loaded 13.3M pairs...
+[19:06:46] [INFO]   Loaded 15.0M pairs...
+[19:06:51] [INFO]   Loaded 16.7M pairs...
+[19:06:55] [INFO]   Loaded 18.3M pairs...
+[19:07:00] [INFO]   Loaded 20.0M pairs...
+[19:07:05] [INFO]   Loaded 21.6M pairs...
+[19:07:09] [INFO]   Loaded 23.3M pairs...
+[19:07:14] [INFO]   Loaded 25.0M pairs...
+[19:07:19] [INFO]   Loaded 26.6M pairs...
+[19:07:24] [INFO]   Loaded 28.3M pairs...
+[19:07:29] [INFO]   Loaded 30.0M pairs...
+[19:07:33] [INFO]   Loaded 31.6M pairs...
+[19:07:38] [INFO]   Loaded 33.3M pairs...
+[19:07:43] [INFO]   Loaded 35.0M pairs...
+[19:07:48] [INFO]   Loaded 36.6M pairs...
+[19:07:52] [INFO]   Loaded 38.3M pairs...
+[19:07:57] [INFO]   Loaded 40.0M pairs...
+[19:08:02] [INFO]   Loaded 41.6M pairs...
+[19:08:07] [INFO]   Loaded 43.3M pairs...
+[19:08:12] [INFO]   Loaded 45.0M pairs...
+[19:08:16] [INFO]   Loaded 46.7M pairs...
+[19:08:21] [INFO]   Loaded 48.3M pairs...
+[19:08:26] [INFO]   Loaded 50.0M pairs...
+[19:08:31] [INFO]   Loaded 51.6M pairs...
+[19:08:36] [INFO]   Loaded 53.3M pairs...
+[19:08:41] [INFO]   Loaded 55.0M pairs...
+[19:08:46] [INFO]   Loaded 56.7M pairs...
+[19:08:50] [INFO]   Loaded 58.3M pairs...
+[19:08:54] [INFO]   Finalizing 59,600,372 pairs...
+[19:08:57] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[19:09:07] [INFO]   Built lookup for 150,099 unique pairs
+[19:09:40] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[19:09:40] [PROCESS] [3/5] Grouping pairs by year-month...
+[19:09:40] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[19:09:45] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[19:09:45] [INFO]     2022-01: 1,358,914 pairs
+[19:09:45] [INFO]     2022-02: 1,194,247 pairs
+[19:09:45] [INFO]     2022-03: 1,496,717 pairs
+[19:09:45] [INFO]     2022-04: 1,511,449 pairs
+[19:09:45] [INFO]     2022-05: 1,543,395 pairs
+[19:09:45] [INFO]     2022-06: 1,536,713 pairs
+[19:09:45] [INFO]     2022-07: 1,569,647 pairs
+[19:09:45] [INFO]     2022-08: 1,607,002 pairs
+[19:09:45] [INFO]     2022-09: 1,550,824 pairs
+[19:09:45] [INFO]     2022-10: 1,569,662 pairs
+[19:09:45] [INFO]     2022-11: 1,519,788 pairs
+[19:09:45] [INFO]     2022-12: 1,540,990 pairs
+[19:09:45] [INFO]     2023-01: 1,629,197 pairs
+[19:09:45] [INFO]     2023-02: 1,518,164 pairs
+[19:09:45] [INFO]     2023-03: 1,681,595 pairs
+[19:09:45] [INFO]     2023-04: 1,601,886 pairs
+[19:09:45] [INFO]     2023-05: 1,653,659 pairs
+[19:09:45] [INFO]     2023-06: 1,654,619 pairs
+[19:09:45] [INFO]     2023-07: 1,786,303 pairs
+[19:09:45] [INFO]     2023-08: 1,873,339 pairs
+[19:09:45] [INFO]     2023-09: 1,733,816 pairs
+[19:09:45] [INFO]     2023-10: 1,793,138 pairs
+[19:09:45] [INFO]     2023-11: 1,663,909 pairs
+[19:09:45] [INFO]     2023-12: 1,766,054 pairs
+[19:09:45] [INFO]     2024-01: 1,714,009 pairs
+[19:09:45] [INFO]     2024-02: 1,612,781 pairs
+[19:09:45] [INFO]     2024-03: 1,770,989 pairs
+[19:09:45] [INFO]     2024-04: 1,739,239 pairs
+[19:09:45] [INFO]     2024-05: 1,774,128 pairs
+[19:09:45] [INFO]     2024-06: 1,708,794 pairs
+[19:09:45] [INFO]     2024-07: 1,776,684 pairs
+[19:09:45] [INFO]     2024-08: 1,855,358 pairs
+[19:09:45] [INFO]     2024-09: 1,774,334 pairs
+[19:09:45] [INFO]     2024-10: 1,859,497 pairs
+[19:09:45] [INFO]     2024-11: 1,779,789 pairs
+[19:09:45] [INFO]     2024-12: 1,879,743 pairs
+[19:09:45] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[19:09:45] [INFO]   2022-01: EW/NS = 0.786, v = 30.26 km/s, EW_λ=588km, NS_λ=748km (n=1,358,914)
+[19:09:46] [INFO]   2022-02: EW/NS = 0.739, v = 30.15 km/s, EW_λ=597km, NS_λ=808km (n=1,194,247)
+[19:09:46] [INFO]   2022-03: EW/NS = 0.988, v = 29.94 km/s, EW_λ=736km, NS_λ=745km (n=1,496,717)
+[19:09:46] [INFO]   2022-04: EW/NS = 0.976, v = 29.68 km/s, EW_λ=808km, NS_λ=828km (n=1,511,449)
+[19:09:46] [INFO]   2022-05: EW/NS = 0.874, v = 29.45 km/s, EW_λ=623km, NS_λ=713km (n=1,543,395)
+[19:09:46] [INFO]   2022-06: EW/NS = 0.754, v = 29.31 km/s, EW_λ=731km, NS_λ=969km (n=1,536,713)
+[19:09:46] [INFO]   2022-07: EW/NS = 0.870, v = 29.29 km/s, EW_λ=818km, NS_λ=941km (n=1,569,647)
+[19:09:46] [INFO]   2022-08: EW/NS = 1.025, v = 29.41 km/s, EW_λ=946km, NS_λ=923km (n=1,607,002)
+[19:09:46] [INFO]   2022-09: EW/NS = 1.083, v = 29.62 km/s, EW_λ=790km, NS_λ=730km (n=1,550,824)
+[19:09:47] [INFO]   2022-10: EW/NS = 0.975, v = 29.88 km/s, EW_λ=679km, NS_λ=696km (n=1,569,662)
+[19:09:47] [INFO]   2022-11: EW/NS = 1.042, v = 30.11 km/s, EW_λ=663km, NS_λ=636km (n=1,519,788)
+[19:09:47] [INFO]   2022-12: EW/NS = 0.618, v = 30.25 km/s, EW_λ=619km, NS_λ=1001km (n=1,540,990)
+[19:09:47] [INFO]   2023-01: EW/NS = 0.585, v = 30.26 km/s, EW_λ=634km, NS_λ=1082km (n=1,629,197)
+[19:09:47] [INFO]   2023-02: EW/NS = 0.899, v = 30.15 km/s, EW_λ=569km, NS_λ=634km (n=1,518,164)
+[19:09:47] [INFO]   2023-03: EW/NS = 1.122, v = 29.94 km/s, EW_λ=651km, NS_λ=580km (n=1,681,595)
+[19:09:47] [INFO]   2023-04: EW/NS = 1.016, v = 29.68 km/s, EW_λ=661km, NS_λ=650km (n=1,601,886)
+[19:09:47] [INFO]   2023-05: EW/NS = 0.997, v = 29.45 km/s, EW_λ=738km, NS_λ=740km (n=1,653,659)
+[19:09:48] [INFO]   2023-06: EW/NS = 0.929, v = 29.31 km/s, EW_λ=716km, NS_λ=771km (n=1,654,619)
+[19:09:48] [INFO]   2023-07: EW/NS = 1.049, v = 29.29 km/s, EW_λ=1095km, NS_λ=1044km (n=1,786,303)
+[19:09:48] [INFO]   2023-08: EW/NS = 1.214, v = 29.41 km/s, EW_λ=917km, NS_λ=755km (n=1,873,339)
+[19:09:48] [INFO]   2023-09: EW/NS = 1.113, v = 29.62 km/s, EW_λ=757km, NS_λ=680km (n=1,733,816)
+[19:09:48] [INFO]   2023-10: EW/NS = 1.166, v = 29.88 km/s, EW_λ=739km, NS_λ=634km (n=1,793,138)
+[19:09:48] [INFO]   2023-11: EW/NS = 0.833, v = 30.11 km/s, EW_λ=624km, NS_λ=749km (n=1,663,909)
+[19:09:48] [INFO]   2023-12: EW/NS = 0.663, v = 30.25 km/s, EW_λ=611km, NS_λ=921km (n=1,766,054)
+[19:09:48] [INFO]   2024-01: EW/NS = 0.410, v = 30.26 km/s, EW_λ=651km, NS_λ=1589km (n=1,714,009)
+[19:09:49] [INFO]   2024-02: EW/NS = 0.785, v = 30.15 km/s, EW_λ=791km, NS_λ=1007km (n=1,612,781)
+[19:09:49] [INFO]   2024-03: EW/NS = 1.287, v = 29.93 km/s, EW_λ=1031km, NS_λ=801km (n=1,770,989)
+[19:09:49] [INFO]   2024-04: EW/NS = 1.517, v = 29.68 km/s, EW_λ=1065km, NS_λ=702km (n=1,739,239)
+[19:09:49] [INFO]   2024-05: EW/NS = 1.144, v = 29.45 km/s, EW_λ=704km, NS_λ=616km (n=1,774,128)
+[19:09:49] [INFO]   2024-06: EW/NS = 0.823, v = 29.31 km/s, EW_λ=611km, NS_λ=742km (n=1,708,794)
+[19:09:49] [INFO]   2024-07: EW/NS = 0.911, v = 29.29 km/s, EW_λ=705km, NS_λ=774km (n=1,776,684)
+[19:09:49] [INFO]   2024-08: EW/NS = 1.094, v = 29.41 km/s, EW_λ=761km, NS_λ=696km (n=1,855,358)
+[19:09:50] [INFO]   2024-09: EW/NS = 1.422, v = 29.63 km/s, EW_λ=668km, NS_λ=470km (n=1,774,334)
+[19:09:50] [INFO]   2024-10: EW/NS = 1.210, v = 29.89 km/s, EW_λ=935km, NS_λ=773km (n=1,859,497)
+[19:09:50] [INFO]   2024-11: EW/NS = 0.942, v = 30.12 km/s, EW_λ=1170km, NS_λ=1242km (n=1,779,789)
+[19:09:50] [INFO]   2024-12: EW/NS = 0.448, v = 30.26 km/s, EW_λ=662km, NS_λ=1479km (n=1,879,743)
+[19:09:50] [PROCESS] [5/5] Computing orbital velocity correlation...
+[19:09:50] [INFO]   Pearson r = -0.438
+[19:09:50] [INFO]   p-value = 7.62e-03
+[19:09:50] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[19:09:53] [INFO]   Monte Carlo: 72/10000 exceeded
+[19:09:53] [INFO]   Empirical p-value: 7.30e-03
+[19:09:53] [INFO]   Significance: 2.7σ
+[19:09:53] [PROCESS] [5/5] Creating visualizations...
+[19:09:54] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_optimal_100_clock_drift_msc.png
+[19:09:54] [INFO] 
+[19:09:54] [INFO] ============================================================
+[19:09:54] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[19:09:54] [INFO] ============================================================
+[19:09:54] [INFO]   Year-months analyzed: 36
+[19:09:54] [INFO]   Pearson r: -0.438
+[19:09:54] [INFO]   p-value: 7.62e-03
+[19:09:54] [INFO]   Monte Carlo p: 7.30e-03
+[19:09:54] [INFO]   Significance: 2.7σ
+[19:09:54] [INFO] 
+[19:09:54] [INFO] Comparison to CODE Longspan:
+[19:09:54] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:09:54] [INFO]   RINEX: r = -0.438, p = 7.30e-03 (2.7σ)
+[19:09:54] [INFO] 
+[19:09:54] [WARNING] TEP SIGNATURE: WEAK ORBITAL COUPLING
+[19:09:54] [WARNING]   More data needed for confirmation
+[19:09:54] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_optimal_100_clock_drift_msc.json
+[19:09:54] [INFO] 
+[19:09:54] [INFO] ================================================================================
+[19:09:54] [INFO] Step 2.5 Complete
+[19:09:54] [INFO] ================================================================================
+[19:09:55] [INFO] 
+[19:09:55] [INFO] ================================================================================
+[19:09:55] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (OPTIMAL 100)
+[19:09:55] [INFO] ================================================================================
+[19:09:55] [INFO] 
+[19:09:55] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[19:09:55] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:09:55] [INFO] 
+[19:09:55] [INFO]   Metric: clock_drift, Coherence: phase_alignment
+[19:09:55] [INFO] Loaded 538 station coordinates
+[19:09:55] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[19:09:55] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[19:09:59] [INFO]   Loaded 1.7M pairs...
+[19:10:04] [INFO]   Loaded 3.3M pairs...
+[19:10:09] [INFO]   Loaded 5.0M pairs...
+[19:10:14] [INFO]   Loaded 6.6M pairs...
+[19:10:18] [INFO]   Loaded 8.3M pairs...
+[19:10:23] [INFO]   Loaded 10.0M pairs...
+[19:10:28] [INFO]   Loaded 11.7M pairs...
+[19:10:33] [INFO]   Loaded 13.3M pairs...
+[19:10:37] [INFO]   Loaded 15.0M pairs...
+[19:10:42] [INFO]   Loaded 16.7M pairs...
+[19:10:47] [INFO]   Loaded 18.3M pairs...
+[19:10:51] [INFO]   Loaded 20.0M pairs...
+[19:10:56] [INFO]   Loaded 21.6M pairs...
+[19:11:01] [INFO]   Loaded 23.3M pairs...
+[19:11:06] [INFO]   Loaded 25.0M pairs...
+[19:11:10] [INFO]   Loaded 26.6M pairs...
+[19:11:15] [INFO]   Loaded 28.3M pairs...
+[19:11:20] [INFO]   Loaded 30.0M pairs...
+[19:11:25] [INFO]   Loaded 31.6M pairs...
+[19:11:29] [INFO]   Loaded 33.3M pairs...
+[19:11:34] [INFO]   Loaded 35.0M pairs...
+[19:11:39] [INFO]   Loaded 36.6M pairs...
+[19:11:43] [INFO]   Loaded 38.3M pairs...
+[19:11:48] [INFO]   Loaded 40.0M pairs...
+[19:11:53] [INFO]   Loaded 41.6M pairs...
+[19:11:58] [INFO]   Loaded 43.3M pairs...
+[19:12:02] [INFO]   Loaded 45.0M pairs...
+[19:12:07] [INFO]   Loaded 46.7M pairs...
+[19:12:12] [INFO]   Loaded 48.3M pairs...
+[19:12:17] [INFO]   Loaded 50.0M pairs...
+[19:12:22] [INFO]   Loaded 51.6M pairs...
+[19:12:26] [INFO]   Loaded 53.3M pairs...
+[19:12:31] [INFO]   Loaded 55.0M pairs...
+[19:12:36] [INFO]   Loaded 56.7M pairs...
+[19:12:41] [INFO]   Loaded 58.3M pairs...
+[19:12:44] [INFO]   Finalizing 59,600,372 pairs...
+[19:12:46] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[19:12:56] [INFO]   Built lookup for 150,099 unique pairs
+[19:13:28] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[19:13:28] [PROCESS] [3/5] Grouping pairs by year-month...
+[19:13:29] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[19:13:34] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[19:13:34] [INFO]     2022-01: 1,358,914 pairs
+[19:13:34] [INFO]     2022-02: 1,194,247 pairs
+[19:13:34] [INFO]     2022-03: 1,496,717 pairs
+[19:13:34] [INFO]     2022-04: 1,511,449 pairs
+[19:13:34] [INFO]     2022-05: 1,543,395 pairs
+[19:13:34] [INFO]     2022-06: 1,536,713 pairs
+[19:13:34] [INFO]     2022-07: 1,569,647 pairs
+[19:13:34] [INFO]     2022-08: 1,607,002 pairs
+[19:13:34] [INFO]     2022-09: 1,550,824 pairs
+[19:13:34] [INFO]     2022-10: 1,569,662 pairs
+[19:13:34] [INFO]     2022-11: 1,519,788 pairs
+[19:13:34] [INFO]     2022-12: 1,540,990 pairs
+[19:13:34] [INFO]     2023-01: 1,629,197 pairs
+[19:13:34] [INFO]     2023-02: 1,518,164 pairs
+[19:13:34] [INFO]     2023-03: 1,681,595 pairs
+[19:13:34] [INFO]     2023-04: 1,601,886 pairs
+[19:13:34] [INFO]     2023-05: 1,653,659 pairs
+[19:13:34] [INFO]     2023-06: 1,654,619 pairs
+[19:13:34] [INFO]     2023-07: 1,786,303 pairs
+[19:13:34] [INFO]     2023-08: 1,873,339 pairs
+[19:13:34] [INFO]     2023-09: 1,733,816 pairs
+[19:13:34] [INFO]     2023-10: 1,793,138 pairs
+[19:13:34] [INFO]     2023-11: 1,663,909 pairs
+[19:13:34] [INFO]     2023-12: 1,766,054 pairs
+[19:13:34] [INFO]     2024-01: 1,714,009 pairs
+[19:13:34] [INFO]     2024-02: 1,612,781 pairs
+[19:13:34] [INFO]     2024-03: 1,770,989 pairs
+[19:13:34] [INFO]     2024-04: 1,739,239 pairs
+[19:13:34] [INFO]     2024-05: 1,774,128 pairs
+[19:13:34] [INFO]     2024-06: 1,708,794 pairs
+[19:13:34] [INFO]     2024-07: 1,776,684 pairs
+[19:13:34] [INFO]     2024-08: 1,855,358 pairs
+[19:13:34] [INFO]     2024-09: 1,774,334 pairs
+[19:13:34] [INFO]     2024-10: 1,859,497 pairs
+[19:13:34] [INFO]     2024-11: 1,779,789 pairs
+[19:13:34] [INFO]     2024-12: 1,879,743 pairs
+[19:13:34] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[19:13:34] [INFO]   2022-01: EW/NS = 0.752, v = 30.26 km/s, EW_λ=924km, NS_λ=1229km (n=1,358,914)
+[19:13:34] [INFO]   2022-02: EW/NS = 0.886, v = 30.15 km/s, EW_λ=1067km, NS_λ=1204km (n=1,194,247)
+[19:13:34] [INFO]   2022-03: EW/NS = 1.013, v = 29.94 km/s, EW_λ=1067km, NS_λ=1053km (n=1,496,717)
+[19:13:34] [INFO]   2022-04: EW/NS = 1.261, v = 29.68 km/s, EW_λ=1181km, NS_λ=936km (n=1,511,449)
+[19:13:34] [INFO]   2022-05: EW/NS = 0.919, v = 29.45 km/s, EW_λ=956km, NS_λ=1040km (n=1,543,395)
+[19:13:34] [INFO]   2022-06: EW/NS = 0.856, v = 29.31 km/s, EW_λ=951km, NS_λ=1110km (n=1,536,713)
+[19:13:34] [INFO]   2022-07: EW/NS = 0.939, v = 29.29 km/s, EW_λ=1069km, NS_λ=1138km (n=1,569,647)
+[19:13:35] [INFO]   2022-08: EW/NS = 1.146, v = 29.41 km/s, EW_λ=1182km, NS_λ=1032km (n=1,607,002)
+[19:13:35] [INFO]   2022-09: EW/NS = 1.047, v = 29.62 km/s, EW_λ=1023km, NS_λ=977km (n=1,550,824)
+[19:13:35] [INFO]   2022-10: EW/NS = 0.867, v = 29.88 km/s, EW_λ=1014km, NS_λ=1169km (n=1,569,662)
+[19:13:35] [INFO]   2022-11: EW/NS = 1.118, v = 30.11 km/s, EW_λ=1013km, NS_λ=907km (n=1,519,788)
+[19:13:35] [INFO]   2022-12: EW/NS = 1.021, v = 30.25 km/s, EW_λ=940km, NS_λ=920km (n=1,540,990)
+[19:13:35] [INFO]   2023-01: EW/NS = 0.665, v = 30.26 km/s, EW_λ=861km, NS_λ=1295km (n=1,629,197)
+[19:13:35] [INFO]   2023-02: EW/NS = 0.751, v = 30.15 km/s, EW_λ=820km, NS_λ=1092km (n=1,518,164)
+[19:13:35] [INFO]   2023-03: EW/NS = 0.918, v = 29.94 km/s, EW_λ=857km, NS_λ=934km (n=1,681,595)
+[19:13:36] [INFO]   2023-04: EW/NS = 1.063, v = 29.68 km/s, EW_λ=1032km, NS_λ=971km (n=1,601,886)
+[19:13:36] [INFO]   2023-05: EW/NS = 0.910, v = 29.45 km/s, EW_λ=1020km, NS_λ=1121km (n=1,653,659)
+[19:13:36] [INFO]   2023-06: EW/NS = 0.766, v = 29.31 km/s, EW_λ=837km, NS_λ=1093km (n=1,654,619)
+[19:13:36] [INFO]   2023-07: EW/NS = 0.831, v = 29.29 km/s, EW_λ=927km, NS_λ=1116km (n=1,786,303)
+[19:13:36] [INFO]   2023-08: EW/NS = 0.918, v = 29.41 km/s, EW_λ=941km, NS_λ=1025km (n=1,873,339)
+[19:13:36] [INFO]   2023-09: EW/NS = 0.790, v = 29.62 km/s, EW_λ=771km, NS_λ=976km (n=1,733,816)
+[19:13:36] [INFO]   2023-10: EW/NS = 0.960, v = 29.88 km/s, EW_λ=877km, NS_λ=913km (n=1,793,138)
+[19:13:37] [INFO]   2023-11: EW/NS = 0.930, v = 30.11 km/s, EW_λ=956km, NS_λ=1028km (n=1,663,909)
+[19:13:37] [INFO]   2023-12: EW/NS = 0.664, v = 30.25 km/s, EW_λ=907km, NS_λ=1366km (n=1,766,054)
+[19:13:37] [INFO]   2024-01: EW/NS = 0.752, v = 30.26 km/s, EW_λ=837km, NS_λ=1113km (n=1,714,009)
+[19:13:37] [INFO]   2024-02: EW/NS = 0.951, v = 30.15 km/s, EW_λ=956km, NS_λ=1005km (n=1,612,781)
+[19:13:37] [INFO]   2024-03: EW/NS = 0.848, v = 29.93 km/s, EW_λ=724km, NS_λ=853km (n=1,770,989)
+[19:13:37] [INFO]   2024-04: EW/NS = 0.762, v = 29.68 km/s, EW_λ=766km, NS_λ=1005km (n=1,739,239)
+[19:13:37] [INFO]   2024-05: EW/NS = 0.642, v = 29.45 km/s, EW_λ=718km, NS_λ=1117km (n=1,774,128)
+[19:13:37] [INFO]   2024-06: EW/NS = 0.586, v = 29.31 km/s, EW_λ=663km, NS_λ=1132km (n=1,708,794)
+[19:13:38] [INFO]   2024-07: EW/NS = 0.794, v = 29.29 km/s, EW_λ=794km, NS_λ=1000km (n=1,776,684)
+[19:13:38] [INFO]   2024-08: EW/NS = 1.142, v = 29.41 km/s, EW_λ=900km, NS_λ=788km (n=1,855,358)
+[19:13:38] [INFO]   2024-09: EW/NS = 1.281, v = 29.63 km/s, EW_λ=853km, NS_λ=666km (n=1,774,334)
+[19:13:38] [INFO]   2024-10: EW/NS = 1.023, v = 29.89 km/s, EW_λ=881km, NS_λ=861km (n=1,859,497)
+[19:13:38] [INFO]   2024-11: EW/NS = 0.838, v = 30.12 km/s, EW_λ=821km, NS_λ=980km (n=1,779,789)
+[19:13:38] [INFO]   2024-12: EW/NS = 0.856, v = 30.26 km/s, EW_λ=817km, NS_λ=955km (n=1,879,743)
+[19:13:38] [PROCESS] [5/5] Computing orbital velocity correlation...
+[19:13:38] [INFO]   Pearson r = -0.093
+[19:13:38] [INFO]   p-value = 5.89e-01
+[19:13:38] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[19:13:41] [INFO]   Monte Carlo: 5991/10000 exceeded
+[19:13:41] [INFO]   Empirical p-value: 5.99e-01
+[19:13:41] [INFO]   Significance: 0.5σ
+[19:13:41] [PROCESS] [5/5] Creating visualizations...
+[19:13:42] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_optimal_100_clock_drift_phase_alignment.png
+[19:13:42] [INFO] 
+[19:13:42] [INFO] ============================================================
+[19:13:42] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[19:13:42] [INFO] ============================================================
+[19:13:42] [INFO]   Year-months analyzed: 36
+[19:13:42] [INFO]   Pearson r: -0.093
+[19:13:42] [INFO]   p-value: 5.89e-01
+[19:13:42] [INFO]   Monte Carlo p: 5.99e-01
+[19:13:42] [INFO]   Significance: 0.5σ
+[19:13:42] [INFO] 
+[19:13:42] [INFO] Comparison to CODE Longspan:
+[19:13:42] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:13:42] [INFO]   RINEX: r = -0.093, p = 5.99e-01 (0.5σ)
+[19:13:42] [INFO] 
+[19:13:42] [WARNING] TEP SIGNATURE: NO ORBITAL COUPLING DETECTED
+[19:13:42] [WARNING]   May need full year of data
+[19:13:42] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_optimal_100_clock_drift_phase_alignment.json
+[19:13:42] [INFO] 
+[19:13:42] [INFO] ================================================================================
+[19:13:42] [INFO] Step 2.5 Complete
+[19:13:42] [INFO] ================================================================================
+[19:13:43] [INFO] 
+[19:13:43] [INFO] ================================================================================
+[19:13:43] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (ALL STATIONS)
+[19:13:43] [INFO] ================================================================================
+[19:13:43] [INFO] 
+[19:13:43] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[19:13:43] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:13:43] [INFO] 
+[19:13:43] [INFO]   Metric: clock_bias, Coherence: msc
+[19:13:43] [INFO] Loaded 538 station coordinates
+[19:13:43] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[19:13:43] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[19:13:48] [INFO]   Loaded 1.7M pairs...
+[19:13:53] [INFO]   Loaded 3.4M pairs...
+[19:13:57] [INFO]   Loaded 5.0M pairs...
+[19:14:02] [INFO]   Loaded 6.7M pairs...
+[19:14:07] [INFO]   Loaded 8.3M pairs...
+[19:14:12] [INFO]   Loaded 10.0M pairs...
+[19:14:16] [INFO]   Loaded 11.7M pairs...
+[19:14:21] [INFO]   Loaded 13.4M pairs...
+[19:14:26] [INFO]   Loaded 15.0M pairs...
+[19:14:31] [INFO]   Loaded 16.7M pairs...
+[19:14:35] [INFO]   Loaded 18.4M pairs...
+[19:14:40] [INFO]   Loaded 20.0M pairs...
+[19:14:45] [INFO]   Loaded 21.7M pairs...
+[19:14:50] [INFO]   Loaded 23.4M pairs...
+[19:14:55] [INFO]   Loaded 25.0M pairs...
+[19:14:59] [INFO]   Loaded 26.7M pairs...
+[19:15:04] [INFO]   Loaded 28.4M pairs...
+[19:15:09] [INFO]   Loaded 30.0M pairs...
+[19:15:14] [INFO]   Loaded 31.7M pairs...
+[19:15:19] [INFO]   Loaded 33.4M pairs...
+[19:15:23] [INFO]   Loaded 35.0M pairs...
+[19:15:28] [INFO]   Loaded 36.7M pairs...
+[19:15:33] [INFO]   Loaded 38.3M pairs...
+[19:15:38] [INFO]   Loaded 40.0M pairs...
+[19:15:43] [INFO]   Loaded 41.7M pairs...
+[19:15:48] [INFO]   Loaded 43.3M pairs...
+[19:15:52] [INFO]   Loaded 45.0M pairs...
+[19:15:57] [INFO]   Loaded 46.7M pairs...
+[19:16:02] [INFO]   Loaded 48.3M pairs...
+[19:16:07] [INFO]   Loaded 50.0M pairs...
+[19:16:12] [INFO]   Loaded 51.7M pairs...
+[19:16:17] [INFO]   Loaded 53.4M pairs...
+[19:16:21] [INFO]   Loaded 55.0M pairs...
+[19:16:26] [INFO]   Loaded 56.7M pairs...
+[19:16:31] [INFO]   Loaded 58.4M pairs...
+[19:16:35] [INFO]   Finalizing 59,600,372 pairs...
+[19:16:37] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[19:16:47] [INFO]   Built lookup for 150,099 unique pairs
+[19:17:20] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[19:17:20] [PROCESS] [3/5] Grouping pairs by year-month...
+[19:17:21] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[19:17:26] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[19:17:26] [INFO]     2022-01: 1,358,914 pairs
+[19:17:26] [INFO]     2022-02: 1,194,247 pairs
+[19:17:26] [INFO]     2022-03: 1,496,717 pairs
+[19:17:26] [INFO]     2022-04: 1,511,449 pairs
+[19:17:26] [INFO]     2022-05: 1,543,395 pairs
+[19:17:26] [INFO]     2022-06: 1,536,713 pairs
+[19:17:26] [INFO]     2022-07: 1,569,647 pairs
+[19:17:26] [INFO]     2022-08: 1,607,002 pairs
+[19:17:26] [INFO]     2022-09: 1,550,824 pairs
+[19:17:26] [INFO]     2022-10: 1,569,662 pairs
+[19:17:26] [INFO]     2022-11: 1,519,788 pairs
+[19:17:26] [INFO]     2022-12: 1,540,990 pairs
+[19:17:26] [INFO]     2023-01: 1,629,197 pairs
+[19:17:26] [INFO]     2023-02: 1,518,164 pairs
+[19:17:26] [INFO]     2023-03: 1,681,595 pairs
+[19:17:26] [INFO]     2023-04: 1,601,886 pairs
+[19:17:26] [INFO]     2023-05: 1,653,659 pairs
+[19:17:26] [INFO]     2023-06: 1,654,619 pairs
+[19:17:26] [INFO]     2023-07: 1,786,303 pairs
+[19:17:26] [INFO]     2023-08: 1,873,339 pairs
+[19:17:26] [INFO]     2023-09: 1,733,816 pairs
+[19:17:26] [INFO]     2023-10: 1,793,138 pairs
+[19:17:26] [INFO]     2023-11: 1,663,909 pairs
+[19:17:26] [INFO]     2023-12: 1,766,054 pairs
+[19:17:26] [INFO]     2024-01: 1,714,009 pairs
+[19:17:26] [INFO]     2024-02: 1,612,781 pairs
+[19:17:26] [INFO]     2024-03: 1,770,989 pairs
+[19:17:26] [INFO]     2024-04: 1,739,239 pairs
+[19:17:26] [INFO]     2024-05: 1,774,128 pairs
+[19:17:26] [INFO]     2024-06: 1,708,794 pairs
+[19:17:26] [INFO]     2024-07: 1,776,684 pairs
+[19:17:26] [INFO]     2024-08: 1,855,358 pairs
+[19:17:26] [INFO]     2024-09: 1,774,334 pairs
+[19:17:26] [INFO]     2024-10: 1,859,497 pairs
+[19:17:26] [INFO]     2024-11: 1,779,789 pairs
+[19:17:26] [INFO]     2024-12: 1,879,743 pairs
+[19:17:26] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[19:17:26] [INFO]   2022-01: EW/NS = 0.772, v = 30.26 km/s, EW_λ=619km, NS_λ=802km (n=1,358,914)
+[19:17:26] [INFO]   2022-02: EW/NS = 0.712, v = 30.15 km/s, EW_λ=619km, NS_λ=869km (n=1,194,247)
+[19:17:26] [INFO]   2022-03: EW/NS = 0.992, v = 29.94 km/s, EW_λ=742km, NS_λ=748km (n=1,496,717)
+[19:17:26] [INFO]   2022-04: EW/NS = 0.992, v = 29.68 km/s, EW_λ=839km, NS_λ=846km (n=1,511,449)
+[19:17:26] [INFO]   2022-05: EW/NS = 0.859, v = 29.45 km/s, EW_λ=654km, NS_λ=761km (n=1,543,395)
+[19:17:26] [INFO]   2022-06: EW/NS = 0.756, v = 29.31 km/s, EW_λ=741km, NS_λ=980km (n=1,536,713)
+[19:17:26] [INFO]   2022-07: EW/NS = 0.848, v = 29.29 km/s, EW_λ=819km, NS_λ=966km (n=1,569,647)
+[19:17:26] [INFO]   2022-08: EW/NS = 1.002, v = 29.41 km/s, EW_λ=940km, NS_λ=938km (n=1,607,002)
+[19:17:27] [INFO]   2022-09: EW/NS = 1.116, v = 29.62 km/s, EW_λ=806km, NS_λ=722km (n=1,550,824)
+[19:17:27] [INFO]   2022-10: EW/NS = 0.929, v = 29.88 km/s, EW_λ=697km, NS_λ=751km (n=1,569,662)
+[19:17:27] [INFO]   2022-11: EW/NS = 1.016, v = 30.11 km/s, EW_λ=725km, NS_λ=714km (n=1,519,788)
+[19:17:27] [INFO]   2022-12: EW/NS = 0.555, v = 30.25 km/s, EW_λ=654km, NS_λ=1179km (n=1,540,990)
+[19:17:27] [INFO]   2023-01: EW/NS = 0.523, v = 30.26 km/s, EW_λ=682km, NS_λ=1304km (n=1,629,197)
+[19:17:27] [INFO]   2023-02: EW/NS = 0.870, v = 30.15 km/s, EW_λ=588km, NS_λ=676km (n=1,518,164)
+[19:17:27] [INFO]   2023-03: EW/NS = 1.136, v = 29.94 km/s, EW_λ=676km, NS_λ=595km (n=1,681,595)
+[19:17:28] [INFO]   2023-04: EW/NS = 1.006, v = 29.68 km/s, EW_λ=679km, NS_λ=675km (n=1,601,886)
+[19:17:28] [INFO]   2023-05: EW/NS = 1.013, v = 29.45 km/s, EW_λ=772km, NS_λ=762km (n=1,653,659)
+[19:17:28] [INFO]   2023-06: EW/NS = 0.916, v = 29.31 km/s, EW_λ=712km, NS_λ=777km (n=1,654,619)
+[19:17:28] [INFO]   2023-07: EW/NS = 0.999, v = 29.29 km/s, EW_λ=1063km, NS_λ=1063km (n=1,786,303)
+[19:17:28] [INFO]   2023-08: EW/NS = 1.194, v = 29.41 km/s, EW_λ=874km, NS_λ=732km (n=1,873,339)
+[19:17:28] [INFO]   2023-09: EW/NS = 1.114, v = 29.62 km/s, EW_λ=749km, NS_λ=672km (n=1,733,816)
+[19:17:28] [INFO]   2023-10: EW/NS = 1.094, v = 29.88 km/s, EW_λ=732km, NS_λ=670km (n=1,793,138)
+[19:17:28] [INFO]   2023-11: EW/NS = 0.780, v = 30.11 km/s, EW_λ=662km, NS_λ=849km (n=1,663,909)
+[19:17:29] [INFO]   2023-12: EW/NS = 0.601, v = 30.25 km/s, EW_λ=633km, NS_λ=1053km (n=1,766,054)
+[19:17:29] [INFO]   2024-01: EW/NS = 0.384, v = 30.26 km/s, EW_λ=668km, NS_λ=1739km (n=1,714,009)
+[19:17:29] [INFO]   2024-02: EW/NS = 0.654, v = 30.15 km/s, EW_λ=839km, NS_λ=1283km (n=1,612,781)
+[19:17:29] [INFO]   2024-03: EW/NS = 1.167, v = 29.93 km/s, EW_λ=1101km, NS_λ=944km (n=1,770,989)
+[19:17:29] [INFO]   2024-04: EW/NS = 1.510, v = 29.68 km/s, EW_λ=1171km, NS_λ=775km (n=1,739,239)
+[19:17:29] [INFO]   2024-05: EW/NS = 1.175, v = 29.45 km/s, EW_λ=753km, NS_λ=641km (n=1,774,128)
+[19:17:29] [INFO]   2024-06: EW/NS = 0.839, v = 29.31 km/s, EW_λ=620km, NS_λ=740km (n=1,708,794)
+[19:17:30] [INFO]   2024-07: EW/NS = 0.893, v = 29.29 km/s, EW_λ=694km, NS_λ=778km (n=1,776,684)
+[19:17:30] [INFO]   2024-08: EW/NS = 1.096, v = 29.41 km/s, EW_λ=756km, NS_λ=690km (n=1,855,358)
+[19:17:30] [INFO]   2024-09: EW/NS = 1.353, v = 29.63 km/s, EW_λ=665km, NS_λ=492km (n=1,774,334)
+[19:17:30] [INFO]   2024-10: EW/NS = 1.200, v = 29.89 km/s, EW_λ=954km, NS_λ=795km (n=1,859,497)
+[19:17:30] [INFO]   2024-11: EW/NS = 0.793, v = 30.12 km/s, EW_λ=1316km, NS_λ=1660km (n=1,779,789)
+[19:17:30] [INFO]   2024-12: EW/NS = 0.309, v = 30.26 km/s, EW_λ=747km, NS_λ=2419km (n=1,879,743)
+[19:17:30] [PROCESS] [5/5] Computing orbital velocity correlation...
+[19:17:30] [INFO]   Pearson r = -0.505
+[19:17:30] [INFO]   p-value = 1.69e-03
+[19:17:30] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[19:17:33] [INFO]   Monte Carlo: 15/10000 exceeded
+[19:17:33] [INFO]   Empirical p-value: 1.60e-03
+[19:17:33] [INFO]   Significance: 3.2σ
+[19:17:33] [PROCESS] [5/5] Creating visualizations...
+[19:17:34] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_all_stations_clock_bias_msc.png
+[19:17:34] [INFO] 
+[19:17:34] [INFO] ============================================================
+[19:17:34] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[19:17:34] [INFO] ============================================================
+[19:17:34] [INFO]   Year-months analyzed: 36
+[19:17:34] [INFO]   Pearson r: -0.505
+[19:17:34] [INFO]   p-value: 1.69e-03
+[19:17:34] [INFO]   Monte Carlo p: 1.60e-03
+[19:17:34] [INFO]   Significance: 3.2σ
+[19:17:34] [INFO] 
+[19:17:34] [INFO] Comparison to CODE Longspan:
+[19:17:34] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:17:34] [INFO]   RINEX: r = -0.505, p = 1.60e-03 (3.2σ)
+[19:17:34] [INFO] 
+[19:17:34] [SUCCESS] TEP SIGNATURE: ORBITAL COUPLING DETECTED
+[19:17:34] [SUCCESS]   Direction: NEGATIVE (consistent with CODE)
+[19:17:34] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_all_stations_clock_bias_msc.json
+[19:17:34] [INFO] 
+[19:17:34] [INFO] ================================================================================
+[19:17:34] [INFO] Step 2.5 Complete
+[19:17:34] [INFO] ================================================================================
+[19:17:35] [INFO] 
+[19:17:35] [INFO] ================================================================================
+[19:17:35] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (ALL STATIONS)
+[19:17:35] [INFO] ================================================================================
+[19:17:35] [INFO] 
+[19:17:35] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[19:17:35] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:17:35] [INFO] 
+[19:17:35] [INFO]   Metric: clock_bias, Coherence: phase_alignment
+[19:17:35] [INFO] Loaded 538 station coordinates
+[19:17:35] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[19:17:35] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[19:17:40] [INFO]   Loaded 1.7M pairs...
+[19:17:45] [INFO]   Loaded 3.4M pairs...
+[19:17:49] [INFO]   Loaded 5.0M pairs...
+[19:17:54] [INFO]   Loaded 6.7M pairs...
+[19:17:59] [INFO]   Loaded 8.3M pairs...
+[19:18:04] [INFO]   Loaded 10.0M pairs...
+[19:18:08] [INFO]   Loaded 11.7M pairs...
+[19:18:13] [INFO]   Loaded 13.4M pairs...
+[19:18:18] [INFO]   Loaded 15.0M pairs...
+[19:18:23] [INFO]   Loaded 16.7M pairs...
+[19:18:27] [INFO]   Loaded 18.4M pairs...
+[19:18:32] [INFO]   Loaded 20.0M pairs...
+[19:18:37] [INFO]   Loaded 21.7M pairs...
+[19:18:42] [INFO]   Loaded 23.4M pairs...
+[19:18:46] [INFO]   Loaded 25.0M pairs...
+[19:18:51] [INFO]   Loaded 26.7M pairs...
+[19:18:56] [INFO]   Loaded 28.4M pairs...
+[19:19:01] [INFO]   Loaded 30.0M pairs...
+[19:19:06] [INFO]   Loaded 31.7M pairs...
+[19:19:10] [INFO]   Loaded 33.4M pairs...
+[19:19:15] [INFO]   Loaded 35.0M pairs...
+[19:19:20] [INFO]   Loaded 36.7M pairs...
+[19:19:25] [INFO]   Loaded 38.3M pairs...
+[19:19:30] [INFO]   Loaded 40.0M pairs...
+[19:19:34] [INFO]   Loaded 41.7M pairs...
+[19:19:39] [INFO]   Loaded 43.3M pairs...
+[19:19:44] [INFO]   Loaded 45.0M pairs...
+[19:19:49] [INFO]   Loaded 46.7M pairs...
+[19:19:54] [INFO]   Loaded 48.3M pairs...
+[19:19:58] [INFO]   Loaded 50.0M pairs...
+[19:20:03] [INFO]   Loaded 51.7M pairs...
+[19:20:08] [INFO]   Loaded 53.4M pairs...
+[19:20:13] [INFO]   Loaded 55.0M pairs...
+[19:20:18] [INFO]   Loaded 56.7M pairs...
+[19:20:22] [INFO]   Loaded 58.4M pairs...
+[19:20:26] [INFO]   Finalizing 59,600,372 pairs...
+[19:20:29] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[19:20:39] [INFO]   Built lookup for 150,099 unique pairs
+[19:21:12] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[19:21:12] [PROCESS] [3/5] Grouping pairs by year-month...
+[19:21:12] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[19:21:17] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[19:21:17] [INFO]     2022-01: 1,358,914 pairs
+[19:21:17] [INFO]     2022-02: 1,194,247 pairs
+[19:21:17] [INFO]     2022-03: 1,496,717 pairs
+[19:21:17] [INFO]     2022-04: 1,511,449 pairs
+[19:21:17] [INFO]     2022-05: 1,543,395 pairs
+[19:21:17] [INFO]     2022-06: 1,536,713 pairs
+[19:21:17] [INFO]     2022-07: 1,569,647 pairs
+[19:21:17] [INFO]     2022-08: 1,607,002 pairs
+[19:21:17] [INFO]     2022-09: 1,550,824 pairs
+[19:21:17] [INFO]     2022-10: 1,569,662 pairs
+[19:21:17] [INFO]     2022-11: 1,519,788 pairs
+[19:21:17] [INFO]     2022-12: 1,540,990 pairs
+[19:21:17] [INFO]     2023-01: 1,629,197 pairs
+[19:21:17] [INFO]     2023-02: 1,518,164 pairs
+[19:21:17] [INFO]     2023-03: 1,681,595 pairs
+[19:21:17] [INFO]     2023-04: 1,601,886 pairs
+[19:21:17] [INFO]     2023-05: 1,653,659 pairs
+[19:21:17] [INFO]     2023-06: 1,654,619 pairs
+[19:21:17] [INFO]     2023-07: 1,786,303 pairs
+[19:21:17] [INFO]     2023-08: 1,873,339 pairs
+[19:21:17] [INFO]     2023-09: 1,733,816 pairs
+[19:21:17] [INFO]     2023-10: 1,793,138 pairs
+[19:21:17] [INFO]     2023-11: 1,663,909 pairs
+[19:21:17] [INFO]     2023-12: 1,766,054 pairs
+[19:21:17] [INFO]     2024-01: 1,714,009 pairs
+[19:21:17] [INFO]     2024-02: 1,612,781 pairs
+[19:21:17] [INFO]     2024-03: 1,770,989 pairs
+[19:21:17] [INFO]     2024-04: 1,739,239 pairs
+[19:21:17] [INFO]     2024-05: 1,774,128 pairs
+[19:21:17] [INFO]     2024-06: 1,708,794 pairs
+[19:21:17] [INFO]     2024-07: 1,776,684 pairs
+[19:21:17] [INFO]     2024-08: 1,855,358 pairs
+[19:21:17] [INFO]     2024-09: 1,774,334 pairs
+[19:21:17] [INFO]     2024-10: 1,859,497 pairs
+[19:21:17] [INFO]     2024-11: 1,779,789 pairs
+[19:21:17] [INFO]     2024-12: 1,879,743 pairs
+[19:21:17] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[19:21:17] [INFO]   2022-01: EW/NS = 0.882, v = 30.26 km/s, EW_λ=1638km, NS_λ=1858km (n=1,358,914)
+[19:21:17] [INFO]   2022-02: EW/NS = 0.960, v = 30.15 km/s, EW_λ=1687km, NS_λ=1756km (n=1,194,247)
+[19:21:18] [INFO]   2022-03: EW/NS = 0.962, v = 29.94 km/s, EW_λ=1628km, NS_λ=1691km (n=1,496,717)
+[19:21:18] [INFO]   2022-04: EW/NS = 0.926, v = 29.68 km/s, EW_λ=1713km, NS_λ=1849km (n=1,511,449)
+[19:21:18] [INFO]   2022-05: EW/NS = 0.944, v = 29.45 km/s, EW_λ=1682km, NS_λ=1782km (n=1,543,395)
+[19:21:18] [INFO]   2022-06: EW/NS = 0.889, v = 29.31 km/s, EW_λ=1656km, NS_λ=1863km (n=1,536,713)
+[19:21:18] [INFO]   2022-07: EW/NS = 0.968, v = 29.29 km/s, EW_λ=1745km, NS_λ=1803km (n=1,569,647)
+[19:21:18] [INFO]   2022-08: EW/NS = 0.941, v = 29.41 km/s, EW_λ=1674km, NS_λ=1779km (n=1,607,002)
+[19:21:18] [INFO]   2022-09: EW/NS = 0.885, v = 29.62 km/s, EW_λ=1657km, NS_λ=1873km (n=1,550,824)
+[19:21:18] [INFO]   2022-10: EW/NS = 0.885, v = 29.88 km/s, EW_λ=1727km, NS_λ=1952km (n=1,569,662)
+[19:21:19] [INFO]   2022-11: EW/NS = 0.986, v = 30.11 km/s, EW_λ=1775km, NS_λ=1801km (n=1,519,788)
+[19:21:19] [INFO]   2022-12: EW/NS = 0.696, v = 30.25 km/s, EW_λ=1409km, NS_λ=2025km (n=1,540,990)
+[19:21:19] [INFO]   2023-01: EW/NS = 0.647, v = 30.26 km/s, EW_λ=1490km, NS_λ=2305km (n=1,629,197)
+[19:21:19] [INFO]   2023-02: EW/NS = 0.703, v = 30.15 km/s, EW_λ=1264km, NS_λ=1800km (n=1,518,164)
+[19:21:19] [INFO]   2023-03: EW/NS = 0.998, v = 29.94 km/s, EW_λ=1645km, NS_λ=1648km (n=1,681,595)
+[19:21:19] [INFO]   2023-04: EW/NS = 0.925, v = 29.68 km/s, EW_λ=1709km, NS_λ=1848km (n=1,601,886)
+[19:21:19] [INFO]   2023-05: EW/NS = 0.785, v = 29.45 km/s, EW_λ=1726km, NS_λ=2198km (n=1,653,659)
+[19:21:19] [INFO]   2023-06: EW/NS = 0.712, v = 29.31 km/s, EW_λ=1443km, NS_λ=2026km (n=1,654,619)
+[19:21:20] [INFO]   2023-07: EW/NS = 0.901, v = 29.29 km/s, EW_λ=1608km, NS_λ=1785km (n=1,786,303)
+[19:21:20] [INFO]   2023-08: EW/NS = 1.018, v = 29.41 km/s, EW_λ=1553km, NS_λ=1525km (n=1,873,339)
+[19:21:20] [INFO]   2023-09: EW/NS = 0.905, v = 29.62 km/s, EW_λ=1483km, NS_λ=1640km (n=1,733,816)
+[19:21:20] [INFO]   2023-10: EW/NS = 0.815, v = 29.88 km/s, EW_λ=1553km, NS_λ=1905km (n=1,793,138)
+[19:21:20] [INFO]   2023-11: EW/NS = 0.981, v = 30.11 km/s, EW_λ=1772km, NS_λ=1808km (n=1,663,909)
+[19:21:20] [INFO]   2023-12: EW/NS = 0.679, v = 30.25 km/s, EW_λ=1501km, NS_λ=2211km (n=1,766,054)
+[19:21:20] [INFO]   2024-01: EW/NS = 0.676, v = 30.26 km/s, EW_λ=1308km, NS_λ=1937km (n=1,714,009)
+[19:21:20] [INFO]   2024-02: EW/NS = 0.797, v = 30.15 km/s, EW_λ=1573km, NS_λ=1973km (n=1,612,781)
+[19:21:21] [INFO]   2024-03: EW/NS = 0.870, v = 29.93 km/s, EW_λ=2096km, NS_λ=2409km (n=1,770,989)
+[19:21:21] [INFO]   2024-04: EW/NS = 0.904, v = 29.68 km/s, EW_λ=2085km, NS_λ=2306km (n=1,739,239)
+[19:21:21] [INFO]   2024-05: EW/NS = 0.857, v = 29.45 km/s, EW_λ=1677km, NS_λ=1957km (n=1,774,128)
+[19:21:21] [INFO]   2024-06: EW/NS = 0.855, v = 29.31 km/s, EW_λ=1691km, NS_λ=1977km (n=1,708,794)
+[19:21:21] [INFO]   2024-07: EW/NS = 0.871, v = 29.29 km/s, EW_λ=1662km, NS_λ=1908km (n=1,776,684)
+[19:21:21] [INFO]   2024-08: EW/NS = 1.134, v = 29.41 km/s, EW_λ=2096km, NS_λ=1848km (n=1,855,358)
+[19:21:21] [INFO]   2024-09: EW/NS = 1.207, v = 29.63 km/s, EW_λ=2029km, NS_λ=1682km (n=1,774,334)
+[19:21:22] [INFO]   2024-10: EW/NS = 1.294, v = 29.89 km/s, EW_λ=1955km, NS_λ=1511km (n=1,859,497)
+[19:21:22] [INFO]   2024-11: EW/NS = 1.295, v = 30.12 km/s, EW_λ=2307km, NS_λ=1781km (n=1,779,789)
+[19:21:22] [INFO]   2024-12: EW/NS = 0.862, v = 30.26 km/s, EW_λ=1991km, NS_λ=2311km (n=1,879,743)
+[19:21:22] [PROCESS] [5/5] Computing orbital velocity correlation...
+[19:21:22] [INFO]   Pearson r = -0.190
+[19:21:22] [INFO]   p-value = 2.67e-01
+[19:21:22] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[19:21:25] [INFO]   Monte Carlo: 2746/10000 exceeded
+[19:21:25] [INFO]   Empirical p-value: 2.75e-01
+[19:21:25] [INFO]   Significance: 1.1σ
+[19:21:25] [PROCESS] [5/5] Creating visualizations...
+[19:21:26] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_all_stations_clock_bias_phase_alignment.png
+[19:21:26] [INFO] 
+[19:21:26] [INFO] ============================================================
+[19:21:26] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[19:21:26] [INFO] ============================================================
+[19:21:26] [INFO]   Year-months analyzed: 36
+[19:21:26] [INFO]   Pearson r: -0.190
+[19:21:26] [INFO]   p-value: 2.67e-01
+[19:21:26] [INFO]   Monte Carlo p: 2.75e-01
+[19:21:26] [INFO]   Significance: 1.1σ
+[19:21:26] [INFO] 
+[19:21:26] [INFO] Comparison to CODE Longspan:
+[19:21:26] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:21:26] [INFO]   RINEX: r = -0.190, p = 2.75e-01 (1.1σ)
+[19:21:26] [INFO] 
+[19:21:26] [WARNING] TEP SIGNATURE: NO ORBITAL COUPLING DETECTED
+[19:21:26] [WARNING]   May need full year of data
+[19:21:26] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_all_stations_clock_bias_phase_alignment.json
+[19:21:26] [INFO] 
+[19:21:26] [INFO] ================================================================================
+[19:21:26] [INFO] Step 2.5 Complete
+[19:21:26] [INFO] ================================================================================
+[19:21:27] [INFO] 
+[19:21:27] [INFO] ================================================================================
+[19:21:27] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (ALL STATIONS)
+[19:21:27] [INFO] ================================================================================
+[19:21:27] [INFO] 
+[19:21:27] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[19:21:27] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:21:27] [INFO] 
+[19:21:27] [INFO]   Metric: pos_jitter, Coherence: msc
+[19:21:27] [INFO] Loaded 538 station coordinates
+[19:21:27] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[19:21:27] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[19:21:31] [INFO]   Loaded 1.7M pairs...
+[19:21:36] [INFO]   Loaded 3.3M pairs...
+[19:21:41] [INFO]   Loaded 5.0M pairs...
+[19:21:46] [INFO]   Loaded 6.7M pairs...
+[19:21:50] [INFO]   Loaded 8.3M pairs...
+[19:21:55] [INFO]   Loaded 10.0M pairs...
+[19:22:00] [INFO]   Loaded 11.7M pairs...
+[19:22:05] [INFO]   Loaded 13.3M pairs...
+[19:22:09] [INFO]   Loaded 15.0M pairs...
+[19:22:14] [INFO]   Loaded 16.7M pairs...
+[19:22:19] [INFO]   Loaded 18.3M pairs...
+[19:22:23] [INFO]   Loaded 20.0M pairs...
+[19:22:28] [INFO]   Loaded 21.7M pairs...
+[19:22:33] [INFO]   Loaded 23.3M pairs...
+[19:22:38] [INFO]   Loaded 25.0M pairs...
+[19:22:42] [INFO]   Loaded 26.7M pairs...
+[19:22:47] [INFO]   Loaded 28.4M pairs...
+[19:22:52] [INFO]   Loaded 30.0M pairs...
+[19:22:57] [INFO]   Loaded 31.6M pairs...
+[19:23:01] [INFO]   Loaded 33.3M pairs...
+[19:23:06] [INFO]   Loaded 35.0M pairs...
+[19:23:11] [INFO]   Loaded 36.6M pairs...
+[19:23:16] [INFO]   Loaded 38.3M pairs...
+[19:23:20] [INFO]   Loaded 40.0M pairs...
+[19:23:25] [INFO]   Loaded 41.7M pairs...
+[19:23:30] [INFO]   Loaded 43.3M pairs...
+[19:23:35] [INFO]   Loaded 45.0M pairs...
+[19:23:39] [INFO]   Loaded 46.7M pairs...
+[19:23:44] [INFO]   Loaded 48.3M pairs...
+[19:23:49] [INFO]   Loaded 50.0M pairs...
+[19:23:54] [INFO]   Loaded 51.7M pairs...
+[19:23:59] [INFO]   Loaded 53.3M pairs...
+[19:24:03] [INFO]   Loaded 55.0M pairs...
+[19:24:08] [INFO]   Loaded 56.7M pairs...
+[19:24:13] [INFO]   Loaded 58.3M pairs...
+[19:24:17] [INFO]   Finalizing 59,600,372 pairs...
+[19:24:19] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[19:24:29] [INFO]   Built lookup for 150,099 unique pairs
+[19:25:02] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[19:25:03] [PROCESS] [3/5] Grouping pairs by year-month...
+[19:25:03] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[19:25:08] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[19:25:08] [INFO]     2022-01: 1,358,914 pairs
+[19:25:08] [INFO]     2022-02: 1,194,247 pairs
+[19:25:08] [INFO]     2022-03: 1,496,717 pairs
+[19:25:08] [INFO]     2022-04: 1,511,449 pairs
+[19:25:08] [INFO]     2022-05: 1,543,395 pairs
+[19:25:08] [INFO]     2022-06: 1,536,713 pairs
+[19:25:08] [INFO]     2022-07: 1,569,647 pairs
+[19:25:08] [INFO]     2022-08: 1,607,002 pairs
+[19:25:08] [INFO]     2022-09: 1,550,824 pairs
+[19:25:08] [INFO]     2022-10: 1,569,662 pairs
+[19:25:08] [INFO]     2022-11: 1,519,788 pairs
+[19:25:08] [INFO]     2022-12: 1,540,990 pairs
+[19:25:08] [INFO]     2023-01: 1,629,197 pairs
+[19:25:08] [INFO]     2023-02: 1,518,164 pairs
+[19:25:08] [INFO]     2023-03: 1,681,595 pairs
+[19:25:08] [INFO]     2023-04: 1,601,886 pairs
+[19:25:08] [INFO]     2023-05: 1,653,659 pairs
+[19:25:08] [INFO]     2023-06: 1,654,619 pairs
+[19:25:08] [INFO]     2023-07: 1,786,303 pairs
+[19:25:08] [INFO]     2023-08: 1,873,339 pairs
+[19:25:08] [INFO]     2023-09: 1,733,816 pairs
+[19:25:08] [INFO]     2023-10: 1,793,138 pairs
+[19:25:08] [INFO]     2023-11: 1,663,909 pairs
+[19:25:08] [INFO]     2023-12: 1,766,054 pairs
+[19:25:08] [INFO]     2024-01: 1,714,009 pairs
+[19:25:08] [INFO]     2024-02: 1,612,781 pairs
+[19:25:08] [INFO]     2024-03: 1,770,989 pairs
+[19:25:08] [INFO]     2024-04: 1,739,239 pairs
+[19:25:08] [INFO]     2024-05: 1,774,128 pairs
+[19:25:08] [INFO]     2024-06: 1,708,794 pairs
+[19:25:08] [INFO]     2024-07: 1,776,684 pairs
+[19:25:08] [INFO]     2024-08: 1,855,358 pairs
+[19:25:08] [INFO]     2024-09: 1,774,334 pairs
+[19:25:08] [INFO]     2024-10: 1,859,497 pairs
+[19:25:08] [INFO]     2024-11: 1,779,789 pairs
+[19:25:08] [INFO]     2024-12: 1,879,743 pairs
+[19:25:08] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[19:25:08] [INFO]   2022-01: EW/NS = 0.957, v = 30.26 km/s, EW_λ=646km, NS_λ=675km (n=1,358,914)
+[19:25:08] [INFO]   2022-02: EW/NS = 0.857, v = 30.15 km/s, EW_λ=642km, NS_λ=749km (n=1,194,247)
+[19:25:08] [INFO]   2022-03: EW/NS = 1.085, v = 29.94 km/s, EW_λ=793km, NS_λ=731km (n=1,496,717)
+[19:25:08] [INFO]   2022-04: EW/NS = 1.302, v = 29.68 km/s, EW_λ=923km, NS_λ=709km (n=1,511,449)
+[19:25:08] [INFO]   2022-05: EW/NS = 1.303, v = 29.45 km/s, EW_λ=912km, NS_λ=700km (n=1,543,395)
+[19:25:08] [INFO]   2022-06: EW/NS = 1.143, v = 29.31 km/s, EW_λ=1014km, NS_λ=887km (n=1,536,713)
+[19:25:08] [INFO]   2022-07: EW/NS = 1.153, v = 29.29 km/s, EW_λ=1098km, NS_λ=953km (n=1,569,647)
+[19:25:09] [INFO]   2022-08: EW/NS = 1.186, v = 29.41 km/s, EW_λ=1026km, NS_λ=865km (n=1,607,002)
+[19:25:09] [INFO]   2022-09: EW/NS = 1.202, v = 29.62 km/s, EW_λ=839km, NS_λ=698km (n=1,550,824)
+[19:25:09] [INFO]   2022-10: EW/NS = 1.263, v = 29.88 km/s, EW_λ=858km, NS_λ=680km (n=1,569,662)
+[19:25:09] [INFO]   2022-11: EW/NS = 1.109, v = 30.11 km/s, EW_λ=837km, NS_λ=755km (n=1,519,788)
+[19:25:09] [INFO]   2022-12: EW/NS = 0.799, v = 30.25 km/s, EW_λ=763km, NS_λ=954km (n=1,540,990)
+[19:25:09] [INFO]   2023-01: EW/NS = 0.746, v = 30.26 km/s, EW_λ=822km, NS_λ=1103km (n=1,629,197)
+[19:25:09] [INFO]   2023-02: EW/NS = 1.073, v = 30.15 km/s, EW_λ=787km, NS_λ=733km (n=1,518,164)
+[19:25:09] [INFO]   2023-03: EW/NS = 1.162, v = 29.94 km/s, EW_λ=726km, NS_λ=624km (n=1,681,595)
+[19:25:09] [INFO]   2023-04: EW/NS = 1.281, v = 29.68 km/s, EW_λ=796km, NS_λ=622km (n=1,601,886)
+[19:25:10] [INFO]   2023-05: EW/NS = 1.257, v = 29.45 km/s, EW_λ=977km, NS_λ=777km (n=1,653,659)
+[19:25:10] [INFO]   2023-06: EW/NS = 1.128, v = 29.31 km/s, EW_λ=999km, NS_λ=886km (n=1,654,619)
+[19:25:10] [INFO]   2023-07: EW/NS = 1.315, v = 29.29 km/s, EW_λ=1679km, NS_λ=1277km (n=1,786,303)
+[19:25:10] [INFO]   2023-08: EW/NS = 1.478, v = 29.41 km/s, EW_λ=1233km, NS_λ=835km (n=1,873,339)
+[19:25:10] [INFO]   2023-09: EW/NS = 1.234, v = 29.62 km/s, EW_λ=1030km, NS_λ=835km (n=1,733,816)
+[19:25:10] [INFO]   2023-10: EW/NS = 1.292, v = 29.88 km/s, EW_λ=1038km, NS_λ=804km (n=1,793,138)
+[19:25:10] [INFO]   2023-11: EW/NS = 1.130, v = 30.11 km/s, EW_λ=928km, NS_λ=821km (n=1,663,909)
+[19:25:10] [INFO]   2023-12: EW/NS = 0.958, v = 30.25 km/s, EW_λ=901km, NS_λ=941km (n=1,766,054)
+[19:25:11] [INFO]   2024-01: EW/NS = 0.642, v = 30.26 km/s, EW_λ=856km, NS_λ=1334km (n=1,714,009)
+[19:25:11] [INFO]   2024-02: EW/NS = 0.930, v = 30.15 km/s, EW_λ=1072km, NS_λ=1153km (n=1,612,781)
+[19:25:11] [INFO]   2024-03: EW/NS = 1.292, v = 29.93 km/s, EW_λ=1007km, NS_λ=780km (n=1,770,989)
+[19:25:11] [INFO]   2024-04: EW/NS = 1.905, v = 29.68 km/s, EW_λ=1258km, NS_λ=660km (n=1,739,239)
+[19:25:11] [INFO]   2024-05: EW/NS = 1.375, v = 29.45 km/s, EW_λ=999km, NS_λ=726km (n=1,774,128)
+[19:25:11] [INFO]   2024-06: EW/NS = 0.824, v = 29.31 km/s, EW_λ=793km, NS_λ=963km (n=1,708,794)
+[19:25:11] [INFO]   2024-07: EW/NS = 1.181, v = 29.29 km/s, EW_λ=746km, NS_λ=631km (n=1,776,684)
+[19:25:12] [INFO]   2024-08: EW/NS = 1.447, v = 29.41 km/s, EW_λ=887km, NS_λ=613km (n=1,855,358)
+[19:25:12] [INFO]   2024-09: EW/NS = 1.515, v = 29.63 km/s, EW_λ=807km, NS_λ=532km (n=1,774,334)
+[19:25:12] [INFO]   2024-10: EW/NS = 1.436, v = 29.89 km/s, EW_λ=1190km, NS_λ=829km (n=1,859,497)
+[19:25:12] [INFO]   2024-11: EW/NS = 1.296, v = 30.12 km/s, EW_λ=2008km, NS_λ=1549km (n=1,779,789)
+[19:25:12] [INFO]   2024-12: EW/NS = 0.665, v = 30.26 km/s, EW_λ=897km, NS_λ=1349km (n=1,879,743)
+[19:25:12] [PROCESS] [5/5] Computing orbital velocity correlation...
+[19:25:12] [INFO]   Pearson r = -0.515
+[19:25:12] [INFO]   p-value = 1.31e-03
+[19:25:12] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[19:25:15] [INFO]   Monte Carlo: 12/10000 exceeded
+[19:25:15] [INFO]   Empirical p-value: 1.30e-03
+[19:25:15] [INFO]   Significance: 3.2σ
+[19:25:15] [PROCESS] [5/5] Creating visualizations...
+[19:25:16] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_all_stations_pos_jitter_msc.png
+[19:25:16] [INFO] 
+[19:25:16] [INFO] ============================================================
+[19:25:16] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[19:25:16] [INFO] ============================================================
+[19:25:16] [INFO]   Year-months analyzed: 36
+[19:25:16] [INFO]   Pearson r: -0.515
+[19:25:16] [INFO]   p-value: 1.31e-03
+[19:25:16] [INFO]   Monte Carlo p: 1.30e-03
+[19:25:16] [INFO]   Significance: 3.2σ
+[19:25:16] [INFO] 
+[19:25:16] [INFO] Comparison to CODE Longspan:
+[19:25:16] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:25:16] [INFO]   RINEX: r = -0.515, p = 1.30e-03 (3.2σ)
+[19:25:16] [INFO] 
+[19:25:16] [SUCCESS] TEP SIGNATURE: ORBITAL COUPLING DETECTED
+[19:25:16] [SUCCESS]   Direction: NEGATIVE (consistent with CODE)
+[19:25:16] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_all_stations_pos_jitter_msc.json
+[19:25:16] [INFO] 
+[19:25:16] [INFO] ================================================================================
+[19:25:16] [INFO] Step 2.5 Complete
+[19:25:16] [INFO] ================================================================================
+[19:25:17] [INFO] 
+[19:25:17] [INFO] ================================================================================
+[19:25:17] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (ALL STATIONS)
+[19:25:17] [INFO] ================================================================================
+[19:25:17] [INFO] 
+[19:25:17] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[19:25:17] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:25:17] [INFO] 
+[19:25:17] [INFO]   Metric: pos_jitter, Coherence: phase_alignment
+[19:25:17] [INFO] Loaded 538 station coordinates
+[19:25:17] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[19:25:17] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[19:25:22] [INFO]   Loaded 1.7M pairs...
+[19:25:26] [INFO]   Loaded 3.3M pairs...
+[19:25:31] [INFO]   Loaded 5.0M pairs...
+[19:25:36] [INFO]   Loaded 6.7M pairs...
+[19:25:40] [INFO]   Loaded 8.3M pairs...
+[19:25:45] [INFO]   Loaded 10.0M pairs...
+[19:25:50] [INFO]   Loaded 11.7M pairs...
+[19:25:55] [INFO]   Loaded 13.3M pairs...
+[19:25:59] [INFO]   Loaded 15.0M pairs...
+[19:26:04] [INFO]   Loaded 16.7M pairs...
+[19:26:09] [INFO]   Loaded 18.3M pairs...
+[19:26:14] [INFO]   Loaded 20.0M pairs...
+[19:26:18] [INFO]   Loaded 21.7M pairs...
+[19:26:23] [INFO]   Loaded 23.3M pairs...
+[19:26:28] [INFO]   Loaded 25.0M pairs...
+[19:26:33] [INFO]   Loaded 26.7M pairs...
+[19:26:37] [INFO]   Loaded 28.4M pairs...
+[19:26:42] [INFO]   Loaded 30.0M pairs...
+[19:26:47] [INFO]   Loaded 31.6M pairs...
+[19:26:52] [INFO]   Loaded 33.3M pairs...
+[19:26:56] [INFO]   Loaded 35.0M pairs...
+[19:27:01] [INFO]   Loaded 36.6M pairs...
+[19:27:06] [INFO]   Loaded 38.3M pairs...
+[19:27:11] [INFO]   Loaded 40.0M pairs...
+[19:27:15] [INFO]   Loaded 41.7M pairs...
+[19:27:20] [INFO]   Loaded 43.3M pairs...
+[19:27:25] [INFO]   Loaded 45.0M pairs...
+[19:27:30] [INFO]   Loaded 46.7M pairs...
+[19:27:34] [INFO]   Loaded 48.3M pairs...
+[19:27:39] [INFO]   Loaded 50.0M pairs...
+[19:27:44] [INFO]   Loaded 51.7M pairs...
+[19:27:49] [INFO]   Loaded 53.3M pairs...
+[19:27:54] [INFO]   Loaded 55.0M pairs...
+[19:27:58] [INFO]   Loaded 56.7M pairs...
+[19:28:03] [INFO]   Loaded 58.3M pairs...
+[19:28:07] [INFO]   Finalizing 59,600,372 pairs...
+[19:28:09] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[19:28:19] [INFO]   Built lookup for 150,099 unique pairs
+[19:28:52] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[19:28:52] [PROCESS] [3/5] Grouping pairs by year-month...
+[19:28:52] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[19:28:57] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[19:28:57] [INFO]     2022-01: 1,358,914 pairs
+[19:28:57] [INFO]     2022-02: 1,194,247 pairs
+[19:28:57] [INFO]     2022-03: 1,496,717 pairs
+[19:28:57] [INFO]     2022-04: 1,511,449 pairs
+[19:28:57] [INFO]     2022-05: 1,543,395 pairs
+[19:28:57] [INFO]     2022-06: 1,536,713 pairs
+[19:28:57] [INFO]     2022-07: 1,569,647 pairs
+[19:28:57] [INFO]     2022-08: 1,607,002 pairs
+[19:28:57] [INFO]     2022-09: 1,550,824 pairs
+[19:28:57] [INFO]     2022-10: 1,569,662 pairs
+[19:28:57] [INFO]     2022-11: 1,519,788 pairs
+[19:28:57] [INFO]     2022-12: 1,540,990 pairs
+[19:28:57] [INFO]     2023-01: 1,629,197 pairs
+[19:28:57] [INFO]     2023-02: 1,518,164 pairs
+[19:28:57] [INFO]     2023-03: 1,681,595 pairs
+[19:28:57] [INFO]     2023-04: 1,601,886 pairs
+[19:28:57] [INFO]     2023-05: 1,653,659 pairs
+[19:28:57] [INFO]     2023-06: 1,654,619 pairs
+[19:28:57] [INFO]     2023-07: 1,786,303 pairs
+[19:28:57] [INFO]     2023-08: 1,873,339 pairs
+[19:28:57] [INFO]     2023-09: 1,733,816 pairs
+[19:28:57] [INFO]     2023-10: 1,793,138 pairs
+[19:28:57] [INFO]     2023-11: 1,663,909 pairs
+[19:28:57] [INFO]     2023-12: 1,766,054 pairs
+[19:28:57] [INFO]     2024-01: 1,714,009 pairs
+[19:28:57] [INFO]     2024-02: 1,612,781 pairs
+[19:28:57] [INFO]     2024-03: 1,770,989 pairs
+[19:28:57] [INFO]     2024-04: 1,739,239 pairs
+[19:28:57] [INFO]     2024-05: 1,774,128 pairs
+[19:28:57] [INFO]     2024-06: 1,708,794 pairs
+[19:28:57] [INFO]     2024-07: 1,776,684 pairs
+[19:28:57] [INFO]     2024-08: 1,855,358 pairs
+[19:28:57] [INFO]     2024-09: 1,774,334 pairs
+[19:28:57] [INFO]     2024-10: 1,859,497 pairs
+[19:28:57] [INFO]     2024-11: 1,779,789 pairs
+[19:28:57] [INFO]     2024-12: 1,879,743 pairs
+[19:28:57] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[19:28:57] [INFO]   2022-01: EW/NS = 1.140, v = 30.26 km/s, EW_λ=2019km, NS_λ=1770km (n=1,358,914)
+[19:28:58] [INFO]   2022-02: EW/NS = 0.575, v = 30.15 km/s, EW_λ=1438km, NS_λ=2501km (n=1,194,247)
+[19:28:58] [INFO]   2022-03: EW/NS = 0.888, v = 29.94 km/s, EW_λ=1744km, NS_λ=1965km (n=1,496,717)
+[19:28:58] [INFO]   2022-04: EW/NS = 1.001, v = 29.68 km/s, EW_λ=1762km, NS_λ=1761km (n=1,511,449)
+[19:28:58] [INFO]   2022-05: EW/NS = 1.055, v = 29.45 km/s, EW_λ=2129km, NS_λ=2017km (n=1,543,395)
+[19:28:58] [INFO]   2022-06: EW/NS = 1.132, v = 29.31 km/s, EW_λ=2409km, NS_λ=2129km (n=1,536,713)
+[19:28:58] [INFO]   2022-07: EW/NS = 1.274, v = 29.29 km/s, EW_λ=3101km, NS_λ=2433km (n=1,569,647)
+[19:28:58] [INFO]   2022-08: EW/NS = 1.368, v = 29.41 km/s, EW_λ=2761km, NS_λ=2019km (n=1,607,002)
+[19:28:58] [INFO]   2022-09: EW/NS = 1.332, v = 29.62 km/s, EW_λ=2364km, NS_λ=1774km (n=1,550,824)
+[19:28:58] [INFO]   2022-10: EW/NS = 1.126, v = 29.88 km/s, EW_λ=2106km, NS_λ=1870km (n=1,569,662)
+[19:28:59] [INFO]   2022-11: EW/NS = 0.813, v = 30.11 km/s, EW_λ=1681km, NS_λ=2069km (n=1,519,788)
+[19:28:59] [INFO]   2022-12: EW/NS = 0.738, v = 30.25 km/s, EW_λ=1587km, NS_λ=2151km (n=1,540,990)
+[19:28:59] [INFO]   2023-01: EW/NS = 0.855, v = 30.26 km/s, EW_λ=1720km, NS_λ=2011km (n=1,629,197)
+[19:28:59] [INFO]   2023-02: EW/NS = 0.993, v = 30.15 km/s, EW_λ=1931km, NS_λ=1944km (n=1,518,164)
+[19:28:59] [INFO]   2023-03: EW/NS = 0.959, v = 29.94 km/s, EW_λ=2052km, NS_λ=2141km (n=1,681,595)
+[19:28:59] [INFO]   2023-04: EW/NS = 1.189, v = 29.68 km/s, EW_λ=2350km, NS_λ=1977km (n=1,601,886)
+[19:28:59] [INFO]   2023-05: EW/NS = 1.209, v = 29.45 km/s, EW_λ=2312km, NS_λ=1912km (n=1,653,659)
+[19:28:59] [INFO]   2023-06: EW/NS = 1.050, v = 29.31 km/s, EW_λ=2382km, NS_λ=2269km (n=1,654,619)
+[19:29:00] [INFO]   2023-07: EW/NS = 1.027, v = 29.29 km/s, EW_λ=2740km, NS_λ=2668km (n=1,786,303)
+[19:29:00] [INFO]   2023-08: EW/NS = 1.383, v = 29.41 km/s, EW_λ=3077km, NS_λ=2224km (n=1,873,339)
+[19:29:00] [INFO]   2023-09: EW/NS = 1.191, v = 29.62 km/s, EW_λ=1926km, NS_λ=1617km (n=1,733,816)
+[19:29:00] [INFO]   2023-10: EW/NS = 1.133, v = 29.88 km/s, EW_λ=2438km, NS_λ=2152km (n=1,793,138)
+[19:29:00] [INFO]   2023-11: EW/NS = 1.203, v = 30.11 km/s, EW_λ=2269km, NS_λ=1887km (n=1,663,909)
+[19:29:00] [INFO]   2023-12: EW/NS = 1.019, v = 30.25 km/s, EW_λ=2037km, NS_λ=1999km (n=1,766,054)
+[19:29:00] [INFO]   2024-01: EW/NS = 0.792, v = 30.26 km/s, EW_λ=2020km, NS_λ=2550km (n=1,714,009)
+[19:29:01] [INFO]   2024-02: EW/NS = 0.932, v = 30.15 km/s, EW_λ=1665km, NS_λ=1786km (n=1,612,781)
+[19:29:01] [INFO]   2024-03: EW/NS = 0.886, v = 29.93 km/s, EW_λ=1516km, NS_λ=1712km (n=1,770,989)
+[19:29:01] [INFO]   2024-04: EW/NS = 1.095, v = 29.68 km/s, EW_λ=1646km, NS_λ=1503km (n=1,739,239)
+[19:29:01] [INFO]   2024-05: EW/NS = 0.847, v = 29.45 km/s, EW_λ=1629km, NS_λ=1924km (n=1,774,128)
+[19:29:01] [INFO]   2024-06: EW/NS = 0.779, v = 29.31 km/s, EW_λ=1777km, NS_λ=2281km (n=1,708,794)
+[19:29:01] [INFO]   2024-07: EW/NS = 0.912, v = 29.29 km/s, EW_λ=1580km, NS_λ=1733km (n=1,776,684)
+[19:29:01] [INFO]   2024-08: EW/NS = 1.069, v = 29.41 km/s, EW_λ=1605km, NS_λ=1501km (n=1,855,358)
+[19:29:02] [INFO]   2024-09: EW/NS = 0.877, v = 29.63 km/s, EW_λ=1570km, NS_λ=1791km (n=1,774,334)
+[19:29:02] [INFO]   2024-10: EW/NS = 0.793, v = 29.89 km/s, EW_λ=1765km, NS_λ=2225km (n=1,859,497)
+[19:29:02] [INFO]   2024-11: EW/NS = 0.797, v = 30.12 km/s, EW_λ=1751km, NS_λ=2196km (n=1,779,789)
+[19:29:02] [INFO]   2024-12: EW/NS = 0.790, v = 30.26 km/s, EW_λ=1458km, NS_λ=1846km (n=1,879,743)
+[19:29:02] [PROCESS] [5/5] Computing orbital velocity correlation...
+[19:29:02] [INFO]   Pearson r = -0.463
+[19:29:02] [INFO]   p-value = 4.47e-03
+[19:29:02] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[19:29:05] [INFO]   Monte Carlo: 39/10000 exceeded
+[19:29:05] [INFO]   Empirical p-value: 4.00e-03
+[19:29:05] [INFO]   Significance: 2.9σ
+[19:29:05] [PROCESS] [5/5] Creating visualizations...
+[19:29:06] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_all_stations_pos_jitter_phase_alignment.png
+[19:29:06] [INFO] 
+[19:29:06] [INFO] ============================================================
+[19:29:06] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[19:29:06] [INFO] ============================================================
+[19:29:06] [INFO]   Year-months analyzed: 36
+[19:29:06] [INFO]   Pearson r: -0.463
+[19:29:06] [INFO]   p-value: 4.47e-03
+[19:29:06] [INFO]   Monte Carlo p: 4.00e-03
+[19:29:06] [INFO]   Significance: 2.9σ
+[19:29:06] [INFO] 
+[19:29:06] [INFO] Comparison to CODE Longspan:
+[19:29:06] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:29:06] [INFO]   RINEX: r = -0.463, p = 4.00e-03 (2.9σ)
+[19:29:06] [INFO] 
+[19:29:06] [WARNING] TEP SIGNATURE: WEAK ORBITAL COUPLING
+[19:29:06] [WARNING]   More data needed for confirmation
+[19:29:06] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_all_stations_pos_jitter_phase_alignment.json
+[19:29:06] [INFO] 
+[19:29:06] [INFO] ================================================================================
+[19:29:06] [INFO] Step 2.5 Complete
+[19:29:06] [INFO] ================================================================================
+[19:29:07] [INFO] 
+[19:29:07] [INFO] ================================================================================
+[19:29:07] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (ALL STATIONS)
+[19:29:07] [INFO] ================================================================================
+[19:29:07] [INFO] 
+[19:29:07] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[19:29:07] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:29:07] [INFO] 
+[19:29:07] [INFO]   Metric: clock_drift, Coherence: msc
+[19:29:07] [INFO] Loaded 538 station coordinates
+[19:29:07] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[19:29:07] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[19:29:11] [INFO]   Loaded 1.7M pairs...
+[19:29:16] [INFO]   Loaded 3.3M pairs...
+[19:29:21] [INFO]   Loaded 5.0M pairs...
+[19:29:26] [INFO]   Loaded 6.6M pairs...
+[19:29:31] [INFO]   Loaded 8.3M pairs...
+[19:29:35] [INFO]   Loaded 10.0M pairs...
+[19:29:40] [INFO]   Loaded 11.7M pairs...
+[19:29:45] [INFO]   Loaded 13.3M pairs...
+[19:29:50] [INFO]   Loaded 15.0M pairs...
+[19:29:54] [INFO]   Loaded 16.7M pairs...
+[19:29:59] [INFO]   Loaded 18.3M pairs...
+[19:30:04] [INFO]   Loaded 20.0M pairs...
+[19:30:09] [INFO]   Loaded 21.6M pairs...
+[19:30:13] [INFO]   Loaded 23.3M pairs...
+[19:30:18] [INFO]   Loaded 25.0M pairs...
+[19:30:23] [INFO]   Loaded 26.6M pairs...
+[19:30:28] [INFO]   Loaded 28.3M pairs...
+[19:30:32] [INFO]   Loaded 30.0M pairs...
+[19:30:37] [INFO]   Loaded 31.6M pairs...
+[19:30:42] [INFO]   Loaded 33.3M pairs...
+[19:30:47] [INFO]   Loaded 35.0M pairs...
+[19:30:51] [INFO]   Loaded 36.6M pairs...
+[19:30:56] [INFO]   Loaded 38.3M pairs...
+[19:31:01] [INFO]   Loaded 40.0M pairs...
+[19:31:06] [INFO]   Loaded 41.6M pairs...
+[19:31:11] [INFO]   Loaded 43.3M pairs...
+[19:31:15] [INFO]   Loaded 45.0M pairs...
+[19:31:20] [INFO]   Loaded 46.7M pairs...
+[19:31:25] [INFO]   Loaded 48.3M pairs...
+[19:31:30] [INFO]   Loaded 50.0M pairs...
+[19:31:34] [INFO]   Loaded 51.6M pairs...
+[19:31:39] [INFO]   Loaded 53.3M pairs...
+[19:31:44] [INFO]   Loaded 55.0M pairs...
+[19:31:49] [INFO]   Loaded 56.7M pairs...
+[19:31:54] [INFO]   Loaded 58.3M pairs...
+[19:31:57] [INFO]   Finalizing 59,600,372 pairs...
+[19:32:00] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[19:32:09] [INFO]   Built lookup for 150,099 unique pairs
+[19:32:41] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[19:32:42] [PROCESS] [3/5] Grouping pairs by year-month...
+[19:32:42] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[19:32:47] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[19:32:47] [INFO]     2022-01: 1,358,914 pairs
+[19:32:47] [INFO]     2022-02: 1,194,247 pairs
+[19:32:47] [INFO]     2022-03: 1,496,717 pairs
+[19:32:47] [INFO]     2022-04: 1,511,449 pairs
+[19:32:47] [INFO]     2022-05: 1,543,395 pairs
+[19:32:47] [INFO]     2022-06: 1,536,713 pairs
+[19:32:47] [INFO]     2022-07: 1,569,647 pairs
+[19:32:47] [INFO]     2022-08: 1,607,002 pairs
+[19:32:47] [INFO]     2022-09: 1,550,824 pairs
+[19:32:47] [INFO]     2022-10: 1,569,662 pairs
+[19:32:47] [INFO]     2022-11: 1,519,788 pairs
+[19:32:47] [INFO]     2022-12: 1,540,990 pairs
+[19:32:47] [INFO]     2023-01: 1,629,197 pairs
+[19:32:47] [INFO]     2023-02: 1,518,164 pairs
+[19:32:47] [INFO]     2023-03: 1,681,595 pairs
+[19:32:47] [INFO]     2023-04: 1,601,886 pairs
+[19:32:47] [INFO]     2023-05: 1,653,659 pairs
+[19:32:47] [INFO]     2023-06: 1,654,619 pairs
+[19:32:47] [INFO]     2023-07: 1,786,303 pairs
+[19:32:47] [INFO]     2023-08: 1,873,339 pairs
+[19:32:47] [INFO]     2023-09: 1,733,816 pairs
+[19:32:47] [INFO]     2023-10: 1,793,138 pairs
+[19:32:47] [INFO]     2023-11: 1,663,909 pairs
+[19:32:47] [INFO]     2023-12: 1,766,054 pairs
+[19:32:47] [INFO]     2024-01: 1,714,009 pairs
+[19:32:47] [INFO]     2024-02: 1,612,781 pairs
+[19:32:47] [INFO]     2024-03: 1,770,989 pairs
+[19:32:47] [INFO]     2024-04: 1,739,239 pairs
+[19:32:47] [INFO]     2024-05: 1,774,128 pairs
+[19:32:47] [INFO]     2024-06: 1,708,794 pairs
+[19:32:47] [INFO]     2024-07: 1,776,684 pairs
+[19:32:47] [INFO]     2024-08: 1,855,358 pairs
+[19:32:47] [INFO]     2024-09: 1,774,334 pairs
+[19:32:47] [INFO]     2024-10: 1,859,497 pairs
+[19:32:47] [INFO]     2024-11: 1,779,789 pairs
+[19:32:47] [INFO]     2024-12: 1,879,743 pairs
+[19:32:47] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[19:32:47] [INFO]   2022-01: EW/NS = 0.786, v = 30.26 km/s, EW_λ=588km, NS_λ=748km (n=1,358,914)
+[19:32:47] [INFO]   2022-02: EW/NS = 0.739, v = 30.15 km/s, EW_λ=597km, NS_λ=808km (n=1,194,247)
+[19:32:47] [INFO]   2022-03: EW/NS = 0.988, v = 29.94 km/s, EW_λ=736km, NS_λ=745km (n=1,496,717)
+[19:32:47] [INFO]   2022-04: EW/NS = 0.976, v = 29.68 km/s, EW_λ=808km, NS_λ=828km (n=1,511,449)
+[19:32:47] [INFO]   2022-05: EW/NS = 0.874, v = 29.45 km/s, EW_λ=623km, NS_λ=713km (n=1,543,395)
+[19:32:47] [INFO]   2022-06: EW/NS = 0.754, v = 29.31 km/s, EW_λ=731km, NS_λ=969km (n=1,536,713)
+[19:32:47] [INFO]   2022-07: EW/NS = 0.870, v = 29.29 km/s, EW_λ=818km, NS_λ=941km (n=1,569,647)
+[19:32:48] [INFO]   2022-08: EW/NS = 1.025, v = 29.41 km/s, EW_λ=946km, NS_λ=923km (n=1,607,002)
+[19:32:48] [INFO]   2022-09: EW/NS = 1.083, v = 29.62 km/s, EW_λ=790km, NS_λ=730km (n=1,550,824)
+[19:32:48] [INFO]   2022-10: EW/NS = 0.975, v = 29.88 km/s, EW_λ=679km, NS_λ=696km (n=1,569,662)
+[19:32:48] [INFO]   2022-11: EW/NS = 1.042, v = 30.11 km/s, EW_λ=663km, NS_λ=636km (n=1,519,788)
+[19:32:48] [INFO]   2022-12: EW/NS = 0.618, v = 30.25 km/s, EW_λ=619km, NS_λ=1001km (n=1,540,990)
+[19:32:48] [INFO]   2023-01: EW/NS = 0.585, v = 30.26 km/s, EW_λ=634km, NS_λ=1082km (n=1,629,197)
+[19:32:48] [INFO]   2023-02: EW/NS = 0.899, v = 30.15 km/s, EW_λ=569km, NS_λ=634km (n=1,518,164)
+[19:32:48] [INFO]   2023-03: EW/NS = 1.122, v = 29.94 km/s, EW_λ=651km, NS_λ=580km (n=1,681,595)
+[19:32:49] [INFO]   2023-04: EW/NS = 1.016, v = 29.68 km/s, EW_λ=661km, NS_λ=650km (n=1,601,886)
+[19:32:49] [INFO]   2023-05: EW/NS = 0.997, v = 29.45 km/s, EW_λ=738km, NS_λ=740km (n=1,653,659)
+[19:32:49] [INFO]   2023-06: EW/NS = 0.929, v = 29.31 km/s, EW_λ=716km, NS_λ=771km (n=1,654,619)
+[19:32:49] [INFO]   2023-07: EW/NS = 1.049, v = 29.29 km/s, EW_λ=1095km, NS_λ=1044km (n=1,786,303)
+[19:32:49] [INFO]   2023-08: EW/NS = 1.214, v = 29.41 km/s, EW_λ=917km, NS_λ=755km (n=1,873,339)
+[19:32:49] [INFO]   2023-09: EW/NS = 1.113, v = 29.62 km/s, EW_λ=757km, NS_λ=680km (n=1,733,816)
+[19:32:49] [INFO]   2023-10: EW/NS = 1.166, v = 29.88 km/s, EW_λ=739km, NS_λ=634km (n=1,793,138)
+[19:32:49] [INFO]   2023-11: EW/NS = 0.833, v = 30.11 km/s, EW_λ=624km, NS_λ=749km (n=1,663,909)
+[19:32:50] [INFO]   2023-12: EW/NS = 0.663, v = 30.25 km/s, EW_λ=611km, NS_λ=921km (n=1,766,054)
+[19:32:50] [INFO]   2024-01: EW/NS = 0.410, v = 30.26 km/s, EW_λ=651km, NS_λ=1589km (n=1,714,009)
+[19:32:50] [INFO]   2024-02: EW/NS = 0.785, v = 30.15 km/s, EW_λ=791km, NS_λ=1007km (n=1,612,781)
+[19:32:50] [INFO]   2024-03: EW/NS = 1.287, v = 29.93 km/s, EW_λ=1031km, NS_λ=801km (n=1,770,989)
+[19:32:50] [INFO]   2024-04: EW/NS = 1.517, v = 29.68 km/s, EW_λ=1065km, NS_λ=702km (n=1,739,239)
+[19:32:50] [INFO]   2024-05: EW/NS = 1.144, v = 29.45 km/s, EW_λ=704km, NS_λ=616km (n=1,774,128)
+[19:32:50] [INFO]   2024-06: EW/NS = 0.823, v = 29.31 km/s, EW_λ=611km, NS_λ=742km (n=1,708,794)
+[19:32:51] [INFO]   2024-07: EW/NS = 0.911, v = 29.29 km/s, EW_λ=705km, NS_λ=774km (n=1,776,684)
+[19:32:51] [INFO]   2024-08: EW/NS = 1.094, v = 29.41 km/s, EW_λ=761km, NS_λ=696km (n=1,855,358)
+[19:32:51] [INFO]   2024-09: EW/NS = 1.422, v = 29.63 km/s, EW_λ=668km, NS_λ=470km (n=1,774,334)
+[19:32:51] [INFO]   2024-10: EW/NS = 1.210, v = 29.89 km/s, EW_λ=935km, NS_λ=773km (n=1,859,497)
+[19:32:51] [INFO]   2024-11: EW/NS = 0.942, v = 30.12 km/s, EW_λ=1170km, NS_λ=1242km (n=1,779,789)
+[19:32:51] [INFO]   2024-12: EW/NS = 0.448, v = 30.26 km/s, EW_λ=662km, NS_λ=1479km (n=1,879,743)
+[19:32:51] [PROCESS] [5/5] Computing orbital velocity correlation...
+[19:32:51] [INFO]   Pearson r = -0.438
+[19:32:51] [INFO]   p-value = 7.62e-03
+[19:32:51] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[19:32:54] [INFO]   Monte Carlo: 77/10000 exceeded
+[19:32:54] [INFO]   Empirical p-value: 7.80e-03
+[19:32:54] [INFO]   Significance: 2.7σ
+[19:32:54] [PROCESS] [5/5] Creating visualizations...
+[19:32:55] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_all_stations_clock_drift_msc.png
+[19:32:55] [INFO] 
+[19:32:55] [INFO] ============================================================
+[19:32:55] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[19:32:55] [INFO] ============================================================
+[19:32:55] [INFO]   Year-months analyzed: 36
+[19:32:55] [INFO]   Pearson r: -0.438
+[19:32:55] [INFO]   p-value: 7.62e-03
+[19:32:55] [INFO]   Monte Carlo p: 7.80e-03
+[19:32:55] [INFO]   Significance: 2.7σ
+[19:32:55] [INFO] 
+[19:32:55] [INFO] Comparison to CODE Longspan:
+[19:32:55] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:32:55] [INFO]   RINEX: r = -0.438, p = 7.80e-03 (2.7σ)
+[19:32:55] [INFO] 
+[19:32:55] [WARNING] TEP SIGNATURE: WEAK ORBITAL COUPLING
+[19:32:55] [WARNING]   More data needed for confirmation
+[19:32:55] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_all_stations_clock_drift_msc.json
+[19:32:55] [INFO] 
+[19:32:55] [INFO] ================================================================================
+[19:32:55] [INFO] Step 2.5 Complete
+[19:32:55] [INFO] ================================================================================
+[19:32:56] [INFO] 
+[19:32:56] [INFO] ================================================================================
+[19:32:56] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.5: Orbital Velocity Coupling (ALL STATIONS)
+[19:32:56] [INFO] ================================================================================
+[19:32:56] [INFO] 
+[19:32:56] [INFO] This is the CRITICAL TEST - validates the strongest TEP signature
+[19:32:56] [INFO] CODE Longspan: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:32:56] [INFO] 
+[19:32:56] [INFO]   Metric: clock_drift, Coherence: phase_alignment
+[19:32:56] [INFO] Loaded 538 station coordinates
+[19:32:56] [PROCESS] [1/5] Loading pre-computed coherences from Step 2.0 CSV...
+[19:32:56] [INFO]   Loading from step_2_0_pairs_baseline.csv...
+[19:33:00] [INFO]   Loaded 1.7M pairs...
+[19:33:05] [INFO]   Loaded 3.3M pairs...
+[19:33:10] [INFO]   Loaded 5.0M pairs...
+[19:33:15] [INFO]   Loaded 6.6M pairs...
+[19:33:19] [INFO]   Loaded 8.3M pairs...
+[19:33:24] [INFO]   Loaded 10.0M pairs...
+[19:33:29] [INFO]   Loaded 11.7M pairs...
+[19:33:33] [INFO]   Loaded 13.3M pairs...
+[19:33:38] [INFO]   Loaded 15.0M pairs...
+[19:33:43] [INFO]   Loaded 16.7M pairs...
+[19:33:48] [INFO]   Loaded 18.3M pairs...
+[19:33:52] [INFO]   Loaded 20.0M pairs...
+[19:33:57] [INFO]   Loaded 21.6M pairs...
+[19:34:02] [INFO]   Loaded 23.3M pairs...
+[19:34:07] [INFO]   Loaded 25.0M pairs...
+[19:34:11] [INFO]   Loaded 26.6M pairs...
+[19:34:16] [INFO]   Loaded 28.3M pairs...
+[19:34:21] [INFO]   Loaded 30.0M pairs...
+[19:34:26] [INFO]   Loaded 31.6M pairs...
+[19:34:30] [INFO]   Loaded 33.3M pairs...
+[19:34:35] [INFO]   Loaded 35.0M pairs...
+[19:34:40] [INFO]   Loaded 36.6M pairs...
+[19:34:45] [INFO]   Loaded 38.3M pairs...
+[19:34:49] [INFO]   Loaded 40.0M pairs...
+[19:34:54] [INFO]   Loaded 41.6M pairs...
+[19:34:59] [INFO]   Loaded 43.3M pairs...
+[19:35:04] [INFO]   Loaded 45.0M pairs...
+[19:35:09] [INFO]   Loaded 46.7M pairs...
+[19:35:13] [INFO]   Loaded 48.3M pairs...
+[19:35:18] [INFO]   Loaded 50.0M pairs...
+[19:35:23] [INFO]   Loaded 51.6M pairs...
+[19:35:28] [INFO]   Loaded 53.3M pairs...
+[19:35:32] [INFO]   Loaded 55.0M pairs...
+[19:35:37] [INFO]   Loaded 56.7M pairs...
+[19:35:42] [INFO]   Loaded 58.3M pairs...
+[19:35:46] [INFO]   Finalizing 59,600,372 pairs...
+[19:35:48] [PROCESS] [2/5] Recomputing azimuths from station coordinates...
+[19:35:58] [INFO]   Built lookup for 150,099 unique pairs
+[19:36:31] [SUCCESS]   Fixed 7,029,547 azimuths (11.8% were ~180° off)
+[19:36:31] [PROCESS] [3/5] Grouping pairs by year-month...
+[19:36:31] [INFO]   Years in data: [np.int32(2022), np.int32(2023), np.int32(2024)]
+[19:36:36] [SUCCESS]   Total: 59,600,372 pairs across 36 year-months
+[19:36:36] [INFO]     2022-01: 1,358,914 pairs
+[19:36:36] [INFO]     2022-02: 1,194,247 pairs
+[19:36:36] [INFO]     2022-03: 1,496,717 pairs
+[19:36:36] [INFO]     2022-04: 1,511,449 pairs
+[19:36:36] [INFO]     2022-05: 1,543,395 pairs
+[19:36:36] [INFO]     2022-06: 1,536,713 pairs
+[19:36:36] [INFO]     2022-07: 1,569,647 pairs
+[19:36:36] [INFO]     2022-08: 1,607,002 pairs
+[19:36:36] [INFO]     2022-09: 1,550,824 pairs
+[19:36:36] [INFO]     2022-10: 1,569,662 pairs
+[19:36:36] [INFO]     2022-11: 1,519,788 pairs
+[19:36:36] [INFO]     2022-12: 1,540,990 pairs
+[19:36:36] [INFO]     2023-01: 1,629,197 pairs
+[19:36:36] [INFO]     2023-02: 1,518,164 pairs
+[19:36:36] [INFO]     2023-03: 1,681,595 pairs
+[19:36:36] [INFO]     2023-04: 1,601,886 pairs
+[19:36:36] [INFO]     2023-05: 1,653,659 pairs
+[19:36:36] [INFO]     2023-06: 1,654,619 pairs
+[19:36:36] [INFO]     2023-07: 1,786,303 pairs
+[19:36:36] [INFO]     2023-08: 1,873,339 pairs
+[19:36:36] [INFO]     2023-09: 1,733,816 pairs
+[19:36:36] [INFO]     2023-10: 1,793,138 pairs
+[19:36:36] [INFO]     2023-11: 1,663,909 pairs
+[19:36:36] [INFO]     2023-12: 1,766,054 pairs
+[19:36:36] [INFO]     2024-01: 1,714,009 pairs
+[19:36:36] [INFO]     2024-02: 1,612,781 pairs
+[19:36:36] [INFO]     2024-03: 1,770,989 pairs
+[19:36:36] [INFO]     2024-04: 1,739,239 pairs
+[19:36:36] [INFO]     2024-05: 1,774,128 pairs
+[19:36:36] [INFO]     2024-06: 1,708,794 pairs
+[19:36:36] [INFO]     2024-07: 1,776,684 pairs
+[19:36:36] [INFO]     2024-08: 1,855,358 pairs
+[19:36:36] [INFO]     2024-09: 1,774,334 pairs
+[19:36:36] [INFO]     2024-10: 1,859,497 pairs
+[19:36:36] [INFO]     2024-11: 1,779,789 pairs
+[19:36:36] [INFO]     2024-12: 1,879,743 pairs
+[19:36:36] [PROCESS] [4/5] Computing E-W/N-S anisotropy ratios for each year-month...
+[19:36:36] [INFO]   2022-01: EW/NS = 0.752, v = 30.26 km/s, EW_λ=924km, NS_λ=1229km (n=1,358,914)
+[19:36:36] [INFO]   2022-02: EW/NS = 0.886, v = 30.15 km/s, EW_λ=1067km, NS_λ=1204km (n=1,194,247)
+[19:36:36] [INFO]   2022-03: EW/NS = 1.013, v = 29.94 km/s, EW_λ=1067km, NS_λ=1053km (n=1,496,717)
+[19:36:37] [INFO]   2022-04: EW/NS = 1.261, v = 29.68 km/s, EW_λ=1181km, NS_λ=936km (n=1,511,449)
+[19:36:37] [INFO]   2022-05: EW/NS = 0.919, v = 29.45 km/s, EW_λ=956km, NS_λ=1040km (n=1,543,395)
+[19:36:37] [INFO]   2022-06: EW/NS = 0.856, v = 29.31 km/s, EW_λ=951km, NS_λ=1110km (n=1,536,713)
+[19:36:37] [INFO]   2022-07: EW/NS = 0.939, v = 29.29 km/s, EW_λ=1069km, NS_λ=1138km (n=1,569,647)
+[19:36:37] [INFO]   2022-08: EW/NS = 1.146, v = 29.41 km/s, EW_λ=1182km, NS_λ=1032km (n=1,607,002)
+[19:36:37] [INFO]   2022-09: EW/NS = 1.047, v = 29.62 km/s, EW_λ=1023km, NS_λ=977km (n=1,550,824)
+[19:36:37] [INFO]   2022-10: EW/NS = 0.867, v = 29.88 km/s, EW_λ=1014km, NS_λ=1169km (n=1,569,662)
+[19:36:37] [INFO]   2022-11: EW/NS = 1.118, v = 30.11 km/s, EW_λ=1013km, NS_λ=907km (n=1,519,788)
+[19:36:37] [INFO]   2022-12: EW/NS = 1.021, v = 30.25 km/s, EW_λ=940km, NS_λ=920km (n=1,540,990)
+[19:36:38] [INFO]   2023-01: EW/NS = 0.665, v = 30.26 km/s, EW_λ=861km, NS_λ=1295km (n=1,629,197)
+[19:36:38] [INFO]   2023-02: EW/NS = 0.751, v = 30.15 km/s, EW_λ=820km, NS_λ=1092km (n=1,518,164)
+[19:36:38] [INFO]   2023-03: EW/NS = 0.918, v = 29.94 km/s, EW_λ=857km, NS_λ=934km (n=1,681,595)
+[19:36:38] [INFO]   2023-04: EW/NS = 1.063, v = 29.68 km/s, EW_λ=1032km, NS_λ=971km (n=1,601,886)
+[19:36:38] [INFO]   2023-05: EW/NS = 0.910, v = 29.45 km/s, EW_λ=1020km, NS_λ=1121km (n=1,653,659)
+[19:36:38] [INFO]   2023-06: EW/NS = 0.766, v = 29.31 km/s, EW_λ=837km, NS_λ=1093km (n=1,654,619)
+[19:36:38] [INFO]   2023-07: EW/NS = 0.831, v = 29.29 km/s, EW_λ=927km, NS_λ=1116km (n=1,786,303)
+[19:36:38] [INFO]   2023-08: EW/NS = 0.918, v = 29.41 km/s, EW_λ=941km, NS_λ=1025km (n=1,873,339)
+[19:36:39] [INFO]   2023-09: EW/NS = 0.790, v = 29.62 km/s, EW_λ=771km, NS_λ=976km (n=1,733,816)
+[19:36:39] [INFO]   2023-10: EW/NS = 0.960, v = 29.88 km/s, EW_λ=877km, NS_λ=913km (n=1,793,138)
+[19:36:39] [INFO]   2023-11: EW/NS = 0.930, v = 30.11 km/s, EW_λ=956km, NS_λ=1028km (n=1,663,909)
+[19:36:39] [INFO]   2023-12: EW/NS = 0.664, v = 30.25 km/s, EW_λ=907km, NS_λ=1366km (n=1,766,054)
+[19:36:39] [INFO]   2024-01: EW/NS = 0.752, v = 30.26 km/s, EW_λ=837km, NS_λ=1113km (n=1,714,009)
+[19:36:39] [INFO]   2024-02: EW/NS = 0.951, v = 30.15 km/s, EW_λ=956km, NS_λ=1005km (n=1,612,781)
+[19:36:39] [INFO]   2024-03: EW/NS = 0.848, v = 29.93 km/s, EW_λ=724km, NS_λ=853km (n=1,770,989)
+[19:36:39] [INFO]   2024-04: EW/NS = 0.762, v = 29.68 km/s, EW_λ=766km, NS_λ=1005km (n=1,739,239)
+[19:36:40] [INFO]   2024-05: EW/NS = 0.642, v = 29.45 km/s, EW_λ=718km, NS_λ=1117km (n=1,774,128)
+[19:36:40] [INFO]   2024-06: EW/NS = 0.586, v = 29.31 km/s, EW_λ=663km, NS_λ=1132km (n=1,708,794)
+[19:36:40] [INFO]   2024-07: EW/NS = 0.794, v = 29.29 km/s, EW_λ=794km, NS_λ=1000km (n=1,776,684)
+[19:36:40] [INFO]   2024-08: EW/NS = 1.142, v = 29.41 km/s, EW_λ=900km, NS_λ=788km (n=1,855,358)
+[19:36:40] [INFO]   2024-09: EW/NS = 1.281, v = 29.63 km/s, EW_λ=853km, NS_λ=666km (n=1,774,334)
+[19:36:40] [INFO]   2024-10: EW/NS = 1.023, v = 29.89 km/s, EW_λ=881km, NS_λ=861km (n=1,859,497)
+[19:36:40] [INFO]   2024-11: EW/NS = 0.838, v = 30.12 km/s, EW_λ=821km, NS_λ=980km (n=1,779,789)
+[19:36:40] [INFO]   2024-12: EW/NS = 0.856, v = 30.26 km/s, EW_λ=817km, NS_λ=955km (n=1,879,743)
+[19:36:40] [PROCESS] [5/5] Computing orbital velocity correlation...
+[19:36:40] [INFO]   Pearson r = -0.093
+[19:36:40] [INFO]   p-value = 5.89e-01
+[19:36:40] [PROCESS] [4/5] Running Monte Carlo validation (10000 surrogates)...
+[19:36:43] [INFO]   Monte Carlo: 5872/10000 exceeded
+[19:36:43] [INFO]   Empirical p-value: 5.87e-01
+[19:36:43] [INFO]   Significance: 0.5σ
+[19:36:43] [PROCESS] [5/5] Creating visualizations...
+[19:36:44] [SUCCESS] Figure saved: /home/matthewsmawfield/tep-gnss-rinex/results/figures/step_2_5_orbital_velocity_correlation_all_stations_clock_drift_phase_alignment.png
+[19:36:44] [INFO] 
+[19:36:44] [INFO] ============================================================
+[19:36:44] [INFO] ORBITAL VELOCITY COUPLING SUMMARY
+[19:36:44] [INFO] ============================================================
+[19:36:44] [INFO]   Year-months analyzed: 36
+[19:36:44] [INFO]   Pearson r: -0.093
+[19:36:44] [INFO]   p-value: 5.89e-01
+[19:36:44] [INFO]   Monte Carlo p: 5.87e-01
+[19:36:44] [INFO]   Significance: 0.5σ
+[19:36:44] [INFO] 
+[19:36:44] [INFO] Comparison to CODE Longspan:
+[19:36:44] [INFO]   CODE: r = -0.888, p < 2×10⁻⁷ (5.1σ)
+[19:36:44] [INFO]   RINEX: r = -0.093, p = 5.87e-01 (0.5σ)
+[19:36:44] [INFO] 
+[19:36:44] [WARNING] TEP SIGNATURE: NO ORBITAL COUPLING DETECTED
+[19:36:44] [WARNING]   May need full year of data
+[19:36:44] [SUCCESS] Results saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_all_stations_clock_drift_phase_alignment.json
+[19:36:44] [INFO] 
+[19:36:44] [INFO] ================================================================================
+[19:36:44] [INFO] Step 2.5 Complete
+[19:36:44] [INFO] ================================================================================
+[19:36:45] [INFO] 
+[19:36:45] [INFO] ================================================================================
+[19:36:45] [INFO] ORBITAL COUPLING COMPARISON SUMMARY
+[19:36:45] [INFO] ================================================================================
+[19:36:45] [INFO] 
+[19:36:45] [INFO] Filter          Metric       Coh Type        r      p-value      σ   Match?
+[19:36:45] [INFO] --------------------------------------------------------------------------------
+[19:36:45] [INFO] DYNAMIC 100     clock_bias   msc        -0.505     1.40e-03    3.2      YES
+[19:36:45] [INFO] DYNAMIC 100     clock_bias   phase_     -0.190     2.67e-01    1.1      YES
+[19:36:45] [INFO] DYNAMIC 100     pos_jitter   msc        -0.515     1.00e-03    3.3      YES
+[19:36:45] [INFO] DYNAMIC 100     pos_jitter   phase_     -0.463     5.30e-03    2.8      YES
+[19:36:45] [INFO] DYNAMIC 100     clock_drift  msc        -0.438     8.20e-03    2.6      YES
+[19:36:45] [INFO] DYNAMIC 100     clock_drift  phase_     -0.093     5.94e-01    0.5      YES
+[19:36:45] [INFO] OPTIMAL 100     clock_bias   msc        -0.505     2.30e-03    3.0      YES
+[19:36:45] [INFO] OPTIMAL 100     clock_bias   phase_     -0.190     2.71e-01    1.1      YES
+[19:36:45] [INFO] OPTIMAL 100     pos_jitter   msc        -0.515     1.20e-03    3.2      YES
+[19:36:45] [INFO] OPTIMAL 100     pos_jitter   phase_     -0.463     4.40e-03    2.8      YES
+[19:36:45] [INFO] OPTIMAL 100     clock_drift  msc        -0.438     7.30e-03    2.7      YES
+[19:36:45] [INFO] OPTIMAL 100     clock_drift  phase_     -0.093     5.99e-01    0.5      YES
+[19:36:45] [INFO] ALL STATIONS    clock_bias   msc        -0.505     1.60e-03    3.2      YES
+[19:36:45] [INFO] ALL STATIONS    clock_bias   phase_     -0.190     2.75e-01    1.1      YES
+[19:36:45] [INFO] ALL STATIONS    pos_jitter   msc        -0.515     1.30e-03    3.2      YES
+[19:36:45] [INFO] ALL STATIONS    pos_jitter   phase_     -0.463     4.00e-03    2.9      YES
+[19:36:45] [INFO] ALL STATIONS    clock_drift  msc        -0.438     7.80e-03    2.7      YES
+[19:36:45] [INFO] ALL STATIONS    clock_drift  phase_     -0.093     5.87e-01    0.5      YES
+[19:36:45] [INFO] ----------------------------------------------------------------------
+[19:36:45] [INFO] CODE Longspan reference: r = -0.888, p < 2×10⁻⁷, 5.1σ
+[19:36:45] [INFO] 
+[19:36:45] [INFO] 
+[19:36:45] [SUCCESS] BEST RESULT: DYNAMIC 100/pos_jitter/msc
+[19:36:45] [SUCCESS]   r = -0.515, p = 1.00e-03, σ = 3.3
+[19:36:45] [SUCCESS] Summary saved: /home/matthewsmawfield/tep-gnss-rinex/results/outputs/step_2_5_orbital_coupling_summary.json
+[19:36:45] [SUCCESS] MULTI-FILTER PIPELINE COMPLETE

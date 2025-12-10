@@ -1,0 +1,42 @@
+[22:16:48] [INFO] [24730] Processing clock_bias...
+[22:16:48] [INFO] [24731] Processing pos_jitter...
+[22:16:48] [INFO] [24729] Processing clock_drift...
+[22:19:12] [INFO]   Fitting pos_jitter/msc...
+[22:19:13] [INFO]   Fitting clock_bias/msc...
+[22:19:13] [INFO]   Fitting clock_drift/msc...
+[22:19:43] [INFO]     global      : λ=744km, R²=0.93
+[22:19:43] [INFO]     global      : λ=930km, R²=0.97
+[22:19:43] [INFO]     global      : λ=797km, R²=0.93
+[22:19:44] [INFO]     europe      : λ=570km, R²=0.99
+[22:19:44] [INFO]     europe      : λ=581km, R²=0.88
+[22:19:44] [INFO]     europe      : λ=586km, R²=0.87
+[22:19:53] [INFO]     non_europe  : λ=854km, R²=0.95
+[22:19:53] [INFO]     non_europe  : λ=879km, R²=0.95
+[22:19:53] [INFO]     non_europe  : λ=1023km, R²=0.96
+[22:20:07] [INFO]     northern    : λ=704km, R²=0.94
+[22:20:09] [INFO]     northern    : λ=749km, R²=0.94
+[22:20:09] [INFO]     northern    : λ=880km, R²=0.98
+[22:20:09] [INFO]     southern    : λ=2185km, R²=0.88
+[22:20:09] [INFO]   Fitting clock_drift/phase_alignment...
+[22:20:10] [INFO]     southern    : λ=2154km, R²=0.89
+[22:20:10] [INFO]   Fitting clock_bias/phase_alignment...
+[22:20:11] [INFO]     southern    : λ=1487km, R²=0.94
+[22:20:11] [INFO]   Fitting pos_jitter/phase_alignment...
+[22:20:41] [INFO]     global      : λ=988km, R²=0.97
+[22:20:41] [INFO]     global      : λ=1758km, R²=0.96
+[22:20:41] [INFO]     global      : λ=1793km, R²=0.96
+[22:20:42] [INFO]     europe      : λ=1383km, R²=0.93
+[22:20:42] [INFO]     europe      : λ=3514km, R²=0.83
+[22:20:42] [INFO]     europe      : λ=5153km, R²=0.96
+[22:20:54] [INFO]     non_europe  : λ=1500km, R²=0.96
+[22:20:54] [INFO]     non_europe  : λ=905km, R²=0.97
+[22:20:55] [INFO]     non_europe  : λ=1741km, R²=0.95
+[22:21:12] [INFO]     northern    : λ=1900km, R²=0.94
+[22:21:13] [INFO]     northern    : λ=1016km, R²=0.96
+[22:21:13] [INFO]     northern    : λ=1860km, R²=0.95
+[22:21:14] [INFO]     southern    : λ=1833km, R²=0.94
+[22:21:14] [INFO]     southern    : λ=1072km, R²=0.89
+[22:21:14] [INFO]     southern    : λ=1751km, R²=0.96
+[22:24:25] [SUCCESS] Saved: step_2_1_control_tests_dynamic_50.json
+[22:24:26] [SUCCESS] Saved figure to /Users/matthewsmawfield/www/TEP-GNSS-RINEX/results/figures/step_2_1_control_tests.png
+[22:24:26] [SUCCESS] COMPLETE: 3 filters × 3 modes

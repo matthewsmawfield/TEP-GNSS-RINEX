@@ -1,0 +1,2926 @@
+{
+  "step": "2.1b",
+  "name": "elevation_analysis_comprehensive",
+  "timestamp": "2025-12-08T14:00:17.599505",
+  "filters_tested": [
+    "ALL_STATIONS",
+    "OPTIMAL_100",
+    "DYNAMIC_50"
+  ],
+  "modes_tested": [
+    "baseline",
+    "ionofree",
+    "multi_gnss"
+  ],
+  "results_by_filter": {
+    "all_stations": {
+      "filter_name": "ALL_STATIONS",
+      "filter_config": "none",
+      "filter_metadata": {
+        "type": "all"
+      },
+      "results_by_mode": {
+        "baseline": {
+          "clock_bias": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.21640876107831578,
+                "lambda_km": 701.5484684178589,
+                "lambda_err": 67.00758209029082,
+                "offset": 0.5486478175020898,
+                "r_squared": 0.969038813092932,
+                "n_pairs": 1938526,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.16710140067397297,
+                "lambda_km": 794.2702410108222,
+                "lambda_err": 81.80878907560925,
+                "offset": 0.5478328000468208,
+                "r_squared": 0.9089337606891609,
+                "n_pairs": 2111857,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.08350024878175955,
+                "lambda_km": 1219.3486672354013,
+                "lambda_err": 245.96101734123124,
+                "offset": 0.549224280745046,
+                "r_squared": 0.7957646849251077,
+                "n_pairs": 2560996,
+                "n_bins": 35,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.1888854363620038,
+                "lambda_km": 728.6350228215565,
+                "lambda_err": 112.96477898194024,
+                "offset": 0.5506827629071966,
+                "r_squared": 0.844750439274913,
+                "n_pairs": 2550407,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.2269209477250701,
+                "lambda_km": 724.6429149718726,
+                "lambda_err": 68.4208636130118,
+                "offset": 0.5467396618659324,
+                "r_squared": 0.9203190915163642,
+                "n_pairs": 2445040,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.113147516822058,
+                "lambda_km": 1385.1866585402684,
+                "lambda_err": 163.2026403041296,
+                "offset": -0.01937422374977259,
+                "r_squared": 0.9066036014397711,
+                "n_pairs": 1938526,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.0230889889476302,
+                "lambda_km": 2021.454569279497,
+                "lambda_err": 299.7105697755605,
+                "offset": -0.07014757001819251,
+                "r_squared": 0.887343170063574,
+                "n_pairs": 2111857,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.7635588901202838,
+                "lambda_km": 2180.1667740203247,
+                "lambda_err": 439.99423296976215,
+                "offset": -0.09207955609071722,
+                "r_squared": 0.8383538439429763,
+                "n_pairs": 2560996,
+                "n_bins": 35,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.0017271641961423,
+                "lambda_km": 2192.906778512807,
+                "lambda_err": 324.4331740407203,
+                "offset": -0.0674633603976304,
+                "r_squared": 0.8901142927697524,
+                "n_pairs": 2550407,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.1763506599750284,
+                "lambda_km": 1922.1951768437343,
+                "lambda_err": 247.3308865157623,
+                "offset": -0.04806145912478373,
+                "r_squared": 0.9022352684862931,
+                "n_pairs": 2445040,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            }
+          },
+          "pos_jitter": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.19197648686333282,
+                "lambda_km": 1014.2641262875616,
+                "lambda_err": 75.46759567818061,
+                "offset": 0.5486214271130619,
+                "r_squared": 0.9705827961878437,
+                "n_pairs": 1938526,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.3095236741119857,
+                "lambda_km": 652.8220805617719,
+                "lambda_err": 37.96821715910971,
+                "offset": 0.5495046975923505,
+                "r_squared": 0.9682842739982374,
+                "n_pairs": 2111857,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.2539587449693314,
+                "lambda_km": 747.6148953695929,
+                "lambda_err": 37.94713786307083,
+                "offset": 0.5516612698263711,
+                "r_squared": 0.980352306442564,
+                "n_pairs": 2560996,
+                "n_bins": 35,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.2710173909521718,
+                "lambda_km": 761.7749656162921,
+                "lambda_err": 37.13022394808893,
+                "offset": 0.5512979522463958,
+                "r_squared": 0.9821958891586111,
+                "n_pairs": 2550407,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.2521882366491789,
+                "lambda_km": 887.6057812859248,
+                "lambda_err": 68.69297528967462,
+                "offset": 0.5475480318979463,
+                "r_squared": 0.9482499518256524,
+                "n_pairs": 2445040,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.1156330347879964,
+                "lambda_km": 2116.886844313808,
+                "lambda_err": 117.8312591068213,
+                "offset": -0.031155695449204154,
+                "r_squared": 0.9741929539056418,
+                "n_pairs": 1938526,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.3748077783688033,
+                "lambda_km": 2138.354608858036,
+                "lambda_err": 154.35241772278073,
+                "offset": -0.06154280820407458,
+                "r_squared": 0.9721194153285035,
+                "n_pairs": 2111857,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.3612366035295158,
+                "lambda_km": 2016.6008590690694,
+                "lambda_err": 173.92716084574954,
+                "offset": -0.04362528668041181,
+                "r_squared": 0.9645093352513304,
+                "n_pairs": 2560996,
+                "n_bins": 35,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.3180750247555186,
+                "lambda_km": 2057.165075943311,
+                "lambda_err": 159.48846713331656,
+                "offset": -0.03557775082796107,
+                "r_squared": 0.9657955930097115,
+                "n_pairs": 2550407,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.38066004512909,
+                "lambda_km": 2151.983181818518,
+                "lambda_err": 195.2229163903663,
+                "offset": -0.044842238830986085,
+                "r_squared": 0.9520529346204489,
+                "n_pairs": 2445040,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            }
+          },
+          "clock_drift": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.21370339592183485,
+                "lambda_km": 694.8377343491481,
+                "lambda_err": 67.9682107284575,
+                "offset": 0.5477928443306492,
+                "r_squared": 0.967933670677342,
+                "n_pairs": 1938526,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.16881800649339143,
+                "lambda_km": 759.2748305045939,
+                "lambda_err": 78.43505467372476,
+                "offset": 0.5467053509586121,
+                "r_squared": 0.9078500381215325,
+                "n_pairs": 2111857,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.08755291179890405,
+                "lambda_km": 1118.3798582093896,
+                "lambda_err": 212.70187964372698,
+                "offset": 0.5483181089146897,
+                "r_squared": 0.807979560978505,
+                "n_pairs": 2560996,
+                "n_bins": 35,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.19071347321422918,
+                "lambda_km": 695.2192821071995,
+                "lambda_err": 106.40360115527662,
+                "offset": 0.5494804942645041,
+                "r_squared": 0.8477704164475421,
+                "n_pairs": 2550407,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.2288802549796309,
+                "lambda_km": 704.1700175251013,
+                "lambda_err": 65.74543864148724,
+                "offset": 0.5459217826874069,
+                "r_squared": 0.9213794512801244,
+                "n_pairs": 2445040,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.0521349129363275,
+                "lambda_km": 930.791643209033,
+                "lambda_err": 70.96436281440302,
+                "offset": -0.00794161701189355,
+                "r_squared": 0.9720396447292934,
+                "n_pairs": 1938526,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.9512197305140427,
+                "lambda_km": 994.2719462043915,
+                "lambda_err": 113.57170363780989,
+                "offset": -0.012899642211183787,
+                "r_squared": 0.8956476971644082,
+                "n_pairs": 2111857,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.6159415721802952,
+                "lambda_km": 1258.989403769334,
+                "lambda_err": 231.9891777797201,
+                "offset": -0.018415401090035758,
+                "r_squared": 0.825789342323159,
+                "n_pairs": 2560996,
+                "n_bins": 35,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.975197017783163,
+                "lambda_km": 1064.9670959581128,
+                "lambda_err": 126.79910265277456,
+                "offset": -0.005007051338849974,
+                "r_squared": 0.9041579482578601,
+                "n_pairs": 2550407,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.067467130395979,
+                "lambda_km": 1050.9455742938696,
+                "lambda_err": 96.27939032338749,
+                "offset": 0.010895712582782815,
+                "r_squared": 0.932906136616537,
+                "n_pairs": 2445040,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            }
+          }
+        },
+        "ionofree": {
+          "clock_bias": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.12899452132392175,
+                "lambda_km": 1093.0415968681577,
+                "lambda_err": 106.76915196061512,
+                "offset": 0.5472350753558178,
+                "r_squared": 0.9468824455576399,
+                "n_pairs": 1877125,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.11718996861138799,
+                "lambda_km": 971.642453962169,
+                "lambda_err": 114.39516428075923,
+                "offset": 0.5462413762273592,
+                "r_squared": 0.8902732607022135,
+                "n_pairs": 1965513,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.05644548329411529,
+                "lambda_km": 1885.116624498821,
+                "lambda_err": 364.3542721215741,
+                "offset": 0.5466200244922242,
+                "r_squared": 0.8454549115663251,
+                "n_pairs": 2419725,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.109567528011779,
+                "lambda_km": 1123.4324263065885,
+                "lambda_err": 142.1193016874073,
+                "offset": 0.548790116262471,
+                "r_squared": 0.8955233005293325,
+                "n_pairs": 2464217,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.11472312807592011,
+                "lambda_km": 1251.813213981617,
+                "lambda_err": 123.62491024197854,
+                "offset": 0.5459788281157144,
+                "r_squared": 0.9277602422320153,
+                "n_pairs": 2365023,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.1539688492810158,
+                "lambda_km": 1640.2676727243072,
+                "lambda_err": 228.94403595538236,
+                "offset": -0.061547876947466065,
+                "r_squared": 0.863094296522761,
+                "n_pairs": 1877125,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.1681203908440951,
+                "lambda_km": 2272.364476784434,
+                "lambda_err": 507.58850245319445,
+                "offset": -0.09185735594179474,
+                "r_squared": 0.795222931643908,
+                "n_pairs": 1965513,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.8673400746613547,
+                "lambda_km": 2090.6141112301743,
+                "lambda_err": 707.9330684300546,
+                "offset": -0.06393268381664492,
+                "r_squared": 0.6525695379377096,
+                "n_pairs": 2419725,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.148584263194235,
+                "lambda_km": 1967.2390154733066,
+                "lambda_err": 407.96517795141426,
+                "offset": -0.07060432432834778,
+                "r_squared": 0.7954890264026049,
+                "n_pairs": 2464217,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.2106623965209333,
+                "lambda_km": 2048.8646309468704,
+                "lambda_err": 335.0784523855098,
+                "offset": -0.011793533488951565,
+                "r_squared": 0.855263840579946,
+                "n_pairs": 2365023,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            }
+          },
+          "pos_jitter": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.11236515285022003,
+                "lambda_km": 1577.4472974632456,
+                "lambda_err": 128.13742370581033,
+                "offset": 0.5477862077545467,
+                "r_squared": 0.9499189574061382,
+                "n_pairs": 1877125,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.18236660630798074,
+                "lambda_km": 790.321741346883,
+                "lambda_err": 92.10356151995248,
+                "offset": 0.5462873348670426,
+                "r_squared": 0.8871457356897311,
+                "n_pairs": 1965513,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.11379457529576677,
+                "lambda_km": 1070.2605950121208,
+                "lambda_err": 125.87140208738577,
+                "offset": 0.5483807552594352,
+                "r_squared": 0.9196191299516181,
+                "n_pairs": 2419725,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.12735489097566016,
+                "lambda_km": 1043.9168958044518,
+                "lambda_err": 81.24568155193413,
+                "offset": 0.5513599817140203,
+                "r_squared": 0.9573487560846916,
+                "n_pairs": 2464217,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.11275389047594357,
+                "lambda_km": 1724.677675523531,
+                "lambda_err": 226.0445096078896,
+                "offset": 0.5463496193041246,
+                "r_squared": 0.8934285723649066,
+                "n_pairs": 2365023,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.195438680187696,
+                "lambda_km": 3334.7644308130175,
+                "lambda_err": 302.27784043270486,
+                "offset": -0.1721613772724454,
+                "r_squared": 0.9494805667887177,
+                "n_pairs": 1877125,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.146868970646379,
+                "lambda_km": 2983.121312285748,
+                "lambda_err": 427.7521406197161,
+                "offset": -0.12853086437084738,
+                "r_squared": 0.924759400478891,
+                "n_pairs": 1965513,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.1674389066564657,
+                "lambda_km": 3616.8988729887515,
+                "lambda_err": 412.97848530066807,
+                "offset": -0.16640008199135456,
+                "r_squared": 0.9618151680441992,
+                "n_pairs": 2419725,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.1217333697218732,
+                "lambda_km": 2628.2655124409816,
+                "lambda_err": 381.6746199694847,
+                "offset": -0.08054899423009773,
+                "r_squared": 0.9074901959967643,
+                "n_pairs": 2464217,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.1733047656046227,
+                "lambda_km": 3835.2824627716095,
+                "lambda_err": 612.6715409949636,
+                "offset": -0.1436943430967778,
+                "r_squared": 0.9151590498853471,
+                "n_pairs": 2365023,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            }
+          },
+          "clock_drift": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.1263154865429017,
+                "lambda_km": 1119.1576680087214,
+                "lambda_err": 111.47938590111,
+                "offset": 0.5463631599130108,
+                "r_squared": 0.9435423949525715,
+                "n_pairs": 1877125,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.11845673268706015,
+                "lambda_km": 962.6324692988071,
+                "lambda_err": 114.73676459521235,
+                "offset": 0.5458583003114363,
+                "r_squared": 0.8875431747901541,
+                "n_pairs": 1965513,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.05846276360129346,
+                "lambda_km": 1776.6282350284894,
+                "lambda_err": 329.32930943277603,
+                "offset": 0.5465637778957462,
+                "r_squared": 0.8525815839318645,
+                "n_pairs": 2419725,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.1109087414032615,
+                "lambda_km": 1112.3716873561705,
+                "lambda_err": 137.42044166125882,
+                "offset": 0.5483278296768369,
+                "r_squared": 0.8997582847218435,
+                "n_pairs": 2464217,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.11382521633474342,
+                "lambda_km": 1239.4443164942898,
+                "lambda_err": 122.81628547689363,
+                "offset": 0.5455697897276407,
+                "r_squared": 0.9270445881426908,
+                "n_pairs": 2365023,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 0.914972964029159,
+                "lambda_km": 1044.07500793618,
+                "lambda_err": 111.57336009490308,
+                "offset": -0.011891798020444358,
+                "r_squared": 0.9400159726924466,
+                "n_pairs": 1877125,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.7918887644871909,
+                "lambda_km": 1227.1336268247721,
+                "lambda_err": 196.98112230771395,
+                "offset": -0.009632732016711599,
+                "r_squared": 0.828288583862228,
+                "n_pairs": 1965513,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.5402169645529209,
+                "lambda_km": 1396.391914157433,
+                "lambda_err": 340.3207357210998,
+                "offset": -0.015295225693696133,
+                "r_squared": 0.7503313868316845,
+                "n_pairs": 2419725,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.9043255240734881,
+                "lambda_km": 1053.1244346250905,
+                "lambda_err": 152.7386003688446,
+                "offset": 0.0013919681044879052,
+                "r_squared": 0.8661227420596153,
+                "n_pairs": 2464217,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.8349914000959346,
+                "lambda_km": 1176.8742020284349,
+                "lambda_err": 125.9196296026919,
+                "offset": 0.02269597599790903,
+                "r_squared": 0.9144057304445184,
+                "n_pairs": 2365023,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            }
+          }
+        },
+        "multi_gnss": {
+          "clock_bias": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.17720174987432996,
+                "lambda_km": 726.27997711672,
+                "lambda_err": 77.60511961117997,
+                "offset": 0.5478168516131472,
+                "r_squared": 0.9604591690856664,
+                "n_pairs": 1829692,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.09960566305465887,
+                "lambda_km": 1258.0223655965601,
+                "lambda_err": 165.64017665757407,
+                "offset": 0.5448590033128973,
+                "r_squared": 0.8773801823747521,
+                "n_pairs": 1988683,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.06532193664868717,
+                "lambda_km": 1849.794736001348,
+                "lambda_err": 428.1999040104654,
+                "offset": 0.5446322975011615,
+                "r_squared": 0.7912170312349357,
+                "n_pairs": 2285871,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.12280271158073171,
+                "lambda_km": 885.9985649341315,
+                "lambda_err": 161.32525060973865,
+                "offset": 0.5496569075362134,
+                "r_squared": 0.8029848560434295,
+                "n_pairs": 2396194,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.1684139042039026,
+                "lambda_km": 730.6340979517535,
+                "lambda_err": 94.90799991437834,
+                "offset": 0.5468872672782151,
+                "r_squared": 0.8598015285750155,
+                "n_pairs": 2355725,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.0749890768557748,
+                "lambda_km": 1365.9828859577908,
+                "lambda_err": 151.7834725790377,
+                "offset": -0.01838199099435409,
+                "r_squared": 0.917837841850869,
+                "n_pairs": 1829692,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.8839284200470479,
+                "lambda_km": 1945.8490527651852,
+                "lambda_err": 235.74590356013232,
+                "offset": -0.05545006431556077,
+                "r_squared": 0.9195985680656313,
+                "n_pairs": 1988683,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.6778358920947944,
+                "lambda_km": 2417.959234250467,
+                "lambda_err": 440.052030392991,
+                "offset": -0.100860097670418,
+                "r_squared": 0.876162096935231,
+                "n_pairs": 2285871,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.8538007208701891,
+                "lambda_km": 2252.853627318285,
+                "lambda_err": 290.12889506685826,
+                "offset": -0.05346504224673076,
+                "r_squared": 0.9170558179754831,
+                "n_pairs": 2396194,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.96092697504236,
+                "lambda_km": 1689.158455308094,
+                "lambda_err": 213.20608499731517,
+                "offset": -0.040685862675035024,
+                "r_squared": 0.8996280954966286,
+                "n_pairs": 2355725,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            }
+          },
+          "pos_jitter": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.16775659374596846,
+                "lambda_km": 991.5387689613061,
+                "lambda_err": 71.87903266237097,
+                "offset": 0.5481820043573906,
+                "r_squared": 0.9731200066107343,
+                "n_pairs": 1829692,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.22924229286444261,
+                "lambda_km": 747.7109298562893,
+                "lambda_err": 53.37681366830252,
+                "offset": 0.5480469792036333,
+                "r_squared": 0.9533300343434482,
+                "n_pairs": 1988683,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.22265037833203602,
+                "lambda_km": 777.8401350574609,
+                "lambda_err": 38.078890380675354,
+                "offset": 0.5489155492635661,
+                "r_squared": 0.9830599976165256,
+                "n_pairs": 2285871,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.18552794207918386,
+                "lambda_km": 877.8406542660501,
+                "lambda_err": 77.35873844026352,
+                "offset": 0.5501657367869263,
+                "r_squared": 0.9456268147621089,
+                "n_pairs": 2396194,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.1926490228582593,
+                "lambda_km": 856.9485856599083,
+                "lambda_err": 82.3499781268569,
+                "offset": 0.5478746495866531,
+                "r_squared": 0.9217247124556786,
+                "n_pairs": 2355725,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.1060592006073922,
+                "lambda_km": 1709.0495166335904,
+                "lambda_err": 127.99743932158127,
+                "offset": -0.004489362844633673,
+                "r_squared": 0.9556892054796252,
+                "n_pairs": 1829692,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.3445586792747128,
+                "lambda_km": 1773.0227571342407,
+                "lambda_err": 134.37638582515697,
+                "offset": -0.027050085219100482,
+                "r_squared": 0.9644654657812392,
+                "n_pairs": 1988683,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.3547094768878376,
+                "lambda_km": 1798.8468246794303,
+                "lambda_err": 175.9221157864523,
+                "offset": -0.029609646505847628,
+                "r_squared": 0.9544685828413321,
+                "n_pairs": 2285871,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.305102623261812,
+                "lambda_km": 1928.4284349620673,
+                "lambda_err": 159.93975913885626,
+                "offset": -0.04460085137910791,
+                "r_squared": 0.9601549670823635,
+                "n_pairs": 2396194,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.3675200214293315,
+                "lambda_km": 1821.1884816175555,
+                "lambda_err": 159.63123241246046,
+                "offset": -0.03160077018783669,
+                "r_squared": 0.9507296172597972,
+                "n_pairs": 2355725,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            }
+          },
+          "clock_drift": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.17367929898604856,
+                "lambda_km": 722.5861898305277,
+                "lambda_err": 78.88650254162471,
+                "offset": 0.5468116273685242,
+                "r_squared": 0.9590367439096757,
+                "n_pairs": 1829692,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.10016822380770636,
+                "lambda_km": 1172.2578337415794,
+                "lambda_err": 156.05221314314338,
+                "offset": 0.5438587419216376,
+                "r_squared": 0.8709402081322608,
+                "n_pairs": 1988683,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.06776069294787761,
+                "lambda_km": 1585.3036128150447,
+                "lambda_err": 355.09443496474853,
+                "offset": 0.5437973070015489,
+                "r_squared": 0.790824302522979,
+                "n_pairs": 2285871,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.12346516366021655,
+                "lambda_km": 811.6159709081478,
+                "lambda_err": 149.07600131857325,
+                "offset": 0.5483041849903826,
+                "r_squared": 0.7994549230463192,
+                "n_pairs": 2396194,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.17068157296482636,
+                "lambda_km": 695.1050219825405,
+                "lambda_err": 89.06478892528871,
+                "offset": 0.5458436351624949,
+                "r_squared": 0.8614436302352064,
+                "n_pairs": 2355725,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.0458098523212218,
+                "lambda_km": 895.2856851120806,
+                "lambda_err": 69.9648473541542,
+                "offset": -0.008397481283851227,
+                "r_squared": 0.9723603853675334,
+                "n_pairs": 1829692,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.9170339587209858,
+                "lambda_km": 1049.5818289020306,
+                "lambda_err": 108.57980862047229,
+                "offset": -0.013033171248831405,
+                "r_squared": 0.9140904525068279,
+                "n_pairs": 1988683,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.5995177023958004,
+                "lambda_km": 1338.3142451559947,
+                "lambda_err": 223.0159677251057,
+                "offset": -0.018559174381541522,
+                "r_squared": 0.8639497797488782,
+                "n_pairs": 2285871,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.923521707803869,
+                "lambda_km": 1094.2402947306512,
+                "lambda_err": 123.53096307303123,
+                "offset": 0.0036461914754124685,
+                "r_squared": 0.915160434953182,
+                "n_pairs": 2396194,
+                "n_bins": 37,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.1326872602770994,
+                "lambda_km": 770.2135758080393,
+                "lambda_err": 70.2153029300968,
+                "offset": 0.0052208307952435066,
+                "r_squared": 0.9267173184670923,
+                "n_pairs": 2355725,
+                "n_bins": 36,
+                "boundary_hit": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "optimal_100": {
+      "filter_name": "OPTIMAL_100",
+      "filter_config": "optimal_100_metadata.json",
+      "filter_metadata": {
+        "type": "metadata",
+        "n_stations": 100
+      },
+      "results_by_mode": {
+        "baseline": {
+          "clock_bias": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.08265319883336487,
+                "lambda_km": 2023.090853442902,
+                "lambda_err": 1006.9778183210593,
+                "offset": 0.5437370175649835,
+                "r_squared": 0.7848386946086966,
+                "n_pairs": 40670,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.2106785948563747,
+                "lambda_km": 718.8122560296595,
+                "lambda_err": 77.71454903860304,
+                "offset": 0.5510137429113122,
+                "r_squared": 0.9578150015943344,
+                "n_pairs": 77293,
+                "n_bins": 19,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.2980348486544588,
+                "lambda_km": 458.620278592614,
+                "lambda_err": 72.35526416150367,
+                "offset": 0.5590109973996471,
+                "r_squared": 0.8615717904422747,
+                "n_pairs": 117742,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.35443915490663636,
+                "lambda_km": 576.0191420087269,
+                "lambda_err": 76.42353794090634,
+                "offset": 0.5425987679849393,
+                "r_squared": 0.944154547310912,
+                "n_pairs": 109948,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.17882903883643633,
+                "lambda_km": 676.1114030448631,
+                "lambda_err": 83.24317660920943,
+                "offset": 0.544439423910632,
+                "r_squared": 0.9471783266058896,
+                "n_pairs": 132002,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.3053046771811811,
+                "lambda_km": 1230.5687419399064,
+                "lambda_err": 1084.1423077768131,
+                "offset": 0.07719584350914437,
+                "r_squared": 0.6477204437593385,
+                "n_pairs": 40670,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.3942857646488303,
+                "lambda_km": 2046.8644304772433,
+                "lambda_err": 551.5893884384208,
+                "offset": -0.14136133772734638,
+                "r_squared": 0.8991440271857933,
+                "n_pairs": 77293,
+                "n_bins": 19,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.343305419628675,
+                "lambda_km": 2336.6813246121255,
+                "lambda_err": 640.7964647927038,
+                "offset": -0.2420990944622118,
+                "r_squared": 0.8740052557838677,
+                "n_pairs": 117742,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.259714250817749,
+                "lambda_km": 2212.206993150486,
+                "lambda_err": 504.05076380171096,
+                "offset": -0.13433392276616624,
+                "r_squared": 0.9562780325005736,
+                "n_pairs": 109948,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.8680649787984092,
+                "lambda_km": 1618.985586274932,
+                "lambda_err": 589.076433738952,
+                "offset": 0.004788501281694968,
+                "r_squared": 0.7842896833661582,
+                "n_pairs": 132002,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            }
+          },
+          "pos_jitter": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.17049814176359254,
+                "lambda_km": 1325.896140234862,
+                "lambda_err": 284.04782510249584,
+                "offset": 0.5483037883288973,
+                "r_squared": 0.9667179650268724,
+                "n_pairs": 40670,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.25645052375284866,
+                "lambda_km": 734.8893785062377,
+                "lambda_err": 56.812886379479416,
+                "offset": 0.5491550715422137,
+                "r_squared": 0.9781723664376991,
+                "n_pairs": 77293,
+                "n_bins": 19,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.31723071026771127,
+                "lambda_km": 570.1059806390125,
+                "lambda_err": 29.895303961408846,
+                "offset": 0.5567563151788529,
+                "r_squared": 0.9825534488877851,
+                "n_pairs": 117742,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.2888703448998207,
+                "lambda_km": 798.7808903074408,
+                "lambda_err": 97.37624226337708,
+                "offset": 0.5443202735277757,
+                "r_squared": 0.9630385415923587,
+                "n_pairs": 109948,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.2903733872455553,
+                "lambda_km": 729.9608651696548,
+                "lambda_err": 48.72264498239096,
+                "offset": 0.5457053722024202,
+                "r_squared": 0.9840130559169915,
+                "n_pairs": 132002,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.6127170553148606,
+                "lambda_km": 1637.1809505114095,
+                "lambda_err": 335.1926349890368,
+                "offset": -0.03701704199650687,
+                "r_squared": 0.962724235248056,
+                "n_pairs": 40670,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.4312918942188344,
+                "lambda_km": 3556.045976157772,
+                "lambda_err": 385.5696408155697,
+                "offset": -0.23151710638013426,
+                "r_squared": 0.9891440235376922,
+                "n_pairs": 77293,
+                "n_bins": 19,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.448405619552791,
+                "lambda_km": 3266.7640048482695,
+                "lambda_err": 505.3917491105732,
+                "offset": -0.21679517644915575,
+                "r_squared": 0.9648845460198581,
+                "n_pairs": 117742,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.4021317002083982,
+                "lambda_km": 6215.01426765019,
+                "lambda_err": 795.5174147903062,
+                "offset": -0.32929176846350855,
+                "r_squared": 0.99704585721454,
+                "n_pairs": 109948,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.3623008039039166,
+                "lambda_km": 2919.5139315251677,
+                "lambda_err": 384.55144077861826,
+                "offset": -0.14440016633841166,
+                "r_squared": 0.9831772388725171,
+                "n_pairs": 132002,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            }
+          },
+          "clock_drift": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.07867229057102165,
+                "lambda_km": 2158.092961139188,
+                "lambda_err": 1062.6227104278573,
+                "offset": 0.5419273956332449,
+                "r_squared": 0.7816850932315174,
+                "n_pairs": 40670,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.2129018333872541,
+                "lambda_km": 709.0343086173549,
+                "lambda_err": 75.85261506486266,
+                "offset": 0.5489668396663607,
+                "r_squared": 0.9584402790680209,
+                "n_pairs": 77293,
+                "n_bins": 19,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.29549421762393374,
+                "lambda_km": 468.71437581575543,
+                "lambda_err": 70.80982007980718,
+                "offset": 0.556541860100595,
+                "r_squared": 0.8713103340027962,
+                "n_pairs": 117742,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.3513219820654674,
+                "lambda_km": 573.2080563132633,
+                "lambda_err": 73.9533700391651,
+                "offset": 0.5413067642682797,
+                "r_squared": 0.9468711328144526,
+                "n_pairs": 109948,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.177960364711291,
+                "lambda_km": 682.9730137477299,
+                "lambda_err": 85.17369275015079,
+                "offset": 0.5429171045276551,
+                "r_squared": 0.9459119505720679,
+                "n_pairs": 132002,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 0.7645043302417979,
+                "lambda_km": 1452.9953908528682,
+                "lambda_err": 759.5401443883214,
+                "offset": -0.014481209397136924,
+                "r_squared": 0.8168786214312271,
+                "n_pairs": 40670,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.416990521834433,
+                "lambda_km": 1121.2446910143494,
+                "lambda_err": 154.95375154677592,
+                "offset": -0.09506780799514467,
+                "r_squared": 0.9476132196940559,
+                "n_pairs": 77293,
+                "n_bins": 19,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.3801124652406793,
+                "lambda_km": 1231.5694309828193,
+                "lambda_err": 192.0211780250134,
+                "offset": -0.15891013070078056,
+                "r_squared": 0.9182910088240921,
+                "n_pairs": 117742,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.24489803444328,
+                "lambda_km": 1119.838334806392,
+                "lambda_err": 158.65172356531818,
+                "offset": -0.012473243462617712,
+                "r_squared": 0.9638235843696015,
+                "n_pairs": 109948,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.234485382895952,
+                "lambda_km": 717.922522631409,
+                "lambda_err": 131.41855219553284,
+                "offset": -0.004994445145403115,
+                "r_squared": 0.8908481814262468,
+                "n_pairs": 132002,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            }
+          }
+        },
+        "ionofree": {
+          "clock_bias": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.05456599090628424,
+                "lambda_km": 4070.792771097023,
+                "lambda_err": 2346.8789295324636,
+                "offset": 0.5374709062878279,
+                "r_squared": 0.7485230256387265,
+                "n_pairs": 40462,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.16705501859497873,
+                "lambda_km": 772.5290938087653,
+                "lambda_err": 135.08494695863553,
+                "offset": 0.5516074397334273,
+                "r_squared": 0.9051557427704459,
+                "n_pairs": 73227,
+                "n_bins": 18,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.2403608966309471,
+                "lambda_km": 431.68186619853566,
+                "lambda_err": 69.24202371557318,
+                "offset": 0.5659590998920693,
+                "r_squared": 0.8594116880298506,
+                "n_pairs": 115618,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.1597383566025436,
+                "lambda_km": 898.9955306975588,
+                "lambda_err": 159.69502922417146,
+                "offset": 0.5467696604991694,
+                "r_squared": 0.9319628786331632,
+                "n_pairs": 109593,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.13507208762036957,
+                "lambda_km": 763.0031285336547,
+                "lambda_err": 99.60494584809223,
+                "offset": 0.5442130146801573,
+                "r_squared": 0.9426380220174329,
+                "n_pairs": 129667,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.9607406775944096,
+                "lambda_km": 888.7241805417145,
+                "lambda_err": 1124.9704349875742,
+                "offset": -0.02829794842405626,
+                "r_squared": 0.5241496715336079,
+                "n_pairs": 40462,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.8041610663465173,
+                "lambda_km": 2513.474708753133,
+                "lambda_err": 736.0250206871789,
+                "offset": -0.3837863378056245,
+                "r_squared": 0.9105312912675109,
+                "n_pairs": 73227,
+                "n_bins": 18,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.917767133890659,
+                "lambda_km": 2278.08377446402,
+                "lambda_err": 803.6747407260106,
+                "offset": -0.5050287040633894,
+                "r_squared": 0.801827992296374,
+                "n_pairs": 115618,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.154602304730664,
+                "lambda_km": 2414.424975739492,
+                "lambda_err": 595.469393149203,
+                "offset": -0.025192131760208705,
+                "r_squared": 0.9546553165681675,
+                "n_pairs": 109593,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.9067029287508899,
+                "lambda_km": 1551.7396144568374,
+                "lambda_err": 563.921952219292,
+                "offset": 0.08984088772484429,
+                "r_squared": 0.7768201082987218,
+                "n_pairs": 129667,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            }
+          },
+          "pos_jitter": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.09954160877176171,
+                "lambda_km": 1778.5553342847516,
+                "lambda_err": 471.5706086442186,
+                "offset": 0.5471723429519283,
+                "r_squared": 0.9343721920051915,
+                "n_pairs": 40462,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.15532615459432916,
+                "lambda_km": 729.7358972221747,
+                "lambda_err": 180.5294903900124,
+                "offset": 0.544178195396719,
+                "r_squared": 0.8230368256127358,
+                "n_pairs": 73227,
+                "n_bins": 18,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.2514100216804774,
+                "lambda_km": 381.02343891701645,
+                "lambda_err": 45.18988851747904,
+                "offset": 0.5607954850443874,
+                "r_squared": 0.9201036673735976,
+                "n_pairs": 115618,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.13207811686654292,
+                "lambda_km": 995.4658641991928,
+                "lambda_err": 100.00974543225185,
+                "offset": 0.5466500448110072,
+                "r_squared": 0.9792674202037567,
+                "n_pairs": 109593,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.13541344368087188,
+                "lambda_km": 1011.4787954254294,
+                "lambda_err": 135.2182284271869,
+                "offset": 0.5421371688306368,
+                "r_squared": 0.9463982916526701,
+                "n_pairs": 129667,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.1251429174239433,
+                "lambda_km": 3426.1745023852595,
+                "lambda_err": 1009.5208878342656,
+                "offset": -0.022782458535181675,
+                "r_squared": 0.9092374605052282,
+                "n_pairs": 40462,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.3209511516196928,
+                "lambda_km": 950.9022409988181,
+                "lambda_err": 329.84306742218064,
+                "offset": 0.16352418318463827,
+                "r_squared": 0.7307899588141613,
+                "n_pairs": 73227,
+                "n_bins": 18,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.4721301443584056,
+                "lambda_km": 7690.24917400852,
+                "lambda_err": 3697.413174472054,
+                "offset": -0.5434157117105052,
+                "r_squared": 0.8805787998495509,
+                "n_pairs": 115618,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.291711868073181,
+                "lambda_km": 4100.322955815918,
+                "lambda_err": 748.6855833912103,
+                "offset": -0.2511595062394551,
+                "r_squared": 0.9884123111154527,
+                "n_pairs": 109593,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.2547646415130898,
+                "lambda_km": 2648.502246084198,
+                "lambda_err": 493.04831422344955,
+                "offset": -0.11658089167696485,
+                "r_squared": 0.9628275632484427,
+                "n_pairs": 129667,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            }
+          },
+          "clock_drift": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.055879658246288655,
+                "lambda_km": 3293.1595991124905,
+                "lambda_err": 1819.518732480516,
+                "offset": 0.539683505801067,
+                "r_squared": 0.7362217610037056,
+                "n_pairs": 40462,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.16598862680880055,
+                "lambda_km": 779.8823048872007,
+                "lambda_err": 133.5991905110891,
+                "offset": 0.5510306937851436,
+                "r_squared": 0.9089823498591474,
+                "n_pairs": 73227,
+                "n_bins": 18,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.2270147214017341,
+                "lambda_km": 467.47820220745507,
+                "lambda_err": 71.77689437694052,
+                "offset": 0.5655046076754944,
+                "r_squared": 0.8682449273802103,
+                "n_pairs": 115618,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.1606260349047165,
+                "lambda_km": 912.741779352654,
+                "lambda_err": 152.141308101287,
+                "offset": 0.5470641615768742,
+                "r_squared": 0.9404182543233999,
+                "n_pairs": 109593,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.13469362189193526,
+                "lambda_km": 759.6748919854516,
+                "lambda_err": 101.12096819300614,
+                "offset": 0.5439682782747209,
+                "r_squared": 0.9404408914826914,
+                "n_pairs": 129667,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 0.9173745715929108,
+                "lambda_km": 908.3815491645518,
+                "lambda_err": 958.8002547125543,
+                "offset": -0.038962735053963256,
+                "r_squared": 0.6106914389304077,
+                "n_pairs": 40462,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.4475265859247346,
+                "lambda_km": 1272.62520517509,
+                "lambda_err": 197.94702121218526,
+                "offset": -0.19438066032307466,
+                "r_squared": 0.9448658957095448,
+                "n_pairs": 73227,
+                "n_bins": 18,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.2820845358559936,
+                "lambda_km": 1275.9925362834483,
+                "lambda_err": 309.8553964514006,
+                "offset": -0.16317495844493132,
+                "r_squared": 0.8263419929704923,
+                "n_pairs": 115618,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.9957358720849494,
+                "lambda_km": 1148.4809188650343,
+                "lambda_err": 234.64004898191274,
+                "offset": 0.09231218933601255,
+                "r_squared": 0.9292459960703034,
+                "n_pairs": 109593,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.155985285442665,
+                "lambda_km": 668.2252854154982,
+                "lambda_err": 102.8404198066872,
+                "offset": 0.02822866315045185,
+                "r_squared": 0.9208512095406236,
+                "n_pairs": 129667,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            }
+          }
+        },
+        "multi_gnss": {
+          "clock_bias": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.07284912522778991,
+                "lambda_km": 1907.879126514749,
+                "lambda_err": 1011.1365221061202,
+                "offset": 0.5444179766412282,
+                "r_squared": 0.7672803643949174,
+                "n_pairs": 38672,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.12746185104948551,
+                "lambda_km": 1043.9522535635904,
+                "lambda_err": 188.38482260570552,
+                "offset": 0.5463390266872352,
+                "r_squared": 0.9102304375665214,
+                "n_pairs": 75318,
+                "n_bins": 19,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.26680770902174605,
+                "lambda_km": 439.4428679484833,
+                "lambda_err": 82.81282187289229,
+                "offset": 0.5540694531459842,
+                "r_squared": 0.8158612821195684,
+                "n_pairs": 111380,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.2931189083753435,
+                "lambda_km": 489.8413768255598,
+                "lambda_err": 84.61224402102711,
+                "offset": 0.543055496366811,
+                "r_squared": 0.9009280372497784,
+                "n_pairs": 107636,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.09106667973452712,
+                "lambda_km": 956.9585355730535,
+                "lambda_err": 241.50997827854476,
+                "offset": 0.5457328358607659,
+                "r_squared": 0.8271621733362238,
+                "n_pairs": 128761,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.0642073078269556,
+                "lambda_km": 1370.7887917391436,
+                "lambda_err": 1037.3172303711249,
+                "offset": 0.08180526992504017,
+                "r_squared": 0.6872746994437313,
+                "n_pairs": 38672,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.113259507605126,
+                "lambda_km": 1821.6930771574325,
+                "lambda_err": 585.862394181783,
+                "offset": -0.0134642331854075,
+                "r_squared": 0.8482194393315845,
+                "n_pairs": 75318,
+                "n_bins": 19,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.0367061890617217,
+                "lambda_km": 2408.1552667420897,
+                "lambda_err": 929.2109741239597,
+                "offset": -0.16693119949678417,
+                "r_squared": 0.7798276574983549,
+                "n_pairs": 111380,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.1928401759727227,
+                "lambda_km": 1711.4443887461648,
+                "lambda_err": 510.96036699596823,
+                "offset": -0.1000217658867594,
+                "r_squared": 0.9032166854806064,
+                "n_pairs": 107636,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.7944197905047057,
+                "lambda_km": 10350.67137297415,
+                "lambda_err": 15138.424819710239,
+                "offset": -0.32608997210351687,
+                "r_squared": 0.7079945051133418,
+                "n_pairs": 128761,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            }
+          },
+          "pos_jitter": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.18935046939699696,
+                "lambda_km": 1010.5454241174792,
+                "lambda_err": 193.1083810981225,
+                "offset": 0.5452302715207415,
+                "r_squared": 0.9777423290265782,
+                "n_pairs": 38672,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.1764015416167652,
+                "lambda_km": 925.9704274030998,
+                "lambda_err": 94.61374202161984,
+                "offset": 0.5472578962525446,
+                "r_squared": 0.9667935338829999,
+                "n_pairs": 75318,
+                "n_bins": 19,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.2708345644434367,
+                "lambda_km": 613.4442850044215,
+                "lambda_err": 40.18967977405474,
+                "offset": 0.5500955326824482,
+                "r_squared": 0.9735262277454971,
+                "n_pairs": 111380,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.22436231337781218,
+                "lambda_km": 798.6941638295534,
+                "lambda_err": 200.90450973378395,
+                "offset": 0.5401734511848348,
+                "r_squared": 0.8591822404693419,
+                "n_pairs": 107636,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.15013779876025046,
+                "lambda_km": 1098.3975589631168,
+                "lambda_err": 197.10206393909948,
+                "offset": 0.546488904763718,
+                "r_squared": 0.9118097755939036,
+                "n_pairs": 128761,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.5891677701316889,
+                "lambda_km": 1569.114083566721,
+                "lambda_err": 277.44229211600697,
+                "offset": -0.003211140243489226,
+                "r_squared": 0.9724393266740269,
+                "n_pairs": 38672,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.364160632910206,
+                "lambda_km": 2925.529368182418,
+                "lambda_err": 309.44816701091037,
+                "offset": -0.14343259342387735,
+                "r_squared": 0.9878935536177248,
+                "n_pairs": 75318,
+                "n_bins": 19,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.3844495670043004,
+                "lambda_km": 2814.5311673114143,
+                "lambda_err": 382.6820666643002,
+                "offset": -0.16554451676098436,
+                "r_squared": 0.9694698484160571,
+                "n_pairs": 111380,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.2117903979672218,
+                "lambda_km": 5325.8185888493135,
+                "lambda_err": 832.4380287239246,
+                "offset": -0.18697995743027934,
+                "r_squared": 0.9944026416598334,
+                "n_pairs": 107636,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.2247672061648636,
+                "lambda_km": 2882.1176577987508,
+                "lambda_err": 410.4968707250785,
+                "offset": -0.0970112404284018,
+                "r_squared": 0.9801648151739782,
+                "n_pairs": 128761,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            }
+          },
+          "clock_drift": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.06761646210462423,
+                "lambda_km": 2071.940866235385,
+                "lambda_err": 1096.2430399941072,
+                "offset": 0.5422639982175232,
+                "r_squared": 0.7574411455282961,
+                "n_pairs": 38672,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.12839739961186902,
+                "lambda_km": 1003.6422431931961,
+                "lambda_err": 180.73712807350915,
+                "offset": 0.5442062949615687,
+                "r_squared": 0.9081814334606433,
+                "n_pairs": 75318,
+                "n_bins": 19,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.26739695699972144,
+                "lambda_km": 439.5939515300157,
+                "lambda_err": 80.74094641440648,
+                "offset": 0.5508168428800999,
+                "r_squared": 0.8234434673240523,
+                "n_pairs": 111380,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.29272580650100055,
+                "lambda_km": 469.0021236776473,
+                "lambda_err": 81.72307774343398,
+                "offset": 0.5417465468099454,
+                "r_squared": 0.8977535088802792,
+                "n_pairs": 107636,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.08989835191386457,
+                "lambda_km": 975.336925030369,
+                "lambda_err": 243.40208690020103,
+                "offset": 0.543721440053559,
+                "r_squared": 0.8318516807716966,
+                "n_pairs": 128761,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 0.8279096370839841,
+                "lambda_km": 1216.8014240253324,
+                "lambda_err": 729.8853265950802,
+                "offset": 0.01247853481811648,
+                "r_squared": 0.7957862038202888,
+                "n_pairs": 38672,
+                "n_bins": 14,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.169810614299411,
+                "lambda_km": 1390.094238940328,
+                "lambda_err": 208.5422906398851,
+                "offset": -0.05863916262643897,
+                "r_squared": 0.9501634194963926,
+                "n_pairs": 75318,
+                "n_bins": 19,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.1990408872234881,
+                "lambda_km": 1135.4011862642667,
+                "lambda_err": 152.24829538436157,
+                "offset": -0.06588177448278434,
+                "r_squared": 0.9322333865209896,
+                "n_pairs": 111380,
+                "n_bins": 25,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.236330741364288,
+                "lambda_km": 1187.083869648155,
+                "lambda_err": 197.17014828560312,
+                "offset": -0.04367812287158357,
+                "r_squared": 0.9535355382511422,
+                "n_pairs": 107636,
+                "n_bins": 20,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.9315665717911389,
+                "lambda_km": 835.7653879548926,
+                "lambda_err": 187.4303719178194,
+                "offset": 0.014000106904383365,
+                "r_squared": 0.85060039714425,
+                "n_pairs": 128761,
+                "n_bins": 17,
+                "boundary_hit": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "dynamic_50": {
+      "filter_name": "DYNAMIC_50",
+      "filter_config": "dynamic_50_metadata.json",
+      "filter_metadata": {
+        "type": "metadata",
+        "n_stations": 399
+      },
+      "results_by_mode": {
+        "baseline": {
+          "clock_bias": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.21011881076637118,
+                "lambda_km": 815.1369466932937,
+                "lambda_err": 66.75569390265207,
+                "offset": 0.5492645465645343,
+                "r_squared": 0.9749284814298501,
+                "n_pairs": 1739673,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.2384856029435011,
+                "lambda_km": 753.2149587524002,
+                "lambda_err": 58.71709816849572,
+                "offset": 0.5487615619784352,
+                "r_squared": 0.9448267895755361,
+                "n_pairs": 1745615,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.24201991777709797,
+                "lambda_km": 637.3489604259246,
+                "lambda_err": 57.61658176262728,
+                "offset": 0.5514537807053626,
+                "r_squared": 0.9305725867743083,
+                "n_pairs": 2019622,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.25177832597102284,
+                "lambda_km": 662.2266032995997,
+                "lambda_err": 55.04223165278901,
+                "offset": 0.5496309848774901,
+                "r_squared": 0.9520293468273466,
+                "n_pairs": 2057829,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.22961281318604618,
+                "lambda_km": 775.0276699932707,
+                "lambda_err": 70.79203948347512,
+                "offset": 0.5471630432803196,
+                "r_squared": 0.9266269990574886,
+                "n_pairs": 2095161,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.130831720757521,
+                "lambda_km": 1469.9129915483895,
+                "lambda_err": 175.37107125944715,
+                "offset": -0.02016343242059335,
+                "r_squared": 0.9071461743863616,
+                "n_pairs": 1739673,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.361256658361417,
+                "lambda_km": 1841.0268843886493,
+                "lambda_err": 243.22994133003033,
+                "offset": -0.0783483221777446,
+                "r_squared": 0.9033586957152171,
+                "n_pairs": 1745615,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.3054156456333004,
+                "lambda_km": 1731.8106263967936,
+                "lambda_err": 202.42256911204367,
+                "offset": -0.10006458597449958,
+                "r_squared": 0.9285671790033022,
+                "n_pairs": 2019622,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.2034468822445619,
+                "lambda_km": 2126.7345415452596,
+                "lambda_err": 266.34360631197336,
+                "offset": -0.0749553239541744,
+                "r_squared": 0.925659843919968,
+                "n_pairs": 2057829,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.2619117182686939,
+                "lambda_km": 2020.2735855368176,
+                "lambda_err": 263.7982169511201,
+                "offset": -0.05723091957773659,
+                "r_squared": 0.9001482160808519,
+                "n_pairs": 2095161,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            }
+          },
+          "pos_jitter": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.190560114985825,
+                "lambda_km": 1012.4173804035379,
+                "lambda_err": 77.77158771505643,
+                "offset": 0.5487488440986077,
+                "r_squared": 0.9711779366051183,
+                "n_pairs": 1739673,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.3240557042437035,
+                "lambda_km": 642.4254009477755,
+                "lambda_err": 44.268834911511064,
+                "offset": 0.5493482420121816,
+                "r_squared": 0.9556323136236655,
+                "n_pairs": 1745615,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.23526583825627154,
+                "lambda_km": 797.7949802422712,
+                "lambda_err": 52.55786179985433,
+                "offset": 0.5512801265416641,
+                "r_squared": 0.964644430983995,
+                "n_pairs": 2019622,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.2684127064283673,
+                "lambda_km": 784.2432100395733,
+                "lambda_err": 41.181721204040606,
+                "offset": 0.5491417463158197,
+                "r_squared": 0.9807949828223768,
+                "n_pairs": 2057829,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.25481276101054734,
+                "lambda_km": 883.0662384166889,
+                "lambda_err": 68.48837078156264,
+                "offset": 0.5475016055683762,
+                "r_squared": 0.9477170768540432,
+                "n_pairs": 2095161,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.106782105733655,
+                "lambda_km": 2050.47052028667,
+                "lambda_err": 121.63363756251943,
+                "offset": -0.027274968733093926,
+                "r_squared": 0.972440882161352,
+                "n_pairs": 1739673,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.3944892807063183,
+                "lambda_km": 2019.4855398721857,
+                "lambda_err": 162.60804071096211,
+                "offset": -0.05550313558482324,
+                "r_squared": 0.9644442246878322,
+                "n_pairs": 1745615,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.3854769127608013,
+                "lambda_km": 1935.451912763402,
+                "lambda_err": 159.1416526777059,
+                "offset": -0.03848655209975409,
+                "r_squared": 0.9655506704450607,
+                "n_pairs": 2019622,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.3248441648997618,
+                "lambda_km": 2057.188665465261,
+                "lambda_err": 170.15792273408513,
+                "offset": -0.03302222862519122,
+                "r_squared": 0.9654300997627148,
+                "n_pairs": 2057829,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.3583149385659128,
+                "lambda_km": 2234.0637857710785,
+                "lambda_err": 206.66633267117618,
+                "offset": -0.045122222682515756,
+                "r_squared": 0.9502863093971392,
+                "n_pairs": 2095161,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            }
+          },
+          "clock_drift": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.20726308307707117,
+                "lambda_km": 811.2974078336129,
+                "lambda_err": 68.62786666855673,
+                "offset": 0.5483210234213872,
+                "r_squared": 0.9734531362853448,
+                "n_pairs": 1739673,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.2408410400538529,
+                "lambda_km": 722.6339221611391,
+                "lambda_err": 55.922824487395864,
+                "offset": 0.5475985757203266,
+                "r_squared": 0.9452876252363135,
+                "n_pairs": 1745615,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.24247703078429841,
+                "lambda_km": 626.971837392429,
+                "lambda_err": 56.41040545763998,
+                "offset": 0.5503377252307456,
+                "r_squared": 0.9309167028345118,
+                "n_pairs": 2019622,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.25224525410360377,
+                "lambda_km": 641.517146684252,
+                "lambda_err": 51.77931805844244,
+                "offset": 0.5485292390399524,
+                "r_squared": 0.9544049180356822,
+                "n_pairs": 2057829,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.23172282195945323,
+                "lambda_km": 751.8768571600629,
+                "lambda_err": 68.01724867351356,
+                "offset": 0.5462642756266656,
+                "r_squared": 0.9274604006680763,
+                "n_pairs": 2095161,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.060358870698688,
+                "lambda_km": 987.9390267160124,
+                "lambda_err": 74.86071447794,
+                "offset": -0.0106029598205337,
+                "r_squared": 0.972722086934196,
+                "n_pairs": 1739673,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.3168650457595434,
+                "lambda_km": 933.0972251629871,
+                "lambda_err": 78.246068758391,
+                "offset": -0.01546036329195243,
+                "r_squared": 0.9395932962039785,
+                "n_pairs": 1745615,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.2856079863696073,
+                "lambda_km": 930.2219651819152,
+                "lambda_err": 89.64907043991177,
+                "offset": -0.01853923501237897,
+                "r_squared": 0.9319182415645232,
+                "n_pairs": 2019622,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.222448142339567,
+                "lambda_km": 993.8444962187792,
+                "lambda_err": 78.71557705613631,
+                "offset": -0.007617691500571706,
+                "r_squared": 0.9588183068311236,
+                "n_pairs": 2057829,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.078169409408965,
+                "lambda_km": 1155.9357383858833,
+                "lambda_err": 100.86807041935565,
+                "offset": 0.011780740179765692,
+                "r_squared": 0.9399850137649302,
+                "n_pairs": 2095161,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            }
+          }
+        },
+        "ionofree": {
+          "clock_bias": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.12762793419247206,
+                "lambda_km": 1252.6296731205084,
+                "lambda_err": 99.39896352244664,
+                "offset": 0.5474923368330256,
+                "r_squared": 0.9621650060775615,
+                "n_pairs": 1681051,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.16615789004550768,
+                "lambda_km": 906.8797164009984,
+                "lambda_err": 66.04001033906505,
+                "offset": 0.547146519328903,
+                "r_squared": 0.9539339221812023,
+                "n_pairs": 1613888,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.15320764364639217,
+                "lambda_km": 872.6049297258912,
+                "lambda_err": 77.45584503916328,
+                "offset": 0.5493070181252447,
+                "r_squared": 0.9430873291404922,
+                "n_pairs": 1897219,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.1425064976031947,
+                "lambda_km": 1029.5546513127204,
+                "lambda_err": 61.57065623875768,
+                "offset": 0.5474295537446745,
+                "r_squared": 0.9767386592939644,
+                "n_pairs": 1981608,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.11996826385710349,
+                "lambda_km": 1276.2582565047235,
+                "lambda_err": 129.80954748002034,
+                "offset": 0.5462502955758421,
+                "r_squared": 0.9230261731375785,
+                "n_pairs": 2061306,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.1883731581504953,
+                "lambda_km": 1740.1901517459144,
+                "lambda_err": 265.43835903506823,
+                "offset": -0.0701692247328668,
+                "r_squared": 0.8469355739750957,
+                "n_pairs": 1681051,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.5311703123155616,
+                "lambda_km": 2176.9537769837434,
+                "lambda_err": 412.32233324014385,
+                "offset": -0.1072649309079429,
+                "r_squared": 0.8410976528764788,
+                "n_pairs": 1613888,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.5213318075543893,
+                "lambda_km": 1700.4513418487245,
+                "lambda_err": 394.45600449404725,
+                "offset": -0.07417543654246438,
+                "r_squared": 0.7737540199753201,
+                "n_pairs": 1897219,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.3985616967879424,
+                "lambda_km": 1943.729667273005,
+                "lambda_err": 373.8689961915574,
+                "offset": -0.09234721211671298,
+                "r_squared": 0.835297213332364,
+                "n_pairs": 1981608,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.275746712000205,
+                "lambda_km": 2140.634583198362,
+                "lambda_err": 359.83051687768875,
+                "offset": -0.016787694934321234,
+                "r_squared": 0.8489375504094233,
+                "n_pairs": 2061306,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            }
+          },
+          "pos_jitter": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.1124388941475142,
+                "lambda_km": 1552.043191243458,
+                "lambda_err": 133.55582483363267,
+                "offset": 0.5483484679028198,
+                "r_squared": 0.9482824401414903,
+                "n_pairs": 1681051,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.20202124370017904,
+                "lambda_km": 739.4973785864822,
+                "lambda_err": 82.37793131767481,
+                "offset": 0.5458916513649351,
+                "r_squared": 0.8941342884339383,
+                "n_pairs": 1613888,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.11234680559192362,
+                "lambda_km": 1148.8417059296842,
+                "lambda_err": 141.62671845347595,
+                "offset": 0.5477541881966057,
+                "r_squared": 0.9080434528688106,
+                "n_pairs": 1897219,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.13245658321208706,
+                "lambda_km": 1035.4629295621066,
+                "lambda_err": 75.65775115948951,
+                "offset": 0.5491382435617223,
+                "r_squared": 0.9657054353415724,
+                "n_pairs": 1981608,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.11382281522061502,
+                "lambda_km": 1677.405919659239,
+                "lambda_err": 225.90171746399244,
+                "offset": 0.5467936618458931,
+                "r_squared": 0.8848078184357063,
+                "n_pairs": 2061306,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.1888242494665235,
+                "lambda_km": 3258.879704037309,
+                "lambda_err": 295.47766597474185,
+                "offset": -0.16840120787577603,
+                "r_squared": 0.9499871899981793,
+                "n_pairs": 1681051,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.1945525244659871,
+                "lambda_km": 2646.0436106362213,
+                "lambda_err": 377.0413787737128,
+                "offset": -0.12296465511538633,
+                "r_squared": 0.9177093647486755,
+                "n_pairs": 1613888,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.1639411017129695,
+                "lambda_km": 3664.744095586576,
+                "lambda_err": 500.11528470311146,
+                "offset": -0.16657315204804518,
+                "r_squared": 0.9466351566701519,
+                "n_pairs": 1897219,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.1276540658193142,
+                "lambda_km": 2817.414407105618,
+                "lambda_err": 423.45414609717335,
+                "offset": -0.09627223802208335,
+                "r_squared": 0.9162235104786864,
+                "n_pairs": 1981608,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.186849082136864,
+                "lambda_km": 4087.8093008324663,
+                "lambda_err": 665.973515265793,
+                "offset": -0.16333191242666287,
+                "r_squared": 0.9164594926549072,
+                "n_pairs": 2061306,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            }
+          },
+          "clock_drift": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.12515429590711608,
+                "lambda_km": 1282.5967244961696,
+                "lambda_err": 105.18121778065246,
+                "offset": 0.5464916902192781,
+                "r_squared": 0.9588380879632318,
+                "n_pairs": 1681051,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.16830215771460222,
+                "lambda_km": 900.7311458801014,
+                "lambda_err": 64.84305689782681,
+                "offset": 0.5467908924287251,
+                "r_squared": 0.9548423896295134,
+                "n_pairs": 1613888,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.15330171524075076,
+                "lambda_km": 871.8851615232926,
+                "lambda_err": 76.86739079468197,
+                "offset": 0.5491955653618081,
+                "r_squared": 0.9437922478575571,
+                "n_pairs": 1897219,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.1439388655984222,
+                "lambda_km": 1026.2127548818307,
+                "lambda_err": 59.60306653432192,
+                "offset": 0.5471367087692418,
+                "r_squared": 0.9780173923072789,
+                "n_pairs": 1981608,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.11905293139152127,
+                "lambda_km": 1264.0201401567917,
+                "lambda_err": 130.05935929738055,
+                "offset": 0.5458113269411986,
+                "r_squared": 0.9210965941606166,
+                "n_pairs": 2061306,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 0.9249128467295136,
+                "lambda_km": 1111.7076624272754,
+                "lambda_err": 122.82434591804368,
+                "offset": -0.015295274925898345,
+                "r_squared": 0.9368272899063204,
+                "n_pairs": 1681051,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.095259820578197,
+                "lambda_km": 1143.4181893985917,
+                "lambda_err": 140.09765975478288,
+                "offset": -0.011773968688009586,
+                "r_squared": 0.8895175335340544,
+                "n_pairs": 1613888,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.0831189788969313,
+                "lambda_km": 1065.2603203736028,
+                "lambda_err": 156.5037984818751,
+                "offset": -0.014143105687674119,
+                "r_squared": 0.8698780276754432,
+                "n_pairs": 1897219,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.1312390163990769,
+                "lambda_km": 987.0060020475962,
+                "lambda_err": 106.85975861591623,
+                "offset": 0.0004070940083448379,
+                "r_squared": 0.9270801900178477,
+                "n_pairs": 1981608,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.8521255467945045,
+                "lambda_km": 1254.0089728332623,
+                "lambda_err": 135.40267589790187,
+                "offset": 0.025250976711794514,
+                "r_squared": 0.9135558378708292,
+                "n_pairs": 2061306,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            }
+          }
+        },
+        "multi_gnss": {
+          "clock_bias": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.1711791990536131,
+                "lambda_km": 861.509566425611,
+                "lambda_err": 80.29233906467202,
+                "offset": 0.5487176835840495,
+                "r_squared": 0.9659925560735515,
+                "n_pairs": 1641041,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.13697764731288042,
+                "lambda_km": 1228.9009175523975,
+                "lambda_err": 129.794645050384,
+                "offset": 0.5452518916301738,
+                "r_squared": 0.9173789374560102,
+                "n_pairs": 1642411,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.1963283173169524,
+                "lambda_km": 737.1743265049132,
+                "lambda_err": 85.44549142051856,
+                "offset": 0.5483700309633124,
+                "r_squared": 0.9013483244467929,
+                "n_pairs": 1788923,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.16133683327802126,
+                "lambda_km": 810.6385409484844,
+                "lambda_err": 100.32556441150533,
+                "offset": 0.5485498783796906,
+                "r_squared": 0.9045892427306654,
+                "n_pairs": 1928321,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.17107960168983524,
+                "lambda_km": 777.323722279759,
+                "lambda_err": 100.62663046711168,
+                "offset": 0.5474625887220859,
+                "r_squared": 0.8632165720002243,
+                "n_pairs": 2022245,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.0886042115944612,
+                "lambda_km": 1483.3339910231985,
+                "lambda_err": 158.34675187856632,
+                "offset": -0.01990377300825721,
+                "r_squared": 0.9246820267632488,
+                "n_pairs": 1641041,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.195052350017119,
+                "lambda_km": 1721.4565031841435,
+                "lambda_err": 184.10890588089168,
+                "offset": -0.06139106262585302,
+                "r_squared": 0.9314629275544574,
+                "n_pairs": 1642411,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.1415135801177723,
+                "lambda_km": 1878.1848236049705,
+                "lambda_err": 206.1009485363689,
+                "offset": -0.10667352945143502,
+                "r_squared": 0.9416885334509565,
+                "n_pairs": 1788923,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.0225500004804056,
+                "lambda_km": 2196.0155862402166,
+                "lambda_err": 217.32991383705928,
+                "offset": -0.05799538267869765,
+                "r_squared": 0.9539982862292026,
+                "n_pairs": 1928321,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.0259917325840486,
+                "lambda_km": 1778.670638200212,
+                "lambda_err": 234.76932529584283,
+                "offset": -0.048403908824399045,
+                "r_squared": 0.8915424033950182,
+                "n_pairs": 2022245,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            }
+          },
+          "pos_jitter": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.1667858822024993,
+                "lambda_km": 1016.247469949262,
+                "lambda_err": 76.65607621498816,
+                "offset": 0.5483369725269245,
+                "r_squared": 0.9724791886846045,
+                "n_pairs": 1641041,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.24435051589988876,
+                "lambda_km": 708.7950283617599,
+                "lambda_err": 61.37188145878687,
+                "offset": 0.5479405069053219,
+                "r_squared": 0.9318665027526696,
+                "n_pairs": 1642411,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.20362564299957578,
+                "lambda_km": 851.7803985051476,
+                "lambda_err": 52.0853767376585,
+                "offset": 0.5484246112893568,
+                "r_squared": 0.9721556118043465,
+                "n_pairs": 1788923,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.1843260846110534,
+                "lambda_km": 889.8735673142638,
+                "lambda_err": 81.54829260786799,
+                "offset": 0.5477263053920889,
+                "r_squared": 0.9461087312477549,
+                "n_pairs": 1928321,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.20223017589226464,
+                "lambda_km": 812.9138691142196,
+                "lambda_err": 76.68502194742115,
+                "offset": 0.5476356076922926,
+                "r_squared": 0.9231685999446019,
+                "n_pairs": 2022245,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.0972863309817422,
+                "lambda_km": 1698.3548112877515,
+                "lambda_err": 129.4988768231384,
+                "offset": -0.0024398548367631817,
+                "r_squared": 0.9572133868646708,
+                "n_pairs": 1641041,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.357537311905212,
+                "lambda_km": 1693.9157375335362,
+                "lambda_err": 141.3549251265967,
+                "offset": -0.02199280567835742,
+                "r_squared": 0.9566206695127428,
+                "n_pairs": 1642411,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.3988365021161182,
+                "lambda_km": 1735.0630039871494,
+                "lambda_err": 165.25962202008918,
+                "offset": -0.025880387962485724,
+                "r_squared": 0.9535940462421301,
+                "n_pairs": 1788923,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.3116013284935681,
+                "lambda_km": 1941.2933295732546,
+                "lambda_err": 177.06738618534706,
+                "offset": -0.04530905508321999,
+                "r_squared": 0.9576259199202176,
+                "n_pairs": 1928321,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.3491509384094698,
+                "lambda_km": 1859.5797014531367,
+                "lambda_err": 161.30841916550543,
+                "offset": -0.02985989272675779,
+                "r_squared": 0.9511386716714011,
+                "n_pairs": 2022245,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            }
+          },
+          "clock_drift": {
+            "msc": {
+              "Q1": {
+                "amplitude": 0.167544801141594,
+                "lambda_km": 862.6992620852268,
+                "lambda_err": 82.64788994068681,
+                "offset": 0.5476323512955354,
+                "r_squared": 0.9640754142495639,
+                "n_pairs": 1641041,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 0.13710676612993436,
+                "lambda_km": 1162.8998512529363,
+                "lambda_err": 123.92507573646971,
+                "offset": 0.544168894553911,
+                "r_squared": 0.9136572028821152,
+                "n_pairs": 1642411,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 0.19676612828854778,
+                "lambda_km": 715.4110164414267,
+                "lambda_err": 83.86378723692407,
+                "offset": 0.5468079451398837,
+                "r_squared": 0.8982980447602078,
+                "n_pairs": 1788923,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 0.1614601511885874,
+                "lambda_km": 754.3237271623802,
+                "lambda_err": 93.64940725805721,
+                "offset": 0.5473198620074101,
+                "r_squared": 0.9029956998578484,
+                "n_pairs": 1928321,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 0.17375929202910817,
+                "lambda_km": 734.8844681116099,
+                "lambda_err": 94.13676243997817,
+                "offset": 0.5463627122404411,
+                "r_squared": 0.864206797546827,
+                "n_pairs": 2022245,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            },
+            "phase_alignment": {
+              "Q1": {
+                "amplitude": 1.0450307171573106,
+                "lambda_km": 982.1446183276204,
+                "lambda_err": 69.526384058827,
+                "offset": -0.00969334439738176,
+                "r_squared": 0.9766348435327468,
+                "n_pairs": 1641041,
+                "n_bins": 39,
+                "boundary_hit": false
+              },
+              "Q2": {
+                "amplitude": 1.2795096000744763,
+                "lambda_km": 970.1348009492436,
+                "lambda_err": 72.89435775062577,
+                "offset": -0.015852259379651408,
+                "r_squared": 0.9514877931104933,
+                "n_pairs": 1642411,
+                "n_bins": 32,
+                "boundary_hit": false
+              },
+              "Q3": {
+                "amplitude": 1.2656298706750375,
+                "lambda_km": 949.0421673314269,
+                "lambda_err": 70.28004761583416,
+                "offset": -0.017833371886311466,
+                "r_squared": 0.9616398025848651,
+                "n_pairs": 1788923,
+                "n_bins": 33,
+                "boundary_hit": false
+              },
+              "Q4": {
+                "amplitude": 1.14230664010137,
+                "lambda_km": 1054.4229188996474,
+                "lambda_err": 65.19288394078754,
+                "offset": 0.0017863833617609872,
+                "r_squared": 0.9754314510998032,
+                "n_pairs": 1928321,
+                "n_bins": 34,
+                "boundary_hit": false
+              },
+              "Q5": {
+                "amplitude": 1.1325205631767115,
+                "lambda_km": 836.0351796566293,
+                "lambda_err": 76.42665547386999,
+                "offset": 0.005678209244682347,
+                "r_squared": 0.9279966176881899,
+                "n_pairs": 2022245,
+                "n_bins": 37,
+                "boundary_hit": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

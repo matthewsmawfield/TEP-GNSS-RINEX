@@ -41,9 +41,12 @@ site/dist/
 
 # Data & Large Results (42GB+)
 data/
-results/
-logs/
+# results/
+# logs/
 RTKLIB/
+
+# Ignore massive CSV data dumps in results
+results/**/*.csv
 
 # Allow keeping the directory structure (optional)
 # !data/.gitkeep

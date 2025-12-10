@@ -1,0 +1,214 @@
+================================================================================
+STEP 2.3a: Kp Geomagnetic Stratification (COMPREHENSIVE)
+================================================================================
+Processing: 3 filters x 3 modes x 3 metrics x 2 coherence types
+================================================================================
+  Downloading real Kp data from GFZ Potsdam...
+  Loaded 1096 days of REAL Kp data
+  Kp range: 0.00 - 8.38, mean: 1.95
+  Quiet days: 936 (85.4%)
+  Storm days: 160 (14.6%)
+
+################################################################################
+# FILTER: ALL_STATIONS
+################################################################################
+
+  MODE: BASELINE (GPS L1 only)
+
+Processing metric: clock_bias...
+  clock_bias/msc: Q=730.9484713129841, S=701.4247052021907
+  clock_bias/phase_alignment: Q=1789.9959372743863, S=1776.6914683604027
+
+Processing metric: pos_jitter...
+  pos_jitter/msc: Q=888.4089398562597, S=854.1211291209607
+  pos_jitter/phase_alignment: Q=2020.5377146183255, S=2004.3522498798877
+
+Processing metric: clock_drift...
+  clock_drift/msc: Q=706.1106051263046, S=676.8895209980528
+  clock_drift/phase_alignment: Q=1031.3715399297462, S=996.2890099304852
+      clock_bias/msc: Q=731km, S=701km, Δ=-4.0%
+      clock_bias/phase_alignment: Q=1790km, S=1777km, Δ=-0.7%
+      pos_jitter/msc: Q=888km, S=854km, Δ=-3.9%
+      pos_jitter/phase_alignment: Q=2021km, S=2004km, Δ=-0.8%
+      clock_drift/msc: Q=706km, S=677km, Δ=-4.1%
+      clock_drift/phase_alignment: Q=1031km, S=996km, Δ=-3.4%
+
+  MODE: IONOFREE (Dual-frequency L1+L2 ionosphere-free)
+
+Processing metric: clock_bias...
+  clock_bias/msc: Q=1076.3034590560844, S=1044.9304773723825
+  clock_bias/phase_alignment: Q=1782.078049110976, S=1796.414527111548
+
+Processing metric: pos_jitter...
+  pos_jitter/msc: Q=1235.4108314625637, S=1220.5458910408126
+  pos_jitter/phase_alignment: Q=3473.1844319281417, S=3559.669845984356
+
+Processing metric: clock_drift...
+  clock_drift/msc: Q=1076.5191351048334, S=1049.42721615944
+  clock_drift/phase_alignment: Q=1108.3122337108616, S=1112.474078517278
+      clock_bias/msc: Q=1076km, S=1045km, Δ=-2.9%
+      clock_bias/phase_alignment: Q=1782km, S=1796km, Δ=+0.8%
+      pos_jitter/msc: Q=1235km, S=1221km, Δ=-1.2%
+      pos_jitter/phase_alignment: Q=3473km, S=3560km, Δ=+2.5%
+      clock_drift/msc: Q=1077km, S=1049km, Δ=-2.5%
+      clock_drift/phase_alignment: Q=1108km, S=1112km, Δ=+0.4%
+
+  MODE: MULTI_GNSS (GPS+GLO+GAL+BDS)
+
+Processing metric: clock_bias...
+  clock_bias/msc: Q=809.4016493434128, S=848.1534503829519
+  clock_bias/phase_alignment: Q=1765.9850108036248, S=1697.1453542939114
+
+Processing metric: pos_jitter...
+  pos_jitter/msc: Q=936.5289605257477, S=889.5458703813556
+  pos_jitter/phase_alignment: Q=1787.1859377979545, S=1760.103055980429
+
+Processing metric: clock_drift...
+  clock_drift/msc: Q=754.1495049257542, S=785.2507452839998
+  clock_drift/phase_alignment: Q=987.3224413895872, S=969.2596770748078
+      clock_bias/msc: Q=809km, S=848km, Δ=+4.8%
+      clock_bias/phase_alignment: Q=1766km, S=1697km, Δ=-3.9%
+      pos_jitter/msc: Q=937km, S=890km, Δ=-5.0%
+      pos_jitter/phase_alignment: Q=1787km, S=1760km, Δ=-1.5%
+      clock_drift/msc: Q=754km, S=785km, Δ=+4.1%
+      clock_drift/phase_alignment: Q=987km, S=969km, Δ=-1.8%
+
+  Saved: step_2_3_kp_stratification_all_stations.json
+
+################################################################################
+# FILTER: OPTIMAL_100
+################################################################################
+  Using 100 stations
+
+  MODE: BASELINE (GPS L1 only)
+
+Processing metric: clock_bias...
+  clock_bias/msc: Q=630.0437913070444, S=650.2977493811214
+  clock_bias/phase_alignment: Q=2067.5529309463036, S=1999.5994081266053
+
+Processing metric: pos_jitter...
+  pos_jitter/msc: Q=682.7139499654301, S=708.2672973017396
+  pos_jitter/phase_alignment: Q=3045.5629234772196, S=2691.894663771976
+
+Processing metric: clock_drift...
+  clock_drift/msc: Q=622.8049518256862, S=644.3738207125247
+  clock_drift/phase_alignment: Q=1065.0166875005227, S=1038.548409213514
+      clock_bias/msc: Q=630km, S=650km, Δ=+3.2%
+      clock_bias/phase_alignment: Q=2068km, S=2000km, Δ=-3.3%
+      pos_jitter/msc: Q=683km, S=708km, Δ=+3.7%
+      pos_jitter/phase_alignment: Q=3046km, S=2692km, Δ=-11.6%
+      clock_drift/msc: Q=623km, S=644km, Δ=+3.5%
+      clock_drift/phase_alignment: Q=1065km, S=1039km, Δ=-2.5%
+
+  MODE: IONOFREE (Dual-frequency L1+L2 ionosphere-free)
+
+Processing metric: clock_bias...
+  clock_bias/msc: Q=817.4512937231619, S=799.7235268305656
+  clock_bias/phase_alignment: Q=1936.9717029706935, S=1867.6808015383433
+
+Processing metric: pos_jitter...
+  pos_jitter/msc: Q=676.0031761461992, S=738.1555051131523
+  pos_jitter/phase_alignment: Q=3852.4265350625383, S=4223.034326768753
+
+Processing metric: clock_drift...
+  clock_drift/msc: Q=827.6454263437274, S=812.4090127173604
+  clock_drift/phase_alignment: Q=1073.8339641168252, S=1076.7020728430614
+      clock_bias/msc: Q=817km, S=800km, Δ=-2.2%
+      clock_bias/phase_alignment: Q=1937km, S=1868km, Δ=-3.6%
+      pos_jitter/msc: Q=676km, S=738km, Δ=+9.2%
+      pos_jitter/phase_alignment: Q=3852km, S=4223km, Δ=+9.6%
+      clock_drift/msc: Q=828km, S=812km, Δ=-1.8%
+      clock_drift/phase_alignment: Q=1074km, S=1077km, Δ=+0.3%
+
+  MODE: MULTI_GNSS (GPS+GLO+GAL+BDS)
+
+Processing metric: clock_bias...
+  clock_bias/msc: Q=693.082001253383, S=784.3885847852891
+  clock_bias/phase_alignment: Q=2205.010266467731, S=2177.8605620129965
+
+Processing metric: pos_jitter...
+  pos_jitter/msc: Q=797.2729204737943, S=791.4470643474453
+  pos_jitter/phase_alignment: Q=2794.9216417598673, S=2351.388239341154
+
+Processing metric: clock_drift...
+  clock_drift/msc: Q=669.4119831190258, S=761.6853053342147
+  clock_drift/phase_alignment: Q=1190.10562798028, S=1127.777372124022
+      clock_bias/msc: Q=693km, S=784km, Δ=+13.2%
+      clock_bias/phase_alignment: Q=2205km, S=2178km, Δ=-1.2%
+      pos_jitter/msc: Q=797km, S=791km, Δ=-0.7%
+      pos_jitter/phase_alignment: Q=2795km, S=2351km, Δ=-15.9%
+      clock_drift/msc: Q=669km, S=762km, Δ=+13.8%
+      clock_drift/phase_alignment: Q=1190km, S=1128km, Δ=-5.2%
+
+  Saved: step_2_3_kp_stratification_optimal_100.json
+
+################################################################################
+# FILTER: DYNAMIC_50
+################################################################################
+  Using 399 stations
+
+  MODE: BASELINE (GPS L1 only)
+
+Processing metric: clock_bias...
+  clock_bias/msc: Q=787.7833353781766, S=760.2555033859081
+  clock_bias/phase_alignment: Q=1789.7155659141797, S=1777.8757944750762
+
+Processing metric: pos_jitter...
+  pos_jitter/msc: Q=915.1116893328764, S=882.811096105336
+  pos_jitter/phase_alignment: Q=2023.9342094866238, S=2002.297770220381
+
+Processing metric: clock_drift...
+  clock_drift/msc: Q=765.9716358304443, S=740.5151423176314
+  clock_drift/phase_alignment: Q=1048.280375916482, S=1014.5225840890884
+      clock_bias/msc: Q=788km, S=760km, Δ=-3.5%
+      clock_bias/phase_alignment: Q=1790km, S=1778km, Δ=-0.7%
+      pos_jitter/msc: Q=915km, S=883km, Δ=-3.5%
+      pos_jitter/phase_alignment: Q=2024km, S=2002km, Δ=-1.1%
+      clock_drift/msc: Q=766km, S=741km, Δ=-3.3%
+      clock_drift/phase_alignment: Q=1048km, S=1015km, Δ=-3.2%
+
+  MODE: IONOFREE (Dual-frequency L1+L2 ionosphere-free)
+
+Processing metric: clock_bias...
+  clock_bias/msc: Q=1098.3372763811662, S=1071.9429741187555
+  clock_bias/phase_alignment: Q=1785.163830277673, S=1797.5128237783074
+
+Processing metric: pos_jitter...
+  pos_jitter/msc: Q=1216.8439658298948, S=1211.668807118194
+  pos_jitter/phase_alignment: Q=3362.095104437162, S=3428.8150579504113
+
+Processing metric: clock_drift...
+  clock_drift/msc: Q=1102.552333775863, S=1083.7304323450287
+  clock_drift/phase_alignment: Q=1123.8493497473823, S=1125.5831907797574
+      clock_bias/msc: Q=1098km, S=1072km, Δ=-2.4%
+      clock_bias/phase_alignment: Q=1785km, S=1798km, Δ=+0.7%
+      pos_jitter/msc: Q=1217km, S=1212km, Δ=-0.4%
+      pos_jitter/phase_alignment: Q=3362km, S=3429km, Δ=+2.0%
+      clock_drift/msc: Q=1103km, S=1084km, Δ=-1.7%
+      clock_drift/phase_alignment: Q=1124km, S=1126km, Δ=+0.2%
+
+  MODE: MULTI_GNSS (GPS+GLO+GAL+BDS)
+
+Processing metric: clock_bias...
+  clock_bias/msc: Q=881.366437369494, S=922.4274390698264
+  clock_bias/phase_alignment: Q=1770.2568726493494, S=1707.1343008708996
+
+Processing metric: pos_jitter...
+  pos_jitter/msc: Q=953.9607920028801, S=906.3409665788727
+  pos_jitter/phase_alignment: Q=1794.545125373017, S=1763.8346648958423
+
+Processing metric: clock_drift...
+  clock_drift/msc: Q=836.9188316811656, S=878.8346748001263
+  clock_drift/phase_alignment: Q=1014.334682188801, S=994.8270767940667
+      clock_bias/msc: Q=881km, S=922km, Δ=+4.7%
+      clock_bias/phase_alignment: Q=1770km, S=1707km, Δ=-3.6%
+      pos_jitter/msc: Q=954km, S=906km, Δ=-5.0%
+      pos_jitter/phase_alignment: Q=1795km, S=1764km, Δ=-1.7%
+      clock_drift/msc: Q=837km, S=879km, Δ=+5.0%
+      clock_drift/phase_alignment: Q=1014km, S=995km, Δ=-1.9%
+
+  Saved: step_2_3_kp_stratification_dynamic_50.json
+
+================================================================================
+COMPLETE: 3 filters × 3 modes
+================================================================================

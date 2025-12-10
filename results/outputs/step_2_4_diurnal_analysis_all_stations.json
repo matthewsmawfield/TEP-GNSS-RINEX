@@ -1,0 +1,410 @@
+{
+  "step": "2.4a",
+  "name": "seasonal_analysis",
+  "filter": "ALL_STATIONS",
+  "timestamp": "2025-12-08T19:17:58.180430",
+  "results_by_mode": {
+    "baseline": {
+      "clock_bias/msc": {
+        "winter": {
+          "lambda_km": 726.1724321451718,
+          "r_squared": 0.9456704414509027,
+          "n_pairs": 13880332
+        },
+        "spring": {
+          "lambda_km": 679.4802588744893,
+          "r_squared": 0.9467703929795661,
+          "n_pairs": 14825251
+        },
+        "summer": {
+          "lambda_km": 760.6988157493824,
+          "r_squared": 0.9695014350903451,
+          "n_pairs": 15472924
+        },
+        "autumn": {
+          "lambda_km": 734.0693322263323,
+          "r_squared": 0.9458025107744886,
+          "n_pairs": 15361928
+        }
+      },
+      "clock_bias/phase_alignment": {
+        "winter": {
+          "lambda_km": 1763.1352236959963,
+          "r_squared": 0.9123483207753742,
+          "n_pairs": 13880332
+        },
+        "spring": {
+          "lambda_km": 1865.1815813731325,
+          "r_squared": 0.9068808011476687,
+          "n_pairs": 14825251
+        },
+        "summer": {
+          "lambda_km": 1749.7594984477469,
+          "r_squared": 0.8869965439823577,
+          "n_pairs": 15472924
+        },
+        "autumn": {
+          "lambda_km": 1775.8525144167477,
+          "r_squared": 0.9012890092629747,
+          "n_pairs": 15361928
+        }
+      },
+      "pos_jitter/msc": {
+        "winter": {
+          "lambda_km": 854.5058843875574,
+          "r_squared": 0.975422413918319,
+          "n_pairs": 13880332
+        },
+        "spring": {
+          "lambda_km": 829.7657092762848,
+          "r_squared": 0.9761414794298453,
+          "n_pairs": 14825251
+        },
+        "summer": {
+          "lambda_km": 938.3795956859889,
+          "r_squared": 0.9837988478628423,
+          "n_pairs": 15472924
+        },
+        "autumn": {
+          "lambda_km": 903.0158291914205,
+          "r_squared": 0.9776040922607165,
+          "n_pairs": 15361928
+        }
+      },
+      "pos_jitter/phase_alignment": {
+        "winter": {
+          "lambda_km": 2008.2669911369335,
+          "r_squared": 0.962386158726198,
+          "n_pairs": 13880332
+        },
+        "spring": {
+          "lambda_km": 1920.471744996923,
+          "r_squared": 0.9542018928992995,
+          "n_pairs": 14825251
+        },
+        "summer": {
+          "lambda_km": 2133.255135486787,
+          "r_squared": 0.9741399504874293,
+          "n_pairs": 15472924
+        },
+        "autumn": {
+          "lambda_km": 2031.9523121086177,
+          "r_squared": 0.9654402107639682,
+          "n_pairs": 15361928
+        }
+      },
+      "clock_drift/msc": {
+        "winter": {
+          "lambda_km": 684.4609937420801,
+          "r_squared": 0.9508460451429959,
+          "n_pairs": 13880332
+        },
+        "spring": {
+          "lambda_km": 662.4350272630352,
+          "r_squared": 0.9481962270268068,
+          "n_pairs": 14825251
+        },
+        "summer": {
+          "lambda_km": 763.8736557464961,
+          "r_squared": 0.9684604300065617,
+          "n_pairs": 15472924
+        },
+        "autumn": {
+          "lambda_km": 689.5183756874513,
+          "r_squared": 0.9519969076439954,
+          "n_pairs": 15361928
+        }
+      },
+      "clock_drift/phase_alignment": {
+        "winter": {
+          "lambda_km": 1054.3207059492684,
+          "r_squared": 0.9500960366151124,
+          "n_pairs": 13880332
+        },
+        "spring": {
+          "lambda_km": 1018.0078022124193,
+          "r_squared": 0.9357222500717266,
+          "n_pairs": 14825251
+        },
+        "summer": {
+          "lambda_km": 1012.1133192653068,
+          "r_squared": 0.9246129474031364,
+          "n_pairs": 15472924
+        },
+        "autumn": {
+          "lambda_km": 1022.221408656768,
+          "r_squared": 0.9630037365115691,
+          "n_pairs": 15361928
+        }
+      }
+    },
+    "ionofree": {
+      "clock_bias/msc": {
+        "winter": {
+          "lambda_km": 805.5484151707581,
+          "r_squared": 0.9759914243958139,
+          "n_pairs": 13240862
+        },
+        "spring": {
+          "lambda_km": 1098.3543659266645,
+          "r_squared": 0.9597085506014428,
+          "n_pairs": 14183142
+        },
+        "summer": {
+          "lambda_km": 1355.7775170102248,
+          "r_squared": 0.9687348179141329,
+          "n_pairs": 14776872
+        },
+        "autumn": {
+          "lambda_km": 1089.5786680189622,
+          "r_squared": 0.9716327064952084,
+          "n_pairs": 14692537
+        }
+      },
+      "clock_bias/phase_alignment": {
+        "winter": {
+          "lambda_km": 1906.229499929076,
+          "r_squared": 0.8386532479281756,
+          "n_pairs": 13240862
+        },
+        "spring": {
+          "lambda_km": 1646.8081025273457,
+          "r_squared": 0.7247051553077724,
+          "n_pairs": 14183142
+        },
+        "summer": {
+          "lambda_km": 1749.2533528332642,
+          "r_squared": 0.7343399784640088,
+          "n_pairs": 14776872
+        },
+        "autumn": {
+          "lambda_km": 1854.0066390380182,
+          "r_squared": 0.8065922701585532,
+          "n_pairs": 14692537
+        }
+      },
+      "pos_jitter/msc": {
+        "winter": {
+          "lambda_km": 884.9577000442355,
+          "r_squared": 0.9651317255563288,
+          "n_pairs": 13240862
+        },
+        "spring": {
+          "lambda_km": 1344.2531000849613,
+          "r_squared": 0.9397971349524671,
+          "n_pairs": 14183142
+        },
+        "summer": {
+          "lambda_km": 1547.059777409521,
+          "r_squared": 0.9337798823517592,
+          "n_pairs": 14776872
+        },
+        "autumn": {
+          "lambda_km": 1348.2495799732555,
+          "r_squared": 0.9273784497217458,
+          "n_pairs": 14692537
+        }
+      },
+      "pos_jitter/phase_alignment": {
+        "winter": {
+          "lambda_km": 3281.762408887955,
+          "r_squared": 0.9470237034473108,
+          "n_pairs": 13240862
+        },
+        "spring": {
+          "lambda_km": 3014.834616151948,
+          "r_squared": 0.9378252106029629,
+          "n_pairs": 14183142
+        },
+        "summer": {
+          "lambda_km": 4220.142100549367,
+          "r_squared": 0.9517090337388016,
+          "n_pairs": 14776872
+        },
+        "autumn": {
+          "lambda_km": 3392.01395006313,
+          "r_squared": 0.9546304540055687,
+          "n_pairs": 14692537
+        }
+      },
+      "clock_drift/msc": {
+        "winter": {
+          "lambda_km": 798.714373761214,
+          "r_squared": 0.9770539745569049,
+          "n_pairs": 13240862
+        },
+        "spring": {
+          "lambda_km": 1110.6195170822077,
+          "r_squared": 0.9603446739894744,
+          "n_pairs": 14183142
+        },
+        "summer": {
+          "lambda_km": 1384.251831534133,
+          "r_squared": 0.9666035299604449,
+          "n_pairs": 14776872
+        },
+        "autumn": {
+          "lambda_km": 1087.6333858727587,
+          "r_squared": 0.971548407866568,
+          "n_pairs": 14692537
+        }
+      },
+      "clock_drift/phase_alignment": {
+        "winter": {
+          "lambda_km": 1099.5854713429842,
+          "r_squared": 0.9255167155646313,
+          "n_pairs": 13240862
+        },
+        "spring": {
+          "lambda_km": 1057.6459255725197,
+          "r_squared": 0.8858284438723365,
+          "n_pairs": 14183142
+        },
+        "summer": {
+          "lambda_km": 1123.810433363839,
+          "r_squared": 0.861803211213098,
+          "n_pairs": 14776872
+        },
+        "autumn": {
+          "lambda_km": 1146.3765663037184,
+          "r_squared": 0.8990863074580397,
+          "n_pairs": 14692537
+        }
+      }
+    },
+    "multi_gnss": {
+      "clock_bias/msc": {
+        "winter": {
+          "lambda_km": 941.1048513396371,
+          "r_squared": 0.9107161557497625,
+          "n_pairs": 12811866
+        },
+        "spring": {
+          "lambda_km": 711.2575444305129,
+          "r_squared": 0.9403689909287999,
+          "n_pairs": 13871778
+        },
+        "summer": {
+          "lambda_km": 713.9569303071703,
+          "r_squared": 0.9448230856935637,
+          "n_pairs": 14493187
+        },
+        "autumn": {
+          "lambda_km": 1006.1230110428211,
+          "r_squared": 0.9081599547436653,
+          "n_pairs": 14595303
+        }
+      },
+      "clock_bias/phase_alignment": {
+        "winter": {
+          "lambda_km": 1733.0793044875384,
+          "r_squared": 0.9426013502506645,
+          "n_pairs": 12811866
+        },
+        "spring": {
+          "lambda_km": 1783.2561536031185,
+          "r_squared": 0.9554023970051267,
+          "n_pairs": 13871778
+        },
+        "summer": {
+          "lambda_km": 1742.0537076518485,
+          "r_squared": 0.9706910866148594,
+          "n_pairs": 14493187
+        },
+        "autumn": {
+          "lambda_km": 1769.4567382985374,
+          "r_squared": 0.9462823189313829,
+          "n_pairs": 14595303
+        }
+      },
+      "pos_jitter/msc": {
+        "winter": {
+          "lambda_km": 1011.12586982947,
+          "r_squared": 0.9675168354131539,
+          "n_pairs": 12811866
+        },
+        "spring": {
+          "lambda_km": 813.689561877504,
+          "r_squared": 0.9841415186663236,
+          "n_pairs": 13871778
+        },
+        "summer": {
+          "lambda_km": 864.5800945425034,
+          "r_squared": 0.9773900761056546,
+          "n_pairs": 14493187
+        },
+        "autumn": {
+          "lambda_km": 1076.4521660531739,
+          "r_squared": 0.9630783744169062,
+          "n_pairs": 14595303
+        }
+      },
+      "pos_jitter/phase_alignment": {
+        "winter": {
+          "lambda_km": 1863.8101666164516,
+          "r_squared": 0.9569341215213951,
+          "n_pairs": 12811866
+        },
+        "spring": {
+          "lambda_km": 1679.2502385539985,
+          "r_squared": 0.9408819308936079,
+          "n_pairs": 13871778
+        },
+        "summer": {
+          "lambda_km": 1811.611373527642,
+          "r_squared": 0.9678455608287073,
+          "n_pairs": 14493187
+        },
+        "autumn": {
+          "lambda_km": 1792.0108340208744,
+          "r_squared": 0.954006024322867,
+          "n_pairs": 14595303
+        }
+      },
+      "clock_drift/msc": {
+        "winter": {
+          "lambda_km": 830.8297669568832,
+          "r_squared": 0.9126172433889915,
+          "n_pairs": 12811866
+        },
+        "spring": {
+          "lambda_km": 679.1739556038945,
+          "r_squared": 0.9434352783987969,
+          "n_pairs": 13871778
+        },
+        "summer": {
+          "lambda_km": 701.4289529744576,
+          "r_squared": 0.9446445145646084,
+          "n_pairs": 14493187
+        },
+        "autumn": {
+          "lambda_km": 881.8711040367807,
+          "r_squared": 0.9094556596550593,
+          "n_pairs": 14595303
+        }
+      },
+      "clock_drift/phase_alignment": {
+        "winter": {
+          "lambda_km": 1031.8693711999667,
+          "r_squared": 0.9649462070743257,
+          "n_pairs": 12811866
+        },
+        "spring": {
+          "lambda_km": 958.7028937590915,
+          "r_squared": 0.9671134261627715,
+          "n_pairs": 13871778
+        },
+        "summer": {
+          "lambda_km": 936.9376360526236,
+          "r_squared": 0.9596137325233,
+          "n_pairs": 14493187
+        },
+        "autumn": {
+          "lambda_km": 1014.7007777208319,
+          "r_squared": 0.9747474572768815,
+          "n_pairs": 14595303
+        }
+      }
+    }
+  }
+}

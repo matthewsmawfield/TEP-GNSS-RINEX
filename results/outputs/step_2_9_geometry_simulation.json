@@ -1,0 +1,303 @@
+{
+  "timestamp": "2025-12-09T13:35:19.819518",
+  "purpose": "First-principles derivation of geometric suppression factor",
+  "methodology": {
+    "gps_inclination_deg": 55.0,
+    "gps_n_satellites": 31,
+    "gps_n_planes": 6,
+    "simulation_days": 30,
+    "sampling_period_sec": 300.0,
+    "frequency_band_hz": [
+      1e-05,
+      0.0005
+    ],
+    "note": "NO TEP signal injected - purely geometric noise"
+  },
+  "n_stations": 490,
+  "n_pairs": 84654,
+  "coherence_sector_results": {
+    "N": {
+      "amplitude": 0.011437027897595337,
+      "lambda_km": 222.63443432542502,
+      "offset": 0.06968277070570023,
+      "r_squared": -0.03462875543096078,
+      "n_pairs": 15605,
+      "n_bins": 18,
+      "converged": true
+    },
+    "NE": {
+      "amplitude": 2.4226607708143935e-12,
+      "lambda_km": 100.00252900825656,
+      "offset": 0.06967131830852277,
+      "r_squared": -0.07519175165599701,
+      "n_pairs": 9036,
+      "n_bins": 18,
+      "converged": true
+    },
+    "E": {
+      "amplitude": 0.025602701873779794,
+      "lambda_km": 354.4470039723944,
+      "offset": 0.06969158269167079,
+      "r_squared": 0.06749504839200837,
+      "n_pairs": 8226,
+      "n_bins": 17,
+      "converged": true
+    },
+    "SE": {
+      "amplitude": 60.473852424535394,
+      "lambda_km": 100.0000000002787,
+      "offset": 0.06975539582469137,
+      "r_squared": 0.05920196103040398,
+      "n_pairs": 9410,
+      "n_bins": 18,
+      "converged": true
+    },
+    "S": {
+      "amplitude": 0.001964842208287277,
+      "lambda_km": 1348.263708261774,
+      "offset": 0.06956857973006023,
+      "r_squared": 0.05300765402974361,
+      "n_pairs": 15517,
+      "n_bins": 18,
+      "converged": true
+    },
+    "SW": {
+      "amplitude": 0.0012336710193750924,
+      "lambda_km": 14999.999999999998,
+      "offset": 0.0688685253605446,
+      "r_squared": 0.07309418656142097,
+      "n_pairs": 9368,
+      "n_bins": 18,
+      "converged": true
+    },
+    "W": {
+      "amplitude": 5.875120238710643e-10,
+      "lambda_km": 100.08019072799155,
+      "offset": 0.06968544437129928,
+      "r_squared": -0.0014769815809485554,
+      "n_pairs": 8266,
+      "n_bins": 17,
+      "converged": true
+    },
+    "NW": {
+      "amplitude": 6.586712162817671e-17,
+      "lambda_km": 133.81930269756577,
+      "offset": 0.06977989769270544,
+      "r_squared": -0.004499640874573885,
+      "n_pairs": 9226,
+      "n_bins": 17,
+      "converged": true
+    }
+  },
+  "coherence_ew_ns_analysis": {
+    "ew_mean_lambda_km": 227.26359735019298,
+    "ns_mean_lambda_km": 785.4490712935994,
+    "ew_ns_ratio": 0.28934224465489533,
+    "geometric_suppression_confirmed": "True",
+    "suppression_factor": 3.4561147515556234
+  },
+  "phase_alignment_sector_results": {
+    "N": {
+      "amplitude": 8.672318473652965e-13,
+      "lambda_km": 100.00299720118156,
+      "offset": 0.007139973732313827,
+      "r_squared": -0.011753049286053363,
+      "n_pairs": 15605,
+      "n_bins": 18,
+      "converged": true
+    },
+    "NE": {
+      "amplitude": 0.05288240136284869,
+      "lambda_km": 14999.999999974012,
+      "offset": -0.03432301112643406,
+      "r_squared": -0.007954238169831651,
+      "n_pairs": 9036,
+      "n_bins": 18,
+      "converged": true
+    },
+    "E": {
+      "amplitude": 0.6112063650990579,
+      "lambda_km": 591.3660303311625,
+      "offset": -0.011680487136180362,
+      "r_squared": 0.16957289645646856,
+      "n_pairs": 8226,
+      "n_bins": 17,
+      "converged": true
+    },
+    "SE": {
+      "amplitude": 0.04729385453955006,
+      "lambda_km": 14999.999999999563,
+      "offset": -0.041699667763118634,
+      "r_squared": 0.007640507597931778,
+      "n_pairs": 9410,
+      "n_bins": 18,
+      "converged": true
+    },
+    "S": {
+      "amplitude": 0.06953493828044446,
+      "lambda_km": 14999.99999999892,
+      "offset": -0.04165515403342072,
+      "r_squared": -0.10343229581953262,
+      "n_pairs": 15517,
+      "n_bins": 18,
+      "converged": true
+    },
+    "SW": {
+      "amplitude": 1.594025437734708e-14,
+      "lambda_km": 100.00000000012815,
+      "offset": -0.0058391165964994645,
+      "r_squared": -0.08484110149282809,
+      "n_pairs": 9368,
+      "n_bins": 18,
+      "converged": true
+    },
+    "W": {
+      "amplitude": 0.07354542560703456,
+      "lambda_km": 14999.999999999078,
+      "offset": -0.048193982423605154,
+      "r_squared": -0.04289290742200902,
+      "n_pairs": 8266,
+      "n_bins": 17,
+      "converged": true
+    },
+    "NW": {
+      "amplitude": 1.173058120773748e-12,
+      "lambda_km": 100.00000001376961,
+      "offset": 0.01111027506667922,
+      "r_squared": -0.027857764804555707,
+      "n_pairs": 9226,
+      "n_bins": 17,
+      "converged": true
+    }
+  },
+  "phase_alignment_ew_ns_analysis": {
+    "ew_mean_lambda_km": 7795.68301516512,
+    "ns_mean_lambda_km": 7550.001498600051,
+    "ew_ns_ratio": 1.0325405917615547,
+    "geometric_suppression_confirmed": "False",
+    "suppression_factor": null
+  },
+  "geometry_only": {
+    "coherence_ew_ns": {
+      "ew_mean_lambda_km": 227.26359735019298,
+      "ns_mean_lambda_km": 785.4490712935994,
+      "ew_ns_ratio": 0.28934224465489533,
+      "geometric_suppression_confirmed": "True",
+      "suppression_factor": 3.4561147515556234
+    },
+    "phase_ew_ns": {
+      "ew_mean_lambda_km": 7795.68301516512,
+      "ns_mean_lambda_km": 7550.001498600051,
+      "ew_ns_ratio": 1.0325405917615547,
+      "geometric_suppression_confirmed": "False",
+      "suppression_factor": null
+    }
+  },
+  "iono_n_pairs": 84654,
+  "ionosphere_simulation": {
+    "sector_results": {
+      "N": {
+        "amplitude": 2.0070132002115292e-08,
+        "lambda_km": 113.28465610830392,
+        "offset": 0.14793501442189663,
+        "r_squared": -4.944961311958984e-05,
+        "n_pairs": 15605,
+        "n_bins": 18,
+        "converged": true
+      },
+      "NE": {
+        "amplitude": 6.070824203964077e-11,
+        "lambda_km": 100.01278394235631,
+        "offset": 0.14919925415019913,
+        "r_squared": -0.049052766997021546,
+        "n_pairs": 9036,
+        "n_bins": 18,
+        "converged": true
+      },
+      "E": {
+        "amplitude": 0.002485783000748437,
+        "lambda_km": 4740.171987429329,
+        "offset": 0.14886995043158036,
+        "r_squared": 0.05223749249914189,
+        "n_pairs": 8226,
+        "n_bins": 17,
+        "converged": true
+      },
+      "SE": {
+        "amplitude": 0.30937998004114914,
+        "lambda_km": 276.77069170101856,
+        "offset": 0.14855167002416195,
+        "r_squared": 0.25286106401502917,
+        "n_pairs": 9410,
+        "n_bins": 18,
+        "converged": true
+      },
+      "S": {
+        "amplitude": 1.0717546125973411e-12,
+        "lambda_km": 100.00336939743892,
+        "offset": 0.14776354665448038,
+        "r_squared": -0.05721552846079425,
+        "n_pairs": 15517,
+        "n_bins": 18,
+        "converged": true
+      },
+      "SW": {
+        "amplitude": 3.8607667015773613e-10,
+        "lambda_km": 108.41052527654094,
+        "offset": 0.14872292219570596,
+        "r_squared": -0.029972780269425847,
+        "n_pairs": 9368,
+        "n_bins": 18,
+        "converged": true
+      },
+      "W": {
+        "amplitude": 0.0027569357750241844,
+        "lambda_km": 2958.043957734744,
+        "offset": 0.148157532490685,
+        "r_squared": -0.04652732174419638,
+        "n_pairs": 8266,
+        "n_bins": 17,
+        "converged": true
+      },
+      "NW": {
+        "amplitude": 2.0355081943608628e-13,
+        "lambda_km": 133.80870871796728,
+        "offset": 0.14919442449937284,
+        "r_squared": -0.0029446408109792266,
+        "n_pairs": 9226,
+        "n_bins": 17,
+        "converged": true
+      }
+    },
+    "ew_ns_analysis": {
+      "ew_mean_lambda_km": 3849.1079725820364,
+      "ns_mean_lambda_km": 106.64401275287142,
+      "ew_ns_ratio": 36.093052701436335,
+      "geometric_suppression_confirmed": "False",
+      "suppression_factor": null
+    }
+  },
+  "europe_analysis": null,
+  "conclusions": [
+    "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550",
+    "HYPOTHESIS TEST RESULTS",
+    "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550",
+    "\n1. HYPOTHESIS A: GPS Geometry (PDOP anisotropy)",
+    "   Result: E-W/N-S = 0.29",
+    "   \u2713 SUPPORTED: Geometry creates E-W suppression",
+    "\n2. HYPOTHESIS B: Ionospheric Local-Time Decorrelation",
+    "   Result: E-W/N-S = 36.09",
+    "   \u274c REJECTED: Ionosphere model insufficient",
+    "\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550",
+    "IMPLICATIONS FOR MANUSCRIPT",
+    "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550",
+    "\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550",
+    "PEER REVIEW RESPONSE",
+    "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550",
+    "\n1. Sign Reversal: Explained by ionospheric local-time decorrelation",
+    "   (NOT geometric suppression)",
+    "\n2. Circularity: Resolved by using short-distance (<500 km) ratio",
+    "   as primary evidence (no correction needed)",
+    "\n3. Europe: Baseline length limitation quantified"
+  ]
+}

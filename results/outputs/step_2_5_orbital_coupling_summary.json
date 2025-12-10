@@ -1,0 +1,58 @@
+{
+  "step": "2.5",
+  "name": "orbital_coupling_comprehensive",
+  "timestamp": "2025-12-08T07:17:21.425773",
+  "methodology": "Monthly EW/NS lambda ratio vs orbital velocity correlation",
+  "n_combinations": 3,
+  "filters_tested": [
+    "DYNAMIC_50"
+  ],
+  "modes_tested": [
+    "baseline",
+    "ionofree",
+    "multi_gnss"
+  ],
+  "summary": {
+    "dynamic_50": {
+      "baseline": {
+        "metric": "pos_jitter",
+        "coherence_type": "phase_alignment",
+        "pearson_r": -0.48804043493082844,
+        "p_value": 0.0025314073292749912,
+        "sigma": 3.0195616918969783,
+        "n_months": 36
+      },
+      "ionofree": {
+        "metric": "clock_drift",
+        "coherence_type": "msc",
+        "pearson_r": -0.3179280178169956,
+        "p_value": 0.05881086446102163,
+        "sigma": 1.8896045778934334,
+        "n_months": 36
+      },
+      "multi_gnss": {
+        "metric": "pos_jitter",
+        "coherence_type": "phase_alignment",
+        "pearson_r": -0.7589073748095553,
+        "p_value": 8.139264712294397e-08,
+        "sigma": 5.36401387600092,
+        "n_months": 36
+      }
+    }
+  },
+  "code_reference": {
+    "code_r": -0.888,
+    "code_sigma": 5.1,
+    "code_n_months": 300
+  },
+  "best_result": {
+    "metric": "pos_jitter",
+    "coherence_type": "phase_alignment",
+    "pearson_r": -0.7589073748095553,
+    "p_value": 8.139264712294397e-08,
+    "sigma": 5.36401387600092,
+    "n_months": 36,
+    "filter": "dynamic_50",
+    "mode": "multi_gnss"
+  }
+}
