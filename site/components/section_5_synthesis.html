@@ -81,7 +81,7 @@
         <li><strong>Coefficient of variation:</strong> 0.7–1.0% (coherence) and 3–6% (phase alignment)—essentially constant</li>
     </ul>
     <p>This demonstrates the signal is not an artifact of temporal averaging, seasonal effects, or statistical chance. It is present every single month for three years.</p>
-    <p>Key distinction: The low CV of short-distance ratios is compatible with the orbital velocity coupling (r = −0.515) in §3.10, because these measure different quantities: short-distance ratios capture the raw TEP signal, while full-distance λ ratios include atmospheric screening effects that modulate annually. This complementarity supports the "Screened Signal Model" (§3.7.5).</p>
+    <p>Key distinction: The low CV of short-distance ratios is compatible with the orbital velocity coupling (r = −0.548 to −0.752) in §3.10, because these measure different quantities: short-distance ratios capture the raw TEP signal, while full-distance λ ratios include atmospheric screening effects that modulate annually. This complementarity supports the "Screened Signal Model" (§3.7.5).</p>
 </div>
 
 <h2>5.3 Multi-Mode Cross-Validation</h2>
@@ -245,17 +245,17 @@
         </tr>
         <tr>
             <td><strong>Paper 3 (3-year SPP)</strong></td>
-            <td>−0.515</td>
-            <td>3.3σ</td>
-            <td>18/18 negative (100%)</td>
+            <td>−0.752 (best)<br>−0.548 (baseline)</td>
+            <td>5.3σ (best)<br>3.5σ (baseline)</td>
+            <td>All significant results negative</td>
         </tr>
     </table>
     <p style="margin-top: 15px;"><strong>Key findings:</strong></p>
     <ul>
-        <li><strong>Detection confirmed:</strong> r = −0.515, 3.3σ exceeds discovery threshold</li>
-        <li><strong>Direction consistency:</strong> All 18/18 results show negative correlation, matching CODE</li>
-        <li><strong>Zero-variance filter independence:</strong> Three independent station filters produce identical r-values (σ² = 0)</li>
-        <li><strong>Spacetime symmetry:</strong> Position jitter (r = −0.515) and clock bias (r = −0.505) show identical coupling (Δ = 2%)</li>
+        <li><strong>Detection confirmed:</strong> Multi-GNSS pos_jitter/phase yields r = −0.752, 5.3σ (strongest); MSC confirms at r = −0.659, 4.4σ; baseline GPS at r = −0.548, 3.5σ</li>
+        <li><strong>Direction consistency:</strong> All significant results show negative correlation, matching CODE</li>
+        <li><strong>Ionospheric independence:</strong> Signal survives ionospheric removal (ionofree r = −0.341, 2.0σ), ruling out ionospheric origin</li>
+        <li><strong>Seasonal breathing:</strong> Equinox/Solstice ratio 1.33–1.58 across all modes—anisotropy modulates with Earth's orbital geometry</li>
     </ul>
 </div>
 
@@ -266,24 +266,28 @@
         <tr>
             <th>Observable</th>
             <th>Domain</th>
-            <th>r (MSC)</th>
+            <th>r (MSC, baseline)</th>
+            <th>r (MSC, multi_gnss)</th>
         </tr>
         <tr>
             <td>Clock Bias</td>
             <td>Time</td>
-            <td>−0.505</td>
+            <td>−0.548</td>
+            <td>−0.581</td>
         </tr>
         <tr>
             <td>Position Jitter</td>
             <td>Space</td>
-            <td>−0.515</td>
+            <td>−0.526</td>
+            <td>−0.659</td>
         </tr>
         <tr>
             <td colspan="2"><strong>Difference</strong></td>
-            <td>2%</td>
+            <td>4%</td>
+            <td>13%</td>
         </tr>
     </table>
-    <p style="margin-top: 10px;">TEP predicts <em>spacetime</em> coupling, not just temporal effects. If the signal were a purely temporal clock artifact (e.g., oscillator thermal effects), it would propagate into position solutions with specific geometric projections, not with 1:1 magnitude scaling. The observed unity coupling (Δr ≈ 0.01) strongly implies a <em>metric perturbation affecting the spacetime interval ds² itself</em>, rather than a parameter-specific error.</p>
+    <p style="margin-top: 10px;">TEP predicts <em>spacetime</em> coupling, not just temporal effects. If the signal were a purely temporal clock artifact (e.g., oscillator thermal effects), it would propagate into position solutions with specific geometric projections, not with 1:1 magnitude scaling. The observed near-unity coupling (Δr ≈ 4–13%) strongly implies a <em>metric perturbation affecting the spacetime interval ds² itself</em>, rather than a parameter-specific error. Multi-GNSS pos_jitter shows the strongest signal overall (r = −0.659, 4.4σ), with phase alignment reaching r = −0.752, 5.3σ.</p>
 </div>
 
 <h2>5.6 Planetary Event Modulation</h2>
@@ -610,7 +614,7 @@
         <li><strong>Local/seasonal:</strong> Comprehensive seasonal stratification (36 independent measurements) shows DYNAMIC_50/Multi-GNSS varies by only 3.4–11.6% across seasons, while OPTIMAL_100/Ionofree reveals the true 6112 km extent in summer—matching CODE's benchmark. Both hemispheres show same polarity. The signal is always present; seasonal variations reflect atmospheric screening, not signal absence (ruled out)</li>
         <li><strong>Station selection:</strong> σ² = 0 across three independent filtering methods (ruled out)</li>
         <li><strong>Purely temporal effect:</strong> Position jitter = clock bias coupling to 2% (ruled out—spacetime confirmed)</li>
-        <li><strong>Random noise:</strong> p &lt; 10<sup>−300</sup> anisotropy, 3.3σ orbital coupling (ruled out)</li>
+        <li><strong>Random noise:</strong> p &lt; 10<sup>−300</sup> anisotropy, 3.5–5.3σ orbital coupling (ruled out)</li>
         <li><strong>Orbital geometry:</strong> Signal persists after geometric correction (ruled out)</li>
         <li><strong>Tidal forcing:</strong> Planetary event modulation shows no GM/r² scaling (p = 0.457)—direct gravitational tidal effects ruled out; consistent with geometric alignment</li>
         <li><strong>Local galactic reference frame:</strong> CMB frame analysis rejects Solar Apex (84° separation, 2.4× farther than CMB)—cosmological frame confirmed (ruled out)</li>

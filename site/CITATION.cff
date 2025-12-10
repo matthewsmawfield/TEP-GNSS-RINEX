@@ -18,7 +18,7 @@ abstract: >
   4. Planetary Modulation: Coherence modulation is detected around 37 planetary events with 2.1x higher significance than null controls, but with no mass scaling (p = 0.457), ruling out direct tidal forcing in favor of geometric alignment.
 license: CC-BY-4.0
 version: 0.1
-date-released: 2025-12-09
+date-released: 2025-12-11
 keywords:
   - physics
   - GNSS
@@ -34,7 +34,7 @@ keywords:
   - TEP-GNSS
 repository-code: "https://github.com/matthewsmawfield/TEP-GNSS-RINEX"
 url: "https://github.com/matthewsmawfield/TEP-GNSS-RINEX"
-doi: 10.5281/zenodo.17860167
+doi: 10.5281/zenodo.17860166
 
 preferred-citation:
   type: article
@@ -45,6 +45,10 @@ preferred-citation:
       orcid: "https://orcid.org/0009-0003-8219-3159"
   year: 2025
   journal: Zenodo
-  doi: 10.5281/zenodo.17860167
-  url: "https://doi.org/10.5281/zenodo.17860167"
+  doi: 10.5281/zenodo.17860166
+  identifiers:
+  - type: doi
+    value: 10.5281/zenodo.17860166
+    description: Pre-print DOI
+  url: "https://doi.org/10.5281/zenodo.17860166"
   notes: "Preprint"

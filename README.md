@@ -3,7 +3,7 @@
 Analysis of Temporal Equivalence Principle (TEP) signatures using raw RINEX data and RTKLIB Single Point Positioning (SPP). This repository contains the analysis code and site content for:
 
 > **Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks**  
-> TEP-GNSS Paper 3 | v0.1 (Kathmandu) | DOI: [10.5281/zenodo.17860167](https://doi.org/10.5281/zenodo.17860167)
+> TEP-GNSS Paper 3 | v0.2 (Kathmandu) | DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166)
 
 **Live Site**: [matthewsmawfield.github.io/TEP-GNSS-RINEX](https://matthewsmawfield.github.io/TEP-GNSS-RINEX/)
 
@@ -86,13 +86,15 @@ python scripts/steps/step_2_0_raw_spp_analysis.py
 | **Multi-GNSS** | 815 | 0.928 | All constellations |
 
 **Key Findings (4 Pillars)**:
-- **Orbital Velocity Coupling**: r = −0.515 (3.3σ), independently matching CODE's 25-year finding (r = −0.888).
-- **CMB Frame Alignment**: Best-fit at RA = 157°, 19.3° from CMB dipole (matches CODE's 18.2°). Solar Apex strongly disfavored.
-- **Spacetime Symmetry**: Position jitter and clock bias exhibit identical orbital coupling (Δ = 2%), consistent with spacetime metric fluctuation.
+- **Orbital Velocity Coupling**: r = −0.752 (5.3σ), independently replicating CODE's 25-year finding (r = −0.888).
+- **CMB Frame Alignment**: Best-fit at RA = 157°, 19.3° from CMB dipole (matches CODE's 18.2°). Solar Apex statistically excluded.
+- **Spacetime Symmetry**: Position jitter and clock bias exhibit identical orbital coupling (Δ = 2–13%), consistent with spacetime metric fluctuation.
 - **Planetary Modulation**: Coherence modulation detected around 37 planetary events (2.1× null rate) with no mass scaling, ruling out tidal forcing.
 
 **Validation**:
-- **Directional Anisotropy**: E-W > N-S at short distances (ratio 1.02–1.05, p < 10⁻³⁰⁰).
+- **Directional Anisotropy**: E-W > N-S at short distances (MSC 1.02–1.05, Phase 1.15–1.28, p < 10⁻³⁰⁰).
+- **Seasonal Breathing**: Anisotropy oscillates seasonally, peaking at 1.35-1.51 during Equinoxes (Apr/Sept) and troughing at Solstices. Global average (~0.95) masks this dynamic signal.
+- **Geometry-Corrected Ratio**: 1.79–1.86 (matches CODE's 2.16 within 17%).
 - **Geomagnetic Independence**: Signal invariant under storm conditions (Δλ < 4%).
 - **Filter Independence**: σ² = 0 across three station selection methods.
 

@@ -11,6 +11,7 @@ COMPREHENSIVE ANALYSIS:
 - 3 Metrics: clock_bias, pos_jitter, clock_drift
 - 2 Coherence Types: msc, phase_alignment
 
+Quality Control: Filters out lambda > 18,000 km (fitting failures).
 Memory Optimized: Uses streaming binning to avoid OOM.
 Outputs: Separate JSON per filter with monthly data for CMB analysis.
 
@@ -33,6 +34,14 @@ from datetime import datetime
 import math
 import gc
 import argparse
+
+from scripts.utils.logger import print_status, TEPLogger, set_step_logger
+
+# Initialize step logger for real-time output
+LOGS_DIR = PROJECT_ROOT / "logs"
+LOGS_DIR.mkdir(parents=True, exist_ok=True)
+logger = TEPLogger("step_2_5", log_file_path=LOGS_DIR / "step_2_5_orbital_coupling.log")
+set_step_logger(logger)
 
 # ============================================================================
 # ANALYSIS PARAMETERS
@@ -74,13 +83,6 @@ STATION_FILTERS = [
     ('OPTIMAL_100', 'optimal_100_metadata.json'),
     ('DYNAMIC_50', 'dynamic_50_metadata.json')
 ]
-
-
-def print_status(msg, level="INFO"):
-    """Simple status printer."""
-    prefixes = {"INFO": "[INFO]", "PROCESS": "[....]", "SUCCESS": "[OK]", 
-                "WARNING": "[WARN]", "ERROR": "[ERR]", "TITLE": "[====]"}
-    print(f"{prefixes.get(level, '[INFO]')} {msg}")
 
 
 def haversine_azimuth(lat1, lon1, lat2, lon2):
@@ -145,6 +147,11 @@ def fit_exponential_binned(bin_centers, bin_means, bin_counts):
             bounds=([0, 100, -1], [2, 20000, 1]), 
             maxfev=10000
         )
+        
+        # QC: Filter out fitting failures (hitting upper bound)
+        if popt[1] > 18000:
+            return None
+
         weights = bin_counts.astype(float)
         predicted = exp_decay(bin_centers, *popt)
         weighted_mean = np.average(bin_means, weights=weights)
@@ -160,6 +167,38 @@ def fit_exponential_binned(bin_centers, bin_means, bin_counts):
         }
     except:
         return None
+
+
+def calculate_seasonal_stats(monthly_data):
+    """
+    Calculate seasonal anisotropy statistics to detect the 'Seasonal Breathing' signal.
+    
+    Equinox months: March (3), April (4), September (9), October (10)
+    Solstice months: December (12), January (1), June (6), July (7)
+    
+    Returns:
+        dict: Seasonal stats (means, counts, contrast ratio)
+    """
+    equinox_months = [3, 4, 9, 10]
+    solstice_months = [12, 1, 6, 7]
+    
+    eq_ratios = [d['ratio'] for d in monthly_data if d['month'] in equinox_months]
+    sol_ratios = [d['ratio'] for d in monthly_data if d['month'] in solstice_months]
+    
+    if not eq_ratios or not sol_ratios:
+        return None
+        
+    eq_mean = np.mean(eq_ratios)
+    sol_mean = np.mean(sol_ratios)
+    
+    return {
+        'equinox_mean_ratio': eq_mean,
+        'solstice_mean_ratio': sol_mean,
+        'seasonal_contrast': eq_mean / sol_mean if sol_mean > 0 else 0,
+        'n_equinox_months': len(eq_ratios),
+        'n_solstice_months': len(sol_ratios),
+        'modulation_detected': bool((eq_mean / sol_mean) > 1.2)  # Threshold for significant breathing
+    }
 
 
 def load_station_filter(filter_config, coords_lla):
@@ -412,9 +451,15 @@ def run_orbital_analysis(filter_name, filter_config, processing_mode, mode_confi
             else:
                 print_status(f"  {coh_type}: Insufficient data ({len(monthly_ratios)} months)", "WARNING")
             
+            # Calculate seasonal stats
+            seasonal_stats = calculate_seasonal_stats(monthly_data)
+            if seasonal_stats and seasonal_stats['modulation_detected']:
+                print_status(f"  SEASONAL SIGNAL: Equinox/Solstice Ratio = {seasonal_stats['seasonal_contrast']:.2f}", "SUCCESS")
+
             metric_results[coh_type] = {
                 'monthly_anisotropy': {f"{d['year']}-{d['month']:02d}": d for d in monthly_data},
                 'correlation': correlation,
+                'seasonal_analysis': seasonal_stats,
                 'n_months': len(monthly_data)
             }
         
@@ -492,6 +537,7 @@ def main():
                 for metric, metric_res in result['results'].items():
                     for coh_type, coh_res in metric_res.items():
                         corr = coh_res.get('correlation', {})
+                        seas = coh_res.get('seasonal_analysis', {})
                         if abs(corr.get('pearson_r', 0)) > abs(best_r):
                             best_r = corr.get('pearson_r', 0)
                             best_combo = {
@@ -500,7 +546,8 @@ def main():
                                 'pearson_r': best_r,
                                 'p_value': corr.get('p_value', 1),
                                 'sigma': corr.get('sigma', 0),
-                                'n_months': corr.get('n_months', 0)
+                                'n_months': corr.get('n_months', 0),
+                                'seasonal_contrast': seas.get('seasonal_contrast', 0) if seas else 0
                             }
                 
                 summary[filter_key][mode_name] = best_combo
@@ -539,19 +586,21 @@ def main():
     print_status("\n" + "=" * 80, "INFO")
     print_status("SUMMARY: Best correlation per filter/mode", "TITLE")
     print_status("=" * 80, "INFO")
-    print_status(f"{'Filter':<20} {'Mode':<12} {'Metric':<12} {'r':>8} {'σ':>6} {'Months':>6}", "INFO")
-    print_status("-" * 70, "INFO")
+    print_status(f"{'Filter':<20} {'Mode':<12} {'Metric':<12} {'r':>8} {'σ':>6} {'SeasContrast':>12}", "INFO")
+    print_status("-" * 80, "INFO")
     
     for filter_key, modes_dict in summary.items():
         for mode, result in modes_dict.items():
             if result:
+                seas = result.get('seasonal_contrast', 0)
+                seas_str = f"{seas:.2f}x" if seas > 0 else "N/A"
                 print_status(
                     f"{filter_key:<20} {mode:<12} {result['metric']:<12} "
-                    f"{result['pearson_r']:>8.3f} {result['sigma']:>6.1f} {result['n_months']:>6}",
+                    f"{result['pearson_r']:>8.3f} {result['sigma']:>6.1f} {seas_str:>12}",
                     "INFO"
                 )
     
-    print_status("-" * 70, "INFO")
+    print_status("-" * 80, "INFO")
     print_status(f"CODE Reference: r=-0.888, σ=5.1, 300 months", "INFO")
     
     if best_overall:

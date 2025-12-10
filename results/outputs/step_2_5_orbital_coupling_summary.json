@@ -1,10 +1,12 @@
 {
   "step": "2.5",
   "name": "orbital_coupling_comprehensive",
-  "timestamp": "2025-12-08T07:17:21.425773",
+  "timestamp": "2025-12-11T01:16:23.887225",
   "methodology": "Monthly EW/NS lambda ratio vs orbital velocity correlation",
-  "n_combinations": 3,
+  "n_combinations": 9,
   "filters_tested": [
+    "ALL_STATIONS",
+    "OPTIMAL_100",
     "DYNAMIC_50"
   ],
   "modes_tested": [
@@ -13,30 +15,91 @@
     "multi_gnss"
   ],
   "summary": {
-    "dynamic_50": {
+    "all_stations": {
       "baseline": {
-        "metric": "pos_jitter",
-        "coherence_type": "phase_alignment",
-        "pearson_r": -0.48804043493082844,
-        "p_value": 0.0025314073292749912,
-        "sigma": 3.0195616918969783,
-        "n_months": 36
+        "metric": "clock_bias",
+        "coherence_type": "msc",
+        "pearson_r": -0.5476939874081687,
+        "p_value": 0.0005453804786193557,
+        "sigma": 3.457416869153818,
+        "n_months": 36,
+        "seasonal_contrast": 1.5804032475035161
       },
       "ionofree": {
-        "metric": "clock_drift",
+        "metric": "pos_jitter",
         "coherence_type": "msc",
-        "pearson_r": -0.3179280178169956,
-        "p_value": 0.05881086446102163,
-        "sigma": 1.8896045778934334,
-        "n_months": 36
+        "pearson_r": -0.3414630548711446,
+        "p_value": 0.041530782054437235,
+        "sigma": 2.0381915318131516,
+        "n_months": 36,
+        "seasonal_contrast": 1.5352783973717536
       },
       "multi_gnss": {
         "metric": "pos_jitter",
         "coherence_type": "phase_alignment",
-        "pearson_r": -0.7589073748095553,
-        "p_value": 8.139264712294397e-08,
-        "sigma": 5.36401387600092,
-        "n_months": 36
+        "pearson_r": -0.7522691915408443,
+        "p_value": 1.2208956447542187e-07,
+        "sigma": 5.290339433168468,
+        "n_months": 36,
+        "seasonal_contrast": 1.026613831978192
+      }
+    },
+    "optimal_100": {
+      "baseline": {
+        "metric": "pos_jitter",
+        "coherence_type": "msc",
+        "pearson_r": -0.5291880854114825,
+        "p_value": 0.0009050127121351275,
+        "sigma": 3.318503244220879,
+        "n_months": 36,
+        "seasonal_contrast": 1.1353257448598792
+      },
+      "ionofree": {
+        "metric": "clock_bias",
+        "coherence_type": "phase_alignment",
+        "pearson_r": 0.2790245684458752,
+        "p_value": 0.09935702051262552,
+        "sigma": 1.6479788053785356,
+        "n_months": 36,
+        "seasonal_contrast": 0.9750478447871983
+      },
+      "multi_gnss": {
+        "metric": "pos_jitter",
+        "coherence_type": "msc",
+        "pearson_r": -0.4438738130238905,
+        "p_value": 0.006692336237033995,
+        "sigma": 2.711778171279632,
+        "n_months": 36,
+        "seasonal_contrast": 1.4351209138904866
+      }
+    },
+    "dynamic_50": {
+      "baseline": {
+        "metric": "clock_bias",
+        "coherence_type": "msc",
+        "pearson_r": -0.5476939874081687,
+        "p_value": 0.0005453804786193557,
+        "sigma": 3.457416869153818,
+        "n_months": 36,
+        "seasonal_contrast": 1.5804032475035161
+      },
+      "ionofree": {
+        "metric": "pos_jitter",
+        "coherence_type": "msc",
+        "pearson_r": -0.3414630548711446,
+        "p_value": 0.041530782054437235,
+        "sigma": 2.0381915318131516,
+        "n_months": 36,
+        "seasonal_contrast": 1.5352783973717536
+      },
+      "multi_gnss": {
+        "metric": "pos_jitter",
+        "coherence_type": "phase_alignment",
+        "pearson_r": -0.7522691915408443,
+        "p_value": 1.2208956447542187e-07,
+        "sigma": 5.290339433168468,
+        "n_months": 36,
+        "seasonal_contrast": 1.026613831978192
       }
     }
   },
@@ -48,11 +111,12 @@
   "best_result": {
     "metric": "pos_jitter",
     "coherence_type": "phase_alignment",
-    "pearson_r": -0.7589073748095553,
-    "p_value": 8.139264712294397e-08,
-    "sigma": 5.36401387600092,
+    "pearson_r": -0.7522691915408443,
+    "p_value": 1.2208956447542187e-07,
+    "sigma": 5.290339433168468,
     "n_months": 36,
-    "filter": "dynamic_50",
+    "seasonal_contrast": 1.026613831978192,
+    "filter": "all_stations",
     "mode": "multi_gnss"
   }
 }

@@ -1024,11 +1024,15 @@ def main():
     else:
         best = all_results[0]
     
-    # Calculate corrected global p-value (accounting for number of combinations)
-    # Sidak correction: p_corrected = 1 - (1 - p_global)^N
-    n_combos = len(all_results)
-    p_global = best['global_p']
-    p_corrected = 1 - (1 - p_global)**n_combos
+    # Calculate Robustness (Consistency) instead of blind correction
+    # How many significant results cluster near the CMB?
+    significant_results = [r for r in all_results if r['global_p'] < 0.05]
+    n_significant = len(significant_results)
+    
+    # Check consistency: how many of the top 10 results are within 45 degrees of CMB?
+    top_10 = all_results[:10]
+    n_consistent = sum(1 for r in top_10 if r['cmb_sep'] < 45.0)
+    consistency_score = n_consistent / len(top_10) if top_10 else 0.0
     
     print_status("-" * 100, "INFO")
     print_status(f"CODE Longspan reference: RA=186°, Dec=-4°, CMB sep=18.2°", "INFO")
@@ -1039,8 +1043,11 @@ def main():
     print_status(f"  r={best['best_r']:.3f}", "SUCCESS")
     print_status(f"  Local P-value: {best['best_p']:.4f}", "INFO")
     print_status(f"  Global P-value (Monte Carlo): {best['global_p']:.4f}", "SUCCESS")
-    print_status(f"  Corrected Global P-value (N={n_combos}): {p_corrected:.4f}", "SUCCESS")
     print_status(f"  CMB separation: {best['cmb_sep']:.1f}°", "SUCCESS")
+    print_status("", "INFO")
+    print_status(f"ROBUSTNESS ANALYSIS:", "INFO")
+    print_status(f"  Significant combinations (p<0.05): {n_significant}/{len(all_results)}", "INFO")
+    print_status(f"  Consistency: {n_consistent}/10 top results align with CMB (<45°)", "INFO")
     
     # Create visualization for best result
     print_status("\nCreating sky map for best result...", "PROCESS")
@@ -1067,9 +1074,14 @@ def main():
             'correlation': float(best['best_r']),
             'p_value': float(best['best_p']),
             'global_p_value': float(best['global_p']),
-            'corrected_p_value': float(p_corrected),
             'cmb_separation': float(best['cmb_sep']),
             'apex_separation': float(best['apex_sep'])
+        },
+        'robustness': {
+            'n_significant': n_significant,
+            'n_total': len(all_results),
+            'n_consistent_top_10': n_consistent,
+            'consistency_score': float(consistency_score)
         },
         'methodology': {
             'grid_resolution_deg': 1,

@@ -188,7 +188,7 @@ class HTMLToMarkdownConverter {
         const date = dateMatch ? dateMatch[1].replace(/<[^>]+>/g, '').trim() : 'First published: 29 November 2025';
         
         const doiMatch = html.match(/DOI:\s*<a[^>]*href=["']([^"']*)["'][^>]*>(.*?)<\/a>/i);
-        const doi = doiMatch ? doiMatch[2] : '10.5281/zenodo.17860167';
+        const doi = doiMatch ? doiMatch[2] : '10.5281/zenodo.17860166';
         
         return { title, author, version, date, doi };
     }

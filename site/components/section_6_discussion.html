@@ -19,7 +19,7 @@
         <h4>Why Tropospheric Weather Is Not the Cause</h4>
         <p>A potential objection is that the short-distance E-W anisotropy simply reflects prevailing weather patterns (Westerlies). This is ruled out by four facts:</p>
         <ol>
-            <li><strong>Orbital Coupling:</strong> Weather does not modulate with Earth's orbital velocity (r = −0.515, 3.3σ).</li>
+            <li><strong>Orbital Coupling:</strong> Weather does not modulate with Earth's orbital velocity (r = −0.548 to −0.752, 3.5–5.3σ).</li>
             <li><strong>Ionofree Persistence:</strong> The signal becomes <em>stronger</em> and <em>longer-ranged</em> (λ = 6112 km) when ionospheric delay is removed. Tropospheric delay is non-dispersive and would not be selectively enhanced by ionofree combination.</li>
             <li><strong>CMB Alignment:</strong> Weather patterns do not align with the Cosmic Microwave Background dipole (19.3° separation, p &lt; 10<sup>−25</sup>) (Burde, 2016; Consoli & Pluchino, 2021).</li>
             <li><strong>Ionospheric Gradient Scale:</strong> Lee & Lee (2019) show ionospheric spatial gradients are &lt;0.01 TECU/km under quiet conditions—far smaller than the effect observed here, which persists across all geomagnetic conditions.</li>
@@ -33,7 +33,7 @@
 
 <p>The comparable correlation lengths for position jitter (spatial proxy, λ = 883 km) and clock bias (temporal proxy, λ = 727 km) confirm the fundamental TEP prediction: spatial and temporal fluctuations are coupled. The similar scales (within 21%) demonstrate that the same underlying mechanism affects both space and time measurements.</p>
 
-<p>New evidence from orbital coupling analysis: Position jitter and clock bias show nearly identical orbital velocity coupling (r = −0.515 vs −0.505, difference of only 2%). This spacetime symmetry provides direct evidence that TEP affects both spatial and temporal measurements equally—a prediction unique to spacetime coupling theories.</p>
+<p>New evidence from orbital coupling analysis: Position jitter and clock bias show similar orbital velocity coupling (baseline: r = −0.526 vs −0.548, difference of 4%; multi_gnss: r = −0.659 vs −0.581, difference of 13%). This near-unity spacetime symmetry provides direct evidence that TEP affects both spatial and temporal measurements—a prediction unique to spacetime coupling theories. Multi-GNSS pos_jitter/phase achieves the strongest detection at r = −0.752, 5.3σ.</p>
 
 <h3>6.2.2 Directional Anisotropy as Physical Signature</h3>
 
@@ -61,6 +61,11 @@
     <p>The CMB frame is unique—it is the only reference frame that can be defined without appeal to local matter distribution. It represents the "absolute rest" frame of the universe, in which the average motion of all matter since the Big Bang is zero (Burde, 2016; Consoli & Pluchino, 2021). Burde (2016) develops a theoretical framework for special relativity consistent with a CMB preferred frame, while Consoli & Pluchino (2021) show that the CMB dipole anisotropy is a Doppler effect from Earth's 370 km/s motion through this fundamental rest frame Σ. If TEP describes velocity-dependent spacetime coupling, this is precisely the expected reference frame. The strong rejection of the Solar Apex (representing local galactic motion at 20 km/s) implies the effect is cosmological, not local.</p>
 </div>
 
+<div>
+    <h4>Theoretical Resolution: Bi-Metric Geometry & Local Invariance</h4>
+    <p>The apparent conflict with standard Lorentz invariance is resolved within the Bi-Metric Geometry framework detailed in the companion theory paper (<em>Smawfield, 2025, TEP theory preprint</em>). The theory postulates that while matter couples to a causal metric $\tilde{g}_{\mu\nu}$ (preserving exact <strong>local</strong> Lorentz invariance and a locally invariant $c$ in freely falling frames), the global time field $\phi$ induces path-dependent synchronization non-integrability. The "preferred" CMB frame is not an ether, but the natural cosmological rest frame of the scalar time field $\phi$, consistent with the background evolution of the universe. Thus, the signal represents a breakdown of <strong>global simultaneity</strong>, not local covariance.</p>
+</div>
+
 <p>This finding has profound implications: the anisotropy modulation couples to the CMB frame, indicating the underlying phenomenon operates at cosmic scales. The TEP signal appears to reflect Earth's absolute motion through space at 370 km/s, as defined by the cosmic microwave background. The convergence of RINEX's 3-year raw SPP analysis (19.3° CMB separation) with CODE's 25-year precise PPP analysis (18.2° CMB separation) provides strong independent validation from completely different data and methodology.</p>
 
 <h3>6.2.4 Synthesis: A Unified Physical Picture</h3>
@@ -69,7 +74,7 @@
 <ol>
     <li><strong>Metric Fluctuation:</strong> The identical coupling of spatial (position jitter) and temporal (clock bias) variance confirms the signal affects the spacetime metric itself, not just clocks or orbits independently.</li>
     <li><strong>Cosmic Reference:</strong> The alignment with the CMB frame (and rejection of the Solar Apex) anchors this metric fluctuation to the universe's absolute rest frame, suggesting a cosmological origin rather than a local galactic one.</li>
-    <li><strong>Velocity Dependence:</strong> The modulation with Earth's orbital velocity (r = −0.515) confirms the coupling is kinematic—dependent on Earth's motion through this cosmic frame.</li>
+    <li><strong>Velocity Dependence:</strong> The modulation with Earth's orbital velocity (r = −0.548 to −0.752) confirms the coupling is kinematic—dependent on Earth's motion through this cosmic frame.</li>
 </ol>
 <p>This triplet—Spacetime Symmetry, CMB Alignment, and Velocity Dependence— constitutes the core empirical signature of the Temporal Equivalence Principle.</p>
 
@@ -85,7 +90,9 @@
 
 <h3>6.2.7 Reinterpreting Common Mode Error</h3>
 
-<p>Geodesists have long observed unexplained spatially correlated noise in GNSS networks, termed "Common Mode Error" (CME). It is typically treated as a nuisance to be filtered out via stacking or PCA. These findings suggest that a significant component of CME is not "error" but "signal"—a fundamental physical phenomenon (TEP) with specific directional and temporal structure. This reframes CME from a processing artifact to a relativistic observable, potentially offering a new way to study gravity using existing geodetic infrastructure.</p>
+<p>Over the past decade, a substantial literature in the <em>Journal of Geodesy</em> and related journals has documented that GNSS "noise" is neither white nor independent, but instead forms a spatially correlated, multi-scale random field on the Earth’s surface. Recent work by Gobron et al. (2024), Niu et al. (2023), and Rebischung & Gobron (2024) demonstrates clear, distance-structured spatial covariance, multiple correlation regimes, and well-defined angular power spectra in GNSS residuals, while studies by He et al. (2021), Santamaría-Gómez & Ray (2021), and Ray et al. (2008) highlight unexplained spectral features and time-variable noise properties.</p>
+
+<p>In the present series these empirical findings are taken one step further: it is shown that, after exhaustive correction for known geophysical and processing contributions, the remaining correlated component exhibits a stable, reproducible pattern across independent datasets (CODE PPP vs raw RINEX SPP), including a characteristic anisotropy between east–west and north–south directions. It is argued that this residual, geometry-dependent field is more naturally interpreted as a manifestation of a dynamical temporal-gravitational field (the Temporal Equivalence Principle) than as yet another layer of ad-hoc "noise".</p>
 
 <h2>6.3 Methodological Implications</h2>
 
@@ -121,24 +128,14 @@
     <h4>Orbital Velocity Coupling — Confirmed</h4>
     <p>The orbital velocity correlation (as in Paper 2) has been successfully tested and confirmed:</p>
     <ul>
-        <li><strong>Best result:</strong> r = −0.515, 3.3σ (Position Jitter + MSC)</li>
-        <li><strong>Direction:</strong> 18/18 results negative, matching CODE's r = −0.888</li>
-        <li><strong>Filter independence:</strong> σ² = 0 across all three station filters</li>
-        <li><strong>Spacetime symmetry:</strong> Position Jitter ≈ Clock Bias (Δ = 2%)</li>
+        <li><strong>Best result:</strong> r = −0.752, 5.3σ (Multi-GNSS pos_jitter/phase); MSC confirms at r = −0.659, 4.4σ</li>
+        <li><strong>Baseline GPS:</strong> r = −0.548, 3.5σ (clock_bias/msc)</li>
+        <li><strong>Ionospheric independence:</strong> Signal survives ionofree (r = −0.341, 2.0σ)</li>
+        <li><strong>Seasonal breathing:</strong> Equinox/Solstice ratio 1.33–1.58 across all modes</li>
     </ul>
     <p>This completes the orbital dynamics validation originally planned for Paper 2 methodology.</p>
 </div>
 
-<h3>6.4.3 Recommended Future Investigations</h3>
-
-<ol>
-    <li><strong>Carrier Phase Analysis:</strong> Use raw carrier phase (not just pseudorange) for higher precision</li>
-    <li><strong>Enhanced Southern Network:</strong> Expand analysis to include more Southern Hemisphere stations</li>
-    <li><strong>Hemisphere-Specific Orbital Coupling:</strong> Test whether Southern Hemisphere shows stronger orbital coupling (as suggested by CODE findings)</li>
-    <li><strong>Latitude-Dependent Effects:</strong> Further investigate equatorial anomaly contamination</li>
-    <li><strong>Extended Kp Analysis:</strong> The analysis pipeline now supports all three modes (Baseline, Ionofree, Multi-GNSS); re-running Step 2.3 will generate comprehensive 18-metric Kp stratification results</li>
-    <li><strong>Quantum Network Integration:</strong> Compare GNSS-derived TEP signatures with data from dedicated optical clock networks to bridge the gap between geodetic and quantum metrology</li>
-</ol>
 
 <h2>6.5 TEP Framework Validation</h2>
 
@@ -196,13 +193,13 @@
         <tr>
             <td><strong>Orbital velocity coupling</strong></td>
             <td>E-W/N-S ~ orbital velocity</td>
-            <td>r = −0.515, 3.3σ (18/18 negative)</td>
+            <td>r = −0.752, 5.3σ (multi_gnss best); r = −0.548, 3.5σ (baseline)</td>
             <td>Supported</td>
         </tr>
         <tr>
             <td><strong>Spacetime symmetry</strong></td>
             <td>Position Jitter ≈ Clock Bias</td>
-            <td>r = −0.515 vs −0.505 (Δ = 2%)</td>
+            <td>r = −0.526 vs −0.548 (Δ = 4%, baseline); r = −0.659 vs −0.581 (Δ = 13%, multi_gnss)</td>
             <td>Supported</td>
         </tr>
         <tr>

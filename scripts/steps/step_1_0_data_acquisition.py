@@ -1138,7 +1138,7 @@ def main():
     total_failed = 0
     total_exists = 0
     download_queue = Queue()  # DOYs to download
-    process_queue = Queue()   # Downloaded files ready to process
+    process_queue = Queue(maxsize=2)   # Downloaded files ready to process (LIMIT=2 to save disk)
     
     # Fill download queue
     for year, doy in doys_to_process:
@@ -1194,96 +1194,113 @@ def main():
             
             year, doy, nav_file, rinex_files = item
             
-            # Log start of processing
-            n_rinex = len(rinex_files) if rinex_files else 0
-            msg = f"    [{year}/{doy:03d}] PROCESSING: {n_rinex} RINEX files..."
-            print(msg, flush=True)
-            logger.info(msg)
+            try:
+                # Log start of processing
+                n_rinex = len(rinex_files) if rinex_files else 0
+                msg = f"    [{year}/{doy:03d}] PROCESSING: {n_rinex} RINEX files..."
+                try:
+                    print(msg, flush=True)
+                    logger.info(msg)
+                except:
+                    pass
+                
+                if not rinex_files or n_rinex == 0:
+                    try:
+                        print(f"    [{year}/{doy:03d}] SKIPPED: No RINEX files to process", flush=True)
+                    except:
+                        pass
+                    with lock:
+                        pbar.update(1)
+                    continue
+                
+                # Find SP3 file for this DOY (for precise/ionofree modes)
+                sp3_file = SP3_DIR / f"sp3_{year}{doy:03d}.sp3"
+                if not sp3_file.exists():
+                    sp3_file = None  # Will skip precise/ionofree modes
+                
+                # Build processing tasks
+                tasks = []
+                for rinex_path in rinex_files:
+                    tasks.append((
+                        rinex_path,
+                        nav_file,
+                        sp3_file,  # SP3 file for precise/ionofree modes
+                        DEFAULT_RTKLIB,
+                        PROCESSED_DIR
+                    ))
+                
+                # Process in parallel
+                doy_new, doy_exist, doy_fail = 0, 0, 0
+                doy_errors = {}
+                
+                process_start = _time.time()
+                
+                with ProcessPoolExecutor(max_workers=workers_per_doy) as executor:
+                    futures = [executor.submit(process_rinex_file, t) for t in tasks]
+                    completed = 0
+                    total = len(futures)
+                    
+                    for future in as_completed(futures):
+                        completed += 1
+                        # Log progress every 50 files
+                        if completed % 50 == 0:
+                            try:
+                                print(f"    [{year}/{doy:03d}] Progress: {completed}/{total} files...", flush=True)
+                            except:
+                                pass
+                            
+                        try:
+                            result = future.result()
+                            if result:
+                                status = result["status"]
+                                if status == "success":
+                                    doy_new += 1
+                                    with lock:
+                                        total_success += 1
+                                        if result.get("coords"):
+                                            all_coords[result["station"]] = result["coords"]
+                                elif status == "exists":
+                                    doy_exist += 1
+                                    with lock:
+                                        total_exists += 1
+                                else:
+                                    doy_fail += 1
+                                    with lock:
+                                        total_failed += 1
+                                    doy_errors[status] = doy_errors.get(status, 0) + 1
+                        except Exception as e:
+                            doy_fail += 1
+                            with lock:
+                                total_failed += 1
+                            doy_errors["exception"] = doy_errors.get("exception", 0) + 1
+                
+                process_time = _time.time() - process_start
+                
+                # Log DOY summary
+                msg = f"    [{year}/{doy:03d}] PROCESSED: {doy_new} new, {doy_exist} exist, {doy_fail} fail ({process_time:.1f}s)"
+                try:
+                    print(msg, flush=True)
+                    logger.info(msg)
+                    if doy_errors:
+                        error_str = ", ".join(f"{k}:{v}" for k, v in doy_errors.items())
+                        err_msg = f"             Failures: {error_str}"
+                        print(err_msg, flush=True)
+                        logger.warning(err_msg)
+                except:
+                    pass
             
-            if not rinex_files or n_rinex == 0:
-                print(f"    [{year}/{doy:03d}] SKIPPED: No RINEX files to process", flush=True)
+            finally:
+                # CRITICAL: Clean up RINEX files regardless of success/failure
+                try:
+                    doy_dir = RINEX_DIR / f"{year}" / f"{doy:03d}"
+                    if doy_dir.exists():
+                        shutil.rmtree(doy_dir, ignore_errors=True)
+                except:
+                    pass
+                
                 with lock:
                     pbar.update(1)
-                continue
-            
-            # Find SP3 file for this DOY (for precise/ionofree modes)
-            sp3_file = SP3_DIR / f"sp3_{year}{doy:03d}.sp3"
-            if not sp3_file.exists():
-                sp3_file = None  # Will skip precise/ionofree modes
-            
-            # Build processing tasks
-            tasks = []
-            for rinex_path in rinex_files:
-                tasks.append((
-                    rinex_path,
-                    nav_file,
-                    sp3_file,  # SP3 file for precise/ionofree modes
-                    DEFAULT_RTKLIB,
-                    PROCESSED_DIR
-                ))
-            
-            # Process in parallel
-            doy_new, doy_exist, doy_fail = 0, 0, 0
-            doy_errors = {}
-            
-            process_start = _time.time()
-            
-            with ProcessPoolExecutor(max_workers=workers_per_doy) as executor:
-                futures = [executor.submit(process_rinex_file, t) for t in tasks]
-                completed = 0
-                total = len(futures)
-                
-                for future in as_completed(futures):
-                    completed += 1
-                    # Log progress every 50 files
-                    if completed % 50 == 0:
-                        print(f"    [{year}/{doy:03d}] Progress: {completed}/{total} files...", flush=True)
-                        
-                    try:
-                        result = future.result()
-                        if result:
-                            status = result["status"]
-                            if status == "success":
-                                doy_new += 1
-                                with lock:
-                                    total_success += 1
-                                    if result.get("coords"):
-                                        all_coords[result["station"]] = result["coords"]
-                            elif status == "exists":
-                                doy_exist += 1
-                                with lock:
-                                    total_exists += 1
-                            else:
-                                doy_fail += 1
-                                with lock:
-                                    total_failed += 1
-                                doy_errors[status] = doy_errors.get(status, 0) + 1
-                    except Exception as e:
-                        doy_fail += 1
-                        with lock:
-                            total_failed += 1
-                        doy_errors["exception"] = doy_errors.get("exception", 0) + 1
-            
-            process_time = _time.time() - process_start
-            
-            # Log DOY summary - write directly to log file for reliability
-            msg = f"    [{year}/{doy:03d}] PROCESSED: {doy_new} new, {doy_exist} exist, {doy_fail} fail ({process_time:.1f}s)"
-            print(msg, flush=True)
-            logger.info(msg)
-            if doy_errors:
-                error_str = ", ".join(f"{k}:{v}" for k, v in doy_errors.items())
-                err_msg = f"             Failures: {error_str}"
-                print(err_msg, flush=True)
-                logger.warning(err_msg)
-            
-            # Clean up
-            doy_dir = RINEX_DIR / f"{year}" / f"{doy:03d}"
-            if doy_dir.exists():
-                shutil.rmtree(doy_dir, ignore_errors=True)
-            
-            with lock:
-                pbar.update(1)
-                pbar.set_postfix({"new": total_success, "exist": total_exists, "fail": total_failed})
+                    pbar.set_postfix({"new": total_success, "exist": total_exists, "fail": total_failed})
     
     # Start DOY processor threads
     processor_threads = []
