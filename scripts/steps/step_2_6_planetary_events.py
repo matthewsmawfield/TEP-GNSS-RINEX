@@ -1025,7 +1025,7 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True, proces
     station_data_by_mode = {mode: {} for mode in PROCESSING_MODES}
     
     for i, (sta, files) in enumerate(station_files.items()):
-        if i % 50 == 0:
+        if i % 10 == 0:
             print(f"\r  Loading: {i}/{len(station_files)}", end="", flush=True)
         
         try:
