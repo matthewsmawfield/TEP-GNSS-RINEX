@@ -68,50 +68,114 @@ STATION_FILTERS = [
 
 GOOD_STATIONS_SET = None
 
-# ALL THREE PROCESSING MODES
+# ALL FOUR PROCESSING MODES
 PROCESSING_MODES = {
     'baseline': {
-        'csv_file': 'step_2_0_pairs_baseline.csv',
         'description': 'GPS L1 only'
     },
     'ionofree': {
-        'csv_file': 'step_2_0_pairs_ionofree.csv',
         'description': 'Dual-frequency L1+L2 ionosphere-free'
     },
     'multi_gnss': {
-        'csv_file': 'step_2_0_pairs_multi_gnss.csv',
         'description': 'GPS+GLO+GAL+BDS'
+    },
+    'precise': {
+        'description': 'IGS Precise Orbits (L1+L2)'
     }
+
 }
+
+
+def _sanitize_tag(tag: str) -> str:
+    tag = (tag or "").strip()
+    if not tag:
+        return ""
+    safe = []
+    for ch in tag:
+        if ch.isalnum() or ch in ('-', '_'):
+            safe.append(ch)
+    return "_" + "".join(safe) if safe else ""
 
 def exp_decay(r, A, lam, C0):
     return A * np.exp(-r / lam) + C0
 
-def fit_exponential(distances, coherences):
-    if len(distances) < 1000:
+def fit_exponential_binned(bin_centers, bin_means, bin_counts):
+    if bin_centers.size < 5:
         return None
-    bin_edges = np.logspace(np.log10(MIN_DISTANCE_KM), np.log10(MAX_DISTANCE_KM), N_BINS + 1)
-    bin_centers, bin_means, bin_counts = [], [], []
-    for i in range(N_BINS):
-        mask = (distances >= bin_edges[i]) & (distances < bin_edges[i+1])
-        if np.sum(mask) >= MIN_BIN_COUNT:
-            bin_centers.append((bin_edges[i] + bin_edges[i+1]) / 2)
-            bin_means.append(np.nanmean(coherences[mask]))
-            bin_counts.append(np.sum(mask))
-    if len(bin_centers) < 5:
-        return None
-    bin_centers, bin_means, bin_counts = np.array(bin_centers), np.array(bin_means), np.array(bin_counts)
     try:
-        popt, pcov = curve_fit(exp_decay, bin_centers, bin_means, p0=[0.5, 2000, 0],
-                               sigma=1.0/np.sqrt(bin_counts), bounds=([0, 100, -1], [2, 20000, 1]), maxfev=10000)
+        lam_lower = 100.0
+        lam_upper = 20000.0
+        popt, pcov = curve_fit(
+            exp_decay,
+            bin_centers,
+            bin_means,
+            p0=[0.5, 2000, 0],
+            sigma=1.0 / np.sqrt(bin_counts),
+            bounds=([0, lam_lower, -1], [2, lam_upper, 1]),
+            maxfev=10000,
+        )
+
         predicted = exp_decay(bin_centers, *popt)
-        ss_res, ss_tot = np.sum((bin_means - predicted)**2), np.sum((bin_means - np.mean(bin_means))**2)
-        r2 = 1 - ss_res/ss_tot if ss_tot > 0 else 0
-        return {'lambda_km': float(popt[1]), 'lambda_err': float(np.sqrt(pcov[1,1])),
-                'amplitude': float(popt[0]), 'offset': float(popt[2]),
-                'r_squared': float(r2), 'n_pairs': int(sum(bin_counts))}
-    except:
+
+        weights = bin_counts.astype(float)
+        weighted_mean = np.average(bin_means, weights=weights)
+        ss_res = np.sum(weights * (bin_means - predicted) ** 2)
+        ss_tot = np.sum(weights * (bin_means - weighted_mean) ** 2)
+        r2 = 1 - ss_res / ss_tot if ss_tot > 0 else 0
+
+        lam = float(popt[1])
+        lambda_hit_lower_bound = bool(lam <= lam_lower * 1.01)
+        lambda_hit_upper_bound = bool(lam >= lam_upper * 0.99)
+        lam_err = float(np.sqrt(pcov[1, 1])) if pcov.shape == (3, 3) and np.isfinite(pcov[1, 1]) else float('nan')
+        lam_rel_err = float(lam_err / lam) if lam > 0 and np.isfinite(lam_err) else float('nan')
+
+        max_bin_center_km = float(np.max(bin_centers))
+        lambda_unconstrained = bool(
+            lambda_hit_upper_bound
+            or (np.isfinite(lam_rel_err) and lam_rel_err > 0.5)
+            or (max_bin_center_km > 0 and lam > 1.5 * max_bin_center_km)
+        )
+
+        return {
+            'lambda_km': lam,
+            'lambda_err': lam_err,
+            'lambda_rel_err': lam_rel_err,
+            'lambda_hit_lower_bound': lambda_hit_lower_bound,
+            'lambda_hit_upper_bound': lambda_hit_upper_bound,
+            'lambda_unconstrained': lambda_unconstrained,
+            'amplitude': float(popt[0]),
+            'offset': float(popt[2]),
+            'r_squared': float(r2),
+            'n_pairs': int(np.sum(bin_counts)),
+            'n_bins': int(bin_centers.size),
+            'max_bin_center_km': max_bin_center_km,
+        }
+    except Exception:
         return None
+
+
+def _init_binner():
+    return {
+        'sum': np.zeros(N_BINS, dtype=np.float64),
+        'count': np.zeros(N_BINS, dtype=np.int64),
+    }
+
+
+def _accumulate_binner(binner, bin_idx, values):
+    if values.size == 0:
+        return
+    binner['sum'] += np.bincount(bin_idx, weights=values, minlength=N_BINS)
+    binner['count'] += np.bincount(bin_idx, minlength=N_BINS)
+
+
+def _finalize_binner(binner, bin_edges):
+    counts = binner['count']
+    ok = counts >= MIN_BIN_COUNT
+    if not np.any(ok):
+        return None, None, None
+    bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
+    means = binner['sum'][ok] / counts[ok]
+    return bin_centers[ok], means, counts[ok]
 
 def load_station_filter(filter_config):
     """Load station filter and return set of valid stations."""
@@ -140,61 +204,64 @@ def run_temporal_analysis(csv_file, filter_name):
     
     print_status(f"\n  Loading {csv_file.name}...")
     
-    # Initialize: year + 'all'
     periods = YEARS + ['all']
-    data = {m: {c: {p: {'dist': [], 'coh': []} for p in periods} for c in COHERENCE_TYPES} for m in METRICS}
+    bin_edges = np.logspace(np.log10(MIN_DISTANCE_KM), np.log10(MAX_DISTANCE_KM), N_BINS + 1)
+    binners = {
+        m: {
+            c: {p: _init_binner() for p in periods}
+            for c in COHERENCE_TYPES
+        }
+        for m in METRICS
+    }
     
     total = 0
-    for chunk in pd.read_csv(csv_file, chunksize=10_000_000):  # Larger chunks for high-RAM systems
-        # Apply station filter if set
+    for chunk in pd.read_csv(csv_file, chunksize=10_000_000):
         if GOOD_STATIONS_SET:
             chunk = chunk[chunk['station1'].isin(GOOD_STATIONS_SET) & chunk['station2'].isin(GOOD_STATIONS_SET)]
+
         has_phase = 'phase_alignment' in chunk.columns
-        years = chunk['year'].values
-        
+
         for metric in METRICS:
             if 'metric' in chunk.columns:
-                # Handle prefixed metric names (ionofree_*, multi_gnss_*)
                 metric_mask = chunk['metric'].str.endswith(metric)
                 mc = chunk[metric_mask]
-                yr = years[metric_mask]
             else:
                 mc = chunk
-                yr = years
-            
+
             if mc.empty:
                 continue
-            
-            dist = mc['distance_km'].values
-            msc = mc['coherence'].values
-            phase = mc['phase_alignment'].values if has_phase else None
-            
-            # By year
-            for year in YEARS:
-                year_mask = (yr == year)
-                
-                # MSC
-                valid = year_mask & ~np.isnan(msc)
-                data[metric]['msc'][year]['dist'].extend(dist[valid].tolist())
-                data[metric]['msc'][year]['coh'].extend(msc[valid].tolist())
-                
-                # Phase
-                if phase is not None:
-                    valid = year_mask & ~np.isnan(phase)
-                    data[metric]['phase_alignment'][year]['dist'].extend(dist[valid].tolist())
-                    data[metric]['phase_alignment'][year]['coh'].extend(phase[valid].tolist())
-            
-            # All years
-            valid = ~np.isnan(msc)
-            data[metric]['msc']['all']['dist'].extend(dist[valid].tolist())
-            data[metric]['msc']['all']['coh'].extend(msc[valid].tolist())
+
+            yr = mc['year'].to_numpy(dtype=np.int64, copy=False)
+            dist = mc['distance_km'].to_numpy(dtype=np.float64, copy=False)
+            msc = mc['coherence'].to_numpy(dtype=np.float64, copy=False)
+            phase = mc['phase_alignment'].to_numpy(dtype=np.float64, copy=False) if has_phase else None
+
+            bin_idx = np.searchsorted(bin_edges, dist, side='right') - 1
+            in_range = (bin_idx >= 0) & (bin_idx < N_BINS)
+
+            valid_msc_all = in_range & ~np.isnan(msc)
+            if np.any(valid_msc_all):
+                _accumulate_binner(binners[metric]['msc']['all'], bin_idx[valid_msc_all], msc[valid_msc_all])
+
             if phase is not None:
-                valid = ~np.isnan(phase)
-                data[metric]['phase_alignment']['all']['dist'].extend(dist[valid].tolist())
-                data[metric]['phase_alignment']['all']['coh'].extend(phase[valid].tolist())
-        
+                valid_phase_all = in_range & ~np.isnan(phase)
+                if np.any(valid_phase_all):
+                    _accumulate_binner(binners[metric]['phase_alignment']['all'], bin_idx[valid_phase_all], phase[valid_phase_all])
+
+            for year in YEARS:
+                year_mask = yr == year
+
+                valid_msc = valid_msc_all & year_mask
+                if np.any(valid_msc):
+                    _accumulate_binner(binners[metric]['msc'][year], bin_idx[valid_msc], msc[valid_msc])
+
+                if phase is not None:
+                    valid_phase = (in_range & ~np.isnan(phase) & year_mask)
+                    if np.any(valid_phase):
+                        _accumulate_binner(binners[metric]['phase_alignment'][year], bin_idx[valid_phase], phase[valid_phase])
+
         total += len(chunk)
-        print(f"  {total/1e6:.1f}M rows...", end='\r')  # Progress indicator
+        print(f"  {total/1e6:.1f}M rows...", end='\r')
         gc.collect()
     
     print_status(f"  Total: {total:,} rows")
@@ -212,14 +279,21 @@ def run_temporal_analysis(csv_file, filter_name):
             
             all_results[mode] = {}
             lambdas = []
+            unconstrained_years = []
             for period in periods:
-                d = data[metric][coh_type][period]
-                result = fit_exponential(np.array(d['dist']), np.array(d['coh']))
+                bc, bm, bn = _finalize_binner(binners[metric][coh_type][period], bin_edges)
+                result = fit_exponential_binned(bc, bm, bn) if bc is not None else None
                 all_results[mode][str(period)] = result
                 if result:
                     print_status(f"{period:<12} {result['lambda_km']:<12.0f} {result['r_squared']:<10.3f} {result['n_pairs']:>12,}")
                     if period != 'all':
                         lambdas.append(result['lambda_km'])
+                        if result.get('lambda_unconstrained'):
+                            unconstrained_years.append(str(period))
+                        else:
+                            rel_err = result.get('lambda_rel_err', float('nan'))
+                            if np.isfinite(rel_err) and rel_err > 0.5:
+                                unconstrained_years.append(str(period))
                 else:
                     print_status(f"{period:<12} {'N/A':<12}")
             
@@ -231,6 +305,9 @@ def run_temporal_analysis(csv_file, filter_name):
                     print_status(f"  → STABLE (CV < 20%)", level="SUCCESS")
                 else:
                     print_status(f"  → VARIABLE (CV ≥ 20%)", level="WARNING")
+
+                if unconstrained_years:
+                    print_status(f"  → WARNING: Potentially unconstrained λ in years: {', '.join(unconstrained_years)} (large relative fit uncertainty)", level="WARNING")
     
     # Summary
     print_status("TEMPORAL STABILITY SUMMARY", level="TITLE")
@@ -261,16 +338,20 @@ def main():
     parser = argparse.ArgumentParser(description='TEP-GNSS-RINEX Step 2.3b: Temporal Analysis')
     parser.add_argument('--filter', type=str, default='all',
                         help='Filter: "all", "none", "optimal_100_metadata.json", or "dynamic_50_metadata.json"')
+    parser.add_argument('--tag', type=str, default='',
+                        help='Optional tag appended to output filenames (for non-overwriting reruns).')
     args = parser.parse_args()
     
     print_status('STEP 2.3b: Temporal Stability Analysis (COMPREHENSIVE)', level="TITLE")
-    print_status('Processing: 3 filters x 3 modes x 3 metrics x 2 coherence types')
+    run_tag = _sanitize_tag(args.tag)
     
     if args.filter == 'all':
         filters = STATION_FILTERS
     else:
-        matching = [f for f in STATION_FILTERS if f[1] == args.filter]
+        matching = [f for f in STATION_FILTERS if f[1] == args.filter or f[0] == args.filter]
         filters = matching if matching else [('ALL_STATIONS', 'none')]
+
+    print_status(f"Processing: {len(filters)} filters x {len(PROCESSING_MODES)} modes x {len(METRICS)} metrics x {len(COHERENCE_TYPES)} coherence types")
     
     all_filter_results = {}
     
@@ -288,7 +369,10 @@ def main():
         
         for mode_name, mode_config in PROCESSING_MODES.items():
             print_status(f"\n  MODE: {mode_name.upper()}")
-            csv_file = RESULTS_DIR / mode_config['csv_file']
+            # Construct filename dynamically: step_2_0_pairs_{mode}_{filter}.csv
+            csv_filename = f"step_2_0_pairs_{mode_name}_{filter_key}.csv"
+            csv_file = RESULTS_DIR / csv_filename
+            
             result = run_temporal_analysis(csv_file, filter_name)
             if result:
                 all_mode_results[mode_name] = result
@@ -307,9 +391,9 @@ def main():
             'years': YEARS,
             'results_by_mode': all_mode_results
         }
-        with open(RESULTS_DIR / f"step_2_3_temporal_analysis_{filter_key}.json", 'w') as f:
+        with open(RESULTS_DIR / f"step_2_3_temporal_analysis_{filter_key}{run_tag}.json", 'w') as f:
             json.dump(output, f, indent=2, default=str)
-        print_status(f"  Saved: step_2_3_temporal_analysis_{filter_key}.json", level="SUCCESS")
+        print_status(f"  Saved: step_2_3_temporal_analysis_{filter_key}{run_tag}.json", level="SUCCESS")
     
     # Save summary
     summary = {
@@ -319,7 +403,7 @@ def main():
         'modes_tested': list(PROCESSING_MODES.keys()),
         'results_by_filter': all_filter_results
     }
-    with open(RESULTS_DIR / "step_2_3_temporal_analysis_summary.json", 'w') as f:
+    with open(RESULTS_DIR / f"step_2_3_temporal_analysis_summary{run_tag}.json", 'w') as f:
         json.dump(summary, f, indent=2, default=str)
     
     print_status(f"COMPLETE: {len(filters)} filters x {len(PROCESSING_MODES)} modes", level="SUCCESS")

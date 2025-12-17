@@ -3,7 +3,7 @@
 Analysis of Temporal Equivalence Principle (TEP) signatures using raw RINEX data and RTKLIB Single Point Positioning (SPP). This repository contains the analysis code and site content for:
 
 > **Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks**  
-> TEP-GNSS Paper 3 | v0.2 (Kathmandu) | DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166)
+> TEP-GNSS Paper 3 | v0.3 (Kathmandu) | DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166)
 
 **Live Site**: [matthewsmawfield.github.io/TEP-GNSS-RINEX](https://matthewsmawfield.github.io/TEP-GNSS-RINEX/)
 

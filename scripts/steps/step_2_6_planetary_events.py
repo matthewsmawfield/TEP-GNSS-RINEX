@@ -107,6 +107,10 @@ PROCESSING_MODES = {
         'key': 'ionofree_clock_bias_ns',
         'description': 'Dual-Freq Iono-Free with Precise Orbits (Option D)',
     },
+    'multi_gnss': {
+        'key': 'mgex_clock_bias_ns',
+        'description': 'Multi-GNSS (GPS+GLO+GAL+BDS) (Option F)',
+    },
 }
 
 # Event analysis parameters - ALIGNED WITH CODE LONGSPAN
@@ -141,7 +145,15 @@ PLANETS = {
 }
 
 
-def load_daily_coherence_from_csv(metric='clock_bias', coherence_type='msc'):
+def _filter_name_from_station_filter(station_filter: str) -> str:
+    if station_filter == 'optimal_100_metadata.json':
+        return 'optimal_100'
+    if station_filter == 'dynamic_50_metadata.json':
+        return 'dynamic_50'
+    return 'all_stations'
+
+
+def load_daily_coherence_from_csv(metric='clock_bias', coherence_type='msc', processing_mode='baseline', station_filter='optimal_100_metadata.json'):
     """
     Load daily mean coherence from pre-computed CSV file.
     
@@ -154,6 +166,10 @@ def load_daily_coherence_from_csv(metric='clock_bias', coherence_type='msc'):
         'clock_bias', 'pos_jitter', or 'clock_drift'
     coherence_type : str
         'msc' (Magnitude Squared Coherence) or 'phase_alignment'
+    processing_mode : str
+        'baseline', 'precise', 'ionofree', or 'multi_gnss'
+    station_filter : str
+        'optimal_100_metadata.json', 'dynamic_50_metadata.json', or 'all_stations'
     
     Returns:
     --------
@@ -162,10 +178,10 @@ def load_daily_coherence_from_csv(metric='clock_bias', coherence_type='msc'):
     """
     import gc
     
-    # Find the CSV file
+    filter_name = _filter_name_from_station_filter(station_filter)
     csv_candidates = [
-        OUTPUTS_DIR / "step_2_0_pairs_baseline.csv",
-        ROOT / "results" / "outputs" / "step_2_0_pairs_baseline.csv",
+        OUTPUTS_DIR / f"step_2_0_pairs_{processing_mode}_{filter_name}.csv",
+        OUTPUTS_DIR / f"step_2_0_pairs_{processing_mode}.csv",
     ]
     
     csv_file = None
@@ -175,7 +191,7 @@ def load_daily_coherence_from_csv(metric='clock_bias', coherence_type='msc'):
             break
     
     if csv_file is None:
-        print_status("CSV not found. Run step_2_0 first.", "ERROR")
+        print_status(f"CSV not found for {processing_mode}/{filter_name}. Run step_2_0 first.", "ERROR")
         return None
     
     print_status(f"  Loading from {csv_file.name}...", "INFO")
@@ -188,50 +204,58 @@ def load_daily_coherence_from_csv(metric='clock_bias', coherence_type='msc'):
     
     use_cols = ['year', 'doy', 'metric', coh_col]
     has_metric = 'metric' in header
-    
-    # Load in chunks
+
     chunk_size = 500000
-    daily_coherences = defaultdict(list)  # key: (year, doy) -> list of coherences
+    daily_aggs = defaultdict(lambda: [0.0, 0.0, 0])
     total_loaded = 0
-    
+
     for i, chunk in enumerate(pd.read_csv(csv_file, usecols=use_cols, chunksize=chunk_size)):
-        # Filter by metric
         if has_metric:
-            chunk = chunk[chunk['metric'] == metric]
-        
-        # Remove NaN coherences
-        chunk = chunk.dropna(subset=[coh_col])
-        
-        if len(chunk) == 0:
+            mc = chunk[chunk['metric'].astype(str).str.endswith(metric, na=False)]
+        else:
+            mc = chunk
+
+        if mc.empty:
             continue
-        
-        # Group by (year, doy) and accumulate coherences
-        for (year, doy), group in chunk.groupby(['year', 'doy']):
-            daily_coherences[(int(year), int(doy))].extend(group[coh_col].values)
-        
-        total_loaded += len(chunk)
+
+        mc = mc.dropna(subset=[coh_col, 'doy'])
+        if mc.empty:
+            continue
+
+        doys = mc['doy'].astype(int).values
+        vals = mc[coh_col].astype(float).values
+
+        for doy, v in zip(doys, vals):
+            if np.isfinite(v):
+                agg = daily_aggs[int(doy)]
+                agg[0] += float(v)
+                agg[1] += float(v) * float(v)
+                agg[2] += 1
+
+        total_loaded += len(mc)
         if (i + 1) % 10 == 0:
             print_status(f"  Loaded {total_loaded/1e6:.1f}M pairs...", "INFO")
             gc.collect()
-    
+
     print_status(f"  Total pairs: {total_loaded:,}", "INFO")
-    
-    # Aggregate to daily means
+
     daily_data = []
-    for (year, doy), coherences in sorted(daily_coherences.items()):
-        if len(coherences) >= MIN_DAILY_PAIRS:
+    for doy in sorted(daily_aggs.keys()):
+        s, s2, n = daily_aggs[doy]
+        if n >= MIN_DAILY_PAIRS:
+            mean = s / n
+            var = max(0.0, (s2 / n) - (mean * mean))
             daily_data.append({
-                'year': year,
-                'doy': doy,
-                'date': datetime(year, 1, 1) + timedelta(days=doy-1),
-                'mean_coherence': float(np.mean(coherences)),
-                'std_coherence': float(np.std(coherences)),
-                'n_pairs': len(coherences)
+                'doy': int(doy),
+                'date': datetime(2024, 1, 1) + timedelta(days=int(doy)-1),
+                'mean_coherence': float(mean),
+                'std_coherence': float(np.sqrt(var)),
+                'n_pairs': int(n)
             })
-    
+
     daily_df = pd.DataFrame(daily_data)
     print_status(f"  Valid days: {len(daily_df)}", "SUCCESS")
-    
+
     return daily_df
 
 
@@ -905,7 +929,7 @@ def compute_clock_bias_amplitude(station_data, doy, window_days=EVENT_WINDOW_DAY
     }
 
 
-def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True):
+def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True, processing_mode='baseline'):
     """
     Run planetary event analysis for a specific metric/coherence combination.
     
@@ -923,6 +947,8 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True):
         'msc' (Magnitude Squared Coherence) or 'phase_alignment'
     use_csv : bool
         If True, load from pre-computed CSV (fast). If False, compute from NPZ (slow).
+    processing_mode : str
+        'baseline', 'precise', 'ionofree', or 'multi_gnss'
     
     Returns:
     --------
@@ -933,7 +959,7 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True):
     print_status("TEP-GNSS-RINEX Analysis - STEP 2.6: Planetary Event Analysis", "INFO")
     print_status("=" * 80, "INFO")
     print_status("", "INFO")
-    print_status(f"Metric: {metric}, Coherence: {coherence_type}", "INFO")
+    print_status(f"Mode: {processing_mode} | Metric: {metric}, Coherence: {coherence_type}", "INFO")
     print_status("METHODOLOGY: CODE LONGSPAN (daily coherence + Gaussian pulse fitting)", "INFO")
     print_status("CODE Longspan: 56/156 events significant, NO mass scaling", "INFO")
     print_status("", "INFO")
@@ -1042,8 +1068,11 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True):
         print_status(f"    {mode}: {len(station_data_by_mode[mode])} stations", "INFO")
     print_status(f"  Data coverage: DOYs {min(available_doys)}-{max(available_doys)} ({len(available_doys)} days)", "INFO")
     
-    # Use baseline as primary
-    station_data = station_data_by_mode['baseline']
+    if processing_mode not in station_data_by_mode:
+        print_status(f"Unknown processing mode: {processing_mode}", "ERROR")
+        return
+
+    station_data = station_data_by_mode[processing_mode]
     
     if len(station_data) < 20:
         print_status("Insufficient stations for analysis", "ERROR")
@@ -1055,8 +1084,12 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True):
     print_status("[2/5] Loading daily coherence time series...", "PROCESS")
     
     if use_csv:
-        # FAST PATH: Load from pre-computed CSV
-        daily_df = load_daily_coherence_from_csv(metric=metric, coherence_type=coherence_type)
+        daily_df = load_daily_coherence_from_csv(
+            metric=metric,
+            coherence_type=coherence_type,
+            processing_mode=processing_mode,
+            station_filter=station_filter,
+        )
     else:
         # SLOW PATH: Compute from NPZ files
         daily_df = compute_daily_coherence_timeseries(station_data, station_coords, sorted(available_dates))
@@ -1279,7 +1312,7 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True):
         avg_perm_detections = np.mean(permutation_detections)
         n_events_tested = min(20, len(unique_event_doys))
         real_detections = sum(1 for e in all_event_responses[:n_events_tested] if e['is_significant'])
-        print_status(f"  Permuted null: {avg_perm_detections:.1f}/{n_events_tested} significant (real: {real_detections}/{n_events_tested})", "INFO")
+        print_status(f"  Permuted null: {avg_perm_detections:.1f}/{n_events_tested} vs real: {real_detections}/{n_events_tested}", "INFO")
         
         # Update for comparison
         random_mean_sigma = np.mean(random_sigma_levels) if random_sigma_levels else 0
@@ -1552,20 +1585,20 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True):
     print_status("KEY FINDINGS:", "INFO")
     
     if n_significant > n_random_significant:
-        print_status(f"  ✓ Higher detection rate for planetary events vs random", "SUCCESS")
+        print_status(f"  Higher detection rate for planetary events vs random", "SUCCESS")
     else:
-        print_status(f"  ⚠ Similar detection rate for events and random dates", "WARNING")
+        print_status(f"  Similar detection rate for events and random dates", "WARNING")
     
     # Mass scaling summary
     if mass_scaling_result.get('valid'):
-        amp_test = mass_scaling_result.get('gm_r2_vs_clock_amplitude', {})
+        amp_test = mass_scaling_result.get('gm_r2_vs_amplitude', {})
         amp_r = amp_test.get('pearson_r', 0)
         amp_p = amp_test.get('p_value', 1.0)
         
         if amp_test.get('scaling_detected', False):
-            print_status(f"  ✓ Classical amplitude scaling DETECTED (r={amp_r:.3f}, p={amp_p:.3f})", "SUCCESS")
+            print_status(f"  Classical amplitude scaling DETECTED (r={amp_r:.3f}, p={amp_p:.3f})", "SUCCESS")
         else:
-            print_status(f"  • No classical amplitude scaling (r={amp_r:.3f}, p={amp_p:.3f}) - expected", "INFO")
+            print_status(f"  No classical amplitude scaling (r={amp_r:.3f}, p={amp_p:.3f}) - expected", "INFO")
     
     if coherence_scaling_result.get('valid'):
         coh_test = coherence_scaling_result.get('gm_r2_vs_coherence_mod', {})
@@ -1573,12 +1606,12 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True):
         coh_p = coh_test.get('p_value', 1.0)
         
         if coh_test.get('scaling_detected', False):
-            print_status(f"  ⚠ Coherence scaling detected (r={coh_r:.3f}, p={coh_p:.3f})", "WARNING")
+            print_status(f"  Coherence scaling detected (r={coh_r:.3f}, p={coh_p:.3f})", "WARNING")
         else:
-            print_status(f"  ✓ NO coherence scaling (r={coh_r:.3f}, p={coh_p:.3f}) - consistent with CODE", "SUCCESS")
+            print_status(f"  NO coherence scaling (r={coh_r:.3f}, p={coh_p:.3f}) - consistent with CODE", "SUCCESS")
     
     if mann_whitney_result.get('valid') and mann_whitney_result.get('p_value', 1) < 0.05:
-        print_status(f"  ✓ Events significantly stronger than random (p={mann_whitney_result['p_value']:.3f})", "SUCCESS")
+        print_status(f"  Events significantly stronger than random (p={mann_whitney_result['p_value']:.3f})", "SUCCESS")
     
     # Save results
     output = {
@@ -1587,7 +1620,7 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True):
         'methodology': 'CODE LONGSPAN: daily coherence + Gaussian pulse fitting + JPL ephemeris',
         'timestamp': datetime.now().isoformat(),
         'processing_modes': list(PROCESSING_MODES.keys()),
-        'primary_mode': 'baseline',
+        'primary_mode': processing_mode,
         'mode_station_counts': {mode: len(data) for mode, data in station_data_by_mode.items()},
         'parameters': {
             'frequency_band_hz': [F1_HZ, F2_HZ],
@@ -1633,7 +1666,7 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True):
     }
     
     # Include metric/coherence in output filename
-    suffix = f"_{metric}_{coherence_type}" if metric != 'clock_bias' or coherence_type != 'msc' else ""
+    suffix = f"_{processing_mode}_{metric}_{coherence_type}"
     output_path = OUTPUTS_DIR / f"step_2_6_planetary_events{suffix}.json"
     with open(output_path, 'w') as f:
         json.dump(output, f, indent=2, default=str)
@@ -1660,6 +1693,9 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True):
 def main():
     """Main execution loop over all metric and coherence type combinations."""
     print_status("STARTING MULTI-METRIC PLANETARY EVENT ANALYSIS", "TITLE")
+
+    import os
+    processing_mode = os.environ.get('PROCESSING_MODE', 'baseline')
     
     # Define metrics and coherence types to compare
     metrics = ['clock_bias', 'pos_jitter', 'clock_drift']
@@ -1671,7 +1707,12 @@ def main():
     for metric in metrics:
         for coh_type in coherence_types:
             try:
-                result = run_analysis(metric=metric, coherence_type=coh_type, use_csv=True)
+                result = run_analysis(
+                    metric=metric,
+                    coherence_type=coh_type,
+                    use_csv=True,
+                    processing_mode=processing_mode,
+                )
                 if result:
                     all_results.append(result)
             except Exception as e:

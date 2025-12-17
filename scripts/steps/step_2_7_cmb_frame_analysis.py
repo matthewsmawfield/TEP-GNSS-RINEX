@@ -288,7 +288,7 @@ def get_all_step_2_5_combinations():
     combinations = []
     
     filters = ['all_stations', 'optimal_100', 'dynamic_50']
-    modes = ['baseline', 'ionofree', 'multi_gnss']
+    modes = ['baseline', 'precise', 'ionofree', 'multi_gnss']
     metrics = ['clock_bias', 'pos_jitter', 'clock_drift']
     coherence_types = ['msc', 'phase_alignment']
     

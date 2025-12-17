@@ -1,8 +1,8 @@
-<h1>8. Analysis Package</h1>
+<h2>8. Analysis Package</h2>
 
 <p>This section provides comprehensive documentation for reproducing the analysis presented in this paper. All code, data sources, and processing steps are fully documented to enable independent verification.</p>
 
-<h2>8.1 Repository Structure</h2>
+<h3>8.1 Repository Structure</h3>
 
 <div class="error-budget">
 <pre>
@@ -20,7 +20,8 @@ TEP-GNSS-RINEX/
 │   │   ├── step_1_0_data_acquisition.py
 │   │   ├── step_2_0_raw_spp_analysis.py
 │   │   ├── step_2_2_anisotropy_analysis.py
-│   │   └── step_2_3_kp_stratification.py
+│   │   ├── step_2_3_kp_stratification.py
+│   │   └── step_2_3_temporal_analysis.py
 │   └── utils/                  # Utility modules
 │       ├── config.py
 │       └── data_alignment.py
@@ -30,9 +31,9 @@ TEP-GNSS-RINEX/
 </pre>
 </div>
 
-<h2>8.2 Data Acquisition</h2>
+<h3>8.2 Data Acquisition</h3>
 
-<h3>8.2.1 RINEX Observation Files</h3>
+<h4>8.2.1 RINEX Observation Files</h4>
 
 <p>Raw RINEX files are obtained from NASA CDDIS:</p>
 
@@ -44,7 +45,7 @@ wget --ftp-user=anonymous --ftp-password=email@example.com \
 </pre>
 </div>
 
-<h3>8.2.2 Broadcast Ephemerides</h3>
+<h4>8.2.2 Broadcast Ephemerides</h4>
 
 <p>Broadcast navigation messages are obtained from the same archive:</p>
 
@@ -56,9 +57,9 @@ wget --ftp-user=anonymous --ftp-password=email@example.com \
 </pre>
 </div>
 
-<h2>8.3 Processing Pipeline</h2>
+<h3>8.3 Processing Pipeline</h3>
 
-<h3>8.3.1 RTKLIB Single Point Positioning</h3>
+<h4>8.3.1 RTKLIB Single Point Positioning</h4>
 
 <div class="error-budget">
 <pre>
@@ -73,7 +74,7 @@ rnx2rtkp -p 0 -t -y 1 -o output.pos observation.24o brdc0010.24n
 </pre>
 </div>
 
-<h3>8.3.2 Time Series Extraction</h3>
+<h4>8.3.2 Time Series Extraction</h4>
 
 <div class="error-budget">
 <pre>
@@ -87,7 +88,7 @@ python scripts/steps/step_1_0_data_acquisition.py
 </pre>
 </div>
 
-<h3>8.3.3 Coherence Analysis</h3>
+<h4>8.3.3 Coherence Analysis</h4>
 
 <div class="error-budget">
 <pre>
@@ -100,7 +101,7 @@ python scripts/steps/step_2_0_raw_spp_analysis.py
 </pre>
 </div>
 
-<h2>8.4 Key Parameters</h2>
+<h3>8.4 Key Parameters</h3>
 
 <table>
     <tr>
@@ -150,9 +151,9 @@ python scripts/steps/step_2_0_raw_spp_analysis.py
     </tr>
 </table>
 
-<h2>8.5 Dependencies</h2>
+<h3>8.5 Dependencies</h3>
 
-<h3>8.5.1 Python Requirements</h3>
+<h4>8.5.1 Python Requirements</h4>
 
 <div class="error-budget">
 <pre>
@@ -165,7 +166,7 @@ requests>=2.28.0
 </pre>
 </div>
 
-<h3>8.5.2 External Software</h3>
+<h4>8.5.2 External Software</h4>
 
 <ul>
     <li><strong>RTKLIB:</strong> v2.4.3 or later (<a href="https://github.com/tomojitakasu/RTKLIB">github.com/tomojitakasu/RTKLIB</a>)</li>
@@ -173,9 +174,9 @@ requests>=2.28.0
     <li><strong>Node.js:</strong> 18+ (for site building only)</li>
 </ul>
 
-<h2>8.6 Output Files</h2>
+<h3>8.6 Output Files</h3>
 
-<h3>8.6.1 JSON Results</h3>
+<h4>8.6.1 JSON Results</h4>
 
 <p>The primary analysis output is a JSON file containing all fit parameters, statistics, and metadata:</p>
 
@@ -200,7 +201,7 @@ requests>=2.28.0
 </pre>
 </div>
 
-<h3>8.6.2 Figures</h3>
+<h4>8.6.2 Figures</h4>
 
 <p>Generated figures are saved to <code>results/figures/</code>:</p>
 <ul>
@@ -210,10 +211,10 @@ requests>=2.28.0
     <li><code>step_2_0_summary.png</code> — Combined summary figure</li>
 </ul>
 
-<h2>8.7 Quick Start</h2>
+<h3>8.7 Quick Start</h3>
 
 <div class="experimental-section">
-    <h3>Reproduce in 5 Steps</h3>
+    <h4>Reproduce in 5 Steps</h4>
     <ol>
         <li>Clone the repository: <code>git clone https://github.com/matthewsmawfield/TEP-GNSS-RINEX</code></li>
         <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
@@ -224,7 +225,7 @@ requests>=2.28.0
     <p>Results will be generated in <code>results/outputs/</code> and <code>results/figures/</code>.</p>
 </div>
 
-<h2>8.8 Citation</h2>
+<h3>8.8 Citation</h3>
 
 <p>If you use this analysis package, please cite:</p>
 

@@ -1,186 +1,193 @@
-[23:19:56] [INFO] 
-[23:19:56] [INFO] ================================================================================
-[23:19:56] [INFO] STARTING MULTI-FILTER ANALYSIS PIPELINE
-[23:19:56] [INFO] ================================================================================
-[23:19:56] [INFO] 
-[23:19:56] [INFO] 
-[23:19:56] [INFO] ================================================================================
-[23:19:56] [INFO] 
-[23:19:56] [INFO] ================================================================================
-[23:19:56] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.0: Multi-Metric SPP Correlation Analysis (ALL STATIONS)
-[23:19:56] [INFO] ================================================================================
-[23:19:56] [INFO] 
-[23:19:56] [INFO] ================================================================================
-[23:19:56] [PROCESS] [1/3] Loading processed .npz files...
-[23:19:56] [WARNING]   Using ALL stations (no filter)
-[23:20:03] [INFO]   Found 408950 processed files matching filter
-[23:20:03] [INFO]   Loaded coordinates for 538 stations
-[23:20:03] [PROCESS] [2/3] Computing CSD correlations using Day-by-Day Batch Processing...
-[23:20:07] [INFO]   Grouped 408950 files into 1096 day batches
-[23:20:07] [PROCESS] Running Single-Pass Optimized Batch Processing for 9 metrics...
-[23:20:07] [INFO]   Pre-computing pairwise geometry...
-[23:20:10] [SUCCESS]   Pre-computed 113479 valid station pairs
-[23:20:10] [INFO] Processing 1096 remaining days (of 1096 total)...
-[23:20:10] [INFO]   Workers: 80, Batches: 1096 (batch_size=1)
-[23:30:16] [INFO]   Day 1/1096 complete: +382200 pairs (total: 382200)
-[23:30:25] [INFO]   Day 2/1096 complete: +384363 pairs (total: 766563)
-[23:30:32] [INFO]   Day 3/1096 complete: +367839 pairs (total: 1134402)
-[23:30:40] [INFO]   Day 4/1096 complete: +381480 pairs (total: 1515882)
-[23:30:47] [INFO]   Day 5/1096 complete: +361752 pairs (total: 1877634)
-[23:31:10] [INFO]   Day 6/1096 complete: +354012 pairs (total: 2231646)
-[23:31:15] [INFO]   Day 7/1096 complete: +369153 pairs (total: 2600799)
-[23:31:24] [INFO]   Day 8/1096 complete: +377925 pairs (total: 2978724)
-[23:31:30] [INFO]   Day 9/1096 complete: +378432 pairs (total: 3357156)
-[23:31:32] [INFO]   Day 10/1096 complete: +372078 pairs (total: 3729234)
-[23:31:44] [INFO]   Day 11/1096 complete: +312084 pairs (total: 4041318)
-[23:31:52] [INFO]   Day 12/1096 complete: +373743 pairs (total: 4415061)
-[23:32:01] [INFO]   Day 13/1096 complete: +378117 pairs (total: 4793178)
-[23:32:07] [INFO]   Day 14/1096 complete: +371787 pairs (total: 5164965)
-[23:32:16] [INFO]   Day 15/1096 complete: +378057 pairs (total: 5543022)
-[23:32:18] [INFO]   Day 16/1096 complete: +352944 pairs (total: 5895966)
-[23:32:45] [INFO]   Day 17/1096 complete: +390357 pairs (total: 6286323)
-[23:32:51] [INFO]   Day 18/1096 complete: +424104 pairs (total: 6710427)
-[23:32:57] [INFO]   Day 19/1096 complete: +320040 pairs (total: 7030467)
-[23:33:25] [INFO]   Day 20/1096 complete: +371973 pairs (total: 7402440)
-[23:33:31] [INFO]   Day 21/1096 complete: +369510 pairs (total: 7771950)
-[23:33:34] [INFO]   Day 22/1096 complete: +392277 pairs (total: 8164227)
-[23:33:46] [INFO]   Day 23/1096 complete: +365466 pairs (total: 8529693)
-[23:33:50] [INFO]   Day 24/1096 complete: +371124 pairs (total: 8900817)
-[23:33:59] [INFO]   Day 25/1096 complete: +346737 pairs (total: 9247554)
-[23:34:01] [INFO]   Day 26/1096 complete: +370452 pairs (total: 9618006)
-[23:34:10] [INFO]   Day 27/1096 complete: +378834 pairs (total: 9996840)
-[23:34:20] [INFO]   Day 28/1096 complete: +368934 pairs (total: 10365774)
-[23:34:29] [INFO]   Day 29/1096 complete: +380241 pairs (total: 10746015)
-[23:34:37] [INFO]   Day 30/1096 complete: +386925 pairs (total: 11132940)
-[23:34:49] [INFO]   Day 31/1096 complete: +368289 pairs (total: 11501229)
-[23:34:59] [INFO]   Day 32/1096 complete: +355260 pairs (total: 11856489)
-[23:35:08] [INFO]   Day 33/1096 complete: +381408 pairs (total: 12237897)
-[23:35:17] [INFO]   Day 34/1096 complete: +378438 pairs (total: 12616335)
-[23:35:29] [INFO]   Day 35/1096 complete: +360828 pairs (total: 12977163)
-[23:35:39] [INFO]   Day 36/1096 complete: +381672 pairs (total: 13358835)
-[23:35:48] [INFO]   Day 37/1096 complete: +366873 pairs (total: 13725708)
-[23:35:57] [INFO]   Day 38/1096 complete: +382254 pairs (total: 14107962)
-[23:36:05] [INFO]   Day 39/1096 complete: +380343 pairs (total: 14488305)
-[23:36:14] [INFO]   Day 40/1096 complete: +373371 pairs (total: 14861676)
-[23:36:24] [INFO]   Day 41/1096 complete: +377748 pairs (total: 15239424)
-[23:36:33] [INFO]   Day 42/1096 complete: +390900 pairs (total: 15630324)
-[23:36:42] [INFO]   Day 43/1096 complete: +358962 pairs (total: 15989286)
-[23:36:51] [INFO]   Day 44/1096 complete: +380025 pairs (total: 16369311)
-[23:37:00] [INFO]   Day 45/1096 complete: +382212 pairs (total: 16751523)
-[23:37:09] [INFO]   Day 46/1096 complete: +360768 pairs (total: 17112291)
-[23:37:11] [INFO]   Day 47/1096 complete: +377445 pairs (total: 17489736)
-[23:37:14] [INFO]   Day 48/1096 complete: +371808 pairs (total: 17861544)
-[23:37:19] [INFO]   Day 49/1096 complete: +345009 pairs (total: 18206553)
-[23:37:29] [INFO]   Day 50/1096 complete: +385413 pairs (total: 18591966)
-[23:37:31] [INFO]   Day 51/1096 complete: +383361 pairs (total: 18975327)
-[23:37:37] [INFO]   Day 52/1096 complete: +362106 pairs (total: 19337433)
-[23:37:40] [INFO]   Day 53/1096 complete: +430131 pairs (total: 19767564)
-[23:37:43] [INFO]   Day 54/1096 complete: +422361 pairs (total: 20189925)
-[23:37:45] [INFO]   Day 55/1096 complete: +377721 pairs (total: 20567646)
-[23:37:48] [INFO]   Day 56/1096 complete: +386097 pairs (total: 20953743)
-[23:37:50] [INFO]   Day 57/1096 complete: +382551 pairs (total: 21336294)
-[23:37:53] [INFO]   Day 58/1096 complete: +414900 pairs (total: 21751194)
-[23:37:55] [INFO]   Day 59/1096 complete: +375699 pairs (total: 22126893)
-[23:38:05] [INFO]   Day 60/1096 complete: +383727 pairs (total: 22510620)
-[23:38:11] [INFO]   Day 61/1096 complete: +429276 pairs (total: 22939896)
-[23:38:21] [INFO]   Day 62/1096 complete: +379302 pairs (total: 23319198)
-[23:38:26] [INFO]   Day 63/1096 complete: +381771 pairs (total: 23700969)
-[23:38:29] [INFO]   Day 64/1096 complete: +388209 pairs (total: 24089178)
-[23:38:31] [INFO]   Day 65/1096 complete: +411753 pairs (total: 24500931)
-[23:38:34] [INFO]   Day 66/1096 complete: +389121 pairs (total: 24890052)
-[23:38:36] [INFO]   Day 67/1096 complete: +420948 pairs (total: 25311000)
-[23:38:39] [INFO]   Day 68/1096 complete: +385620 pairs (total: 25696620)
-[23:38:42] [INFO]   Day 69/1096 complete: +385248 pairs (total: 26081868)
-[23:38:44] [INFO]   Day 70/1096 complete: +391215 pairs (total: 26473083)
-[23:38:50] [INFO]   Day 71/1096 complete: +388482 pairs (total: 26861565)
-[23:38:53] [INFO]   Day 72/1096 complete: +409911 pairs (total: 27271476)
-[23:38:56] [INFO]   Day 73/1096 complete: +412179 pairs (total: 27683655)
-[23:38:58] [INFO]   Day 74/1096 complete: +427959 pairs (total: 28111614)
-[23:39:01] [INFO]   Day 75/1096 complete: +431901 pairs (total: 28543515)
-[23:39:04] [INFO]   Day 76/1096 complete: +423729 pairs (total: 28967244)
-[23:39:07] [INFO]   Day 77/1096 complete: +419886 pairs (total: 29387130)
-[23:39:09] [INFO]   Day 78/1096 complete: +432114 pairs (total: 29819244)
-[23:39:12] [INFO]   Day 79/1096 complete: +409992 pairs (total: 30229236)
-[23:39:21] [INFO]   Day 80/1096 complete: +426525 pairs (total: 30655761)
-[23:41:28] [INFO]   Day 81/1096 complete: +419109 pairs (total: 31074870)
-[23:42:51] [INFO]   Day 82/1096 complete: +408087 pairs (total: 31482957)
-[23:43:21] [INFO]   Day 83/1096 complete: +433125 pairs (total: 31916082)
-[23:44:03] [INFO]   Day 84/1096 complete: +434211 pairs (total: 32350293)
-[23:44:36] [INFO]   Day 85/1096 complete: +307134 pairs (total: 32657427)
-[23:45:03] [INFO]   Day 86/1096 complete: +418416 pairs (total: 33075843)
-[23:45:15] [INFO]   Day 87/1096 complete: +415260 pairs (total: 33491103)
-[23:45:52] [INFO]   Day 88/1096 complete: +425349 pairs (total: 33916452)
-[23:45:58] [INFO]   Day 89/1096 complete: +429357 pairs (total: 34345809)
-[23:46:05] [INFO]   Day 90/1096 complete: +417993 pairs (total: 34763802)
-[23:46:18] [INFO]   Day 91/1096 complete: +439863 pairs (total: 35203665)
-[23:46:27] [INFO]   Day 92/1096 complete: +411033 pairs (total: 35614698)
-[23:46:33] [INFO]   Day 93/1096 complete: +409950 pairs (total: 36024648)
-[23:46:36] [INFO]   Day 94/1096 complete: +432969 pairs (total: 36457617)
-[23:46:42] [INFO]   Day 95/1096 complete: +438435 pairs (total: 36896052)
-[23:46:56] [INFO]   Day 96/1096 complete: +428103 pairs (total: 37324155)
-[23:47:03] [INFO]   Day 97/1096 complete: +439476 pairs (total: 37763631)
-[23:47:14] [INFO]   Day 98/1096 complete: +442320 pairs (total: 38205951)
-[23:47:21] [INFO]   Day 99/1096 complete: +382497 pairs (total: 38588448)
-[23:47:36] [INFO]   Day 100/1096 complete: +435174 pairs (total: 39023622)
-[23:48:09] [INFO]   Day 101/1096 complete: +441348 pairs (total: 39464970)
-[23:48:19] [INFO]   Day 102/1096 complete: +426696 pairs (total: 39891666)
-[23:48:22] [INFO]   Day 103/1096 complete: +438120 pairs (total: 40329786)
-[23:48:29] [INFO]   Day 104/1096 complete: +436857 pairs (total: 40766643)
-[23:48:36] [INFO]   Day 105/1096 complete: +437466 pairs (total: 41204109)
-[23:48:51] [INFO]   Day 106/1096 complete: +448428 pairs (total: 41652537)
-[23:48:58] [INFO]   Day 107/1096 complete: +425064 pairs (total: 42077601)
-[23:49:05] [INFO]   Day 108/1096 complete: +436860 pairs (total: 42514461)
-[23:49:26] [INFO]   Day 109/1096 complete: +451194 pairs (total: 42965655)
-[23:49:39] [INFO]   Day 110/1096 complete: +447327 pairs (total: 43412982)
-[23:49:46] [INFO]   Day 111/1096 complete: +451605 pairs (total: 43864587)
-[23:49:58] [INFO]   Day 112/1096 complete: +443172 pairs (total: 44307759)
-[23:50:05] [INFO]   Day 113/1096 complete: +439170 pairs (total: 44746929)
-[23:50:17] [INFO]   Day 114/1096 complete: +434550 pairs (total: 45181479)
-[23:50:31] [INFO]   Day 115/1096 complete: +440625 pairs (total: 45622104)
-[23:50:34] [INFO]   Day 116/1096 complete: +441441 pairs (total: 46063545)
-[23:50:40] [INFO]   Day 117/1096 complete: +440616 pairs (total: 46504161)
-[23:50:44] [INFO]   Day 118/1096 complete: +445644 pairs (total: 46949805)
-[23:50:54] [INFO]   Day 119/1096 complete: +436086 pairs (total: 47385891)
-[23:51:01] [INFO]   Day 120/1096 complete: +438825 pairs (total: 47824716)
-[23:51:04] [INFO]   Day 121/1096 complete: +446751 pairs (total: 48271467)
-[23:51:07] [INFO]   Day 122/1096 complete: +434790 pairs (total: 48706257)
-[23:51:10] [INFO]   Day 123/1096 complete: +440907 pairs (total: 49147164)
-[23:51:18] [INFO]   Day 124/1096 complete: +395151 pairs (total: 49542315)
-[23:51:24] [INFO]   Day 125/1096 complete: +433098 pairs (total: 49975413)
-[23:51:31] [INFO]   Day 126/1096 complete: +443715 pairs (total: 50419128)
-[23:51:33] [INFO]   Day 127/1096 complete: +437142 pairs (total: 50856270)
-[23:51:40] [INFO]   Day 128/1096 complete: +434781 pairs (total: 51291051)
-[23:51:47] [INFO]   Day 129/1096 complete: +438033 pairs (total: 51729084)
-[23:51:50] [INFO]   Day 130/1096 complete: +437610 pairs (total: 52166694)
-[23:51:58] [INFO]   Day 131/1096 complete: +448977 pairs (total: 52615671)
-[23:52:04] [INFO]   Day 132/1096 complete: +441777 pairs (total: 53057448)
-[23:52:13] [INFO]   Day 133/1096 complete: +438528 pairs (total: 53495976)
-[23:52:22] [INFO]   Day 134/1096 complete: +444534 pairs (total: 53940510)
-[23:52:36] [INFO]   Day 135/1096 complete: +431847 pairs (total: 54372357)
-[23:52:46] [INFO]   Day 136/1096 complete: +441303 pairs (total: 54813660)
-[23:52:56] [INFO]   Day 137/1096 complete: +438399 pairs (total: 55252059)
-[23:53:05] [INFO]   Day 138/1096 complete: +442122 pairs (total: 55694181)
-[23:53:15] [INFO]   Day 139/1096 complete: +420747 pairs (total: 56114928)
-[23:53:18] [INFO]   Day 140/1096 complete: +453504 pairs (total: 56568432)
-[23:53:20] [INFO]   Day 141/1096 complete: +417225 pairs (total: 56985657)
-[23:53:30] [INFO]   Day 142/1096 complete: +433626 pairs (total: 57419283)
-[23:53:33] [INFO]   Day 143/1096 complete: +424884 pairs (total: 57844167)
-[23:53:39] [INFO]   Day 144/1096 complete: +440031 pairs (total: 58284198)
-[23:53:45] [INFO]   Day 145/1096 complete: +450294 pairs (total: 58734492)
-[23:53:48] [INFO]   Day 146/1096 complete: +428781 pairs (total: 59163273)
-[23:53:51] [INFO]   Day 147/1096 complete: +437976 pairs (total: 59601249)
-[23:53:57] [INFO]   Day 148/1096 complete: +452409 pairs (total: 60053658)
-[23:54:07] [INFO]   Day 149/1096 complete: +424083 pairs (total: 60477741)
-[23:54:13] [INFO]   Day 150/1096 complete: +447366 pairs (total: 60925107)
-[23:54:16] [INFO]   Day 151/1096 complete: +446742 pairs (total: 61371849)
-[23:54:19] [INFO]   Day 152/1096 complete: +454167 pairs (total: 61826016)
-[23:54:21] [INFO]   Day 153/1096 complete: +449076 pairs (total: 62275092)
-[23:54:31] [INFO]   Day 154/1096 complete: +444417 pairs (total: 62719509)
-[23:54:41] [INFO]   Day 155/1096 complete: +446178 pairs (total: 63165687)
-[23:54:44] [INFO]   Day 156/1096 complete: +447498 pairs (total: 63613185)
-[23:54:47] [INFO]   Day 157/1096 complete: +430617 pairs (total: 64043802)
-[23:54:52] [INFO]   Day 158/1096 complete: +441675 pairs (total: 64485477)
-[23:55:07] [INFO]   Day 159/1096 complete: +445959 pairs (total: 64931436)
-[23:55:13] [INFO]   Day 160/1096 complete: +446904 pairs (total: 65378340)
-[23:55:54] [INFO]   Day 161/1096 complete: +443118 pairs (total: 65821458)
-[23:57:42] [INFO]   Day 162/1096 complete: +448044 pairs (total: 66269502)
+[05:33:22] [INFO]   Day 884/1096 complete: +1516059 pairs (total: 1516059)
+[05:34:00] [INFO]   Day 888/1096 complete: +1588623 pairs (total: 3104682)
+[05:34:14] [INFO]   Day 892/1096 complete: +1613592 pairs (total: 4718274)
+[05:34:25] [INFO]   Day 896/1096 complete: +1646862 pairs (total: 6365136)
+[05:35:04] [INFO]   Day 900/1096 complete: +1721841 pairs (total: 8086977)
+[05:35:50] [INFO]   Day 904/1096 complete: +1796574 pairs (total: 9883551)
+[05:46:53] [INFO]   Day 908/1096 complete: +1657851 pairs (total: 11541402)
+[05:46:59] [INFO]   Day 912/1096 complete: +1759734 pairs (total: 13301136)
+[05:48:11] [INFO]   Day 916/1096 complete: +1785213 pairs (total: 15086349)
+[05:48:26] [INFO]   Day 920/1096 complete: +1815990 pairs (total: 16902339)
+[05:49:08] [INFO]   Day 924/1096 complete: +1805742 pairs (total: 18708081)
+[05:50:17] [INFO]   Day 928/1096 complete: +1831563 pairs (total: 20539644)
+[06:00:39] [INFO]   Day 932/1096 complete: +1742847 pairs (total: 22282491)
+[06:00:59] [INFO]   Day 936/1096 complete: +1778886 pairs (total: 24061377)
+[06:01:39] [INFO]   Day 940/1096 complete: +1685037 pairs (total: 25746414)
+[06:02:00] [INFO]   Day 944/1096 complete: +1635039 pairs (total: 27381453)
+[06:02:16] [INFO]   Day 948/1096 complete: +1780959 pairs (total: 29162412)
+[06:03:52] [INFO]   Day 952/1096 complete: +1700937 pairs (total: 30863349)
+[06:12:28] [INFO]   Day 956/1096 complete: +1470834 pairs (total: 32334183)
+[06:12:51] [INFO]   Day 960/1096 complete: +1552590 pairs (total: 33886773)
+[06:13:20] [INFO]   Day 964/1096 complete: +1496397 pairs (total: 35383170)
+[06:14:33] [INFO]   Day 968/1096 complete: +1562094 pairs (total: 36945264)
+[06:14:55] [INFO]   Day 972/1096 complete: +1642293 pairs (total: 38587557)
+[06:16:02] [INFO]   Day 976/1096 complete: +1529784 pairs (total: 40117341)
+[06:23:51] [INFO]   Day 980/1096 complete: +1445538 pairs (total: 41562879)
+[06:24:10] [INFO]   Day 984/1096 complete: +1377549 pairs (total: 42940428)
+[06:24:29] [INFO]   Day 988/1096 complete: +1471710 pairs (total: 44412138)
+[06:26:13] [INFO]   Day 992/1096 complete: +1469577 pairs (total: 45881715)
+[06:26:56] [INFO]   Day 996/1096 complete: +1524822 pairs (total: 47406537)
+[06:28:18] [INFO]   Day 1000/1096 complete: +1532319 pairs (total: 48938856)
+[06:34:21] [INFO]   Day 1004/1096 complete: +1249791 pairs (total: 50188647)
+[06:34:53] [INFO]   Day 1008/1096 complete: +1364694 pairs (total: 51553341)
+[06:34:57] [INFO]   Day 1012/1096 complete: +1407105 pairs (total: 52960446)
+[06:35:02] [INFO]   Day 1016/1096 complete: +1110123 pairs (total: 54070569)
+[06:37:15] [INFO]   Day 1020/1096 complete: +1306884 pairs (total: 55377453)
+[06:40:14] [INFO]   Day 1024/1096 complete: +1488618 pairs (total: 56866071)
+[06:43:30] [INFO]   Day 1028/1096 complete: +1063344 pairs (total: 57929415)
+[06:44:03] [INFO]   Day 1032/1096 complete: +1145889 pairs (total: 59075304)
+[06:44:43] [INFO]   Day 1036/1096 complete: +1301367 pairs (total: 60376671)
+[06:44:55] [INFO]   Day 1040/1096 complete: +963978 pairs (total: 61340649)
+[06:45:12] [INFO]   Day 1044/1096 complete: +1308408 pairs (total: 62649057)
+[06:48:13] [INFO]   Day 1048/1096 complete: +994932 pairs (total: 63643989)
+[06:52:36] [INFO]   Day 1052/1096 complete: +968898 pairs (total: 64612887)
+[06:54:03] [INFO]   Day 1056/1096 complete: +1329495 pairs (total: 65942382)
+[06:54:19] [INFO]   Day 1060/1096 complete: +1214301 pairs (total: 67156683)
+[06:55:26] [INFO]   Day 1064/1096 complete: +1446546 pairs (total: 68603229)
+[06:55:40] [INFO]   Day 1068/1096 complete: +1328970 pairs (total: 69932199)
+[07:00:44] [INFO]   Day 1072/1096 complete: +1557204 pairs (total: 71489403)
+[07:03:47] [INFO]   Day 1076/1096 complete: +1035510 pairs (total: 72524913)
+[07:05:22] [INFO]   Day 1080/1096 complete: +1626234 pairs (total: 74151147)
+[07:06:43] [INFO]   Day 1084/1096 complete: +1625607 pairs (total: 75776754)
+[07:07:27] [INFO]   Day 1088/1096 complete: +1702164 pairs (total: 77478918)
+[07:07:53] [INFO]   Day 1092/1096 complete: +1637304 pairs (total: 79116222)
+[07:10:16] [INFO]   Day 1096/1096 complete: +1301151 pairs (total: 80417373)
+[07:10:18] [SUCCESS]   Final checkpoint saved: 1096 days
+[07:10:35] [INFO]     [BASELINE] clock_bias: 6,912,495 pairs written to CSV
+[07:10:35] [INFO]     [BASELINE] pos_jitter: 6,912,495 pairs written to CSV
+[07:10:35] [INFO]     [BASELINE] clock_drift: 6,912,495 pairs written to CSV
+[07:10:35] [INFO]     [IONOFREE] ionofree_clock_bias: 6,660,926 pairs written to CSV
+[07:10:35] [INFO]     [IONOFREE] ionofree_pos_jitter: 6,660,926 pairs written to CSV
+[07:10:35] [INFO]     [IONOFREE] ionofree_clock_drift: 6,660,926 pairs written to CSV
+[07:10:35] [INFO]     [MULTI_GNSS] mgex_clock_bias: 6,598,557 pairs written to CSV
+[07:10:35] [INFO]     [MULTI_GNSS] mgex_pos_jitter: 6,598,557 pairs written to CSV
+[07:10:35] [INFO]     [MULTI_GNSS] mgex_clock_drift: 6,598,557 pairs written to CSV
+[07:10:35] [INFO]     [PRECISE] precise_clock_bias: 6,633,813 pairs written to CSV
+[07:10:35] [INFO]     [PRECISE] precise_pos_jitter: 6,633,813 pairs written to CSV
+[07:10:35] [INFO]     [PRECISE] precise_clock_drift: 6,633,813 pairs written to CSV
+[07:10:35] [PROCESS] Loading data from CSV for fitting (STREAMING LOG BINNED)...
+[07:10:35] [INFO]   Streaming step_2_0_pairs_baseline_dynamic_50.csv...
+[07:11:04] [INFO]     Processed 10M rows...
+[07:11:32] [INFO]     Processed 20M rows...
+[07:12:01] [INFO]     Processed 30M rows...
+[07:12:29] [INFO]     Processed 40M rows...
+[07:12:58] [INFO]     Processed 50M rows...
+[07:13:26] [INFO]     Processed 60M rows...
+[07:13:55] [INFO]     Processed 70M rows...
+[07:14:24] [INFO]     Processed 80M rows...
+[07:14:52] [INFO]     Processed 90M rows...
+[07:15:21] [INFO]     Processed 100M rows...
+[07:15:49] [INFO]   Streaming step_2_0_pairs_ionofree_dynamic_50.csv...
+[07:15:50] [INFO]     Processed 110M rows...
+[07:16:19] [INFO]     Processed 120M rows...
+[07:16:48] [INFO]     Processed 130M rows...
+[07:17:17] [INFO]     Processed 140M rows...
+[07:17:46] [INFO]     Processed 150M rows...
+[07:18:15] [INFO]     Processed 160M rows...
+[07:18:44] [INFO]     Processed 170M rows...
+[07:19:14] [INFO]     Processed 180M rows...
+[07:19:43] [INFO]     Processed 190M rows...
+[07:20:12] [INFO]     Processed 200M rows...
+[07:20:42] [INFO]     Processed 210M rows...
+[07:21:00] [INFO]   Streaming step_2_0_pairs_multi_gnss_dynamic_50.csv...
+[07:21:11] [INFO]     Processed 220M rows...
+[07:21:40] [INFO]     Processed 230M rows...
+[07:22:09] [INFO]     Processed 240M rows...
+[07:22:38] [INFO]     Processed 250M rows...
+[07:23:07] [INFO]     Processed 260M rows...
+[07:23:36] [INFO]     Processed 270M rows...
+[07:24:05] [INFO]     Processed 280M rows...
+[07:24:34] [INFO]     Processed 290M rows...
+[07:25:03] [INFO]     Processed 300M rows...
+[07:25:32] [INFO]     Processed 310M rows...
+[07:26:01] [INFO]     Processed 320M rows...
+[07:26:02] [INFO]   Streaming step_2_0_pairs_precise_dynamic_50.csv...
+[07:26:29] [INFO]     Processed 330M rows...
+[07:26:58] [INFO]     Processed 340M rows...
+[07:27:27] [INFO]     Processed 350M rows...
+[07:27:55] [INFO]     Processed 360M rows...
+[07:28:23] [INFO]     Processed 370M rows...
+[07:28:52] [INFO]     Processed 380M rows...
+[07:29:21] [INFO]     Processed 390M rows...
+[07:29:49] [INFO]     Processed 400M rows...
+[07:30:18] [INFO]     Processed 410M rows...
+[07:30:46] [INFO]     Processed 420M rows...
+[07:31:03] [SUCCESS]   Streamed 425,758,551 rows into 40 log-spaced bins (50-13000 km)
+[07:31:03] [INFO] 
+[07:31:03] [PROCESS] FITTING RESULTS - Exponential Decay Model
+[07:31:03] [INFO]   Model: C(r) = A·exp(-r/λ) + C₀
+[07:31:03] [INFO]   TEP Criterion: 500 < λ < 10,000 km AND R² > 0.5
+[07:31:03] [INFO] 
+[07:31:03] [SUCCESS]     [BASELINE] clock_bias (MSC): λ=766km, R²=0.990, N=36,654,612, TEP=YES
+[07:31:03] [SUCCESS]     [BASELINE] clock_bias (Phase): λ=1789km, R²=0.906, N=36,654,612, TEP=YES
+[07:31:03] [SUCCESS]     [BASELINE] pos_jitter (MSC): λ=898km, R²=0.976, N=36,654,612, TEP=YES
+[07:31:03] [SUCCESS]     [BASELINE] pos_jitter (Phase): λ=2070km, R²=0.850, N=36,654,612, TEP=YES
+[07:31:03] [SUCCESS]     [BASELINE] clock_drift (MSC): λ=747km, R²=0.989, N=36,654,612, TEP=YES
+[07:31:03] [SUCCESS]     [BASELINE] clock_drift (Phase): λ=1032km, R²=0.945, N=36,654,612, TEP=YES
+[07:31:03] [SUCCESS]     [IONOFREE] ionofree_clock_bias (MSC): λ=1084km, R²=0.988, N=35,500,722, TEP=YES
+[07:31:03] [SUCCESS]     [IONOFREE] ionofree_clock_bias (Phase): λ=1849km, R²=0.730, N=35,500,722, TEP=YES
+[07:31:03] [SUCCESS]     [IONOFREE] ionofree_pos_jitter (MSC): λ=1170km, R²=0.979, N=35,500,722, TEP=YES
+[07:31:03] [SUCCESS]     [IONOFREE] ionofree_pos_jitter (Phase): λ=3341km, R²=0.973, N=35,500,722, TEP=YES
+[07:31:03] [SUCCESS]     [IONOFREE] ionofree_clock_drift (MSC): λ=1088km, R²=0.985, N=35,500,722, TEP=YES
+[07:31:03] [SUCCESS]     [IONOFREE] ionofree_clock_drift (Phase): λ=1129km, R²=0.934, N=35,500,722, TEP=YES
+[07:31:03] [SUCCESS]     [MULTI_GNSS] mgex_clock_bias (MSC): λ=834km, R²=0.979, N=34,680,321, TEP=YES
+[07:31:03] [SUCCESS]     [MULTI_GNSS] mgex_clock_bias (Phase): λ=1749km, R²=0.981, N=34,680,321, TEP=YES
+[07:31:03] [SUCCESS]     [MULTI_GNSS] mgex_pos_jitter (MSC): λ=907km, R²=0.993, N=34,680,321, TEP=YES
+[07:31:03] [SUCCESS]     [MULTI_GNSS] mgex_pos_jitter (Phase): λ=1810km, R²=0.868, N=34,680,321, TEP=YES
+[07:31:03] [SUCCESS]     [MULTI_GNSS] mgex_clock_drift (MSC): λ=796km, R²=0.981, N=34,548,138, TEP=YES
+[07:31:03] [SUCCESS]     [MULTI_GNSS] mgex_clock_drift (Phase): λ=994km, R²=0.959, N=34,548,138, TEP=YES
+[07:31:03] [SUCCESS]     [PRECISE] precise_clock_bias (MSC): λ=1214km, R²=0.980, N=35,127,923, TEP=YES
+[07:31:03] [SUCCESS]     [PRECISE] precise_clock_bias (Phase): λ=1766km, R²=0.666, N=35,127,923, TEP=YES
+[07:31:03] [SUCCESS]     [PRECISE] precise_pos_jitter (MSC): λ=1336km, R²=0.972, N=35,127,923, TEP=YES
+[07:31:03] [SUCCESS]     [PRECISE] precise_pos_jitter (Phase): λ=3447km, R²=0.979, N=35,127,923, TEP=YES
+[07:31:03] [SUCCESS]     [PRECISE] precise_clock_drift (MSC): λ=1219km, R²=0.974, N=35,127,923, TEP=YES
+[07:31:03] [SUCCESS]     [PRECISE] precise_clock_drift (Phase): λ=1190km, R²=0.893, N=35,127,923, TEP=YES
+[07:31:03] [SUCCESS] Results saved: /Users/matthewsmawfield/www/TEP-GNSS-RINEX/results/outputs/step_2_0_raw_spp_analysis_dynamic_50.json
+[07:31:03] [INFO] 
+[07:31:03] [INFO] ================================================================================
+[07:31:03] [INFO] 
+[07:31:03] [INFO] ================================================================================
+[07:31:03] [INFO] ANALYSIS SUMMARY: DYNAMIC 50
+[07:31:03] [INFO] ================================================================================
+[07:31:03] [INFO] 
+[07:31:03] [INFO] ================================================================================
+[07:31:03] [INFO] 
+[07:31:03] [INFO]   Dataset: DYNAMIC 50
+[07:31:03] [INFO]   Stations: 539
+[07:31:03] [INFO]   Total Pairs: 425,758,551
+[07:31:03] [INFO]   Binning: 40 log-spaced bins (50-13000 km)
+[07:31:03] [INFO] 
+[07:31:03] [INFO]   MSC Metrics:   λ = 1005 ± 195 km (n=12)
+[07:31:03] [INFO]   Phase Metrics: λ = 1847 ± 775 km (n=12)
+[07:31:03] [INFO] 
+[07:31:03] [INFO]   Mode         Metric                               λ (km)       R²    TEP
+[07:31:03] [INFO]   ------------ -------------------------------- ---------- -------- ------
+[07:31:03] [SUCCESS]   baseline     clock_bias                              766    0.990    YES
+[07:31:03] [SUCCESS]   baseline     clock_bias_phase_alignment             1789    0.906    YES
+[07:31:03] [SUCCESS]   baseline     pos_jitter                              898    0.976    YES
+[07:31:03] [SUCCESS]   baseline     pos_jitter_phase_alignment             2070    0.850    YES
+[07:31:03] [SUCCESS]   baseline     clock_drift                             747    0.989    YES
+[07:31:03] [SUCCESS]   baseline     clock_drift_phase_alignment            1032    0.945    YES
+[07:31:03] [SUCCESS]   ionofree     ionofree_clock_bias                    1084    0.988    YES
+[07:31:03] [SUCCESS]   ionofree     ionofree_clock_bias_phase_alignment       1849    0.730    YES
+[07:31:03] [SUCCESS]   ionofree     ionofree_pos_jitter                    1170    0.979    YES
+[07:31:03] [SUCCESS]   ionofree     ionofree_pos_jitter_phase_alignment       3341    0.973    YES
+[07:31:03] [SUCCESS]   ionofree     ionofree_clock_drift                   1088    0.985    YES
+[07:31:03] [SUCCESS]   ionofree     ionofree_clock_drift_phase_alignment       1129    0.934    YES
+[07:31:03] [SUCCESS]   multi_gnss   mgex_clock_bias                         834    0.979    YES
+[07:31:03] [SUCCESS]   multi_gnss   mgex_clock_bias_phase_alignment        1749    0.981    YES
+[07:31:03] [SUCCESS]   multi_gnss   mgex_pos_jitter                         907    0.993    YES
+[07:31:03] [SUCCESS]   multi_gnss   mgex_pos_jitter_phase_alignment        1810    0.868    YES
+[07:31:03] [SUCCESS]   multi_gnss   mgex_clock_drift                        796    0.981    YES
+[07:31:03] [SUCCESS]   multi_gnss   mgex_clock_drift_phase_alignment        994    0.959    YES
+[07:31:03] [SUCCESS]   precise      precise_clock_bias                     1214    0.980    YES
+[07:31:03] [SUCCESS]   precise      precise_clock_bias_phase_alignment       1766    0.666    YES
+[07:31:03] [SUCCESS]   precise      precise_pos_jitter                     1336    0.972    YES
+[07:31:03] [SUCCESS]   precise      precise_pos_jitter_phase_alignment       3447    0.979    YES
+[07:31:03] [SUCCESS]   precise      precise_clock_drift                    1219    0.974    YES
+[07:31:03] [SUCCESS]   precise      precise_clock_drift_phase_alignment       1190    0.893    YES
+[07:31:03] [INFO] 
+[07:31:03] [INFO] ================================================================================
+[07:31:03] [SUCCESS]   ✓ TEP CONFIRMED: 24/24 metrics show TEP signature (100%)
+[07:31:03] [INFO] ================================================================================
+[07:31:04] [SUCCESS] MULTI-FILTER PIPELINE COMPLETE

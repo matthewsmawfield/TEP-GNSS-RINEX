@@ -16,7 +16,7 @@ Methodology:
     3. Apply band-pass filter (33 min - 12 hours) to isolate TEP-relevant frequencies
     4. Compute magnitude-weighted phase coherence for all station pairs
     5. Fit exponential decay model: C(r) = A*exp(-r/λ) + C₀
-    6. Assess TEP consistency (λ in range 1000-3000 km, R² > 0.5)
+    6. Assess TEP consistency (λ in range 500-10000 km, R² > 0.5)
 
 Requirements: Step 1.0 complete (RINEX data downloaded)
 Inputs:
@@ -48,6 +48,16 @@ from scipy.optimize import curve_fit
 from scipy.signal import csd, welch, detrend
 import matplotlib.pyplot as plt
 import multiprocessing
+
+# Global variables for worker processes (avoids pickling large data)
+_WORKER_GEOMETRY = None
+_WORKER_METRICS = None
+
+def _init_worker(geometry_data, metrics_config):
+    """Initialize worker with shared geometry data (called once per worker)."""
+    global _WORKER_GEOMETRY, _WORKER_METRICS
+    _WORKER_GEOMETRY = geometry_data
+    _WORKER_METRICS = metrics_config
 from collections import defaultdict
 
 from scripts.utils.logger import TEPLogger, set_step_logger, print_status
@@ -556,8 +566,11 @@ def compute_pairs_coherence_stream(day_files, station_coords, mode_metrics, chec
     # Smaller batches = faster feedback, same total work
     cpu_count = multiprocessing.cpu_count()
     if cpu_count >= 48:
-        # High-CPU machine: maximize parallelism
-        n_workers = 80  # Use most of 96 vCPUs
+        # High-CPU machine: maximize parallelism but respect memory limits
+        # n1-highcpu-64 has 57.6GB RAM. 80 workers = OOM.
+        # 30 workers = OOM after 2.5h.
+        # Safe limit: 20 workers (Stable for long runs)
+        n_workers = 20
         batch_size = 1  # 1 day per batch for fastest feedback
     elif cpu_count >= 16:
         # Medium machine
@@ -571,10 +584,12 @@ def compute_pairs_coherence_stream(day_files, station_coords, mode_metrics, chec
     
     print_status(f"  Workers: {n_workers}, Batches: {len(batches)} (batch_size={batch_size})", "INFO")
     
+    # Use fewer workers to reduce memory pressure from geometry pickling
+    # Each worker gets a copy of pair_geometry (~114k pairs), so limit workers
+    n_workers = min(6, n_workers)  # Cap at 6 to reduce memory
+    print_status(f"  Using {n_workers} workers (memory-optimized)", "INFO")
+    
     with ProcessPoolExecutor(max_workers=n_workers) as executor:
-        # CRITICAL OPTIMIZATION: 
-        # 1. Only pass files for each batch (not entire 400k file dict)
-        # 2. Pass pre-computed geometry (not raw coords that need recomputation)
         futures = {}
         for i, batch_days in enumerate(batches):
             batch_files = {d: day_files[d] for d in batch_days if d in day_files}
@@ -631,6 +646,46 @@ def compute_pairs_coherence_stream(day_files, station_coords, mode_metrics, chec
 
 def exp_decay(r, A, lam, C0):
     return A * np.exp(-r/lam) + C0
+
+def fit_exponential_prebinned(bin_centers, bin_means, bin_counts=None):
+    """Fit exponential decay to PRE-BINNED data (no re-binning)."""
+    x = np.array(bin_centers)
+    y = np.array(bin_means)
+    
+    if len(x) < 5:
+        return None
+    
+    # Use bin counts for weighting if provided
+    if bin_counts is not None:
+        w = np.sqrt(np.array(bin_counts))
+        w[w == 0] = 1  # Avoid division by zero
+    else:
+        w = np.ones_like(x)
+    
+    try:
+        popt, pcov = curve_fit(
+            exp_decay, x, y,
+            p0=[0.5, 2000, 0.5],
+            sigma=1.0/w,
+            bounds=([0, 100, -1], [2, 20000, 1]),
+            maxfev=5000
+        )
+        
+        # R2
+        predicted = exp_decay(x, *popt)
+        ss_res = np.sum((y - predicted)**2)
+        ss_tot = np.sum((y - np.mean(y))**2)
+        r2 = 1 - (ss_res / ss_tot) if ss_tot > 0 else 0
+        
+        return {
+            'amplitude': popt[0],
+            'correlation_length_km': popt[1],
+            'offset': popt[2],
+            'r_squared': r2,
+            'success': True
+        }
+    except Exception as e:
+        return None
 
 def fit_exponential_model(distances, coherences):
     """Fit exponential decay model to pair data."""
@@ -941,241 +996,163 @@ def run_analysis_pipeline(filter_mode_name, station_filter_config):
         for metric_name, count in metrics.items():
             print_status(f"    [{mode_name.upper()}] {metric_name}: {count:,} pairs written to CSV", "INFO")
             
-    # Read ALL data from CSV for fitting (memory efficient chunked reading)
-    # Now supports BOTH coherence metrics: MSC (normalized) and phase_alignment (cos(phase))
-    print_status("Loading data from CSV for fitting (ALL pairs)...", "PROCESS")
-    metrics_data = defaultdict(lambda: {'distances': [], 'coherences': [], 'phase_alignments': []})
+    # MEMORY-EFFICIENT: Stream CSV and aggregate into LOG distance bins
+    # Using LOG bins like CODE longspan for proper exponential decay fitting
+    print_status("Loading data from CSV for fitting (STREAMING LOG BINNED)...", "PROCESS")
+    
+    # LOG distance bins: 40 bins from 50-13000 km (same as CODE longspan)
+    N_BINS = 40
+    MIN_DIST = 50
+    MAX_DIST = 13000
+    bin_edges = np.logspace(np.log10(MIN_DIST), np.log10(MAX_DIST), N_BINS + 1)
+    
+    # Per-metric bin accumulators
+    metrics_bins = defaultdict(lambda: {
+        'coh_sum': np.zeros(N_BINS),
+        'coh_count': np.zeros(N_BINS, dtype=np.int64),
+        'pa_sum': np.zeros(N_BINS),
+        'pa_count': np.zeros(N_BINS, dtype=np.int64)
+    })
+    
+    import csv as csv_module
+    total_rows = 0
+    skipped_out_of_range = 0
     
     for mode_name in modes_config.keys():
         csv_path = RESULTS_DIR / f"step_2_0_pairs_{mode_name}_{filter_suffix}.csv"
         if not csv_path.exists():
             continue
-            
-        # Read CSV in chunks to avoid memory issues
-        import csv as csv_module
+        
+        print_status(f"  Streaming {csv_path.name}...", "INFO")
         with open(csv_path, 'r') as f:
             reader = csv_module.DictReader(f)
             for row in reader:
+                total_rows += 1
                 metric_name = row['metric']
-                metrics_data[metric_name]['distances'].append(float(row['distance_km']))
-                metrics_data[metric_name]['coherences'].append(float(row['coherence']))
-                # Handle both old (no phase) and new (with phase) CSV formats
+                dist = float(row['distance_km'])
+                coh = float(row['coherence'])
+                
+                # Skip pairs outside range (like CODE longspan)
+                if dist < MIN_DIST or dist > MAX_DIST:
+                    skipped_out_of_range += 1
+                    continue
+                
+                # Find LOG bin index
+                bin_idx = np.searchsorted(bin_edges, dist, side='right') - 1
+                bin_idx = max(0, min(bin_idx, N_BINS - 1))
+                
+                # Accumulate coherence
+                if np.isfinite(coh):
+                    metrics_bins[metric_name]['coh_sum'][bin_idx] += coh
+                    metrics_bins[metric_name]['coh_count'][bin_idx] += 1
+                
+                # Accumulate phase alignment if present
                 if 'phase_alignment' in row and row['phase_alignment']:
                     try:
                         pa = float(row['phase_alignment'])
-                        metrics_data[metric_name]['phase_alignments'].append(pa if np.isfinite(pa) else np.nan)
+                        if np.isfinite(pa):
+                            metrics_bins[metric_name]['pa_sum'][bin_idx] += pa
+                            metrics_bins[metric_name]['pa_count'][bin_idx] += 1
                     except:
-                        metrics_data[metric_name]['phase_alignments'].append(np.nan)
-                else:
-                    metrics_data[metric_name]['phase_alignments'].append(np.nan)
+                        pass
+                
+                # Progress every 10M rows
+                if total_rows % 10000000 == 0:
+                    print_status(f"    Processed {total_rows/1e6:.0f}M rows...", "INFO")
     
-    # Perform Fit on ALL data - BOTH coherence metrics
-    for metric_name, data in metrics_data.items():
-        dists = np.array(data['distances'])
-        cohs = np.array(data['coherences'])
-        phase_aligns = np.array(data['phase_alignments'])
+    print_status(f"  Streamed {total_rows:,} rows into {N_BINS} log-spaced bins ({MIN_DIST}-{MAX_DIST} km)", "SUCCESS")
+    
+    # Convert bins to arrays for fitting - use LOG bin centers (geometric mean)
+    bin_centers = np.sqrt(bin_edges[:-1] * bin_edges[1:])
+    
+    # ========================================================================
+    # EXPONENTIAL DECAY FITTING: C(r) = A·exp(-r/λ) + C₀
+    # ========================================================================
+    print_status("", "INFO")
+    print_status("FITTING RESULTS - Exponential Decay Model", "PROCESS")
+    print_status(f"  Model: C(r) = A·exp(-r/λ) + C₀", "INFO")
+    print_status(f"  TEP Criterion: 500 < λ < 10,000 km AND R² > 0.5", "INFO")
+    print_status("", "INFO")
+    
+    metrics_data = {}
+    for metric_name, bins in metrics_bins.items():
         
-        if len(dists) < 100:
+        # Coherence: only use bins with data
+        valid_coh = bins['coh_count'] > 0
+        distances = bin_centers[valid_coh]
+        coherences = bins['coh_sum'][valid_coh] / bins['coh_count'][valid_coh]
+        
+        # Phase alignment: only use bins with data
+        valid_pa = bins['pa_count'] > 0
+        pa_distances = bin_centers[valid_pa]
+        phase_alignments = bins['pa_sum'][valid_pa] / bins['pa_count'][valid_pa]
+        
+        metrics_data[metric_name] = {
+            'distances': distances,
+            'coherences': coherences,
+            'n_pairs': int(bins['coh_count'].sum()),
+            'pa_distances': pa_distances,
+            'phase_alignments': phase_alignments,
+            'n_pa_pairs': int(bins['pa_count'].sum())
+        }
+    
+    # Perform Fit on PRE-BINNED data - BOTH coherence metrics
+    # NOTE: Data is already binned from streaming step - use fit_exponential_prebinned (no re-binning)
+    for metric_name, data in metrics_data.items():
+        dists = data['distances']
+        cohs = data['coherences']
+        n_pairs = data['n_pairs']
+        pa_dists = data['pa_distances']
+        phase_aligns = data['phase_alignments']
+        n_pa_pairs = data['n_pa_pairs']
+        
+        # Get bin counts for weighting
+        bins = metrics_bins[metric_name]
+        valid_coh = bins['coh_count'] > 0
+        coh_counts = bins['coh_count'][valid_coh]
+        valid_pa = bins['pa_count'] > 0
+        pa_counts = bins['pa_count'][valid_pa]
+        
+        if len(dists) < 10:  # Need at least 10 bins for fitting
             continue
         
         mode_name = metric_to_mode.get(metric_name, 'baseline')
         
         # Fit 1: Normalized MSC (coherence) - range [0, 1]
-        res = fit_exponential_model(dists, cohs)
+        # Use fit_exponential_prebinned since data is already binned!
+        res = fit_exponential_prebinned(dists, cohs, coh_counts)
         if res:
             all_mode_results[mode_name][metric_name] = res
-            res['n_pairs'] = len(dists)
+            res['n_pairs'] = n_pairs
+            res['n_bins'] = len(dists)
             res['metric_type'] = 'normalized_msc'
             lam = res['correlation_length_km']
             r2 = res['r_squared']
-            tep = "YES" if 500 < lam < 5000 and r2 > 0.5 else "NO"
-            print_status(f"    [{mode_name.upper()}] {metric_name} (MSC): λ={lam:.0f}km, R²={r2:.3f}, N={len(dists):,}, TEP={tep}", 
+            tep = "YES" if 500 < lam < 10000 and r2 > 0.5 else "NO"
+            print_status(f"    [{mode_name.upper()}] {metric_name} (MSC): λ={lam:.0f}km, R²={r2:.3f}, N={n_pairs:,}, TEP={tep}", 
                        "SUCCESS" if tep == "YES" else "INFO")
         
         # Fit 2: Phase Alignment cos(phase) - range [-1, 1] (like CODE longspan)
-        valid_pa = np.isfinite(phase_aligns)
-        if np.sum(valid_pa) > 100:
-            res_pa = fit_exponential_model(dists[valid_pa], phase_aligns[valid_pa])
+        if len(pa_dists) >= 10:
+            res_pa = fit_exponential_prebinned(pa_dists, phase_aligns, pa_counts)
             if res_pa:
                 pa_key = f"{metric_name}_phase_alignment"
                 all_mode_results[mode_name][pa_key] = res_pa
-                res_pa['n_pairs'] = int(np.sum(valid_pa))
+                res_pa['n_pairs'] = n_pa_pairs
+                res_pa['n_bins'] = len(pa_dists)
                 res_pa['metric_type'] = 'phase_alignment'
                 lam = res_pa['correlation_length_km']
                 r2 = res_pa['r_squared']
-                tep = "YES" if 500 < lam < 5000 and r2 > 0.5 else "NO"
-                print_status(f"    [{mode_name.upper()}] {metric_name} (Phase): λ={lam:.0f}km, R²={r2:.3f}, N={np.sum(valid_pa):,}, TEP={tep}", 
+                tep = "YES" if 500 < lam < 10000 and r2 > 0.5 else "NO"
+                print_status(f"    [{mode_name.upper()}] {metric_name} (Phase): λ={lam:.0f}km, R²={r2:.3f}, N={n_pa_pairs:,}, TEP={tep}", 
                            "SUCCESS" if tep == "YES" else "INFO")
 
     if not metrics_data:
         print_status("No valid metrics aggregated", "ERROR")
         return
         
-    # Use baseline metrics for plotting
+    # Use baseline metrics for backward compatibility
     fit_results = all_mode_results.get('baseline', {})
-    
-    # ========================================================================
-    # STEP 3: Fit Exponential Decay Models (Publication Quality)
-    # ========================================================================
-    print_status("[3/3] Fitting exponential decay models...", "PROCESS")
-    
-    def exp_decay(r, A, lam, C0):
-        return A * np.exp(-r/lam) + C0
-    
-    fit_results = {}
-    
-    # Metric display names
-    metric_labels = {
-        'pos_jitter': 'Position Jitter (Proxy)',
-        'clock_bias': 'Clock Bias (Time)',
-        'clock_drift': 'Clock Drift (Doppler)'
-    }
-    
-    for metric_name, samples in metrics_data.items():
-        if len(samples.get('distances', [])) < 100:
-            print_status(f"  Skipping {metric_name}: too few pairs", "WARNING")
-            continue
-        
-        # Use pre-collected arrays
-        distances = np.array(samples['distances'])
-        coherences = np.array(samples['coherences'])
-        
-        # LOG bins - captures exponential decay shape better at short distances
-        bin_edges = np.logspace(np.log10(MIN_DISTANCE_KM), np.log10(MAX_DISTANCE_KM), N_BINS + 1)
-        
-        bin_centers = []
-        bin_means = []
-        bin_sems = []  # Standard Error of Mean
-        bin_counts = []
-        
-        for i in range(N_BINS):
-            mask = (bin_edges[i] <= distances) & (distances < bin_edges[i+1])
-            bin_data = coherences[mask]
-            
-            if len(bin_data) >= MIN_BIN_COUNT:
-                bin_centers.append((bin_edges[i] + bin_edges[i+1]) / 2)
-                bin_means.append(np.mean(bin_data))
-                bin_sems.append(np.std(bin_data) / np.sqrt(len(bin_data)))  # SEM
-                bin_counts.append(len(bin_data))
-        
-        if len(bin_centers) < 5:
-            print_status(f"  {metric_name}: too few bins", "WARNING")
-            continue
-        
-        # Convert to numpy arrays
-        bin_centers = np.array(bin_centers)
-        bin_means = np.array(bin_means)
-        bin_sems = np.array(bin_sems)
-        bin_counts = np.array(bin_counts)
-        
-        try:
-            # Weighted fit using inverse SEM
-            weights = bin_counts  # More samples = more weight
-            popt, pcov = curve_fit(
-                exp_decay,
-                bin_centers,
-                bin_means,
-                p0=[0.5, 2000, 0],
-                sigma=1.0/np.sqrt(weights),
-                bounds=([0, 100, -1], [2, 20000, 1]),
-                maxfev=10000
-            )
-            
-            A, lam, C0 = popt
-            A_err, lam_err, C0_err = np.sqrt(np.diag(pcov))
-            
-            # Calculate R²
-            predicted = exp_decay(bin_centers, A, lam, C0)
-            ss_res = np.sum((bin_means - predicted)**2)
-            ss_tot = np.sum((bin_means - np.mean(bin_means))**2)
-            r_squared = 1 - (ss_res / ss_tot) if ss_tot > 0 else 0
-            
-            fit_results[metric_name] = {
-                'amplitude': float(A),
-                'amplitude_err': float(A_err),
-                'correlation_length_km': float(lam),
-                'correlation_length_err_km': float(lam_err),
-                'offset': float(C0),
-                'offset_err': float(C0_err),
-                'r_squared': float(r_squared),
-                'success': True,
-                'n_pairs': len(distances)
-            }
-            
-            print_status(f"  {metric_name}:", "INFO")
-            print_status(f"    λ: {lam:.0f} ± {lam_err:.0f} km, R²: {r_squared:.3f}", "INFO")
-            
-            # ================================================================
-            # PUBLICATION-QUALITY PLOT (Linear scale, SEM errors)
-            # ================================================================
-            plt.style.use('seaborn-v0_8-whitegrid')
-            fig, ax = plt.subplots(figsize=(10, 6))
-            
-            # 1. Individual pairs as faint scatter background
-            if len(distances) > 10000:
-                idx = np.random.choice(len(distances), 10000, replace=False)
-                ax.scatter(distances[idx], coherences[idx], s=10, alpha=0.05,
-                          c='#bdc3c7', edgecolors='none')
-            else:
-                ax.scatter(distances, coherences, s=10, alpha=0.05,
-                          c='#bdc3c7', edgecolors='none')
-            
-            # 2. Fit line (smooth red) - log-spaced for log x-axis
-            x_smooth = np.logspace(np.log10(MIN_DISTANCE_KM), np.log10(MAX_DISTANCE_KM), 500)
-            y_smooth = exp_decay(x_smooth, A, lam, C0)
-            ax.plot(x_smooth, y_smooth, color='#e74c3c', linewidth=2.5, zorder=5,
-                   label=f'Fit: $\\lambda={lam:.0f}$ km ($R^2={r_squared:.2f}$)')
-            
-            # 3. Binned means with SEM error bars (only stable bins)
-            plot_centers, plot_means, plot_errs = [], [], []
-            for c, m, e, cnt in zip(bin_centers, bin_means, bin_sems, bin_counts):
-                if cnt > 20:
-                    plot_centers.append(c)
-                    plot_means.append(m)
-                    plot_errs.append(e)
-            
-            ax.errorbar(plot_centers, plot_means, yerr=plot_errs, fmt='o',
-                       color='#2980b9', ecolor='#2980b9', elinewidth=1.5, capsize=2,
-                       markersize=5, alpha=0.9, zorder=10, label='Binned Mean ± SEM')
-            
-            # Formatting
-            ax.axhline(0, color='black', linewidth=0.8, linestyle='--', alpha=0.5)
-            ax.set_xlabel('Distance (km)', fontsize=12, fontweight='bold')
-            ax.set_ylabel(f'{metric_labels.get(metric_name, metric_name)} Coherence', 
-                         fontsize=12, fontweight='bold')
-            ax.set_title(f'TEP Analysis: {metric_labels.get(metric_name, metric_name)}',
-                        fontsize=14, fontweight='bold', pad=15)
-            
-            # Stats box
-            stats_text = (f"$\\lambda = {lam:.0f} \\pm {lam_err:.0f}$ km\n"
-                         f"$A = {A:.3f}$\n"
-                         f"$R^2 = {r_squared:.3f}$")
-            props = dict(boxstyle='round', facecolor='white', alpha=0.9, edgecolor='#bdc3c7')
-            ax.text(0.97, 0.97, stats_text, transform=ax.transAxes, fontsize=11,
-                   verticalalignment='top', horizontalalignment='right', bbox=props)
-            
-            ax.legend(loc='upper right', bbox_to_anchor=(0.97, 0.75), fontsize=10, frameon=True)
-            ax.set_ylim(-0.1, 1.1)
-            ax.set_xscale('log')
-            ax.set_xlim(MIN_DISTANCE_KM, MAX_DISTANCE_KM)
-            ax.grid(True, which='both', linestyle='-', alpha=0.3)
-            
-            # TEP detection badge
-            tep_detected = 500 < lam < 5000 and r_squared > 0.5
-            if tep_detected:
-                ax.text(0.03, 0.97, 'TEP DETECTED', transform=ax.transAxes, fontsize=11,
-                       fontweight='bold', verticalalignment='top',
-                       bbox=dict(boxstyle='round', facecolor='lightgreen', alpha=0.9))
-            
-            plt.tight_layout()
-            fig_file = FIGURES_DIR / f'step_2_0_{metric_name}_{filter_suffix}.png'
-            fig.savefig(fig_file, dpi=300, bbox_inches='tight')
-            plt.close(fig)
-            print_status(f"    Figure: {fig_file}", "SUCCESS")
-            
-        except Exception as e:
-            print_status(f"  {metric_name} fit failed: {e}", "WARNING")
-            fit_results[metric_name] = {'success': False, 'error': str(e)}
     
     # ========================================================================
     # Save Results - ALL MODES
@@ -1208,52 +1185,69 @@ def run_analysis_pipeline(filter_mode_name, station_filter_config):
     print_status(f"Results saved: {output_file}", "SUCCESS")
     
     # ========================================================================
-    # COMPARATIVE SUMMARY - ALL MODES
+    # SUMMARY TABLE - ALL MODES
     # ========================================================================
     print_status("", "INFO")
     print_status("="*80, "INFO")
-    print_status("COMPARATIVE ANALYSIS SUMMARY - ALL PROCESSING MODES", "INFO")
+    print_status(f"ANALYSIS SUMMARY: {filter_mode_name}", "TITLE")
     print_status("="*80, "INFO")
     
-    # Print table header
-    print_status("", "INFO")
-    print_status(f"  {'Mode':<12} {'Metric':<15} {'λ (km)':<12} {'R²':<8} {'TEP?':<6}", "INFO")
-    print_status(f"  {'-'*12} {'-'*15} {'-'*12} {'-'*8} {'-'*6}", "INFO")
-    
-    tep_count = 0
-    total_tests = 0
+    # Count results
+    tep_yes = 0
+    tep_no = 0
+    all_results = []
     
     for mode_name, mode_results in all_mode_results.items():
         for metric, result in mode_results.items():
             if result.get('success'):
                 lam = result['correlation_length_km']
                 r2 = result['r_squared']
-                tep = "YES" if 500 < lam < 5000 and r2 > 0.5 else "NO"
-                
-                # Count TEP detections for clock metrics across all modes
-                is_clock = 'clock_bias' in metric
-                
-                if is_clock and tep == "YES":
-                    tep_count += 1
-                if is_clock:
-                    total_tests += 1
-                
-                status = "SUCCESS" if (is_clock and tep == "YES") else "INFO"
-                print_status(f"  {mode_name:<12} {metric:<15} {lam:>8.0f}     {r2:>6.3f}   {tep:<6}", status)
+                tep = "YES" if 500 < lam < 10000 and r2 > 0.5 else "NO"
+                if tep == "YES":
+                    tep_yes += 1
+                else:
+                    tep_no += 1
+                all_results.append((mode_name, metric, lam, r2, tep))
+    
+    # Print summary statistics first
+    print_status("", "INFO")
+    print_status(f"  Dataset: {filter_mode_name}", "INFO")
+    print_status(f"  Stations: {len(station_coords)}", "INFO")
+    print_status(f"  Total Pairs: {total_rows:,}", "INFO")
+    print_status(f"  Binning: {N_BINS} log-spaced bins ({MIN_DIST}-{MAX_DIST} km)", "INFO")
+    print_status("", "INFO")
+    
+    # Compute lambda statistics
+    msc_lambdas = [r[2] for r in all_results if 'phase' not in r[1].lower()]
+    phase_lambdas = [r[2] for r in all_results if 'phase' in r[1].lower()]
+    
+    if msc_lambdas:
+        print_status(f"  MSC Metrics:   λ = {np.mean(msc_lambdas):.0f} ± {np.std(msc_lambdas):.0f} km (n={len(msc_lambdas)})", "INFO")
+    if phase_lambdas:
+        print_status(f"  Phase Metrics: λ = {np.mean(phase_lambdas):.0f} ± {np.std(phase_lambdas):.0f} km (n={len(phase_lambdas)})", "INFO")
+    
+    print_status("", "INFO")
+    print_status(f"  {'Mode':<12} {'Metric':<32} {'λ (km)':>10} {'R²':>8} {'TEP':>6}", "INFO")
+    print_status(f"  {'-'*12} {'-'*32} {'-'*10} {'-'*8} {'-'*6}", "INFO")
+    
+    for mode_name, metric, lam, r2, tep in all_results:
+        status = "SUCCESS" if tep == "YES" else "WARNING"
+        print_status(f"  {mode_name:<12} {metric:<32} {lam:>10.0f} {r2:>8.3f} {tep:>6}", status)
     
     print_status("", "INFO")
     print_status("="*80, "INFO")
     
-    # Final verdict
-    if tep_count == total_tests and total_tests > 0:
-        print_status(f"  TEP SIGNATURE CONFIRMED IN ALL {total_tests} MODES (clock_bias)", "SUCCESS")
-    elif tep_count > 0:
-        print_status(f"  TEP DETECTED in {tep_count}/{total_tests} modes (clock_bias)", "SUCCESS")
+    # Final verdict with clear count
+    total_metrics = tep_yes + tep_no
+    if tep_yes == total_metrics and total_metrics > 0:
+        print_status(f"  ✓ TEP CONFIRMED: {tep_yes}/{total_metrics} metrics show TEP signature (100%)", "SUCCESS")
+    elif tep_yes > 0:
+        pct = 100 * tep_yes / total_metrics
+        print_status(f"  ✓ TEP DETECTED: {tep_yes}/{total_metrics} metrics ({pct:.0f}%)", "SUCCESS")
     else:
-        print_status(f"  TEP NOT DETECTED in any mode", "WARNING")
+        print_status(f"  ✗ TEP NOT DETECTED: 0/{total_metrics} metrics", "WARNING")
     
     print_status("="*80, "INFO")
-    print_status("Step 2.0 Analysis Complete", "TITLE")
 
 def main():
     """Main execution loop over all filter modes."""

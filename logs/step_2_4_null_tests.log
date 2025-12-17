@@ -1,0 +1,444 @@
+[19:40:03] [INFO] 
+[19:40:03] [INFO] ================================================================================
+[19:40:03] [INFO] STEP 2.4b: Null Tests (COMPREHENSIVE)
+[19:40:03] [INFO] ================================================================================
+[19:40:03] [INFO] 
+[19:40:03] [INFO] Processing: 3 filters x 4 modes x 3 metrics x 2 coherence types
+[19:40:03] [INFO] 
+################################################################################
+[19:40:03] [INFO] # FILTER: ALL_STATIONS
+[19:40:03] [INFO] ################################################################################
+[19:40:03] [INFO] 
+  MODE: BASELINE
+[19:40:03] [INFO] 
+Processing metric: clock_bias...
+[19:41:04] [INFO]   Loaded 61.9M rows total.
+[19:41:04] [INFO]   Analyzing clock_bias/msc...
+[19:41:05] [INFO]   Analyzing clock_bias/phase_alignment...
+[19:41:05] [INFO]     Solar clock_bias/msc: r=0.040
+[19:41:05] [INFO]     Lunar clock_bias/msc: r=0.061
+[19:41:05] [INFO]     Shuffle clock_bias/msc: Real R²=0.953, Shuffled R²=-0.000
+[19:41:05] [INFO]     Solar clock_bias/phase_alignment: r=0.064
+[19:41:05] [INFO]     Lunar clock_bias/phase_alignment: r=0.069
+[19:41:05] [INFO]     Shuffle clock_bias/phase_alignment: Real R²=0.907, Shuffled R²=0.070
+[19:41:05] [INFO] 
+Processing metric: pos_jitter...
+[19:42:06] [INFO]   Loaded 61.9M rows total.
+[19:42:06] [INFO]   Analyzing pos_jitter/msc...
+[19:42:06] [INFO]   Analyzing pos_jitter/phase_alignment...
+[19:42:06] [INFO]     Solar pos_jitter/msc: r=0.022
+[19:42:06] [INFO]     Lunar pos_jitter/msc: r=0.074
+[19:42:06] [INFO]     Shuffle pos_jitter/msc: Real R²=0.979, Shuffled R²=0.045
+[19:42:06] [INFO]     Solar pos_jitter/phase_alignment: r=0.069
+[19:42:06] [INFO]     Lunar pos_jitter/phase_alignment: r=0.079
+[19:42:06] [INFO]     Shuffle pos_jitter/phase_alignment: Real R²=0.966, Shuffled R²=0.000
+[19:42:06] [INFO] 
+Processing metric: clock_drift...
+[19:43:09] [INFO]   Loaded 61.9M rows total.
+[19:43:09] [INFO]   Analyzing clock_drift/msc...
+[19:43:09] [INFO]   Analyzing clock_drift/phase_alignment...
+[19:43:09] [INFO]     Solar clock_drift/msc: r=0.037
+[19:43:09] [INFO]     Lunar clock_drift/msc: r=0.057
+[19:43:09] [INFO]     Shuffle clock_drift/msc: Real R²=0.955, Shuffled R²=0.086
+[19:43:09] [INFO]     Solar clock_drift/phase_alignment: r=0.021
+[19:43:09] [INFO]     Lunar clock_drift/phase_alignment: r=0.051
+[19:43:09] [INFO]     Shuffle clock_drift/phase_alignment: Real R²=0.947, Shuffled R²=0.000
+[19:43:09] [INFO] 
+  MODE: IONOFREE
+[19:43:09] [INFO] 
+Processing metric: clock_bias...
+[19:44:10] [INFO]   Loaded 59.1M rows total.
+[19:44:10] [INFO]   Analyzing clock_bias/msc...
+[19:44:11] [INFO]   Analyzing clock_bias/phase_alignment...
+[19:44:11] [INFO]     Solar clock_bias/msc: r=0.045
+[19:44:11] [INFO]     Lunar clock_bias/msc: r=0.054
+[19:44:11] [INFO]     Shuffle clock_bias/msc: Real R²=0.969, Shuffled R²=-0.000
+[19:44:11] [INFO]     Solar clock_bias/phase_alignment: r=0.053
+[19:44:11] [INFO]     Lunar clock_bias/phase_alignment: r=0.029
+[19:44:11] [INFO]     Shuffle clock_bias/phase_alignment: Real R²=0.780, Shuffled R²=0.030
+[19:44:11] [INFO] 
+Processing metric: pos_jitter...
+[19:45:11] [INFO]   Loaded 59.1M rows total.
+[19:45:11] [INFO]   Analyzing pos_jitter/msc...
+[19:45:12] [INFO]   Analyzing pos_jitter/phase_alignment...
+[19:45:12] [INFO]     Solar pos_jitter/msc: r=0.019
+[19:45:12] [INFO]     Lunar pos_jitter/msc: r=0.071
+[19:45:12] [INFO]     Shuffle pos_jitter/msc: Real R²=0.940, Shuffled R²=-0.002
+[19:45:12] [INFO]     Solar pos_jitter/phase_alignment: r=0.059
+[19:45:12] [INFO]     Lunar pos_jitter/phase_alignment: r=0.034
+[19:45:12] [INFO]     Shuffle pos_jitter/phase_alignment: Real R²=0.949, Shuffled R²=0.135
+[19:45:12] [INFO] 
+Processing metric: clock_drift...
+[19:46:13] [INFO]   Loaded 59.1M rows total.
+[19:46:13] [INFO]   Analyzing clock_drift/msc...
+[19:46:13] [INFO]   Analyzing clock_drift/phase_alignment...
+[19:46:13] [INFO]     Solar clock_drift/msc: r=0.041
+[19:46:13] [INFO]     Lunar clock_drift/msc: r=0.056
+[19:46:13] [INFO]     Shuffle clock_drift/msc: Real R²=0.969, Shuffled R²=0.014
+[19:46:13] [INFO]     Solar clock_drift/phase_alignment: r=0.047
+[19:46:13] [INFO]     Lunar clock_drift/phase_alignment: r=0.028
+[19:46:13] [INFO]     Shuffle clock_drift/phase_alignment: Real R²=0.895, Shuffled R²=0.000
+[19:46:13] [INFO] 
+  MODE: MULTI_GNSS
+[19:46:13] [INFO] 
+Processing metric: clock_bias...
+[19:47:12] [INFO]   Loaded 58.1M rows total.
+[19:47:12] [INFO]   Analyzing clock_bias/msc...
+[19:47:12] [INFO]   Analyzing clock_bias/phase_alignment...
+[19:47:12] [INFO]     Solar clock_bias/msc: r=0.058
+[19:47:12] [INFO]     Lunar clock_bias/msc: r=0.040
+[19:47:12] [INFO]     Shuffle clock_bias/msc: Real R²=0.925, Shuffled R²=-0.002
+[19:47:12] [INFO]     Solar clock_bias/phase_alignment: r=0.062
+[19:47:12] [INFO]     Lunar clock_bias/phase_alignment: r=0.029
+[19:47:12] [INFO]     Shuffle clock_bias/phase_alignment: Real R²=0.959, Shuffled R²=0.081
+[19:47:12] [INFO] 
+Processing metric: pos_jitter...
+[19:48:10] [INFO]   Loaded 58.1M rows total.
+[19:48:10] [INFO]   Analyzing pos_jitter/msc...
+[19:48:10] [INFO]   Analyzing pos_jitter/phase_alignment...
+[19:48:10] [INFO]     Solar pos_jitter/msc: r=0.035
+[19:48:10] [INFO]     Lunar pos_jitter/msc: r=0.039
+[19:48:10] [INFO]     Shuffle pos_jitter/msc: Real R²=0.973, Shuffled R²=0.009
+[19:48:10] [INFO]     Solar pos_jitter/phase_alignment: r=0.038
+[19:48:10] [INFO]     Lunar pos_jitter/phase_alignment: r=0.086
+[19:48:10] [INFO]     Shuffle pos_jitter/phase_alignment: Real R²=0.956, Shuffled R²=0.050
+[19:48:10] [INFO] 
+Processing metric: clock_drift...
+[19:49:09] [INFO]   Loaded 58.1M rows total.
+[19:49:09] [INFO]   Analyzing clock_drift/msc...
+[19:49:09] [INFO]   Analyzing clock_drift/phase_alignment...
+[19:49:09] [INFO]     Solar clock_drift/msc: r=0.060
+[19:49:09] [INFO]     Lunar clock_drift/msc: r=0.036
+[19:49:09] [INFO]     Shuffle clock_drift/msc: Real R²=0.928, Shuffled R²=-0.000
+[19:49:09] [INFO]     Solar clock_drift/phase_alignment: r=0.072
+[19:49:09] [INFO]     Lunar clock_drift/phase_alignment: r=0.029
+[19:49:09] [INFO]     Shuffle clock_drift/phase_alignment: Real R²=0.968, Shuffled R²=0.216
+[19:49:09] [INFO] 
+  MODE: PRECISE
+[19:49:09] [INFO] 
+Processing metric: clock_bias...
+[19:50:09] [INFO]   Loaded 58.7M rows total.
+[19:50:09] [INFO]   Analyzing clock_bias/msc...
+[19:50:10] [INFO]   Analyzing clock_bias/phase_alignment...
+[19:50:10] [INFO]     Solar clock_bias/msc: r=0.036
+[19:50:10] [INFO]     Lunar clock_bias/msc: r=0.042
+[19:50:10] [INFO]     Shuffle clock_bias/msc: Real R²=0.973, Shuffled R²=0.005
+[19:50:10] [INFO]     Solar clock_bias/phase_alignment: r=0.060
+[19:50:10] [INFO]     Lunar clock_bias/phase_alignment: r=0.025
+[19:50:10] [INFO]     Shuffle clock_bias/phase_alignment: Real R²=0.699, Shuffled R²=0.023
+[19:50:10] [INFO] 
+Processing metric: pos_jitter...
+[19:51:13] [INFO]   Loaded 58.7M rows total.
+[19:51:13] [INFO]   Analyzing pos_jitter/msc...
+[19:51:13] [INFO]   Analyzing pos_jitter/phase_alignment...
+[19:51:13] [INFO]     Solar pos_jitter/msc: r=0.036
+[19:51:13] [INFO]     Lunar pos_jitter/msc: r=0.045
+[19:51:13] [INFO]     Shuffle pos_jitter/msc: Real R²=0.923, Shuffled R²=0.131
+[19:51:13] [INFO]     Solar pos_jitter/phase_alignment: r=0.024
+[19:51:13] [INFO]     Lunar pos_jitter/phase_alignment: r=0.021
+[19:51:13] [INFO]     Shuffle pos_jitter/phase_alignment: Real R²=0.964, Shuffled R²=0.064
+[19:51:13] [INFO] 
+Processing metric: clock_drift...
+[19:52:17] [INFO]   Loaded 58.7M rows total.
+[19:52:17] [INFO]   Analyzing clock_drift/msc...
+[19:52:18] [INFO]   Analyzing clock_drift/phase_alignment...
+[19:52:18] [INFO]     Solar clock_drift/msc: r=0.037
+[19:52:18] [INFO]     Lunar clock_drift/msc: r=0.040
+[19:52:18] [INFO]     Shuffle clock_drift/msc: Real R²=0.971, Shuffled R²=0.018
+[19:52:18] [INFO]     Solar clock_drift/phase_alignment: r=0.071
+[19:52:18] [INFO]     Lunar clock_drift/phase_alignment: r=0.028
+[19:52:18] [INFO]     Shuffle clock_drift/phase_alignment: Real R²=0.854, Shuffled R²=0.049
+[19:52:18] [SUCCESS]   Saved: step_2_4_null_tests_all_stations.json
+[19:52:18] [INFO] 
+################################################################################
+[19:52:18] [INFO] # FILTER: OPTIMAL_100
+[19:52:18] [INFO] ################################################################################
+[19:52:18] [INFO]   Using 100 stations
+[19:52:18] [INFO] 
+  MODE: BASELINE
+[19:52:18] [INFO] 
+Processing metric: clock_bias...
+[19:52:20] [INFO]   Loaded 2.4M rows total.
+[19:52:20] [INFO]   Analyzing clock_bias/msc...
+[19:52:20] [INFO]   Analyzing clock_bias/phase_alignment...
+[19:52:20] [INFO]     Solar clock_bias/msc: r=0.027
+[19:52:20] [INFO]     Lunar clock_bias/msc: r=0.039
+[19:52:20] [INFO]     Shuffle clock_bias/msc: Real R²=0.973, Shuffled R²=0.076
+[19:52:20] [INFO]     Solar clock_bias/phase_alignment: r=0.035
+[19:52:20] [INFO]     Lunar clock_bias/phase_alignment: r=0.086
+[19:52:20] [INFO]     Shuffle clock_bias/phase_alignment: Real R²=0.938, Shuffled R²=-0.000
+[19:52:20] [INFO] 
+Processing metric: pos_jitter...
+[19:52:23] [INFO]   Loaded 2.4M rows total.
+[19:52:23] [INFO]   Analyzing pos_jitter/msc...
+[19:52:23] [INFO]   Analyzing pos_jitter/phase_alignment...
+[19:52:23] [INFO]     Solar pos_jitter/msc: r=0.022
+[19:52:23] [INFO]     Lunar pos_jitter/msc: r=0.104
+[19:52:23] [INFO]     Shuffle pos_jitter/msc: Real R²=0.989, Shuffled R²=0.156
+[19:52:23] [INFO]     Solar pos_jitter/phase_alignment: r=0.056
+[19:52:23] [INFO]     Lunar pos_jitter/phase_alignment: r=0.063
+[19:52:23] [INFO]     Shuffle pos_jitter/phase_alignment: Real R²=0.986, Shuffled R²=-0.000
+[19:52:23] [INFO] 
+Processing metric: clock_drift...
+[19:52:25] [INFO]   Loaded 2.4M rows total.
+[19:52:25] [INFO]   Analyzing clock_drift/msc...
+[19:52:25] [INFO]   Analyzing clock_drift/phase_alignment...
+[19:52:25] [INFO]     Solar clock_drift/msc: r=0.029
+[19:52:25] [INFO]     Lunar clock_drift/msc: r=0.039
+[19:52:25] [INFO]     Shuffle clock_drift/msc: Real R²=0.976, Shuffled R²=0.017
+[19:52:25] [INFO]     Solar clock_drift/phase_alignment: r=0.047
+[19:52:25] [INFO]     Lunar clock_drift/phase_alignment: r=0.049
+[19:52:25] [INFO]     Shuffle clock_drift/phase_alignment: Real R²=0.949, Shuffled R²=0.000
+[19:52:25] [INFO] 
+  MODE: IONOFREE
+[19:52:25] [INFO] 
+Processing metric: clock_bias...
+[19:52:28] [INFO]   Loaded 2.4M rows total.
+[19:52:28] [INFO]   Analyzing clock_bias/msc...
+[19:52:28] [INFO]   Analyzing clock_bias/phase_alignment...
+[19:52:28] [INFO]     Solar clock_bias/msc: r=0.040
+[19:52:28] [INFO]     Lunar clock_bias/msc: r=0.039
+[19:52:28] [INFO]     Shuffle clock_bias/msc: Real R²=0.975, Shuffled R²=0.017
+[19:52:28] [INFO]     Solar clock_bias/phase_alignment: r=0.065
+[19:52:28] [INFO]     Lunar clock_bias/phase_alignment: r=0.031
+[19:52:28] [INFO]     Shuffle clock_bias/phase_alignment: Real R²=0.836, Shuffled R²=0.024
+[19:52:28] [INFO] 
+Processing metric: pos_jitter...
+[19:52:31] [INFO]   Loaded 2.4M rows total.
+[19:52:31] [INFO]   Analyzing pos_jitter/msc...
+[19:52:31] [INFO]   Analyzing pos_jitter/phase_alignment...
+[19:52:31] [INFO]     Solar pos_jitter/msc: r=0.041
+[19:52:31] [INFO]     Lunar pos_jitter/msc: r=0.065
+[19:52:31] [INFO]     Shuffle pos_jitter/msc: Real R²=0.950, Shuffled R²=0.012
+[19:52:31] [INFO]     Solar pos_jitter/phase_alignment: r=0.023
+[19:52:31] [INFO]     Lunar pos_jitter/phase_alignment: r=0.025
+[19:52:31] [INFO]     Shuffle pos_jitter/phase_alignment: Real R²=0.958, Shuffled R²=0.006
+[19:52:31] [INFO] 
+Processing metric: clock_drift...
+[19:52:33] [INFO]   Loaded 2.4M rows total.
+[19:52:33] [INFO]   Analyzing clock_drift/msc...
+[19:52:34] [INFO]   Analyzing clock_drift/phase_alignment...
+[19:52:34] [INFO]     Solar clock_drift/msc: r=0.035
+[19:52:34] [INFO]     Lunar clock_drift/msc: r=0.038
+[19:52:34] [INFO]     Shuffle clock_drift/msc: Real R²=0.975, Shuffled R²=0.056
+[19:52:34] [INFO]     Solar clock_drift/phase_alignment: r=0.035
+[19:52:34] [INFO]     Lunar clock_drift/phase_alignment: r=0.036
+[19:52:34] [INFO]     Shuffle clock_drift/phase_alignment: Real R²=0.918, Shuffled R²=0.001
+[19:52:34] [INFO] 
+  MODE: MULTI_GNSS
+[19:52:34] [INFO] 
+Processing metric: clock_bias...
+[19:52:36] [INFO]   Loaded 2.3M rows total.
+[19:52:36] [INFO]   Analyzing clock_bias/msc...
+[19:52:36] [INFO]   Analyzing clock_bias/phase_alignment...
+[19:52:36] [INFO]     Solar clock_bias/msc: r=0.038
+[19:52:36] [INFO]     Lunar clock_bias/msc: r=0.059
+[19:52:36] [INFO]     Shuffle clock_bias/msc: Real R²=0.947, Shuffled R²=-0.000
+[19:52:36] [INFO]     Solar clock_bias/phase_alignment: r=0.050
+[19:52:36] [INFO]     Lunar clock_bias/phase_alignment: r=0.065
+[19:52:36] [INFO]     Shuffle clock_bias/phase_alignment: Real R²=0.968, Shuffled R²=0.038
+[19:52:36] [INFO] 
+Processing metric: pos_jitter...
+[19:52:39] [INFO]   Loaded 2.3M rows total.
+[19:52:39] [INFO]   Analyzing pos_jitter/msc...
+[19:52:39] [INFO]   Analyzing pos_jitter/phase_alignment...
+[19:52:39] [INFO]     Solar pos_jitter/msc: r=0.044
+[19:52:39] [INFO]     Lunar pos_jitter/msc: r=0.050
+[19:52:39] [INFO]     Shuffle pos_jitter/msc: Real R²=0.973, Shuffled R²=0.036
+[19:52:39] [INFO]     Solar pos_jitter/phase_alignment: r=0.028
+[19:52:39] [INFO]     Lunar pos_jitter/phase_alignment: r=0.036
+[19:52:39] [INFO]     Shuffle pos_jitter/phase_alignment: Real R²=0.985, Shuffled R²=0.044
+[19:52:39] [INFO] 
+Processing metric: clock_drift...
+[19:52:41] [INFO]   Loaded 2.3M rows total.
+[19:52:41] [INFO]   Analyzing clock_drift/msc...
+[19:52:41] [INFO]   Analyzing clock_drift/phase_alignment...
+[19:52:41] [INFO]     Solar clock_drift/msc: r=0.047
+[19:52:41] [INFO]     Lunar clock_drift/msc: r=0.064
+[19:52:41] [INFO]     Shuffle clock_drift/msc: Real R²=0.949, Shuffled R²=-0.000
+[19:52:41] [INFO]     Solar clock_drift/phase_alignment: r=0.017
+[19:52:41] [INFO]     Lunar clock_drift/phase_alignment: r=0.024
+[19:52:41] [INFO]     Shuffle clock_drift/phase_alignment: Real R²=0.971, Shuffled R²=0.003
+[19:52:41] [INFO] 
+  MODE: PRECISE
+[19:52:41] [INFO] 
+Processing metric: clock_bias...
+[19:52:44] [INFO]   Loaded 2.4M rows total.
+[19:52:44] [INFO]   Analyzing clock_bias/msc...
+[19:52:44] [INFO]   Analyzing clock_bias/phase_alignment...
+[19:52:44] [INFO]     Solar clock_bias/msc: r=0.020
+[19:52:44] [INFO]     Lunar clock_bias/msc: r=0.038
+[19:52:44] [INFO]     Shuffle clock_bias/msc: Real R²=0.970, Shuffled R²=-0.000
+[19:52:44] [INFO]     Solar clock_bias/phase_alignment: r=0.005
+[19:52:44] [INFO]     Lunar clock_bias/phase_alignment: r=0.031
+[19:52:44] [INFO]     Shuffle clock_bias/phase_alignment: Real R²=0.755, Shuffled R²=0.018
+[19:52:44] [INFO] 
+Processing metric: pos_jitter...
+[19:52:46] [INFO]   Loaded 2.4M rows total.
+[19:52:46] [INFO]   Analyzing pos_jitter/msc...
+[19:52:46] [INFO]   Analyzing pos_jitter/phase_alignment...
+[19:52:46] [INFO]     Solar pos_jitter/msc: r=0.017
+[19:52:46] [INFO]     Lunar pos_jitter/msc: r=0.047
+[19:52:46] [INFO]     Shuffle pos_jitter/msc: Real R²=0.932, Shuffled R²=0.172
+[19:52:46] [INFO]     Solar pos_jitter/phase_alignment: r=0.043
+[19:52:46] [INFO]     Lunar pos_jitter/phase_alignment: r=0.031
+[19:52:46] [INFO]     Shuffle pos_jitter/phase_alignment: Real R²=0.935, Shuffled R²=0.027
+[19:52:46] [INFO] 
+Processing metric: clock_drift...
+[19:52:49] [INFO]   Loaded 2.4M rows total.
+[19:52:49] [INFO]   Analyzing clock_drift/msc...
+[19:52:49] [INFO]   Analyzing clock_drift/phase_alignment...
+[19:52:49] [INFO]     Solar clock_drift/msc: r=0.020
+[19:52:49] [INFO]     Lunar clock_drift/msc: r=0.045
+[19:52:49] [INFO]     Shuffle clock_drift/msc: Real R²=0.971, Shuffled R²=-0.000
+[19:52:49] [INFO]     Solar clock_drift/phase_alignment: r=0.044
+[19:52:49] [INFO]     Lunar clock_drift/phase_alignment: r=0.037
+[19:52:49] [INFO]     Shuffle clock_drift/phase_alignment: Real R²=0.864, Shuffled R²=0.000
+[19:52:49] [SUCCESS]   Saved: step_2_4_null_tests_optimal_100.json
+[19:52:49] [INFO] 
+################################################################################
+[19:52:49] [INFO] # FILTER: DYNAMIC_50
+[19:52:49] [INFO] ################################################################################
+[19:52:49] [INFO]   Using 400 stations
+[19:52:49] [INFO] 
+  MODE: BASELINE
+[19:52:49] [INFO] 
+Processing metric: clock_bias...
+[19:53:28] [INFO]   Loaded 36.7M rows total.
+[19:53:28] [INFO]   Analyzing clock_bias/msc...
+[19:53:28] [INFO]   Analyzing clock_bias/phase_alignment...
+[19:53:28] [INFO]     Solar clock_bias/msc: r=0.032
+[19:53:28] [INFO]     Lunar clock_bias/msc: r=0.040
+[19:53:28] [INFO]     Shuffle clock_bias/msc: Real R²=0.969, Shuffled R²=0.351
+[19:53:28] [INFO]     Solar clock_bias/phase_alignment: r=0.048
+[19:53:28] [INFO]     Lunar clock_bias/phase_alignment: r=0.051
+[19:53:28] [INFO]     Shuffle clock_bias/phase_alignment: Real R²=0.901, Shuffled R²=0.103
+[19:53:28] [INFO] 
+Processing metric: pos_jitter...
+[19:54:04] [INFO]   Loaded 36.7M rows total.
+[19:54:04] [INFO]   Analyzing pos_jitter/msc...
+[19:54:05] [INFO]   Analyzing pos_jitter/phase_alignment...
+[19:54:05] [INFO]     Solar pos_jitter/msc: r=0.017
+[19:54:05] [INFO]     Lunar pos_jitter/msc: r=0.072
+[19:54:05] [INFO]     Shuffle pos_jitter/msc: Real R²=0.980, Shuffled R²=0.043
+[19:54:05] [INFO]     Solar pos_jitter/phase_alignment: r=0.084
+[19:54:05] [INFO]     Lunar pos_jitter/phase_alignment: r=0.090
+[19:54:05] [INFO]     Shuffle pos_jitter/phase_alignment: Real R²=0.965, Shuffled R²=0.290
+[19:54:05] [INFO] 
+Processing metric: clock_drift...
+[19:54:42] [INFO]   Loaded 36.7M rows total.
+[19:54:42] [INFO]   Analyzing clock_drift/msc...
+[19:54:42] [INFO]   Analyzing clock_drift/phase_alignment...
+[19:54:42] [INFO]     Solar clock_drift/msc: r=0.025
+[19:54:42] [INFO]     Lunar clock_drift/msc: r=0.049
+[19:54:42] [INFO]     Shuffle clock_drift/msc: Real R²=0.969, Shuffled R²=0.193
+[19:54:42] [INFO]     Solar clock_drift/phase_alignment: r=0.018
+[19:54:42] [INFO]     Lunar clock_drift/phase_alignment: r=0.057
+[19:54:42] [INFO]     Shuffle clock_drift/phase_alignment: Real R²=0.942, Shuffled R²=0.092
+[19:54:42] [INFO] 
+  MODE: IONOFREE
+[19:54:42] [INFO] 
+Processing metric: clock_bias...
+[19:55:20] [INFO]   Loaded 35.5M rows total.
+[19:55:20] [INFO]   Analyzing clock_bias/msc...
+[19:55:20] [INFO]   Analyzing clock_bias/phase_alignment...
+[19:55:20] [INFO]     Solar clock_bias/msc: r=0.046
+[19:55:20] [INFO]     Lunar clock_bias/msc: r=0.034
+[19:55:20] [INFO]     Shuffle clock_bias/msc: Real R²=0.977, Shuffled R²=-0.000
+[19:55:20] [INFO]     Solar clock_bias/phase_alignment: r=0.042
+[19:55:20] [INFO]     Lunar clock_bias/phase_alignment: r=0.033
+[19:55:20] [INFO]     Shuffle clock_bias/phase_alignment: Real R²=0.786, Shuffled R²=0.285
+[19:55:20] [INFO] 
+Processing metric: pos_jitter...
+[19:55:57] [INFO]   Loaded 35.5M rows total.
+[19:55:57] [INFO]   Analyzing pos_jitter/msc...
+[19:55:58] [INFO]   Analyzing pos_jitter/phase_alignment...
+[19:55:58] [INFO]     Solar pos_jitter/msc: r=0.022
+[19:55:58] [INFO]     Lunar pos_jitter/msc: r=0.065
+[19:55:58] [INFO]     Shuffle pos_jitter/msc: Real R²=0.948, Shuffled R²=0.274
+[19:55:58] [INFO]     Solar pos_jitter/phase_alignment: r=0.039
+[19:55:58] [INFO]     Lunar pos_jitter/phase_alignment: r=0.044
+[19:55:58] [INFO]     Shuffle pos_jitter/phase_alignment: Real R²=0.950, Shuffled R²=0.420
+[19:55:58] [INFO] 
+Processing metric: clock_drift...
+[19:56:42] [INFO]   Loaded 35.5M rows total.
+[19:56:42] [INFO]   Analyzing clock_drift/msc...
+[19:56:42] [INFO]   Analyzing clock_drift/phase_alignment...
+[19:56:42] [INFO]     Solar clock_drift/msc: r=0.044
+[19:56:42] [INFO]     Lunar clock_drift/msc: r=0.038
+[19:56:42] [INFO]     Shuffle clock_drift/msc: Real R²=0.975, Shuffled R²=0.064
+[19:56:42] [INFO]     Solar clock_drift/phase_alignment: r=0.037
+[19:56:42] [INFO]     Lunar clock_drift/phase_alignment: r=0.039
+[19:56:42] [INFO]     Shuffle clock_drift/phase_alignment: Real R²=0.900, Shuffled R²=0.047
+[19:56:42] [INFO] 
+  MODE: MULTI_GNSS
+[19:56:42] [INFO] 
+Processing metric: clock_bias...
+[19:57:19] [INFO]   Loaded 34.7M rows total.
+[19:57:19] [INFO]   Analyzing clock_bias/msc...
+[19:57:19] [INFO]   Analyzing clock_bias/phase_alignment...
+[19:57:19] [INFO]     Solar clock_bias/msc: r=0.054
+[19:57:19] [INFO]     Lunar clock_bias/msc: r=0.061
+[19:57:19] [INFO]     Shuffle clock_bias/msc: Real R²=0.950, Shuffled R²=0.266
+[19:57:19] [INFO]     Solar clock_bias/phase_alignment: r=0.034
+[19:57:19] [INFO]     Lunar clock_bias/phase_alignment: r=0.041
+[19:57:19] [INFO]     Shuffle clock_bias/phase_alignment: Real R²=0.967, Shuffled R²=0.143
+[19:57:19] [INFO] 
+Processing metric: pos_jitter...
+[19:57:57] [INFO]   Loaded 34.7M rows total.
+[19:57:57] [INFO]   Analyzing pos_jitter/msc...
+[19:57:57] [INFO]   Analyzing pos_jitter/phase_alignment...
+[19:57:57] [INFO]     Solar pos_jitter/msc: r=0.037
+[19:57:57] [INFO]     Lunar pos_jitter/msc: r=0.062
+[19:57:57] [INFO]     Shuffle pos_jitter/msc: Real R²=0.976, Shuffled R²=0.257
+[19:57:57] [INFO]     Solar pos_jitter/phase_alignment: r=0.061
+[19:57:57] [INFO]     Lunar pos_jitter/phase_alignment: r=0.093
+[19:57:57] [INFO]     Shuffle pos_jitter/phase_alignment: Real R²=0.957, Shuffled R²=0.109
+[19:57:57] [INFO] 
+Processing metric: clock_drift...
+[19:58:33] [INFO]   Loaded 34.5M rows total.
+[19:58:33] [INFO]   Analyzing clock_drift/msc...
+[19:58:34] [INFO]   Analyzing clock_drift/phase_alignment...
+[19:58:34] [INFO]     Solar clock_drift/msc: r=0.059
+[19:58:34] [INFO]     Lunar clock_drift/msc: r=0.064
+[19:58:34] [INFO]     Shuffle clock_drift/msc: Real R²=0.950, Shuffled R²=0.218
+[19:58:34] [INFO]     Solar clock_drift/phase_alignment: r=0.071
+[19:58:34] [INFO]     Lunar clock_drift/phase_alignment: r=0.060
+[19:58:34] [INFO]     Shuffle clock_drift/phase_alignment: Real R²=0.966, Shuffled R²=0.178
+[19:58:34] [INFO] 
+  MODE: PRECISE
+[19:58:34] [INFO] 
+Processing metric: clock_bias...
+[19:59:11] [INFO]   Loaded 35.1M rows total.
+[19:59:11] [INFO]   Analyzing clock_bias/msc...
+[19:59:11] [INFO]   Analyzing clock_bias/phase_alignment...
+[19:59:11] [INFO]     Solar clock_bias/msc: r=0.034
+[19:59:11] [INFO]     Lunar clock_bias/msc: r=0.050
+[19:59:11] [INFO]     Shuffle clock_bias/msc: Real R²=0.978, Shuffled R²=0.392
+[19:59:11] [INFO]     Solar clock_bias/phase_alignment: r=0.057
+[19:59:11] [INFO]     Lunar clock_bias/phase_alignment: r=0.030
+[19:59:11] [INFO]     Shuffle clock_bias/phase_alignment: Real R²=0.707, Shuffled R²=0.325
+[19:59:11] [INFO] 
+Processing metric: pos_jitter...
+[19:59:49] [INFO]   Loaded 35.1M rows total.
+[19:59:49] [INFO]   Analyzing pos_jitter/msc...
+[19:59:49] [INFO]   Analyzing pos_jitter/phase_alignment...
+[19:59:49] [INFO]     Solar pos_jitter/msc: r=0.040
+[19:59:49] [INFO]     Lunar pos_jitter/msc: r=0.050
+[19:59:49] [INFO]     Shuffle pos_jitter/msc: Real R²=0.927, Shuffled R²=0.399
+[19:59:49] [INFO]     Solar pos_jitter/phase_alignment: r=0.021
+[19:59:49] [INFO]     Lunar pos_jitter/phase_alignment: r=0.034
+[19:59:49] [INFO]     Shuffle pos_jitter/phase_alignment: Real R²=0.957, Shuffled R²=0.506
+[19:59:49] [INFO] 
+Processing metric: clock_drift...
+[20:00:28] [INFO]   Loaded 35.1M rows total.
+[20:00:28] [INFO]   Analyzing clock_drift/msc...
+[20:00:28] [INFO]   Analyzing clock_drift/phase_alignment...
+[20:00:28] [INFO]     Solar clock_drift/msc: r=0.037
+[20:00:28] [INFO]     Lunar clock_drift/msc: r=0.054
+[20:00:28] [INFO]     Shuffle clock_drift/msc: Real R²=0.975, Shuffled R²=0.394
+[20:00:28] [INFO]     Solar clock_drift/phase_alignment: r=0.049
+[20:00:28] [INFO]     Lunar clock_drift/phase_alignment: r=0.036
+[20:00:28] [INFO]     Shuffle clock_drift/phase_alignment: Real R²=0.860, Shuffled R²=0.127
+[20:00:28] [SUCCESS]   Saved: step_2_4_null_tests_dynamic_50.json
+[20:00:28] [SUCCESS] COMPLETE: 3 filters x 4 modes

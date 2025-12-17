@@ -65,7 +65,7 @@ STATION_FILTERS = [
 
 GOOD_STATIONS_SET = None
 
-# ALL THREE PROCESSING MODES
+# ALL FOUR PROCESSING MODES
 PROCESSING_MODES = {
     'baseline': {
         'csv_file': 'step_2_0_pairs_baseline.csv',
@@ -78,6 +78,10 @@ PROCESSING_MODES = {
     'multi_gnss': {
         'csv_file': 'step_2_0_pairs_multi_gnss.csv',
         'description': 'GPS+GLO+GAL+BDS'
+    },
+    'precise': {
+        'csv_file': 'step_2_0_pairs_precise.csv',
+        'description': 'IGS precise orbits/clocks (SP3)'
     }
 }
 
@@ -127,6 +131,68 @@ def fit_exponential(distances, coherences):
     except:
         return None
 
+def fit_exponential_binned(bin_centers, bin_means, bin_counts):
+    if len(bin_centers) < 5:
+        return None
+    try:
+        popt, pcov = curve_fit(
+            exp_decay,
+            bin_centers,
+            bin_means,
+            p0=[0.5, 2000, 0],
+            sigma=1.0 / np.sqrt(bin_counts),
+            bounds=([0, 100, -1], [2, 20000, 1]),
+            maxfev=10000,
+        )
+
+        weights = bin_counts.astype(float)
+        predicted = exp_decay(bin_centers, *popt)
+        weighted_mean = np.average(bin_means, weights=weights)
+        ss_res = np.sum(weights * (bin_means - predicted) ** 2)
+        ss_tot = np.sum(weights * (bin_means - weighted_mean) ** 2)
+        r2 = 1 - ss_res / ss_tot if ss_tot > 0 else 0
+
+        return {
+            'lambda_km': float(popt[1]),
+            'r_squared': float(r2),
+            'n_pairs': int(np.sum(bin_counts)),
+            'n_bins': int(len(bin_centers)),
+        }
+    except Exception:
+        return None
+
+def _init_bin_accumulators():
+    return {
+        'bin_counts': np.zeros(N_BINS, dtype=np.int64),
+        'bin_sums': np.zeros(N_BINS, dtype=np.float64),
+    }
+
+def _accumulate_binned(distances, values, bin_edges, bin_counts, bin_sums):
+    if distances.size == 0:
+        return
+    idx = np.searchsorted(bin_edges, distances, side='right') - 1
+    valid = (idx >= 0) & (idx < N_BINS) & np.isfinite(values)
+    if not np.any(valid):
+        return
+    idx = idx[valid]
+    vals = values[valid]
+    bin_counts += np.bincount(idx, minlength=N_BINS)
+    bin_sums += np.bincount(idx, weights=vals, minlength=N_BINS)
+
+def _accumulate_daily_means(years, doys, values, daily_sum, daily_count):
+    valid = np.isfinite(values)
+    if not np.any(valid):
+        return
+    keys = years[valid].astype(np.int64) * 1000 + doys[valid].astype(np.int64)
+    vals = values[valid].astype(float)
+
+    uniq, inv = np.unique(keys, return_inverse=True)
+    sums = np.bincount(inv, weights=vals)
+    counts = np.bincount(inv)
+    for k, s, c in zip(uniq.tolist(), sums.tolist(), counts.tolist()):
+        daily_sum[k] = daily_sum.get(k, 0.0) + float(s)
+        daily_count[k] = daily_count.get(k, 0) + int(c)
+
 def compute_cycle_phase_correlation(doys, coherences, period):
     phases = (doys % period) / period * 2 * np.pi
     sin_corr = np.corrcoef(coherences, np.sin(phases))[0, 1]
@@ -150,112 +216,151 @@ def load_station_filter(filter_config):
     GOOD_STATIONS_SET = None
     return None, {'type': 'all'}
 
-
 def process_metric(csv_file, target_metric):
     """Process a single metric to save memory."""
     print_status(f"\nProcessing metric: {target_metric}...")
-    
-    # Data storage for this metric
-    all_data = {c: {'dist': [], 'coh': []} for c in COHERENCE_TYPES}
-    daily_coherence = {c: {} for c in COHERENCE_TYPES}
-    
-    chunk_size = 10_000_000  # Larger chunks for high-RAM systems
+
+    bin_edges = np.logspace(np.log10(MIN_DISTANCE_KM), np.log10(MAX_DISTANCE_KM), N_BINS + 1)
+    bin_centers_full = (bin_edges[:-1] + bin_edges[1:]) / 2
+    rng = np.random.default_rng(42)
+
+    accum_real = {c: _init_bin_accumulators() for c in COHERENCE_TYPES}
+    accum_shuf = {c: _init_bin_accumulators() for c in COHERENCE_TYPES}
+    daily_sum = {c: {} for c in COHERENCE_TYPES}
+    daily_count = {c: {} for c in COHERENCE_TYPES}
+
+    chunk_size = 5_000_000
+    usecols_with_phase = ['metric', 'year', 'doy', 'distance_km', 'coherence', 'phase_alignment']
+    usecols_no_phase = ['metric', 'year', 'doy', 'distance_km', 'coherence']
+    try:
+        reader = pd.read_csv(csv_file, chunksize=chunk_size, usecols=usecols_with_phase)
+        phase_available = True
+    except ValueError:
+        reader = pd.read_csv(csv_file, chunksize=chunk_size, usecols=usecols_no_phase)
+        phase_available = False
+
     total_rows = 0
-    
-    for chunk in pd.read_csv(csv_file, chunksize=chunk_size):
-        # Apply station filter if set
-        if GOOD_STATIONS_SET:
-            chunk = chunk[chunk['station1'].isin(GOOD_STATIONS_SET) & chunk['station2'].isin(GOOD_STATIONS_SET)]
-        if 'metric' in chunk.columns:
-            # Handle prefixed metric names (ionofree_*, multi_gnss_*)
-            mc = chunk[chunk['metric'].str.endswith(target_metric)]
-        else:
-            continue # Should not happen if CSV is correct
-            
+    for chunk in reader:
+        if 'metric' not in chunk.columns:
+            continue
+
+        mc = chunk[chunk['metric'].str.endswith(target_metric)]
         if mc.empty:
             continue
-            
-        has_phase = 'phase_alignment' in mc.columns
-        dist = mc['distance_km'].values
-        msc = mc['coherence'].values
-        years = mc['year'].values
-        doys = mc['doy'].values
-        phase = mc['phase_alignment'].values if has_phase else None
-        
-        # MSC
-        valid = ~np.isnan(msc)
-        if np.any(valid):
-            all_data['msc']['dist'].extend(dist[valid].tolist())
-            all_data['msc']['coh'].extend(msc[valid].tolist())
-            # Daily accumulation
-            valid_idx = np.where(valid)[0]
-            for i in valid_idx:
-                key = f"{years[i]}_{doys[i]}"
-                if key not in daily_coherence['msc']: daily_coherence['msc'][key] = []
-                daily_coherence['msc'][key].append(msc[i])
-        
-        # Phase
-        if phase is not None:
-            valid = ~np.isnan(phase)
-            if np.any(valid):
-                all_data['phase_alignment']['dist'].extend(dist[valid].tolist())
-                all_data['phase_alignment']['coh'].extend(phase[valid].tolist())
-                # Daily accumulation
-                valid_idx = np.where(valid)[0]
-                for i in valid_idx:
-                    key = f"{years[i]}_{doys[i]}"
-                    if key not in daily_coherence['phase_alignment']: daily_coherence['phase_alignment'][key] = []
-                    daily_coherence['phase_alignment'][key].append(phase[i])
-        
+
+        dist = mc['distance_km'].to_numpy()
+        years = mc['year'].to_numpy()
+        doys = mc['doy'].to_numpy()
+
+        msc = mc['coherence'].to_numpy()
+        _accumulate_daily_means(years, doys, msc, daily_sum['msc'], daily_count['msc'])
+        _accumulate_binned(
+            dist,
+            msc,
+            bin_edges,
+            accum_real['msc']['bin_counts'],
+            accum_real['msc']['bin_sums'],
+        )
+        msc_valid = np.isfinite(msc)
+        if np.any(msc_valid):
+            msc_shuf = msc[msc_valid].astype(float).copy()
+            rng.shuffle(msc_shuf)
+            _accumulate_binned(
+                dist[msc_valid],
+                msc_shuf,
+                bin_edges,
+                accum_shuf['msc']['bin_counts'],
+                accum_shuf['msc']['bin_sums'],
+            )
+
+        if phase_available and 'phase_alignment' in mc.columns:
+            phase = mc['phase_alignment'].to_numpy()
+            _accumulate_daily_means(
+                years,
+                doys,
+                phase,
+                daily_sum['phase_alignment'],
+                daily_count['phase_alignment'],
+            )
+            _accumulate_binned(
+                dist,
+                phase,
+                bin_edges,
+                accum_real['phase_alignment']['bin_counts'],
+                accum_real['phase_alignment']['bin_sums'],
+            )
+            phase_valid = np.isfinite(phase)
+            if np.any(phase_valid):
+                phase_shuf = phase[phase_valid].astype(float).copy()
+                rng.shuffle(phase_shuf)
+                _accumulate_binned(
+                    dist[phase_valid],
+                    phase_shuf,
+                    bin_edges,
+                    accum_shuf['phase_alignment']['bin_counts'],
+                    accum_shuf['phase_alignment']['bin_sums'],
+                )
+
         total_rows += len(mc)
-        # print(f"  Loaded {total_rows/1e6:.1f}M rows...", end='\r')
-    
+
     print_status(f"  Loaded {total_rows/1e6:.1f}M rows total.")
     
     results = {'solar': {}, 'lunar': {}, 'shuffle': {}}
-    
     for coh_type in COHERENCE_TYPES:
         mode = f"{target_metric}/{coh_type}"
         print_status(f"  Analyzing {mode}...")
-        
+
         # 1. Daily Means for Cycles
-        d_means = {}
-        for k, v in daily_coherence[coh_type].items():
-            d_means[k] = np.mean(v)
-            
-        doys = [int(k.split('_')[1]) for k in d_means.keys()]
-        vals = list(d_means.values())
-        
-        if len(doys) > 30:
-            # Solar
-            r_solar = compute_cycle_phase_correlation(np.array(doys), np.array(vals), SOLAR_ROTATION_DAYS)
-            results['solar'][coh_type] = {'r': r_solar, 'status': "NULL ✓" if r_solar < 0.1 else "DETECTED ✗"}
-            
-            # Lunar
-            r_lunar = compute_cycle_phase_correlation(np.array(doys), np.array(vals), LUNAR_MONTH_DAYS)
-            results['lunar'][coh_type] = {'r': r_lunar, 'status': "NULL ✓" if r_lunar < 0.1 else "DETECTED ✗"}
-            
-        # 2. Shuffle Test
-        dist_arr = np.array(all_data[coh_type]['dist'])
-        coh_arr = np.array(all_data[coh_type]['coh'])
-        
-        if len(dist_arr) > 1000:
-            real_res = fit_exponential(dist_arr, coh_arr)
-            
-            # Shuffle
-            np.random.shuffle(coh_arr)
-            shuf_res = fit_exponential(dist_arr, coh_arr)
-            
-            if real_res and shuf_res:
-                status = "PASS ✓" if shuf_res['r_squared'] < 0.3 else "FAIL ✗"
-                results['shuffle'][coh_type] = {
-                    'real_r2': real_res['r_squared'],
-                    'shuffled_r2': shuf_res['r_squared'],
-                    'status': status
-                }
-                
-        # Clear memory
-        del dist_arr, coh_arr
+        d_keys = list(daily_sum[coh_type].keys())
+        if len(d_keys) > 30:
+            doys = np.array([int(k % 1000) for k in d_keys], dtype=float)
+            vals = np.array(
+                [daily_sum[coh_type][k] / max(daily_count[coh_type].get(k, 0), 1) for k in d_keys],
+                dtype=float,
+            )
+
+            r_solar = compute_cycle_phase_correlation(doys, vals, SOLAR_ROTATION_DAYS)
+            results['solar'][coh_type] = {
+                'r': float(r_solar),
+                'status': "NULL " if r_solar < 0.1 else "DETECTED ",
+            }
+
+            r_lunar = compute_cycle_phase_correlation(doys, vals, LUNAR_MONTH_DAYS)
+            results['lunar'][coh_type] = {
+                'r': float(r_lunar),
+                'status': "NULL " if r_lunar < 0.1 else "DETECTED ",
+            }
+
+        # 2. Shuffle Test (streaming binned)
+        real_counts = accum_real[coh_type]['bin_counts']
+        real_sums = accum_real[coh_type]['bin_sums']
+        shuf_counts = accum_shuf[coh_type]['bin_counts']
+        shuf_sums = accum_shuf[coh_type]['bin_sums']
+
+        real_valid = real_counts >= MIN_BIN_COUNT
+        shuf_valid = shuf_counts >= MIN_BIN_COUNT
+
+        real_res = None
+        shuf_res = None
+
+        if np.sum(real_valid) >= 5:
+            real_centers = bin_centers_full[real_valid]
+            real_means = (real_sums[real_valid] / real_counts[real_valid]).astype(float)
+            real_res = fit_exponential_binned(real_centers, real_means, real_counts[real_valid].astype(float))
+
+        if np.sum(shuf_valid) >= 5:
+            shuf_centers = bin_centers_full[shuf_valid]
+            shuf_means = (shuf_sums[shuf_valid] / shuf_counts[shuf_valid]).astype(float)
+            shuf_res = fit_exponential_binned(shuf_centers, shuf_means, shuf_counts[shuf_valid].astype(float))
+
+        if real_res and shuf_res:
+            status = "PASS " if shuf_res['r_squared'] < 0.3 else "FAIL "
+            results['shuffle'][coh_type] = {
+                'real_r2': float(real_res['r_squared']),
+                'shuffled_r2': float(shuf_res['r_squared']),
+                'status': status,
+            }
+
         gc.collect()
         
     return results
@@ -287,7 +392,6 @@ def run_null_tests(csv_file):
     
     return final_results
 
-
 def main():
     import argparse
     parser = argparse.ArgumentParser(description='TEP-GNSS-RINEX Step 2.4b: Null Tests')
@@ -296,7 +400,7 @@ def main():
     args = parser.parse_args()
     
     print_status('STEP 2.4b: Null Tests (COMPREHENSIVE)', level="TITLE")
-    print_status('Processing: 3 filters x 3 modes x 3 metrics x 2 coherence types')
+    print_status('Processing: 3 filters x 4 modes x 3 metrics x 2 coherence types')
     
     if args.filter == 'all':
         filters = STATION_FILTERS
@@ -319,7 +423,7 @@ def main():
         all_mode_results = {}
         
         for mode_name, mode_config in PROCESSING_MODES.items():
-            csv_file = RESULTS_DIR / mode_config['csv_file']
+            csv_file = RESULTS_DIR / f"step_2_0_pairs_{mode_name}_{filter_key}.csv"
             print_status(f"\n  MODE: {mode_name.upper()}")
             
             result = run_null_tests(csv_file)

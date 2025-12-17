@@ -62,15 +62,15 @@ COHERENCE_TYPES = ['msc', 'phase_alignment']
 # ============================================================================
 PROCESSING_MODES = {
     'baseline': {
-        'csv_file': 'step_2_0_pairs_baseline.csv',
         'description': 'SPP with Broadcast Ephemeris'
     },
+    'precise': {
+        'description': 'SPP with Precise Orbits'
+    },
     'ionofree': {
-        'csv_file': 'step_2_0_pairs_ionofree.csv',
         'description': 'Dual-Freq Iono-Free with Precise Orbits'
     },
     'multi_gnss': {
-        'csv_file': 'step_2_0_pairs_multi_gnss.csv',
         'description': 'Multi-GNSS (GPS+GLO+GAL+BDS)'
     }
 }
@@ -233,12 +233,24 @@ def load_station_filter(filter_config, coords_lla):
     return coords_lla, {'type': 'all', 'n_stations': len(coords_lla)}
 
 
+def _find_pairs_csv(processing_mode: str, filter_name: str) -> Path | None:
+    filter_suffix = filter_name.lower().replace(' ', '_')
+    candidates = [
+        RESULTS_DIR / f"step_2_0_pairs_{processing_mode}_{filter_suffix}.csv",
+        RESULTS_DIR / f"step_2_0_pairs_{processing_mode}.csv",
+    ]
+    for p in candidates:
+        if p.exists():
+            return p
+    return None
+
+
 def run_orbital_analysis(filter_name, filter_config, processing_mode, mode_config):
     """Run orbital coupling analysis for one filter + mode combination."""
     
-    csv_file = RESULTS_DIR / mode_config['csv_file']
-    if not csv_file.exists():
-        print_status(f"CSV not found: {csv_file}", "WARNING")
+    csv_file = _find_pairs_csv(processing_mode, filter_name)
+    if csv_file is None:
+        print_status(f"CSV not found for {processing_mode}/{filter_name}", "WARNING")
         return None
     
     print_status(f"\n{'='*60}", "INFO")
@@ -482,14 +494,14 @@ def main():
     parser.add_argument('--filter', type=str, default='all',
                         help='Filter: "all", "none", "optimal_100_metadata.json", or "dynamic_50_metadata.json"')
     parser.add_argument('--mode', type=str, default='all',
-                        help='Processing mode: "all", "baseline", "ionofree", "multi_gnss"')
+                        help='Processing mode: "all", "baseline", "precise", "ionofree", "multi_gnss"')
     args = parser.parse_args()
     
     print_status("", "INFO")
     print_status("=" * 80, "INFO")
     print_status("STEP 2.5: ORBITAL COUPLING - COMPREHENSIVE ANALYSIS", "TITLE")
     print_status("=" * 80, "INFO")
-    print_status("Analyzing: 3 filters × 3 modes × 3 metrics × 2 coherence types", "INFO")
+    print_status("Analyzing: 3 filters × 4 modes × 3 metrics × 2 coherence types", "INFO")
     print_status("=" * 80, "INFO")
     
     # Select filters

@@ -1,0 +1,5455 @@
+{
+  "step": "2.1b",
+  "name": "elevation_analysis",
+  "filter": "OPTIMAL_100",
+  "timestamp": "2025-12-16T18:38:52.734634",
+  "output_tag": "lat10_sr200",
+  "modes_processed": [
+    "precise",
+    "baseline",
+    "ionofree",
+    "multi_gnss"
+  ],
+  "results_by_mode": {
+    "precise": {
+      "clock_bias": {
+        "msc": {
+          "Q1": {
+            "amplitude": 0.19210591735128726,
+            "lambda_km": 772.2624740252222,
+            "lambda_err": 233.58392323878738,
+            "offset": 0.5556943733629353,
+            "r_squared": 0.9728317621219853,
+            "n_pairs": 13017,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13017,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 0.31245889702977336,
+            "lambda_km": 662.2470575300592,
+            "lambda_err": 156.46832505454546,
+            "offset": 0.555107451453033,
+            "r_squared": 0.9174439376505988,
+            "n_pairs": 19647,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 19647,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.13955259197481976,
+            "lambda_km": 911.6708762424627,
+            "lambda_err": 539.0913767767995,
+            "offset": 0.5603195354160491,
+            "r_squared": 0.5958898791787186,
+            "n_pairs": 24214,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24214,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.12201508398424671,
+            "lambda_km": 2452.3399539166953,
+            "lambda_err": 3833.4981805912203,
+            "offset": 0.5520646248456138,
+            "r_squared": 0.7505019301944407,
+            "n_pairs": 11647,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11647,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3937,
+            "short_range_mean": 0.6533318811277622
+          },
+          "Q5": {
+            "amplitude": 0.17639989151040428,
+            "lambda_km": 701.8292395026443,
+            "lambda_err": 123.53420462352007,
+            "offset": 0.5493866143007899,
+            "r_squared": 0.9007304402726517,
+            "n_pairs": 52976,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 52976,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1461,
+            "short_range_mean": 0.722635988364134
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.4200624492662648,
+            "intercept_km": 928.937114316519,
+            "r_value": 0.23143356729833392,
+            "p_value": 0.7079816769230328,
+            "stderr_slope": 1.0194667916499829
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.06216829289503213,
+            "intercept_km": 948.9357496572246,
+            "r_value": -0.05262325102386271,
+            "p_value": 0.9330289324131963,
+            "stderr_slope": 0.6811276021010217
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.004091226710270359,
+            "intercept_km": 708.2019288633833,
+            "r_value": -0.031237592787372682,
+            "p_value": 0.9602335308485925,
+            "stderr_slope": 0.07557938724789033
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -7.765401492531794e-05,
+            "intercept": 0.22014260449551093,
+            "r_value": -0.43615518582320734,
+            "p_value": 0.46281692102872063,
+            "stderr_slope": 9.250021188909425e-05
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": -7.393372708204686e-06,
+            "intercept": 0.5575265687246791,
+            "r_value": -0.7541434747637116,
+            "p_value": 0.14081655324757383,
+            "stderr_slope": 3.7170758283085118e-06
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        },
+        "phase_alignment": {
+          "Q1": {
+            "amplitude": 1.9999999999999998,
+            "lambda_km": 2298.6584108931943,
+            "lambda_err": 2866.861695571873,
+            "offset": -0.7008268057573268,
+            "r_squared": 0.9381971733861104,
+            "n_pairs": 13017,
+            "n_bins": 7,
+            "boundary_hit": true,
+            "n_samples": 13017,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 1.999999999999998,
+            "lambda_km": 2443.885095268272,
+            "lambda_err": 1767.5350429772748,
+            "offset": -0.7772043850506897,
+            "r_squared": 0.8889918083821827,
+            "n_pairs": 19647,
+            "n_bins": 13,
+            "boundary_hit": true,
+            "n_samples": 19647,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.5054152201889883,
+            "lambda_km": 1532.1773090123572,
+            "lambda_err": 703.7702704644419,
+            "offset": 0.5642029737564286,
+            "r_squared": 0.735760942013721,
+            "n_pairs": 24214,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24214,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.7055490810966601,
+            "lambda_km": 1629.8239344663964,
+            "lambda_err": 2791.4037731377507,
+            "offset": 0.37438969077935963,
+            "r_squared": 0.5473504856568643,
+            "n_pairs": 11647,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11647,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3937,
+            "short_range_mean": 0.9676630497840997
+          },
+          "Q5": {
+            "amplitude": 0.9236292601613316,
+            "lambda_km": 2844.331544938839,
+            "lambda_err": 1346.109258513574,
+            "offset": 0.14382582021338988,
+            "r_squared": 0.8137681402837404,
+            "n_pairs": 52976,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 52976,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1461,
+            "short_range_mean": 0.927770966461328
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.400949054538823,
+            "intercept_km": 1986.429221066396,
+            "r_value": 0.3019333023564949,
+            "p_value": 0.6214902391256175,
+            "stderr_slope": 0.7309040649060103
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.7877718190768276,
+            "intercept_km": 1882.7225349046744,
+            "r_value": 0.6287067098317185,
+            "p_value": 0.25592004250187406,
+            "stderr_slope": 0.5625637075797768
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 1.1202154689239867,
+            "intercept_km": 1454.5890409558012,
+            "r_value": 0.6725624792943242,
+            "p_value": 0.21352671125544223,
+            "stderr_slope": 0.7116454867277632
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -0.0010265988617744776,
+            "intercept": 1.645153534477619,
+            "r_value": -0.5976311786592513,
+            "p_value": 0.2871725151749805,
+            "stderr_slope": 0.0007951651328907517
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": 0.0008379369304028309,
+            "intercept": -0.42049677816174125,
+            "r_value": 0.5663024003970086,
+            "p_value": 0.3196077487945696,
+            "stderr_slope": 0.0007040988218756812
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        }
+      },
+      "pos_jitter": {
+        "msc": {
+          "Q1": {
+            "amplitude": 0.41757543028997507,
+            "lambda_km": 364.5764919757149,
+            "lambda_err": 173.44252980757153,
+            "offset": 0.5551667436803472,
+            "r_squared": 0.8931498961075841,
+            "n_pairs": 13017,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13017,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 0.26338800501277465,
+            "lambda_km": 550.6850845410523,
+            "lambda_err": 139.43718756670745,
+            "offset": 0.5550323109831269,
+            "r_squared": 0.906110767544495,
+            "n_pairs": 19647,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 19647,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.16702151630241774,
+            "lambda_km": 558.6007964118609,
+            "lambda_err": 270.1121325303496,
+            "offset": 0.5571587115542221,
+            "r_squared": 0.7191712086579758,
+            "n_pairs": 24214,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24214,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.0784212529104954,
+            "lambda_km": 4698.073436082448,
+            "lambda_err": 19244.702884482624,
+            "offset": 0.5468512191378536,
+            "r_squared": 0.5772861615076623,
+            "n_pairs": 11647,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11647,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3937,
+            "short_range_mean": 0.6081482819405639
+          },
+          "Q5": {
+            "amplitude": 0.14992888297322726,
+            "lambda_km": 796.8453658549703,
+            "lambda_err": 184.69551107037623,
+            "offset": 0.5438546423450777,
+            "r_squared": 0.8384155782659137,
+            "n_pairs": 52976,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 52976,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1461,
+            "short_range_mean": 0.7168898234086242
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 1.459606017979127,
+            "intercept_km": 799.1149528475081,
+            "r_value": 0.3305504569790245,
+            "p_value": 0.5869251745483667,
+            "stderr_slope": 2.4060899272083045
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.3589572745922541,
+            "intercept_km": 827.3986338704169,
+            "r_value": 0.12872797035146172,
+            "p_value": 0.8365522552570587,
+            "stderr_slope": 1.5965434398800349
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.3335141233689765,
+            "intercept_km": 455.11831567183805,
+            "r_value": 0.8860315224821937,
+            "p_value": 0.04538828541672693,
+            "stderr_slope": 0.10075608315718712
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -0.0002144621870335843,
+            "intercept": 0.30263858783543623,
+            "r_value": -0.6875783067073807,
+            "p_value": 0.19951031979217437,
+            "stderr_slope": 0.0001307586701345439
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": -1.288731807687517e-05,
+            "intercept": 0.5568629994154038,
+            "r_value": -0.921181505058224,
+            "p_value": 0.026246643040838465,
+            "stderr_slope": 3.143076689997002e-06
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        },
+        "phase_alignment": {
+          "Q1": {
+            "amplitude": 1.337867323380611,
+            "lambda_km": 1419.4076155263372,
+            "lambda_err": 823.4684680529252,
+            "offset": 0.044876061544171446,
+            "r_squared": 0.9611254506911937,
+            "n_pairs": 13017,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13017,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 1.7172108850828065,
+            "lambda_km": 389.8602933368918,
+            "lambda_err": 444.9014636514109,
+            "offset": 0.31415999197401695,
+            "r_squared": 0.33835330199708313,
+            "n_pairs": 19647,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 19647,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.8181722193704994,
+            "lambda_km": 986.3628631362493,
+            "lambda_err": 358.05158779328406,
+            "offset": 0.3670319910170791,
+            "r_squared": 0.7951767569659621,
+            "n_pairs": 24214,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24214,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.82014233748794,
+            "lambda_km": 3032.2029534041426,
+            "lambda_err": 5860.909412905897,
+            "offset": 0.1806211591146179,
+            "r_squared": 0.7455858860453306,
+            "n_pairs": 11647,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11647,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3937,
+            "short_range_mean": 0.899427525527051
+          },
+          "Q5": {
+            "amplitude": 0.9647880211197063,
+            "lambda_km": 2117.2598961351277,
+            "lambda_err": 570.7635739020297,
+            "offset": 0.1389098591284709,
+            "r_squared": 0.8919761301422565,
+            "n_pairs": 52976,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 52976,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1461,
+            "short_range_mean": 0.9840565605749487
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 1.6340750819139707,
+            "intercept_km": 923.2990096519287,
+            "r_value": 0.6700468648866985,
+            "p_value": 0.2159006985576578,
+            "stderr_slope": 1.0451934019993507
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 1.3681656759134593,
+            "intercept_km": 825.7706424514424,
+            "r_value": 0.7435727036085373,
+            "p_value": 0.14973610827351966,
+            "stderr_slope": 0.7103244803457687
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 1.4981793345952128,
+            "intercept_km": 555.9383052453727,
+            "r_value": 0.8694952907348866,
+            "p_value": 0.05547323468097473,
+            "stderr_slope": 0.4913729220094404
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -0.0005474218404982977,
+            "intercept": 1.3546549864023578,
+            "r_value": -0.5891197235979381,
+            "p_value": 0.29589553107925737,
+            "stderr_slope": 0.00043350477561620844
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": -6.596616702707716e-05,
+            "intercept": 0.23599432914077645,
+            "r_value": -0.2113072891784044,
+            "p_value": 0.7329710079832007,
+            "stderr_slope": 0.00017616808075583755
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        }
+      },
+      "clock_drift": {
+        "msc": {
+          "Q1": {
+            "amplitude": 0.19624079268109149,
+            "lambda_km": 720.5585229833606,
+            "lambda_err": 206.58228928313005,
+            "offset": 0.5549352113524394,
+            "r_squared": 0.973188415851015,
+            "n_pairs": 13017,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13017,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 0.3032214207057203,
+            "lambda_km": 648.7763212963429,
+            "lambda_err": 153.6900181486053,
+            "offset": 0.5582299702650907,
+            "r_squared": 0.9168524521727182,
+            "n_pairs": 19647,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 19647,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.13635007949389982,
+            "lambda_km": 963.1533663920928,
+            "lambda_err": 527.4107772329291,
+            "offset": 0.561751941743496,
+            "r_squared": 0.6308115329151426,
+            "n_pairs": 24214,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24214,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.12061817463246689,
+            "lambda_km": 2470.309048681567,
+            "lambda_err": 3829.33685375399,
+            "offset": 0.5502709902762672,
+            "r_squared": 0.7561796432803671,
+            "n_pairs": 11647,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11647,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3937,
+            "short_range_mean": 0.6505232715265431
+          },
+          "Q5": {
+            "amplitude": 0.17780380028466822,
+            "lambda_km": 708.5358017628705,
+            "lambda_err": 123.77948357148026,
+            "offset": 0.5498772672179338,
+            "r_squared": 0.9019555883948311,
+            "n_pairs": 52976,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 52976,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1461,
+            "short_range_mean": 0.7259824517453799
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.4536757012258717,
+            "intercept_km": 917.4398183328376,
+            "r_value": 0.24599056448350692,
+            "p_value": 0.6899831375741463,
+            "stderr_slope": 1.0320772612785307
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.05037324177661294,
+            "intercept_km": 949.230307283398,
+            "r_value": -0.042031376374825964,
+            "p_value": 0.9464997508819659,
+            "stderr_slope": 0.6913241083096475
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.02443917703026926,
+            "intercept_km": 686.1324945414415,
+            "r_value": 0.17904005136001583,
+            "p_value": 0.7732629445071226,
+            "stderr_slope": 0.07753557649034296
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -7.405687258184091e-05,
+            "intercept": 0.2170175113397124,
+            "r_value": -0.43265825300614597,
+            "p_value": 0.46682729938087564,
+            "stderr_slope": 8.909501841850048e-05
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": -8.76219174755117e-06,
+            "intercept": 0.5585827798245073,
+            "r_value": -0.7191420861535631,
+            "p_value": 0.17094780582741054,
+            "stderr_slope": 4.888061246596487e-06
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        },
+        "phase_alignment": {
+          "Q1": {
+            "amplitude": 1.820015160007436,
+            "lambda_km": 1176.6135887943333,
+            "lambda_err": 566.42811165403,
+            "offset": -0.39179918726994234,
+            "r_squared": 0.964367469287228,
+            "n_pairs": 13017,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13017,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 1.9499532225600553,
+            "lambda_km": 2182.7226924291544,
+            "lambda_err": 664.9280692515268,
+            "offset": -0.6907561293685991,
+            "r_squared": 0.9581232289303696,
+            "n_pairs": 19647,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 19647,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.8428220787665934,
+            "lambda_km": 956.7899852748453,
+            "lambda_err": 396.04101247304396,
+            "offset": 0.22238738972566105,
+            "r_squared": 0.7494957084214903,
+            "n_pairs": 24214,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24214,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.8999835517895722,
+            "lambda_km": 1574.6982178461478,
+            "lambda_err": 811.7953074563287,
+            "offset": 0.11220316329329535,
+            "r_squared": 0.9266318151541901,
+            "n_pairs": 11647,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11647,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3937,
+            "short_range_mean": 0.8928067325374651
+          },
+          "Q5": {
+            "amplitude": 1.188436308190814,
+            "lambda_km": 732.1807958805217,
+            "lambda_err": 155.54591487312652,
+            "offset": 0.08451841387296091,
+            "r_squared": 0.8610782186011947,
+            "n_pairs": 52976,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 52976,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1461,
+            "short_range_mean": 0.9442013045859001
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.707110236213567,
+            "intercept_km": 1612.6766958319668,
+            "r_value": -0.5192415919784387,
+            "p_value": 0.3699237602713017,
+            "stderr_slope": 0.6719452511441109
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.84027635445969,
+            "intercept_km": 1631.0404872036695,
+            "r_value": -0.6922717628261126,
+            "p_value": 0.1951844992329655,
+            "stderr_slope": 0.5057124274584517
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.6559523518011618,
+            "intercept_km": 1421.7392400691065,
+            "r_value": -0.7345262781746755,
+            "p_value": 0.15749527314521747,
+            "stderr_slope": 0.349869061220287
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -0.0006852973419990685,
+            "intercept": 1.619431163967941,
+            "r_value": -0.55716686622555,
+            "p_value": 0.32923080535178006,
+            "stderr_slope": 0.0005896859352891018
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": 0.0005812849962303265,
+            "intercept": -0.36950389744545353,
+            "r_value": 0.6238974663745374,
+            "p_value": 0.26069364985368254,
+            "stderr_slope": 0.0004203854688323834
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        }
+      }
+    },
+    "baseline": {
+      "clock_bias": {
+        "msc": {
+          "Q1": {
+            "amplitude": 0.20217515787360485,
+            "lambda_km": 663.1473827630989,
+            "lambda_err": 217.35225935406095,
+            "offset": 0.5583393727682587,
+            "r_squared": 0.961622962437328,
+            "n_pairs": 13034,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13034,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 0.35747618112318197,
+            "lambda_km": 561.7123522606635,
+            "lambda_err": 111.3464897313713,
+            "offset": 0.558721711908701,
+            "r_squared": 0.9402719619399806,
+            "n_pairs": 20214,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 20214,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.22343123422279848,
+            "lambda_km": 913.5043469940076,
+            "lambda_err": 432.0049159559994,
+            "offset": 0.5334061421223437,
+            "r_squared": 0.697270235715141,
+            "n_pairs": 24433,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24433,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.3290836282406105,
+            "lambda_km": 885.0647355940326,
+            "lambda_err": 155.8222963976032,
+            "offset": 0.5364681861437868,
+            "r_squared": 0.9812202433678516,
+            "n_pairs": 11738,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11738,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3974,
+            "short_range_mean": 0.8055890739808758
+          },
+          "Q5": {
+            "amplitude": 0.2513463337201117,
+            "lambda_km": 663.0910740086756,
+            "lambda_err": 115.85322420473724,
+            "offset": 0.540609419222686,
+            "r_squared": 0.9024269047277755,
+            "n_pairs": 53491,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 53491,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1525,
+            "short_range_mean": 0.7955929304918032
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.05611690522583439,
+            "intercept_km": 714.4420360866844,
+            "r_value": 0.15307585472308982,
+            "p_value": 0.80586163167895,
+            "stderr_slope": 0.20915949671495945
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.03913966560219827,
+            "intercept_km": 740.2409076490798,
+            "r_value": -0.13368352057991373,
+            "p_value": 0.8302972048739083,
+            "stderr_slope": 0.16751851481495464
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.09666109331019163,
+            "intercept_km": 624.9079825869912,
+            "r_value": 0.34868371539871224,
+            "p_value": 0.5652098352483598,
+            "stderr_slope": 0.15000662360929845
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": 4.348191319432398e-06,
+            "intercept": 0.27093106047495796,
+            "r_value": 0.02704127303515989,
+            "p_value": 0.9655741783382802,
+            "stderr_slope": 9.280300548094202e-05
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": -1.7171238717786182e-05,
+            "intercept": 0.5525045030924025,
+            "r_value": -0.5927707160303308,
+            "p_value": 0.2921454657723513,
+            "stderr_slope": 1.3469466345857016e-05
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        },
+        "phase_alignment": {
+          "Q1": {
+            "amplitude": 1.9873330066228887,
+            "lambda_km": 2144.4146097864887,
+            "lambda_err": 754.8860145020253,
+            "offset": -0.5630766166318503,
+            "r_squared": 0.9912924139889836,
+            "n_pairs": 13034,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13034,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 1.9999999999999998,
+            "lambda_km": 2989.946183887718,
+            "lambda_err": 1424.270275225125,
+            "offset": -0.7659181921883671,
+            "r_squared": 0.947793231635431,
+            "n_pairs": 20214,
+            "n_bins": 13,
+            "boundary_hit": true,
+            "n_samples": 20214,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.942224557083654,
+            "lambda_km": 2368.110085633393,
+            "lambda_err": 1174.2939766697252,
+            "offset": 0.09630321821420582,
+            "r_squared": 0.796116273765197,
+            "n_pairs": 24433,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24433,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 1.1989957422484196,
+            "lambda_km": 3023.6122781550534,
+            "lambda_err": 2661.9783148516212,
+            "offset": -0.1146779802310373,
+            "r_squared": 0.9333309314907532,
+            "n_pairs": 11738,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11738,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3974,
+            "short_range_mean": 0.9824634569703069
+          },
+          "Q5": {
+            "amplitude": 1.0264384556500163,
+            "lambda_km": 2222.400439257936,
+            "lambda_err": 483.649879214138,
+            "offset": -0.03534788770353964,
+            "r_squared": 0.9316288022316881,
+            "n_pairs": 53491,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 53491,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1525,
+            "short_range_mean": 0.8609715508196722
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.11856370171965913,
+            "intercept_km": 2597.999391939124,
+            "r_value": -0.11708047764022492,
+            "p_value": 0.8512697843392337,
+            "stderr_slope": 0.5806433120192792
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.356666530470093,
+            "intercept_km": 2653.968530035842,
+            "r_value": -0.45686095391337556,
+            "p_value": 0.43922814333399257,
+            "stderr_slope": 0.4009426458567789
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.113136620481313,
+            "intercept_km": 2359.1182612495663,
+            "r_value": -0.23187951484922234,
+            "p_value": 0.7074293243190315,
+            "stderr_slope": 0.2740179303315612
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -0.0008802479992213372,
+            "intercept": 1.7896100546557585,
+            "r_value": -0.7079296040185147,
+            "p_value": 0.18094974434534503,
+            "stderr_slope": 0.0005070293482605793
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": 0.0005595435883910528,
+            "intercept": -0.5045007025633756,
+            "r_value": 0.6363198001037742,
+            "p_value": 0.24841216148210815,
+            "stderr_slope": 0.00039164427315960276
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        }
+      },
+      "pos_jitter": {
+        "msc": {
+          "Q1": {
+            "amplitude": 0.2912615177030339,
+            "lambda_km": 591.221773305636,
+            "lambda_err": 95.13621782103733,
+            "offset": 0.5599068698245584,
+            "r_squared": 0.9892299678616636,
+            "n_pairs": 13034,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13034,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 0.36667736193659206,
+            "lambda_km": 542.9014532732948,
+            "lambda_err": 54.92465457814546,
+            "offset": 0.5605781858310941,
+            "r_squared": 0.9837713850551465,
+            "n_pairs": 20214,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 20214,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.2272830312295044,
+            "lambda_km": 1053.423199290201,
+            "lambda_err": 383.7827702564817,
+            "offset": 0.535032401328294,
+            "r_squared": 0.7939438460463923,
+            "n_pairs": 24433,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24433,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.25114740799937735,
+            "lambda_km": 1121.2315192240808,
+            "lambda_err": 221.67345342041918,
+            "offset": 0.538631917580082,
+            "r_squared": 0.9815547574765071,
+            "n_pairs": 11738,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11738,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3974,
+            "short_range_mean": 0.7524480938600906
+          },
+          "Q5": {
+            "amplitude": 0.3076512623031213,
+            "lambda_km": 763.5162562608169,
+            "lambda_err": 69.38716390803705,
+            "offset": 0.5368170737967982,
+            "r_squared": 0.9711246536521321,
+            "n_pairs": 53491,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 53491,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1525,
+            "short_range_mean": 0.8221967652459016
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.22963292998751977,
+            "intercept_km": 720.9067322196778,
+            "r_value": 0.36603514025509665,
+            "p_value": 0.5445764919367048,
+            "stderr_slope": 0.337065488167594
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.054645842651833185,
+            "intercept_km": 768.8672765584205,
+            "r_value": 0.11968920746675188,
+            "p_value": 0.8479716050820473,
+            "stderr_slope": 0.2617027389014176
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.22445319137407344,
+            "intercept_km": 553.3581445448939,
+            "r_value": 0.7387119755881631,
+            "p_value": 0.15389097391205037,
+            "stderr_slope": 0.11823977458164696
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -1.749407304661666e-05,
+            "intercept": 0.2959311751104215,
+            "r_value": -0.13619559424153257,
+            "p_value": 0.8271279879719423,
+            "stderr_slope": 7.346855653350496e-05
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": -2.2009452009754698e-05,
+            "intercept": 0.5551599071023161,
+            "r_value": -0.7167162626203859,
+            "p_value": 0.1730978658413473,
+            "stderr_slope": 1.2364069161489875e-05
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        },
+        "phase_alignment": {
+          "Q1": {
+            "amplitude": 1.6259097598327004,
+            "lambda_km": 3755.916570603069,
+            "lambda_err": 1370.6368263526504,
+            "offset": -0.39766111923719033,
+            "r_squared": 0.9953139006421396,
+            "n_pairs": 13034,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13034,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 1.839483820535642,
+            "lambda_km": 4972.599234746977,
+            "lambda_err": 1672.6378586269263,
+            "offset": -0.6766127472660012,
+            "r_squared": 0.988442103399196,
+            "n_pairs": 20214,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 20214,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 1.7834491344542933,
+            "lambda_km": 13873.650793818437,
+            "lambda_err": 6618.5736315451095,
+            "offset": -0.7523968486814641,
+            "r_squared": 0.9956885491854395,
+            "n_pairs": 24433,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24433,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 1.219951268394393,
+            "lambda_km": 4520.983047791622,
+            "lambda_err": 2816.3625215892775,
+            "offset": -0.1538449279478752,
+            "r_squared": 0.9822905509772738,
+            "n_pairs": 11738,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11738,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3974,
+            "short_range_mean": 0.9824237320080523
+          },
+          "Q5": {
+            "amplitude": 1.2738572115705598,
+            "lambda_km": 4118.769428149333,
+            "lambda_err": 919.026992609468,
+            "offset": -0.1400271275483469,
+            "r_squared": 0.9740784379582917,
+            "n_pairs": 53491,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 53491,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1525,
+            "short_range_mean": 0.9939786183606556
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -2.081503007614652,
+            "intercept_km": 7096.3849892772405,
+            "r_value": -0.203823095268081,
+            "p_value": 0.7422926218255459,
+            "stderr_slope": 5.772303346890871
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -3.6035078495496244,
+            "intercept_km": 8301.019198438928,
+            "r_value": -0.40436747896048947,
+            "p_value": 0.49954029790918814,
+            "stderr_slope": 4.705634676201586
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.26103713234181575,
+            "intercept_km": 4453.388898083689,
+            "r_value": -0.11766385676935778,
+            "p_value": 0.8505321370785948,
+            "stderr_slope": 1.2719534603975062
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -0.0005603471330888097,
+            "intercept": 1.7768148127062098,
+            "r_value": -0.819848790019207,
+            "p_value": 0.08926704592218788,
+            "stderr_slope": 0.0002259430623387967
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": 0.0005002268010303363,
+            "intercept": -0.6279001956163568,
+            "r_value": 0.7355392105113138,
+            "p_value": 0.15662081222010857,
+            "stderr_slope": 0.0002660102430230598
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        }
+      },
+      "clock_drift": {
+        "msc": {
+          "Q1": {
+            "amplitude": 0.20437059168941973,
+            "lambda_km": 652.255437263062,
+            "lambda_err": 200.24340148306777,
+            "offset": 0.5574699654350249,
+            "r_squared": 0.9655359203568986,
+            "n_pairs": 13034,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13034,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 0.35677567058846804,
+            "lambda_km": 560.9374956748595,
+            "lambda_err": 110.29895334317872,
+            "offset": 0.5574792989402618,
+            "r_squared": 0.9411776202251799,
+            "n_pairs": 20214,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 20214,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.21884109731093265,
+            "lambda_km": 920.761014865995,
+            "lambda_err": 421.5960252245011,
+            "offset": 0.533400694491999,
+            "r_squared": 0.7105018319026017,
+            "n_pairs": 24433,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24433,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.32556922295412344,
+            "lambda_km": 862.7938849570972,
+            "lambda_err": 151.1979776752301,
+            "offset": 0.5360357895998057,
+            "r_squared": 0.9809742019084673,
+            "n_pairs": 11738,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11738,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3974,
+            "short_range_mean": 0.8010713787116256
+          },
+          "Q5": {
+            "amplitude": 0.2507812319549098,
+            "lambda_km": 666.3392992250908,
+            "lambda_err": 113.86662212315473,
+            "offset": 0.539062993486129,
+            "r_squared": 0.9061880732945357,
+            "n_pairs": 53491,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 53491,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1525,
+            "short_range_mean": 0.793839462295082
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.057485453984001365,
+            "intercept_km": 709.197939467486,
+            "r_value": 0.1585341378445075,
+            "p_value": 0.7989968096335219,
+            "stderr_slope": 0.20670320544109075
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.03458206032209432,
+            "intercept_km": 737.0282466968247,
+            "r_value": -0.11834448011712188,
+            "p_value": 0.8496715953579856,
+            "stderr_slope": 0.16752494930898584
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.09922473836226706,
+            "intercept_km": 621.1619161072413,
+            "r_value": 0.37841424918131517,
+            "p_value": 0.5299476315377052,
+            "stderr_slope": 0.14013036580811672
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": 2.9809079873230655e-06,
+            "intercept": 0.2700531454981307,
+            "r_value": 0.018702869552918843,
+            "p_value": 0.9761881552589449,
+            "stderr_slope": 9.200336837137024e-05
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": -1.7671095365286263e-05,
+            "intercept": 0.5518889258913835,
+            "r_value": -0.6264003557961461,
+            "p_value": 0.25820635400552183,
+            "stderr_slope": 1.2696026050056638e-05
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        },
+        "phase_alignment": {
+          "Q1": {
+            "amplitude": 1.7667270369538675,
+            "lambda_km": 868.1533984957883,
+            "lambda_err": 124.96828998363387,
+            "offset": -0.1913515921998412,
+            "r_squared": 0.9946966958946891,
+            "n_pairs": 13034,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13034,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 1.57678415926486,
+            "lambda_km": 1568.9704499048776,
+            "lambda_err": 349.4055223780047,
+            "offset": -0.26392353924123935,
+            "r_squared": 0.9624830410563873,
+            "n_pairs": 20214,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 20214,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 1.0360293280660564,
+            "lambda_km": 975.6434387844134,
+            "lambda_err": 394.71704447197015,
+            "offset": 0.15241451408873233,
+            "r_squared": 0.757617381199394,
+            "n_pairs": 24433,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24433,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 1.0942623250232055,
+            "lambda_km": 1633.0304786513761,
+            "lambda_err": 833.4774987980977,
+            "offset": 0.028649939844076808,
+            "r_squared": 0.9315896394374126,
+            "n_pairs": 11738,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11738,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3974,
+            "short_range_mean": 0.9791642083543031
+          },
+          "Q5": {
+            "amplitude": 1.3560502049551213,
+            "lambda_km": 769.1179745723274,
+            "lambda_err": 112.32680039020171,
+            "offset": 0.011090919462058714,
+            "r_squared": 0.9286691390432222,
+            "n_pairs": 53491,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 53491,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1525,
+            "short_range_mean": 0.9757817403278688
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.2207759302649466,
+            "intercept_km": 1252.9269278539223,
+            "r_value": -0.22764202128067296,
+            "p_value": 0.7126803234125485,
+            "stderr_slope": 0.545235160489864
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.4461585225067849,
+            "intercept_km": 1295.0699037581398,
+            "r_value": -0.5656915158229114,
+            "p_value": 0.3202489747692634,
+            "stderr_slope": 0.3754924044514135
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.1740926061631673,
+            "intercept_km": 963.1136002056024,
+            "r_value": -0.45164081144828583,
+            "p_value": 0.4451493181112749,
+            "stderr_slope": 0.19855858426495362
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -0.00032145974928046966,
+            "intercept": 1.4969328260732766,
+            "r_value": -0.4333468607983985,
+            "p_value": 0.4660369919391958,
+            "stderr_slope": 0.00038597983735152834
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": 0.00020691397237350667,
+            "intercept": -0.1369203907211176,
+            "r_value": 0.5087149600245029,
+            "p_value": 0.3814207334064312,
+            "stderr_slope": 0.00020217388190715488
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        }
+      }
+    },
+    "ionofree": {
+      "clock_bias": {
+        "msc": {
+          "Q1": {
+            "amplitude": 0.17433363146457537,
+            "lambda_km": 806.4392360996646,
+            "lambda_err": 100.69248547861008,
+            "offset": 0.5556416725894626,
+            "r_squared": 0.9955453383611691,
+            "n_pairs": 13014,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13014,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 0.3142522911889475,
+            "lambda_km": 628.6933486554344,
+            "lambda_err": 125.45842666303885,
+            "offset": 0.5530431885917872,
+            "r_squared": 0.9393695363985659,
+            "n_pairs": 19694,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 19694,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.14033954229977905,
+            "lambda_km": 1052.8865887407094,
+            "lambda_err": 579.780728846518,
+            "offset": 0.5489775479272342,
+            "r_squared": 0.6277391868587785,
+            "n_pairs": 24304,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24304,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.1209186286839964,
+            "lambda_km": 2142.510533957799,
+            "lambda_err": 2916.5923776224604,
+            "offset": 0.5475445278911887,
+            "r_squared": 0.7543462951882531,
+            "n_pairs": 11701,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11701,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3968,
+            "short_range_mean": 0.6478179201108871
+          },
+          "Q5": {
+            "amplitude": 0.17674785232656248,
+            "lambda_km": 770.9664593125185,
+            "lambda_err": 130.6368735782439,
+            "offset": 0.5445368670695924,
+            "r_squared": 0.9066748357775679,
+            "n_pairs": 53176,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 53176,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1468,
+            "short_range_mean": 0.7115776437329699
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.36612680593625097,
+            "intercept_km": 931.1397268694465,
+            "r_value": 0.25066030923716554,
+            "p_value": 0.684223679113771,
+            "stderr_slope": 0.8163838043171536
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.03507527790994863,
+            "intercept_km": 960.1587040288678,
+            "r_value": -0.03648239109888214,
+            "p_value": 0.9535594830934055,
+            "stderr_slope": 0.5547125489134388
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.026828830002874185,
+            "intercept_km": 742.1060441002901,
+            "r_value": 0.13070442714117542,
+            "p_value": 0.8340570142586221,
+            "stderr_slope": 0.1174922142373938
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -6.935046647981271e-05,
+            "intercept": 0.21357166425165933,
+            "r_value": -0.38399503549688113,
+            "p_value": 0.5233785102686261,
+            "stderr_slope": 9.627699397032151e-05
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": -9.748279651446354e-06,
+            "intercept": 0.5539201951865901,
+            "r_value": -0.9266607672945948,
+            "p_value": 0.023577741931566535,
+            "stderr_slope": 2.2830603074293287e-06
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        },
+        "phase_alignment": {
+          "Q1": {
+            "amplitude": 1.9999999999999998,
+            "lambda_km": 2503.006842940839,
+            "lambda_err": 2610.1142306496918,
+            "offset": -0.690260604454759,
+            "r_squared": 0.9567709093642661,
+            "n_pairs": 13014,
+            "n_bins": 7,
+            "boundary_hit": true,
+            "n_samples": 13014,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 1.9999999999999998,
+            "lambda_km": 2658.2127353392884,
+            "lambda_err": 1286.0237467324073,
+            "offset": -0.7313131198354847,
+            "r_squared": 0.9451004036569272,
+            "n_pairs": 19694,
+            "n_bins": 13,
+            "boundary_hit": true,
+            "n_samples": 19694,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.6389974387573935,
+            "lambda_km": 1660.7932528904973,
+            "lambda_err": 750.4350589574093,
+            "offset": 0.444844014184337,
+            "r_squared": 0.7537927737599792,
+            "n_pairs": 24304,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24304,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.7388495720492497,
+            "lambda_km": 1531.951627687053,
+            "lambda_err": 2288.1340070572514,
+            "offset": 0.34338321917628384,
+            "r_squared": 0.5895587858562819,
+            "n_pairs": 11701,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11701,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3968,
+            "short_range_mean": 0.9607119768145161
+          },
+          "Q5": {
+            "amplitude": 0.9226534600683118,
+            "lambda_km": 2712.231127850589,
+            "lambda_err": 896.0412075326072,
+            "offset": 0.13097778631276233,
+            "r_squared": 0.8921019523853959,
+            "n_pairs": 53176,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 53176,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1468,
+            "short_range_mean": 0.9035101587193461
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.023739408988082456,
+            "intercept_km": 2203.567718057397,
+            "r_value": 0.017477452352347635,
+            "p_value": 0.9777481494800422,
+            "stderr_slope": 0.7840880017264924
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.44253804213765824,
+            "intercept_km": 2099.380282375228,
+            "r_value": 0.3939392447685951,
+            "p_value": 0.5117142780193659,
+            "stderr_slope": 0.5961296715615243
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.7010230184556021,
+            "intercept_km": 1824.5486018044849,
+            "r_value": 0.5294187535918998,
+            "p_value": 0.3588899490352225,
+            "stderr_slope": 0.6485640071593726
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -0.0010456019193919495,
+            "intercept": 1.6860767332691264,
+            "r_value": -0.6425598608445643,
+            "p_value": 0.2423036761565785,
+            "stderr_slope": 0.0007198705632050115
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": 0.0008157047178254494,
+            "intercept": -0.4327906081251659,
+            "r_value": 0.6020576754165464,
+            "p_value": 0.28266307411251784,
+            "stderr_slope": 0.0006245732634557838
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        }
+      },
+      "pos_jitter": {
+        "msc": {
+          "Q1": {
+            "amplitude": 0.26465582294989826,
+            "lambda_km": 419.8567197985257,
+            "lambda_err": 181.34653159444184,
+            "offset": 0.5593786627745824,
+            "r_squared": 0.9112431552213076,
+            "n_pairs": 13014,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13014,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 0.33574116075462657,
+            "lambda_km": 369.24203557474397,
+            "lambda_err": 102.72785695307628,
+            "offset": 0.5571971484591114,
+            "r_squared": 0.8972493725330073,
+            "n_pairs": 19694,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 19694,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.13937276137583668,
+            "lambda_km": 678.4152015600638,
+            "lambda_err": 312.2458939471505,
+            "offset": 0.5574831702717694,
+            "r_squared": 0.7256749915651584,
+            "n_pairs": 24304,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24304,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.07993151906268356,
+            "lambda_km": 2576.699282748295,
+            "lambda_err": 4170.56336529069,
+            "offset": 0.5497399034107906,
+            "r_squared": 0.754266617829596,
+            "n_pairs": 11701,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11701,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3968,
+            "short_range_mean": 0.6167468450100806
+          },
+          "Q5": {
+            "amplitude": 0.18261054225145223,
+            "lambda_km": 644.0166736377545,
+            "lambda_err": 103.90184371742002,
+            "offset": 0.5471900682157638,
+            "r_squared": 0.9164470211234649,
+            "n_pairs": 53176,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 53176,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1468,
+            "short_range_mean": 0.7135570183923705
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.7668567699305066,
+            "intercept_km": 625.2296954868725,
+            "r_value": 0.34755925963424217,
+            "p_value": 0.5665519829517234,
+            "stderr_slope": 1.1944534726213383
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.19433182548218858,
+            "intercept_km": 654.4180500252235,
+            "r_value": 0.13927321117051658,
+            "p_value": 0.8232467928447251,
+            "stderr_slope": 0.797741740883268
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.25851457613454254,
+            "intercept_km": 378.4711486919258,
+            "r_value": 0.8873020678446399,
+            "p_value": 0.044640243657302806,
+            "stderr_slope": 0.07757675263370062
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -0.0001320134902191736,
+            "intercept": 0.25424445734788176,
+            "r_value": -0.5473444535475611,
+            "p_value": 0.33965689270414995,
+            "stderr_slope": 0.00011653983226602341
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": -1.2318764809294934e-05,
+            "intercept": 0.5592164367611641,
+            "r_value": -0.9618265632805447,
+            "p_value": 0.008901705787217117,
+            "stderr_slope": 2.023581521897852e-06
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        },
+        "phase_alignment": {
+          "Q1": {
+            "amplitude": 1.441100795629484,
+            "lambda_km": 5558.009694441763,
+            "lambda_err": 7472.967858321086,
+            "offset": -0.4226413961885927,
+            "r_squared": 0.9652811847233019,
+            "n_pairs": 13014,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13014,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 1.3158509418151008,
+            "lambda_km": 544.4919657955652,
+            "lambda_err": 306.76819005885574,
+            "offset": 0.3251626221348191,
+            "r_squared": 0.6611428585532093,
+            "n_pairs": 19694,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 19694,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.9033790691747483,
+            "lambda_km": 1082.2094547697407,
+            "lambda_err": 345.1488778879856,
+            "offset": 0.3278885175355462,
+            "r_squared": 0.8343383491801046,
+            "n_pairs": 24304,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24304,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.8655695658994872,
+            "lambda_km": 2434.4534182807643,
+            "lambda_err": 3748.4605969216364,
+            "offset": 0.16565005833306437,
+            "r_squared": 0.752886297569487,
+            "n_pairs": 11701,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11701,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3968,
+            "short_range_mean": 0.935990691532258
+          },
+          "Q5": {
+            "amplitude": 0.8761498276718104,
+            "lambda_km": 1570.6773696883845,
+            "lambda_err": 227.91961795671077,
+            "offset": 0.2543936332877761,
+            "r_squared": 0.9503330113329406,
+            "n_pairs": 53176,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 53176,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1468,
+            "short_range_mean": 0.9772711416893732
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -1.2741424988509296,
+            "intercept_km": 2757.052105788816,
+            "r_value": -0.2698725169504605,
+            "p_value": 0.6606053833579693,
+            "stderr_slope": 2.6246906557592626
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.6292134581581802,
+            "intercept_km": 2184.1317218334916,
+            "r_value": -0.1951948523558299,
+            "p_value": 0.7530575467497973,
+            "stderr_slope": 1.8252978622769414
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.9294205701445729,
+            "intercept_km": 618.1798472652564,
+            "r_value": 0.9191485001595733,
+            "p_value": 0.027260113965181028,
+            "stderr_slope": 0.2299663545321072
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -0.0005035370907441517,
+            "intercept": 1.2855502885364916,
+            "r_value": -0.7657586610558794,
+            "p_value": 0.1312043531152757,
+            "stderr_slope": 0.00024416103932611816
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": 0.00028138072215296744,
+            "intercept": 0.015456606778679577,
+            "r_value": 0.373782381754012,
+            "p_value": 0.5354121075422853,
+            "stderr_slope": 0.0004031219978937713
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        }
+      },
+      "clock_drift": {
+        "msc": {
+          "Q1": {
+            "amplitude": 0.17273617354397153,
+            "lambda_km": 752.4802967999398,
+            "lambda_err": 117.23514632838027,
+            "offset": 0.5563818313112473,
+            "r_squared": 0.992380184880036,
+            "n_pairs": 13014,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13014,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 0.3098217656578345,
+            "lambda_km": 603.8794530550545,
+            "lambda_err": 119.52068891483667,
+            "offset": 0.5549034942765715,
+            "r_squared": 0.9402161522562394,
+            "n_pairs": 19694,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 19694,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.14061867647219112,
+            "lambda_km": 1095.763153135806,
+            "lambda_err": 539.2478595768398,
+            "offset": 0.5489145680644241,
+            "r_squared": 0.6792715022376508,
+            "n_pairs": 24304,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24304,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.12233964262294286,
+            "lambda_km": 2049.236605632558,
+            "lambda_err": 2523.058208821514,
+            "offset": 0.5458568987312896,
+            "r_squared": 0.7758182860107405,
+            "n_pairs": 11701,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11701,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3968,
+            "short_range_mean": 0.6477816302923387
+          },
+          "Q5": {
+            "amplitude": 0.1785294398193542,
+            "lambda_km": 774.3516627088078,
+            "lambda_err": 130.72828223712222,
+            "offset": 0.544065246191669,
+            "r_squared": 0.9072866603877472,
+            "n_pairs": 53176,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 53176,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1468,
+            "short_range_mean": 0.7154558385558583
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.3742286182674858,
+            "intercept_km": 902.682061703696,
+            "r_value": 0.2690096013678378,
+            "p_value": 0.6616634482769312,
+            "stderr_slope": 0.7735651181033918
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.019293274987204196,
+            "intercept_km": 942.2299434448414,
+            "r_value": -0.020976356735386743,
+            "p_value": 0.9732940318442023,
+            "stderr_slope": 0.5309085253082472
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.08849905306672813,
+            "intercept_km": 683.9736373712819,
+            "r_value": 0.4021043986711834,
+            "p_value": 0.5021770944998462,
+            "stderr_slope": 0.11634347398717595
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -6.454874439344563e-05,
+            "intercept": 0.21110620037316288,
+            "r_value": -0.36813240272124054,
+            "p_value": 0.5420925955453564,
+            "stderr_slope": 9.41239691641496e-05
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": -1.1861282105389139e-05,
+            "intercept": 0.5548566760887816,
+            "r_value": -0.915395404990669,
+            "p_value": 0.029163197315410547,
+            "stderr_slope": 3.0115388894514332e-06
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        },
+        "phase_alignment": {
+          "Q1": {
+            "amplitude": 1.77894622630061,
+            "lambda_km": 1126.3951952599775,
+            "lambda_err": 217.55400754975756,
+            "offset": -0.335671788544122,
+            "r_squared": 0.9936703056053785,
+            "n_pairs": 13014,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 13014,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 1.684694070905016,
+            "lambda_km": 1516.5133853496427,
+            "lambda_err": 351.0218725951589,
+            "offset": -0.36395477490661265,
+            "r_squared": 0.9574397888306249,
+            "n_pairs": 19694,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 19694,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.8637604180269568,
+            "lambda_km": 941.3662429130821,
+            "lambda_err": 429.16668084389363,
+            "offset": 0.17481743937877267,
+            "r_squared": 0.7117941861476043,
+            "n_pairs": 24304,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 24304,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.9988756640483496,
+            "lambda_km": 1306.462388153047,
+            "lambda_err": 444.80726835625137,
+            "offset": 0.05007046047499321,
+            "r_squared": 0.9562751021795828,
+            "n_pairs": 11701,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11701,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3968,
+            "short_range_mean": 0.9035955483870969
+          },
+          "Q5": {
+            "amplitude": 1.2554986141398081,
+            "lambda_km": 702.4356989121492,
+            "lambda_err": 128.62760958318464,
+            "offset": 0.05159545028740689,
+            "r_squared": 0.893431159753903,
+            "n_pairs": 53176,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 53176,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1468,
+            "short_range_mean": 0.9178836089918256
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.47482328080965175,
+            "intercept_km": 1312.076867916528,
+            "r_value": -0.6316294511168068,
+            "p_value": 0.25303057073067425,
+            "stderr_slope": 0.33648229993215956
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.5643501971986635,
+            "intercept_km": 1314.93570885013,
+            "r_value": -0.7972213195220695,
+            "p_value": 0.10621732704488893,
+            "stderr_slope": 0.24672949894839538
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.5179264315542041,
+            "intercept_km": 1259.2960179572374,
+            "r_value": -0.8656277202734153,
+            "p_value": 0.057922233089764165,
+            "stderr_slope": 0.1729591841027336
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -0.0004592340883680625,
+            "intercept": 1.5034462710818188,
+            "r_value": -0.4749216741070581,
+            "p_value": 0.4188811023589499,
+            "stderr_slope": 0.0004913014265032294
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": 0.0003658114108843192,
+            "intercept": -0.23365965767898939,
+            "r_value": 0.6203739257113252,
+            "p_value": 0.26420602044827607,
+            "stderr_slope": 0.0002670107366631104
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        }
+      }
+    },
+    "multi_gnss": {
+      "clock_bias": {
+        "msc": {
+          "Q1": {
+            "amplitude": 0.1199012828766924,
+            "lambda_km": 930.3876155796278,
+            "lambda_err": 499.4688052164622,
+            "offset": 0.5532412689303803,
+            "r_squared": 0.9373412546497761,
+            "n_pairs": 12805,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 12805,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 0.32443940197448107,
+            "lambda_km": 663.0599992767351,
+            "lambda_err": 147.22705663600473,
+            "offset": 0.5509090696363118,
+            "r_squared": 0.926223021715809,
+            "n_pairs": 19521,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 19521,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.17851445938047816,
+            "lambda_km": 905.4529454118783,
+            "lambda_err": 513.4534641602453,
+            "offset": 0.5348522761015124,
+            "r_squared": 0.6164853914720957,
+            "n_pairs": 23924,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 23924,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.38230324629835905,
+            "lambda_km": 342.86663606315193,
+            "lambda_err": 33.5951623537374,
+            "offset": 0.5407286796934879,
+            "r_squared": 0.9932866144690329,
+            "n_pairs": 11541,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11541,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3911,
+            "short_range_mean": 0.7792515180260804
+          },
+          "Q5": {
+            "amplitude": 0.17076097512623317,
+            "lambda_km": 763.2959006675829,
+            "lambda_err": 223.74014374598522,
+            "offset": 0.5400385699167338,
+            "r_squared": 0.7633012590883135,
+            "n_pairs": 51783,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 51783,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1498,
+            "short_range_mean": 0.7382840787716954
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.1861416974122342,
+            "intercept_km": 796.8464651381922,
+            "r_value": -0.32871834399819166,
+            "p_value": 0.5891275140845957,
+            "stderr_slope": 0.30876492335861355
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.061667666536358454,
+            "intercept_km": 788.5903688889357,
+            "r_value": -0.16584383180232082,
+            "p_value": 0.7898130670201,
+            "stderr_slope": 0.2117100315442568
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.3070021415638346,
+            "intercept_km": 550.3932491635783,
+            "r_value": -0.40566420867557823,
+            "p_value": 0.49803072932381026,
+            "stderr_slope": 0.39936575433059934
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": 1.3080768804173564e-05,
+            "intercept": 0.22985478772252113,
+            "r_value": 0.04898271684656888,
+            "p_value": 0.9376582163705043,
+            "stderr_slope": 0.00015399554028470934
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": -1.0591666229504088e-05,
+            "intercept": 0.5482690016435768,
+            "r_value": -0.5701814610187891,
+            "p_value": 0.3155436631282618,
+            "stderr_slope": 8.810652269073369e-06
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        },
+        "phase_alignment": {
+          "Q1": {
+            "amplitude": 1.5620491375467978,
+            "lambda_km": 2340.786178103068,
+            "lambda_err": 582.9784283622678,
+            "offset": -0.33915685999433437,
+            "r_squared": 0.9960533892099017,
+            "n_pairs": 12805,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 12805,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 1.6723743115721375,
+            "lambda_km": 2915.323622758866,
+            "lambda_err": 1400.9974895832684,
+            "offset": -0.49922487258999476,
+            "r_squared": 0.9385090713917662,
+            "n_pairs": 19521,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 19521,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 1.097397199562781,
+            "lambda_km": 1846.7826597566313,
+            "lambda_err": 1031.5036421720251,
+            "offset": -0.0635615524782983,
+            "r_squared": 0.6889860225461593,
+            "n_pairs": 23924,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 23924,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 1.2421840706021958,
+            "lambda_km": 2522.6332569870524,
+            "lambda_err": 2016.8284728871406,
+            "offset": -0.156143130417261,
+            "r_squared": 0.9232620264862021,
+            "n_pairs": 11541,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11541,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3911,
+            "short_range_mean": 0.9675010544617745
+          },
+          "Q5": {
+            "amplitude": 0.898909188420269,
+            "lambda_km": 2443.5725630758893,
+            "lambda_err": 983.162847111193,
+            "offset": -0.0945160564854718,
+            "r_squared": 0.8214389470773727,
+            "n_pairs": 51783,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 51783,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1498,
+            "short_range_mean": 0.7288876281708946
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.01783016398297003,
+            "intercept_km": 2421.083637951082,
+            "r_value": -0.019469624187367664,
+            "p_value": 0.9752120707961527,
+            "stderr_slope": 0.5286336597887119
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.03219043320381447,
+            "intercept_km": 2379.0672446278986,
+            "r_value": 0.04231645390738128,
+            "p_value": 0.9461371018371845,
+            "stderr_slope": 0.43880112937213517
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.057154007587259664,
+            "intercept_km": 2320.651273926589,
+            "r_value": 0.0802649091288388,
+            "p_value": 0.8979133826189407,
+            "stderr_slope": 0.409785752909677
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -0.0006445182631414737,
+            "intercept": 1.5571585462519932,
+            "r_value": -0.8425215976825011,
+            "p_value": 0.073220210542922,
+            "stderr_slope": 0.0002379087152572817
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": 0.00028879836747364797,
+            "intercept": -0.34817651210948797,
+            "r_value": 0.6576625329644321,
+            "p_value": 0.22769290436742867,
+            "stderr_slope": 0.0001909880888881363
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        }
+      },
+      "pos_jitter": {
+        "msc": {
+          "Q1": {
+            "amplitude": 0.23727565487867014,
+            "lambda_km": 607.9624402684063,
+            "lambda_err": 187.7508446461581,
+            "offset": 0.5507866976572843,
+            "r_squared": 0.9624012327878168,
+            "n_pairs": 12805,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 12805,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 0.2802380561586947,
+            "lambda_km": 691.6277750153598,
+            "lambda_err": 63.42314933213704,
+            "offset": 0.551314064745004,
+            "r_squared": 0.9866902164565382,
+            "n_pairs": 19521,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 19521,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.18960995021705238,
+            "lambda_km": 1257.618897191673,
+            "lambda_err": 439.1056225029799,
+            "offset": 0.5277325345252476,
+            "r_squared": 0.8127056556629745,
+            "n_pairs": 23924,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 23924,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.37843985335092445,
+            "lambda_km": 228.30588561780831,
+            "lambda_err": 68.3090918245678,
+            "offset": 0.5491253990079115,
+            "r_squared": 0.9617238723908654,
+            "n_pairs": 11541,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11541,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3911,
+            "short_range_mean": 0.7349261327026335
+          },
+          "Q5": {
+            "amplitude": 0.21575549401669938,
+            "lambda_km": 913.4156434512488,
+            "lambda_err": 176.44590037352947,
+            "offset": 0.5363345619358761,
+            "r_squared": 0.882465969337345,
+            "n_pairs": 51783,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 51783,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1498,
+            "short_range_mean": 0.7852447136181576
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.00161732129119247,
+            "intercept_km": 739.127234063221,
+            "r_value": 0.0017834506381829607,
+            "p_value": 0.9977292413251491,
+            "stderr_slope": 0.5235689611131678
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 0.06739128747281337,
+            "intercept_km": 808.0057252022568,
+            "r_value": 0.10090807627327106,
+            "p_value": 0.8717382213886941,
+            "stderr_slope": 0.383614289731253
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.39187379169769576,
+            "intercept_km": 656.4886177475332,
+            "r_value": -0.47433864235048817,
+            "p_value": 0.4195344983179914,
+            "stderr_slope": 0.41990276649087466
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": 9.478701938239345e-06,
+            "intercept": 0.25640219290393634,
+            "r_value": 0.05381410017757595,
+            "p_value": 0.931514844954247,
+            "stderr_slope": 0.00010154590049552772
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": -9.089706954346824e-06,
+            "intercept": 0.546761784427172,
+            "r_value": -0.3618321810096707,
+            "p_value": 0.5495608898228386,
+            "stderr_slope": 1.3521077782642433e-05
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        },
+        "phase_alignment": {
+          "Q1": {
+            "amplitude": 1.4619297085213405,
+            "lambda_km": 2418.102612873319,
+            "lambda_err": 943.1660738024326,
+            "offset": -0.17435947604637736,
+            "r_squared": 0.9907353071471396,
+            "n_pairs": 12805,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 12805,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 1.9999999999999998,
+            "lambda_km": 5414.129378487797,
+            "lambda_err": 1898.9315070522864,
+            "offset": -0.8314020452642229,
+            "r_squared": 0.9894315694192711,
+            "n_pairs": 19521,
+            "n_bins": 13,
+            "boundary_hit": true,
+            "n_samples": 19521,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 1.6135563323616073,
+            "lambda_km": 11631.538623282644,
+            "lambda_err": 3679.3866659163614,
+            "offset": -0.6013795900388031,
+            "r_squared": 0.9970809453323376,
+            "n_pairs": 23924,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 23924,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 1.0671654042817051,
+            "lambda_km": 2299.42494392448,
+            "lambda_err": 309.18231088006695,
+            "offset": -0.03300143166115411,
+            "r_squared": 0.997208571051531,
+            "n_pairs": 11541,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11541,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3911,
+            "short_range_mean": 0.9661143605216058
+          },
+          "Q5": {
+            "amplitude": 1.250240938422375,
+            "lambda_km": 4689.983095637042,
+            "lambda_err": 847.2382223627055,
+            "offset": -0.1839812049590378,
+            "r_squared": 0.9861451130543151,
+            "n_pairs": 51783,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 51783,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1498,
+            "short_range_mean": 0.9843135867823765
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -1.2206564509713216,
+            "intercept_km": 5787.929321097394,
+            "r_value": -0.134812184886763,
+            "p_value": 0.8288731534993823,
+            "stderr_slope": 5.179893949780067
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -2.0169732072819544,
+            "intercept_km": 6897.255041676242,
+            "r_value": -0.27786971809624117,
+            "p_value": 0.6508123690994075,
+            "stderr_slope": 4.025773616620379
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": 1.122099525702169,
+            "intercept_km": 2016.1547575019758,
+            "r_value": 0.2423874055974863,
+            "p_value": 0.694431939302855,
+            "stderr_slope": 2.593061482291843
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -0.0005767550436339007,
+            "intercept": 1.7135476083833399,
+            "r_value": -0.6768356385572599,
+            "p_value": 0.20951093846495034,
+            "stderr_slope": 0.0003621633791171422
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": 0.0004169049206356659,
+            "intercept": -0.5346711831366803,
+            "r_value": 0.5201681532525537,
+            "p_value": 0.3689158590937514,
+            "stderr_slope": 0.00039520550345092156
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        }
+      },
+      "clock_drift": {
+        "msc": {
+          "Q1": {
+            "amplitude": 0.11889224227429031,
+            "lambda_km": 921.3723246147385,
+            "lambda_err": 473.3958378598198,
+            "offset": 0.5512878366513984,
+            "r_squared": 0.9414705532094447,
+            "n_pairs": 12805,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 12805,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 0.32398361806699977,
+            "lambda_km": 653.4119231898891,
+            "lambda_err": 146.73572281315754,
+            "offset": 0.5488185546403338,
+            "r_squared": 0.9245323292431022,
+            "n_pairs": 19521,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 19521,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 0.17441850047569996,
+            "lambda_km": 881.4791036065099,
+            "lambda_err": 502.02771430392227,
+            "offset": 0.5345950849980764,
+            "r_squared": 0.6155815514323448,
+            "n_pairs": 23924,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 23924,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 0.39625566729735684,
+            "lambda_km": 306.9345655320469,
+            "lambda_err": 33.29492019113675,
+            "offset": 0.5408430330593745,
+            "r_squared": 0.9924939114737393,
+            "n_pairs": 11541,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11541,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3911,
+            "short_range_mean": 0.7745755908974685
+          },
+          "Q5": {
+            "amplitude": 0.1709496371984332,
+            "lambda_km": 752.4030685309878,
+            "lambda_err": 219.03170060311265,
+            "offset": 0.5382413592602348,
+            "r_squared": 0.7659575452708995,
+            "n_pairs": 51783,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 51783,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1498,
+            "short_range_mean": 0.7361793998664887
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.1919056809815879,
+            "intercept_km": 781.3022810136806,
+            "r_value": -0.3279690633548994,
+            "p_value": 0.5900286356746332,
+            "stderr_slope": 0.3191412460353654
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.05854820310219233,
+            "intercept_km": 771.2518040881505,
+            "r_value": -0.1536338909939113,
+            "p_value": 0.8051595223807915,
+            "stderr_slope": 0.2174097661476625
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.3280483039042393,
+            "intercept_km": 529.0734053102209,
+            "r_value": -0.40543297262570077,
+            "p_value": 0.4982998498180157,
+            "stderr_slope": 0.42703510999161465
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": 1.866084952828612e-05,
+            "intercept": 0.22929753121413232,
+            "r_value": 0.06670564338453414,
+            "p_value": 0.9151307654657339,
+            "stderr_slope": 0.00016115352981574472
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": -1.0165079767330675e-05,
+            "intercept": 0.5468984118308662,
+            "r_value": -0.6031460006161732,
+            "p_value": 0.28155722850749926,
+            "stderr_slope": 7.76121348962179e-06
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        },
+        "phase_alignment": {
+          "Q1": {
+            "amplitude": 1.2684801472807903,
+            "lambda_km": 1127.0058496425688,
+            "lambda_err": 343.1614908121342,
+            "offset": -0.11341548043547701,
+            "r_squared": 0.9843853300270801,
+            "n_pairs": 12805,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 12805,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q2": {
+            "amplitude": 1.3920974447634136,
+            "lambda_km": 1170.8084580250734,
+            "lambda_err": 258.66244990185027,
+            "offset": -0.03202888682206866,
+            "r_squared": 0.9470330208975678,
+            "n_pairs": 19521,
+            "n_bins": 13,
+            "boundary_hit": false,
+            "n_samples": 19521,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q3": {
+            "amplitude": 1.024536287769001,
+            "lambda_km": 1280.3454780762904,
+            "lambda_err": 604.5367241240002,
+            "offset": 0.0696389816342115,
+            "r_squared": 0.7048288350963646,
+            "n_pairs": 23924,
+            "n_bins": 11,
+            "boundary_hit": false,
+            "n_samples": 23924,
+            "short_range_max_km": 200.0,
+            "short_range_n": 0,
+            "short_range_mean": NaN
+          },
+          "Q4": {
+            "amplitude": 1.1611188824218812,
+            "lambda_km": 1467.0997279649591,
+            "lambda_err": 646.9354508472967,
+            "offset": -0.037320831229551994,
+            "r_squared": 0.938849792058817,
+            "n_pairs": 11541,
+            "n_bins": 7,
+            "boundary_hit": false,
+            "n_samples": 11541,
+            "short_range_max_km": 200.0,
+            "short_range_n": 3911,
+            "short_range_mean": 0.9669142469956534
+          },
+          "Q5": {
+            "amplitude": 1.1449542472938934,
+            "lambda_km": 1009.2937080084198,
+            "lambda_err": 146.81144665569516,
+            "offset": -0.017293831765917006,
+            "r_squared": 0.9315109098396838,
+            "n_pairs": 51783,
+            "n_bins": 18,
+            "boundary_hit": false,
+            "n_samples": 51783,
+            "short_range_max_km": 200.0,
+            "short_range_n": 1498,
+            "short_range_mean": 0.9505771648865153
+          },
+          "trend": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.06441867721490752,
+            "intercept_km": 1237.1547159217298,
+            "r_value": -0.15627970562262278,
+            "p_value": 0.8018314579552934,
+            "stderr_slope": 0.2350603022244055
+          },
+          "trend_weighted_n_pairs": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.19619318057666857,
+            "intercept_km": 1260.9035256614566,
+            "r_value": -0.5720755428730827,
+            "p_value": 0.313564059846235,
+            "stderr_slope": 0.1624015458713826
+          },
+          "trend_weighted_invvar": {
+            "x": "altitude_mean_m",
+            "y": "lambda_km",
+            "n_quintiles_used": 5,
+            "slope_km_per_m": -0.16600944024602277,
+            "intercept_km": 1195.20315613463,
+            "r_value": -0.7109982318956941,
+            "p_value": 0.17819625334710054,
+            "stderr_slope": 0.09479352371187662
+          },
+          "trend_amplitude": {
+            "x": "altitude_mean_m",
+            "y": "amplitude",
+            "n_quintiles_used": 5,
+            "slope_per_m": -0.00014804518308201168,
+            "intercept": 1.258550785377801,
+            "r_value": -0.44817672395528896,
+            "p_value": 0.449088321272237,
+            "stderr_slope": 0.00017048852183886273
+          },
+          "trend_offset": {
+            "x": "altitude_mean_m",
+            "y": "offset",
+            "n_quintiles_used": 5,
+            "slope_per_m": 3.358055060171506e-05,
+            "intercept": -0.039764675203571215,
+            "r_value": 0.21603815360705209,
+            "p_value": 0.7270866017999472,
+            "stderr_slope": 8.762293430789628e-05
+          },
+          "trend_short_range_mean": {
+            "x": "altitude_mean_m",
+            "y": "short_range_mean",
+            "n_quintiles_used": 2,
+            "trend_available": false
+          },
+          "stratification": {
+            "lat_band_deg": 10.0,
+            "require_same_lat_band": true,
+            "short_range_max_km": 200.0
+          },
+          "altitude_quintiles": {
+            "Q1": {
+              "min": -13.405100762844086,
+              "max": 81.41976858768612,
+              "mean": 39.85481963728865,
+              "median": 35.425350822508335,
+              "count": 15,
+              "lat_mean": 12.637543426122601,
+              "lat_median": 43.278766898544454
+            },
+            "Q2": {
+              "min": 40.560955880209804,
+              "max": 155.5221510604024,
+              "mean": 86.09915128983558,
+              "median": 81.69692501798272,
+              "count": 15,
+              "lat_mean": 12.276811005508472,
+              "lat_median": 40.33491382767878
+            },
+            "Q3": {
+              "min": 75.82112244796008,
+              "max": 592.5820490270853,
+              "mean": 263.46504382385564,
+              "median": 207.19003073498607,
+              "count": 15,
+              "lat_mean": 12.331109508954928,
+              "lat_median": 40.64905980295327
+            },
+            "Q4": {
+              "min": 76.51097901724279,
+              "max": 1163.3778578415513,
+              "mean": 601.3023734108855,
+              "median": 663.4047154374421,
+              "count": 15,
+              "lat_mean": 13.791152175109707,
+              "lat_median": 46.92374882709678
+            },
+            "Q5": {
+              "min": 104.78558990824968,
+              "max": 2488.9079361893237,
+              "mean": 1046.2710426757444,
+              "median": 964.6043032226153,
+              "count": 28,
+              "lat_mean": 8.144914591571998,
+              "lat_median": -15.490400791966909
+            }
+          }
+        }
+      }
+    }
+  },
+  "results": {
+    "clock_bias": {
+      "msc": {
+        "Q1": {
+          "amplitude": 0.20217515787360485,
+          "lambda_km": 663.1473827630989,
+          "lambda_err": 217.35225935406095,
+          "offset": 0.5583393727682587,
+          "r_squared": 0.961622962437328,
+          "n_pairs": 13034,
+          "n_bins": 7,
+          "boundary_hit": false,
+          "n_samples": 13034,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q2": {
+          "amplitude": 0.35747618112318197,
+          "lambda_km": 561.7123522606635,
+          "lambda_err": 111.3464897313713,
+          "offset": 0.558721711908701,
+          "r_squared": 0.9402719619399806,
+          "n_pairs": 20214,
+          "n_bins": 13,
+          "boundary_hit": false,
+          "n_samples": 20214,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q3": {
+          "amplitude": 0.22343123422279848,
+          "lambda_km": 913.5043469940076,
+          "lambda_err": 432.0049159559994,
+          "offset": 0.5334061421223437,
+          "r_squared": 0.697270235715141,
+          "n_pairs": 24433,
+          "n_bins": 11,
+          "boundary_hit": false,
+          "n_samples": 24433,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q4": {
+          "amplitude": 0.3290836282406105,
+          "lambda_km": 885.0647355940326,
+          "lambda_err": 155.8222963976032,
+          "offset": 0.5364681861437868,
+          "r_squared": 0.9812202433678516,
+          "n_pairs": 11738,
+          "n_bins": 7,
+          "boundary_hit": false,
+          "n_samples": 11738,
+          "short_range_max_km": 200.0,
+          "short_range_n": 3974,
+          "short_range_mean": 0.8055890739808758
+        },
+        "Q5": {
+          "amplitude": 0.2513463337201117,
+          "lambda_km": 663.0910740086756,
+          "lambda_err": 115.85322420473724,
+          "offset": 0.540609419222686,
+          "r_squared": 0.9024269047277755,
+          "n_pairs": 53491,
+          "n_bins": 18,
+          "boundary_hit": false,
+          "n_samples": 53491,
+          "short_range_max_km": 200.0,
+          "short_range_n": 1525,
+          "short_range_mean": 0.7955929304918032
+        },
+        "trend": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": 0.05611690522583439,
+          "intercept_km": 714.4420360866844,
+          "r_value": 0.15307585472308982,
+          "p_value": 0.80586163167895,
+          "stderr_slope": 0.20915949671495945
+        },
+        "trend_weighted_n_pairs": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": -0.03913966560219827,
+          "intercept_km": 740.2409076490798,
+          "r_value": -0.13368352057991373,
+          "p_value": 0.8302972048739083,
+          "stderr_slope": 0.16751851481495464
+        },
+        "trend_weighted_invvar": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": 0.09666109331019163,
+          "intercept_km": 624.9079825869912,
+          "r_value": 0.34868371539871224,
+          "p_value": 0.5652098352483598,
+          "stderr_slope": 0.15000662360929845
+        },
+        "trend_amplitude": {
+          "x": "altitude_mean_m",
+          "y": "amplitude",
+          "n_quintiles_used": 5,
+          "slope_per_m": 4.348191319432398e-06,
+          "intercept": 0.27093106047495796,
+          "r_value": 0.02704127303515989,
+          "p_value": 0.9655741783382802,
+          "stderr_slope": 9.280300548094202e-05
+        },
+        "trend_offset": {
+          "x": "altitude_mean_m",
+          "y": "offset",
+          "n_quintiles_used": 5,
+          "slope_per_m": -1.7171238717786182e-05,
+          "intercept": 0.5525045030924025,
+          "r_value": -0.5927707160303308,
+          "p_value": 0.2921454657723513,
+          "stderr_slope": 1.3469466345857016e-05
+        },
+        "trend_short_range_mean": {
+          "x": "altitude_mean_m",
+          "y": "short_range_mean",
+          "n_quintiles_used": 2,
+          "trend_available": false
+        },
+        "stratification": {
+          "lat_band_deg": 10.0,
+          "require_same_lat_band": true,
+          "short_range_max_km": 200.0
+        },
+        "altitude_quintiles": {
+          "Q1": {
+            "min": -13.405100762844086,
+            "max": 81.41976858768612,
+            "mean": 39.85481963728865,
+            "median": 35.425350822508335,
+            "count": 15,
+            "lat_mean": 12.637543426122601,
+            "lat_median": 43.278766898544454
+          },
+          "Q2": {
+            "min": 40.560955880209804,
+            "max": 155.5221510604024,
+            "mean": 86.09915128983558,
+            "median": 81.69692501798272,
+            "count": 15,
+            "lat_mean": 12.276811005508472,
+            "lat_median": 40.33491382767878
+          },
+          "Q3": {
+            "min": 75.82112244796008,
+            "max": 592.5820490270853,
+            "mean": 263.46504382385564,
+            "median": 207.19003073498607,
+            "count": 15,
+            "lat_mean": 12.331109508954928,
+            "lat_median": 40.64905980295327
+          },
+          "Q4": {
+            "min": 76.51097901724279,
+            "max": 1163.3778578415513,
+            "mean": 601.3023734108855,
+            "median": 663.4047154374421,
+            "count": 15,
+            "lat_mean": 13.791152175109707,
+            "lat_median": 46.92374882709678
+          },
+          "Q5": {
+            "min": 104.78558990824968,
+            "max": 2488.9079361893237,
+            "mean": 1046.2710426757444,
+            "median": 964.6043032226153,
+            "count": 28,
+            "lat_mean": 8.144914591571998,
+            "lat_median": -15.490400791966909
+          }
+        }
+      },
+      "phase_alignment": {
+        "Q1": {
+          "amplitude": 1.9873330066228887,
+          "lambda_km": 2144.4146097864887,
+          "lambda_err": 754.8860145020253,
+          "offset": -0.5630766166318503,
+          "r_squared": 0.9912924139889836,
+          "n_pairs": 13034,
+          "n_bins": 7,
+          "boundary_hit": false,
+          "n_samples": 13034,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q2": {
+          "amplitude": 1.9999999999999998,
+          "lambda_km": 2989.946183887718,
+          "lambda_err": 1424.270275225125,
+          "offset": -0.7659181921883671,
+          "r_squared": 0.947793231635431,
+          "n_pairs": 20214,
+          "n_bins": 13,
+          "boundary_hit": true,
+          "n_samples": 20214,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q3": {
+          "amplitude": 0.942224557083654,
+          "lambda_km": 2368.110085633393,
+          "lambda_err": 1174.2939766697252,
+          "offset": 0.09630321821420582,
+          "r_squared": 0.796116273765197,
+          "n_pairs": 24433,
+          "n_bins": 11,
+          "boundary_hit": false,
+          "n_samples": 24433,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q4": {
+          "amplitude": 1.1989957422484196,
+          "lambda_km": 3023.6122781550534,
+          "lambda_err": 2661.9783148516212,
+          "offset": -0.1146779802310373,
+          "r_squared": 0.9333309314907532,
+          "n_pairs": 11738,
+          "n_bins": 7,
+          "boundary_hit": false,
+          "n_samples": 11738,
+          "short_range_max_km": 200.0,
+          "short_range_n": 3974,
+          "short_range_mean": 0.9824634569703069
+        },
+        "Q5": {
+          "amplitude": 1.0264384556500163,
+          "lambda_km": 2222.400439257936,
+          "lambda_err": 483.649879214138,
+          "offset": -0.03534788770353964,
+          "r_squared": 0.9316288022316881,
+          "n_pairs": 53491,
+          "n_bins": 18,
+          "boundary_hit": false,
+          "n_samples": 53491,
+          "short_range_max_km": 200.0,
+          "short_range_n": 1525,
+          "short_range_mean": 0.8609715508196722
+        },
+        "trend": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": -0.11856370171965913,
+          "intercept_km": 2597.999391939124,
+          "r_value": -0.11708047764022492,
+          "p_value": 0.8512697843392337,
+          "stderr_slope": 0.5806433120192792
+        },
+        "trend_weighted_n_pairs": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": -0.356666530470093,
+          "intercept_km": 2653.968530035842,
+          "r_value": -0.45686095391337556,
+          "p_value": 0.43922814333399257,
+          "stderr_slope": 0.4009426458567789
+        },
+        "trend_weighted_invvar": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": -0.113136620481313,
+          "intercept_km": 2359.1182612495663,
+          "r_value": -0.23187951484922234,
+          "p_value": 0.7074293243190315,
+          "stderr_slope": 0.2740179303315612
+        },
+        "trend_amplitude": {
+          "x": "altitude_mean_m",
+          "y": "amplitude",
+          "n_quintiles_used": 5,
+          "slope_per_m": -0.0008802479992213372,
+          "intercept": 1.7896100546557585,
+          "r_value": -0.7079296040185147,
+          "p_value": 0.18094974434534503,
+          "stderr_slope": 0.0005070293482605793
+        },
+        "trend_offset": {
+          "x": "altitude_mean_m",
+          "y": "offset",
+          "n_quintiles_used": 5,
+          "slope_per_m": 0.0005595435883910528,
+          "intercept": -0.5045007025633756,
+          "r_value": 0.6363198001037742,
+          "p_value": 0.24841216148210815,
+          "stderr_slope": 0.00039164427315960276
+        },
+        "trend_short_range_mean": {
+          "x": "altitude_mean_m",
+          "y": "short_range_mean",
+          "n_quintiles_used": 2,
+          "trend_available": false
+        },
+        "stratification": {
+          "lat_band_deg": 10.0,
+          "require_same_lat_band": true,
+          "short_range_max_km": 200.0
+        },
+        "altitude_quintiles": {
+          "Q1": {
+            "min": -13.405100762844086,
+            "max": 81.41976858768612,
+            "mean": 39.85481963728865,
+            "median": 35.425350822508335,
+            "count": 15,
+            "lat_mean": 12.637543426122601,
+            "lat_median": 43.278766898544454
+          },
+          "Q2": {
+            "min": 40.560955880209804,
+            "max": 155.5221510604024,
+            "mean": 86.09915128983558,
+            "median": 81.69692501798272,
+            "count": 15,
+            "lat_mean": 12.276811005508472,
+            "lat_median": 40.33491382767878
+          },
+          "Q3": {
+            "min": 75.82112244796008,
+            "max": 592.5820490270853,
+            "mean": 263.46504382385564,
+            "median": 207.19003073498607,
+            "count": 15,
+            "lat_mean": 12.331109508954928,
+            "lat_median": 40.64905980295327
+          },
+          "Q4": {
+            "min": 76.51097901724279,
+            "max": 1163.3778578415513,
+            "mean": 601.3023734108855,
+            "median": 663.4047154374421,
+            "count": 15,
+            "lat_mean": 13.791152175109707,
+            "lat_median": 46.92374882709678
+          },
+          "Q5": {
+            "min": 104.78558990824968,
+            "max": 2488.9079361893237,
+            "mean": 1046.2710426757444,
+            "median": 964.6043032226153,
+            "count": 28,
+            "lat_mean": 8.144914591571998,
+            "lat_median": -15.490400791966909
+          }
+        }
+      }
+    },
+    "pos_jitter": {
+      "msc": {
+        "Q1": {
+          "amplitude": 0.2912615177030339,
+          "lambda_km": 591.221773305636,
+          "lambda_err": 95.13621782103733,
+          "offset": 0.5599068698245584,
+          "r_squared": 0.9892299678616636,
+          "n_pairs": 13034,
+          "n_bins": 7,
+          "boundary_hit": false,
+          "n_samples": 13034,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q2": {
+          "amplitude": 0.36667736193659206,
+          "lambda_km": 542.9014532732948,
+          "lambda_err": 54.92465457814546,
+          "offset": 0.5605781858310941,
+          "r_squared": 0.9837713850551465,
+          "n_pairs": 20214,
+          "n_bins": 13,
+          "boundary_hit": false,
+          "n_samples": 20214,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q3": {
+          "amplitude": 0.2272830312295044,
+          "lambda_km": 1053.423199290201,
+          "lambda_err": 383.7827702564817,
+          "offset": 0.535032401328294,
+          "r_squared": 0.7939438460463923,
+          "n_pairs": 24433,
+          "n_bins": 11,
+          "boundary_hit": false,
+          "n_samples": 24433,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q4": {
+          "amplitude": 0.25114740799937735,
+          "lambda_km": 1121.2315192240808,
+          "lambda_err": 221.67345342041918,
+          "offset": 0.538631917580082,
+          "r_squared": 0.9815547574765071,
+          "n_pairs": 11738,
+          "n_bins": 7,
+          "boundary_hit": false,
+          "n_samples": 11738,
+          "short_range_max_km": 200.0,
+          "short_range_n": 3974,
+          "short_range_mean": 0.7524480938600906
+        },
+        "Q5": {
+          "amplitude": 0.3076512623031213,
+          "lambda_km": 763.5162562608169,
+          "lambda_err": 69.38716390803705,
+          "offset": 0.5368170737967982,
+          "r_squared": 0.9711246536521321,
+          "n_pairs": 53491,
+          "n_bins": 18,
+          "boundary_hit": false,
+          "n_samples": 53491,
+          "short_range_max_km": 200.0,
+          "short_range_n": 1525,
+          "short_range_mean": 0.8221967652459016
+        },
+        "trend": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": 0.22963292998751977,
+          "intercept_km": 720.9067322196778,
+          "r_value": 0.36603514025509665,
+          "p_value": 0.5445764919367048,
+          "stderr_slope": 0.337065488167594
+        },
+        "trend_weighted_n_pairs": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": 0.054645842651833185,
+          "intercept_km": 768.8672765584205,
+          "r_value": 0.11968920746675188,
+          "p_value": 0.8479716050820473,
+          "stderr_slope": 0.2617027389014176
+        },
+        "trend_weighted_invvar": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": 0.22445319137407344,
+          "intercept_km": 553.3581445448939,
+          "r_value": 0.7387119755881631,
+          "p_value": 0.15389097391205037,
+          "stderr_slope": 0.11823977458164696
+        },
+        "trend_amplitude": {
+          "x": "altitude_mean_m",
+          "y": "amplitude",
+          "n_quintiles_used": 5,
+          "slope_per_m": -1.749407304661666e-05,
+          "intercept": 0.2959311751104215,
+          "r_value": -0.13619559424153257,
+          "p_value": 0.8271279879719423,
+          "stderr_slope": 7.346855653350496e-05
+        },
+        "trend_offset": {
+          "x": "altitude_mean_m",
+          "y": "offset",
+          "n_quintiles_used": 5,
+          "slope_per_m": -2.2009452009754698e-05,
+          "intercept": 0.5551599071023161,
+          "r_value": -0.7167162626203859,
+          "p_value": 0.1730978658413473,
+          "stderr_slope": 1.2364069161489875e-05
+        },
+        "trend_short_range_mean": {
+          "x": "altitude_mean_m",
+          "y": "short_range_mean",
+          "n_quintiles_used": 2,
+          "trend_available": false
+        },
+        "stratification": {
+          "lat_band_deg": 10.0,
+          "require_same_lat_band": true,
+          "short_range_max_km": 200.0
+        },
+        "altitude_quintiles": {
+          "Q1": {
+            "min": -13.405100762844086,
+            "max": 81.41976858768612,
+            "mean": 39.85481963728865,
+            "median": 35.425350822508335,
+            "count": 15,
+            "lat_mean": 12.637543426122601,
+            "lat_median": 43.278766898544454
+          },
+          "Q2": {
+            "min": 40.560955880209804,
+            "max": 155.5221510604024,
+            "mean": 86.09915128983558,
+            "median": 81.69692501798272,
+            "count": 15,
+            "lat_mean": 12.276811005508472,
+            "lat_median": 40.33491382767878
+          },
+          "Q3": {
+            "min": 75.82112244796008,
+            "max": 592.5820490270853,
+            "mean": 263.46504382385564,
+            "median": 207.19003073498607,
+            "count": 15,
+            "lat_mean": 12.331109508954928,
+            "lat_median": 40.64905980295327
+          },
+          "Q4": {
+            "min": 76.51097901724279,
+            "max": 1163.3778578415513,
+            "mean": 601.3023734108855,
+            "median": 663.4047154374421,
+            "count": 15,
+            "lat_mean": 13.791152175109707,
+            "lat_median": 46.92374882709678
+          },
+          "Q5": {
+            "min": 104.78558990824968,
+            "max": 2488.9079361893237,
+            "mean": 1046.2710426757444,
+            "median": 964.6043032226153,
+            "count": 28,
+            "lat_mean": 8.144914591571998,
+            "lat_median": -15.490400791966909
+          }
+        }
+      },
+      "phase_alignment": {
+        "Q1": {
+          "amplitude": 1.6259097598327004,
+          "lambda_km": 3755.916570603069,
+          "lambda_err": 1370.6368263526504,
+          "offset": -0.39766111923719033,
+          "r_squared": 0.9953139006421396,
+          "n_pairs": 13034,
+          "n_bins": 7,
+          "boundary_hit": false,
+          "n_samples": 13034,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q2": {
+          "amplitude": 1.839483820535642,
+          "lambda_km": 4972.599234746977,
+          "lambda_err": 1672.6378586269263,
+          "offset": -0.6766127472660012,
+          "r_squared": 0.988442103399196,
+          "n_pairs": 20214,
+          "n_bins": 13,
+          "boundary_hit": false,
+          "n_samples": 20214,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q3": {
+          "amplitude": 1.7834491344542933,
+          "lambda_km": 13873.650793818437,
+          "lambda_err": 6618.5736315451095,
+          "offset": -0.7523968486814641,
+          "r_squared": 0.9956885491854395,
+          "n_pairs": 24433,
+          "n_bins": 11,
+          "boundary_hit": false,
+          "n_samples": 24433,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q4": {
+          "amplitude": 1.219951268394393,
+          "lambda_km": 4520.983047791622,
+          "lambda_err": 2816.3625215892775,
+          "offset": -0.1538449279478752,
+          "r_squared": 0.9822905509772738,
+          "n_pairs": 11738,
+          "n_bins": 7,
+          "boundary_hit": false,
+          "n_samples": 11738,
+          "short_range_max_km": 200.0,
+          "short_range_n": 3974,
+          "short_range_mean": 0.9824237320080523
+        },
+        "Q5": {
+          "amplitude": 1.2738572115705598,
+          "lambda_km": 4118.769428149333,
+          "lambda_err": 919.026992609468,
+          "offset": -0.1400271275483469,
+          "r_squared": 0.9740784379582917,
+          "n_pairs": 53491,
+          "n_bins": 18,
+          "boundary_hit": false,
+          "n_samples": 53491,
+          "short_range_max_km": 200.0,
+          "short_range_n": 1525,
+          "short_range_mean": 0.9939786183606556
+        },
+        "trend": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": -2.081503007614652,
+          "intercept_km": 7096.3849892772405,
+          "r_value": -0.203823095268081,
+          "p_value": 0.7422926218255459,
+          "stderr_slope": 5.772303346890871
+        },
+        "trend_weighted_n_pairs": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": -3.6035078495496244,
+          "intercept_km": 8301.019198438928,
+          "r_value": -0.40436747896048947,
+          "p_value": 0.49954029790918814,
+          "stderr_slope": 4.705634676201586
+        },
+        "trend_weighted_invvar": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": -0.26103713234181575,
+          "intercept_km": 4453.388898083689,
+          "r_value": -0.11766385676935778,
+          "p_value": 0.8505321370785948,
+          "stderr_slope": 1.2719534603975062
+        },
+        "trend_amplitude": {
+          "x": "altitude_mean_m",
+          "y": "amplitude",
+          "n_quintiles_used": 5,
+          "slope_per_m": -0.0005603471330888097,
+          "intercept": 1.7768148127062098,
+          "r_value": -0.819848790019207,
+          "p_value": 0.08926704592218788,
+          "stderr_slope": 0.0002259430623387967
+        },
+        "trend_offset": {
+          "x": "altitude_mean_m",
+          "y": "offset",
+          "n_quintiles_used": 5,
+          "slope_per_m": 0.0005002268010303363,
+          "intercept": -0.6279001956163568,
+          "r_value": 0.7355392105113138,
+          "p_value": 0.15662081222010857,
+          "stderr_slope": 0.0002660102430230598
+        },
+        "trend_short_range_mean": {
+          "x": "altitude_mean_m",
+          "y": "short_range_mean",
+          "n_quintiles_used": 2,
+          "trend_available": false
+        },
+        "stratification": {
+          "lat_band_deg": 10.0,
+          "require_same_lat_band": true,
+          "short_range_max_km": 200.0
+        },
+        "altitude_quintiles": {
+          "Q1": {
+            "min": -13.405100762844086,
+            "max": 81.41976858768612,
+            "mean": 39.85481963728865,
+            "median": 35.425350822508335,
+            "count": 15,
+            "lat_mean": 12.637543426122601,
+            "lat_median": 43.278766898544454
+          },
+          "Q2": {
+            "min": 40.560955880209804,
+            "max": 155.5221510604024,
+            "mean": 86.09915128983558,
+            "median": 81.69692501798272,
+            "count": 15,
+            "lat_mean": 12.276811005508472,
+            "lat_median": 40.33491382767878
+          },
+          "Q3": {
+            "min": 75.82112244796008,
+            "max": 592.5820490270853,
+            "mean": 263.46504382385564,
+            "median": 207.19003073498607,
+            "count": 15,
+            "lat_mean": 12.331109508954928,
+            "lat_median": 40.64905980295327
+          },
+          "Q4": {
+            "min": 76.51097901724279,
+            "max": 1163.3778578415513,
+            "mean": 601.3023734108855,
+            "median": 663.4047154374421,
+            "count": 15,
+            "lat_mean": 13.791152175109707,
+            "lat_median": 46.92374882709678
+          },
+          "Q5": {
+            "min": 104.78558990824968,
+            "max": 2488.9079361893237,
+            "mean": 1046.2710426757444,
+            "median": 964.6043032226153,
+            "count": 28,
+            "lat_mean": 8.144914591571998,
+            "lat_median": -15.490400791966909
+          }
+        }
+      }
+    },
+    "clock_drift": {
+      "msc": {
+        "Q1": {
+          "amplitude": 0.20437059168941973,
+          "lambda_km": 652.255437263062,
+          "lambda_err": 200.24340148306777,
+          "offset": 0.5574699654350249,
+          "r_squared": 0.9655359203568986,
+          "n_pairs": 13034,
+          "n_bins": 7,
+          "boundary_hit": false,
+          "n_samples": 13034,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q2": {
+          "amplitude": 0.35677567058846804,
+          "lambda_km": 560.9374956748595,
+          "lambda_err": 110.29895334317872,
+          "offset": 0.5574792989402618,
+          "r_squared": 0.9411776202251799,
+          "n_pairs": 20214,
+          "n_bins": 13,
+          "boundary_hit": false,
+          "n_samples": 20214,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q3": {
+          "amplitude": 0.21884109731093265,
+          "lambda_km": 920.761014865995,
+          "lambda_err": 421.5960252245011,
+          "offset": 0.533400694491999,
+          "r_squared": 0.7105018319026017,
+          "n_pairs": 24433,
+          "n_bins": 11,
+          "boundary_hit": false,
+          "n_samples": 24433,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q4": {
+          "amplitude": 0.32556922295412344,
+          "lambda_km": 862.7938849570972,
+          "lambda_err": 151.1979776752301,
+          "offset": 0.5360357895998057,
+          "r_squared": 0.9809742019084673,
+          "n_pairs": 11738,
+          "n_bins": 7,
+          "boundary_hit": false,
+          "n_samples": 11738,
+          "short_range_max_km": 200.0,
+          "short_range_n": 3974,
+          "short_range_mean": 0.8010713787116256
+        },
+        "Q5": {
+          "amplitude": 0.2507812319549098,
+          "lambda_km": 666.3392992250908,
+          "lambda_err": 113.86662212315473,
+          "offset": 0.539062993486129,
+          "r_squared": 0.9061880732945357,
+          "n_pairs": 53491,
+          "n_bins": 18,
+          "boundary_hit": false,
+          "n_samples": 53491,
+          "short_range_max_km": 200.0,
+          "short_range_n": 1525,
+          "short_range_mean": 0.793839462295082
+        },
+        "trend": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": 0.057485453984001365,
+          "intercept_km": 709.197939467486,
+          "r_value": 0.1585341378445075,
+          "p_value": 0.7989968096335219,
+          "stderr_slope": 0.20670320544109075
+        },
+        "trend_weighted_n_pairs": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": -0.03458206032209432,
+          "intercept_km": 737.0282466968247,
+          "r_value": -0.11834448011712188,
+          "p_value": 0.8496715953579856,
+          "stderr_slope": 0.16752494930898584
+        },
+        "trend_weighted_invvar": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": 0.09922473836226706,
+          "intercept_km": 621.1619161072413,
+          "r_value": 0.37841424918131517,
+          "p_value": 0.5299476315377052,
+          "stderr_slope": 0.14013036580811672
+        },
+        "trend_amplitude": {
+          "x": "altitude_mean_m",
+          "y": "amplitude",
+          "n_quintiles_used": 5,
+          "slope_per_m": 2.9809079873230655e-06,
+          "intercept": 0.2700531454981307,
+          "r_value": 0.018702869552918843,
+          "p_value": 0.9761881552589449,
+          "stderr_slope": 9.200336837137024e-05
+        },
+        "trend_offset": {
+          "x": "altitude_mean_m",
+          "y": "offset",
+          "n_quintiles_used": 5,
+          "slope_per_m": -1.7671095365286263e-05,
+          "intercept": 0.5518889258913835,
+          "r_value": -0.6264003557961461,
+          "p_value": 0.25820635400552183,
+          "stderr_slope": 1.2696026050056638e-05
+        },
+        "trend_short_range_mean": {
+          "x": "altitude_mean_m",
+          "y": "short_range_mean",
+          "n_quintiles_used": 2,
+          "trend_available": false
+        },
+        "stratification": {
+          "lat_band_deg": 10.0,
+          "require_same_lat_band": true,
+          "short_range_max_km": 200.0
+        },
+        "altitude_quintiles": {
+          "Q1": {
+            "min": -13.405100762844086,
+            "max": 81.41976858768612,
+            "mean": 39.85481963728865,
+            "median": 35.425350822508335,
+            "count": 15,
+            "lat_mean": 12.637543426122601,
+            "lat_median": 43.278766898544454
+          },
+          "Q2": {
+            "min": 40.560955880209804,
+            "max": 155.5221510604024,
+            "mean": 86.09915128983558,
+            "median": 81.69692501798272,
+            "count": 15,
+            "lat_mean": 12.276811005508472,
+            "lat_median": 40.33491382767878
+          },
+          "Q3": {
+            "min": 75.82112244796008,
+            "max": 592.5820490270853,
+            "mean": 263.46504382385564,
+            "median": 207.19003073498607,
+            "count": 15,
+            "lat_mean": 12.331109508954928,
+            "lat_median": 40.64905980295327
+          },
+          "Q4": {
+            "min": 76.51097901724279,
+            "max": 1163.3778578415513,
+            "mean": 601.3023734108855,
+            "median": 663.4047154374421,
+            "count": 15,
+            "lat_mean": 13.791152175109707,
+            "lat_median": 46.92374882709678
+          },
+          "Q5": {
+            "min": 104.78558990824968,
+            "max": 2488.9079361893237,
+            "mean": 1046.2710426757444,
+            "median": 964.6043032226153,
+            "count": 28,
+            "lat_mean": 8.144914591571998,
+            "lat_median": -15.490400791966909
+          }
+        }
+      },
+      "phase_alignment": {
+        "Q1": {
+          "amplitude": 1.7667270369538675,
+          "lambda_km": 868.1533984957883,
+          "lambda_err": 124.96828998363387,
+          "offset": -0.1913515921998412,
+          "r_squared": 0.9946966958946891,
+          "n_pairs": 13034,
+          "n_bins": 7,
+          "boundary_hit": false,
+          "n_samples": 13034,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q2": {
+          "amplitude": 1.57678415926486,
+          "lambda_km": 1568.9704499048776,
+          "lambda_err": 349.4055223780047,
+          "offset": -0.26392353924123935,
+          "r_squared": 0.9624830410563873,
+          "n_pairs": 20214,
+          "n_bins": 13,
+          "boundary_hit": false,
+          "n_samples": 20214,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q3": {
+          "amplitude": 1.0360293280660564,
+          "lambda_km": 975.6434387844134,
+          "lambda_err": 394.71704447197015,
+          "offset": 0.15241451408873233,
+          "r_squared": 0.757617381199394,
+          "n_pairs": 24433,
+          "n_bins": 11,
+          "boundary_hit": false,
+          "n_samples": 24433,
+          "short_range_max_km": 200.0,
+          "short_range_n": 0,
+          "short_range_mean": NaN
+        },
+        "Q4": {
+          "amplitude": 1.0942623250232055,
+          "lambda_km": 1633.0304786513761,
+          "lambda_err": 833.4774987980977,
+          "offset": 0.028649939844076808,
+          "r_squared": 0.9315896394374126,
+          "n_pairs": 11738,
+          "n_bins": 7,
+          "boundary_hit": false,
+          "n_samples": 11738,
+          "short_range_max_km": 200.0,
+          "short_range_n": 3974,
+          "short_range_mean": 0.9791642083543031
+        },
+        "Q5": {
+          "amplitude": 1.3560502049551213,
+          "lambda_km": 769.1179745723274,
+          "lambda_err": 112.32680039020171,
+          "offset": 0.011090919462058714,
+          "r_squared": 0.9286691390432222,
+          "n_pairs": 53491,
+          "n_bins": 18,
+          "boundary_hit": false,
+          "n_samples": 53491,
+          "short_range_max_km": 200.0,
+          "short_range_n": 1525,
+          "short_range_mean": 0.9757817403278688
+        },
+        "trend": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": -0.2207759302649466,
+          "intercept_km": 1252.9269278539223,
+          "r_value": -0.22764202128067296,
+          "p_value": 0.7126803234125485,
+          "stderr_slope": 0.545235160489864
+        },
+        "trend_weighted_n_pairs": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": -0.4461585225067849,
+          "intercept_km": 1295.0699037581398,
+          "r_value": -0.5656915158229114,
+          "p_value": 0.3202489747692634,
+          "stderr_slope": 0.3754924044514135
+        },
+        "trend_weighted_invvar": {
+          "x": "altitude_mean_m",
+          "y": "lambda_km",
+          "n_quintiles_used": 5,
+          "slope_km_per_m": -0.1740926061631673,
+          "intercept_km": 963.1136002056024,
+          "r_value": -0.45164081144828583,
+          "p_value": 0.4451493181112749,
+          "stderr_slope": 0.19855858426495362
+        },
+        "trend_amplitude": {
+          "x": "altitude_mean_m",
+          "y": "amplitude",
+          "n_quintiles_used": 5,
+          "slope_per_m": -0.00032145974928046966,
+          "intercept": 1.4969328260732766,
+          "r_value": -0.4333468607983985,
+          "p_value": 0.4660369919391958,
+          "stderr_slope": 0.00038597983735152834
+        },
+        "trend_offset": {
+          "x": "altitude_mean_m",
+          "y": "offset",
+          "n_quintiles_used": 5,
+          "slope_per_m": 0.00020691397237350667,
+          "intercept": -0.1369203907211176,
+          "r_value": 0.5087149600245029,
+          "p_value": 0.3814207334064312,
+          "stderr_slope": 0.00020217388190715488
+        },
+        "trend_short_range_mean": {
+          "x": "altitude_mean_m",
+          "y": "short_range_mean",
+          "n_quintiles_used": 2,
+          "trend_available": false
+        },
+        "stratification": {
+          "lat_band_deg": 10.0,
+          "require_same_lat_band": true,
+          "short_range_max_km": 200.0
+        },
+        "altitude_quintiles": {
+          "Q1": {
+            "min": -13.405100762844086,
+            "max": 81.41976858768612,
+            "mean": 39.85481963728865,
+            "median": 35.425350822508335,
+            "count": 15,
+            "lat_mean": 12.637543426122601,
+            "lat_median": 43.278766898544454
+          },
+          "Q2": {
+            "min": 40.560955880209804,
+            "max": 155.5221510604024,
+            "mean": 86.09915128983558,
+            "median": 81.69692501798272,
+            "count": 15,
+            "lat_mean": 12.276811005508472,
+            "lat_median": 40.33491382767878
+          },
+          "Q3": {
+            "min": 75.82112244796008,
+            "max": 592.5820490270853,
+            "mean": 263.46504382385564,
+            "median": 207.19003073498607,
+            "count": 15,
+            "lat_mean": 12.331109508954928,
+            "lat_median": 40.64905980295327
+          },
+          "Q4": {
+            "min": 76.51097901724279,
+            "max": 1163.3778578415513,
+            "mean": 601.3023734108855,
+            "median": 663.4047154374421,
+            "count": 15,
+            "lat_mean": 13.791152175109707,
+            "lat_median": 46.92374882709678
+          },
+          "Q5": {
+            "min": 104.78558990824968,
+            "max": 2488.9079361893237,
+            "mean": 1046.2710426757444,
+            "median": 964.6043032226153,
+            "count": 28,
+            "lat_mean": 8.144914591571998,
+            "lat_median": -15.490400791966909
+          }
+        }
+      }
+    }
+  }
+}

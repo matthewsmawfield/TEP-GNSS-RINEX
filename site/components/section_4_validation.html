@@ -1,13 +1,13 @@
-<h1>4. Signal Characterization & Validation</h1>
+<h2>4. Signal Characterization & Validation</h2>
 
 <p>Detecting a signal is only the first step. Validating it requires rigorous characterization of its properties and systematic exclusion of alternative explanations. This section presents the battery of tests performed to confirm the origin of the observed correlations.</p>
 
-<h2>4.1 Directional Anisotropy Validation</h2>
+<h3>4.1 Directional Anisotropy Validation</h3>
 
-<p>The most stringent validation of TEP detection comes from the directional anisotropy analysis (Section 3.9). Unlike isotropic noise sources or globally uniform effects, a genuine TEP signal should exhibit specific directional structure matching CODE's 25-year findings.</p>
+<p>An important validation step for TEP detection is the directional anisotropy analysis (Section 3.9). Unlike isotropic noise sources or globally uniform effects, a TEP-related signal is expected to exhibit directional structure consistent with CODE's 25-year findings.</p>
 
 <div>
-    <h3>Statistical Significance</h3>
+    <h4>Statistical Significance</h4>
     <table>
         <tr>
             <th>Metric</th>
@@ -16,8 +16,8 @@
         </tr>
         <tr>
             <td>Total pairs analyzed</td>
-            <td>172,379,294</td>
-            <td>Largest raw SPP anisotropy study</td>
+            <td>713,243,298 (ALL_STATIONS)</td>
+            <td>Large raw SPP anisotropy dataset</td>
         </tr>
         <tr>
             <td>Maximum t-statistic</td>
@@ -32,42 +32,45 @@
         <tr>
             <td>Cohen's d (effect size)</td>
             <td>0.13–0.30</td>
-            <td>Small but robust effect</td>
+            <td>Small but consistently observed effect</td>
         </tr>
         <tr>
             <td>95% confidence interval</td>
-            <td>[1.018, 1.051]</td>
+            <td>[1.032, 1.230]</td>
             <td>Excludes unity (no anisotropy)</td>
         </tr>
     </table>
-    <p style="margin-top: 15px;">The probability of observing this directional structure by chance is effectively zero. The signal is robustly detected.</p>
+    <p style="margin-top: 15px;">The probability of observing this directional structure by chance is very small under the stated null hypothesis. The signal is detected consistently across the tested configurations.</p>
 </div>
 
 <div class="critical-analysis">
-    <h3>Addressing Statistical Inflation & Effective Degrees of Freedom</h3>
-    <p>A legitimate concern in large-N studies is that the 172 million station pairs are not fully independent—each station participates in many pairs, potentially inflating t-statistics beyond their true significance. This is addressed through two conservative tests that sidestep the independence assumption entirely.</p>
+    <h4>Addressing Statistical Inflation & Effective Degrees of Freedom</h4>
+    <p>A legitimate concern in large-N studies is that the 713 million station pairs (ALL_STATIONS filter) are not fully independent—each station participates in many pairs, potentially inflating t-statistics beyond their true significance. This is addressed through two conservative tests that sidestep the independence assumption entirely.</p>
     
-    <h4>Conservative Test 1: Month-as-Sample</h4>
-    <p>If each calendar month is treated as a single independent observation (discarding all within-month pair statistics), the E-W > N-S anisotropy is still detected in <strong>36 of 36 months</strong> (100%) for the Multi-GNSS mode. Under a null hypothesis of random directional bias, this consistency has probability:</p>
+    <h5>Conservative Test 1: Month-as-Sample</h5>
+    <p>If each calendar month is treated as a single independent observation (discarding all within-month pair statistics), the E-W > N-S anisotropy is still detected in 36 of 36 months (100%) for the Multi-GNSS mode. Under a null hypothesis of random directional bias, this consistency has probability:</p>
     
     <p style="text-align: center; font-family: monospace; font-size: 14px; background: #f5f5f5; padding: 10px; border-radius: 4px;">
         P = (0.5)<sup>36</sup> ≈ 1.5 × 10<sup>−11</sup>
     </p>
     
-    <p>This p &lt; 10<sup>−10</sup> significance uses only 36 effective samples—a 4.8-million-fold reduction from the raw pair count—yet remains decisive.</p>
+    <p>This p &lt; 10<sup>−10</sup> result uses only 36 effective samples—a 4.8-million-fold reduction from the raw pair count—yet remains statistically significant.</p>
 
-    <h4>Conservative Test 2: Filter Independence</h4>
-    <p>The three station filtering methods (ALL_STATIONS, OPTIMAL_100, DYNAMIC_50) use overlapping but distinct station subsets. If the signal arose from a specific cluster of problematic stations, the filters would yield different results. Instead, all three converge to identical correlation lengths with <strong>zero variance</strong> (σ² = 0, §3.4). This confirms the signal is network-wide, not driven by station overlap.</p>
+    <h5>Conservative Test 2: Filter Independence</h5>
+    <p>The three station filtering methods (ALL_STATIONS, OPTIMAL_100, DYNAMIC_50) use overlapping but distinct station subsets. If the signal arose from a specific cluster of problematic stations, the filters would yield different results. Instead, all three converge to identical correlation lengths with zero variance (σ² = 0, §3.4). This indicates the signal is network-wide rather than driven by station overlap.</p>
 
-    <h4>No "Garden of Forking Paths"</h4>
-    <p>The 54 analysis combinations (3 modes × 3 filters × 6 metrics) represent an <em>exhaustive</em> grid of all reasonable processing options—not a selective search for significance. The signal appears in <strong>all 54 combinations</strong>, ruling out p-hacking or publication bias.</p>
+    <h5>Conservative Test 3: Distance Bias Audit</h5>
+    <p>A critical potential confounder is distance distribution bias: if E-W pairs happened to be shorter on average than N-S pairs within the &lt;500 km bin, the higher coherence could be a simple distance effect. An audit of the distance distributions reveals the opposite: E-W pairs are on average <strong>13 km longer</strong> than N-S pairs (305 km vs 292 km). Since coherence decays with distance, this bias <em>suppresses</em> the E-W signal. When the ratio is re-computed using strict 50-km distance matching (resampling to match distributions), the E-W/N-S ratio strengthens from 1.033 to 1.041. Thus, the signal is robust to, and in fact underestimated by, distance distribution differences.</p>
+
+    <h5>No "Garden of Forking Paths"</h5>
+    <p>The 72 analysis combinations (4 modes × 3 filters × 6 metrics) represent an <em>exhaustive</em> grid of all reasonable processing options—not a selective search for significance. The signal appears in all 72 combinations, which is not consistent with a selective search for significance and reduces the likelihood of p-hacking or publication bias.</p>
 </div>
 
-<h2>4.2 Geomagnetic Control (Ionosphere Test)</h2>
+<h3>4.2 Geomagnetic Control (Ionosphere Test)</h3>
 
-<h3>4.2.1 Kp Stratification</h3>
+<h4>4.2.1 Kp Stratification</h4>
 
-<p>The most significant alternative hypothesis for long-range GNSS correlations is ionospheric activity. To test this, the dataset was stratified into "Quiet" (Kp &lt; 3) and "Storm" (Kp ≥ 3) days using real geomagnetic data from GFZ Potsdam (Kp index since 1932).</p>
+<p>A major alternative hypothesis for long-range GNSS correlations is ionospheric activity. To test this, the dataset was stratified into "Quiet" (Kp &lt; 3) and "Storm" (Kp ≥ 3) days using real geomagnetic data from GFZ Potsdam (Kp index since 1932). Additional stricter storm definitions (Kp ≥ 4 and Kp ≥ 5) were examined as sensitivity checks; however, these involve far fewer storm days and are interpreted cautiously.</p>
 
 <table>
     <tr>
@@ -94,7 +97,7 @@
 </table>
 
 <div>
-    <h4>Full Kp Stratification Results (Real GFZ Data)</h4>
+    <h5>Full Kp Stratification Results (Real GFZ Data)</h5>
     <table>
         <tr>
             <th>Metric</th>
@@ -115,7 +118,7 @@
             <td>1,790 km</td>
             <td>1,777 km</td>
             <td>−0.7%</td>
-            <td>Phase alignment robust to storms</td>
+            <td>Phase alignment changes little under storms</td>
         </tr>
         <tr>
             <td>pos_jitter/MSC</td>
@@ -135,23 +138,23 @@
 </div>
 
 <div>
-    <h3>Ionosphere Hypothesis: Unsupported</h3>
+    <h4>Ionosphere Hypothesis: Unsupported</h4>
     <p>Key findings from real Kp data:</p>
     <ul>
-        <li><strong>λ nearly invariant:</strong> Storm λ is only 3–4% shorter than quiet λ (MSC metrics)</li>
-        <li><strong>Phase alignment robust:</strong> Δλ &lt; 1% for phase alignment metrics</li>
-        <li><strong>R² remains excellent:</strong> 0.95+ in both conditions—signal persists, not destroyed</li>
-        <li><strong>Physical interpretation:</strong> Storms add short-range ionospheric noise, slightly reducing apparent λ, but the underlying ~700–1,800 km correlation structure is preserved</li>
+        <li><strong>λ changes only slightly:</strong> Storm λ is only 3–4% shorter than quiet λ (MSC metrics)</li>
+        <li><strong>Phase alignment changes little:</strong> Phase-alignment λ is typically stable at the percent level at the primary threshold (Kp &lt; 3 vs. Kp ≥ 3)</li>
+        <li><strong>R² remains high:</strong> 0.95+ in both conditions—signal remains detectable</li>
+        <li><strong>Physical interpretation:</strong> Storms add short-range ionospheric noise, slightly reducing apparent λ, while the inferred ~700–1,800 km correlation structure remains detectable</li>
     </ul>
-    <p>If the signal were ionospheric, storm conditions would increase correlation (enhanced ionospheric activity = stronger ionospheric correlations). Instead, the opposite is observed: storms degrade the signal slightly. This confirms the correlations are not ionospheric in origin. The signal survives the most stringent environmental stress test available: geomagnetic storms inject substantial electromagnetic noise into the ionosphere, yet the underlying correlation structure remains intact.</p>
+    <p>If the signal were primarily ionospheric, storm conditions might be expected to increase correlation (enhanced ionospheric activity = stronger ionospheric correlations). Instead, a modest reduction in apparent λ is observed in storms for MSC-based metrics, while phase-alignment metrics typically change only at the percent level at the primary threshold. This pattern is consistent with storms adding short-range ionospheric noise, but does not support an ionospheric origin for the reported long-range correlation structure.</p>
 </div>
 
-<h2>4.3 Null Tests</h2>
+<h3>4.3 Null Tests</h3>
 
-<h3>4.3.1 Clock Drift as Internal Consistency Check</h3>
+<h4>4.3.1 Clock Drift as Internal Consistency Check</h4>
 
 <div>
-    <p>The clock drift metric (time derivative of clock bias) serves as a powerful null test. Taking the derivative of a random walk process whitens the spectrum and destroys spatial correlations. The fact that clock drift maintains exponential decay structure demonstrates that these signatures are not random-walk artifacts.</p>
+    <p>The clock drift metric (time derivative of clock bias) serves as an internal consistency check. Taking the derivative of a random-walk-like process whitens the spectrum and is expected to reduce spatial correlations. The observation that clock drift maintains an exponential decay structure suggests that the signatures are not solely random-walk artifacts.</p>
     
     <table>
         <tr>
@@ -177,12 +180,12 @@
     <p>Conclusion: The preservation of spatial correlation in the derivative suggests that the signal is not due to static offsets or random walks. The signal represents dynamic, spatially-correlated fluctuations.</p>
 </div>
 
-<h3>4.3.2 Shuffled Data Null Test</h3>
+<h4>4.3.2 Shuffled Data Null Test</h4>
 
 <div>
     <p>A key validation test addresses the question: <em>"Does the methodology itself create artificial exponential decay?"</em> To test this, the coherence values were shuffled randomly across all distance bins, breaking any genuine distance-coherence relationship while preserving the exact same binning, fitting, and weighting procedures.</p>
     
-    <h4>Methodology</h4>
+    <h5>Methodology</h5>
     <p>The shuffled null test randomly permutes the coherence values across all station pairs, destroying any physical distance-dependence while preserving:</p>
     <ul>
         <li>Identical log-spaced distance binning (40 bins, 50–13,000 km)</li>
@@ -191,7 +194,7 @@
         <li>Identical R² assessment</li>
     </ul>
     
-    <h4>Results</h4>
+    <h5>Results</h5>
     <table>
         <tr>
             <th>Data</th>
@@ -220,7 +223,7 @@
     </div>
     -->
     
-    <h4>Implications</h4>
+    <h5>Implications</h5>
     <p>If log-binning or exponential fitting created artificial decay, the shuffled data would also show exponential decay. <em>It does not.</em> This confirms that the signal is topological: it exists only in the specific relationship between coherence and physical separation. Destroying the spatial topology destroys the signal, confirming it is a genuine geometric property of the GNSS network.</p>
     <ul>
         <li>Log-spaced binning does not transform Y-values — it only groups data</li>
@@ -230,7 +233,7 @@
     <p>This confirms that the exponential decay is a property of the data, not a methodological artifact.</p>
 </div>
 
-<h3>4.3.3 Multi-Metric Discrimination</h3>
+<h4>4.3.3 Multi-Metric Discrimination</h4>
 
 <div>
     <p>If the methodology artificially created exponential decay, all metrics would show identical correlation lengths. Instead, different metrics show distinctly different λ values:</p>
@@ -250,8 +253,8 @@
         </tr>
         <tr>
             <td>Clock Bias (ionofree)</td>
-            <td>1,072</td>
-            <td>0.973</td>
+            <td>1,073</td>
+            <td>0.972</td>
             <td>Ionosphere removed → longer λ</td>
         </tr>
         <tr>
@@ -271,10 +274,10 @@
     <p>Key observation: The ionofree mode shows λ = 1,072 km, which is 47% longer than baseline (727 km). Removing ionospheric effects increases the correlation length because ionospheric decorrelation was shortening the apparent λ. An artificial methodology effect would not "know" to respond this way to ionospheric correction. This physically meaningful response confirms the signal is real.</p>
 </div>
 
-<h2>4.4 Systematic Effect Discrimination</h2>
+<h3>4.4 Systematic Effect Discrimination</h3>
 
 <div class="critical-analysis">
-    <h3>Can Alternative Effects Explain the Observed λ?</h3>
+    <h4>Can Alternative Effects Explain the Observed λ?</h4>
     
     <p>Observed correlation lengths range from 700–1,100 km (MSC) to 1,700–3,500 km (Phase Alignment), depending on metric and processing mode:</p>
     
@@ -320,10 +323,10 @@
     <p>None of the known systematic effects produce correlation lengths in the observed range across all processing modes. The observed scales are consistent with TEP predictions, especially for phase alignment metrics which reach 3,485 km in ionofree mode.</p>
 </div>
 
-<h2>4.5 Time Alignment Validation</h2>
+<h3>4.5 Time Alignment Validation</h3>
 
 <div>
-    <h3>The "Time Slip" Problem and Its Solution</h3>
+    <h4>The "Time Slip" Problem and Its Solution</h4>
     
     <p>A critical validation was confirming that the Pandas DatetimeIndex alignment method correctly handles missing data. Without proper alignment:</p>
     <ul>
@@ -336,7 +339,7 @@
     <p>Validation: The agreement between raw SPP results (using Pandas DatetimeIndex alignment) and precise-product results (using the same methodology in Papers 1 and 2) confirms the alignment approach is correct.</p>
 </div>
 
-<h2>4.6 Uncertainty Estimation</h2>
+<h3>4.6 Uncertainty Estimation</h3>
 
 <p>Formal uncertainty bounds from least-squares fitting (Baseline GPS L1 mode, MSC metric):</p>
 
@@ -363,10 +366,10 @@
     </tr>
 </table>
 
-<h2>4.7 Cross-Validation Against Independent Dataset</h2>
+<h3>4.7 Cross-Validation Against Independent Dataset</h3>
 
 <div>
-    <h3>Dataset Independence Statement</h3>
+    <h4>Dataset Independence Statement</h4>
     <p>This analysis (Paper 3) was designed for maximum independence from Papers 1 and 2:</p>
     
     <table>
@@ -411,7 +414,7 @@
 </div>
 
 <div>
-    <h4>Cross-Validation Results</h4>
+    <h5>Cross-Validation Results</h5>
     <p>Comparison with CODE longspan reference values (from Paper 2):</p>
     
     <table>
@@ -424,8 +427,8 @@
         <tr>
             <td>E-W/N-S λ ratio</td>
             <td>2.16</td>
-            <td>1.19–1.23 (raw)<br/>~2.1 (geometry-corrected)</td>
-            <td>Within 5% after correction</td>
+            <td>1.03–1.22 (raw short-dist)<br/>1.80–1.86 (geometry-corrected)</td>
+            <td>Within 17% after correction</td>
         </tr>
         <tr>
             <td>Phase alignment λ</td>
@@ -445,7 +448,7 @@
 </div>
 
 <div>
-    <h4>Why This Is Not Circular Reasoning</h4>
+    <h5>Why This Is Not Circular Reasoning</h5>
     <p>A common concern with cross-validation is circularity: is this just comparing results to themselves? This is not the case here:</p>
     <ul>
         <li><strong>Primary evidence requires no correction:</strong> The core finding—E-W > N-S at short distances (&lt;500 km)—uses raw, uncorrected values and matches CODE's prediction directly. The geometric suppression analysis (§3.9.4) is secondary validation only, explaining long-distance λ inversions</li>
@@ -457,7 +460,7 @@
     <p>The CODE reference values are used only for interpreting secondary full-distance results, never to adjust or tune the primary short-distance evidence. The short-distance finding (E-W > N-S at &lt;500 km) is fully independent and requires no external calibration.</p>
 </div>
 
-<h2>4.8 Validation Summary</h2>
+<h3>4.8 Validation Summary</h3>
 
 <p>The exponential decay signature satisfies all validation criteria. Table 4.8.1 summarizes the tests performed and their outcomes.</p>
 
@@ -492,7 +495,7 @@
         <tr>
             <td>Kp stratification</td>
             <td>Geomagnetic dependence</td>
-            <td>Invariant (Δλ &lt; 4%)</td>
+            <td>Near-invariant (median Δλ ≈ −1%; 60/72 within ±5%)</td>
         </tr>
         <tr>
             <td>Directional sectors</td>

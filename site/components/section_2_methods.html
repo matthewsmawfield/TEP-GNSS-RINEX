@@ -1,8 +1,8 @@
-<h1>2. Data and Methods</h1>
+<h2>2. Data and Methods</h2>
 
-<h2>2.1 Data Sources</h2>
+<h3>2.1 Data Sources</h3>
 
-<h3>2.1.1 NASA CDDIS Archive</h3>
+<h4>2.1.1 NASA CDDIS Archive</h4>
 
 <p>All observation data were obtained from the Crustal Dynamics Data Information System (CDDIS), operated by NASA Goddard Space Flight Center. CDDIS serves as the primary archive for the International GNSS Service (IGS) and provides open access to RINEX observation files from the global tracking network.</p>
 
@@ -21,19 +21,23 @@
     </tr>
     <tr>
         <td><strong>Stations Processed</strong></td>
-        <td>440 stations</td>
+        <td>539 stations</td>
     </tr>
     <tr>
-        <td><strong>Stations After Filtering</strong></td>
-        <td>~400 stations (smart filter: jumps &lt; 500 ns, std &lt; 100 ns)</td>
+        <td><strong>Stations After DYNAMIC_50 Filtering</strong></td>
+        <td>~400 stations (smart filter: jumps &lt; 500 ns, std &lt; 50 ns)</td>
     </tr>
     <tr>
         <td><strong>Time Span</strong></td>
         <td>2022-01-01 – 2024-12-31 (~1,096 days, 3 years)</td>
     </tr>
     <tr>
-        <td><strong>RINEX Files</strong></td>
-        <td>~350,000 observation files</td>
+        <td><strong>RINEX Files (total)</strong></td>
+        <td>409,737 observation files</td>
+    </tr>
+    <tr>
+        <td><strong>Files after DYNAMIC_50 filter</strong></td>
+        <td>316,497 files (77% pass rate)</td>
     </tr>
     <tr>
         <td><strong>File Format</strong></td>
@@ -45,31 +49,32 @@
     </tr>
 </table>
 
-<h3>2.1.2 Broadcast Ephemerides</h3>
+<h4>2.1.2 Broadcast Ephemerides</h4>
 
 <p>Unlike Papers 1 and 2, which used precise orbit and clock products, this analysis relies solely on broadcast navigation messages. Broadcast ephemerides provide satellite positions with ~1 meter accuracy (vs. ~2 cm for precise products) and satellite clocks with ~5 ns accuracy (vs. ~0.1 ns for precise products).</p>
     
 <p>This choice ensures complete independence from the processing chains used in previous analyses.</p>
 
-<h3>2.1.3 External Auxiliary Data</h3>
+<h4>2.1.3 External Auxiliary Data</h4>
 
 <p>Two external data sources are used for geomagnetic and planetary event analyses:</p>
 
 <div>
-    <h4>Geomagnetic Kp Index</h4>
+    <h5>Geomagnetic Kp Index</h5>
     <table>
         <tr><th>Parameter</th><th>Value</th></tr>
         <tr><td><strong>Source</strong></td><td>GFZ Helmholtz Centre Potsdam</td></tr>
         <tr><td><strong>URL</strong></td><td><a href="https://www-app3.gfz-potsdam.de/kp_index/Kp_ap_since_1932.txt">Kp_ap_since_1932.txt</a></td></tr>
         <tr><td><strong>Coverage</strong></td><td>1932–present (3-hourly values)</td></tr>
         <tr><td><strong>Aggregation</strong></td><td>Daily mean Kp</td></tr>
-        <tr><td><strong>Quiet threshold</strong></td><td>Kp &lt; 3.0</td></tr>
+        <tr><td><strong>Primary stratification</strong></td><td>Quiet: Kp &lt; 3.0; Storm: Kp ≥ 3.0</td></tr>
+        <tr><td><strong>Sensitivity thresholds</strong></td><td>Additional storm definitions: Kp ≥ 4.0 and Kp ≥ 5.0</td></tr>
     </table>
     <p>Real Kp index data is downloaded directly from GFZ at runtime. No synthetic or approximated geomagnetic data is used. If the download fails, the analysis terminates with an error.</p>
 </div>
 
 <div>
-    <h4>Planetary Ephemeris</h4>
+    <h5>Planetary Ephemeris</h5>
     <table>
         <tr><th>Parameter</th><th>Value</th></tr>
         <tr><td><strong>Source</strong></td><td>JPL DE440 via Astropy</td></tr>
@@ -81,13 +86,13 @@
 </div>
 
 <div>
-    <h4>Data Authenticity Verification</h4>
+    <h5>Data Authenticity Verification</h5>
     <p>All auxiliary data (Kp, planetary ephemeris) comes from authoritative scientific sources. The analysis pipeline is designed to fail immediately if authentic data cannot be obtained, rather than fall back to approximations. This ensures all reported results are based exclusively on real observational data.</p>
 </div>
 
-<h2>2.2 Station Filtering Strategies</h2>
+<h3>2.2 Station Filtering Strategies</h3>
 
-<p>To ensure robustness and enable cross-validation, analyses were run under three station selection strategies. These filters are not merely data reduction steps but distinct scientific instruments: <strong>OPTIMAL_100</strong> is a "spatial telescope" tuned for global structure, while <strong>DYNAMIC_50</strong> is a "temporal microscope" tuned for stability.</p>
+<p>To ensure robustness and enable cross-validation, analyses were run under three station selection strategies. These filters serve distinct objectives: OPTIMAL_100 emphasizes global spatial structure, while DYNAMIC_50 emphasizes temporal stability.</p>
 
 <div>
     <h4>Station Filters Compared</h4>
@@ -101,7 +106,7 @@
         <tr>
             <td><strong>All Stations</strong></td>
             <td>No filter applied</td>
-            <td>~440</td>
+            <td>539</td>
             <td>Maximum statistical power, full network coverage</td>
         </tr>
         <tr>
@@ -111,10 +116,10 @@
             <td>Reduce Northern Hemisphere bias; high-quality clocks only</td>
         </tr>
         <tr>
-            <td><strong>Dynamic 100</strong></td>
-            <td>Per-file filter: clock std &lt; 100 ns</td>
-            <td>~100/day</td>
-            <td>Adaptive quality control; excludes noisy days per station</td>
+            <td><strong>Dynamic 50</strong></td>
+            <td>Per-file filter: clock std &lt; 50 ns, jumps &lt; 500 ns</td>
+            <td>~400</td>
+            <td>Strict quality control; excludes noisy files per station</td>
         </tr>
     </table>
 </div>
@@ -143,10 +148,10 @@ for each RINEX file:
     else:
         exclude (noisy day for this station)
     </pre>
-    <p>This strict quality filtering selects ~399 stations with 316,657 high-quality daily files, ensuring only the cleanest clock data contributes to the analysis.</p>
+    <p>This strict quality filtering passes 316,497 high-quality daily files from ~400 stations (77% pass rate), rejecting 93,240 files: 47,816 for excessive jumps, 4,045 for excessive range, and 41,379 for high standard deviation. This ensures only the cleanest clock data contributes to the analysis.</p>
 </div>
 
-<h2>2.3 Processing Pipeline</h2>
+<h3>2.3 Processing Pipeline</h3>
 
 <p>The processing chain transforms raw GNSS observations into TEP detection results:</p>
 
@@ -155,7 +160,7 @@ for each RINEX file:
 
 <div class="mermaid" style="text-align: center;">
 flowchart LR
-    A[("CDDIS<br/>RINEX 3")] --> B["RTKLIB SPP<br/>baseline | ionofree | multi_gnss"]
+    A[("CDDIS<br/>RINEX 3")] --> B["RTKLIB SPP<br/>4 modes"]
     B --> C["3 Metrics<br/>bias · jitter · drift"]
     C --> D[(".npz<br/>per station-day")]
     D --> E["Pair Coherence<br/>MSC + Phase"]
@@ -171,14 +176,14 @@ flowchart LR
     style G fill:#ffffff,stroke:#2962ff,stroke-width:3px,color:#2962ff
 </div>
 
-<p style="font-size: 11px; color: #666; margin: 5px 0 15px 0;"><em>Figure 2.3.1: Processing pipeline. Broadcast ephemeris only (no SP3 precise orbits). Station pairs: 50–13,000 km. TEP frequency band: 10–500 µHz (periods 33 min–28 hr). Two coherence metrics enable cross-validation: MSC (amplitude) and Phase Alignment (timing).</em></p>
+<p style="font-size: 11px; color: #666; margin: 5px 0 15px 0;"><em>Figure 2.3.1: Processing pipeline. Four modes: Baseline (broadcast), Ionofree (dual-freq), Multi-GNSS (all constellations), Precise (IGS SP3). Station pairs: 50–13,000 km. TEP frequency band: 10–500 µHz (periods 33 min–28 hr). Two coherence metrics enable cross-validation: MSC (amplitude) and Phase Alignment (timing).</em></p>
 
-<h3>2.3.1 Single Point Positioning (SPP)</h3>
+<h4>2.3.1 Single Point Positioning (SPP)</h4>
 
 <p>Raw RINEX observations were processed using RTKLIB's <code>rnx2rtkp</code> utility in Single Point Positioning mode. SPP determines the receiver position and clock offset using pseudorange measurements from multiple satellites.</p>
 
 <div>
-    <h4>RTKLIB Configuration</h4>
+    <h5>RTKLIB Configuration</h5>
     <table>
         <tr><th>Parameter</th><th>Setting</th></tr>
         <tr><td>Positioning Mode</td><td>Single Point (SPP)</td></tr>
@@ -192,16 +197,25 @@ flowchart LR
 </div>
 
 <div>
-    <h4>Multi-Mode Processing Strategy</h4>
-    <p>Each RINEX file is processed in three modes to enable cross-validation:</p>
+    <h5>Multi-Mode Processing Strategy</h5>
+    <p>Each RINEX file is processed in four modes to enable comprehensive cross-validation. This multi-mode approach is a validation strategy: if TEP is real, ALL modes should show similar correlation lengths (λ). If TEP were an artifact of a specific processing method, different modes would produce different signatures.</p>
     <table>
-        <tr><th>Mode</th><th>Frequencies</th><th>Systems</th><th>Ionosphere</th></tr>
-        <tr><td><strong>Baseline</strong></td><td>L1 only</td><td>GPS</td><td>Klobuchar model</td></tr>
-        <tr><td><strong>Ionofree</strong></td><td>L1+L2</td><td>GPS</td><td>Dual-frequency elimination</td></tr>
-        <tr><td><strong>Multi-GNSS</strong></td><td>L1</td><td>GPS+GLO+GAL+BDS</td><td>Klobuchar model</td></tr>
+        <tr><th>Mode</th><th>Frequencies</th><th>Systems</th><th>Ephemeris</th><th>Ionosphere</th><th>Purpose</th></tr>
+        <tr><td><strong>Baseline</strong></td><td>L1 only</td><td>GPS</td><td>Broadcast</td><td>Klobuchar model</td><td>Reference (simplest processing)</td></tr>
+        <tr><td><strong>Ionofree</strong></td><td>L1+L2</td><td>GPS</td><td>Broadcast</td><td>Dual-frequency elimination</td><td>Remove ionospheric effects</td></tr>
+        <tr><td><strong>Multi-GNSS</strong></td><td>L1</td><td>GPS+GLO+GAL+BDS</td><td>Broadcast</td><td>Klobuchar model</td><td>Cross-constellation validation</td></tr>
+        <tr><td><strong>Precise</strong></td><td>L1+L2</td><td>GPS</td><td>IGS SP3 (precise)</td><td>Dual-frequency elimination</td><td>Remove orbit/clock errors</td></tr>
     </table>
     
-    <h5>Ionosphere-Free Linear Combination</h5>
+    <h6>Mode Descriptions</h6>
+    <ul>
+        <li><strong>Baseline:</strong> GPS-only SPP with broadcast ephemeris and Klobuchar ionosphere model. This is the reference mode using the simplest processing chain.</li>
+        <li><strong>Ionofree:</strong> GPS SPP with dual-frequency (L1+L2) ionosphere-free linear combination. Eliminates ~99% of first-order ionospheric delay. If TEP were an ionospheric artifact, it would disappear in this mode.</li>
+        <li><strong>Multi-GNSS:</strong> Combined GPS+GLONASS+Galileo+BeiDou processing. Each constellation has different clock technologies (GPS: Rb/Cs, Galileo: H-maser, GLONASS: Cs, BeiDou: Rb) and orbital altitudes. If TEP were constellation-specific, this mode would show different λ.</li>
+        <li><strong>Precise:</strong> GPS SPP using IGS precise orbit and clock products (SP3 files) instead of broadcast ephemeris. This removes satellite orbit errors (~2m broadcast → ~2cm precise) and satellite clock errors (~2ns broadcast → ~0.1ns precise). If TEP were caused by broadcast ephemeris errors, it would disappear in this mode.</li>
+    </ul>
+    
+    <h6>Ionosphere-Free Linear Combination</h6>
     <p>The ionofree mode uses the standard dual-frequency linear combination to eliminate first-order ionospheric delay (Kaplan & Hegarty, 2017):</p>
     <p>$$L_{IF} = \frac{f_1^2}{f_1^2 - f_2^2} L_1 - \frac{f_2^2}{f_1^2 - f_2^2} L_2 \approx 2.546 \, L_1 - 1.546 \, L_2$$</p>
     <p>where $f_1 = 1575.42$ MHz (L1) and $f_2 = 1227.60$ MHz (L2). This combination removes the ionospheric delay but amplifies receiver thermal noise by a factor of approximately 3× due to the large coefficients (Kaplan & Hegarty, 2017; Misra & Enge, 2011):</p>
@@ -209,12 +223,12 @@ flowchart LR
     <p>This noise penalty is a fundamental trade-off in dual-frequency GNSS processing. The ionofree mode is critical for validation: if correlations were purely ionospheric, they would disappear in this mode. Instead, longer correlation lengths are observed (λ = 1,072 km vs 727 km), confirming the signal is not ionospheric artifact.</p>
 </div>
 
-<h3>2.3.2 Time Series Extraction</h3>
+<h4>2.3.2 Time Series Extraction</h4>
 
 <p>Three metrics were extracted from SPP solutions for each station, each serving a specific scientific purpose:</p>
 
 <div>
-    <h4>Metrics Comparison</h4>
+    <h5>Metrics Comparison</h5>
     <table>
         <tr>
             <th>Metric</th>
@@ -225,7 +239,7 @@ flowchart LR
         <tr>
             <td><strong>Clock Bias</strong></td>
             <td>Receiver clock offset (ns)</td>
-            <td><strong>E-W &gt; N-S (1.19–1.23)</strong></td>
+            <td><strong>E-W &gt; N-S (~1.22)</strong></td>
             <td>Primary TEP metric</td>
         </tr>
         <tr>
@@ -244,18 +258,18 @@ flowchart LR
 </div>
 
 <div>
-    <h4>1. Clock Bias — Primary TEP Metric</h4>
+    <h5>1. Clock Bias — Primary TEP Metric</h5>
     <p>$$\Delta t = \text{Receiver clock offset (nanoseconds)}$$</p>
     <p>The receiver clock offset from GPS time. This is the primary metric for TEP detection because:</p>
     <ul>
         <li>Directly measures temporal fluctuations at the receiver</li>
-        <li>Shows strongest directional anisotropy (E-W/N-S = 1.19–1.23 at short distances)</li>
+        <li>Shows strongest directional anisotropy (E-W/N-S ≈ 1.22 at short distances)</li>
         <li>Correlation length λ ≈ 700–1,100 km matches theoretical TEP scales</li>
     </ul>
 </div>
 
 <div>
-    <h4>2. Position Jitter — Space Proxy</h4>
+    <h5>2. Position Jitter — Space Proxy</h5>
     <p>$$dr = \sqrt{dE^2 + dN^2 + dU^2}$$</p>
     <p>The 3D deviation from mean position. This metric captures spatial coordinate fluctuations:</p>
     <ul>
@@ -267,7 +281,7 @@ flowchart LR
 </div>
 
 <div>
-    <h4>3. Clock Drift — Derivative Test</h4>
+    <h5>3. Clock Drift — Derivative Test</h5>
     <p>$$\dot{\Delta t} = \frac{d(\Delta t)}{dt}$$</p>
     <p>The time derivative of clock bias. Tests whether the signal is:</p>
     <ul>
@@ -277,10 +291,10 @@ flowchart LR
     <p>Observed R² = 0.974 for clock drift confirms the signal is not random walk.</p>
 </div>
 
-<h3>2.3.3 Time Alignment Strategy (Critical)</h3>
+<h4>2.3.3 Time Alignment Strategy (Critical)</h4>
 
 <div>
-    <h4>Pandas DatetimeIndex Alignment</h4>
+    <h5>Pandas DatetimeIndex Alignment</h5>
     <p>Time alignment uses Pandas DataFrame indexing with DatetimeIndex, identical to the CODE longspan methodology. This approach:</p>
     <ol>
         <li>Creates DatetimeIndex from each file's actual timestamps</li>
@@ -291,12 +305,12 @@ flowchart LR
     <p>This ensures precise temporal synchronization between stations, mirroring the rigorous alignment used in Papers 1 and 2.</p>
 </div>
 
-<h3>2.3.4 Phase Coherence Computation</h3>
+<h4>2.3.4 Phase Coherence Computation</h4>
 
 <p>Two complementary coherence metrics were computed for all station pairs, enabling cross-validation and comparison with CODE longspan methodology:</p>
 
 <div>
-    <h4>Coherence Metrics Comparison</h4>
+    <h5>Coherence Metrics Comparison</h5>
     <table>
         <tr>
             <th>Metric</th>
@@ -330,7 +344,7 @@ $$C_{ij} = \frac{\left| \sum_{t} A_i(t) \cdot A_j(t) \cdot e^{i\Delta\phi_{ij}(t
 </ul>
 
 <div>
-    <h4>Metric 1: Magnitude Squared Coherence (MSC)</h4>
+    <h5>Metric 1: Magnitude Squared Coherence (MSC)</h5>
     <p>$$\text{MSC} = \frac{|P_{xy}(f)|^2}{P_{xx}(f) \cdot P_{yy}(f)}$$</p>
     <p>Measures the strength of the linear relationship between signals. It asks: "How strongly do the clocks vibrate together?" This metric is:</p>
     <ul>
@@ -341,7 +355,7 @@ $$C_{ij} = \frac{\left| \sum_{t} A_i(t) \cdot A_j(t) \cdot e^{i\Delta\phi_{ij}(t
 </div>
 
 <div>
-    <h4>Metric 2: Phase Alignment Index</h4>
+    <h5>Metric 2: Phase Alignment Index</h5>
     <p>$$\text{PA} = \cos\left(\arg\left(\frac{\sum_f w_f \cdot e^{i\phi_f}}{\sum_f w_f}\right)\right)$$</p>
     <p>Measures the consistency of the phase relationship. It asks: "When they vibrate, are they synchronized in time?" This metric is:</p>
     <ul>
@@ -352,7 +366,7 @@ $$C_{ij} = \frac{\left| \sum_{t} A_i(t) \cdot A_j(t) \cdot e^{i\Delta\phi_{ij}(t
 </div>
 
 <div>
-    <h4>Why Phase Alignment Shows Stronger Anisotropy</h4>
+    <h5>Why Phase Alignment Shows Stronger Anisotropy</h5>
     <p>The hemisphere analysis reveals that phase alignment consistently exceeds MSC in detecting directional anisotropy:</p>
     <ul>
         <li><strong>Northern Hemisphere:</strong> MSC ratio 1.029, Phase Alignment ratio <em>1.200</em></li>
@@ -362,7 +376,7 @@ $$C_{ij} = \frac{\left| \sum_{t} A_i(t) \cdot A_j(t) \cdot e^{i\Delta\phi_{ij}(t
 </div>
 
 <div>
-    <h4>Complementary Sensitivity: MSC vs Phase Alignment</h4>
+    <h5>Complementary Sensitivity: MSC vs Phase Alignment</h5>
     <p>A critical finding from this analysis is that MSC and phase alignment probe different aspects of the same physical phenomenon, with each metric excelling at different types of analyses:</p>
     
     <table>
@@ -404,7 +418,7 @@ $$C_{ij} = \frac{\left| \sum_{t} A_i(t) \cdot A_j(t) \cdot e^{i\Delta\phi_{ij}(t
     <p><em>Conclusion:</em> Both metrics are necessary for complete TEP characterization. MSC captures temporal modulation; phase alignment captures spatial structure. Their complementary sensitivity is consistent with TEP predictions of coupled space-time fluctuations affecting both amplitude and phase of clock correlations.</p>
 </div>
 
-<h3>2.3.5 Frequency Band Selection</h3>
+<h4>2.3.5 Frequency Band Selection</h4>
 
 <table>
     <tr>
@@ -433,7 +447,7 @@ $$C_{ij} = \frac{\left| \sum_{t} A_i(t) \cdot A_j(t) \cdot e^{i\Delta\phi_{ij}(t
     </tr>
 </table>
 
-<h3>2.3.6 Exponential Decay Fitting</h3>
+<h4>2.3.6 Exponential Decay Fitting</h4>
 
 <p>Coherence values were binned by inter-station distance and fit to an exponential decay model:</p>
 
@@ -449,7 +463,7 @@ $$C(r) = A \cdot \exp(-r/\lambda) + C_0$$
 </ul>
 
 <div>
-    <h4>Binning Parameters</h4>
+    <h5>Binning Parameters</h5>
     <table>
         <tr><th>Parameter</th><th>Value</th></tr>
         <tr><td>Distance range</td><td>50 – 13,000 km</td></tr>
@@ -460,7 +474,7 @@ $$C(r) = A \cdot \exp(-r/\lambda) + C_0$$
 </div>
 
 <div>
-    <h4>Weighted R² Calculation</h4>
+    <h5>Weighted R² Calculation</h5>
     <p>To ensure consistency between the weighted curve fit and the goodness-of-fit metric, R² is calculated using the same weights as the fit:</p>
     <ul>
         <li><strong>Weights:</strong> w<sub>i</sub> = n<sub>pairs</sub> in bin i (proportional to 1/σ²)</li>
@@ -473,7 +487,7 @@ $$C(r) = A \cdot \exp(-r/\lambda) + C_0$$
 </div>
 
 <div>
-    <h4>Boundary-Hit Detection</h4>
+    <h5>Boundary-Hit Detection</h5>
     <p>Fits where parameters converge to the imposed bounds are flagged as <em>boundary-hit</em>. These fits should be interpreted with caution:</p>
     <ul>
         <li><strong>Amplitude (A):</strong> bounds [0.01, 2.0]</li>
@@ -483,12 +497,12 @@ $$C(r) = A \cdot \exp(-r/\lambda) + C_0$$
     <p>A boundary-hit typically indicates the exponential model is poorly constrained for that subset (e.g., insufficient distance range or dominated by short-range noise).</p>
 </div>
 
-<h3>2.3.7 Directional Anisotropy Analysis</h3>
+<h4>2.3.7 Directional Anisotropy Analysis</h4>
 
 <p>The critical validation test compares E-W and N-S correlations. Station pairs were stratified by azimuth:</p>
 
 <div>
-    <h4>Azimuth Classification</h4>
+    <h5>Azimuth Classification</h5>
     <table>
         <tr><th>Direction</th><th>Azimuth Range</th><th>Sectors</th></tr>
         <tr><td><strong>East-West</strong></td><td>[67.5°, 112.5°) ∪ [247.5°, 292.5°)</td><td>E, W</td></tr>
@@ -503,48 +517,77 @@ $$C(r) = A \cdot \exp(-r/\lambda) + C_0$$
 $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
 </div>
 
+<p>To control for potential distance distribution biases (e.g., if E-W pairs have a different mean distance than N-S pairs within the &lt;500 km bin), a robust distance-matched ratio is also computed. Pairs are binned into 50 km intervals, and the ratio is computed from distributions re-sampled to match the distance profile, ensuring that any observed anisotropy is not an artifact of mean distance differences.</p>
+
 <p>Statistical significance is assessed via Welch's t-test with 95% confidence intervals and Cohen's d effect size.</p>
 
-<h3>2.3.8 Elevation Quintile Analysis (Step 2.1b)</h3>
+<h4>2.3.8 Station Altitude Quintile Analysis (Step 2.1b)</h4>
 
-<p>To test whether the correlation signal depends on atmospheric path length, station pairs were stratified by satellite elevation angle. This analysis addresses a critical question: is the exponential decay driven by ionospheric or tropospheric effects (which depend on elevation) or by an underlying non-atmospheric signal?</p>
+<p>To test whether the correlation structure could be explained by station environment or atmospheric column effects, station pairs were stratified by <strong>station altitude</strong> (geodetic height above the WGS84 ellipsoid) rather than by satellite elevation angle. Station altitude provides a site-based proxy for propagation-path and local-environment effects: higher-altitude sites observe through a thinner tropospheric column and often exhibit reduced multipath and hydrological variability relative to low-altitude sites.</p>
+
+<p>The analysis was conducted as a comprehensive suite of five configurations to test robustness against geographic confounding and distance-sampling biases:</p>
+<ul>
+    <li><strong>Global quintiles (sr200):</strong> All 539 stations sorted by altitude into 5 equal-count bins; pairs restricted to same-quintile membership; short-range coherence computed for pairs &lt;200 km.</li>
+    <li><strong>Latitude-controlled quintiles (lat10, lat20):</strong> Stations binned within ±10° or ±20° latitude bands, then sorted by altitude within each band; pair analysis restricted to same latitude band to control for geographic/climatic confounding.</li>
+    <li><strong>Short-range distance variants (sr100, sr200):</strong> Maximum distance for "short-range coherence" proxy set to 100 km or 200 km to test sensitivity to local-scale effects.</li>
+</ul>
+
+<p>For each configuration, three regression diagnostics were computed per quintile:</p>
+<ol>
+    <li><strong>Unweighted linear regression:</strong> λ vs. mean altitude (km/m slope, p-value)</li>
+    <li><strong>Weighted regression (inverse-variance):</strong> λ vs. altitude weighted by 1/σ²<sub>λ</sub> to suppress noisy quintiles</li>
+    <li><strong>Short-range coherence trend:</strong> Mean coherence level for pairs &lt; distance threshold vs. altitude (Phase II proxy)</li>
+</ol>
 
 <div>
-    <h4>Methodology</h4>
-    <p>For each processed .npz file, the mean satellite elevation angle is computed during the observation period. Stations are then sorted by this elevation and divided into five quintiles (Q1–Q5):</p>
+    <h5>Methodology</h5>
+    <p>Station ECEF coordinates are converted to latitude, longitude, and altitude via the ECEF-to-LLA transform. Stations are then sorted by altitude and divided into five equal-count quintiles (Q1–Q5):</p>
     <ul>
-        <li><strong>Q1 (lowest):</strong> Stations with predominantly low-elevation observations (longer atmospheric path)</li>
-        <li><strong>Q5 (highest):</strong> Stations with predominantly high-elevation observations (shorter atmospheric path)</li>
+        <li><strong>Q1 (lowest altitude):</strong> Stations at low elevations (−86 m to 51 m; thicker atmospheric column)</li>
+        <li><strong>Q5 (highest altitude):</strong> Stations at high elevations (712 m to 3,755 m; thinner atmospheric column)</li>
     </ul>
-    <p>For each quintile, all station pairs are recomputed and the exponential decay analysis is repeated independently, yielding separate λ, R², and amplitude values.</p>
+    <p>For each quintile, only station pairs where <em>both</em> stations fall within the same altitude quintile are included, and the exponential decay analysis is repeated independently, yielding separate λ, R², and amplitude values.</p>
 </div>
 
 <div>
-    <h4>Physical Rationale</h4>
-    <p>If the observed correlation were primarily ionospheric:</p>
+    <h5>Physical Rationale and Null Hypothesis</h5>
+    <p><strong>Alternative Hypothesis (atmospheric/site-dependent origin):</strong> If the observed correlation were primarily driven by residual atmospheric propagation errors or site-specific effects:</p>
     <ul>
-        <li>Low-elevation pairs traverse longer ionospheric paths → stronger ionospheric correlation</li>
-        <li>High-elevation pairs traverse shorter paths → weaker ionospheric correlation</li>
-        <li>Therefore, λ should systematically decrease from Q1 to Q5</li>
+        <li>Low-altitude stations experience larger and more variable tropospheric delays and multipath → stronger contamination of coherence estimates</li>
+        <li>High-altitude stations experience reduced atmospheric column and often cleaner observations → more stable coherence estimates</li>
+        <li>Therefore, λ and/or amplitude could vary systematically with altitude (Q1 → Q5), yielding significant regression slopes (p &lt; 0.05)</li>
     </ul>
-    <p>Conversely, if the signal is non-atmospheric (e.g., gravitational), λ should be elevation-independent (Q5/Q1 ≈ 1.0).</p>
+    <p><strong>Null Hypothesis (network-scale TEP origin):</strong> If the signal is dominated by a network-scale, geometry-driven field (as hypothesized in TEP), λ should be approximately altitude-independent over the ~4 km elevation span of the network. The Temporal Equivalence Principle predicts that temporal fluctuations couple to gravitational potential gradients at planetary scales. Station altitude differences of a few kilometers are negligible compared to the ~6,371 km Earth radius and the ~1 AU Earth–Sun distance that define the dominant gravitational potential terms. Thus, TEP predicts:</p>
+    <ul>
+        <li>Q5/Q1 ≈ 1.0 (no systematic ratio bias)</li>
+        <li>λ-vs-altitude regression slopes statistically consistent with zero (p ≫ 0.05)</li>
+        <li>Short-range coherence level independent of altitude</li>
+    </ul>
 </div>
 
 <div>
-    <h4>Expected Outcome</h4>
-    <p>The ratio Q5/Q1 is the key diagnostic:</p>
+    <h5>Expected Outcome and Quality Control</h5>
+    <p>The ratio Q5/Q1 and regression p-values are the key diagnostics:</p>
     <table style="font-size: 12px;">
-        <tr><th>Q5/Q1 Ratio</th><th>Interpretation</th></tr>
-        <tr><td>≪ 1.0</td><td>Strong atmospheric (ionospheric) origin</td></tr>
-        <tr><td>≈ 1.0</td><td>Non-atmospheric origin — signal independent of path length</td></tr>
-        <tr><td>≫ 1.0</td><td>Inverse relationship (unlikely physically)</td></tr>
+        <tr><th>Diagnostic</th><th>Altitude-Dependent (Alternative)</th><th>Altitude-Independent (TEP Null)</th></tr>
+        <tr><td>Q5/Q1 Ratio</td><td>≪ 1.0 or ≫ 1.0</td><td>≈ 1.0 (0.8–1.2)</td></tr>
+        <tr><td>Regression p-value</td><td>p &lt; 0.05 (significant slope)</td><td>p ≫ 0.05 (slope ~ 0)</td></tr>
+        <tr><td>Replication</td><td>Consistent across tags/modes</td><td>Sporadic, configuration-specific</td></tr>
     </table>
+    
+    <p><strong>Fit Quality Gates:</strong> To avoid overclaiming based on degenerate exponential fits (common when distance support is insufficient), results are flagged when:</p>
+    <ul>
+        <li>λ &gt; 10,000 km ("runaway" regime indicating flat decay / underconstrained fit)</li>
+        <li>R² &lt; 0.6 (poor goodness-of-fit)</li>
+        <li>Boundary hit during optimization (fit pegged at parameter limit)</li>
+    </ul>
+    <p>Trends are considered robust only if they: (1) survive quality gates, (2) replicate across multiple suite configurations, and (3) show sign-consistency (all positive or all negative slopes).</p>
 </div>
 
 <p><em>Note: The geometric suppression correction is not required for the primary evidence. The primary finding—E-W > N-S at short distances (&lt;500 km)—uses raw, uncorrected values that directly match CODE's prediction (see §3.9.1). This section addresses why full-distance λ ratios show the opposite pattern (E-W/N-S &lt; 1), providing interpretive context rather than calibration for the core result.</em></p>
 
 <div>
-    <h4>Geometric Suppression Correction</h4>
+    <h5>Geometric Suppression Correction</h5>
     <p>GPS satellite orbits (55° inclination) create systematic coverage biases that suppress E-W correlations. Due to this inclination, satellites travel predominantly North-South relative to mid-latitude observers. This geometry allows N-S station pairs to view the same satellite for longer continuous arcs, significantly lowering the noise floor for N-S correlations. Conversely, satellites cut across E-W baselines more rapidly, reducing the duration of common-view periods and artificially suppressing the apparent coherence in raw SPP data.</p>
 
     <p><strong>Analogy:</strong> Imagine looking through a vertical picket fence. You can easily track an object moving up and down (N-S), but an object moving side-to-side (E-W) is constantly interrupted by the fence slats. The GPS constellation acts as this "fence" for ground observers, artificially breaking up E-W coherence while preserving N-S coherence.</p>
@@ -563,7 +606,7 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
     $$\text{Corrected ratio} = \text{raw ratio} \times \text{suppression factor}$$
     </div>
     
-    <p>The suppression factor is not a free parameter—it emerges from the sector-by-sector comparison and is consistent across all three processing modes (2.42×–3.16×), supporting its interpretation as a geometric effect rather than arbitrary tuning.</p>
+    <p>The suppression factor is not a free parameter—it emerges from the sector-by-sector comparison and is consistent across all four processing modes (2.42×–3.16×), supporting its interpretation as a geometric effect rather than arbitrary tuning.</p>
 </div>
 
 <h3>2.3.9 Seasonal Stratification Analysis (Step 2.4)</h3>
@@ -609,7 +652,7 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
 
 <div>
     <h4>Analysis Methodology</h4>
-    <p>For each season, independent exponential decay fits were computed across all three station filters (ALL_STATIONS, OPTIMAL_100, DYNAMIC_50) and all three processing modes (Baseline, Ionofree, Multi-GNSS). This produces 36 independent seasonal measurements (4 seasons × 3 filters × 3 modes) for each metric/coherence combination.</p>
+    <p>For each season, independent exponential decay fits were computed across all three station filters (ALL_STATIONS, OPTIMAL_100, DYNAMIC_50) and all four processing modes (Baseline, Ionofree, Multi-GNSS, Precise). This produces 48 independent seasonal measurements (4 seasons × 3 filters × 4 modes) for each metric/coherence combination.</p>
     
     <p>Key Predictions:</p>
     <ul>
@@ -737,7 +780,7 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
 
 <h3>2.5.3 Shuffle Test (Critical Validation)</h3>
 
-<p>The shuffle test is the most rigorous validation of genuine spatial structure. The procedure:</p>
+<p>The shuffle test provides a direct validation of genuine spatial structure. The procedure:</p>
 
 <ol>
     <li><strong>Real Fit:</strong> Fit the exponential decay model C(d) = A·exp(−d/λ) + C₀ to the complete coherence dataset, recording R²<sub>real</sub>.</li>
@@ -748,7 +791,7 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
 <p>Acceptance Criterion: R²<sub>shuffled</sub> &lt; 0.3. If the exponential structure is a genuine property of the data (not an artifact of the fitting procedure), shuffling should destroy it completely.</p>
 
 <div style="background: #eef2f7; border-left: 4px solid #3d5a80; padding: 15px; margin: 20px 0; border-radius: 4px;">
-    <h4 style="margin-top: 0; color: #3d5a80;">Why the Shuffle Test is Rigorous</h4>
+    <h4 style="margin-top: 0; color: #3d5a80;">Why the Shuffle Test is Important</h4>
     <p>The shuffle test directly addresses the concern that exponential fitting might "force" structure onto any dataset. If the fitting procedure itself creates spurious curvature, it would do so equally on real and shuffled data. The ratio R²<sub>real</sub>/R²<sub>shuffled</sub> quantifies the evidence that the structure is physically real.</p>
 </div>
 
@@ -779,7 +822,7 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
 
 <h2>2.6 CMB Frame Analysis (Step 2.7)</h2>
 
-<p>Following the CODE longspan methodology, a comprehensive full-sky grid search was performed across 54 independent analysis combinations to identify whether the observed annual modulation of E-W/N-S anisotropy preferentially aligns with a cosmic reference frame. This exhaustive approach represents the most rigorous test of cosmic frame alignment yet performed on raw GNSS data.</p>
+<p>Following the CODE longspan methodology, a comprehensive full-sky grid search was performed across 72 independent analysis combinations to test whether the observed annual modulation of E-W/N-S anisotropy preferentially aligns with a cosmic reference frame. The full analysis matrix is evaluated to reduce selection bias and to assess robustness across processing choices.</p>
 
 <h3>2.6.1 Physical Motivation</h3>
 
@@ -791,23 +834,23 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
     </ul>
     <p>The net velocity vector combines Earth's orbital motion (~30 km/s, rotating annually) with the background motion. Different background directions produce different annual modulation patterns in the velocity declination, which in turn predicts the E-W/N-S correlation ratio.</p>
     
-    <p>The CMB frame is of particular physical interest because it represents the only reference frame that can be defined without reference to local matter—it is the frame in which the cosmic microwave background radiation is isotropic, representing the universe's "absolute rest" frame. If TEP describes a fundamental spacetime phenomenon, this cosmic frame is the natural expectation for the preferred direction.</p>
+    <p>The CMB provides a well-defined cosmological reference frame in which the cosmic microwave background is (to high precision) isotropic. Under standard interpretation, the observed CMB dipole arises from Earth's motion relative to this frame. If the anisotropy modulation depends on a preferred velocity direction, the CMB dipole is therefore a physically motivated candidate to test.</p>
 </div>
 
 <h3>2.6.2 Comprehensive Analysis Matrix</h3>
 
 <div>
-    <p>To ensure robustness and eliminate selection bias, the CMB frame analysis is performed across all 54 combinations of station filter, processing mode, metric, and coherence type:</p>
+    <p>To ensure robustness and eliminate selection bias, the CMB frame analysis is performed across all 72 combinations of station filter, processing mode, metric, and coherence type:</p>
     
     <table>
         <tr><th>Dimension</th><th>Values</th><th>Purpose</th></tr>
-        <tr><td><strong>Station Filters</strong></td><td>ALL_STATIONS (440), OPTIMAL_100 (50N+50S), DYNAMIC_50 (399 high-stability)</td><td>Test network independence</td></tr>
-        <tr><td><strong>Processing Modes</strong></td><td>Baseline (GPS L1), Ionofree (L1+L2), Multi-GNSS (GPS+GLO+GAL+BDS)</td><td>Test ionospheric independence</td></tr>
+        <tr><td><strong>Station Filters</strong></td><td>ALL_STATIONS (539), OPTIMAL_100 (50N+50S), DYNAMIC_50 (399 high-stability)</td><td>Test network independence</td></tr>
+        <tr><td><strong>Processing Modes</strong></td><td>Baseline (GPS L1), Ionofree (L1+L2), Multi-GNSS (GPS+GLO+GAL+BDS), Precise (IGS SP3)</td><td>Test ionospheric independence</td></tr>
         <tr><td><strong>Metrics</strong></td><td>clock_bias, pos_jitter, clock_drift</td><td>Test spacetime coupling</td></tr>
         <tr><td><strong>Coherence Types</strong></td><td>MSC (amplitude), Phase Alignment (phase)</td><td>Test signal structure</td></tr>
     </table>
     
-    <p style="text-align: center; font-style: italic;">Total combinations: 3 × 3 × 3 × 2 = 54 independent analyses</p>
+    <p style="text-align: center; font-style: italic;">Total combinations: 3 × 4 × 3 × 2 = 72 independent analyses</p>
     
     <p>This exhaustive approach allows us to identify which combinations recover the CMB signal most cleanly and to assess whether the signal is a robust network-wide phenomenon or an artifact of specific analysis choices.</p>
 </div>
@@ -843,11 +886,12 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
 <h3>2.6.4 Mode-Specific Expectations</h3>
 
 <div>
-    <p>The three processing modes provide complementary views of the signal:</p>
+    <p>The four processing modes provide complementary views of the signal:</p>
     <ul>
         <li><strong>Baseline (GPS L1):</strong> Contains full ionospheric contamination. If signal survives, it suggests the effect is not purely ionospheric.</li>
         <li><strong>Ionofree (L1+L2):</strong> Removes first-order ionosphere but amplifies thermal noise by ~3× (Kaplan & Hegarty, 2017). Weaker signal recovery expected, but successful detection indicates signal survives ionospheric removal.</li>
-        <li><strong>Multi-GNSS:</strong> Averages across four constellations (GPS, GLONASS, Galileo, BeiDou), reducing satellite-specific noise by ~√4 = 2×. Expected to provide cleanest signal.</li>
+        <li><strong>Multi-GNSS (All Constellations):</strong> Averages across four constellations (GPS, GLONASS, Galileo, BeiDou), reducing satellite-specific noise by ~√4 = 2×. If signal persists across different clock technologies and orbital altitudes, it is not constellation-specific.</li>
+        <li><strong>Precise (IGS SP3):</strong> Uses precise orbit/clock products instead of broadcast ephemeris. If signal persists, it is not caused by broadcast ephemeris errors.</li>
     </ul>
     
     <h4>Predicted Hierarchy</h4>
@@ -875,7 +919,7 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
         <li>Majority of clean (non-Ionofree) combinations find RA within 20° of CMB</li>
         <li>At least one combination achieves global p &lt; 0.05</li>
         <li>Zero variance across station filters (all converge to same RA)</li>
-        <li>Solar Apex is decisively rejected (separation > 80°)</li>
+        <li>Solar Apex is strongly disfavored (separation > 80°)</li>
     </ul>
     
     <p>CODE's 25-year analysis found best-fit at RA = 186°, Dec = −4° (18.2° from CMB). With only 3 years of data, weaker Dec constraints are expected due to limited seasonal sampling, but RA should converge to within ~20° of the CMB dipole if the effect is real.</p>

@@ -75,6 +75,10 @@ PROCESSING_MODES = {
     'multi_gnss': {
         'csv_file': 'step_2_0_pairs_multi_gnss.csv',
         'description': 'GPS+GLO+GAL+BDS'
+    },
+    'precise': {
+        'csv_file': 'step_2_0_pairs_precise.csv',
+        'description': 'IGS precise orbits/clocks (SP3)'
     }
 }
 
@@ -95,37 +99,59 @@ def get_season_map():
 def exp_decay(r, A, lam, C0):
     return A * np.exp(-r / lam) + C0
 
-def fit_exponential(distances, coherences):
-    if len(distances) < 1000: return None
-    bin_edges = np.logspace(np.log10(MIN_DISTANCE_KM), np.log10(MAX_DISTANCE_KM), N_BINS + 1)
-    bin_centers, bin_means, bin_counts = [], [], []
-    
-    distances = np.asarray(distances)
-    coherences = np.asarray(coherences)
-    
-    for i in range(N_BINS):
-        mask = (distances >= bin_edges[i]) & (distances < bin_edges[i+1])
-        count = np.sum(mask)
-        if count >= MIN_BIN_COUNT:
-            bin_centers.append((bin_edges[i] + bin_edges[i+1]) / 2)
-            bin_means.append(np.nanmean(coherences[mask]))
-            bin_counts.append(count)
-    if len(bin_centers) < 5: return None
-    
-    bin_centers, bin_means, bin_counts = np.array(bin_centers), np.array(bin_means), np.array(bin_counts)
+def fit_exponential_binned(bin_centers, bin_means, bin_counts):
+    if len(bin_centers) < 5:
+        return None
     try:
-        popt, pcov = curve_fit(exp_decay, bin_centers, bin_means, p0=[0.5, 2000, 0],
-                               sigma=1.0/np.sqrt(bin_counts), bounds=([0, 100, -1], [2, 20000, 1]), maxfev=10000)
-        # Weighted R² (consistent with weighted fit)
+        popt, pcov = curve_fit(
+            exp_decay,
+            bin_centers,
+            bin_means,
+            p0=[0.5, 2000, 0],
+            sigma=1.0 / np.sqrt(bin_counts),
+            bounds=([0, 100, -1], [2, 20000, 1]),
+            maxfev=10000,
+        )
         weights = bin_counts.astype(float)
         predicted = exp_decay(bin_centers, *popt)
         weighted_mean = np.average(bin_means, weights=weights)
-        ss_res = np.sum(weights * (bin_means - predicted)**2)
-        ss_tot = np.sum(weights * (bin_means - weighted_mean)**2)
-        r2 = 1 - ss_res/ss_tot if ss_tot > 0 else 0
-        return {'lambda_km': float(popt[1]), 'r_squared': float(r2), 'n_pairs': int(sum(bin_counts))}
-    except:
+        ss_res = np.sum(weights * (bin_means - predicted) ** 2)
+        ss_tot = np.sum(weights * (bin_means - weighted_mean) ** 2)
+        r2 = 1 - ss_res / ss_tot if ss_tot > 0 else 0
+        return {
+            'lambda_km': float(popt[1]),
+            'r_squared': float(r2),
+            'n_pairs': int(np.sum(bin_counts)),
+            'n_bins': int(len(bin_centers)),
+        }
+    except Exception:
         return None
+
+
+def _init_bin_accumulators():
+    return {
+        c: {
+            s: {
+                'bin_counts': np.zeros(N_BINS, dtype=np.int64),
+                'bin_sums': np.zeros(N_BINS, dtype=np.float64),
+            }
+            for s in SEASONS
+        }
+        for c in COHERENCE_TYPES
+    }
+
+
+def _accumulate_binned(distances, values, bin_edges, bin_counts, bin_sums):
+    if distances.size == 0:
+        return
+    idx = np.searchsorted(bin_edges, distances, side='right') - 1
+    valid = (idx >= 0) & (idx < N_BINS) & np.isfinite(values)
+    if not np.any(valid):
+        return
+    idx = idx[valid]
+    vals = values[valid]
+    bin_counts += np.bincount(idx, minlength=N_BINS)
+    bin_sums += np.bincount(idx, weights=vals, minlength=N_BINS)
 
 def load_station_filter(filter_config):
     """Load station filter and return set of valid stations."""
@@ -147,68 +173,71 @@ def load_station_filter(filter_config):
 
 def process_metric(csv_file, target_metric, season_map):
     print_status(f"\nProcessing metric: {target_metric}...")
-    
-    # Store dist/coh per season
-    data = {c: {s: {'dist': [], 'coh': []} for s in SEASONS} for c in COHERENCE_TYPES}
-    
-    chunk_size = 10_000_000  # Larger chunks for high-RAM systems
-    for chunk in pd.read_csv(csv_file, chunksize=chunk_size):
-        # Apply station filter if set
-        if GOOD_STATIONS_SET:
-            chunk = chunk[chunk['station1'].isin(GOOD_STATIONS_SET) & chunk['station2'].isin(GOOD_STATIONS_SET)]
-        if 'metric' in chunk.columns:
-            # Handle prefixed metric names (ionofree_*, multi_gnss_*)
-            mc = chunk[chunk['metric'].str.endswith(target_metric)]
-        else: continue
-        if mc.empty: continue
-            
+
+    bin_edges = np.logspace(np.log10(MIN_DISTANCE_KM), np.log10(MAX_DISTANCE_KM), N_BINS + 1)
+    bin_centers_full = (bin_edges[:-1] + bin_edges[1:]) / 2
+    acc = _init_bin_accumulators()
+
+    chunk_size = 5_000_000
+    usecols = ['metric', 'doy', 'distance_km', 'coherence', 'phase_alignment']
+    for chunk in pd.read_csv(csv_file, chunksize=chunk_size, usecols=usecols):
+        if 'metric' not in chunk.columns:
+            continue
+
+        mc = chunk[chunk['metric'].str.endswith(target_metric)]
+        if mc.empty:
+            continue
+
         has_phase = 'phase_alignment' in mc.columns
-        doys = mc['doy'].values
-        dist = mc['distance_km'].values
-        msc = mc['coherence'].values
-        phase = mc['phase_alignment'].values if has_phase else None
-        
-        # Map DOY to season efficiently
-        # Vectorized map? Pandas map is slow.
-        # Use simple list comprehension for now or numpy map
-        # season_arr = np.array([season_map.get(d, 'winter') for d in doys])
-        # This is slow. Faster:
-        # Create a lookup array for 1-366.
-        # But for now, loop is safer for 5M chunk than complexity.
-        
-        # Actually, let's optimize.
-        # We can iterate by season mask?
-        # SEASONS dict has lists of DOYs.
-        # mask_winter = np.isin(doys, SEASONS['winter']) ...
-        # This is fast!
-        
+        doys = mc['doy'].to_numpy()
+        dist = mc['distance_km'].to_numpy()
+        msc = mc['coherence'].to_numpy()
+        phase = mc['phase_alignment'].to_numpy() if has_phase else None
+
         for s_name, s_doys in SEASONS.items():
             mask = np.isin(doys, s_doys)
-            if not np.any(mask): continue
-            
-            # MSC
-            valid = mask & ~np.isnan(msc)
-            if np.any(valid):
-                data['msc'][s_name]['dist'].extend(dist[valid].tolist())
-                data['msc'][s_name]['coh'].extend(msc[valid].tolist())
-                
-            # Phase
+            if not np.any(mask):
+                continue
+
+            _accumulate_binned(
+                dist[mask],
+                msc[mask],
+                bin_edges,
+                acc['msc'][s_name]['bin_counts'],
+                acc['msc'][s_name]['bin_sums'],
+            )
+
             if phase is not None:
-                valid = mask & ~np.isnan(phase)
-                if np.any(valid):
-                    data['phase_alignment'][s_name]['dist'].extend(dist[valid].tolist())
-                    data['phase_alignment'][s_name]['coh'].extend(phase[valid].tolist())
+                _accumulate_binned(
+                    dist[mask],
+                    phase[mask],
+                    bin_edges,
+                    acc['phase_alignment'][s_name]['bin_counts'],
+                    acc['phase_alignment'][s_name]['bin_sums'],
+                )
 
     results = {}
     for c in COHERENCE_TYPES:
         mode = f"{target_metric}/{c}"
         results[mode] = {}
         for s in SEASONS:
-            d = data[c][s]
-            res = fit_exponential(d['dist'], d['coh'])
+            bin_counts = acc[c][s]['bin_counts']
+            bin_sums = acc[c][s]['bin_sums']
+            valid = bin_counts >= MIN_BIN_COUNT
+            if np.sum(valid) < 5:
+                res = None
+            else:
+                bin_centers = bin_centers_full[valid]
+                bin_means = (bin_sums[valid] / bin_counts[valid]).astype(float)
+                res = fit_exponential_binned(
+                    bin_centers,
+                    bin_means,
+                    bin_counts[valid].astype(float),
+                )
+
             results[mode][s] = res
             print_status(f"  {mode} {s}: {res['lambda_km'] if res else 'N/A'}")
-            
+
     return results
 
 def main():
@@ -219,7 +248,7 @@ def main():
     args = parser.parse_args()
     
     print_status('STEP 2.4a: Seasonal Analysis (COMPREHENSIVE)', level="TITLE")
-    print_status('Processing: 3 filters x 3 modes x 3 metrics x 2 coherence types')
+    print_status('Processing: 3 filters x 4 modes x 3 metrics x 2 coherence types')
     
     if args.filter == 'all':
         filters = STATION_FILTERS
@@ -243,7 +272,7 @@ def main():
         all_mode_results = {}
         
         for mode_name, mode_config in PROCESSING_MODES.items():
-            csv_file = RESULTS_DIR / mode_config['csv_file']
+            csv_file = RESULTS_DIR / f"step_2_0_pairs_{mode_name}_{filter_key}.csv"
             print_status(f"\n  MODE: {mode_name.upper()}")
             
             if not csv_file.exists():
