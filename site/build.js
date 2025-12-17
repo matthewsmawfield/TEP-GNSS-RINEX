@@ -127,6 +127,31 @@ async function buildStaticSite() {
             }
         }
         
+        // Copy citation files to dist root
+        const citationFiles = ['CITATION.cff', 'CITATION.bib', 'citation.json', 'codemeta.json'];
+        for (const file of citationFiles) {
+            const src = path.join(__dirname, file);
+            const dest = path.join(distDir, file);
+            if (fs.existsSync(src)) {
+                fs.copyFileSync(src, dest);
+                console.log(`📁 Copied ${file} to dist root`);
+            }
+        }
+        
+        // Copy .well-known directory
+        const wellKnownSrc = path.join(__dirname, 'public', '.well-known');
+        const wellKnownDest = path.join(distDir, '.well-known');
+        if (fs.existsSync(wellKnownSrc)) {
+            if (!fs.existsSync(wellKnownDest)) {
+                fs.mkdirSync(wellKnownDest, { recursive: true });
+            }
+            const files = fs.readdirSync(wellKnownSrc);
+            for (const file of files) {
+                fs.copyFileSync(path.join(wellKnownSrc, file), path.join(wellKnownDest, file));
+            }
+            console.log(`📁 Copied .well-known/ to dist`);
+        }
+        
         // Generate markdown version
         console.log('📝 Generating markdown version...');
         const { HTMLToMarkdownConverter } = require('./html-to-markdown.js');

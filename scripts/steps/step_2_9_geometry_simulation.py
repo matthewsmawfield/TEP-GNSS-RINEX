@@ -1228,11 +1228,11 @@ def run_geometry_simulation():
     print_status(f"\nResults saved: {output_file}", "SUCCESS")
     
     # Generate figure
-    if coh_analysis:
+    if geo_coh_analysis:
         fig_path = FIGURES_DIR / "step_2_9_geometry_simulation.png"
         plot_simulation_results(
             results.get('coherence_sector_results', {}),
-            coh_analysis,
+            geo_coh_analysis,
             europe_analysis,
             fig_path
         )

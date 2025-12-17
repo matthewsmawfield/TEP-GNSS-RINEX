@@ -222,12 +222,13 @@ def load_daily_coherence_from_csv(metric='clock_bias', coherence_type='msc', pro
         if mc.empty:
             continue
 
+        years = mc['year'].astype(int).values
         doys = mc['doy'].astype(int).values
         vals = mc[coh_col].astype(float).values
 
-        for doy, v in zip(doys, vals):
+        for year, doy, v in zip(years, doys, vals):
             if np.isfinite(v):
-                agg = daily_aggs[int(doy)]
+                agg = daily_aggs[(int(year), int(doy))]
                 agg[0] += float(v)
                 agg[1] += float(v) * float(v)
                 agg[2] += 1
@@ -240,20 +241,23 @@ def load_daily_coherence_from_csv(metric='clock_bias', coherence_type='msc', pro
     print_status(f"  Total pairs: {total_loaded:,}", "INFO")
 
     daily_data = []
-    for doy in sorted(daily_aggs.keys()):
-        s, s2, n = daily_aggs[doy]
+    for (year, doy), (s, s2, n) in sorted(daily_aggs.items()):
         if n >= MIN_DAILY_PAIRS:
             mean = s / n
             var = max(0.0, (s2 / n) - (mean * mean))
             daily_data.append({
+                'year': int(year),
                 'doy': int(doy),
-                'date': datetime(2024, 1, 1) + timedelta(days=int(doy)-1),
+                'date': pd.Timestamp(datetime(year, 1, 1) + timedelta(days=int(doy)-1)),
                 'mean_coherence': float(mean),
                 'std_coherence': float(np.sqrt(var)),
                 'n_pairs': int(n)
             })
 
     daily_df = pd.DataFrame(daily_data)
+    if not daily_df.empty:
+        daily_df = daily_df.sort_values('date').reset_index(drop=True)
+        
     print_status(f"  Valid days: {len(daily_df)}", "SUCCESS")
 
     return daily_df
@@ -583,7 +587,9 @@ def _compute_pair_coherence_for_date(args):
         # Return DOY (for aggregation) from the target_date
         doy = target_date.timetuple().tm_yday
         return {
-            'doy': doy, 
+            'year': target_date.year,
+            'doy': doy,
+            'date': target_date,
             'dist': dist, 
             'coherence': mean_coherence,  # MSC [0, 1]
             'phase_alignment': phase_alignment  # cos(phase) [-1, 1]
@@ -646,69 +652,34 @@ def compute_daily_coherence_timeseries(station_data, station_coords, available_d
     print_status(f"  Computed {len(results)} valid pair-day coherences", "SUCCESS")
     
     # Aggregate by (year, doy) to keep years separate for multi-year analysis
-    # This allows us to analyze events from 2022, 2023, and 2024 independently
     year_doy_coherences = defaultdict(list)
     for r in results:
-        # The result 'doy' comes from target_date.timetuple().tm_yday
-        # We need to also track the year - reconstruct from tasks
-        year_doy_coherences[r['doy']].append(r['coherence'])
+        year_doy_coherences[(r['year'], r['doy'])].append(r['coherence'])
     
-    # Build daily DataFrame - keep dates with year info
-    # We'll use an ordinal day number for unique identification
+    # Build daily DataFrame
     daily_data = []
-    
-    # Group results by actual date (not just DOY)
-    date_coherences = defaultdict(list)
-    
-    # Re-process to get dates properly - need to track target_date in results
-    # For now, use the available_dates to reconstruct
-    for target_date in available_dates:
-        year = target_date.year
-        doy = target_date.timetuple().tm_yday
-        # Calculate ordinal day for unique identification
-        ordinal = (year - 2022) * 366 + doy  # Unique identifier across years
-        date_coherences[(year, doy, ordinal, target_date)].append(None)  # placeholder
-    
-    # Actually need to modify the worker to return year info
-    # For now, use a simpler approach: aggregate by DOY but keep track of which years have data
-    doy_year_coherences = defaultdict(lambda: defaultdict(list))
-    
-    # Reconstruct from available_dates and results
-    # Since results are computed per date, we need to track properly
-    # This is a limitation - let's use the existing approach but extend for multi-year events
-    
-    # Current approach: aggregate by DOY (pools years)
-    # This is valid if we analyze each DOY's average coherence
-    doy_coherences = defaultdict(list)
-    for r in results:
-        doy_coherences[r['doy']].append(r['coherence'])
-    
-    # Build daily DataFrame with DOY-only aggregation
-    # Note: This pools data from all years for each DOY
-    daily_data = []
-    for doy in sorted(doy_coherences.keys()):
-        coherences = doy_coherences[doy]
+    for (year, doy), coherences in sorted(year_doy_coherences.items()):
         if len(coherences) >= MIN_DAILY_PAIRS:
             daily_data.append({
+                'year': year,
                 'doy': doy,
-                'date': datetime(2024, 1, 1) + timedelta(days=doy-1),  # Representative date
+                'date': pd.Timestamp(datetime(year, 1, 1) + timedelta(days=doy-1)),
                 'mean_coherence': np.mean(coherences),
                 'std_coherence': np.std(coherences),
                 'n_pairs': len(coherences)
             })
     
     daily_df = pd.DataFrame(daily_data)
+    if not daily_df.empty:
+        daily_df = daily_df.sort_values('date').reset_index(drop=True)
     
-    # For multi-year analysis, we have 3 years of data pooled by DOY
-    # This means DOY 23 has data from 2022, 2023, AND 2024 averaged
-    n_years = len(set(d.year for d in available_dates))
-    print_status(f"  Valid days: {len(daily_df)} unique DOYs from {n_years} years", "INFO")
-    print_status(f"  Note: Data from {n_years} years pooled by DOY for event analysis", "INFO")
+    n_years = daily_df['year'].nunique() if not daily_df.empty else 0
+    print_status(f"  Valid days: {len(daily_df)} unique days from {n_years} years", "INFO")
     
     return daily_df
 
 
-def analyze_planetary_event(daily_df, event_doy, event_window_days=EVENT_WINDOW_DAYS):
+def analyze_planetary_event(daily_df, event_year, event_doy, event_window_days=EVENT_WINDOW_DAYS):
     """
     Analyze a single planetary event using the Gaussian pulse fitting methodology.
     
@@ -716,6 +687,8 @@ def analyze_planetary_event(daily_df, event_doy, event_window_days=EVENT_WINDOW_
     -----------
     daily_df : pd.DataFrame
         Daily coherence time series
+    event_year : int
+        Year of the event
     event_doy : int
         Day of year of the event
     event_window_days : int
@@ -726,16 +699,22 @@ def analyze_planetary_event(daily_df, event_doy, event_window_days=EVENT_WINDOW_
     result : dict
         Analysis results including Gaussian fit parameters and significance
     """
-    # Filter to event window
-    window_start = event_doy - event_window_days
-    window_end = event_doy + event_window_days
+    # Calculate event date
+    try:
+        event_date = pd.Timestamp(datetime(event_year, 1, 1) + timedelta(days=event_doy - 1))
+    except ValueError:
+        return {'success': False, 'error': f'Invalid date: Year {event_year}, DOY {event_doy}'}
+
+    # Calculate days from event for ALL data (handles year boundaries)
+    # Work on a slice/copy to ensure we don't affect the original
+    daily_df = daily_df.copy()
+    daily_df['days_from_event'] = (daily_df['date'] - event_date).dt.days
     
-    window_df = daily_df[(daily_df['doy'] >= window_start) & (daily_df['doy'] <= window_end)].copy()
+    # Filter to window
+    window_df = daily_df[np.abs(daily_df['days_from_event']) <= event_window_days].copy()
     
     if len(window_df) < 10:
         return {'success': False, 'error': 'Insufficient data in window'}
-    
-    window_df['days_from_event'] = window_df['doy'] - event_doy
     
     days = window_df['days_from_event'].values
     coherences = window_df['mean_coherence'].values
@@ -863,19 +842,19 @@ def compute_clock_bias_amplitude(station_data, doy, window_days=EVENT_WINDOW_DAY
     """
     from datetime import datetime as dt, timedelta
     
+    # Compute dates for event window using exact arithmetic
+    try:
+        event_date = dt(year, 1, 1) + timedelta(days=doy - 1)
+        event_start = event_date - timedelta(days=window_days)
+        # Add 1 day to end to make it exclusive upper bound matching [start, end) if needed
+        # but for boolean indexing with <= or < we need to be careful.
+        # Below we use >= start and < end. So we want end to be event_date + window + 1 day
+        event_end = event_date + timedelta(days=window_days + 1)
+    except Exception:
+         return {'success': False, 'error': 'Invalid date calculation'}
+
     is_leap = (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
     n_days = 366 if is_leap else 365
-    
-    # Compute date range for event window
-    start_doy = max(1, doy - window_days)
-    end_doy = min(n_days, doy + window_days)
-    
-    # Convert DOYs to dates for DatetimeIndex filtering
-    event_start = dt(year, 1, 1) + timedelta(days=start_doy - 1)
-    event_end = dt(year, 1, 1) + timedelta(days=end_doy)
-    
-    # Window DOYs for baseline exclusion
-    window_doys = set(range(start_doy, end_doy + 1))
     
     event_amplitudes = []
     baseline_amplitudes = []
@@ -893,19 +872,28 @@ def compute_clock_bias_amplitude(station_data, doy, window_days=EVENT_WINDOW_DAY
             detrended = event_valid - np.polyval(np.polyfit(t, event_valid, 1), t)
             event_amplitudes.append(np.std(detrended))
         
-        # Baseline (all data outside window) - use DatetimeIndex filtering
+        # Baseline (all data outside window) 
+        # For baseline, we iterate through the specific year to establish a local baseline
+        # excluding the event window.
         baseline_segments = []
+        
+        # We'll approximate the baseline by checking days in the same year
+        # that are NOT in the event window
         for d in range(1, n_days + 1):
-            if d not in window_doys:
-                day_start = dt(year, 1, 1) + timedelta(days=d - 1)
-                day_end = day_start + timedelta(days=1)
-                day_mask = (ts.index >= day_start) & (ts.index < day_end)
-                day_data = ts[day_mask].values
-                valid = day_data[np.isfinite(day_data)]
-                if len(valid) > 100:
-                    t = np.arange(len(valid))
-                    detrended = valid - np.polyval(np.polyfit(t, valid, 1), t)
-                    baseline_segments.append(np.std(detrended))
+            day_start = dt(year, 1, 1) + timedelta(days=d - 1)
+            day_end = day_start + timedelta(days=1)
+            
+            # Check if this day overlaps with event window
+            if day_start >= event_start and day_start < event_end:
+                continue
+                
+            day_mask = (ts.index >= day_start) & (ts.index < day_end)
+            day_data = ts[day_mask].values
+            valid = day_data[np.isfinite(day_data)]
+            if len(valid) > 100:
+                t = np.arange(len(valid))
+                detrended = valid - np.polyval(np.polyfit(t, valid, 1), t)
+                baseline_segments.append(np.std(detrended))
         
         if baseline_segments:
             baseline_amplitudes.append(np.mean(baseline_segments))
@@ -1126,59 +1114,44 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True, proces
                             'doy': doy,
                             'type': event_type
                         })
-                        unique_doys_by_planet[planet].add(doy)
     
     total_events_all_years = len(all_events_list)
-    total_unique_doys = sum(len(doys) for doys in unique_doys_by_planet.values())
-    
-    print_status(f"  Total events across 3 years: {total_events_all_years}", "INFO")
-    print_status(f"  Unique DOYs to analyze: {total_unique_doys}", "INFO")
-    
-    # Count analyzable events (where we have data)
-    total_analyzable_events = 0
-    for event in all_events_list:
-        if any(d in available_doys for d in range(event['doy'] - EVENT_WINDOW_DAYS, event['doy'] + EVENT_WINDOW_DAYS + 1)):
-            total_analyzable_events += 1
-    
-    coverage_pct = 100 * total_analyzable_events / total_events_all_years if total_events_all_years > 0 else 0
-    print_status(f"  Event coverage: {total_analyzable_events}/{total_events_all_years} ({coverage_pct:.0f}%)", "INFO")
+    print_status(f"  Total events across years: {total_events_all_years}", "INFO")
     
     planetary_results = {}
     all_event_responses = []
     n_significant = 0
     
-    # Analyze unique DOYs for each planet across ALL years
+    # Analyze individual events for each planet
     for planet in ['Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn']:
         # Get all events for this planet across all years
-        planet_all_events = [e for e in all_events_list if e['planet'] == planet]
-        
-        # Get unique DOYs for this planet
-        unique_doys = unique_doys_by_planet[planet]
-        
-        # Build event list with unique DOYs
-        planet_events = []
-        for doy in sorted(unique_doys):
-            if any(d in available_doys for d in range(doy - EVENT_WINDOW_DAYS, doy + EVENT_WINDOW_DAYS + 1)):
-                # Find the event type(s) for this DOY
-                events_at_doy = [e for e in planet_all_events if e['doy'] == doy]
-                if events_at_doy:
-                    # Use the most common event type if there are multiple
-                    event_types = [e['type'] for e in events_at_doy]
-                    primary_type = max(set(event_types), key=event_types.count)
-                    years_with_event = sorted(set(e['year'] for e in events_at_doy))
-                    planet_events.append({
-                        'doy': doy, 
-                        'type': primary_type,
-                        'years': years_with_event,
-                        'n_years': len(years_with_event)
-                    })
+        planet_events = [e for e in all_events_list if e['planet'] == planet]
         
         if not planet_events:
             continue
         
         planet_responses = []
         for event in planet_events:
-            result = analyze_planetary_event(daily_df, event['doy'], EVENT_WINDOW_DAYS)
+            # Check coverage
+            event_doy = event['doy']
+            event_year = event['year']
+            
+            # Check if we have data near this event (± window)
+            try:
+                event_date = pd.Timestamp(datetime(event_year, 1, 1) + timedelta(days=event_doy - 1))
+            except ValueError:
+                continue
+                
+            window_start_date = event_date - timedelta(days=EVENT_WINDOW_DAYS)
+            window_end_date = event_date + timedelta(days=EVENT_WINDOW_DAYS)
+            
+            # Fast check using daily_df dates
+            has_coverage = daily_df['date'].between(window_start_date, window_end_date).any()
+            
+            if not has_coverage:
+                continue
+                
+            result = analyze_planetary_event(daily_df, event_year, event_doy, EVENT_WINDOW_DAYS)
             
             if result['success']:
                 # Extract key metrics
@@ -1198,20 +1171,18 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True, proces
                 if is_sig:
                     n_significant += 1
                 
-                # Compute GM/r² using JPL ephemeris (use first year this event occurs)
-                event_year = event.get('years', [2024])[0]
-                gm_r2, dist_au = get_gm_r2_jpl(planet, event['doy'], year=event_year)
+                # Compute GM/r² using JPL ephemeris
+                gm_r2, dist_au = get_gm_r2_jpl(planet, event_doy, year=event_year)
                 
                 # Compute clock bias amplitude for mass scaling test
-                amp_result = compute_clock_bias_amplitude(station_data, event['doy'], EVENT_WINDOW_DAYS, year=event_year)
+                amp_result = compute_clock_bias_amplitude(station_data, event_doy, EVENT_WINDOW_DAYS, year=event_year)
                 clock_amplitude = amp_result.get('event_rms_ns', 0) if amp_result.get('success') else 0
                 amplitude_modulation = amp_result.get('amplitude_modulation_pct', 0) if amp_result.get('success') else 0
                 
                 planet_responses.append({
-                    'doy': event['doy'],
+                    'year': event_year,
+                    'doy': event_doy,
                     'type': event['type'],
-                    'years': event.get('years', [event_year]),
-                    'n_years': event.get('n_years', 1),
                     'sigma_level': sigma_level,
                     'is_significant': is_sig,
                     'modulation_pct': modulation,
@@ -1254,15 +1225,6 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True, proces
     print_status("[4/5] Running null control and mass scaling tests...", "PROCESS")
     
     # Null control: PERMUTATION TEST
-    # With 35 event DOYs and ±120 day analysis windows, there's 75%+ overlap between
-    # any shifted dates and original events - temporal shift is invalid.
-    # 
-    # Instead, we use PERMUTATION NULL: randomly shuffle DOY labels in the coherence
-    # time series and re-run the analysis. This preserves the temporal structure
-    # but breaks any true DOY-specific signal.
-    #
-    # If planetary events are special, shuffled data should show FEWER detections.
-    
     N_PERMUTATIONS = 5  # Number of permutation runs (limited for speed)
     print_status(f"  Null control: permutation test ({N_PERMUTATIONS} shuffles)", "INFO")
     
@@ -1270,8 +1232,8 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True, proces
     n_random_significant = 0
     permutation_detections = []
     
-    # Get unique event DOYs for permutation analysis
-    unique_event_doys = list(set(e['doy'] for e in all_event_responses))
+    # Get list of (year, doy) events we successfully analyzed
+    analyzed_events = [(e['year'], e['doy']) for e in all_event_responses]
     
     for perm_i in range(N_PERMUTATIONS):
         # Create shuffled version by permuting coherence values
@@ -1279,17 +1241,20 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True, proces
         np.random.seed(42 + perm_i)
         shuffled_df = daily_df.copy()
         
-        # Shuffle the coherence values (breaks DOY-specific patterns)
+        # Shuffle the coherence values (breaks temporal patterns relative to event dates)
         original_coherence = shuffled_df['mean_coherence'].values.copy()
         np.random.shuffle(original_coherence)
         shuffled_df['mean_coherence'] = original_coherence
         
-        # Analyze same event DOYs on shuffled data
+        # Analyze same events on shuffled data
         perm_sig_count = 0
         perm_sigma_levels = []
         
-        for event_doy in unique_event_doys[:20]:  # Limit to 20 for speed
-            result = analyze_planetary_event(shuffled_df, int(event_doy), EVENT_WINDOW_DAYS)
+        # Limit to 20 events for speed if we have many
+        events_to_test = analyzed_events[:20] if len(analyzed_events) > 20 else analyzed_events
+        
+        for (ev_year, ev_doy) in events_to_test:
+            result = analyze_planetary_event(shuffled_df, ev_year, ev_doy, EVENT_WINDOW_DAYS)
             if result['success']:
                 if result.get('gaussian_fit'):
                     sigma_level = result['gaussian_fit']['sigma_level']
@@ -1310,8 +1275,9 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True, proces
     # Average across permutations
     if permutation_detections:
         avg_perm_detections = np.mean(permutation_detections)
-        n_events_tested = min(20, len(unique_event_doys))
-        real_detections = sum(1 for e in all_event_responses[:n_events_tested] if e['is_significant'])
+        n_events_tested = len(events_to_test) if 'events_to_test' in locals() else 0
+        real_detections = sum(1 for e in all_event_responses if (e['year'], e['doy']) in events_to_test)
+        
         print_status(f"  Permuted null: {avg_perm_detections:.1f}/{n_events_tested} vs real: {real_detections}/{n_events_tested}", "INFO")
         
         # Update for comparison
@@ -1493,16 +1459,23 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True, proces
     
     # Panel 1: Daily coherence time series with events marked
     ax1 = axes[0, 0]
-    ax1.plot(daily_df['doy'], daily_df['mean_coherence'], 'b-', alpha=0.7, linewidth=0.8)
+    ax1.plot(daily_df['date'], daily_df['mean_coherence'], 'b-', alpha=0.7, linewidth=0.8)
     ax1.axhline(y=baseline_coherence, color='gray', linestyle='--', alpha=0.5, label=f'Mean: {baseline_coherence:.4f}')
     
     # Mark planetary events
     for planet, data in planetary_results.items():
         for event in data['events']:
             color = 'green' if event['is_significant'] else 'red'
-            ax1.axvline(x=event['doy'], color=color, alpha=0.3, linewidth=2)
+            # Calculate date for marking
+            evt_year = event.get('year', 2024)
+            evt_doy = event['doy']
+            try:
+                evt_date = pd.Timestamp(datetime(evt_year, 1, 1) + timedelta(days=evt_doy - 1))
+                ax1.axvline(x=evt_date, color=color, alpha=0.3, linewidth=2)
+            except:
+                pass
     
-    ax1.set_xlabel('Day of Year (2024)')
+    ax1.set_xlabel('Date')
     ax1.set_ylabel('Mean Daily Coherence')
     ax1.set_title('Daily Coherence Time Series\n(Green=Significant, Red=Not Significant)')
     ax1.legend()
@@ -1548,8 +1521,8 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True, proces
         ax4.set_ylabel('Clock Bias RMS (ns)')
         
         # Get correlation from result
-        r_val = mass_scaling_result.get('gm_r2_vs_amplitude', {}).get('pearson_r', np.nan)
-        p_val = mass_scaling_result.get('gm_r2_vs_amplitude', {}).get('p_value', np.nan)
+        r_val = mass_scaling_result.get('gm_r2_vs_clock_amplitude', {}).get('pearson_r', np.nan)
+        p_val = mass_scaling_result.get('gm_r2_vs_clock_amplitude', {}).get('p_value', np.nan)
         ax4.set_title(f"GM/r² Mass Scaling Test\n(r = {r_val:.3f}, p = {p_val:.3f})")
         ax4.legend()
         ax4.grid(True, alpha=0.3)
@@ -1591,7 +1564,7 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True, proces
     
     # Mass scaling summary
     if mass_scaling_result.get('valid'):
-        amp_test = mass_scaling_result.get('gm_r2_vs_amplitude', {})
+        amp_test = mass_scaling_result.get('gm_r2_vs_clock_amplitude', {})
         amp_r = amp_test.get('pearson_r', 0)
         amp_p = amp_test.get('p_value', 1.0)
         

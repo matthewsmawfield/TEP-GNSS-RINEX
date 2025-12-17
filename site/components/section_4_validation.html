@@ -1,6 +1,6 @@
 <h2>4. Signal Characterization & Validation</h2>
 
-<p>Detecting a signal is only the first step. Validating it requires rigorous characterization of its properties and systematic exclusion of alternative explanations. This section presents the battery of tests performed to confirm the origin of the observed correlations.</p>
+<p>Detecting a signal is only the first step. Validating it requires rigorous characterization of its properties and systematic exclusion of alternative explanations. This section presents the battery of tests performed to assess the origin of the observed correlations.</p>
 
 <h3>4.1 Directional Anisotropy Validation</h3>
 
@@ -26,8 +26,8 @@
         </tr>
         <tr>
             <td>p-value</td>
-            <td>&lt;10<sup>−300</sup></td>
-            <td>Beyond floating-point precision</td>
+            <td>&lt;10<sup>−15</sup></td>
+            <td>Highly significant under the standard null model</td>
         </tr>
         <tr>
             <td>Cohen's d (effect size)</td>
@@ -224,13 +224,13 @@
     -->
     
     <h5>Implications</h5>
-    <p>If log-binning or exponential fitting created artificial decay, the shuffled data would also show exponential decay. <em>It does not.</em> This confirms that the signal is topological: it exists only in the specific relationship between coherence and physical separation. Destroying the spatial topology destroys the signal, confirming it is a genuine geometric property of the GNSS network.</p>
+    <p>If log-binning or exponential fitting created artificial decay, the shuffled data would also show exponential decay. <em>It does not.</em> This supports the interpretation that the observed structure depends on the specific relationship between coherence and physical separation. Destroying the spatial topology destroys the signal, which is consistent with a genuine geometric property of the GNSS network.</p>
     <ul>
         <li>Log-spaced binning does not transform Y-values — it only groups data</li>
         <li>The exponential model cannot fit flat data with high R²</li>
         <li>The decay observed in real data is a property of the data, not the analysis</li>
     </ul>
-    <p>This confirms that the exponential decay is a property of the data, not a methodological artifact.</p>
+    <p>This supports the interpretation that the exponential decay is a property of the data, not a methodological artifact.</p>
 </div>
 
 <h4>4.3.3 Multi-Metric Discrimination</h4>
@@ -271,7 +271,7 @@
         </tr>
     </table>
     
-    <p>Key observation: The ionofree mode shows λ = 1,072 km, which is 47% longer than baseline (727 km). Removing ionospheric effects increases the correlation length because ionospheric decorrelation was shortening the apparent λ. An artificial methodology effect would not "know" to respond this way to ionospheric correction. This physically meaningful response confirms the signal is real.</p>
+    <p>Key observation: The ionofree mode shows λ = 1,072 km, which is 47% longer than baseline (727 km). Removing ionospheric effects increases the correlation length because ionospheric decorrelation was shortening the apparent λ. An artificial methodology effect would not "know" to respond this way to ionospheric correction. This physically meaningful response is consistent with a real signal rather than a fitting artifact.</p>
 </div>
 
 <h3>4.4 Systematic Effect Discrimination</h3>
@@ -328,7 +328,7 @@
 <div>
     <h4>The "Time Slip" Problem and Its Solution</h4>
     
-    <p>A critical validation was confirming that the Pandas DatetimeIndex alignment method correctly handles missing data. Without proper alignment:</p>
+    <p>A critical validation step was verifying that the Pandas DatetimeIndex alignment method correctly handles missing data. Without proper alignment:</p>
     <ul>
         <li>Missing days cause cumulative "time slips"</li>
         <li>Station pairs become desynchronized</li>
@@ -336,7 +336,7 @@
         <li>Exponential decay becomes spuriously steep</li>
     </ul>
     
-    <p>Validation: The agreement between raw SPP results (using Pandas DatetimeIndex alignment) and precise-product results (using the same methodology in Papers 1 and 2) confirms the alignment approach is correct.</p>
+    <p>Validation: The agreement between raw SPP results (using Pandas DatetimeIndex alignment) and precise-product results (using the same methodology in Papers 1 and 2) supports the alignment approach.</p>
 </div>
 
 <h3>4.6 Uncertainty Estimation</h3>
@@ -515,7 +515,7 @@
         <tr>
             <td>CODE cross-validation</td>
             <td>Inconsistent</td>
-            <td>Independent confirmation</td>
+            <td>Independent consistency</td>
         </tr>
         <tr>
             <td>Temporal stability</td>
@@ -525,4 +525,4 @@
     </table>
 </div>
 
-<p>The convergence of these independent tests establishes that the observed exponential decay reflects a genuine distance-dependent correlation structure in the data, not a methodological artifact.</p>
+<p>The convergence of these independent tests supports the interpretation that the observed exponential decay reflects a distance-dependent correlation structure in the data, not a methodological artifact.</p>

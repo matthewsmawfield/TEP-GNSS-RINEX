@@ -164,7 +164,7 @@ flowchart LR
     B --> C["3 Metrics<br/>bias · jitter · drift"]
     C --> D[(".npz<br/>per station-day")]
     D --> E["Pair Coherence<br/>MSC + Phase"]
-    E --> F["Exp Fit<br/>C(r) = Ae⁻ʳ/λ + C₀"]
+    E --> F["Exp Fit<br/>C(r) = A·exp(-r/λ) + C_0"]
     F --> G{{"λ, R²<br/>TEP Detection"}}
     
     style A fill:#eceff1,stroke:#455a64,stroke-width:2px,color:#263238
@@ -220,7 +220,7 @@ flowchart LR
     <p>$$L_{IF} = \frac{f_1^2}{f_1^2 - f_2^2} L_1 - \frac{f_2^2}{f_1^2 - f_2^2} L_2 \approx 2.546 \, L_1 - 1.546 \, L_2$$</p>
     <p>where $f_1 = 1575.42$ MHz (L1) and $f_2 = 1227.60$ MHz (L2). This combination removes the ionospheric delay but amplifies receiver thermal noise by a factor of approximately 3× due to the large coefficients (Kaplan & Hegarty, 2017; Misra & Enge, 2011):</p>
     <p>$$\sigma_{IF} = \sqrt{(2.546)^2 + (1.546)^2} \, \sigma_{L1} \approx 2.98 \, \sigma_{L1}$$</p>
-    <p>This noise penalty is a fundamental trade-off in dual-frequency GNSS processing. The ionofree mode is critical for validation: if correlations were purely ionospheric, they would disappear in this mode. Instead, longer correlation lengths are observed (λ = 1,072 km vs 727 km), confirming the signal is not ionospheric artifact.</p>
+    <p>This noise penalty is a fundamental trade-off in dual-frequency GNSS processing. The ionofree mode is critical for validation: if correlations were purely ionospheric, they would disappear in this mode. Instead, longer correlation lengths are observed (λ = 1,072 km vs 727 km), which is less consistent with a purely ionospheric artifact.</p>
 </div>
 
 <h4>2.3.2 Time Series Extraction</h4>
@@ -288,7 +288,7 @@ flowchart LR
         <li><strong>Random walk:</strong> derivative would be white noise (no spatial structure)</li>
         <li><strong>Genuine signal:</strong> derivative maintains spatial correlation (R² > 0.9)</li>
     </ul>
-    <p>Observed R² = 0.974 for clock drift confirms the signal is not random walk.</p>
+    <p>Observed R² = 0.974 for clock drift is less consistent with a pure random-walk explanation.</p>
 </div>
 
 <h4>2.3.3 Time Alignment Strategy (Critical)</h4>
@@ -388,8 +388,8 @@ $$C_{ij} = \frac{\left| \sum_{t} A_i(t) \cdot A_j(t) \cdot e^{i\Delta\phi_{ij}(t
         </tr>
         <tr>
             <td><strong>Orbital Velocity Coupling</strong><br>(temporal modulation)</td>
-            <td>3.5–4.4σ</td>
-            <td style="color: #999;">5.3σ (multi_gnss)</td>
+            <td>3.0–4.2σ</td>
+            <td style="color: #999;">5.4σ (multi_gnss)</td>
             <td>MSC measures power correlation; orbital velocity modulates the <em>amplitude</em> of coupling month-to-month. Multi-GNSS phase alignment achieves strongest detection</td>
         </tr>
         <tr>
@@ -754,7 +754,7 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
 
 <h2>2.5 Null Tests (Step 2.4b)</h2>
 
-<p>A critical requirement for validating the TEP signal is to demonstrate that the observed exponential correlation structure is <em>not</em> driven by known non-gravitational phenomena. A comprehensive null test suite was designed that examines three independent mechanisms that could potentially produce spurious distance-structured correlations.</p>
+<p>A critical requirement for validating the TEP signal is to assess whether the observed exponential correlation structure is driven by known non-gravitational phenomena. A comprehensive null test suite was designed that examines three independent mechanisms that could potentially produce spurious distance-structured correlations.</p>
 
 <h3>2.5.1 Test Design Rationale</h3>
 
@@ -783,7 +783,7 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
 <p>The shuffle test provides a direct validation of genuine spatial structure. The procedure:</p>
 
 <ol>
-    <li><strong>Real Fit:</strong> Fit the exponential decay model C(d) = A·exp(−d/λ) + C₀ to the complete coherence dataset, recording R²<sub>real</sub>.</li>
+    <li><strong>Real Fit:</strong> Fit the exponential decay model C(r) = A·exp(−r/λ) + C_0 to the complete coherence dataset, recording R²<sub>real</sub>.</li>
     <li><strong>Randomization:</strong> Randomly permute the coherence values while preserving the distance values, breaking the space-time relationship.</li>
     <li><strong>Shuffled Fit:</strong> Fit the same exponential model to the shuffled data, recording R²<sub>shuffled</sub>.</li>
 </ol>
@@ -914,12 +914,12 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
         <li>Baseline and Multi-GNSS modes find different preferred directions</li>
     </ul>
     
-    <p>Conversely, CMB frame alignment is confirmed if:</p>
+    <p>Conversely, CMB frame alignment is supported if:</p>
     <ul>
         <li>Majority of clean (non-Ionofree) combinations find RA within 20° of CMB</li>
         <li>At least one combination achieves global p &lt; 0.05</li>
         <li>Zero variance across station filters (all converge to same RA)</li>
-        <li>Solar Apex is strongly disfavored (separation > 80°)</li>
+        <li>Solar Apex is disfavored (separation > 80°)</li>
     </ul>
     
     <p>CODE's 25-year analysis found best-fit at RA = 186°, Dec = −4° (18.2° from CMB). With only 3 years of data, weaker Dec constraints are expected due to limited seasonal sampling, but RA should converge to within ~20° of the CMB dipole if the effect is real.</p>

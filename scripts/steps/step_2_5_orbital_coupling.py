@@ -34,6 +34,7 @@ from datetime import datetime
 import math
 import gc
 import argparse
+from typing import Optional
 
 from scripts.utils.logger import print_status, TEPLogger, set_step_logger
 
@@ -56,6 +57,7 @@ PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 
 METRICS = ['clock_bias', 'pos_jitter', 'clock_drift']
 COHERENCE_TYPES = ['msc', 'phase_alignment']
+HEMISPHERE_BALANCE_SEED = 42
 
 # ============================================================================
 # PROCESSING MODES - consistent with other Step 2.x scripts
@@ -201,40 +203,99 @@ def calculate_seasonal_stats(monthly_data):
     }
 
 
+def _parse_filter_config(filter_config: str):
+    parts = str(filter_config).split('|')
+    base = parts[0]
+    opts = {}
+    for p in parts[1:]:
+        p = p.strip()
+        if not p:
+            continue
+        if '=' in p:
+            k, v = p.split('=', 1)
+            opts[k.strip()] = v.strip()
+        else:
+            opts[p] = True
+    return base, opts
+
+
 def load_station_filter(filter_config, coords_lla):
     """Load station filter and return filtered coordinates + metadata."""
-    if filter_config == 'none':
-        return coords_lla, {'type': 'all', 'n_stations': len(coords_lla)}
-    
-    # Load from metadata file (including dynamic_50_metadata.json)
-    filter_file = PROCESSED_DIR / filter_config
-    if filter_file.exists():
-        with open(filter_file) as f:
-            meta = json.load(f)
-        station_set = set(meta.get('stations', {}).keys())
-        filtered = {k: v for k, v in coords_lla.items() if k in station_set}
-        
-        # Get hemisphere balance
-        n_north = sum(1 for s in meta.get('stations', {}).values() 
-                      if s.get('classification', {}).get('hemisphere') == 'N')
-        n_south = sum(1 for s in meta.get('stations', {}).values() 
-                      if s.get('classification', {}).get('hemisphere') == 'S')
-        
-        return filtered, {
-            'type': 'metadata', 
-            'file': filter_config,
-            'n_stations': len(filtered),
-            'n_north': n_north,
-            'n_south': n_south,
-            'hemisphere_ratio': f"{n_north}:{n_south}"
-        }
-    
-    print_status(f"Filter file not found: {filter_config}, using all stations", "WARNING")
-    return coords_lla, {'type': 'all', 'n_stations': len(coords_lla)}
+    base_config, opts = _parse_filter_config(filter_config)
+    hemi = opts.get('hemi', None)
+    seed = int(opts.get('seed', HEMISPHERE_BALANCE_SEED))
+
+    meta = None
+    if base_config == 'none':
+        filtered = coords_lla
+        filter_meta = {'type': 'all', 'n_stations': len(filtered)}
+    else:
+        filter_file = PROCESSED_DIR / base_config
+        if filter_file.exists():
+            with open(filter_file) as f:
+                meta = json.load(f)
+            station_set = set(meta.get('stations', {}).keys())
+            filtered = {k: v for k, v in coords_lla.items() if k in station_set}
+            filter_meta = {
+                'type': 'metadata',
+                'file': base_config,
+                'n_stations': len(filtered)
+            }
+        else:
+            print_status(f"Filter file not found: {base_config}, using all stations", "WARNING")
+            filtered = coords_lla
+            filter_meta = {'type': 'all', 'n_stations': len(filtered)}
+
+    def _station_hemisphere(station: str) -> Optional[str]:
+        if meta is not None:
+            hs = (
+                meta.get('stations', {})
+                .get(station, {})
+                .get('classification', {})
+                .get('hemisphere', None)
+            )
+            if hs in ('N', 'S'):
+                return hs
+        if station in filtered:
+            lat, _lon = filtered[station]
+            return 'N' if lat >= 0 else 'S'
+        return None
+
+    if hemi in ('N', 'S'):
+        filtered = {k: v for k, v in filtered.items() if _station_hemisphere(k) == hemi}
+        filter_meta['hemisphere_selection'] = hemi
+    elif hemi == 'balanced':
+        north = [k for k in filtered.keys() if _station_hemisphere(k) == 'N']
+        south = [k for k in filtered.keys() if _station_hemisphere(k) == 'S']
+        n_bal = min(len(north), len(south))
+        if n_bal > 0:
+            rng = np.random.default_rng(seed)
+            north_sel = rng.choice(sorted(north), size=n_bal, replace=False)
+            south_sel = rng.choice(sorted(south), size=n_bal, replace=False)
+            station_sel = set(north_sel).union(set(south_sel))
+            filtered = {k: v for k, v in filtered.items() if k in station_sel}
+        else:
+            filtered = {}
+        filter_meta['hemisphere_selection'] = 'balanced'
+        filter_meta['balanced_n_per_hemisphere'] = int(n_bal)
+
+    n_north = sum(1 for s in filtered.keys() if _station_hemisphere(s) == 'N')
+    n_south = sum(1 for s in filtered.keys() if _station_hemisphere(s) == 'S')
+    filter_meta['n_stations'] = len(filtered)
+    filter_meta['n_north'] = int(n_north)
+    filter_meta['n_south'] = int(n_south)
+    filter_meta['hemisphere_ratio'] = f"{n_north}:{n_south}"
+
+    return filtered, filter_meta
 
 
-def _find_pairs_csv(processing_mode: str, filter_name: str) -> Path | None:
-    filter_suffix = filter_name.lower().replace(' ', '_')
+def _find_pairs_csv(processing_mode: str, filter_name: str) -> Optional[Path]:
+    base_name = filter_name
+    for suffix in ("_NORTH", "_SOUTH", "_BALANCED"):
+        if base_name.endswith(suffix):
+            base_name = base_name[: -len(suffix)]
+            break
+    filter_suffix = base_name.lower().replace(' ', '_')
     candidates = [
         RESULTS_DIR / f"step_2_0_pairs_{processing_mode}_{filter_suffix}.csv",
         RESULTS_DIR / f"step_2_0_pairs_{processing_mode}.csv",
@@ -260,7 +321,6 @@ def run_orbital_analysis(filter_name, filter_config, processing_mode, mode_confi
     # Load coordinates
     with open(PROCESSED_DIR / "station_coordinates.json") as f:
         coords_ecef = json.load(f)
-    
     coords_lla_all = {k: ecef_to_lla(*v) for k, v in coords_ecef.items()}
     coords_lla, filter_meta = load_station_filter(filter_config, coords_lla_all)
     
@@ -285,15 +345,15 @@ def run_orbital_analysis(filter_name, filter_config, processing_mode, mode_confi
             if 'metric' in chunk.columns:
                 # Handle prefixed metric names (e.g., ionofree_clock_bias, multi_gnss_clock_bias)
                 # Match if metric column ends with the metric name
-                mc = chunk[chunk['metric'].str.endswith(metric)]
+                mc = chunk[chunk['metric'].astype(str).str.endswith(metric, na=False)]
             else:
                 continue
             if mc.empty:
                 continue
             
-            # Filter by stations if using metadata filter
-            if filter_meta['type'] == 'metadata':
-                station_mask = mc['station1'].isin(coords_lla.keys()) & mc['station2'].isin(coords_lla.keys())
+            if len(coords_lla) != len(coords_lla_all):
+                station_keys = set(coords_lla.keys())
+                station_mask = mc['station1'].isin(station_keys) & mc['station2'].isin(station_keys)
                 mc = mc[station_mask]
                 if mc.empty:
                     continue
@@ -495,13 +555,16 @@ def main():
                         help='Filter: "all", "none", "optimal_100_metadata.json", or "dynamic_50_metadata.json"')
     parser.add_argument('--mode', type=str, default='all',
                         help='Processing mode: "all", "baseline", "precise", "ionofree", "multi_gnss"')
+    parser.add_argument('--hemisphere', type=str, default='none',
+                        choices=['none', 'north', 'south', 'balanced', 'all'],
+                        help='Optional hemisphere selection: none, north, south, balanced, or all')
     args = parser.parse_args()
     
     print_status("", "INFO")
     print_status("=" * 80, "INFO")
     print_status("STEP 2.5: ORBITAL COUPLING - COMPREHENSIVE ANALYSIS", "TITLE")
     print_status("=" * 80, "INFO")
-    print_status("Analyzing: 3 filters × 4 modes × 3 metrics × 2 coherence types", "INFO")
+    print_status("Analyzing: station filters × modes × metrics × coherence types", "INFO")
     print_status("=" * 80, "INFO")
     
     # Select filters
@@ -514,6 +577,22 @@ def main():
         else:
             print_status(f"Unknown filter: {args.filter}", "ERROR")
             return
+
+    if args.hemisphere != 'none':
+        expanded = []
+        if args.hemisphere == 'all':
+            hemi_variants = [('N', 'NORTH'), ('S', 'SOUTH'), ('balanced', 'BALANCED')]
+        elif args.hemisphere == 'north':
+            hemi_variants = [('N', 'NORTH')]
+        elif args.hemisphere == 'south':
+            hemi_variants = [('S', 'SOUTH')]
+        else:
+            hemi_variants = [('balanced', 'BALANCED')]
+
+        for filter_name, filter_config in filters:
+            for hemi_value, hemi_tag in hemi_variants:
+                expanded.append((f"{filter_name}_{hemi_tag}", f"{filter_config}|hemi={hemi_value}"))
+        filters = expanded
     
     # Select modes
     if args.mode == 'all':
@@ -591,6 +670,15 @@ def main():
     summary_output['best_result'] = best_overall
     
     summary_file = RESULTS_DIR / "step_2_5_orbital_coupling_summary.json"
+    if args.filter != 'all' or args.mode != 'all' or args.hemisphere != 'none':
+        parts = []
+        if args.filter != 'all':
+            parts.append(Path(args.filter).stem)
+        if args.mode != 'all':
+            parts.append(args.mode)
+        if args.hemisphere != 'none':
+            parts.append(f"hemi_{args.hemisphere}")
+        summary_file = RESULTS_DIR / f"step_2_5_orbital_coupling_summary_{'_'.join(parts)}.json"
     with open(summary_file, 'w') as f:
         json.dump(summary_output, f, indent=2)
     

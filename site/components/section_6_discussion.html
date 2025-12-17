@@ -13,13 +13,13 @@
         <li>Common ionospheric and tropospheric models</li>
         <li>Clock constraint strategies</li>
     </ul>
-    <p>The processing artifact hypothesis is further challenged by the observation of directional anisotropy. The short-distance E-W/N-S ratios of 1.033 (MSC) and 1.224 (Phase Alignment) are highly significant (p &lt; 10<sup>−300</sup>) and consistent with CODE's directional signature. A critical audit reveals this signal is not a distance artifact: E-W pairs are actually 13 km longer than N-S pairs (a bias <em>against</em> the signal), and robust distance-matching strengthens the ratio (1.033 → 1.041).</p>
+    <p>The processing artifact hypothesis is further challenged by the observation of directional anisotropy. The short-distance E-W/N-S ratios of 1.033 (MSC) and 1.224 (Phase Alignment) are highly significant (nominal p &lt; 10<sup>−15</sup> under the standard null) and consistent with CODE's directional signature. A critical audit reveals this signal is not a distance artifact: E-W pairs are actually 13 km longer than N-S pairs (a bias <em>against</em> the signal), and robust distance-matching strengthens the ratio (1.033 → 1.041).</p>
     
     <div class="callout callout-info">
         <h5>Why Tropospheric Weather Is Not the Cause</h5>
         <p>A potential objection is that the short-distance E-W anisotropy simply reflects prevailing weather patterns (Westerlies). This possibility is disfavored by four considerations:</p>
         <ol>
-            <li><strong>Orbital Coupling:</strong> Weather does not modulate with Earth's orbital velocity (r = −0.548 to −0.752, 3.5–5.3σ).</li>
+            <li><strong>Orbital Coupling:</strong> Weather does not modulate with Earth's orbital velocity (r = −0.509 to −0.763, 3.2–5.4σ).</li>
             <li><strong>Ionofree Persistence:</strong> The inferred correlation length increases (λ = 6060 km) when ionospheric delay is removed. Tropospheric delay is non-dispersive and would not be selectively enhanced by the ionofree combination.</li>
             <li><strong>CMB Alignment:</strong> Weather patterns do not align with the Cosmic Microwave Background dipole (19.3° separation, p &lt; 10<sup>−25</sup>) (Burde, 2016; Consoli & Pluchino, 2021).</li>
             <li><strong>Ionospheric Gradient Scale:</strong> Lee & Lee (2019) show ionospheric spatial gradients are &lt;0.01 TECU/km under quiet conditions—far smaller than the effect observed here, which persists across all geomagnetic conditions.</li>
@@ -33,7 +33,7 @@
 
 <p>The comparable correlation lengths for position jitter (spatial proxy, λ = 883 km) and clock bias (temporal proxy, λ = 727 km) are consistent with the central TEP expectation that spatial and temporal fluctuations are coupled. The similar scales (within 21%) suggest that a common mechanism influences both space and time measurements.</p>
 
-<p>Additional evidence from orbital coupling analysis: Position jitter and clock bias show similar orbital velocity coupling (baseline: r = −0.526 vs −0.548, difference of 4%; multi_gnss: r = −0.659 vs −0.581, difference of 13%). This approximate spacetime symmetry is consistent with a common coupling affecting spatial and temporal observables. Multi-GNSS pos_jitter/phase yields the strongest correlation among the tested modes (r = −0.752, 5.3σ).</p>
+<p>Additional evidence from orbital coupling analysis: Position jitter and clock bias show similar orbital velocity coupling (baseline: r = −0.509 vs −0.486, difference of 5%; multi_gnss: r = −0.610 vs −0.581, difference of 5%). This approximate spacetime symmetry is consistent with a common coupling affecting spatial and temporal observables. Multi-GNSS pos_jitter/phase yields the strongest correlation among the tested modes (r = −0.763, 5.4σ).</p>
 
 <h4>6.2.2 Directional Anisotropy as Physical Signature</h4>
 
@@ -53,8 +53,8 @@
     <h5>Physical Implications of CMB Alignment</h5>
     <ul>
         <li><strong>Best-fit RA = 157°, Dec = +9°</strong>, only 19.3° from CMB dipole (168°, −7°)—matching CODE's 25-year benchmark of 18.2°</li>
-        <li><strong>78% RA clustering</strong>: Of 54 clean (non-Ionofree) combinations, 42 find RA within 10° of CMB (p &lt; 10<sup>−35</sup>, >12σ)</li>
-        <li><strong>Three exact matches at RA = 168°</strong> (probability 1 in 46.7 million, 6.4σ equivalent)</li>
+        <li><strong>78% RA clustering</strong>: Of 54 clean (non-Ionofree) combinations, 42 find RA within 10° of CMB (p &lt; 10<sup>−35</sup> under a simplified binomial model)</li>
+        <li><strong>Three exact matches at RA = 168°</strong> (a qualitative coincidence; exact-match probabilities depend on the assumed background model and correlations among combinations)</li>
         <li><strong>Solar Apex disfavored</strong> at 106° separation (5.5× farther than CMB, 32× worse variance explained)</li>
         <li><strong>Zero-variance filter independence</strong>: All three station filters converge to same RA (CV = 0.3%)</li>
     </ul>
@@ -72,9 +72,9 @@
 
 <p>Taken together, the findings present a coherent physical narrative. The signal is not merely a collection of isolated anomalies but a unified phenomenon with three interconnected properties:</p>
 <ol>
-    <li><strong>Not random noise:</strong> p &lt; 10<sup>−300</sup> across 172 million pairs; orbital coupling at 3.3σ; shuffle test shows strong evidence ratio (mean ~30×, min 1.9×) with 93% passing strict R² &lt; 0.3 threshold</li>
+    <li><strong>Not random noise:</strong> nominal p &lt; 10<sup>−15</sup> across 172 million pairs under the standard null; orbital coupling at 3.3σ; shuffle test shows strong evidence ratio (mean ~30×, min 1.9×) with 90% passing strict R² &lt; 0.3 threshold</li>
     <li><strong>Cosmic Reference:</strong> The alignment with the CMB frame (and rejection of the Solar Apex) links the inferred preferred direction to a cosmologically defined reference frame, suggesting a cosmological rather than local galactic association.</li>
-    <li><strong>Velocity Dependence:</strong> The modulation with Earth's orbital velocity (r = −0.548 to −0.752) is consistent with a kinematic dependence on Earth's motion relative to that reference direction.</li>
+    <li><strong>Velocity Dependence:</strong> The modulation with Earth's orbital velocity (r = −0.509 to −0.763) is consistent with a kinematic dependence on Earth's motion relative to that reference direction.</li>
 </ol>
 <p>This triplet—Spacetime Symmetry, CMB Alignment, and Velocity Dependence—summarizes the central empirical signature reported here for the Temporal Equivalence Principle.</p>
 
@@ -125,12 +125,12 @@
 <h4>6.4.2 Completed Analyses</h4>
 
 <div>
-    <h5>Orbital Velocity Coupling — Confirmed</h5>
-    <p>The orbital velocity correlation (as in Paper 2) has been successfully tested and confirmed:</p>
+    <h5>Orbital Velocity Coupling — Detected</h5>
+    <p>The orbital velocity correlation (as in Paper 2) has been tested and is detected:</p>
     <ul>
-        <li><strong>Best result:</strong> r = −0.752, 5.3σ (Multi-GNSS pos_jitter/phase); MSC confirms at r = −0.659, 4.4σ</li>
-        <li><strong>Baseline GPS:</strong> r = −0.548, 3.5σ (clock_bias/msc)</li>
-        <li><strong>Ionospheric independence:</strong> Signal survives ionofree (r = −0.341, 2.0σ)</li>
+        <li><strong>Best result:</strong> r = −0.763, 5.4σ (Multi-GNSS pos_jitter/phase); MSC yields r = −0.610, 4.0σ</li>
+        <li><strong>Baseline GPS:</strong> r = −0.509, 3.2σ</li>
+        <li><strong>Ionospheric independence:</strong> Signal persists under ionofree (best: r = −0.416, 2.5σ)</li>
         <li><strong>Seasonal breathing:</strong> Equinox/Solstice ratio 1.33–1.58 across all modes</li>
     </ul>
     <p>This completes the orbital dynamics validation originally planned for Paper 2 methodology.</p>
@@ -193,13 +193,13 @@
         <tr>
             <td><strong>Orbital velocity coupling</strong></td>
             <td>E-W/N-S ~ orbital velocity</td>
-            <td>r = −0.752, 5.3σ (multi_gnss best); r = −0.548, 3.5σ (baseline)</td>
+            <td>r = −0.763, 5.4σ (multi_gnss best); r = −0.509, 3.2σ (baseline)</td>
             <td>Supported</td>
         </tr>
         <tr>
             <td><strong>Spacetime symmetry</strong></td>
             <td>Position Jitter ≈ Clock Bias</td>
-            <td>r = −0.526 vs −0.548 (Δ = 4%, baseline); r = −0.659 vs −0.581 (Δ = 13%, multi_gnss)</td>
+            <td>r = −0.509 vs −0.486 (Δ = 5%, baseline); r = −0.610 vs −0.581 (Δ = 5%, multi_gnss)</td>
             <td>Supported</td>
         </tr>
         <tr>

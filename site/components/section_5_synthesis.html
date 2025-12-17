@@ -70,18 +70,20 @@
     </table>
 </div>
 
-<p>The convergence of directional structure across independent methodologies is noteworthy. The raw SPP analysis indicates E-W > N-S with t-statistics up to 112 and p-values below floating-point precision. A critical distance audit confirms this is not an artifact: E-W pairs are 13 km longer than N-S pairs (suppressing the signal), and robust distance-matching strengthens the coherence ratio from 1.033 to 1.041.</p>
+<p>The convergence of directional structure across independent methodologies is noteworthy. The raw SPP analysis indicates E-W > N-S with t-statistics up to 112 and nominal p-values &lt; 10<sup>−15</sup> under the standard null. A critical distance audit indicates this is not an artifact: E-W pairs are 13 km longer than N-S pairs (suppressing the signal), and robust distance-matching strengthens the coherence ratio from 1.033 to 1.041.</p>
 
 <div class="callout callout-success">
     <h4>Monthly Temporal Stability: A Consistency Test</h4>
     <p>The directional anisotropy was computed independently for each of the 36 months (Jan 2022 – Dec 2024). Across all processing modes and metrics:</p>
+    <div class="callout callout-warning" style="margin: 15px 0;">
+    <h4>Key point: the signal is constant, but the screening is not</h4>
+    <p>Monthly short-distance E-W/N-S ratios show:</p>
     <ul>
-        <li>E-W > N-S in 94–100% of all months (p = 1.5 × 10<sup>−11</sup> for 36/36)</li>
-        <li>Multi-GNSS highest ratios: Coherence ratio 1.046, Phase alignment ratio 1.279</li>
+        <li>Always &gt; 1 (94–100% of months)</li>
         <li>Coefficient of variation: 0.7–1.0% (coherence) and 3–6% (phase alignment)—essentially constant</li>
     </ul>
     <p>This pattern is not readily explained by temporal averaging, seasonal aggregation, or statistical fluctuation alone, and it is observed across the full 2022–2024 interval.</p>
-    <p>Key distinction: The low CV of short-distance ratios is compatible with the orbital velocity coupling (r = −0.548 to −0.752) in §3.10, because these measure different quantities: short-distance ratios capture the short-baseline directional signature, while full-distance λ ratios include atmospheric screening effects that modulate annually. This complementarity is consistent with the "Screened Signal Model" (§3.7.5).</p>
+    <p>Key distinction: The low CV of short-distance ratios is compatible with the orbital velocity coupling (r = −0.509 to −0.763) in §3.10, because these measure different quantities: short-distance ratios capture the short-baseline directional signature, while full-distance λ ratios include atmospheric screening effects that modulate annually. This complementarity is consistent with the "Screened Signal Model" (§3.7.5).</p>
 </div>
 
 <h2>5.3 Multi-Mode Cross-Validation</h2>
@@ -245,16 +247,17 @@
         </tr>
         <tr>
             <td><strong>Paper 3 (3-year SPP)</strong></td>
-            <td>−0.752 (best)<br>−0.548 (baseline)</td>
-            <td>5.3σ (best)<br>3.5σ (baseline)</td>
+            <td>−0.763 (best)<br>−0.509 (baseline)</td>
+            <td>5.4σ (best)<br>3.2σ (baseline)</td>
             <td>All significant results negative</td>
         </tr>
     </table>
     <p style="margin-top: 15px;">Key findings:</p>
     <ul>
-        <li><strong>Observed coupling:</strong> Multi-GNSS pos_jitter/phase yields r = −0.752, 5.3σ; MSC yields r = −0.659, 4.4σ; baseline GPS yields r = −0.548, 3.5σ</li>
+        <li><strong>Observed coupling:</strong> Multi-GNSS pos_jitter/phase yields r = −0.763, 5.4σ; MSC yields r = −0.610, 4.0σ; baseline GPS yields r = −0.509, 3.2σ</li>
         <li><strong>Direction consistency:</strong> All significant results show negative correlation, matching CODE</li>
-        <li><strong>Ionospheric removal:</strong> The coupling remains in ionofree mode (r = −0.341, 2.0σ), which is less consistent with a purely ionospheric explanation</li>
+        <li><strong>Ionospheric removal:</strong> The coupling remains in ionofree mode (best: r = −0.416, 2.5σ), which is less consistent with a purely ionospheric explanation</li>
+        <li><strong>Hemisphere balance control:</strong> A hemisphere-balanced DYNAMIC_50 downsample (110:110) strengthens the detection to r = −0.864, 6.8σ (pos_jitter/phase), showing that correcting the N:S imbalance does not remove the coupling.</li>
         <li><strong>Seasonal variation:</strong> Equinox/Solstice ratio 1.33–1.58 across all modes—consistent with modulation by Earth's orbital geometry</li>
     </ul>
 </div>
@@ -272,22 +275,22 @@
         <tr>
             <td>Clock Bias</td>
             <td>Time</td>
-            <td>−0.548</td>
+            <td>−0.486</td>
             <td>−0.581</td>
         </tr>
         <tr>
             <td>Position Jitter</td>
             <td>Space</td>
-            <td>−0.526</td>
-            <td>−0.659</td>
+            <td>−0.509</td>
+            <td>−0.610</td>
         </tr>
         <tr>
             <td colspan="2"><strong>Difference</strong></td>
-            <td>4%</td>
-            <td>13%</td>
+            <td>5%</td>
+            <td>5%</td>
         </tr>
     </table>
-    <p style="margin-top: 10px;">TEP predicts coupling in <em>spacetime</em>, not just temporal effects. If the signal were a purely temporal clock artifact (e.g., oscillator thermal effects), it would be expected to propagate into position solutions with specific geometric projections rather than with near 1:1 magnitude scaling. The observed near-unity coupling (Δr ≈ 4–13%) is consistent with a shared underlying contribution affecting both observables (e.g., a perturbation to the spacetime interval ds²) rather than a parameter-specific error. Among the tested combinations, multi-GNSS pos_jitter yields r = −0.659 (4.4σ), and phase alignment reaches r = −0.752 (5.3σ).</p>
+    <p style="margin-top: 10px;">TEP predicts coupling in <em>spacetime</em>, not just temporal effects. If the signal were a purely temporal clock artifact (e.g., oscillator thermal effects), it would be expected to propagate into position solutions with specific geometric projections rather than with near 1:1 magnitude scaling. The observed near-unity coupling (Δr ≈ 5%) is consistent with a shared underlying contribution affecting both observables (e.g., a perturbation to the spacetime interval ds²) rather than a parameter-specific error. Among the tested combinations, multi-GNSS pos_jitter yields r = −0.610 (4.0σ), and phase alignment reaches r = −0.763 (5.4σ).</p>
 </div>
 
 <h2>5.6 Planetary Event Modulation</h2>
@@ -511,17 +514,13 @@
     </table>
 </div>
 
-<p>The shuffle test is informative: Real data maintains R² > 0.78 in all 54 tests, while shuffled data yields R² < 0.21. If the exponential structure were purely a methodological artifact, shuffling would be expected to have a smaller effect. The 33× average evidence ratio indicates that the fit quality depends on the temporal ordering of observations.</p>
-
-is replaced with:
-
-<p>The shuffle test is informative: Real data maintains R² > 0.70 in all 72 tests, while shuffled data yields R² < 0.30 in 93% of cases (max 0.51). The ~30× average evidence ratio confirms that the fit quality depends on the temporal ordering of observations.</p>
+<p>The shuffle test is informative: Real data maintains R² &gt; 0.70 in all 72 tests, while shuffled data yields R² &lt; 0.30 in 90% of cases (max 0.51). The ~30× average evidence ratio indicates that the fit quality depends on the temporal ordering of observations.</p>
 
 <h3>5.7.4 Synthesis: Environmental Robustness</h3>
 
 <p>The combination of geomagnetic stratification, seasonal analysis, and null tests provides evidence that the signal is not primarily environmental:</p>
 <ul>
-    <li><strong>Seasonal stratification:</strong> DYNAMIC_50/Multi-GNSS Δλ &lt; 13% across all seasons; Summer Ionofree λ = 6060 km (confirmed by Precise λ = 6259 km)</li>
+    <li><strong>Seasonal stratification:</strong> DYNAMIC_50/Multi-GNSS Δλ &lt; 13% across all seasons; Summer Ionofree λ = 6060 km (corroborated by Precise λ = 6259 km)</li>
     <li><strong>Physical consistency:</strong> Variations are consistent with atmospheric screening (reduced in Ionofree), rather than signal absence</li>
     <li><strong>Null tests:</strong> No detected coupling to solar/lunar cycles; structure destroyed by shuffling; persists after ionospheric removal</li>
     <li><strong>Cross-validation:</strong> Collectively, the tests are more consistent with a non-environmental component than with the electromagnetic, atmospheric, or purely random alternatives considered here</li>
@@ -615,7 +614,7 @@ is replaced with:
         <li><strong>Local/seasonal:</strong> Comprehensive seasonal stratification (36 independent measurements) shows DYNAMIC_50/Multi-GNSS varies by only 7–13% across seasons, while OPTIMAL_100/Ionofree reveals the 6060 km extent in summer—matching CODE's benchmark. Both hemispheres show the same polarity. Seasonal variations are consistent with atmospheric screening rather than signal absence.</li>
         <li><strong>Station selection:</strong> σ² = 0 across three independent filtering methods (indicating limited sensitivity to station-selection choices)</li>
         <li><strong>Purely temporal effect:</strong> Position jitter = clock bias coupling to 2% (consistent with comparable coupling across observables)</li>
-        <li><strong>Random noise:</strong> p &lt; 10<sup>−300</sup> anisotropy, 3.5–5.3σ orbital coupling (less consistent with a purely random explanation)</li>
+        <li><strong>Random noise:</strong> nominal p &lt; 10<sup>−15</sup> anisotropy under the standard null, 3.2–5.4σ orbital coupling (less consistent with a purely random explanation)</li>
         <li><strong>Orbital geometry:</strong> Signal persists after geometric correction (less consistent with a purely geometric artifact)</li>
         <li><strong>Tidal forcing:</strong> Planetary event modulation shows no GM/r² scaling (p = 0.457), which is less consistent with a simple tidal GM/r² mechanism and more consistent with geometric alignment</li>
         <li><strong>Local galactic reference frame:</strong> CMB frame analysis finds Solar Apex less consistent (84° separation, 2.4× farther than CMB)</li>
