@@ -1548,7 +1548,7 @@ def run_analysis(metric='clock_bias', coherence_type='msc', use_csv=True, proces
     print_status(f"  Significant detections: {n_significant}/{len(all_event_responses)} ({100*n_significant/len(all_event_responses):.1f}%)", "INFO")
     if permutation_detections:
         avg_null = np.mean(permutation_detections)
-        n_tested = min(20, len(unique_event_doys))
+        n_tested = min(20, len(analyzed_events))
         real_det = sum(1 for e in all_event_responses[:n_tested] if e['is_significant'])
         print_status(f"  Permutation null: {avg_null:.1f}/{n_tested} vs real: {real_det}/{n_tested}", "INFO")
     else:

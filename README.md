@@ -77,7 +77,7 @@ python scripts/steps/step_2_0_raw_spp_analysis.py
 
 ## Key Results
 
-**Dataset**: 440 stations × 3 years (2022–2024) = 172 million pairs
+**Dataset**: 539 stations × 3 years (2022–2024) = 1.17 billion pairs
 
 | Mode | λ (km) | R² | Interpretation |
 |------|--------|-----|----------------|
@@ -86,17 +86,17 @@ python scripts/steps/step_2_0_raw_spp_analysis.py
 | **Multi-GNSS** | 815 | 0.928 | All constellations |
 
 **Key Findings (4 Pillars)**:
-- **Orbital Velocity Coupling**: r = −0.752 (5.3σ), independently replicating CODE's 25-year finding (r = −0.888).
-- **CMB Frame Alignment**: Best-fit at RA = 157°, 19.3° from CMB dipole (matches CODE's 18.2°). Solar Apex statistically excluded.
-- **Spacetime Symmetry**: Position jitter and clock bias exhibit identical orbital coupling (Δ = 2–13%), consistent with spacetime metric fluctuation.
-- **Planetary Modulation**: Coherence modulation detected around 37 planetary events (2.1× null rate) with no mass scaling, ruling out tidal forcing.
+- **Orbital Velocity Coupling**: r = −0.763 (5.4σ), independently replicating CODE's 25-year finding (r = −0.888).
+- **CMB Frame Alignment**: Best-fit at RA = 188°, Dec = −5° (20.0° from CMB dipole, matching CODE's 18.2°). Solar Apex disfavored (86.5° separation).
+- **Spacetime Symmetry**: Position jitter and clock bias exhibit identical orbital coupling (Δ ≈ 5%), consistent with spacetime metric fluctuation.
+- **Planetary Modulation**: Coherence modulation detected around 37 planetary events (2.8× above null, p < 0.001) with no tidal GM/r² scaling, ruling out tidal forcing.
 
 **Validation**:
-- **Directional Anisotropy**: E-W > N-S at short distances (MSC 1.02–1.05, Phase 1.15–1.28, p < 10⁻³⁰⁰).
-- **Seasonal Breathing**: Anisotropy oscillates seasonally, peaking at 1.35-1.51 during Equinoxes (Apr/Sept) and troughing at Solstices. Global average (~0.95) masks this dynamic signal.
-- **Geometry-Corrected Ratio**: 1.79–1.86 (matches CODE's 2.16 within 17%).
-- **Geomagnetic Independence**: Signal invariant under storm conditions (Δλ < 4%).
-- **Filter Independence**: σ² = 0 across three station selection methods.
+- **Directional Anisotropy**: E-W > N-S at short distances (<500 km): Coherence 1.033, Phase Alignment 1.224 (p < 10⁻¹⁵).
+- **Temporal Stability**: E-W > N-S detected in 94–100% of all 36 months across all processing modes.
+- **Geometry-Corrected Ratio**: 1.80–1.86 (matches CODE's 2.16 within 17%).
+- **Geomagnetic Independence**: Signal invariant under storm conditions (Kp<3 vs Kp≥3: median Δλ ≈ −1%).
+- **Filter Independence**: All three station filters converge to consistent results (CV < 15%).
 
 **CODE Cross-Validation**: Ionofree λ = 4,811 km (2024) matches CODE's 25-year benchmark (4,201 ± 1,967 km)
 
@@ -133,7 +133,7 @@ TEP-GNSS-RINEX/
 
 - **Processing**: RTKLIB SPP with broadcast ephemerides (no precise products)
 - **Modes**: Baseline (GPS L1), Ionofree (L1+L2), Multi-GNSS (GPS+GLO+GAL+BDS)
-- **Filters**: ALL_STATIONS (440), OPTIMAL_100 (50N+50S balanced), DYNAMIC_50 (quality-filtered)
+- **Filters**: ALL_STATIONS (539), OPTIMAL_100 (100 balanced), DYNAMIC_50 (clock std < 50 ns)
 - **Coherence**: Magnitude-weighted phase coherence, inverse-variance weighted fitting
 - **Related**: [Paper 1 (Multi-Center)](https://matthewsmawfield.github.io/TEP-GNSS/) · [Paper 2 (25-Year CODE)](https://matthewsmawfield.github.io/TEP-GNSS/code-longspan/)
 

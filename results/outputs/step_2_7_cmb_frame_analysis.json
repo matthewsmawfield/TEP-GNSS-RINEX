@@ -1,8 +1,8 @@
 {
   "step": "2.7",
   "name": "cmb_frame_analysis",
-  "timestamp": "2025-12-11T02:00:13.156015",
-  "n_combinations_tested": 54,
+  "timestamp": "2025-12-18T02:07:22.786759",
+  "n_combinations_tested": 72,
   "best_result": {
     "filter": "all_stations",
     "mode": "multi_gnss",
@@ -15,18 +15,18 @@
       190.0
     ],
     "dec_ci_68": [
-      -20.0,
+      -30.0,
       40.0
     ],
-    "correlation": 0.5121178552128908,
-    "p_value": 0.0014084608158764222,
+    "correlation": 0.5010401745802964,
+    "p_value": 0.0018543034480769105,
     "global_p_value": 0.026973026973026972,
     "cmb_separation": 20.043210090095354,
     "apex_separation": 86.47049920927512
   },
   "robustness": {
-    "n_significant": 17,
-    "n_total": 54,
+    "n_significant": 13,
+    "n_total": 72,
     "n_consistent_top_10": 10,
     "consistency_score": 1.0
   },
@@ -38,11 +38,51 @@
   },
   "all_results": [
     {
+      "filter": "optimal_100",
+      "mode": "precise",
+      "metric": "clock_bias",
+      "coherence_type": "msc",
+      "best_ra": 159.0,
+      "best_dec": 11.0,
+      "ra_ci_68": [
+        150.0,
+        200.0
+      ],
+      "dec_ci_68": [
+        -40.0,
+        20.0
+      ],
+      "correlation": 0.39315529911358926,
+      "p_value": 0.017687641160929246,
+      "cmb_separation": 20.025252719893345,
+      "apex_separation": 102.888463361522
+    },
+    {
       "filter": "all_stations",
       "mode": "multi_gnss",
       "metric": "pos_jitter",
       "coherence_type": "phase_alignment",
       "best_ra": 188.0,
+      "best_dec": -5.0,
+      "ra_ci_68": [
+        150.0,
+        190.0
+      ],
+      "dec_ci_68": [
+        -30.0,
+        40.0
+      ],
+      "correlation": 0.5010401745802964,
+      "p_value": 0.0018543034480769105,
+      "cmb_separation": 20.043210090095354,
+      "apex_separation": 86.47049920927512
+    },
+    {
+      "filter": "dynamic_50",
+      "mode": "multi_gnss",
+      "metric": "pos_jitter",
+      "coherence_type": "phase_alignment",
+      "best_ra": 189.0,
       "best_dec": -5.0,
       "ra_ci_68": [
         150.0,
@@ -52,90 +92,150 @@
         -20.0,
         40.0
       ],
-      "correlation": 0.5121178552128908,
-      "p_value": 0.0014084608158764222,
-      "cmb_separation": 20.043210090095354,
-      "apex_separation": 86.47049920927512
+      "correlation": 0.46949581433014503,
+      "p_value": 0.0038669074016273175,
+      "cmb_separation": 21.03311168004494,
+      "apex_separation": 85.61310779011256
     },
     {
-      "filter": "dynamic_50",
-      "mode": "multi_gnss",
-      "metric": "pos_jitter",
-      "coherence_type": "phase_alignment",
-      "best_ra": 188.0,
-      "best_dec": -5.0,
+      "filter": "optimal_100",
+      "mode": "precise",
+      "metric": "clock_drift",
+      "coherence_type": "msc",
+      "best_ra": 155.0,
+      "best_dec": 12.0,
       "ra_ci_68": [
-        160.0,
+        150.0,
+        200.0
+      ],
+      "dec_ci_68": [
+        -10.0,
+        20.0
+      ],
+      "correlation": 0.39393488857132747,
+      "p_value": 0.017443822402160913,
+      "cmb_separation": 22.897699862635914,
+      "apex_separation": 105.50893504706914
+    },
+    {
+      "filter": "optimal_100",
+      "mode": "precise",
+      "metric": "pos_jitter",
+      "coherence_type": "msc",
+      "best_ra": 155.0,
+      "best_dec": 13.0,
+      "ra_ci_68": [
+        120.0,
         190.0
       ],
       "dec_ci_68": [
-        -30.0,
-        40.0
+        0.0,
+        20.0
       ],
-      "correlation": 0.49157676679553197,
-      "p_value": 0.0023286679591960624,
-      "cmb_separation": 20.043210090095354,
-      "apex_separation": 86.47049920927512
+      "correlation": 0.2992427374989433,
+      "p_value": 0.08556884143538279,
+      "cmb_separation": 23.72494204584508,
+      "apex_separation": 104.91791005578798
     },
     {
       "filter": "dynamic_50",
-      "mode": "ionofree",
+      "mode": "precise",
       "metric": "clock_bias",
-      "coherence_type": "phase_alignment",
-      "best_ra": 179.0,
-      "best_dec": -26.0,
+      "coherence_type": "msc",
+      "best_ra": 198.0,
+      "best_dec": -2.0,
       "ra_ci_68": [
-        160.0,
-        310.0
+        170.0,
+        220.0
       ],
       "dec_ci_68": [
-        -40.0,
-        10.0
+        -41.599999999999966,
+        20.0
       ],
-      "correlation": 0.13013257817617793,
-      "p_value": 0.4493703160136051,
-      "cmb_separation": 21.781455204381285,
-      "apex_separation": 104.26166347823236
+      "correlation": 0.35781453267995333,
+      "p_value": 0.032143094142393025,
+      "cmb_separation": 30.361497699798935,
+      "apex_separation": 76.37316395049628
     },
     {
       "filter": "optimal_100",
       "mode": "ionofree",
       "metric": "clock_drift",
       "coherence_type": "msc",
-      "best_ra": 200.0,
-      "best_dec": -3.0,
+      "best_ra": 199.0,
+      "best_dec": -2.0,
       "ra_ci_68": [
-        200.0,
-        230.0
+        190.0,
+        210.0
       ],
       "dec_ci_68": [
-        -50.0,
-        0.0
+        -1.599999999999966,
+        10.0
       ],
-      "correlation": 0.3265040397113238,
-      "p_value": 0.05195299009320964,
-      "cmb_separation": 32.17193152448166,
-      "apex_separation": 75.20295399008484
+      "correlation": 0.5237193800735522,
+      "p_value": 0.001045410327766838,
+      "cmb_separation": 31.345052380607168,
+      "apex_separation": 75.52226329303595
     },
     {
       "filter": "optimal_100",
       "mode": "ionofree",
       "metric": "clock_bias",
       "coherence_type": "msc",
-      "best_ra": 200.0,
-      "best_dec": 0.0,
+      "best_ra": 199.0,
+      "best_dec": -1.0,
       "ra_ci_68": [
         190.0,
+        210.0
+      ],
+      "dec_ci_68": [
+        -10.0,
+        10.0
+      ],
+      "correlation": 0.43114654844678746,
+      "p_value": 0.008658132610718239,
+      "cmb_separation": 31.53394820363068,
+      "apex_separation": 74.99818728339605
+    },
+    {
+      "filter": "dynamic_50",
+      "mode": "precise",
+      "metric": "clock_drift",
+      "coherence_type": "msc",
+      "best_ra": 199.0,
+      "best_dec": -1.0,
+      "ra_ci_68": [
+        160.0,
+        220.0
+      ],
+      "dec_ci_68": [
+        -20.0,
+        20.0
+      ],
+      "correlation": 0.3743966239361131,
+      "p_value": 0.024472759606254613,
+      "cmb_separation": 31.53394820363068,
+      "apex_separation": 74.99818728339605
+    },
+    {
+      "filter": "all_stations",
+      "mode": "precise",
+      "metric": "clock_bias",
+      "coherence_type": "msc",
+      "best_ra": 200.0,
+      "best_dec": -5.0,
+      "ra_ci_68": [
+        130.0,
         230.0
       ],
       "dec_ci_68": [
         -50.0,
         10.0
       ],
-      "correlation": 0.2573040369958318,
-      "p_value": 0.12977793724173337,
-      "cmb_separation": 32.72411625752304,
-      "apex_separation": 73.6233612007166
+      "correlation": 0.3248202871257377,
+      "p_value": 0.053246398983573195,
+      "cmb_separation": 31.93886972667249,
+      "apex_separation": 76.27278981878091
     },
     {
       "filter": "dynamic_50",
@@ -143,159 +243,139 @@
       "metric": "clock_bias",
       "coherence_type": "phase_alignment",
       "best_ra": 171.0,
-      "best_dec": 27.0,
-      "ra_ci_68": [
-        148.40000000000003,
-        180.0
-      ],
-      "dec_ci_68": [
-        20.0,
-        40.0
-      ],
-      "correlation": 0.4851180649478797,
-      "p_value": 0.002710409949911785,
-      "cmb_separation": 34.06919953248032,
-      "apex_separation": 84.6636454629023
-    },
-    {
-      "filter": "all_stations",
-      "mode": "baseline",
-      "metric": "clock_bias",
-      "coherence_type": "phase_alignment",
-      "best_ra": 171.0,
       "best_dec": 28.0,
       "ra_ci_68": [
-        160.0,
+        150.0,
         180.0
       ],
       "dec_ci_68": [
         20.0,
         40.0
       ],
-      "correlation": 0.5083973195415494,
-      "p_value": 0.001546339011506248,
+      "correlation": 0.6039363836005105,
+      "p_value": 9.620027223977701e-05,
       "cmb_separation": 35.06482767617924,
       "apex_separation": 84.14825079299742
     },
     {
-      "filter": "optimal_100",
-      "mode": "ionofree",
-      "metric": "pos_jitter",
+      "filter": "all_stations",
+      "mode": "baseline",
+      "metric": "clock_bias",
       "coherence_type": "phase_alignment",
-      "best_ra": 176.0,
+      "best_ra": 172.0,
       "best_dec": 28.0,
       "ra_ci_68": [
-        120.0,
-        220.0
+        160.0,
+        180.0
       ],
       "dec_ci_68": [
         20.0,
-        31.59999999999968
+        40.0
       ],
-      "correlation": 0.2559865509834639,
-      "p_value": 0.1318233206154784,
-      "cmb_separation": 35.797024155277974,
-      "apex_separation": 80.3231148693597
+      "correlation": 0.5190085478817967,
+      "p_value": 0.001181423356965805,
+      "cmb_separation": 35.15944724798557,
+      "apex_separation": 83.38960470161385
     },
     {
       "filter": "dynamic_50",
-      "mode": "multi_gnss",
-      "metric": "clock_bias",
-      "coherence_type": "phase_alignment",
-      "best_ra": 168.0,
-      "best_dec": 29.0,
+      "mode": "precise",
+      "metric": "pos_jitter",
+      "coherence_type": "msc",
+      "best_ra": 179.0,
+      "best_dec": 27.0,
       "ra_ci_68": [
-        60.0,
-        170.0
+        140.0,
+        180.0
       ],
       "dec_ci_68": [
-        30.0,
-        50.0
+        10.0,
+        40.0
       ],
-      "correlation": 0.4139417094050836,
-      "p_value": 0.012082973829693922,
-      "cmb_separation": 35.94004647111905,
-      "apex_separation": 85.87014124282604
+      "correlation": 0.424230498828364,
+      "p_value": 0.00991935952320011,
+      "cmb_separation": 35.590709889526536,
+      "apex_separation": 78.45920473394222
     },
     {
       "filter": "all_stations",
       "mode": "ionofree",
       "metric": "clock_drift",
       "coherence_type": "msc",
-      "best_ra": 179.0,
+      "best_ra": 177.0,
       "best_dec": 28.0,
       "ra_ci_68": [
         170.0,
         220.0
       ],
       "dec_ci_68": [
-        -50.0,
+        -41.599999999999966,
         30.0
       ],
-      "correlation": 0.22729927811944367,
-      "p_value": 0.18246845883380858,
-      "cmb_separation": 36.5369338757246,
-      "apex_separation": 77.9919155786626
+      "correlation": 0.24110035969817703,
+      "p_value": 0.15661603475122066,
+      "cmb_separation": 36.0194629458734,
+      "apex_separation": 79.54890832026852
     },
     {
       "filter": "dynamic_50",
       "mode": "multi_gnss",
       "metric": "clock_drift",
       "coherence_type": "phase_alignment",
-      "best_ra": 179.0,
-      "best_dec": 28.0,
+      "best_ra": 183.0,
+      "best_dec": 26.0,
       "ra_ci_68": [
-        30.0,
-        190.0
-      ],
-      "dec_ci_68": [
-        18.400000000000034,
-        40.0
-      ],
-      "correlation": 0.283511556217565,
-      "p_value": 0.09381366668242141,
-      "cmb_separation": 36.5369338757246,
-      "apex_separation": 77.9919155786626
-    },
-    {
-      "filter": "all_stations",
-      "mode": "multi_gnss",
-      "metric": "clock_drift",
-      "coherence_type": "phase_alignment",
-      "best_ra": 181.0,
-      "best_dec": 28.0,
-      "ra_ci_68": [
-        30.0,
-        190.0
-      ],
-      "dec_ci_68": [
         20.0,
+        220.0
+      ],
+      "dec_ci_68": [
+        -40.0,
         40.0
       ],
-      "correlation": 0.27885128415433574,
-      "p_value": 0.09957599817244356,
-      "cmb_separation": 37.147723711546334,
-      "apex_separation": 76.42395149139631
+      "correlation": 0.2415513233678212,
+      "p_value": 0.15581861734607227,
+      "cmb_separation": 36.040931204976665,
+      "apex_separation": 75.73833652176761
     },
     {
       "filter": "optimal_100",
-      "mode": "multi_gnss",
-      "metric": "clock_drift",
+      "mode": "ionofree",
+      "metric": "pos_jitter",
       "coherence_type": "phase_alignment",
-      "best_ra": 180.0,
+      "best_ra": 174.0,
       "best_dec": 29.0,
       "ra_ci_68": [
-        90.0,
-        240.0
+        108.40000000000003,
+        310.0
       ],
       "dec_ci_68": [
-        -30.0,
+        -50.0,
+        30.0
+      ],
+      "correlation": 0.16371722896587315,
+      "p_value": 0.3400357306631212,
+      "cmb_separation": 36.41094591607922,
+      "apex_separation": 81.36752495229177
+    },
+    {
+      "filter": "dynamic_50",
+      "mode": "multi_gnss",
+      "metric": "clock_bias",
+      "coherence_type": "phase_alignment",
+      "best_ra": 156.0,
+      "best_dec": 28.0,
+      "ra_ci_68": [
+        110.0,
+        170.0
+      ],
+      "dec_ci_68": [
+        30.0,
         40.0
       ],
-      "correlation": 0.22982849376715903,
-      "p_value": 0.17751808006662162,
-      "cmb_separation": 37.77053750438462,
-      "apex_separation": 76.75087010065505
+      "correlation": 0.6595339837934548,
+      "p_value": 1.2141439147628219e-05,
+      "cmb_separation": 36.79444475439512,
+      "apex_separation": 95.07279816432302
     },
     {
       "filter": "all_stations",
@@ -303,22 +383,182 @@
       "metric": "clock_bias",
       "coherence_type": "phase_alignment",
       "best_ra": 168.0,
-      "best_dec": 31.0,
+      "best_dec": 30.0,
       "ra_ci_68": [
-        70.0,
+        68.40000000000003,
         170.0
       ],
       "dec_ci_68": [
         30.0,
         50.0
       ],
-      "correlation": 0.43747532373526,
-      "p_value": 0.007626524989748251,
-      "cmb_separation": 37.94004347727176,
-      "apex_separation": 84.80581979217679
+      "correlation": 0.4007775994921119,
+      "p_value": 0.015421974289656859,
+      "cmb_separation": 36.940044939445606,
+      "apex_separation": 85.33747035102907
+    },
+    {
+      "filter": "dynamic_50",
+      "mode": "multi_gnss",
+      "metric": "clock_drift",
+      "coherence_type": "msc",
+      "best_ra": 172.0,
+      "best_dec": 30.0,
+      "ra_ci_68": [
+        160.0,
+        190.0
+      ],
+      "dec_ci_68": [
+        -30.0,
+        30.0
+      ],
+      "correlation": 0.3831304716222318,
+      "p_value": 0.021085509045057016,
+      "cmb_separation": 37.14519355447052,
+      "apex_separation": 82.37585125252365
+    },
+    {
+      "filter": "all_stations",
+      "mode": "multi_gnss",
+      "metric": "clock_drift",
+      "coherence_type": "phase_alignment",
+      "best_ra": 184.0,
+      "best_dec": 27.0,
+      "ra_ci_68": [
+        20.0,
+        330.0
+      ],
+      "dec_ci_68": [
+        -30.0,
+        40.0
+      ],
+      "correlation": 0.24847197100743482,
+      "p_value": 0.14394784282038975,
+      "cmb_separation": 37.33494426568432,
+      "apex_separation": 74.49161074869421
     },
     {
       "filter": "optimal_100",
+      "mode": "multi_gnss",
+      "metric": "clock_drift",
+      "coherence_type": "msc",
+      "best_ra": 170.0,
+      "best_dec": 31.0,
+      "ra_ci_68": [
+        160.0,
+        180.0
+      ],
+      "dec_ci_68": [
+        5.200000000000102,
+        40.0
+      ],
+      "correlation": 0.3542440591568641,
+      "p_value": 0.034028495164783124,
+      "cmb_separation": 37.99121519653003,
+      "apex_separation": 83.34584304330336
+    },
+    {
+      "filter": "optimal_100",
+      "mode": "multi_gnss",
+      "metric": "clock_drift",
+      "coherence_type": "phase_alignment",
+      "best_ra": 181.0,
+      "best_dec": 29.0,
+      "ra_ci_68": [
+        140.0,
+        230.0
+      ],
+      "dec_ci_68": [
+        -30.0,
+        40.0
+      ],
+      "correlation": 0.2281460541121645,
+      "p_value": 0.18080031899490212,
+      "cmb_separation": 38.077721652085756,
+      "apex_separation": 75.9714822178527
+    },
+    {
+      "filter": "optimal_100",
+      "mode": "multi_gnss",
+      "metric": "clock_bias",
+      "coherence_type": "msc",
+      "best_ra": 172.0,
+      "best_dec": 31.0,
+      "ra_ci_68": [
+        160.0,
+        190.0
+      ],
+      "dec_ci_68": [
+        -30.0,
+        40.0
+      ],
+      "correlation": 0.3189286698490203,
+      "p_value": 0.057975530587092594,
+      "cmb_separation": 38.138548718946886,
+      "apex_separation": 81.87152430258313
+    },
+    {
+      "filter": "dynamic_50",
+      "mode": "multi_gnss",
+      "metric": "clock_bias",
+      "coherence_type": "msc",
+      "best_ra": 172.0,
+      "best_dec": 31.0,
+      "ra_ci_68": [
+        160.0,
+        200.0
+      ],
+      "dec_ci_68": [
+        -40.0,
+        30.0
+      ],
+      "correlation": 0.411086893090873,
+      "p_value": 0.012749683182806226,
+      "cmb_separation": 38.138548718946886,
+      "apex_separation": 81.87152430258313
+    },
+    {
+      "filter": "dynamic_50",
+      "mode": "multi_gnss",
+      "metric": "pos_jitter",
+      "coherence_type": "msc",
+      "best_ra": 172.0,
+      "best_dec": 31.0,
+      "ra_ci_68": [
+        170.0,
+        180.0
+      ],
+      "dec_ci_68": [
+        30.0,
+        30.0
+      ],
+      "correlation": 0.6219915330544316,
+      "p_value": 5.130077655168819e-05,
+      "cmb_separation": 38.138548718946886,
+      "apex_separation": 81.87152430258313
+    },
+    {
+      "filter": "all_stations",
+      "mode": "baseline",
+      "metric": "pos_jitter",
+      "coherence_type": "msc",
+      "best_ra": 173.0,
+      "best_dec": 31.0,
+      "ra_ci_68": [
+        170.0,
+        180.0
+      ],
+      "dec_ci_68": [
+        30.0,
+        30.0
+      ],
+      "correlation": 0.5722937476826879,
+      "p_value": 0.00026536958397826993,
+      "cmb_separation": 38.24795436352528,
+      "apex_separation": 81.12920057668404
+    },
+    {
+      "filter": "all_stations",
       "mode": "multi_gnss",
       "metric": "pos_jitter",
       "coherence_type": "msc",
@@ -326,56 +566,76 @@
       "best_dec": 31.0,
       "ra_ci_68": [
         170.0,
-        210.0
+        200.0
       ],
       "dec_ci_68": [
-        -50.0,
+        -40.0,
         30.0
       ],
-      "correlation": 0.37731518922550844,
-      "p_value": 0.023294058382088645,
+      "correlation": 0.5268720898038404,
+      "p_value": 0.0009622935719626469,
       "cmb_separation": 38.24795436352528,
       "apex_separation": 81.12920057668404
     },
     {
-      "filter": "optimal_100",
-      "mode": "multi_gnss",
-      "metric": "clock_drift",
+      "filter": "dynamic_50",
+      "mode": "baseline",
+      "metric": "clock_bias",
       "coherence_type": "msc",
-      "best_ra": 169.0,
-      "best_dec": 32.0,
+      "best_ra": 173.0,
+      "best_dec": 31.0,
       "ra_ci_68": [
-        160.0,
+        170.0,
+        190.0
+      ],
+      "dec_ci_68": [
+        20.0,
+        30.0
+      ],
+      "correlation": 0.5020446808634198,
+      "p_value": 0.0018093151789995154,
+      "cmb_separation": 38.24795436352528,
+      "apex_separation": 81.12920057668404
+    },
+    {
+      "filter": "dynamic_50",
+      "mode": "baseline",
+      "metric": "pos_jitter",
+      "coherence_type": "msc",
+      "best_ra": 173.0,
+      "best_dec": 31.0,
+      "ra_ci_68": [
+        170.0,
         180.0
       ],
       "dec_ci_68": [
         30.0,
-        40.0
+        30.0
       ],
-      "correlation": 0.38043237970733046,
-      "p_value": 0.02208750530132675,
-      "cmb_separation": 38.95313113747565,
-      "apex_separation": 83.55422739035212
+      "correlation": 0.5826475251451716,
+      "p_value": 0.000192595008803087,
+      "cmb_separation": 38.24795436352528,
+      "apex_separation": 81.12920057668404
     },
     {
-      "filter": "optimal_100",
-      "mode": "multi_gnss",
-      "metric": "clock_bias",
+      "filter": "dynamic_50",
+      "mode": "baseline",
+      "metric": "clock_drift",
       "coherence_type": "msc",
-      "best_ra": 170.0,
-      "best_dec": 32.0,
+      "best_ra": 174.0,
+      "best_dec": 31.0,
       "ra_ci_68": [
-        160.0,
-        190.0
+        170.0,
+        180.0
       ],
       "dec_ci_68": [
-        -21.599999999999966,
-        40.0
+        30.0,
+        30.0
       ],
-      "correlation": 0.3504682338613283,
-      "p_value": 0.036119554835255974,
-      "cmb_separation": 38.98957010778442,
-      "apex_separation": 82.82943365522999
+      "correlation": 0.4934913560706936,
+      "p_value": 0.0022249426445293263,
+      "cmb_separation": 38.38092672526148,
+      "apex_separation": 80.38354387028325
     },
     {
       "filter": "all_stations",
@@ -389,121 +649,41 @@
         200.0
       ],
       "dec_ci_68": [
-        -40.0,
+        -20.0,
         40.0
       ],
-      "correlation": 0.43114867599723816,
-      "p_value": 0.008657766754233576,
+      "correlation": 0.4464595544705784,
+      "p_value": 0.006343685762169038,
       "cmb_separation": 39.04929295402542,
       "apex_separation": 82.10101532100092
     },
     {
       "filter": "all_stations",
-      "mode": "multi_gnss",
-      "metric": "pos_jitter",
-      "coherence_type": "msc",
-      "best_ra": 172.0,
-      "best_dec": 32.0,
-      "ra_ci_68": [
-        170.0,
-        190.0
-      ],
-      "dec_ci_68": [
-        0.0,
-        40.0
-      ],
-      "correlation": 0.5488354223263474,
-      "p_value": 0.0005280975070252047,
-      "cmb_separation": 39.13219197401656,
-      "apex_separation": 81.36905848417756
-    },
-    {
-      "filter": "all_stations",
-      "mode": "baseline",
-      "metric": "pos_jitter",
-      "coherence_type": "msc",
-      "best_ra": 173.0,
-      "best_dec": 32.0,
-      "ra_ci_68": [
-        170.0,
-        180.0
-      ],
-      "dec_ci_68": [
-        30.0,
-        40.0
-      ],
-      "correlation": 0.5848234390977611,
-      "p_value": 0.00017980056759991925,
-      "cmb_separation": 39.23811875274917,
-      "apex_separation": 80.63364719797937
-    },
-    {
-      "filter": "dynamic_50",
-      "mode": "baseline",
-      "metric": "pos_jitter",
-      "coherence_type": "msc",
-      "best_ra": 173.0,
-      "best_dec": 32.0,
-      "ra_ci_68": [
-        170.0,
-        180.0
-      ],
-      "dec_ci_68": [
-        30.0,
-        40.0
-      ],
-      "correlation": 0.5850429586211989,
-      "p_value": 0.00017855311579273447,
-      "cmb_separation": 39.23811875274917,
-      "apex_separation": 80.63364719797937
-    },
-    {
-      "filter": "dynamic_50",
-      "mode": "baseline",
+      "mode": "precise",
       "metric": "clock_drift",
-      "coherence_type": "phase_alignment",
-      "best_ra": 176.0,
-      "best_dec": 32.0,
-      "ra_ci_68": [
-        20.0,
-        190.0
-      ],
-      "dec_ci_68": [
-        20.0,
-        40.0
-      ],
-      "correlation": 0.27128249195454973,
-      "p_value": 0.10950395610747199,
-      "cmb_separation": 39.69200024602775,
-      "apex_separation": 78.40749751395863
-    },
-    {
-      "filter": "dynamic_50",
-      "mode": "multi_gnss",
-      "metric": "pos_jitter",
       "coherence_type": "msc",
-      "best_ra": 171.0,
-      "best_dec": 33.0,
+      "best_ra": 134.0,
+      "best_dec": 14.0,
       "ra_ci_68": [
-        170.0,
-        190.0
+        120.0,
+        220.0
       ],
       "dec_ci_68": [
-        10.0,
-        40.0
+        -20.0,
+        20.0
       ],
-      "correlation": 0.5608157335179877,
-      "p_value": 0.00037398960054857433,
-      "cmb_separation": 40.04582330232471,
-      "apex_separation": 81.5933928757133
+      "correlation": 0.3245619759288978,
+      "p_value": 0.05344707861306319,
+      "cmb_separation": 39.659572916230374,
+      "apex_separation": 119.57721909646614
     },
     {
       "filter": "all_stations",
       "mode": "baseline",
       "metric": "clock_drift",
       "coherence_type": "phase_alignment",
-      "best_ra": 180.0,
-      "best_dec": 32.0,
+      "best_ra": 183.0,
+      "best_dec": 30.0,
       "ra_ci_68": [
         20.0,
         190.0
@@ -512,57 +692,57 @@
         20.0,
         40.0
       ],
-      "correlation": 0.30176514548601424,
-      "p_value": 0.07367117557739333,
-      "cmb_separation": 40.604102224540966,
-      "apex_separation": 75.39569661849659
-    },
-    {
-      "filter": "dynamic_50",
-      "mode": "multi_gnss",
-      "metric": "clock_drift",
-      "coherence_type": "msc",
-      "best_ra": 169.0,
-      "best_dec": 34.0,
-      "ra_ci_68": [
-        160.0,
-        200.0
-      ],
-      "dec_ci_68": [
-        -30.0,
-        40.0
-      ],
-      "correlation": 0.44486319321278667,
-      "p_value": 0.006557037981125946,
-      "cmb_separation": 40.95231272743029,
-      "apex_separation": 82.51176579773743
+      "correlation": 0.2980458315216302,
+      "p_value": 0.07747361216572646,
+      "cmb_separation": 39.6695483914988,
+      "apex_separation": 73.967973774634
     },
     {
       "filter": "all_stations",
       "mode": "multi_gnss",
       "metric": "clock_bias",
       "coherence_type": "msc",
-      "best_ra": 170.0,
-      "best_dec": 34.0,
+      "best_ra": 171.0,
+      "best_dec": 33.0,
       "ra_ci_68": [
-        160.0,
+        170.0,
         200.0
       ],
       "dec_ci_68": [
         -40.0,
         40.0
       ],
-      "correlation": 0.4246971909315699,
-      "p_value": 0.009829595435826288,
-      "cmb_separation": 40.986482917202665,
-      "apex_separation": 81.80157211769627
+      "correlation": 0.4329225356644351,
+      "p_value": 0.008357285135844661,
+      "cmb_separation": 40.04582330232471,
+      "apex_separation": 81.5933928757133
+    },
+    {
+      "filter": "optimal_100",
+      "mode": "baseline",
+      "metric": "clock_bias",
+      "coherence_type": "msc",
+      "best_ra": 173.0,
+      "best_dec": 33.0,
+      "ra_ci_68": [
+        160.0,
+        210.0
+      ],
+      "dec_ci_68": [
+        -40.0,
+        40.0
+      ],
+      "correlation": 0.37157189361662457,
+      "p_value": 0.025660135734825174,
+      "cmb_separation": 40.22869283392207,
+      "apex_separation": 80.1402688051674
     },
     {
       "filter": "optimal_100",
       "mode": "multi_gnss",
       "metric": "clock_bias",
       "coherence_type": "phase_alignment",
-      "best_ra": 170.0,
+      "best_ra": 169.0,
       "best_dec": 34.0,
       "ra_ci_68": [
         160.0,
@@ -572,35 +752,55 @@
         -40.0,
         40.0
       ],
-      "correlation": 0.2540062956486251,
-      "p_value": 0.1349423825760463,
+      "correlation": 0.2771597637396178,
+      "p_value": 0.10173290949871361,
+      "cmb_separation": 40.95231272743029,
+      "apex_separation": 82.51176579773743
+    },
+    {
+      "filter": "all_stations",
+      "mode": "baseline",
+      "metric": "clock_drift",
+      "coherence_type": "msc",
+      "best_ra": 170.0,
+      "best_dec": 34.0,
+      "ra_ci_68": [
+        160.0,
+        180.0
+      ],
+      "dec_ci_68": [
+        30.0,
+        40.0
+      ],
+      "correlation": 0.49078071237679766,
+      "p_value": 0.002373023999179269,
       "cmb_separation": 40.986482917202665,
       "apex_separation": 81.80157211769627
     },
     {
       "filter": "optimal_100",
       "mode": "baseline",
-      "metric": "clock_bias",
+      "metric": "clock_drift",
       "coherence_type": "msc",
       "best_ra": 172.0,
       "best_dec": 34.0,
       "ra_ci_68": [
-        160.0,
-        200.0
+        170.0,
+        210.0
       ],
       "dec_ci_68": [
         -40.0,
         40.0
       ],
-      "correlation": 0.3769119481557124,
-      "p_value": 0.023454054659864942,
+      "correlation": 0.36270630428286266,
+      "p_value": 0.0296995923977994,
       "cmb_separation": 41.12025732512005,
       "apex_separation": 80.37019849685211
     },
     {
-      "filter": "dynamic_50",
+      "filter": "all_stations",
       "mode": "baseline",
-      "metric": "clock_drift",
+      "metric": "clock_bias",
       "coherence_type": "msc",
       "best_ra": 168.0,
       "best_dec": 35.0,
@@ -612,37 +812,17 @@
         30.0,
         40.0
       ],
-      "correlation": 0.5335255612171417,
-      "p_value": 0.000805795549957411,
+      "correlation": 0.5143389326521226,
+      "p_value": 0.0013314124256043058,
       "cmb_separation": 41.94003822216084,
       "apex_separation": 82.69180471912615
-    },
-    {
-      "filter": "all_stations",
-      "mode": "baseline",
-      "metric": "clock_drift",
-      "coherence_type": "msc",
-      "best_ra": 169.0,
-      "best_dec": 35.0,
-      "ra_ci_68": [
-        160.0,
-        180.0
-      ],
-      "dec_ci_68": [
-        30.0,
-        40.0
-      ],
-      "correlation": 0.5290546445164752,
-      "p_value": 0.0009082292665152369,
-      "cmb_separation": 41.95192784462804,
-      "apex_separation": 81.99298649145842
     },
     {
       "filter": "optimal_100",
       "mode": "baseline",
       "metric": "pos_jitter",
       "coherence_type": "phase_alignment",
-      "best_ra": 165.0,
+      "best_ra": 163.0,
       "best_dec": 35.0,
       "ra_ci_68": [
         10.0,
@@ -652,90 +832,30 @@
         30.0,
         40.0
       ],
-      "correlation": 0.42134634099522283,
-      "p_value": 0.010489712625272096,
-      "cmb_separation": 42.031669739163185,
-      "apex_separation": 84.7645179972556
+      "correlation": 0.4784349729911437,
+      "p_value": 0.003161779720480151,
+      "cmb_separation": 42.19829210496592,
+      "apex_separation": 86.12559737644241
     },
     {
-      "filter": "optimal_100",
+      "filter": "dynamic_50",
       "mode": "baseline",
       "metric": "clock_drift",
-      "coherence_type": "msc",
-      "best_ra": 171.0,
+      "coherence_type": "phase_alignment",
+      "best_ra": 175.0,
       "best_dec": 35.0,
       "ra_ci_68": [
-        160.0,
-        210.0
-      ],
-      "dec_ci_68": [
-        -40.0,
-        40.0
-      ],
-      "correlation": 0.3721105761523636,
-      "p_value": 0.025430101376230585,
-      "cmb_separation": 42.0392965459225,
-      "apex_separation": 80.58402224847588
-    },
-    {
-      "filter": "all_stations",
-      "mode": "baseline",
-      "metric": "clock_bias",
-      "coherence_type": "msc",
-      "best_ra": 168.0,
-      "best_dec": 36.0,
-      "ra_ci_68": [
-        160.0,
+        20.0,
         180.0
       ],
       "dec_ci_68": [
         30.0,
         40.0
       ],
-      "correlation": 0.5450254168952442,
-      "p_value": 0.0005877632053599147,
-      "cmb_separation": 42.940037035526515,
-      "apex_separation": 82.16704894920954
-    },
-    {
-      "filter": "dynamic_50",
-      "mode": "multi_gnss",
-      "metric": "clock_bias",
-      "coherence_type": "msc",
-      "best_ra": 168.0,
-      "best_dec": 36.0,
-      "ra_ci_68": [
-        160.0,
-        210.0
-      ],
-      "dec_ci_68": [
-        -40.0,
-        40.0
-      ],
-      "correlation": 0.4444351302798723,
-      "p_value": 0.006615284805562727,
-      "cmb_separation": 42.940037035526515,
-      "apex_separation": 82.16704894920954
-    },
-    {
-      "filter": "dynamic_50",
-      "mode": "baseline",
-      "metric": "clock_bias",
-      "coherence_type": "msc",
-      "best_ra": 167.0,
-      "best_dec": 36.0,
-      "ra_ci_68": [
-        160.0,
-        180.0
-      ],
-      "dec_ci_68": [
-        30.0,
-        40.0
-      ],
-      "correlation": 0.551819700831983,
-      "p_value": 0.00048519024593729476,
-      "cmb_separation": 42.949089189629746,
-      "apex_separation": 82.85417708662989
+      "correlation": 0.3208263225352163,
+      "p_value": 0.056417265661586447,
+      "cmb_separation": 42.46585550525389,
+      "apex_separation": 77.72318229527421
     },
     {
       "filter": "optimal_100",
@@ -743,27 +863,47 @@
       "metric": "clock_bias",
       "coherence_type": "phase_alignment",
       "best_ra": 165.0,
+      "best_dec": 36.0,
+      "ra_ci_68": [
+        160.0,
+        210.0
+      ],
+      "dec_ci_68": [
+        20.0,
+        40.0
+      ],
+      "correlation": 0.343852341634441,
+      "p_value": 0.04003497246179122,
+      "cmb_separation": 43.028828867931274,
+      "apex_separation": 84.21631346658063
+    },
+    {
+      "filter": "all_stations",
+      "mode": "precise",
+      "metric": "pos_jitter",
+      "coherence_type": "phase_alignment",
+      "best_ra": 173.0,
       "best_dec": 36.0,
       "ra_ci_68": [
         150.0,
         190.0
       ],
       "dec_ci_68": [
-        20.0,
+        0.0,
         40.0
       ],
-      "correlation": 0.3754379724791047,
-      "p_value": 0.024046660609182924,
-      "cmb_separation": 43.028828867931274,
-      "apex_separation": 84.21631346658063
+      "correlation": 0.4004738118838339,
+      "p_value": 0.015507359035198842,
+      "cmb_separation": 43.202584058209816,
+      "apex_separation": 78.67442275282478
     },
     {
       "filter": "optimal_100",
       "mode": "baseline",
       "metric": "pos_jitter",
       "coherence_type": "msc",
-      "best_ra": 169.0,
-      "best_dec": 38.0,
+      "best_ra": 170.0,
+      "best_dec": 37.0,
       "ra_ci_68": [
         160.0,
         190.0
@@ -772,10 +912,30 @@
         0.0,
         40.0
       ],
-      "correlation": 0.4626295267621848,
-      "p_value": 0.004497500402742105,
-      "cmb_separation": 44.95085710920477,
-      "apex_separation": 80.44792004679921
+      "correlation": 0.4553703361886422,
+      "p_value": 0.005259030593809166,
+      "cmb_separation": 43.98228865609568,
+      "apex_separation": 80.27400132224807
+    },
+    {
+      "filter": "all_stations",
+      "mode": "precise",
+      "metric": "pos_jitter",
+      "coherence_type": "msc",
+      "best_ra": 170.0,
+      "best_dec": 38.0,
+      "ra_ci_68": [
+        150.0,
+        180.0
+      ],
+      "dec_ci_68": [
+        10.0,
+        50.0
+      ],
+      "correlation": 0.5018904891568914,
+      "p_value": 0.0018161580530087207,
+      "cmb_separation": 44.980990964305136,
+      "apex_separation": 79.76909660875145
     },
     {
       "filter": "optimal_100",
@@ -792,18 +952,78 @@
         -40.0,
         40.0
       ],
-      "correlation": 0.2523562206546782,
-      "p_value": 0.13758270941064765,
+      "correlation": 0.23710851658215662,
+      "p_value": 0.16380382730672371,
       "cmb_separation": 45.70571003397665,
       "apex_separation": 87.00864872169096
     },
     {
       "filter": "dynamic_50",
-      "mode": "ionofree",
-      "metric": "clock_drift",
+      "mode": "precise",
+      "metric": "pos_jitter",
+      "coherence_type": "phase_alignment",
+      "best_ra": 156.0,
+      "best_dec": 43.0,
+      "ra_ci_68": [
+        140.0,
+        180.0
+      ],
+      "dec_ci_68": [
+        30.0,
+        50.0
+      ],
+      "correlation": 0.4529585862175076,
+      "p_value": 0.005535503846701539,
+      "cmb_separation": 51.105938165828825,
+      "apex_separation": 85.79500869086147
+    },
+    {
+      "filter": "optimal_100",
+      "mode": "multi_gnss",
+      "metric": "pos_jitter",
       "coherence_type": "msc",
-      "best_ra": 210.0,
-      "best_dec": -45.0,
+      "best_ra": 209.0,
+      "best_dec": -44.0,
+      "ra_ci_68": [
+        170.0,
+        210.0
+      ],
+      "dec_ci_68": [
+        -50.0,
+        30.0
+      ],
+      "correlation": 0.35795065832793277,
+      "p_value": 0.032072940010543505,
+      "cmb_separation": 51.51134941980827,
+      "apex_separation": 93.14506108618265
+    },
+    {
+      "filter": "optimal_100",
+      "mode": "precise",
+      "metric": "pos_jitter",
+      "coherence_type": "phase_alignment",
+      "best_ra": 150.0,
+      "best_dec": 44.0,
+      "ra_ci_68": [
+        150.0,
+        190.0
+      ],
+      "dec_ci_68": [
+        -20.0,
+        50.0
+      ],
+      "correlation": 0.38226064143840033,
+      "p_value": 0.030841308718108307,
+      "cmb_separation": 53.457739985581796,
+      "apex_separation": 88.48276238300622
+    },
+    {
+      "filter": "all_stations",
+      "mode": "ionofree",
+      "metric": "clock_bias",
+      "coherence_type": "msc",
+      "best_ra": 212.0,
+      "best_dec": -46.0,
       "ra_ci_68": [
         170.0,
         220.0
@@ -812,28 +1032,8 @@
         -50.0,
         30.0
       ],
-      "correlation": 0.2787529987964587,
-      "p_value": 0.09970036369657276,
-      "cmb_separation": 52.657365745376346,
-      "apex_separation": 93.24865453917059
-    },
-    {
-      "filter": "dynamic_50",
-      "mode": "ionofree",
-      "metric": "clock_bias",
-      "coherence_type": "msc",
-      "best_ra": 212.0,
-      "best_dec": -46.0,
-      "ra_ci_68": [
-        180.0,
-        220.0
-      ],
-      "dec_ci_68": [
-        -50.0,
-        20.0
-      ],
-      "correlation": 0.32994372225836927,
-      "p_value": 0.04938875014770261,
+      "correlation": 0.27763268025429944,
+      "p_value": 0.101126333792245,
       "cmb_separation": 54.37694452730577,
       "apex_separation": 92.85607205120745
     },
@@ -842,7 +1042,7 @@
       "mode": "baseline",
       "metric": "pos_jitter",
       "coherence_type": "phase_alignment",
-      "best_ra": 149.0,
+      "best_ra": 150.0,
       "best_dec": 46.0,
       "ra_ci_68": [
         140.0,
@@ -852,57 +1052,57 @@
         10.0,
         50.0
       ],
-      "correlation": 0.482631399757208,
-      "p_value": 0.002871318798540967,
-      "cmb_separation": 55.57568764368553,
-      "apex_separation": 87.65739279021619
+      "correlation": 0.4676444374020081,
+      "p_value": 0.004028883475335032,
+      "cmb_separation": 55.31084405922389,
+      "apex_separation": 87.14392794879254
     },
     {
       "filter": "dynamic_50",
-      "mode": "baseline",
-      "metric": "pos_jitter",
-      "coherence_type": "phase_alignment",
-      "best_ra": 149.0,
-      "best_dec": 46.0,
-      "ra_ci_68": [
-        140.0,
-        170.0
-      ],
-      "dec_ci_68": [
-        20.0,
-        50.0
-      ],
-      "correlation": 0.4817753115575454,
-      "p_value": 0.002928609218011635,
-      "cmb_separation": 55.57568764368553,
-      "apex_separation": 87.65739279021619
-    },
-    {
-      "filter": "all_stations",
       "mode": "ionofree",
-      "metric": "clock_bias",
+      "metric": "clock_drift",
       "coherence_type": "msc",
       "best_ra": 215.0,
       "best_dec": -47.0,
       "ra_ci_68": [
         180.0,
-        230.0
+        220.0
       ],
       "dec_ci_68": [
         -50.0,
         30.0
       ],
-      "correlation": 0.2764657664340631,
-      "p_value": 0.10262805236550188,
+      "correlation": 0.265617238139638,
+      "p_value": 0.1174109438280051,
       "cmb_separation": 56.662855148840556,
       "apex_separation": 92.02880440093655
     },
     {
-      "filter": "dynamic_50",
+      "filter": "optimal_100",
+      "mode": "ionofree",
+      "metric": "clock_drift",
+      "coherence_type": "phase_alignment",
+      "best_ra": 117.0,
+      "best_dec": 22.0,
+      "ra_ci_68": [
+        10.0,
+        330.0
+      ],
+      "dec_ci_68": [
+        0.0,
+        30.0
+      ],
+      "correlation": 0.20473424852689381,
+      "p_value": 0.23099826912295995,
+      "cmb_separation": 57.676050900754184,
+      "apex_separation": 122.30300361442474
+    },
+    {
+      "filter": "all_stations",
       "mode": "ionofree",
       "metric": "pos_jitter",
       "coherence_type": "msc",
-      "best_ra": 216.0,
+      "best_ra": 217.0,
       "best_dec": -47.0,
       "ra_ci_68": [
         200.0,
@@ -912,150 +1112,250 @@
         -50.0,
         -40.0
       ],
-      "correlation": 0.47395153988395355,
-      "p_value": 0.0035000341860609296,
-      "cmb_separation": 57.25883934103457,
-      "apex_separation": 91.54182079762575
+      "correlation": 0.47077492332795823,
+      "p_value": 0.003758325000232432,
+      "cmb_separation": 57.860190221572566,
+      "apex_separation": 91.06086209581632
     },
     {
-      "filter": "optimal_100",
+      "filter": "dynamic_50",
       "mode": "ionofree",
-      "metric": "clock_drift",
-      "coherence_type": "phase_alignment",
-      "best_ra": 115.0,
-      "best_dec": 22.0,
-      "ra_ci_68": [
-        20.0,
-        330.0
-      ],
-      "dec_ci_68": [
-        0.0,
-        30.0
-      ],
-      "correlation": 0.20294890320502837,
-      "p_value": 0.2351795637572507,
-      "cmb_separation": 59.375418022051036,
-      "apex_separation": 123.10954589118657
-    },
-    {
-      "filter": "all_stations",
-      "mode": "ionofree",
-      "metric": "pos_jitter",
+      "metric": "clock_bias",
       "coherence_type": "msc",
-      "best_ra": 219.0,
-      "best_dec": -48.0,
+      "best_ra": 217.0,
+      "best_dec": -47.0,
       "ra_ci_68": [
-        210.0,
+        180.0,
         230.0
       ],
       "dec_ci_68": [
         -50.0,
-        -40.0
+        20.0
       ],
-      "correlation": 0.47531276070732426,
-      "p_value": 0.0033941622225674983,
-      "cmb_separation": 59.51813899508932,
-      "apex_separation": 90.84837377525966
+      "correlation": 0.3123524504582652,
+      "p_value": 0.06364146701505624,
+      "cmb_separation": 57.860190221572566,
+      "apex_separation": 91.06086209581632
+    },
+    {
+      "filter": "dynamic_50",
+      "mode": "baseline",
+      "metric": "pos_jitter",
+      "coherence_type": "phase_alignment",
+      "best_ra": 144.0,
+      "best_dec": 49.0,
+      "ra_ci_68": [
+        130.0,
+        171.59999999999968
+      ],
+      "dec_ci_68": [
+        20.0,
+        50.0
+      ],
+      "correlation": 0.4555600531443581,
+      "p_value": 0.005237796562174601,
+      "cmb_separation": 59.73274440649708,
+      "apex_separation": 87.96985571396755
+    },
+    {
+      "filter": "dynamic_50",
+      "mode": "ionofree",
+      "metric": "pos_jitter",
+      "coherence_type": "msc",
+      "best_ra": 221.0,
+      "best_dec": -48.0,
+      "ra_ci_68": [
+        210.0,
+        240.0
+      ],
+      "dec_ci_68": [
+        -50.0,
+        -30.0
+      ],
+      "correlation": 0.42030437121518194,
+      "p_value": 0.010702501911677764,
+      "cmb_separation": 60.72638652595411,
+      "apex_separation": 89.94770103329127
     },
     {
       "filter": "optimal_100",
       "mode": "ionofree",
       "metric": "pos_jitter",
       "coherence_type": "msc",
-      "best_ra": 112.0,
-      "best_dec": 20.0,
+      "best_ra": 111.0,
+      "best_dec": 21.0,
       "ra_ci_68": [
         30.0,
-        120.0
+        130.0
       ],
       "dec_ci_68": [
         10.0,
         30.0
       ],
-      "correlation": 0.31433393289971523,
-      "p_value": 0.061890129297244245,
-      "cmb_separation": 61.24255138297166,
-      "apex_separation": 126.0673277498421
-    },
-    {
-      "filter": "all_stations",
-      "mode": "ionofree",
-      "metric": "clock_drift",
-      "coherence_type": "phase_alignment",
-      "best_ra": 91.0,
-      "best_dec": 32.0,
-      "ra_ci_68": [
-        70.0,
-        311.5999999999997
-      ],
-      "dec_ci_68": [
-        10.0,
-        50.0
-      ],
-      "correlation": 0.40851386668225287,
-      "p_value": 0.01337695959018892,
-      "cmb_separation": 82.7499187883643,
-      "apex_separation": 118.00000000000001
+      "correlation": 0.3188358252835406,
+      "p_value": 0.058052637745225955,
+      "cmb_separation": 62.46754271350318,
+      "apex_separation": 125.49005311184877
     },
     {
       "filter": "optimal_100",
       "mode": "baseline",
       "metric": "clock_drift",
       "coherence_type": "phase_alignment",
-      "best_ra": 94.0,
-      "best_dec": 42.0,
+      "best_ra": 100.0,
+      "best_dec": 43.0,
       "ra_ci_68": [
-        60.0,
+        70.0,
         200.0
       ],
       "dec_ci_68": [
         20.0,
         50.0
       ],
-      "correlation": 0.4504833953352869,
-      "p_value": 0.005832179268226767,
-      "cmb_separation": 82.92149560177182,
-      "apex_separation": 107.94687204893003
+      "correlation": 0.44419529966482296,
+      "p_value": 0.006648112425475805,
+      "cmb_separation": 79.03195034442015,
+      "apex_separation": 106.53337772784694
+    },
+    {
+      "filter": "all_stations",
+      "mode": "ionofree",
+      "metric": "clock_drift",
+      "coherence_type": "phase_alignment",
+      "best_ra": 95.0,
+      "best_dec": 32.0,
+      "ra_ci_68": [
+        80.0,
+        300.0
+      ],
+      "dec_ci_68": [
+        10.0,
+        40.0
+      ],
+      "correlation": 0.41637108870860084,
+      "p_value": 0.01153908449335006,
+      "cmb_separation": 79.45886152046366,
+      "apex_separation": 117.88396909358474
     },
     {
       "filter": "dynamic_50",
       "mode": "ionofree",
       "metric": "clock_drift",
       "coherence_type": "phase_alignment",
-      "best_ra": 89.0,
-      "best_dec": 32.0,
+      "best_ra": 88.0,
+      "best_dec": 40.0,
       "ra_ci_68": [
-        70.0,
+        20.0,
         310.0
       ],
       "dec_ci_68": [
         10.0,
         40.0
       ],
-      "correlation": 0.40346060605928696,
-      "p_value": 0.014684875808375963,
-      "cmb_separation": 84.40679783961885,
-      "apex_separation": 117.97097174164979
+      "correlation": 0.3327229186259149,
+      "p_value": 0.04739181860115971,
+      "cmb_separation": 86.83774204158578,
+      "apex_separation": 109.94457406102238
+    },
+    {
+      "filter": "optimal_100",
+      "mode": "ionofree",
+      "metric": "clock_bias",
+      "coherence_type": "phase_alignment",
+      "best_ra": 61.0,
+      "best_dec": 16.0,
+      "ra_ci_68": [
+        20.0,
+        330.0
+      ],
+      "dec_ci_68": [
+        -40.0,
+        20.0
+      ],
+      "correlation": 0.3078233112881349,
+      "p_value": 0.06779137390125234,
+      "cmb_separation": 108.13976536112702,
+      "apex_separation": 125.67082296172194
     },
     {
       "filter": "dynamic_50",
       "mode": "ionofree",
       "metric": "pos_jitter",
       "coherence_type": "phase_alignment",
-      "best_ra": 13.0,
-      "best_dec": 34.0,
+      "best_ra": 19.0,
+      "best_dec": 38.0,
       "ra_ci_68": [
-        10.0,
-        200.0
+        20.0,
+        210.0
       ],
       "dec_ci_68": [
         -40.0,
         40.0
       ],
-      "correlation": 0.2175188194317449,
-      "p_value": 0.20252992277166437,
-      "cmb_separation": 144.39606030346621,
-      "apex_separation": 82.51176579773745
+      "correlation": 0.2504062173912758,
+      "p_value": 0.1407517660279196,
+      "cmb_separation": 138.11412577333465,
+      "apex_separation": 84.4366652414582
+    },
+    {
+      "filter": "all_stations",
+      "mode": "precise",
+      "metric": "clock_bias",
+      "coherence_type": "phase_alignment",
+      "best_ra": 311.0,
+      "best_dec": -13.0,
+      "ra_ci_68": [
+        160.0,
+        310.0
+      ],
+      "dec_ci_68": [
+        -30.0,
+        0.0
+      ],
+      "correlation": 0.18785863083159318,
+      "p_value": 0.27256407474567435,
+      "cmb_separation": 138.23589437983446,
+      "apex_separation": 57.72827432459599
+    },
+    {
+      "filter": "dynamic_50",
+      "mode": "ionofree",
+      "metric": "clock_bias",
+      "coherence_type": "phase_alignment",
+      "best_ra": 313.0,
+      "best_dec": -10.0,
+      "ra_ci_68": [
+        140.0,
+        320.0
+      ],
+      "dec_ci_68": [
+        -50.0,
+        10.0
+      ],
+      "correlation": 0.13186235266412638,
+      "p_value": 0.44331414565809424,
+      "cmb_separation": 141.2973588183531,
+      "apex_separation": 56.8398748137106
+    },
+    {
+      "filter": "all_stations",
+      "mode": "ionofree",
+      "metric": "clock_bias",
+      "coherence_type": "phase_alignment",
+      "best_ra": 313.0,
+      "best_dec": -8.0,
+      "ra_ci_68": [
+        170.0,
+        310.0
+      ],
+      "dec_ci_68": [
+        -40.0,
+        0.0
+      ],
+      "correlation": 0.13752067271274415,
+      "p_value": 0.4238181217135786,
+      "cmb_separation": 142.09313847474897,
+      "apex_separation": 55.407746628201814
     },
     {
       "filter": "all_stations",
@@ -1066,56 +1366,116 @@
       "best_dec": 34.0,
       "ra_ci_68": [
         10.0,
-        210.0
+        221.59999999999968
       ],
       "dec_ci_68": [
         -40.0,
         40.0
       ],
-      "correlation": 0.2138737062091823,
-      "p_value": 0.21038501449021885,
+      "correlation": 0.2070349349838017,
+      "p_value": 0.22568483839295905,
       "cmb_separation": 144.987885840784,
       "apex_separation": 81.80157211769632
     },
     {
-      "filter": "all_stations",
-      "mode": "ionofree",
+      "filter": "dynamic_50",
+      "mode": "precise",
       "metric": "clock_bias",
       "coherence_type": "phase_alignment",
-      "best_ra": 318.0,
-      "best_dec": -6.0,
+      "best_ra": 324.0,
+      "best_dec": -12.0,
       "ra_ci_68": [
-        170.0,
+        20.0,
         320.0
       ],
       "dec_ci_68": [
         -40.0,
         0.0
       ],
-      "correlation": 0.1207052105881302,
-      "p_value": 0.48315178614858656,
-      "cmb_separation": 147.44306354873686,
-      "apex_separation": 57.64739721337764
+      "correlation": 0.1694215494917998,
+      "p_value": 0.3232411891963558,
+      "cmb_separation": 149.57879920681216,
+      "apex_separation": 66.0560940004044
     },
     {
       "filter": "optimal_100",
-      "mode": "ionofree",
-      "metric": "clock_bias",
+      "mode": "precise",
+      "metric": "clock_drift",
       "coherence_type": "phase_alignment",
-      "best_ra": 16.0,
-      "best_dec": 7.0,
+      "best_ra": 345.0,
+      "best_dec": 35.0,
       "ra_ci_68": [
         20.0,
-        330.0
+        340.0
       ],
       "dec_ci_68": [
-        -31.599999999999966,
-        20.0
+        20.0,
+        50.0
       ],
-      "correlation": 0.30297147444249817,
-      "p_value": 0.07246970098843386,
-      "cmb_separation": 152.15150285536376,
-      "apex_separation": 99.29620533777577
+      "correlation": 0.519169642045818,
+      "p_value": 0.0011765263289020833,
+      "cmb_separation": 151.8099140238041,
+      "apex_separation": 61.16249789119366
+    },
+    {
+      "filter": "dynamic_50",
+      "mode": "precise",
+      "metric": "clock_drift",
+      "coherence_type": "phase_alignment",
+      "best_ra": 2.0,
+      "best_dec": 25.0,
+      "ra_ci_68": [
+        10.0,
+        340.0
+      ],
+      "dec_ci_68": [
+        20.0,
+        30.0
+      ],
+      "correlation": 0.3797922458429556,
+      "p_value": 0.02233094848451156,
+      "cmb_separation": 157.48510610014037,
+      "apex_separation": 78.6027091778187
+    },
+    {
+      "filter": "all_stations",
+      "mode": "precise",
+      "metric": "clock_drift",
+      "coherence_type": "phase_alignment",
+      "best_ra": 357.0,
+      "best_dec": 26.0,
+      "ra_ci_68": [
+        0.0,
+        340.0
+      ],
+      "dec_ci_68": [
+        20.0,
+        30.0
+      ],
+      "correlation": 0.4616215275672509,
+      "p_value": 0.004597178940216162,
+      "cmb_separation": 159.07454766897538,
+      "apex_separation": 74.1283978669108
+    },
+    {
+      "filter": "optimal_100",
+      "mode": "precise",
+      "metric": "clock_bias",
+      "coherence_type": "phase_alignment",
+      "best_ra": 359.0,
+      "best_dec": 7.0,
+      "ra_ci_68": [
+        30.0,
+        340.0
+      ],
+      "dec_ci_68": [
+        -50.0,
+        10.0
+      ],
+      "correlation": 0.3494387667106108,
+      "p_value": 0.03670746787720103,
+      "cmb_separation": 169.0218238013424,
+      "apex_separation": 84.78270212436172
     }
   ],
   "cmb_dipole": {

@@ -15,7 +15,7 @@
             <th>Interpretation</th>
         </tr>
         <tr>
-            <td>Total pairs analyzed</td>
+            <td>Total pair-samples analyzed</td>
             <td>713,243,298 (ALL_STATIONS)</td>
             <td>Large raw SPP anisotropy dataset</td>
         </tr>
@@ -45,7 +45,7 @@
 
 <div class="critical-analysis">
     <h4>Addressing Statistical Inflation & Effective Degrees of Freedom</h4>
-    <p>A legitimate concern in large-N studies is that the 713 million station pairs (ALL_STATIONS filter) are not fully independent—each station participates in many pairs, potentially inflating t-statistics beyond their true significance. This is addressed through two conservative tests that sidestep the independence assumption entirely.</p>
+    <p>A legitimate concern in large-N studies is that the 713 million pair-samples (ALL_STATIONS filter) are not fully independent—each station participates in many pairs, potentially inflating t-statistics beyond their true significance. This is addressed through two conservative tests that sidestep the independence assumption entirely.</p>
     
     <h5>Conservative Test 1: Month-as-Sample</h5>
     <p>If each calendar month is treated as a single independent observation (discarding all within-month pair statistics), the E-W > N-S anisotropy is still detected in 36 of 36 months (100%) for the Multi-GNSS mode. Under a null hypothesis of random directional bias, this consistency has probability:</p>
@@ -54,10 +54,10 @@
         P = (0.5)<sup>36</sup> ≈ 1.5 × 10<sup>−11</sup>
     </p>
     
-    <p>This p &lt; 10<sup>−10</sup> result uses only 36 effective samples—a 4.8-million-fold reduction from the raw pair count—yet remains statistically significant.</p>
+    <p>This p &lt; 10<sup>−10</sup> result uses only 36 effective samples—a 4.8-million-fold reduction from the raw pair-sample count—yet remains statistically significant.</p>
 
     <h5>Conservative Test 2: Filter Independence</h5>
-    <p>The three station filtering methods (ALL_STATIONS, OPTIMAL_100, DYNAMIC_50) use overlapping but distinct station subsets. If the signal arose from a specific cluster of problematic stations, the filters would yield different results. Instead, all three converge to identical correlation lengths with zero variance (σ² = 0, §3.4). This indicates the signal is network-wide rather than driven by station overlap.</p>
+    <p>The three station filtering methods (ALL_STATIONS, OPTIMAL_100, DYNAMIC_50) use overlapping but distinct station subsets. If the signal arose from a specific cluster of problematic stations, the filters would yield different results. Instead, all three converge to consistent correlation lengths (§3.4). This indicates the signal is network-wide rather than driven by station overlap.</p>
 
     <h5>Conservative Test 3: Distance Bias Audit</h5>
     <p>A critical potential confounder is distance distribution bias: if E-W pairs happened to be shorter on average than N-S pairs within the &lt;500 km bin, the higher coherence could be a simple distance effect. An audit of the distance distributions reveals the opposite: E-W pairs are on average <strong>13 km longer</strong> than N-S pairs (305 km vs 292 km). Since coherence decays with distance, this bias <em>suppresses</em> the E-W signal. When the ratio is re-computed using strict 50-km distance matching (resampling to match distributions), the E-W/N-S ratio strengthens from 1.033 to 1.041. Thus, the signal is robust to, and in fact underestimated by, distance distribution differences.</p>
@@ -70,7 +70,7 @@
 
 <h4>4.2.1 Kp Stratification</h4>
 
-<p>A major alternative hypothesis for long-range GNSS correlations is ionospheric activity. To test this, the dataset was stratified into "Quiet" (Kp &lt; 3) and "Storm" (Kp ≥ 3) days using real geomagnetic data from GFZ Potsdam (Kp index since 1932). Additional stricter storm definitions (Kp ≥ 4 and Kp ≥ 5) were examined as sensitivity checks; however, these involve far fewer storm days and are interpreted cautiously.</p>
+<p>A major alternative hypothesis for long-range GNSS correlations is ionospheric activity. To test this, the dataset was stratified into "Quiet" (Kp &lt; 3) and "Storm" (Kp ≥ 3) days using real geomagnetic data from GFZ Potsdam (Kp index since 1932). The Kp = 3 threshold is the standard boundary in space physics literature between quiet and active geomagnetic conditions (Menvielle & Berthelier, 1991): Kp &lt; 3 represents magnetically quiet conditions, while Kp ≥ 3 indicates active to storm conditions with enhanced ionospheric disturbances. Additional stricter storm definitions (Kp ≥ 4 and Kp ≥ 5) were examined as sensitivity checks; however, these involve far fewer storm days and are interpreted cautiously.</p>
 
 <table>
     <tr>
