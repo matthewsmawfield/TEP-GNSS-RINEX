@@ -1,0 +1,32 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "ScholarlyArticle",
+  "identifier": "https://doi.org/10.5281/zenodo.17860166",
+  "name": "Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks",
+  "description": "Validation of TEP signatures using raw RINEX observations and Single Point Positioning (SPP), analyzing 539 globally distributed stations over 3 years (2022-2024; 1.17 billion pair-samples).",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Matthew Lukin",
+      "familyName": "Smawfield",
+      "@id": "https://orcid.org/0009-0003-8219-3159"
+    }
+  ],
+  "datePublished": "2025-12-09",
+  "dateModified": "2025-12-17",
+  "version": "0.3",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "codeRepository": "https://github.com/matthewsmawfield/TEP-GNSS-RINEX",
+  "url": "https://matthewsmawfield.github.io/TEP-GNSS-RINEX/",
+  "keywords": [
+    "GNSS",
+    "RINEX",
+    "raw observations",
+    "Single Point Positioning",
+    "SPP",
+    "atomic clocks",
+    "distance correlations",
+    "phase coherence",
+    "temporal equivalence principle"
+  ]
+}
