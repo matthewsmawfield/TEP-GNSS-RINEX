@@ -1,0 +1,115 @@
+{
+  "filter": "all_stations",
+  "mode": "multi_gnss",
+  "metric": "pos_jitter",
+  "speeds_kms": [
+    20,
+    50,
+    100,
+    200,
+    369,
+    500
+  ],
+  "scan_results": {
+    "msc": [
+      {
+        "background_speed_kms": 20.0,
+        "best_ra": 174.0,
+        "best_dec": 30.0,
+        "best_r": 0.5267257404925894,
+        "cmb_sep": 37.39559616756507,
+        "apex_sep": 80.8744719418654
+      },
+      {
+        "background_speed_kms": 50.0,
+        "best_ra": 196.0,
+        "best_dec": -54.0,
+        "best_r": 0.7540563509568707,
+        "cmb_sep": 52.21882619127263,
+        "apex_sep": 105.82857137354912
+      },
+      {
+        "background_speed_kms": 100.0,
+        "best_ra": 194.0,
+        "best_dec": -70.0,
+        "best_r": 0.7359974253460639,
+        "cmb_sep": 65.25753499494687,
+        "apex_sep": 113.77939502081415
+      },
+      {
+        "background_speed_kms": 200.0,
+        "best_ra": 192.0,
+        "best_dec": -80.0,
+        "best_r": 0.7119275497710125,
+        "cmb_sep": 73.95490017668205,
+        "apex_sep": 117.62672258296624
+      },
+      {
+        "background_speed_kms": 369.0,
+        "best_ra": 190.0,
+        "best_dec": -84.0,
+        "best_r": 0.6987377367717849,
+        "cmb_sep": 77.50618501187539,
+        "apex_sep": 118.88805305268075
+      },
+      {
+        "background_speed_kms": 500.0,
+        "best_ra": 190.0,
+        "best_dec": -86.0,
+        "best_r": 0.699409970584651,
+        "cmb_sep": 79.35568427176008,
+        "apex_sep": 119.296664413662
+      }
+    ],
+    "phase_alignment": [
+      {
+        "background_speed_kms": 20.0,
+        "best_ra": 190.0,
+        "best_dec": -6.0,
+        "best_r": 0.49976926375859826,
+        "cmb_sep": 21.937647233669075,
+        "apex_sep": 85.26945378862965
+      },
+      {
+        "background_speed_kms": 50.0,
+        "best_ra": 156.0,
+        "best_dec": 72.0,
+        "best_r": 0.8075414422845626,
+        "cmb_sep": 79.32719619068659,
+        "apex_sep": 68.75057963016589
+      },
+      {
+        "background_speed_kms": 100.0,
+        "best_ra": 132.0,
+        "best_dec": 28.0,
+        "best_r": 0.8082384111709138,
+        "cmb_sep": 49.239477956469564,
+        "apex_sep": 110.02052260629105
+      },
+      {
+        "background_speed_kms": 200.0,
+        "best_ra": 140.0,
+        "best_dec": 32.0,
+        "best_r": 0.8013169447034394,
+        "cmb_sep": 47.181416422097215,
+        "apex_sep": 102.52529356021081
+      },
+      {
+        "background_speed_kms": 369.0,
+        "best_ra": 144.0,
+        "best_dec": 34.0,
+        "best_r": 0.7941985320749577,
+        "cmb_sep": 46.79604835300203,
+        "apex_sep": 98.77109309513838
+      },
+      {
+        "background_speed_kms": 500.0,
+        "best_ra": 144.0,
+        "best_dec": 34.0,
+        "best_r": 0.7914832565573886,
+        "cmb_sep": 46.79604835300203,
+        "apex_sep": 98.77109309513838
+      }
+    ]
+  }
+}

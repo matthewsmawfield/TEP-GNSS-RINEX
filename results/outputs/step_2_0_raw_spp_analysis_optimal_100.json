@@ -1,0 +1,362 @@
+{
+  "step": "2.0",
+  "name": "Multi-Metric SPP Correlation Analysis - All Processing Modes",
+  "filter_mode": "OPTIMAL 100",
+  "completion_time": "2025-12-16T05:19:01.490618",
+  "status": "completed",
+  "n_stations": 539,
+  "n_pairs": {
+    "clock_bias": 36,
+    "pos_jitter": 36,
+    "clock_drift": 36,
+    "ionofree_clock_bias": 36,
+    "ionofree_pos_jitter": 36,
+    "ionofree_clock_drift": 36,
+    "mgex_clock_bias": 36,
+    "mgex_pos_jitter": 36,
+    "mgex_clock_drift": 36,
+    "precise_clock_bias": 36,
+    "precise_pos_jitter": 36,
+    "precise_clock_drift": 36
+  },
+  "analysis_by_mode": {
+    "baseline": {
+      "clock_bias": {
+        "amplitude": 0.2572855111843297,
+        "correlation_length_km": 631.9621276168028,
+        "offset": 0.5479142562949253,
+        "r_squared": 0.9517284851251,
+        "success": true,
+        "n_pairs": 2422247,
+        "n_bins": 36,
+        "metric_type": "normalized_msc"
+      },
+      "clock_bias_phase_alignment": {
+        "amplitude": 1.1774059717508056,
+        "correlation_length_km": 2052.9752401722585,
+        "offset": -0.0623403827792913,
+        "r_squared": 0.8845498754896324,
+        "success": true,
+        "n_pairs": 2422247,
+        "n_bins": 36,
+        "metric_type": "phase_alignment"
+      },
+      "pos_jitter": {
+        "amplitude": 0.29417369389707826,
+        "correlation_length_km": 683.4950195923108,
+        "offset": 0.5483845394521879,
+        "r_squared": 0.9894267151543895,
+        "success": true,
+        "n_pairs": 2422247,
+        "n_bins": 36,
+        "metric_type": "normalized_msc"
+      },
+      "pos_jitter_phase_alignment": {
+        "amplitude": 1.380679876922957,
+        "correlation_length_km": 2988.474091738485,
+        "offset": -0.15153644232873356,
+        "r_squared": 0.9423740296377681,
+        "success": true,
+        "n_pairs": 2422247,
+        "n_bins": 36,
+        "metric_type": "phase_alignment"
+      },
+      "clock_drift": {
+        "amplitude": 0.2592486496979452,
+        "correlation_length_km": 624.6875132159115,
+        "offset": 0.5460359363199222,
+        "r_squared": 0.9541743144733517,
+        "success": true,
+        "n_pairs": 2422247,
+        "n_bins": 36,
+        "metric_type": "normalized_msc"
+      },
+      "clock_drift_phase_alignment": {
+        "amplitude": 1.3127189128522943,
+        "correlation_length_km": 1057.2898547504903,
+        "offset": -0.03326043907261206,
+        "r_squared": 0.9470692573447991,
+        "success": true,
+        "n_pairs": 2422247,
+        "n_bins": 36,
+        "metric_type": "phase_alignment"
+      }
+    },
+    "ionofree": {
+      "ionofree_clock_bias": {
+        "amplitude": 0.16098249187938327,
+        "correlation_length_km": 812.6114790712013,
+        "offset": 0.549026726463247,
+        "r_squared": 0.9044064790313295,
+        "success": true,
+        "n_pairs": 2371876,
+        "n_bins": 36,
+        "metric_type": "normalized_msc"
+      },
+      "ionofree_clock_bias_phase_alignment": {
+        "amplitude": 1.419637998027855,
+        "correlation_length_km": 1922.6310076282891,
+        "offset": -0.1046968850224974,
+        "r_squared": 0.7677821611205065,
+        "success": true,
+        "n_pairs": 2371876,
+        "n_bins": 36,
+        "metric_type": "phase_alignment"
+      },
+      "ionofree_pos_jitter": {
+        "amplitude": 0.15876222743599125,
+        "correlation_length_km": 682.7987407922634,
+        "offset": 0.5485240487123638,
+        "r_squared": 0.9283529904714679,
+        "success": true,
+        "n_pairs": 2371876,
+        "n_bins": 36,
+        "metric_type": "normalized_msc"
+      },
+      "ionofree_pos_jitter_phase_alignment": {
+        "amplitude": 1.1191079812518225,
+        "correlation_length_km": 3865.812840524478,
+        "offset": -0.13140432083914172,
+        "r_squared": 0.9356794821724524,
+        "success": true,
+        "n_pairs": 2371876,
+        "n_bins": 36,
+        "metric_type": "phase_alignment"
+      },
+      "ionofree_clock_drift": {
+        "amplitude": 0.16181718905196635,
+        "correlation_length_km": 822.813892096164,
+        "offset": 0.548902827220587,
+        "r_squared": 0.9009805234241277,
+        "success": true,
+        "n_pairs": 2371876,
+        "n_bins": 36,
+        "metric_type": "normalized_msc"
+      },
+      "ionofree_clock_drift_phase_alignment": {
+        "amplitude": 1.2105115194882063,
+        "correlation_length_km": 1071.6094223149066,
+        "offset": -0.02952267664220407,
+        "r_squared": 0.9339871034629802,
+        "success": true,
+        "n_pairs": 2371876,
+        "n_bins": 36,
+        "metric_type": "phase_alignment"
+      }
+    },
+    "multi_gnss": {
+      "mgex_clock_bias": {
+        "amplitude": 0.177472583979813,
+        "correlation_length_km": 706.6259999033837,
+        "offset": 0.5469922282773348,
+        "r_squared": 0.8717311270092132,
+        "success": true,
+        "n_pairs": 2341326,
+        "n_bins": 36,
+        "metric_type": "normalized_msc"
+      },
+      "mgex_clock_bias_phase_alignment": {
+        "amplitude": 0.9635473029056518,
+        "correlation_length_km": 2190.660629733631,
+        "offset": -0.03677169283174067,
+        "r_squared": 0.820410926214488,
+        "success": true,
+        "n_pairs": 2341326,
+        "n_bins": 36,
+        "metric_type": "phase_alignment"
+      },
+      "mgex_pos_jitter": {
+        "amplitude": 0.20587691164904195,
+        "correlation_length_km": 795.6755391091737,
+        "offset": 0.5466926707568471,
+        "r_squared": 0.9424505112906716,
+        "success": true,
+        "n_pairs": 2341326,
+        "n_bins": 36,
+        "metric_type": "normalized_msc"
+      },
+      "mgex_pos_jitter_phase_alignment": {
+        "amplitude": 1.2951600190393844,
+        "correlation_length_km": 2726.2312783446537,
+        "offset": -0.10587422186196248,
+        "r_squared": 0.9485053666706297,
+        "success": true,
+        "n_pairs": 2341326,
+        "n_bins": 36,
+        "metric_type": "phase_alignment"
+      },
+      "mgex_clock_drift": {
+        "amplitude": 0.1787884982484211,
+        "correlation_length_km": 682.7161018855463,
+        "offset": 0.544889935529282,
+        "r_squared": 0.8763534747708291,
+        "success": true,
+        "n_pairs": 2341326,
+        "n_bins": 36,
+        "metric_type": "normalized_msc"
+      },
+      "mgex_clock_drift_phase_alignment": {
+        "amplitude": 1.1414242704682618,
+        "correlation_length_km": 1178.163545631926,
+        "offset": -0.011533406772068254,
+        "r_squared": 0.9704359434873198,
+        "success": true,
+        "n_pairs": 2341326,
+        "n_bins": 36,
+        "metric_type": "phase_alignment"
+      }
+    },
+    "precise": {
+      "precise_clock_bias": {
+        "amplitude": 0.15244497729642506,
+        "correlation_length_km": 974.8304962029671,
+        "offset": 0.5480124633102279,
+        "r_squared": 0.9272553295761115,
+        "success": true,
+        "n_pairs": 2363336,
+        "n_bins": 36,
+        "metric_type": "normalized_msc"
+      },
+      "precise_clock_bias_phase_alignment": {
+        "amplitude": 1.4074937999076427,
+        "correlation_length_km": 1830.7416616991463,
+        "offset": -0.053444265967061436,
+        "r_squared": 0.6958781918852681,
+        "success": true,
+        "n_pairs": 2363336,
+        "n_bins": 36,
+        "metric_type": "phase_alignment"
+      },
+      "precise_pos_jitter": {
+        "amplitude": 0.143908689067628,
+        "correlation_length_km": 776.4951496492771,
+        "offset": 0.547692539013919,
+        "r_squared": 0.9043854677405087,
+        "success": true,
+        "n_pairs": 2363336,
+        "n_bins": 36,
+        "metric_type": "normalized_msc"
+      },
+      "precise_pos_jitter_phase_alignment": {
+        "amplitude": 1.2001930940126329,
+        "correlation_length_km": 5026.383092567448,
+        "offset": -0.259230936451893,
+        "r_squared": 0.9064108828784307,
+        "success": true,
+        "n_pairs": 2363336,
+        "n_bins": 36,
+        "metric_type": "phase_alignment"
+      },
+      "precise_clock_drift": {
+        "amplitude": 0.15230885084661475,
+        "correlation_length_km": 1000.5903055663945,
+        "offset": 0.5482327015550709,
+        "r_squared": 0.923194183371297,
+        "success": true,
+        "n_pairs": 2363336,
+        "n_bins": 36,
+        "metric_type": "normalized_msc"
+      },
+      "precise_clock_drift_phase_alignment": {
+        "amplitude": 1.195655857885182,
+        "correlation_length_km": 1197.9235008075352,
+        "offset": -0.026476527929856455,
+        "r_squared": 0.9117918072087088,
+        "success": true,
+        "n_pairs": 2363336,
+        "n_bins": 36,
+        "metric_type": "phase_alignment"
+      }
+    }
+  },
+  "analysis": {
+    "clock_bias": {
+      "amplitude": 0.2572855111843297,
+      "correlation_length_km": 631.9621276168028,
+      "offset": 0.5479142562949253,
+      "r_squared": 0.9517284851251,
+      "success": true,
+      "n_pairs": 2422247,
+      "n_bins": 36,
+      "metric_type": "normalized_msc"
+    },
+    "clock_bias_phase_alignment": {
+      "amplitude": 1.1774059717508056,
+      "correlation_length_km": 2052.9752401722585,
+      "offset": -0.0623403827792913,
+      "r_squared": 0.8845498754896324,
+      "success": true,
+      "n_pairs": 2422247,
+      "n_bins": 36,
+      "metric_type": "phase_alignment"
+    },
+    "pos_jitter": {
+      "amplitude": 0.29417369389707826,
+      "correlation_length_km": 683.4950195923108,
+      "offset": 0.5483845394521879,
+      "r_squared": 0.9894267151543895,
+      "success": true,
+      "n_pairs": 2422247,
+      "n_bins": 36,
+      "metric_type": "normalized_msc"
+    },
+    "pos_jitter_phase_alignment": {
+      "amplitude": 1.380679876922957,
+      "correlation_length_km": 2988.474091738485,
+      "offset": -0.15153644232873356,
+      "r_squared": 0.9423740296377681,
+      "success": true,
+      "n_pairs": 2422247,
+      "n_bins": 36,
+      "metric_type": "phase_alignment"
+    },
+    "clock_drift": {
+      "amplitude": 0.2592486496979452,
+      "correlation_length_km": 624.6875132159115,
+      "offset": 0.5460359363199222,
+      "r_squared": 0.9541743144733517,
+      "success": true,
+      "n_pairs": 2422247,
+      "n_bins": 36,
+      "metric_type": "normalized_msc"
+    },
+    "clock_drift_phase_alignment": {
+      "amplitude": 1.3127189128522943,
+      "correlation_length_km": 1057.2898547504903,
+      "offset": -0.03326043907261206,
+      "r_squared": 0.9470692573447991,
+      "success": true,
+      "n_pairs": 2422247,
+      "n_bins": 36,
+      "metric_type": "phase_alignment"
+    }
+  },
+  "parameters": {
+    "frequency_band_hz": [
+      1e-05,
+      0.0005
+    ],
+    "frequency_band_period_sec": [
+      2000.0,
+      99999.99999999999
+    ],
+    "distance_range_km": [
+      50,
+      13000
+    ],
+    "n_bins": 40,
+    "min_bin_count": 10
+  },
+  "modes_available": {
+    "baseline": true,
+    "ionofree": true,
+    "multi_gnss": true,
+    "precise": true
+  },
+  "mode_station_counts": {
+    "baseline": "dynamic",
+    "ionofree": "dynamic",
+    "multi_gnss": "dynamic",
+    "precise": "dynamic"
+  }
+}

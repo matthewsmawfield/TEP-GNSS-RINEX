@@ -1,0 +1,794 @@
+[18:20:17] [INFO] 
+[18:20:17] [INFO] ================================================================================
+[18:20:17] [INFO] STEP 2.1b: Elevation Analysis (COMPREHENSIVE)
+[18:20:17] [INFO] ================================================================================
+[18:20:17] [INFO] 
+[18:20:17] [INFO] Run tag: lat10_sr200 | lat_band_deg=10 | short_range_km=200
+[18:20:17] [INFO] Processing: 3 filters × 4 modes × 3 metrics × 2 coherence types
+[18:20:17] [INFO] 
+################################################################################
+[18:20:17] [INFO] # FILTER: ALL_STATIONS
+[18:20:17] [INFO] ################################################################################
+[18:20:17] [INFO] 
+============================================================
+[18:20:17] [INFO] MODE: PRECISE (GPS SPP with Precise Orbits)
+[18:20:17] [INFO] ============================================================
+[18:20:17] [INFO] 
+[18:20:17] [INFO] 
+Processing clock_bias...
+[18:20:17] [INFO]   Q1: -83m - 82m (101 stations)
+[18:20:17] [INFO]   Q2: -6m - 160m (101 stations)
+[18:20:17] [INFO]   Q3: 20m - 445m (101 stations)
+[18:20:17] [INFO]   Q4: 29m - 1169m (101 stations)
+[18:20:17] [INFO]   Q5: 33m - 3755m (130 stations)
+[18:21:44] [INFO]   Fitting clock_bias/msc...
+[18:21:44] [INFO]     Q1  : λ=466km, R²=0.94, N=235,633
+[18:21:44] [INFO]     Q2  : λ=1287km, R²=0.83, N=276,526
+[18:21:44] [INFO]     Q3  : λ=5010km, R²=0.63, N=320,897
+[18:21:44] [INFO]     Q4  : λ=842km, R²=0.94, N=313,232
+[18:21:44] [INFO]     Q5  : λ=1047km, R²=0.93, N=380,371
+[18:21:44] [INFO]   Fitting clock_bias/phase_alignment...
+[18:21:44] [INFO]     Q1  : λ=1097km, R²=0.73, N=235,633
+[18:21:44] [INFO]     Q2  : λ=1929km, R²=0.64, N=276,526
+[18:21:44] [INFO]     Q3  : λ=1931km, R²=0.28, N=320,897
+[18:21:44] [INFO]     Q4  : λ=1445km, R²=0.60, N=313,232
+[18:21:44] [INFO]     Q5  : λ=1878km, R²=0.83, N=380,371
+[18:21:45] [INFO] 
+Processing pos_jitter...
+[18:21:45] [INFO]   Q1: -83m - 82m (101 stations)
+[18:21:45] [INFO]   Q2: -6m - 160m (101 stations)
+[18:21:45] [INFO]   Q3: 20m - 445m (101 stations)
+[18:21:45] [INFO]   Q4: 29m - 1169m (101 stations)
+[18:21:45] [INFO]   Q5: 33m - 3755m (130 stations)
+[18:23:12] [INFO]   Fitting pos_jitter/msc...
+[18:23:12] [INFO]     Q1  : λ=2393km, R²=0.88, N=235,633
+[18:23:12] [INFO]     Q2  : λ=1007km, R²=0.88, N=276,526
+[18:23:12] [INFO]     Q3  : λ=871km, R²=0.92, N=320,897
+[18:23:12] [INFO]     Q4  : λ=768km, R²=0.94, N=313,232
+[18:23:12] [INFO]     Q5  : λ=1103km, R²=0.85, N=380,371
+[18:23:12] [INFO]   Fitting pos_jitter/phase_alignment...
+[18:23:12] [INFO]     Q1  : λ=20000km, R²=0.76, N=235,633
+[18:23:12] [INFO]     Q2  : λ=6183km, R²=0.70, N=276,526
+[18:23:12] [INFO]     Q3  : λ=1910km, R²=0.88, N=320,897
+[18:23:12] [INFO]     Q4  : λ=1281km, R²=0.78, N=313,232
+[18:23:12] [INFO]     Q5  : λ=1724km, R²=0.89, N=380,371
+[18:23:13] [INFO] 
+Processing clock_drift...
+[18:23:13] [INFO]   Q1: -83m - 82m (101 stations)
+[18:23:13] [INFO]   Q2: -6m - 160m (101 stations)
+[18:23:13] [INFO]   Q3: 20m - 445m (101 stations)
+[18:23:13] [INFO]   Q4: 29m - 1169m (101 stations)
+[18:23:13] [INFO]   Q5: 33m - 3755m (130 stations)
+[18:24:40] [INFO]   Fitting clock_drift/msc...
+[18:24:40] [INFO]     Q1  : λ=466km, R²=0.94, N=235,633
+[18:24:40] [INFO]     Q2  : λ=1219km, R²=0.82, N=276,526
+[18:24:40] [INFO]     Q3  : λ=3957km, R²=0.67, N=320,897
+[18:24:40] [INFO]     Q4  : λ=850km, R²=0.94, N=313,232
+[18:24:40] [INFO]     Q5  : λ=1078km, R²=0.93, N=380,371
+[18:24:40] [INFO]   Fitting clock_drift/phase_alignment...
+[18:24:40] [INFO]     Q1  : λ=599km, R²=0.89, N=235,633
+[18:24:40] [INFO]     Q2  : λ=1321km, R²=0.78, N=276,526
+[18:24:40] [INFO]     Q3  : λ=1564km, R²=0.51, N=320,897
+[18:24:40] [INFO]     Q4  : λ=901km, R²=0.82, N=313,232
+[18:24:40] [INFO]     Q5  : λ=1138km, R²=0.87, N=380,371
+[18:24:42] [INFO] 
+============================================================
+[18:24:42] [INFO] MODE: BASELINE (GPS L1 only)
+[18:24:42] [INFO] ============================================================
+[18:24:42] [INFO] 
+[18:24:42] [INFO] 
+Processing clock_bias...
+[18:24:42] [INFO]   Q1: -83m - 82m (101 stations)
+[18:24:42] [INFO]   Q2: -6m - 160m (101 stations)
+[18:24:42] [INFO]   Q3: 20m - 445m (101 stations)
+[18:24:42] [INFO]   Q4: 29m - 1169m (101 stations)
+[18:24:42] [INFO]   Q5: 33m - 3755m (130 stations)
+[18:26:11] [INFO]   Fitting clock_bias/msc...
+[18:26:11] [INFO]     Q1  : λ=387km, R²=0.94, N=242,928
+[18:26:11] [INFO]     Q2  : λ=832km, R²=0.85, N=308,220
+[18:26:11] [INFO]     Q3  : λ=6921km, R²=0.71, N=340,895
+[18:26:11] [INFO]     Q4  : λ=499km, R²=0.95, N=322,025
+[18:26:11] [INFO]     Q5  : λ=698km, R²=0.92, N=390,741
+[18:26:11] [INFO]   Fitting clock_bias/phase_alignment...
+[18:26:11] [INFO]     Q1  : λ=1110km, R²=0.93, N=242,928
+[18:26:11] [INFO]     Q2  : λ=1979km, R²=0.82, N=308,220
+[18:26:11] [INFO]     Q3  : λ=3966km, R²=0.73, N=340,895
+[18:26:11] [INFO]     Q4  : λ=2293km, R²=0.95, N=322,025
+[18:26:11] [INFO]     Q5  : λ=2415km, R²=0.94, N=390,741
+[18:26:12] [INFO] 
+Processing pos_jitter...
+[18:26:12] [INFO]   Q1: -83m - 82m (101 stations)
+[18:26:12] [INFO]   Q2: -6m - 160m (101 stations)
+[18:26:12] [INFO]   Q3: 20m - 445m (101 stations)
+[18:26:12] [INFO]   Q4: 29m - 1169m (101 stations)
+[18:26:12] [INFO]   Q5: 33m - 3755m (130 stations)
+[18:27:42] [INFO]   Fitting pos_jitter/msc...
+[18:27:42] [INFO]     Q1  : λ=1044km, R²=0.94, N=242,928
+[18:27:42] [INFO]     Q2  : λ=687km, R²=0.93, N=308,220
+[18:27:42] [INFO]     Q3  : λ=780km, R²=0.96, N=340,895
+[18:27:42] [INFO]     Q4  : λ=674km, R²=0.98, N=322,025
+[18:27:42] [INFO]     Q5  : λ=831km, R²=0.94, N=390,741
+[18:27:42] [INFO]   Fitting pos_jitter/phase_alignment...
+[18:27:42] [INFO]     Q1  : λ=2546km, R²=0.98, N=242,928
+[18:27:42] [INFO]     Q2  : λ=2333km, R²=0.95, N=308,220
+[18:27:43] [INFO]     Q3  : λ=2339km, R²=0.97, N=340,895
+[18:27:43] [INFO]     Q4  : λ=2318km, R²=0.96, N=322,025
+[18:27:43] [INFO]     Q5  : λ=2549km, R²=0.95, N=390,741
+[18:27:44] [INFO] 
+Processing clock_drift...
+[18:27:44] [INFO]   Q1: -83m - 82m (101 stations)
+[18:27:44] [INFO]   Q2: -6m - 160m (101 stations)
+[18:27:44] [INFO]   Q3: 20m - 445m (101 stations)
+[18:27:44] [INFO]   Q4: 29m - 1169m (101 stations)
+[18:27:44] [INFO]   Q5: 33m - 3755m (130 stations)
+[18:29:13] [INFO]   Fitting clock_drift/msc...
+[18:29:13] [INFO]     Q1  : λ=382km, R²=0.94, N=242,928
+[18:29:13] [INFO]     Q2  : λ=809km, R²=0.84, N=308,220
+[18:29:13] [INFO]     Q3  : λ=6414km, R²=0.75, N=340,895
+[18:29:13] [INFO]     Q4  : λ=499km, R²=0.95, N=322,025
+[18:29:13] [INFO]     Q5  : λ=693km, R²=0.92, N=390,741
+[18:29:13] [INFO]   Fitting clock_drift/phase_alignment...
+[18:29:13] [INFO]     Q1  : λ=735km, R²=0.96, N=242,928
+[18:29:13] [INFO]     Q2  : λ=1133km, R²=0.86, N=308,220
+[18:29:13] [INFO]     Q3  : λ=1563km, R²=0.71, N=340,895
+[18:29:13] [INFO]     Q4  : λ=903km, R²=0.95, N=322,025
+[18:29:13] [INFO]     Q5  : λ=965km, R²=0.93, N=390,741
+[18:29:15] [INFO] 
+============================================================
+[18:29:15] [INFO] MODE: IONOFREE (Dual-frequency L1+L2 ionosphere-free)
+[18:29:15] [INFO] ============================================================
+[18:29:15] [INFO] 
+[18:29:15] [INFO] 
+Processing clock_bias...
+[18:29:15] [INFO]   Q1: -83m - 82m (101 stations)
+[18:29:15] [INFO]   Q2: -6m - 160m (101 stations)
+[18:29:15] [INFO]   Q3: 20m - 445m (101 stations)
+[18:29:15] [INFO]   Q4: 29m - 1169m (101 stations)
+[18:29:15] [INFO]   Q5: 33m - 3755m (130 stations)
+[18:30:43] [INFO]   Fitting clock_bias/msc...
+[18:30:43] [INFO]     Q1  : λ=462km, R²=0.92, N=237,308
+[18:30:43] [INFO]     Q2  : λ=1190km, R²=0.85, N=278,647
+[18:30:43] [INFO]     Q3  : λ=3389km, R²=0.63, N=322,183
+[18:30:43] [INFO]     Q4  : λ=836km, R²=0.96, N=316,592
+[18:30:43] [INFO]     Q5  : λ=1026km, R²=0.92, N=381,985
+[18:30:43] [INFO]   Fitting clock_bias/phase_alignment...
+[18:30:43] [INFO]     Q1  : λ=1240km, R²=0.82, N=237,308
+[18:30:43] [INFO]     Q2  : λ=2240km, R²=0.76, N=278,647
+[18:30:43] [INFO]     Q3  : λ=2516km, R²=0.47, N=322,183
+[18:30:43] [INFO]     Q4  : λ=1651km, R²=0.80, N=316,592
+[18:30:44] [INFO]     Q5  : λ=1986km, R²=0.89, N=381,985
+[18:30:45] [INFO] 
+Processing pos_jitter...
+[18:30:45] [INFO]   Q1: -83m - 82m (101 stations)
+[18:30:45] [INFO]   Q2: -6m - 160m (101 stations)
+[18:30:45] [INFO]   Q3: 20m - 445m (101 stations)
+[18:30:45] [INFO]   Q4: 29m - 1169m (101 stations)
+[18:30:45] [INFO]   Q5: 33m - 3755m (130 stations)
+[18:32:13] [INFO]   Fitting pos_jitter/msc...
+[18:32:13] [INFO]     Q1  : λ=1038km, R²=0.92, N=237,308
+[18:32:13] [INFO]     Q2  : λ=764km, R²=0.88, N=278,647
+[18:32:13] [INFO]     Q3  : λ=755km, R²=0.93, N=322,183
+[18:32:13] [INFO]     Q4  : λ=756km, R²=0.95, N=316,592
+[18:32:13] [INFO]     Q5  : λ=1081km, R²=0.82, N=381,985
+[18:32:13] [INFO]   Fitting pos_jitter/phase_alignment...
+[18:32:13] [INFO]     Q1  : λ=6218km, R²=0.85, N=237,308
+[18:32:13] [INFO]     Q2  : λ=3700km, R²=0.80, N=278,647
+[18:32:13] [INFO]     Q3  : λ=1788km, R²=0.89, N=322,183
+[18:32:13] [INFO]     Q4  : λ=1512km, R²=0.88, N=316,592
+[18:32:13] [INFO]     Q5  : λ=1566km, R²=0.93, N=381,985
+[18:32:15] [INFO] 
+Processing clock_drift...
+[18:32:15] [INFO]   Q1: -83m - 82m (101 stations)
+[18:32:15] [INFO]   Q2: -6m - 160m (101 stations)
+[18:32:15] [INFO]   Q3: 20m - 445m (101 stations)
+[18:32:15] [INFO]   Q4: 29m - 1169m (101 stations)
+[18:32:15] [INFO]   Q5: 33m - 3755m (130 stations)
+[18:33:43] [INFO]   Fitting clock_drift/msc...
+[18:33:43] [INFO]     Q1  : λ=462km, R²=0.92, N=237,308
+[18:33:43] [INFO]     Q2  : λ=1106km, R²=0.84, N=278,647
+[18:33:43] [INFO]     Q3  : λ=3033km, R²=0.68, N=322,183
+[18:33:43] [INFO]     Q4  : λ=842km, R²=0.96, N=316,592
+[18:33:43] [INFO]     Q5  : λ=1050km, R²=0.92, N=381,985
+[18:33:43] [INFO]   Fitting clock_drift/phase_alignment...
+[18:33:43] [INFO]     Q1  : λ=659km, R²=0.93, N=237,308
+[18:33:43] [INFO]     Q2  : λ=1251km, R²=0.84, N=278,647
+[18:33:43] [INFO]     Q3  : λ=1516km, R²=0.60, N=322,183
+[18:33:43] [INFO]     Q4  : λ=905km, R²=0.88, N=316,592
+[18:33:43] [INFO]     Q5  : λ=1120km, R²=0.91, N=381,985
+[18:33:44] [INFO] 
+============================================================
+[18:33:44] [INFO] MODE: MULTI_GNSS (GPS+GLO+GAL+BDS)
+[18:33:44] [INFO] ============================================================
+[18:33:44] [INFO] 
+[18:33:44] [INFO] 
+Processing clock_bias...
+[18:33:44] [INFO]   Q1: -83m - 82m (101 stations)
+[18:33:44] [INFO]   Q2: -6m - 160m (101 stations)
+[18:33:44] [INFO]   Q3: 20m - 445m (101 stations)
+[18:33:44] [INFO]   Q4: 29m - 1169m (101 stations)
+[18:33:44] [INFO]   Q5: 33m - 3755m (130 stations)
+[18:35:10] [INFO]   Fitting clock_bias/msc...
+[18:35:10] [INFO]     Q1  : λ=390km, R²=0.92, N=230,650
+[18:35:10] [INFO]     Q2  : λ=1248km, R²=0.83, N=276,270
+[18:35:10] [INFO]     Q3  : λ=20000km, R²=0.74, N=313,462
+[18:35:10] [INFO]     Q4  : λ=503km, R²=0.91, N=306,020
+[18:35:10] [INFO]     Q5  : λ=643km, R²=0.85, N=376,563
+[18:35:10] [INFO]   Fitting clock_bias/phase_alignment...
+[18:35:10] [INFO]     Q1  : λ=1162km, R²=0.92, N=230,650
+[18:35:10] [INFO]     Q2  : λ=2463km, R²=0.87, N=276,270
+[18:35:10] [INFO]     Q3  : λ=5025km, R²=0.74, N=313,462
+[18:35:10] [INFO]     Q4  : λ=2361km, R²=0.94, N=306,020
+[18:35:10] [INFO]     Q5  : λ=2582km, R²=0.91, N=376,563
+[18:35:11] [INFO] 
+Processing pos_jitter...
+[18:35:11] [INFO]   Q1: -83m - 82m (101 stations)
+[18:35:11] [INFO]   Q2: -6m - 160m (101 stations)
+[18:35:11] [INFO]   Q3: 20m - 445m (101 stations)
+[18:35:11] [INFO]   Q4: 29m - 1169m (101 stations)
+[18:35:11] [INFO]   Q5: 33m - 3755m (130 stations)
+[18:36:36] [INFO]   Fitting pos_jitter/msc...
+[18:36:36] [INFO]     Q1  : λ=1148km, R²=0.94, N=230,650
+[18:36:36] [INFO]     Q2  : λ=785km, R²=0.93, N=276,270
+[18:36:36] [INFO]     Q3  : λ=775km, R²=0.96, N=313,462
+[18:36:36] [INFO]     Q4  : λ=768km, R²=0.95, N=306,020
+[18:36:36] [INFO]     Q5  : λ=767km, R²=0.90, N=376,563
+[18:36:36] [INFO]   Fitting pos_jitter/phase_alignment...
+[18:36:37] [INFO]     Q1  : λ=2098km, R²=0.98, N=230,650
+[18:36:37] [INFO]     Q2  : λ=2397km, R²=0.94, N=276,270
+[18:36:37] [INFO]     Q3  : λ=2312km, R²=0.98, N=313,462
+[18:36:37] [INFO]     Q4  : λ=2426km, R²=0.96, N=306,020
+[18:36:37] [INFO]     Q5  : λ=2328km, R²=0.94, N=376,563
+[18:36:38] [INFO] 
+Processing clock_drift...
+[18:36:38] [INFO]   Q1: -83m - 82m (101 stations)
+[18:36:38] [INFO]   Q2: -6m - 160m (101 stations)
+[18:36:38] [INFO]   Q3: 20m - 445m (101 stations)
+[18:36:38] [INFO]   Q4: 29m - 1169m (101 stations)
+[18:36:38] [INFO]   Q5: 33m - 3755m (130 stations)
+[18:38:05] [INFO]   Fitting clock_drift/msc...
+[18:38:05] [INFO]     Q1  : λ=385km, R²=0.91, N=230,650
+[18:38:05] [INFO]     Q2  : λ=1213km, R²=0.82, N=276,270
+[18:38:05] [INFO]     Q3  : λ=20000km, R²=0.76, N=313,462
+[18:38:05] [INFO]     Q4  : λ=494km, R²=0.91, N=306,020
+[18:38:05] [INFO]     Q5  : λ=629km, R²=0.86, N=376,563
+[18:38:05] [INFO]   Fitting clock_drift/phase_alignment...
+[18:38:05] [INFO]     Q1  : λ=836km, R²=0.95, N=230,650
+[18:38:05] [INFO]     Q2  : λ=1280km, R²=0.91, N=276,270
+[18:38:05] [INFO]     Q3  : λ=1694km, R²=0.69, N=313,462
+[18:38:05] [INFO]     Q4  : λ=911km, R²=0.96, N=306,020
+[18:38:05] [INFO]     Q5  : λ=883km, R²=0.94, N=376,563
+[18:38:06] [SUCCESS] Saved: step_2_1_elevation_analysis_all_stations_lat10_sr200.json
+[18:38:06] [INFO] 
+################################################################################
+[18:38:06] [INFO] # FILTER: OPTIMAL_100
+[18:38:06] [INFO] ################################################################################
+[18:38:06] [INFO]   Using 100 stations from optimal_100_metadata.json
+[18:38:06] [INFO] 
+============================================================
+[18:38:06] [INFO] MODE: PRECISE (GPS SPP with Precise Orbits)
+[18:38:06] [INFO] ============================================================
+[18:38:06] [INFO] 
+[18:38:06] [INFO] 
+Processing clock_bias...
+[18:38:06] [INFO]   Filtered to 100 stations
+[18:38:06] [INFO]   Q1: -13m - 81m (15 stations)
+[18:38:06] [INFO]   Q2: 41m - 156m (15 stations)
+[18:38:06] [INFO]   Q3: 76m - 593m (15 stations)
+[18:38:06] [INFO]   Q4: 77m - 1163m (15 stations)
+[18:38:06] [INFO]   Q5: 105m - 2489m (28 stations)
+[18:38:10] [INFO]   Fitting clock_bias/msc...
+[18:38:10] [INFO]     Q1  : λ=772km, R²=0.97, N=13,017
+[18:38:10] [INFO]     Q2  : λ=662km, R²=0.92, N=19,647
+[18:38:10] [INFO]     Q3  : λ=912km, R²=0.60, N=24,214
+[18:38:10] [INFO]     Q4  : λ=2452km, R²=0.75, N=11,647
+[18:38:10] [INFO]     Q5  : λ=702km, R²=0.90, N=52,976
+[18:38:10] [INFO]   Fitting clock_bias/phase_alignment...
+[18:38:10] [INFO]     Q1  : λ=2299km, R²=0.94, N=13,017
+[18:38:10] [INFO]     Q2  : λ=2444km, R²=0.89, N=19,647
+[18:38:10] [INFO]     Q3  : λ=1532km, R²=0.74, N=24,214
+[18:38:10] [INFO]     Q4  : λ=1630km, R²=0.55, N=11,647
+[18:38:10] [INFO]     Q5  : λ=2844km, R²=0.81, N=52,976
+[18:38:10] [INFO] 
+Processing pos_jitter...
+[18:38:10] [INFO]   Filtered to 100 stations
+[18:38:10] [INFO]   Q1: -13m - 81m (15 stations)
+[18:38:10] [INFO]   Q2: 41m - 156m (15 stations)
+[18:38:10] [INFO]   Q3: 76m - 593m (15 stations)
+[18:38:10] [INFO]   Q4: 77m - 1163m (15 stations)
+[18:38:10] [INFO]   Q5: 105m - 2489m (28 stations)
+[18:38:14] [INFO]   Fitting pos_jitter/msc...
+[18:38:14] [INFO]     Q1  : λ=365km, R²=0.89, N=13,017
+[18:38:14] [INFO]     Q2  : λ=551km, R²=0.91, N=19,647
+[18:38:14] [INFO]     Q3  : λ=559km, R²=0.72, N=24,214
+[18:38:14] [INFO]     Q4  : λ=4698km, R²=0.58, N=11,647
+[18:38:14] [INFO]     Q5  : λ=797km, R²=0.84, N=52,976
+[18:38:14] [INFO]   Fitting pos_jitter/phase_alignment...
+[18:38:14] [INFO]     Q1  : λ=1419km, R²=0.96, N=13,017
+[18:38:14] [INFO]     Q2  : λ=390km, R²=0.34, N=19,647
+[18:38:14] [INFO]     Q3  : λ=986km, R²=0.80, N=24,214
+[18:38:14] [INFO]     Q4  : λ=3032km, R²=0.75, N=11,647
+[18:38:14] [INFO]     Q5  : λ=2117km, R²=0.89, N=52,976
+[18:38:14] [INFO] 
+Processing clock_drift...
+[18:38:14] [INFO]   Filtered to 100 stations
+[18:38:14] [INFO]   Q1: -13m - 81m (15 stations)
+[18:38:14] [INFO]   Q2: 41m - 156m (15 stations)
+[18:38:14] [INFO]   Q3: 76m - 593m (15 stations)
+[18:38:14] [INFO]   Q4: 77m - 1163m (15 stations)
+[18:38:14] [INFO]   Q5: 105m - 2489m (28 stations)
+[18:38:18] [INFO]   Fitting clock_drift/msc...
+[18:38:18] [INFO]     Q1  : λ=721km, R²=0.97, N=13,017
+[18:38:18] [INFO]     Q2  : λ=649km, R²=0.92, N=19,647
+[18:38:18] [INFO]     Q3  : λ=963km, R²=0.63, N=24,214
+[18:38:18] [INFO]     Q4  : λ=2470km, R²=0.76, N=11,647
+[18:38:18] [INFO]     Q5  : λ=709km, R²=0.90, N=52,976
+[18:38:18] [INFO]   Fitting clock_drift/phase_alignment...
+[18:38:18] [INFO]     Q1  : λ=1177km, R²=0.96, N=13,017
+[18:38:18] [INFO]     Q2  : λ=2183km, R²=0.96, N=19,647
+[18:38:18] [INFO]     Q3  : λ=957km, R²=0.75, N=24,214
+[18:38:18] [INFO]     Q4  : λ=1575km, R²=0.93, N=11,647
+[18:38:18] [INFO]     Q5  : λ=732km, R²=0.86, N=52,976
+[18:38:18] [INFO] 
+============================================================
+[18:38:18] [INFO] MODE: BASELINE (GPS L1 only)
+[18:38:18] [INFO] ============================================================
+[18:38:18] [INFO] 
+[18:38:18] [INFO] 
+Processing clock_bias...
+[18:38:18] [INFO]   Filtered to 100 stations
+[18:38:18] [INFO]   Q1: -13m - 81m (15 stations)
+[18:38:18] [INFO]   Q2: 41m - 156m (15 stations)
+[18:38:18] [INFO]   Q3: 76m - 593m (15 stations)
+[18:38:18] [INFO]   Q4: 77m - 1163m (15 stations)
+[18:38:18] [INFO]   Q5: 105m - 2489m (28 stations)
+[18:38:22] [INFO]   Fitting clock_bias/msc...
+[18:38:22] [INFO]     Q1  : λ=663km, R²=0.96, N=13,034
+[18:38:22] [INFO]     Q2  : λ=562km, R²=0.94, N=20,214
+[18:38:22] [INFO]     Q3  : λ=914km, R²=0.70, N=24,433
+[18:38:22] [INFO]     Q4  : λ=885km, R²=0.98, N=11,738
+[18:38:22] [INFO]     Q5  : λ=663km, R²=0.90, N=53,491
+[18:38:22] [INFO]   Fitting clock_bias/phase_alignment...
+[18:38:22] [INFO]     Q1  : λ=2144km, R²=0.99, N=13,034
+[18:38:22] [INFO]     Q2  : λ=2990km, R²=0.95, N=20,214
+[18:38:22] [INFO]     Q3  : λ=2368km, R²=0.80, N=24,433
+[18:38:22] [INFO]     Q4  : λ=3024km, R²=0.93, N=11,738
+[18:38:22] [INFO]     Q5  : λ=2222km, R²=0.93, N=53,491
+[18:38:22] [INFO] 
+Processing pos_jitter...
+[18:38:22] [INFO]   Filtered to 100 stations
+[18:38:22] [INFO]   Q1: -13m - 81m (15 stations)
+[18:38:22] [INFO]   Q2: 41m - 156m (15 stations)
+[18:38:22] [INFO]   Q3: 76m - 593m (15 stations)
+[18:38:22] [INFO]   Q4: 77m - 1163m (15 stations)
+[18:38:22] [INFO]   Q5: 105m - 2489m (28 stations)
+[18:38:26] [INFO]   Fitting pos_jitter/msc...
+[18:38:26] [INFO]     Q1  : λ=591km, R²=0.99, N=13,034
+[18:38:26] [INFO]     Q2  : λ=543km, R²=0.98, N=20,214
+[18:38:26] [INFO]     Q3  : λ=1053km, R²=0.79, N=24,433
+[18:38:26] [INFO]     Q4  : λ=1121km, R²=0.98, N=11,738
+[18:38:26] [INFO]     Q5  : λ=764km, R²=0.97, N=53,491
+[18:38:26] [INFO]   Fitting pos_jitter/phase_alignment...
+[18:38:26] [INFO]     Q1  : λ=3756km, R²=1.00, N=13,034
+[18:38:26] [INFO]     Q2  : λ=4973km, R²=0.99, N=20,214
+[18:38:26] [INFO]     Q3  : λ=13874km, R²=1.00, N=24,433
+[18:38:26] [INFO]     Q4  : λ=4521km, R²=0.98, N=11,738
+[18:38:26] [INFO]     Q5  : λ=4119km, R²=0.97, N=53,491
+[18:38:26] [INFO] 
+Processing clock_drift...
+[18:38:26] [INFO]   Filtered to 100 stations
+[18:38:26] [INFO]   Q1: -13m - 81m (15 stations)
+[18:38:26] [INFO]   Q2: 41m - 156m (15 stations)
+[18:38:26] [INFO]   Q3: 76m - 593m (15 stations)
+[18:38:26] [INFO]   Q4: 77m - 1163m (15 stations)
+[18:38:26] [INFO]   Q5: 105m - 2489m (28 stations)
+[18:38:29] [INFO]   Fitting clock_drift/msc...
+[18:38:29] [INFO]     Q1  : λ=652km, R²=0.97, N=13,034
+[18:38:29] [INFO]     Q2  : λ=561km, R²=0.94, N=20,214
+[18:38:29] [INFO]     Q3  : λ=921km, R²=0.71, N=24,433
+[18:38:29] [INFO]     Q4  : λ=863km, R²=0.98, N=11,738
+[18:38:29] [INFO]     Q5  : λ=666km, R²=0.91, N=53,491
+[18:38:29] [INFO]   Fitting clock_drift/phase_alignment...
+[18:38:29] [INFO]     Q1  : λ=868km, R²=0.99, N=13,034
+[18:38:29] [INFO]     Q2  : λ=1569km, R²=0.96, N=20,214
+[18:38:29] [INFO]     Q3  : λ=976km, R²=0.76, N=24,433
+[18:38:29] [INFO]     Q4  : λ=1633km, R²=0.93, N=11,738
+[18:38:29] [INFO]     Q5  : λ=769km, R²=0.93, N=53,491
+[18:38:30] [INFO] 
+============================================================
+[18:38:30] [INFO] MODE: IONOFREE (Dual-frequency L1+L2 ionosphere-free)
+[18:38:30] [INFO] ============================================================
+[18:38:30] [INFO] 
+[18:38:30] [INFO] 
+Processing clock_bias...
+[18:38:30] [INFO]   Filtered to 100 stations
+[18:38:30] [INFO]   Q1: -13m - 81m (15 stations)
+[18:38:30] [INFO]   Q2: 41m - 156m (15 stations)
+[18:38:30] [INFO]   Q3: 76m - 593m (15 stations)
+[18:38:30] [INFO]   Q4: 77m - 1163m (15 stations)
+[18:38:30] [INFO]   Q5: 105m - 2489m (28 stations)
+[18:38:33] [INFO]   Fitting clock_bias/msc...
+[18:38:33] [INFO]     Q1  : λ=806km, R²=1.00, N=13,014
+[18:38:33] [INFO]     Q2  : λ=629km, R²=0.94, N=19,694
+[18:38:33] [INFO]     Q3  : λ=1053km, R²=0.63, N=24,304
+[18:38:33] [INFO]     Q4  : λ=2143km, R²=0.75, N=11,701
+[18:38:33] [INFO]     Q5  : λ=771km, R²=0.91, N=53,176
+[18:38:33] [INFO]   Fitting clock_bias/phase_alignment...
+[18:38:33] [INFO]     Q1  : λ=2503km, R²=0.96, N=13,014
+[18:38:33] [INFO]     Q2  : λ=2658km, R²=0.95, N=19,694
+[18:38:33] [INFO]     Q3  : λ=1661km, R²=0.75, N=24,304
+[18:38:33] [INFO]     Q4  : λ=1532km, R²=0.59, N=11,701
+[18:38:33] [INFO]     Q5  : λ=2712km, R²=0.89, N=53,176
+[18:38:33] [INFO] 
+Processing pos_jitter...
+[18:38:33] [INFO]   Filtered to 100 stations
+[18:38:33] [INFO]   Q1: -13m - 81m (15 stations)
+[18:38:33] [INFO]   Q2: 41m - 156m (15 stations)
+[18:38:33] [INFO]   Q3: 76m - 593m (15 stations)
+[18:38:33] [INFO]   Q4: 77m - 1163m (15 stations)
+[18:38:33] [INFO]   Q5: 105m - 2489m (28 stations)
+[18:38:37] [INFO]   Fitting pos_jitter/msc...
+[18:38:37] [INFO]     Q1  : λ=420km, R²=0.91, N=13,014
+[18:38:37] [INFO]     Q2  : λ=369km, R²=0.90, N=19,694
+[18:38:37] [INFO]     Q3  : λ=678km, R²=0.73, N=24,304
+[18:38:37] [INFO]     Q4  : λ=2577km, R²=0.75, N=11,701
+[18:38:37] [INFO]     Q5  : λ=644km, R²=0.92, N=53,176
+[18:38:37] [INFO]   Fitting pos_jitter/phase_alignment...
+[18:38:37] [INFO]     Q1  : λ=5558km, R²=0.97, N=13,014
+[18:38:37] [INFO]     Q2  : λ=544km, R²=0.66, N=19,694
+[18:38:37] [INFO]     Q3  : λ=1082km, R²=0.83, N=24,304
+[18:38:37] [INFO]     Q4  : λ=2434km, R²=0.75, N=11,701
+[18:38:37] [INFO]     Q5  : λ=1571km, R²=0.95, N=53,176
+[18:38:37] [INFO] 
+Processing clock_drift...
+[18:38:37] [INFO]   Filtered to 100 stations
+[18:38:37] [INFO]   Q1: -13m - 81m (15 stations)
+[18:38:37] [INFO]   Q2: 41m - 156m (15 stations)
+[18:38:37] [INFO]   Q3: 76m - 593m (15 stations)
+[18:38:37] [INFO]   Q4: 77m - 1163m (15 stations)
+[18:38:37] [INFO]   Q5: 105m - 2489m (28 stations)
+[18:38:41] [INFO]   Fitting clock_drift/msc...
+[18:38:41] [INFO]     Q1  : λ=752km, R²=0.99, N=13,014
+[18:38:41] [INFO]     Q2  : λ=604km, R²=0.94, N=19,694
+[18:38:41] [INFO]     Q3  : λ=1096km, R²=0.68, N=24,304
+[18:38:41] [INFO]     Q4  : λ=2049km, R²=0.78, N=11,701
+[18:38:41] [INFO]     Q5  : λ=774km, R²=0.91, N=53,176
+[18:38:41] [INFO]   Fitting clock_drift/phase_alignment...
+[18:38:41] [INFO]     Q1  : λ=1126km, R²=0.99, N=13,014
+[18:38:41] [INFO]     Q2  : λ=1517km, R²=0.96, N=19,694
+[18:38:41] [INFO]     Q3  : λ=941km, R²=0.71, N=24,304
+[18:38:41] [INFO]     Q4  : λ=1306km, R²=0.96, N=11,701
+[18:38:41] [INFO]     Q5  : λ=702km, R²=0.89, N=53,176
+[18:38:41] [INFO] 
+============================================================
+[18:38:41] [INFO] MODE: MULTI_GNSS (GPS+GLO+GAL+BDS)
+[18:38:41] [INFO] ============================================================
+[18:38:41] [INFO] 
+[18:38:41] [INFO] 
+Processing clock_bias...
+[18:38:41] [INFO]   Filtered to 100 stations
+[18:38:41] [INFO]   Q1: -13m - 81m (15 stations)
+[18:38:41] [INFO]   Q2: 41m - 156m (15 stations)
+[18:38:41] [INFO]   Q3: 76m - 593m (15 stations)
+[18:38:41] [INFO]   Q4: 77m - 1163m (15 stations)
+[18:38:41] [INFO]   Q5: 105m - 2489m (28 stations)
+[18:38:45] [INFO]   Fitting clock_bias/msc...
+[18:38:45] [INFO]     Q1  : λ=930km, R²=0.94, N=12,805
+[18:38:45] [INFO]     Q2  : λ=663km, R²=0.93, N=19,521
+[18:38:45] [INFO]     Q3  : λ=905km, R²=0.62, N=23,924
+[18:38:45] [INFO]     Q4  : λ=343km, R²=0.99, N=11,541
+[18:38:45] [INFO]     Q5  : λ=763km, R²=0.76, N=51,783
+[18:38:45] [INFO]   Fitting clock_bias/phase_alignment...
+[18:38:45] [INFO]     Q1  : λ=2341km, R²=1.00, N=12,805
+[18:38:45] [INFO]     Q2  : λ=2915km, R²=0.94, N=19,521
+[18:38:45] [INFO]     Q3  : λ=1847km, R²=0.69, N=23,924
+[18:38:45] [INFO]     Q4  : λ=2523km, R²=0.92, N=11,541
+[18:38:45] [INFO]     Q5  : λ=2444km, R²=0.82, N=51,783
+[18:38:45] [INFO] 
+Processing pos_jitter...
+[18:38:45] [INFO]   Filtered to 100 stations
+[18:38:45] [INFO]   Q1: -13m - 81m (15 stations)
+[18:38:45] [INFO]   Q2: 41m - 156m (15 stations)
+[18:38:45] [INFO]   Q3: 76m - 593m (15 stations)
+[18:38:45] [INFO]   Q4: 77m - 1163m (15 stations)
+[18:38:45] [INFO]   Q5: 105m - 2489m (28 stations)
+[18:38:48] [INFO]   Fitting pos_jitter/msc...
+[18:38:48] [INFO]     Q1  : λ=608km, R²=0.96, N=12,805
+[18:38:48] [INFO]     Q2  : λ=692km, R²=0.99, N=19,521
+[18:38:48] [INFO]     Q3  : λ=1258km, R²=0.81, N=23,924
+[18:38:48] [INFO]     Q4  : λ=228km, R²=0.96, N=11,541
+[18:38:48] [INFO]     Q5  : λ=913km, R²=0.88, N=51,783
+[18:38:48] [INFO]   Fitting pos_jitter/phase_alignment...
+[18:38:48] [INFO]     Q1  : λ=2418km, R²=0.99, N=12,805
+[18:38:48] [INFO]     Q2  : λ=5414km, R²=0.99, N=19,521
+[18:38:48] [INFO]     Q3  : λ=11632km, R²=1.00, N=23,924
+[18:38:48] [INFO]     Q4  : λ=2299km, R²=1.00, N=11,541
+[18:38:48] [INFO]     Q5  : λ=4690km, R²=0.99, N=51,783
+[18:38:49] [INFO] 
+Processing clock_drift...
+[18:38:49] [INFO]   Filtered to 100 stations
+[18:38:49] [INFO]   Q1: -13m - 81m (15 stations)
+[18:38:49] [INFO]   Q2: 41m - 156m (15 stations)
+[18:38:49] [INFO]   Q3: 76m - 593m (15 stations)
+[18:38:49] [INFO]   Q4: 77m - 1163m (15 stations)
+[18:38:49] [INFO]   Q5: 105m - 2489m (28 stations)
+[18:38:52] [INFO]   Fitting clock_drift/msc...
+[18:38:52] [INFO]     Q1  : λ=921km, R²=0.94, N=12,805
+[18:38:52] [INFO]     Q2  : λ=653km, R²=0.92, N=19,521
+[18:38:52] [INFO]     Q3  : λ=881km, R²=0.62, N=23,924
+[18:38:52] [INFO]     Q4  : λ=307km, R²=0.99, N=11,541
+[18:38:52] [INFO]     Q5  : λ=752km, R²=0.77, N=51,783
+[18:38:52] [INFO]   Fitting clock_drift/phase_alignment...
+[18:38:52] [INFO]     Q1  : λ=1127km, R²=0.98, N=12,805
+[18:38:52] [INFO]     Q2  : λ=1171km, R²=0.95, N=19,521
+[18:38:52] [INFO]     Q3  : λ=1280km, R²=0.70, N=23,924
+[18:38:52] [INFO]     Q4  : λ=1467km, R²=0.94, N=11,541
+[18:38:52] [INFO]     Q5  : λ=1009km, R²=0.93, N=51,783
+[18:38:52] [SUCCESS] Saved: step_2_1_elevation_analysis_optimal_100_lat10_sr200.json
+[18:38:52] [INFO] 
+################################################################################
+[18:38:52] [INFO] # FILTER: DYNAMIC_50
+[18:38:52] [INFO] ################################################################################
+[18:38:52] [INFO]   Using 400 stations from dynamic_50_metadata.json
+[18:38:52] [INFO] 
+============================================================
+[18:38:52] [INFO] MODE: PRECISE (GPS SPP with Precise Orbits)
+[18:38:52] [INFO] ============================================================
+[18:38:52] [INFO] 
+[18:38:52] [INFO] 
+Processing clock_bias...
+[18:38:52] [INFO]   Filtered to 400 stations
+[18:38:52] [INFO]   Q1: -78m - 84m (74 stations)
+[18:38:52] [INFO]   Q2: -14m - 241m (74 stations)
+[18:38:52] [INFO]   Q3: 9m - 571m (74 stations)
+[18:38:52] [INFO]   Q4: 32m - 1509m (74 stations)
+[18:38:52] [INFO]   Q5: 50m - 3755m (101 stations)
+[18:39:48] [INFO]   Fitting clock_bias/msc...
+[18:39:48] [INFO]     Q1  : λ=1244km, R²=0.95, N=166,311
+[18:39:48] [INFO]     Q2  : λ=936km, R²=0.95, N=212,476
+[18:39:48] [INFO]     Q3  : λ=1157km, R²=0.93, N=207,022
+[18:39:48] [INFO]     Q4  : λ=963km, R²=0.96, N=152,535
+[18:39:48] [INFO]     Q5  : λ=1048km, R²=0.94, N=251,887
+[18:39:48] [INFO]   Fitting clock_bias/phase_alignment...
+[18:39:48] [INFO]     Q1  : λ=1300km, R²=0.70, N=166,311
+[18:39:48] [INFO]     Q2  : λ=1786km, R²=0.67, N=212,476
+[18:39:48] [INFO]     Q3  : λ=1518km, R²=0.63, N=207,022
+[18:39:48] [INFO]     Q4  : λ=1454km, R²=0.60, N=152,535
+[18:39:48] [INFO]     Q5  : λ=2223km, R²=0.82, N=251,887
+[18:39:49] [INFO] 
+Processing pos_jitter...
+[18:39:49] [INFO]   Filtered to 400 stations
+[18:39:49] [INFO]   Q1: -78m - 84m (74 stations)
+[18:39:49] [INFO]   Q2: -14m - 241m (74 stations)
+[18:39:49] [INFO]   Q3: 9m - 571m (74 stations)
+[18:39:49] [INFO]   Q4: 32m - 1509m (74 stations)
+[18:39:49] [INFO]   Q5: 50m - 3755m (101 stations)
+[18:40:45] [INFO]   Fitting pos_jitter/msc...
+[18:40:45] [INFO]     Q1  : λ=1158km, R²=0.88, N=166,311
+[18:40:45] [INFO]     Q2  : λ=773km, R²=0.89, N=212,476
+[18:40:45] [INFO]     Q3  : λ=979km, R²=0.87, N=207,022
+[18:40:45] [INFO]     Q4  : λ=1024km, R²=0.88, N=152,535
+[18:40:45] [INFO]     Q5  : λ=1133km, R²=0.84, N=251,887
+[18:40:45] [INFO]   Fitting pos_jitter/phase_alignment...
+[18:40:45] [INFO]     Q1  : λ=2560km, R²=0.93, N=166,311
+[18:40:45] [INFO]     Q2  : λ=15986km, R²=0.74, N=212,476
+[18:40:45] [INFO]     Q3  : λ=1560km, R²=0.84, N=207,022
+[18:40:45] [INFO]     Q4  : λ=1444km, R²=0.76, N=152,535
+[18:40:45] [INFO]     Q5  : λ=1396km, R²=0.89, N=251,887
+[18:40:46] [INFO] 
+Processing clock_drift...
+[18:40:46] [INFO]   Filtered to 400 stations
+[18:40:46] [INFO]   Q1: -78m - 84m (74 stations)
+[18:40:46] [INFO]   Q2: -14m - 241m (74 stations)
+[18:40:46] [INFO]   Q3: 9m - 571m (74 stations)
+[18:40:46] [INFO]   Q4: 32m - 1509m (74 stations)
+[18:40:46] [INFO]   Q5: 50m - 3755m (101 stations)
+[18:41:41] [INFO]   Fitting clock_drift/msc...
+[18:41:41] [INFO]     Q1  : λ=1237km, R²=0.95, N=166,311
+[18:41:41] [INFO]     Q2  : λ=896km, R²=0.94, N=212,476
+[18:41:41] [INFO]     Q3  : λ=1209km, R²=0.93, N=207,022
+[18:41:41] [INFO]     Q4  : λ=958km, R²=0.96, N=152,535
+[18:41:41] [INFO]     Q5  : λ=1093km, R²=0.94, N=251,887
+[18:41:41] [INFO]   Fitting clock_drift/phase_alignment...
+[18:41:41] [INFO]     Q1  : λ=964km, R²=0.90, N=166,311
+[18:41:41] [INFO]     Q2  : λ=1158km, R²=0.82, N=212,476
+[18:41:41] [INFO]     Q3  : λ=1078km, R²=0.76, N=207,022
+[18:41:41] [INFO]     Q4  : λ=1010km, R²=0.82, N=152,535
+[18:41:41] [INFO]     Q5  : λ=1205km, R²=0.88, N=251,887
+[18:41:42] [INFO] 
+============================================================
+[18:41:42] [INFO] MODE: BASELINE (GPS L1 only)
+[18:41:42] [INFO] ============================================================
+[18:41:42] [INFO] 
+[18:41:42] [INFO] 
+Processing clock_bias...
+[18:41:42] [INFO]   Filtered to 400 stations
+[18:41:42] [INFO]   Q1: -78m - 84m (74 stations)
+[18:41:42] [INFO]   Q2: -14m - 241m (74 stations)
+[18:41:42] [INFO]   Q3: 9m - 571m (74 stations)
+[18:41:42] [INFO]   Q4: 32m - 1509m (74 stations)
+[18:41:42] [INFO]   Q5: 50m - 3755m (101 stations)
+[18:42:38] [INFO]   Fitting clock_bias/msc...
+[18:42:38] [INFO]     Q1  : λ=740km, R²=0.94, N=173,523
+[18:42:38] [INFO]     Q2  : λ=728km, R²=0.91, N=233,216
+[18:42:38] [INFO]     Q3  : λ=834km, R²=0.93, N=214,090
+[18:42:38] [INFO]     Q4  : λ=566km, R²=0.95, N=156,430
+[18:42:38] [INFO]     Q5  : λ=720km, R²=0.93, N=256,726
+[18:42:38] [INFO]   Fitting clock_bias/phase_alignment...
+[18:42:38] [INFO]     Q1  : λ=1361km, R²=0.92, N=173,523
+[18:42:38] [INFO]     Q2  : λ=1908km, R²=0.86, N=233,216
+[18:42:38] [INFO]     Q3  : λ=1968km, R²=0.92, N=214,090
+[18:42:38] [INFO]     Q4  : λ=2104km, R²=0.94, N=156,430
+[18:42:38] [INFO]     Q5  : λ=2778km, R²=0.93, N=256,726
+[18:42:39] [INFO] 
+Processing pos_jitter...
+[18:42:39] [INFO]   Filtered to 400 stations
+[18:42:39] [INFO]   Q1: -78m - 84m (74 stations)
+[18:42:39] [INFO]   Q2: -14m - 241m (74 stations)
+[18:42:39] [INFO]   Q3: 9m - 571m (74 stations)
+[18:42:39] [INFO]   Q4: 32m - 1509m (74 stations)
+[18:42:39] [INFO]   Q5: 50m - 3755m (101 stations)
+[18:43:36] [INFO]   Fitting pos_jitter/msc...
+[18:43:36] [INFO]     Q1  : λ=1025km, R²=0.94, N=173,523
+[18:43:36] [INFO]     Q2  : λ=713km, R²=0.93, N=233,216
+[18:43:36] [INFO]     Q3  : λ=924km, R²=0.95, N=214,090
+[18:43:36] [INFO]     Q4  : λ=749km, R²=0.96, N=156,430
+[18:43:36] [INFO]     Q5  : λ=812km, R²=0.95, N=256,726
+[18:43:36] [INFO]   Fitting pos_jitter/phase_alignment...
+[18:43:36] [INFO]     Q1  : λ=2381km, R²=0.98, N=173,523
+[18:43:36] [INFO]     Q2  : λ=2459km, R²=0.95, N=233,216
+[18:43:36] [INFO]     Q3  : λ=2401km, R²=0.97, N=214,090
+[18:43:36] [INFO]     Q4  : λ=2095km, R²=0.94, N=156,430
+[18:43:36] [INFO]     Q5  : λ=2664km, R²=0.95, N=256,726
+[18:43:37] [INFO] 
+Processing clock_drift...
+[18:43:37] [INFO]   Filtered to 400 stations
+[18:43:37] [INFO]   Q1: -78m - 84m (74 stations)
+[18:43:37] [INFO]   Q2: -14m - 241m (74 stations)
+[18:43:37] [INFO]   Q3: 9m - 571m (74 stations)
+[18:43:37] [INFO]   Q4: 32m - 1509m (74 stations)
+[18:43:37] [INFO]   Q5: 50m - 3755m (101 stations)
+[18:44:33] [INFO]   Fitting clock_drift/msc...
+[18:44:33] [INFO]     Q1  : λ=733km, R²=0.94, N=173,523
+[18:44:33] [INFO]     Q2  : λ=705km, R²=0.90, N=233,216
+[18:44:33] [INFO]     Q3  : λ=818km, R²=0.94, N=214,090
+[18:44:33] [INFO]     Q4  : λ=561km, R²=0.95, N=156,430
+[18:44:33] [INFO]     Q5  : λ=714km, R²=0.94, N=256,726
+[18:44:33] [INFO]   Fitting clock_drift/phase_alignment...
+[18:44:33] [INFO]     Q1  : λ=1007km, R²=0.97, N=173,523
+[18:44:33] [INFO]     Q2  : λ=1044km, R²=0.91, N=233,216
+[18:44:33] [INFO]     Q3  : λ=934km, R²=0.91, N=214,090
+[18:44:33] [INFO]     Q4  : λ=885km, R²=0.95, N=156,430
+[18:44:33] [INFO]     Q5  : λ=937km, R²=0.92, N=256,726
+[18:44:34] [INFO] 
+============================================================
+[18:44:34] [INFO] MODE: IONOFREE (Dual-frequency L1+L2 ionosphere-free)
+[18:44:34] [INFO] ============================================================
+[18:44:34] [INFO] 
+[18:44:34] [INFO] 
+Processing clock_bias...
+[18:44:34] [INFO]   Filtered to 400 stations
+[18:44:34] [INFO]   Q1: -78m - 84m (74 stations)
+[18:44:34] [INFO]   Q2: -14m - 241m (74 stations)
+[18:44:34] [INFO]   Q3: 9m - 571m (74 stations)
+[18:44:34] [INFO]   Q4: 32m - 1509m (74 stations)
+[18:44:34] [INFO]   Q5: 50m - 3755m (101 stations)
+[18:45:30] [INFO]   Fitting clock_bias/msc...
+[18:45:30] [INFO]     Q1  : λ=1028km, R²=0.95, N=168,298
+[18:45:30] [INFO]     Q2  : λ=874km, R²=0.96, N=214,642
+[18:45:30] [INFO]     Q3  : λ=1014km, R²=0.94, N=208,198
+[18:45:30] [INFO]     Q4  : λ=933km, R²=0.95, N=154,676
+[18:45:30] [INFO]     Q5  : λ=1043km, R²=0.93, N=254,324
+[18:45:30] [INFO]   Fitting clock_bias/phase_alignment...
+[18:45:30] [INFO]     Q1  : λ=1544km, R²=0.83, N=168,298
+[18:45:30] [INFO]     Q2  : λ=2114km, R²=0.81, N=214,642
+[18:45:30] [INFO]     Q3  : λ=1834km, R²=0.76, N=208,198
+[18:45:30] [INFO]     Q4  : λ=1715km, R²=0.85, N=154,676
+[18:45:30] [INFO]     Q5  : λ=2374km, R²=0.89, N=254,324
+[18:45:31] [INFO] 
+Processing pos_jitter...
+[18:45:31] [INFO]   Filtered to 400 stations
+[18:45:31] [INFO]   Q1: -78m - 84m (74 stations)
+[18:45:31] [INFO]   Q2: -14m - 241m (74 stations)
+[18:45:31] [INFO]   Q3: 9m - 571m (74 stations)
+[18:45:31] [INFO]   Q4: 32m - 1509m (74 stations)
+[18:45:31] [INFO]   Q5: 50m - 3755m (101 stations)
+[18:46:26] [INFO]   Fitting pos_jitter/msc...
+[18:46:26] [INFO]     Q1  : λ=1111km, R²=0.91, N=168,298
+[18:46:26] [INFO]     Q2  : λ=658km, R²=0.88, N=214,642
+[18:46:26] [INFO]     Q3  : λ=961km, R²=0.92, N=208,198
+[18:46:26] [INFO]     Q4  : λ=933km, R²=0.89, N=154,676
+[18:46:26] [INFO]     Q5  : λ=1030km, R²=0.81, N=254,324
+[18:46:26] [INFO]   Fitting pos_jitter/phase_alignment...
+[18:46:26] [INFO]     Q1  : λ=2482km, R²=0.97, N=168,298
+[18:46:26] [INFO]     Q2  : λ=8700km, R²=0.82, N=214,642
+[18:46:26] [INFO]     Q3  : λ=1784km, R²=0.89, N=208,198
+[18:46:26] [INFO]     Q4  : λ=1730km, R²=0.86, N=154,676
+[18:46:26] [INFO]     Q5  : λ=1582km, R²=0.93, N=254,324
+[18:46:27] [INFO] 
+Processing clock_drift...
+[18:46:27] [INFO]   Filtered to 400 stations
+[18:46:27] [INFO]   Q1: -78m - 84m (74 stations)
+[18:46:27] [INFO]   Q2: -14m - 241m (74 stations)
+[18:46:27] [INFO]   Q3: 9m - 571m (74 stations)
+[18:46:27] [INFO]   Q4: 32m - 1509m (74 stations)
+[18:46:27] [INFO]   Q5: 50m - 3755m (101 stations)
+[18:47:22] [INFO]   Fitting clock_drift/msc...
+[18:47:22] [INFO]     Q1  : λ=1051km, R²=0.95, N=168,298
+[18:47:22] [INFO]     Q2  : λ=828km, R²=0.95, N=214,642
+[18:47:22] [INFO]     Q3  : λ=1072km, R²=0.95, N=208,198
+[18:47:22] [INFO]     Q4  : λ=926km, R²=0.95, N=154,676
+[18:47:22] [INFO]     Q5  : λ=1081km, R²=0.93, N=254,324
+[18:47:22] [INFO]   Fitting clock_drift/phase_alignment...
+[18:47:22] [INFO]     Q1  : λ=1005km, R²=0.94, N=168,298
+[18:47:22] [INFO]     Q2  : λ=1073km, R²=0.89, N=214,642
+[18:47:22] [INFO]     Q3  : λ=993km, R²=0.83, N=208,198
+[18:47:22] [INFO]     Q4  : λ=1016km, R²=0.89, N=154,676
+[18:47:22] [INFO]     Q5  : λ=1210km, R²=0.91, N=254,324
+[18:47:23] [INFO] 
+============================================================
+[18:47:23] [INFO] MODE: MULTI_GNSS (GPS+GLO+GAL+BDS)
+[18:47:23] [INFO] ============================================================
+[18:47:23] [INFO] 
+[18:47:23] [INFO] 
+Processing clock_bias...
+[18:47:23] [INFO]   Filtered to 400 stations
+[18:47:23] [INFO]   Q1: -78m - 84m (74 stations)
+[18:47:23] [INFO]   Q2: -14m - 241m (74 stations)
+[18:47:23] [INFO]   Q3: 9m - 571m (74 stations)
+[18:47:23] [INFO]   Q4: 32m - 1509m (74 stations)
+[18:47:23] [INFO]   Q5: 50m - 3755m (101 stations)
+[18:48:17] [INFO]   Fitting clock_bias/msc...
+[18:48:17] [INFO]     Q1  : λ=814km, R²=0.92, N=165,131
+[18:48:17] [INFO]     Q2  : λ=1017km, R²=0.89, N=213,292
+[18:48:17] [INFO]     Q3  : λ=1386km, R²=0.89, N=199,724
+[18:48:17] [INFO]     Q4  : λ=496km, R²=0.93, N=149,782
+[18:48:18] [INFO]     Q5  : λ=632km, R²=0.84, N=248,655
+[18:48:18] [INFO]   Fitting clock_bias/phase_alignment...
+[18:48:18] [INFO]     Q1  : λ=1460km, R²=0.94, N=165,131
+[18:48:18] [INFO]     Q2  : λ=2181km, R²=0.91, N=213,292
+[18:48:18] [INFO]     Q3  : λ=2307km, R²=0.92, N=199,724
+[18:48:18] [INFO]     Q4  : λ=1891km, R²=0.88, N=149,782
+[18:48:18] [INFO]     Q5  : λ=3499km, R²=0.88, N=248,655
+[18:48:18] [INFO] 
+Processing pos_jitter...
+[18:48:18] [INFO]   Filtered to 400 stations
+[18:48:18] [INFO]   Q1: -78m - 84m (74 stations)
+[18:48:18] [INFO]   Q2: -14m - 241m (74 stations)
+[18:48:18] [INFO]   Q3: 9m - 571m (74 stations)
+[18:48:18] [INFO]   Q4: 32m - 1509m (74 stations)
+[18:48:18] [INFO]   Q5: 50m - 3755m (101 stations)
+[18:49:11] [INFO]   Fitting pos_jitter/msc...
+[18:49:11] [INFO]     Q1  : λ=999km, R²=0.94, N=165,131
+[18:49:11] [INFO]     Q2  : λ=775km, R²=0.94, N=213,292
+[18:49:11] [INFO]     Q3  : λ=1036km, R²=0.96, N=199,724
+[18:49:11] [INFO]     Q4  : λ=642km, R²=0.94, N=149,782
+[18:49:11] [INFO]     Q5  : λ=798km, R²=0.91, N=248,655
+[18:49:11] [INFO]   Fitting pos_jitter/phase_alignment...
+[18:49:11] [INFO]     Q1  : λ=2210km, R²=0.98, N=165,131
+[18:49:11] [INFO]     Q2  : λ=2420km, R²=0.95, N=213,292
+[18:49:11] [INFO]     Q3  : λ=2332km, R²=0.97, N=199,724
+[18:49:11] [INFO]     Q4  : λ=2076km, R²=0.95, N=149,782
+[18:49:11] [INFO]     Q5  : λ=2405km, R²=0.93, N=248,655
+[18:49:12] [INFO] 
+Processing clock_drift...
+[18:49:12] [INFO]   Filtered to 400 stations
+[18:49:12] [INFO]   Q1: -78m - 84m (74 stations)
+[18:49:12] [INFO]   Q2: -14m - 241m (74 stations)
+[18:49:12] [INFO]   Q3: 9m - 571m (74 stations)
+[18:49:12] [INFO]   Q4: 32m - 1509m (74 stations)
+[18:49:12] [INFO]   Q5: 50m - 3755m (101 stations)
+[18:50:05] [INFO]   Fitting clock_drift/msc...
+[18:50:05] [INFO]     Q1  : λ=801km, R²=0.92, N=164,510
+[18:50:05] [INFO]     Q2  : λ=986km, R²=0.88, N=212,601
+[18:50:05] [INFO]     Q3  : λ=1352km, R²=0.89, N=198,970
+[18:50:05] [INFO]     Q4  : λ=479km, R²=0.93, N=149,162
+[18:50:05] [INFO]     Q5  : λ=615km, R²=0.85, N=247,736
+[18:50:05] [INFO]   Fitting clock_drift/phase_alignment...
+[18:50:05] [INFO]     Q1  : λ=1060km, R²=0.97, N=164,510
+[18:50:05] [INFO]     Q2  : λ=1142km, R²=0.95, N=212,601
+[18:50:05] [INFO]     Q3  : λ=1118km, R²=0.94, N=198,970
+[18:50:05] [INFO]     Q4  : λ=760km, R²=0.95, N=149,162
+[18:50:05] [INFO]     Q5  : λ=847km, R²=0.91, N=247,736
+[18:50:06] [SUCCESS] Saved: step_2_1_elevation_analysis_dynamic_50_lat10_sr200.json
+[18:50:06] [SUCCESS] Saved figure to /Users/matthewsmawfield/www/TEP-GNSS-RINEX/results/figures/step_2_1_elevation_analysis_lat10_sr200.png
+[18:50:06] [SUCCESS] COMPLETE: 3 filters × 4 modes
