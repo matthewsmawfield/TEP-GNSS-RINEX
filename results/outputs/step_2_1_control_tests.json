@@ -1,0 +1,324 @@
+{
+  "step": "2.1",
+  "timestamp": "2025-12-07T14:25:42.459603",
+  "results": {
+    "clock_bias": {
+      "msc": {
+        "global": {
+          "amplitude": 0.18303786612608294,
+          "lambda_km": 724.8156980829823,
+          "lambda_err": 49.78822444644238,
+          "offset": 0.5485356981079497,
+          "r_squared": 0.953982275550216,
+          "n_pairs": 59600372,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "europe": {
+          "amplitude": 0.16173052425060647,
+          "lambda_km": 567.3383883669856,
+          "lambda_err": 77.30202987719724,
+          "offset": 0.5581021793236185,
+          "r_squared": 0.9007042606649514,
+          "n_pairs": 4899392,
+          "n_bins": 32,
+          "boundary_hit": false
+        },
+        "non_europe": {
+          "amplitude": 0.19765889947034188,
+          "lambda_km": 853.0963243303568,
+          "lambda_err": 50.58945911388194,
+          "offset": 0.5478274505391384,
+          "r_squared": 0.9649655423306042,
+          "n_pairs": 31233674,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "northern": {
+          "amplitude": 0.18841369959525914,
+          "lambda_km": 688.489674288235,
+          "lambda_err": 41.94679917315835,
+          "offset": 0.5493321353525232,
+          "r_squared": 0.9641203928274716,
+          "n_pairs": 38162627,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "southern": {
+          "amplitude": 0.11059652957395792,
+          "lambda_km": 1314.7352243322136,
+          "lambda_err": 132.9070208050405,
+          "offset": 0.5444160321826291,
+          "r_squared": 0.9006540303886583,
+          "n_pairs": 4743277,
+          "n_bins": 34,
+          "boundary_hit": false
+        }
+      },
+      "phase_alignment": {
+        "global": {
+          "amplitude": 1.0574513258332465,
+          "lambda_km": 1783.8682222138632,
+          "lambda_err": 203.97292242638505,
+          "offset": -0.055057571150166566,
+          "r_squared": 0.9044798715166165,
+          "n_pairs": 59600372,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "europe": {
+          "amplitude": 1.6736410078045727,
+          "lambda_km": 10669.495687647259,
+          "lambda_err": 18739.117066242674,
+          "offset": -0.9999999643746391,
+          "r_squared": 0.8427055550724636,
+          "n_pairs": 4899392,
+          "n_bins": 32,
+          "boundary_hit": true
+        },
+        "non_europe": {
+          "amplitude": 1.1890605082199772,
+          "lambda_km": 1629.9790725187045,
+          "lambda_err": 154.00033360567687,
+          "offset": -0.03329220049841365,
+          "r_squared": 0.9083466772554684,
+          "n_pairs": 31233674,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "northern": {
+          "amplitude": 1.0916974078784756,
+          "lambda_km": 1947.2414759334126,
+          "lambda_err": 257.42413085119455,
+          "offset": -0.09287467913086933,
+          "r_squared": 0.8915372774636472,
+          "n_pairs": 38162627,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "southern": {
+          "amplitude": 0.9375108085488429,
+          "lambda_km": 1678.0652594504804,
+          "lambda_err": 208.579215971645,
+          "offset": -0.0318998203879138,
+          "r_squared": 0.8715121050964928,
+          "n_pairs": 4743277,
+          "n_bins": 34,
+          "boundary_hit": false
+        }
+      }
+    },
+    "pos_jitter": {
+      "msc": {
+        "global": {
+          "amplitude": 0.22272399469022508,
+          "lambda_km": 881.1380880829175,
+          "lambda_err": 40.72550003505445,
+          "offset": 0.5492977961410411,
+          "r_squared": 0.9792649719417927,
+          "n_pairs": 59600372,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "europe": {
+          "amplitude": 0.29366942059378087,
+          "lambda_km": 571.5709441932296,
+          "lambda_err": 10.537510455880382,
+          "offset": 0.5628968353664944,
+          "r_squared": 0.9979982064652039,
+          "n_pairs": 4899392,
+          "n_bins": 32,
+          "boundary_hit": false
+        },
+        "non_europe": {
+          "amplitude": 0.19101695683481842,
+          "lambda_km": 1046.1313843249875,
+          "lambda_err": 51.78995249658004,
+          "offset": 0.5481608818809641,
+          "r_squared": 0.9734289569241547,
+          "n_pairs": 31233674,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "northern": {
+          "amplitude": 0.2261110843638943,
+          "lambda_km": 848.415580262,
+          "lambda_err": 33.67408052668436,
+          "offset": 0.550068760797183,
+          "r_squared": 0.9850547239420394,
+          "n_pairs": 38162627,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "southern": {
+          "amplitude": 0.1933247197531355,
+          "lambda_km": 1116.3241372547723,
+          "lambda_err": 71.56236008923075,
+          "offset": 0.5464725364992191,
+          "r_squared": 0.955652252498814,
+          "n_pairs": 4743277,
+          "n_bins": 34,
+          "boundary_hit": false
+        }
+      },
+      "phase_alignment": {
+        "global": {
+          "amplitude": 1.3440485102063766,
+          "lambda_km": 2013.4222595345914,
+          "lambda_err": 135.59123736590726,
+          "offset": -0.04173090246233065,
+          "r_squared": 0.966673321106614,
+          "n_pairs": 59600372,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "europe": {
+          "amplitude": 1.999999999999959,
+          "lambda_km": 5394.457232293847,
+          "lambda_err": 2793.5707531802595,
+          "offset": -0.8121003055604245,
+          "r_squared": 0.9465345938179565,
+          "n_pairs": 4899392,
+          "n_bins": 32,
+          "boundary_hit": true
+        },
+        "non_europe": {
+          "amplitude": 1.2429766681496526,
+          "lambda_km": 1968.3553810952726,
+          "lambda_err": 117.82660992420705,
+          "offset": -0.03209650634510115,
+          "r_squared": 0.9638071380298457,
+          "n_pairs": 31233674,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "northern": {
+          "amplitude": 1.33088757453107,
+          "lambda_km": 2073.9109590335847,
+          "lambda_err": 155.97776861226873,
+          "offset": -0.04138979687720442,
+          "r_squared": 0.9636192398132105,
+          "n_pairs": 38162627,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "southern": {
+          "amplitude": 1.4258582498526786,
+          "lambda_km": 1710.0918992967959,
+          "lambda_err": 106.04207027357432,
+          "offset": -0.03491032892817171,
+          "r_squared": 0.9650227140341852,
+          "n_pairs": 4743277,
+          "n_bins": 34,
+          "boundary_hit": false
+        }
+      }
+    },
+    "clock_drift": {
+      "msc": {
+        "global": {
+          "amplitude": 0.1840083792746182,
+          "lambda_km": 700.0603976584005,
+          "lambda_err": 46.61563832042176,
+          "offset": 0.5475710832205614,
+          "r_squared": 0.956440440914655,
+          "n_pairs": 59600372,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "europe": {
+          "amplitude": 0.16384763492434448,
+          "lambda_km": 567.5790557001319,
+          "lambda_err": 75.47508677727875,
+          "offset": 0.5554029197818,
+          "r_squared": 0.9050045773528069,
+          "n_pairs": 4899392,
+          "n_bins": 32,
+          "boundary_hit": false
+        },
+        "non_europe": {
+          "amplitude": 0.19569698759260448,
+          "lambda_km": 837.2010489904965,
+          "lambda_err": 50.486544193873534,
+          "offset": 0.5470289163553224,
+          "r_squared": 0.9641071795015294,
+          "n_pairs": 31233674,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "northern": {
+          "amplitude": 0.18909878542578604,
+          "lambda_km": 667.6145805046742,
+          "lambda_err": 38.589861155153905,
+          "offset": 0.5482782368384999,
+          "r_squared": 0.9674319256862545,
+          "n_pairs": 38162627,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "southern": {
+          "amplitude": 0.10994024697907603,
+          "lambda_km": 1297.4177266055317,
+          "lambda_err": 135.2340250942098,
+          "offset": 0.5436905871944018,
+          "r_squared": 0.8945887103105623,
+          "n_pairs": 4743277,
+          "n_bins": 34,
+          "boundary_hit": false
+        }
+      },
+      "phase_alignment": {
+        "global": {
+          "amplitude": 0.9699554051348124,
+          "lambda_km": 1023.7322555626412,
+          "lambda_err": 79.01599708530553,
+          "offset": -0.007045894929697285,
+          "r_squared": 0.9457709006332421,
+          "n_pairs": 59600372,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "europe": {
+          "amplitude": 0.8656228473444219,
+          "lambda_km": 1270.3805430404248,
+          "lambda_err": 211.96991844905676,
+          "offset": -0.03793473105709205,
+          "r_squared": 0.9359594326066977,
+          "n_pairs": 4899392,
+          "n_bins": 32,
+          "boundary_hit": false
+        },
+        "non_europe": {
+          "amplitude": 1.024623692041944,
+          "lambda_km": 1046.9248989002465,
+          "lambda_err": 60.80610415389256,
+          "offset": -0.005928343660944726,
+          "r_squared": 0.9637821657277653,
+          "n_pairs": 31233674,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "northern": {
+          "amplitude": 0.9676867496834092,
+          "lambda_km": 1056.0586177858343,
+          "lambda_err": 86.6003550061009,
+          "offset": -0.00952489694604916,
+          "r_squared": 0.9422679579042353,
+          "n_pairs": 38162627,
+          "n_bins": 40,
+          "boundary_hit": false
+        },
+        "southern": {
+          "amplitude": 0.8550840751603463,
+          "lambda_km": 941.3895811699417,
+          "lambda_err": 98.3866718133912,
+          "offset": -0.006590626026044828,
+          "r_squared": 0.8886218750284062,
+          "n_pairs": 4743277,
+          "n_bins": 34,
+          "boundary_hit": false
+        }
+      }
+    }
+  }
+}

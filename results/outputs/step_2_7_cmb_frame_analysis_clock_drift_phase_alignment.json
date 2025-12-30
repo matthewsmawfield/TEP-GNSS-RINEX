@@ -1,0 +1,39 @@
+{
+  "step": "2.7",
+  "name": "cmb_frame_analysis",
+  "timestamp": "2025-12-06T16:01:01.473606",
+  "processing_modes": [
+    "baseline",
+    "precise",
+    "ionofree"
+  ],
+  "primary_mode": "baseline",
+  "mode_station_counts": {
+    "baseline": 82,
+    "precise": 0,
+    "ionofree": 80
+  },
+  "n_pairs": 72486,
+  "best_fit": {
+    "ra": 150.0,
+    "dec": -60.0,
+    "correlation": 0.016934611529439644
+  },
+  "cmb_comparison": {
+    "separation_deg": 54.72329963127797,
+    "correlation_at_cmb": 0.01017537454716151
+  },
+  "solar_apex_comparison": {
+    "separation_deg": 130.99785166383103,
+    "correlation_at_apex": -0.023350378271342426
+  },
+  "variance_ratio": 0.5259719170499397,
+  "comparison_to_code": {
+    "code_ra": 186,
+    "code_dec": -4,
+    "code_cmb_sep": 18.2,
+    "code_variance_ratio": 5570,
+    "rinex_cmb_sep": 54.72329963127797,
+    "rinex_variance_ratio": 0.5259719170499397
+  }
+}

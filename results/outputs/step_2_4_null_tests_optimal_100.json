@@ -1,0 +1,352 @@
+{
+  "step": "2.4b",
+  "name": "null_tests",
+  "filter": "OPTIMAL_100",
+  "timestamp": "2025-12-17T19:52:49.518832",
+  "results_by_mode": {
+    "baseline": {
+      "solar": {
+        "clock_bias/msc": {
+          "r": 0.026936343701500443,
+          "status": "NULL "
+        },
+        "clock_bias/phase_alignment": {
+          "r": 0.03528521945507971,
+          "status": "NULL "
+        },
+        "pos_jitter/msc": {
+          "r": 0.021964009571270943,
+          "status": "NULL "
+        },
+        "pos_jitter/phase_alignment": {
+          "r": 0.05597679349325636,
+          "status": "NULL "
+        },
+        "clock_drift/msc": {
+          "r": 0.028501671513360246,
+          "status": "NULL "
+        },
+        "clock_drift/phase_alignment": {
+          "r": 0.04696884853535555,
+          "status": "NULL "
+        }
+      },
+      "lunar": {
+        "clock_bias/msc": {
+          "r": 0.03864434187757308,
+          "status": "NULL "
+        },
+        "clock_bias/phase_alignment": {
+          "r": 0.0857845189219592,
+          "status": "NULL "
+        },
+        "pos_jitter/msc": {
+          "r": 0.10416147713058631,
+          "status": "DETECTED "
+        },
+        "pos_jitter/phase_alignment": {
+          "r": 0.06337546596743084,
+          "status": "NULL "
+        },
+        "clock_drift/msc": {
+          "r": 0.038564518364978484,
+          "status": "NULL "
+        },
+        "clock_drift/phase_alignment": {
+          "r": 0.0492303488152488,
+          "status": "NULL "
+        }
+      },
+      "shuffle": {
+        "clock_bias/msc": {
+          "real_r2": 0.9732689902440804,
+          "shuffled_r2": 0.07620004460339236,
+          "status": "PASS "
+        },
+        "clock_bias/phase_alignment": {
+          "real_r2": 0.9381797001497604,
+          "shuffled_r2": -1.3011813848606835e-13,
+          "status": "PASS "
+        },
+        "pos_jitter/msc": {
+          "real_r2": 0.9892884562864751,
+          "shuffled_r2": 0.15645166944209543,
+          "status": "PASS "
+        },
+        "pos_jitter/phase_alignment": {
+          "real_r2": 0.9858252393453424,
+          "shuffled_r2": -1.9153345576228276e-11,
+          "status": "PASS "
+        },
+        "clock_drift/msc": {
+          "real_r2": 0.9755128746684615,
+          "shuffled_r2": 0.017144860659845662,
+          "status": "PASS "
+        },
+        "clock_drift/phase_alignment": {
+          "real_r2": 0.9490057987435094,
+          "shuffled_r2": 1.1102230246251565e-16,
+          "status": "PASS "
+        }
+      }
+    },
+    "ionofree": {
+      "solar": {
+        "clock_bias/msc": {
+          "r": 0.039539416160155244,
+          "status": "NULL "
+        },
+        "clock_bias/phase_alignment": {
+          "r": 0.065122767338727,
+          "status": "NULL "
+        },
+        "pos_jitter/msc": {
+          "r": 0.04056185049684608,
+          "status": "NULL "
+        },
+        "pos_jitter/phase_alignment": {
+          "r": 0.023277700014948766,
+          "status": "NULL "
+        },
+        "clock_drift/msc": {
+          "r": 0.03461831751004662,
+          "status": "NULL "
+        },
+        "clock_drift/phase_alignment": {
+          "r": 0.03462264372183247,
+          "status": "NULL "
+        }
+      },
+      "lunar": {
+        "clock_bias/msc": {
+          "r": 0.03900249563573947,
+          "status": "NULL "
+        },
+        "clock_bias/phase_alignment": {
+          "r": 0.031126810517745445,
+          "status": "NULL "
+        },
+        "pos_jitter/msc": {
+          "r": 0.06465222040867696,
+          "status": "NULL "
+        },
+        "pos_jitter/phase_alignment": {
+          "r": 0.024841197225639284,
+          "status": "NULL "
+        },
+        "clock_drift/msc": {
+          "r": 0.038401014175060255,
+          "status": "NULL "
+        },
+        "clock_drift/phase_alignment": {
+          "r": 0.03557230316008691,
+          "status": "NULL "
+        }
+      },
+      "shuffle": {
+        "clock_bias/msc": {
+          "real_r2": 0.9748098252056661,
+          "shuffled_r2": 0.01701029626197914,
+          "status": "PASS "
+        },
+        "clock_bias/phase_alignment": {
+          "real_r2": 0.8355802907784325,
+          "shuffled_r2": 0.024367989497291354,
+          "status": "PASS "
+        },
+        "pos_jitter/msc": {
+          "real_r2": 0.9495965987674081,
+          "shuffled_r2": 0.012316299698788002,
+          "status": "PASS "
+        },
+        "pos_jitter/phase_alignment": {
+          "real_r2": 0.9579389713118278,
+          "shuffled_r2": 0.005663091535839215,
+          "status": "PASS "
+        },
+        "clock_drift/msc": {
+          "real_r2": 0.9747329268965769,
+          "shuffled_r2": 0.055517268763065064,
+          "status": "PASS "
+        },
+        "clock_drift/phase_alignment": {
+          "real_r2": 0.9177613716884053,
+          "shuffled_r2": 0.001274526062762793,
+          "status": "PASS "
+        }
+      }
+    },
+    "multi_gnss": {
+      "solar": {
+        "clock_bias/msc": {
+          "r": 0.03797373818054803,
+          "status": "NULL "
+        },
+        "clock_bias/phase_alignment": {
+          "r": 0.049527747526661,
+          "status": "NULL "
+        },
+        "pos_jitter/msc": {
+          "r": 0.044075350056871195,
+          "status": "NULL "
+        },
+        "pos_jitter/phase_alignment": {
+          "r": 0.027536576361582243,
+          "status": "NULL "
+        },
+        "clock_drift/msc": {
+          "r": 0.04653033532239899,
+          "status": "NULL "
+        },
+        "clock_drift/phase_alignment": {
+          "r": 0.017412055587180945,
+          "status": "NULL "
+        }
+      },
+      "lunar": {
+        "clock_bias/msc": {
+          "r": 0.05882907985947002,
+          "status": "NULL "
+        },
+        "clock_bias/phase_alignment": {
+          "r": 0.06538112568355747,
+          "status": "NULL "
+        },
+        "pos_jitter/msc": {
+          "r": 0.04950260662635492,
+          "status": "NULL "
+        },
+        "pos_jitter/phase_alignment": {
+          "r": 0.03644239218313176,
+          "status": "NULL "
+        },
+        "clock_drift/msc": {
+          "r": 0.06380146067947785,
+          "status": "NULL "
+        },
+        "clock_drift/phase_alignment": {
+          "r": 0.02368933338382574,
+          "status": "NULL "
+        }
+      },
+      "shuffle": {
+        "clock_bias/msc": {
+          "real_r2": 0.9465726709585505,
+          "shuffled_r2": -3.1991573834488918e-09,
+          "status": "PASS "
+        },
+        "clock_bias/phase_alignment": {
+          "real_r2": 0.9682936986055072,
+          "shuffled_r2": 0.03804726673340475,
+          "status": "PASS "
+        },
+        "pos_jitter/msc": {
+          "real_r2": 0.973221628996513,
+          "shuffled_r2": 0.03588103272015275,
+          "status": "PASS "
+        },
+        "pos_jitter/phase_alignment": {
+          "real_r2": 0.9848968560182824,
+          "shuffled_r2": 0.04449568297851936,
+          "status": "PASS "
+        },
+        "clock_drift/msc": {
+          "real_r2": 0.9490155879536517,
+          "shuffled_r2": -2.8761437675939305e-12,
+          "status": "PASS "
+        },
+        "clock_drift/phase_alignment": {
+          "real_r2": 0.9708420720261463,
+          "shuffled_r2": 0.0032023829032589157,
+          "status": "PASS "
+        }
+      }
+    },
+    "precise": {
+      "solar": {
+        "clock_bias/msc": {
+          "r": 0.019794061437001558,
+          "status": "NULL "
+        },
+        "clock_bias/phase_alignment": {
+          "r": 0.004835808071618209,
+          "status": "NULL "
+        },
+        "pos_jitter/msc": {
+          "r": 0.01702630414570364,
+          "status": "NULL "
+        },
+        "pos_jitter/phase_alignment": {
+          "r": 0.04276557182400658,
+          "status": "NULL "
+        },
+        "clock_drift/msc": {
+          "r": 0.020088676373147138,
+          "status": "NULL "
+        },
+        "clock_drift/phase_alignment": {
+          "r": 0.043689180970772463,
+          "status": "NULL "
+        }
+      },
+      "lunar": {
+        "clock_bias/msc": {
+          "r": 0.03833778714009331,
+          "status": "NULL "
+        },
+        "clock_bias/phase_alignment": {
+          "r": 0.031229587631862017,
+          "status": "NULL "
+        },
+        "pos_jitter/msc": {
+          "r": 0.04668022442807418,
+          "status": "NULL "
+        },
+        "pos_jitter/phase_alignment": {
+          "r": 0.031233527237692786,
+          "status": "NULL "
+        },
+        "clock_drift/msc": {
+          "r": 0.04544077239702047,
+          "status": "NULL "
+        },
+        "clock_drift/phase_alignment": {
+          "r": 0.03696817930649745,
+          "status": "NULL "
+        }
+      },
+      "shuffle": {
+        "clock_bias/msc": {
+          "real_r2": 0.9700137828944793,
+          "shuffled_r2": -1.928679438378822e-12,
+          "status": "PASS "
+        },
+        "clock_bias/phase_alignment": {
+          "real_r2": 0.7546291156547114,
+          "shuffled_r2": 0.017852051956702253,
+          "status": "PASS "
+        },
+        "pos_jitter/msc": {
+          "real_r2": 0.9323678450453976,
+          "shuffled_r2": 0.17177124458586812,
+          "status": "PASS "
+        },
+        "pos_jitter/phase_alignment": {
+          "real_r2": 0.9353762673652782,
+          "shuffled_r2": 0.027148142369095463,
+          "status": "PASS "
+        },
+        "clock_drift/msc": {
+          "real_r2": 0.9705899035527217,
+          "shuffled_r2": -2.5868196473766147e-13,
+          "status": "PASS "
+        },
+        "clock_drift/phase_alignment": {
+          "real_r2": 0.864322224117517,
+          "shuffled_r2": 0.0,
+          "status": "PASS "
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,640 @@
+{
+  "step": "2.4a",
+  "name": "seasonal_analysis",
+  "filter": "ALL_STATIONS",
+  "timestamp": "2025-12-17T18:47:34.316941",
+  "results_by_mode": {
+    "baseline": {
+      "clock_bias/msc": {
+        "winter": {
+          "lambda_km": 731.7553175724441,
+          "r_squared": 0.9447440131066593,
+          "n_pairs": 14477854,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 688.1949559923053,
+          "r_squared": 0.9429420340780192,
+          "n_pairs": 16312021,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 761.337004779483,
+          "r_squared": 0.9697679668574125,
+          "n_pairs": 15274338,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 730.9423206651926,
+          "r_squared": 0.9462185436922246,
+          "n_pairs": 15728976,
+          "n_bins": 40
+        }
+      },
+      "clock_bias/phase_alignment": {
+        "winter": {
+          "lambda_km": 1776.936302337464,
+          "r_squared": 0.9147875572261672,
+          "n_pairs": 14477854,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 1887.69726458182,
+          "r_squared": 0.9123999823554071,
+          "n_pairs": 16312021,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 1752.4935234884874,
+          "r_squared": 0.8878748432988949,
+          "n_pairs": 15274338,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1779.1023804721829,
+          "r_squared": 0.9029849776584431,
+          "n_pairs": 15728976,
+          "n_bins": 40
+        }
+      },
+      "pos_jitter/msc": {
+        "winter": {
+          "lambda_km": 856.6448291144827,
+          "r_squared": 0.9747922997295112,
+          "n_pairs": 14477854,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 829.1235954410014,
+          "r_squared": 0.9739563481987354,
+          "n_pairs": 16312021,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 934.1878874691964,
+          "r_squared": 0.984015092872965,
+          "n_pairs": 15274338,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 897.7786401091283,
+          "r_squared": 0.9780826410268707,
+          "n_pairs": 15728976,
+          "n_bins": 40
+        }
+      },
+      "pos_jitter/phase_alignment": {
+        "winter": {
+          "lambda_km": 1989.1489512405676,
+          "r_squared": 0.9620606638723987,
+          "n_pairs": 14477854,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 1878.7273012007772,
+          "r_squared": 0.9515652280287213,
+          "n_pairs": 16312021,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 2129.2670389400782,
+          "r_squared": 0.9740911710478452,
+          "n_pairs": 15274338,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 2027.4937684403874,
+          "r_squared": 0.9649307106790057,
+          "n_pairs": 15728976,
+          "n_bins": 40
+        }
+      },
+      "clock_drift/msc": {
+        "winter": {
+          "lambda_km": 688.6214519397438,
+          "r_squared": 0.9498595621395337,
+          "n_pairs": 14477854,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 669.9122201743475,
+          "r_squared": 0.944260771123633,
+          "n_pairs": 16312021,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 764.5797394713428,
+          "r_squared": 0.9687718960363064,
+          "n_pairs": 15274338,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 687.081951107294,
+          "r_squared": 0.9523588909801363,
+          "n_pairs": 15728976,
+          "n_bins": 40
+        }
+      },
+      "clock_drift/phase_alignment": {
+        "winter": {
+          "lambda_km": 1048.1870888337187,
+          "r_squared": 0.9501393805822054,
+          "n_pairs": 14477854,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 1008.6098609761956,
+          "r_squared": 0.9380094163695647,
+          "n_pairs": 16312021,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 1008.8853854904978,
+          "r_squared": 0.9255403297427836,
+          "n_pairs": 15274338,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1022.469643667466,
+          "r_squared": 0.9637421231782741,
+          "n_pairs": 15728976,
+          "n_bins": 40
+        }
+      }
+    },
+    "ionofree": {
+      "clock_bias/msc": {
+        "winter": {
+          "lambda_km": 817.7040115151605,
+          "r_squared": 0.975712449643714,
+          "n_pairs": 13830804,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 1111.02816907545,
+          "r_squared": 0.9569291554270615,
+          "n_pairs": 15600147,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 1353.8490673892682,
+          "r_squared": 0.9690075038010838,
+          "n_pairs": 14596256,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1089.7517440494175,
+          "r_squared": 0.9715594470887862,
+          "n_pairs": 15057478,
+          "n_bins": 40
+        }
+      },
+      "clock_bias/phase_alignment": {
+        "winter": {
+          "lambda_km": 1896.4646424547955,
+          "r_squared": 0.8370010362502438,
+          "n_pairs": 13830804,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 1632.6167933794993,
+          "r_squared": 0.7233802657818449,
+          "n_pairs": 15600147,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 1752.9666573345462,
+          "r_squared": 0.7355396138645045,
+          "n_pairs": 14596256,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1853.5773073821008,
+          "r_squared": 0.8059037943551683,
+          "n_pairs": 15057478,
+          "n_bins": 40
+        }
+      },
+      "pos_jitter/msc": {
+        "winter": {
+          "lambda_km": 897.1322605964269,
+          "r_squared": 0.9641720980879862,
+          "n_pairs": 13830804,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 1377.7144574401227,
+          "r_squared": 0.9362007929609855,
+          "n_pairs": 15600147,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 1529.8976938355875,
+          "r_squared": 0.9345812826043248,
+          "n_pairs": 14596256,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1354.5465508629495,
+          "r_squared": 0.9279832373033597,
+          "n_pairs": 15057478,
+          "n_bins": 40
+        }
+      },
+      "pos_jitter/phase_alignment": {
+        "winter": {
+          "lambda_km": 3332.33401469324,
+          "r_squared": 0.9472867660464662,
+          "n_pairs": 13830804,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 3176.3985706543126,
+          "r_squared": 0.9386384934173814,
+          "n_pairs": 15600147,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 4183.438100454489,
+          "r_squared": 0.9512464409317074,
+          "n_pairs": 14596256,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 3380.548481801787,
+          "r_squared": 0.9545572888726043,
+          "n_pairs": 15057478,
+          "n_bins": 40
+        }
+      },
+      "clock_drift/msc": {
+        "winter": {
+          "lambda_km": 810.2416842597402,
+          "r_squared": 0.976773359160839,
+          "n_pairs": 13830804,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 1125.4038012790113,
+          "r_squared": 0.9579263727931862,
+          "n_pairs": 15600147,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 1381.807049575703,
+          "r_squared": 0.9669609363649185,
+          "n_pairs": 14596256,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1086.8279837528612,
+          "r_squared": 0.9716692820969857,
+          "n_pairs": 15057478,
+          "n_bins": 40
+        }
+      },
+      "clock_drift/phase_alignment": {
+        "winter": {
+          "lambda_km": 1098.2580700517735,
+          "r_squared": 0.9239906242334163,
+          "n_pairs": 13830804,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 1050.1749110277922,
+          "r_squared": 0.8849015526457044,
+          "n_pairs": 15600147,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 1123.5843922145868,
+          "r_squared": 0.8620479833885318,
+          "n_pairs": 14596256,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1147.3963871369747,
+          "r_squared": 0.8990161604272493,
+          "n_pairs": 15057478,
+          "n_bins": 40
+        }
+      }
+    },
+    "multi_gnss": {
+      "clock_bias/msc": {
+        "winter": {
+          "lambda_km": 946.3728746122639,
+          "r_squared": 0.9115647042299859,
+          "n_pairs": 13403070,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 735.409560115603,
+          "r_squared": 0.9385286334677768,
+          "n_pairs": 15304836,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 716.5641329675746,
+          "r_squared": 0.9443374709809811,
+          "n_pairs": 14328082,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1001.1659507490067,
+          "r_squared": 0.9080444167982487,
+          "n_pairs": 14957583,
+          "n_bins": 40
+        }
+      },
+      "clock_bias/phase_alignment": {
+        "winter": {
+          "lambda_km": 1762.9468776821373,
+          "r_squared": 0.9442100076623654,
+          "n_pairs": 13403070,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 1820.8564230564853,
+          "r_squared": 0.955174461645225,
+          "n_pairs": 15304836,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 1740.7486592898795,
+          "r_squared": 0.9704335836806404,
+          "n_pairs": 14328082,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1773.227214401613,
+          "r_squared": 0.9469181935184592,
+          "n_pairs": 14957583,
+          "n_bins": 40
+        }
+      },
+      "pos_jitter/msc": {
+        "winter": {
+          "lambda_km": 1012.3461772769645,
+          "r_squared": 0.9677619398463649,
+          "n_pairs": 13403070,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 822.2694686115348,
+          "r_squared": 0.982952930497096,
+          "n_pairs": 15304836,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 863.2368771088303,
+          "r_squared": 0.9769009411035142,
+          "n_pairs": 14328082,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1072.4328016945758,
+          "r_squared": 0.9633943807385899,
+          "n_pairs": 14957583,
+          "n_bins": 40
+        }
+      },
+      "pos_jitter/phase_alignment": {
+        "winter": {
+          "lambda_km": 1855.5202538915028,
+          "r_squared": 0.9570670804016848,
+          "n_pairs": 13403070,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 1656.5703784225038,
+          "r_squared": 0.9382281040098747,
+          "n_pairs": 15304836,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 1814.5619814762795,
+          "r_squared": 0.9679626409105796,
+          "n_pairs": 14328082,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1794.6042418694185,
+          "r_squared": 0.953556674999086,
+          "n_pairs": 14957583,
+          "n_bins": 40
+        }
+      },
+      "clock_drift/msc": {
+        "winter": {
+          "lambda_km": 837.6974174862858,
+          "r_squared": 0.9136343746225057,
+          "n_pairs": 13403070,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 699.9114510736081,
+          "r_squared": 0.9410806871714908,
+          "n_pairs": 15304836,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 703.6513800789487,
+          "r_squared": 0.9441164993948258,
+          "n_pairs": 14328082,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 877.016608559303,
+          "r_squared": 0.9094124084150794,
+          "n_pairs": 14957583,
+          "n_bins": 40
+        }
+      },
+      "clock_drift/phase_alignment": {
+        "winter": {
+          "lambda_km": 1033.7168449405908,
+          "r_squared": 0.9655276617802926,
+          "n_pairs": 13403070,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 966.0102392734258,
+          "r_squared": 0.9671812691686948,
+          "n_pairs": 15304836,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 935.1046079841059,
+          "r_squared": 0.9597638451449386,
+          "n_pairs": 14328082,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1012.9719831188823,
+          "r_squared": 0.9753992756262372,
+          "n_pairs": 14957583,
+          "n_bins": 40
+        }
+      }
+    },
+    "precise": {
+      "clock_bias/msc": {
+        "winter": {
+          "lambda_km": 1010.9744937828175,
+          "r_squared": 0.9814899021803106,
+          "n_pairs": 13623287,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 1301.4826795907848,
+          "r_squared": 0.9481346688096309,
+          "n_pairs": 15557906,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 1416.6317246275805,
+          "r_squared": 0.9662346745380508,
+          "n_pairs": 14457761,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1135.1667251274498,
+          "r_squared": 0.9807726204349808,
+          "n_pairs": 15007526,
+          "n_bins": 40
+        }
+      },
+      "clock_bias/phase_alignment": {
+        "winter": {
+          "lambda_km": 1879.3840349351706,
+          "r_squared": 0.8037294840378038,
+          "n_pairs": 13623287,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 1550.7168850365154,
+          "r_squared": 0.6158533428691837,
+          "n_pairs": 15557906,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 1674.5641841029076,
+          "r_squared": 0.6368882748120239,
+          "n_pairs": 14457761,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1769.5339701731584,
+          "r_squared": 0.7242916222494298,
+          "n_pairs": 15007526,
+          "n_bins": 40
+        }
+      },
+      "pos_jitter/msc": {
+        "winter": {
+          "lambda_km": 1026.1993522592197,
+          "r_squared": 0.9566286461729331,
+          "n_pairs": 13623287,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 1682.4809764803524,
+          "r_squared": 0.8977008714292313,
+          "n_pairs": 15557906,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 1882.1430733673121,
+          "r_squared": 0.9028321598285247,
+          "n_pairs": 14457761,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1364.9598799223122,
+          "r_squared": 0.9369923527551176,
+          "n_pairs": 15007526,
+          "n_bins": 40
+        }
+      },
+      "pos_jitter/phase_alignment": {
+        "winter": {
+          "lambda_km": 2891.866221047468,
+          "r_squared": 0.9531811438341123,
+          "n_pairs": 13623287,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 4664.679208945214,
+          "r_squared": 0.9687577510575877,
+          "n_pairs": 15557906,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 3928.799920787197,
+          "r_squared": 0.966397268200185,
+          "n_pairs": 14457761,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 3062.1068656749967,
+          "r_squared": 0.9562408249001573,
+          "n_pairs": 15007526,
+          "n_bins": 40
+        }
+      },
+      "clock_drift/msc": {
+        "winter": {
+          "lambda_km": 1011.6397323840464,
+          "r_squared": 0.9830424809616701,
+          "n_pairs": 13623287,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 1303.1233642064374,
+          "r_squared": 0.9459014488738917,
+          "n_pairs": 15557906,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 1429.0424378223656,
+          "r_squared": 0.9620877276679518,
+          "n_pairs": 14457761,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1139.2650801794355,
+          "r_squared": 0.9791047082610886,
+          "n_pairs": 15007526,
+          "n_bins": 40
+        }
+      },
+      "clock_drift/phase_alignment": {
+        "winter": {
+          "lambda_km": 1251.166870128824,
+          "r_squared": 0.9036309765101045,
+          "n_pairs": 13623287,
+          "n_bins": 40
+        },
+        "spring": {
+          "lambda_km": 1102.1166624703365,
+          "r_squared": 0.8204855367150993,
+          "n_pairs": 15557906,
+          "n_bins": 40
+        },
+        "summer": {
+          "lambda_km": 1087.2366314169751,
+          "r_squared": 0.8060073654520656,
+          "n_pairs": 14457761,
+          "n_bins": 40
+        },
+        "autumn": {
+          "lambda_km": 1250.9087283241058,
+          "r_squared": 0.8676587945910259,
+          "n_pairs": 15007526,
+          "n_bins": 40
+        }
+      }
+    }
+  }
+}

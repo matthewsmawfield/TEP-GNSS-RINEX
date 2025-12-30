@@ -1,0 +1,42 @@
+{
+  "name": "tep-gnss-rinex-site",
+  "version": "1.0.0",
+  "description": "Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks",
+  "main": "index.html",
+  "scripts": {
+    "dev": "node dev-server.js",
+    "start": "python3 -m http.server 8000",
+    "build": "node build.js",
+    "build:dev": "npm run build && cd dist && python3 -m http.server 8350",
+    "build:markdown": "npm run build && node html-to-markdown.js",
+    "markdown": "node html-to-markdown.js",
+    "serve": "python3 -m http.server",
+    "serve:dist": "cd dist && python3 -m http.server 8351"
+  },
+  "keywords": [
+    "TEP-GNSS",
+    "RINEX",
+    "GNSS",
+    "Single Point Positioning",
+    "SPP",
+    "raw observations",
+    "temporal equivalence principle",
+    "physics"
+  ],
+  "author": "Matthew Lukin Smawfield <matthewsmawfield@gmail.com>",
+  "license": "CC-BY-4.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matthewsmawfield/TEP-GNSS-RINEX.git"
+  },
+  "homepage": "https://matthewsmawfield.github.io/TEP-GNSS-RINEX/",
+  "devDependencies": {
+    "chokidar": "^4.0.3",
+    "live-server": "^1.2.2",
+    "nodemon": "^3.1.10"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "python": ">=3.10"
+  }
+}
