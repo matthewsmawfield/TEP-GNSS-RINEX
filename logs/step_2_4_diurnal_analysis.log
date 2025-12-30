@@ -1,0 +1,408 @@
+[18:37:06] [INFO] 
+[18:37:06] [INFO] ================================================================================
+[18:37:06] [INFO] STEP 2.4a: Seasonal Analysis (COMPREHENSIVE)
+[18:37:06] [INFO] ================================================================================
+[18:37:06] [INFO] 
+[18:37:06] [INFO] Processing: 3 filters x 4 modes x 3 metrics x 2 coherence types
+[18:37:06] [INFO] 
+################################################################################
+[18:37:06] [INFO] # FILTER: ALL_STATIONS
+[18:37:06] [INFO] ################################################################################
+[18:37:06] [INFO] 
+  MODE: BASELINE
+[18:37:06] [INFO] 
+Processing metric: clock_bias...
+[18:38:00] [INFO]   clock_bias/msc winter: 731.7553175724441
+[18:38:00] [INFO]   clock_bias/msc spring: 688.1949559923053
+[18:38:00] [INFO]   clock_bias/msc summer: 761.337004779483
+[18:38:00] [INFO]   clock_bias/msc autumn: 730.9423206651926
+[18:38:00] [INFO]   clock_bias/phase_alignment winter: 1776.936302337464
+[18:38:00] [INFO]   clock_bias/phase_alignment spring: 1887.69726458182
+[18:38:00] [INFO]   clock_bias/phase_alignment summer: 1752.4935234884874
+[18:38:00] [INFO]   clock_bias/phase_alignment autumn: 1779.1023804721829
+[18:38:01] [INFO] 
+Processing metric: pos_jitter...
+[18:38:53] [INFO]   pos_jitter/msc winter: 856.6448291144827
+[18:38:53] [INFO]   pos_jitter/msc spring: 829.1235954410014
+[18:38:53] [INFO]   pos_jitter/msc summer: 934.1878874691964
+[18:38:53] [INFO]   pos_jitter/msc autumn: 897.7786401091283
+[18:38:53] [INFO]   pos_jitter/phase_alignment winter: 1989.1489512405676
+[18:38:53] [INFO]   pos_jitter/phase_alignment spring: 1878.7273012007772
+[18:38:53] [INFO]   pos_jitter/phase_alignment summer: 2129.2670389400782
+[18:38:53] [INFO]   pos_jitter/phase_alignment autumn: 2027.4937684403874
+[18:38:54] [INFO] 
+Processing metric: clock_drift...
+[18:39:46] [INFO]   clock_drift/msc winter: 688.6214519397438
+[18:39:46] [INFO]   clock_drift/msc spring: 669.9122201743475
+[18:39:46] [INFO]   clock_drift/msc summer: 764.5797394713428
+[18:39:46] [INFO]   clock_drift/msc autumn: 687.081951107294
+[18:39:46] [INFO]   clock_drift/phase_alignment winter: 1048.1870888337187
+[18:39:46] [INFO]   clock_drift/phase_alignment spring: 1008.6098609761956
+[18:39:46] [INFO]   clock_drift/phase_alignment summer: 1008.8853854904978
+[18:39:46] [INFO]   clock_drift/phase_alignment autumn: 1022.469643667466
+[18:39:46] [INFO] 
+  MODE: IONOFREE
+[18:39:46] [INFO] 
+Processing metric: clock_bias...
+[18:40:39] [INFO]   clock_bias/msc winter: 817.7040115151605
+[18:40:39] [INFO]   clock_bias/msc spring: 1111.02816907545
+[18:40:39] [INFO]   clock_bias/msc summer: 1353.8490673892682
+[18:40:39] [INFO]   clock_bias/msc autumn: 1089.7517440494175
+[18:40:39] [INFO]   clock_bias/phase_alignment winter: 1896.4646424547955
+[18:40:39] [INFO]   clock_bias/phase_alignment spring: 1632.6167933794993
+[18:40:39] [INFO]   clock_bias/phase_alignment summer: 1752.9666573345462
+[18:40:39] [INFO]   clock_bias/phase_alignment autumn: 1853.5773073821008
+[18:40:39] [INFO] 
+Processing metric: pos_jitter...
+[18:41:33] [INFO]   pos_jitter/msc winter: 897.1322605964269
+[18:41:33] [INFO]   pos_jitter/msc spring: 1377.7144574401227
+[18:41:33] [INFO]   pos_jitter/msc summer: 1529.8976938355875
+[18:41:33] [INFO]   pos_jitter/msc autumn: 1354.5465508629495
+[18:41:33] [INFO]   pos_jitter/phase_alignment winter: 3332.33401469324
+[18:41:33] [INFO]   pos_jitter/phase_alignment spring: 3176.3985706543126
+[18:41:33] [INFO]   pos_jitter/phase_alignment summer: 4183.438100454489
+[18:41:33] [INFO]   pos_jitter/phase_alignment autumn: 3380.548481801787
+[18:41:33] [INFO] 
+Processing metric: clock_drift...
+[18:42:26] [INFO]   clock_drift/msc winter: 810.2416842597402
+[18:42:26] [INFO]   clock_drift/msc spring: 1125.4038012790113
+[18:42:26] [INFO]   clock_drift/msc summer: 1381.807049575703
+[18:42:26] [INFO]   clock_drift/msc autumn: 1086.8279837528612
+[18:42:26] [INFO]   clock_drift/phase_alignment winter: 1098.2580700517735
+[18:42:26] [INFO]   clock_drift/phase_alignment spring: 1050.1749110277922
+[18:42:26] [INFO]   clock_drift/phase_alignment summer: 1123.5843922145868
+[18:42:26] [INFO]   clock_drift/phase_alignment autumn: 1147.3963871369747
+[18:42:26] [INFO] 
+  MODE: MULTI_GNSS
+[18:42:26] [INFO] 
+Processing metric: clock_bias...
+[18:43:17] [INFO]   clock_bias/msc winter: 946.3728746122639
+[18:43:17] [INFO]   clock_bias/msc spring: 735.409560115603
+[18:43:17] [INFO]   clock_bias/msc summer: 716.5641329675746
+[18:43:17] [INFO]   clock_bias/msc autumn: 1001.1659507490067
+[18:43:17] [INFO]   clock_bias/phase_alignment winter: 1762.9468776821373
+[18:43:17] [INFO]   clock_bias/phase_alignment spring: 1820.8564230564853
+[18:43:17] [INFO]   clock_bias/phase_alignment summer: 1740.7486592898795
+[18:43:17] [INFO]   clock_bias/phase_alignment autumn: 1773.227214401613
+[18:43:17] [INFO] 
+Processing metric: pos_jitter...
+[18:44:09] [INFO]   pos_jitter/msc winter: 1012.3461772769645
+[18:44:09] [INFO]   pos_jitter/msc spring: 822.2694686115348
+[18:44:09] [INFO]   pos_jitter/msc summer: 863.2368771088303
+[18:44:09] [INFO]   pos_jitter/msc autumn: 1072.4328016945758
+[18:44:09] [INFO]   pos_jitter/phase_alignment winter: 1855.5202538915028
+[18:44:09] [INFO]   pos_jitter/phase_alignment spring: 1656.5703784225038
+[18:44:09] [INFO]   pos_jitter/phase_alignment summer: 1814.5619814762795
+[18:44:09] [INFO]   pos_jitter/phase_alignment autumn: 1794.6042418694185
+[18:44:09] [INFO] 
+Processing metric: clock_drift...
+[18:44:59] [INFO]   clock_drift/msc winter: 837.6974174862858
+[18:44:59] [INFO]   clock_drift/msc spring: 699.9114510736081
+[18:44:59] [INFO]   clock_drift/msc summer: 703.6513800789487
+[18:44:59] [INFO]   clock_drift/msc autumn: 877.016608559303
+[18:44:59] [INFO]   clock_drift/phase_alignment winter: 1033.7168449405908
+[18:44:59] [INFO]   clock_drift/phase_alignment spring: 966.0102392734258
+[18:44:59] [INFO]   clock_drift/phase_alignment summer: 935.1046079841059
+[18:44:59] [INFO]   clock_drift/phase_alignment autumn: 1012.9719831188823
+[18:45:00] [INFO] 
+  MODE: PRECISE
+[18:45:00] [INFO] 
+Processing metric: clock_bias...
+[18:45:51] [INFO]   clock_bias/msc winter: 1010.9744937828175
+[18:45:51] [INFO]   clock_bias/msc spring: 1301.4826795907848
+[18:45:51] [INFO]   clock_bias/msc summer: 1416.6317246275805
+[18:45:51] [INFO]   clock_bias/msc autumn: 1135.1667251274498
+[18:45:51] [INFO]   clock_bias/phase_alignment winter: 1879.3840349351706
+[18:45:51] [INFO]   clock_bias/phase_alignment spring: 1550.7168850365154
+[18:45:51] [INFO]   clock_bias/phase_alignment summer: 1674.5641841029076
+[18:45:51] [INFO]   clock_bias/phase_alignment autumn: 1769.5339701731584
+[18:45:51] [INFO] 
+Processing metric: pos_jitter...
+[18:46:42] [INFO]   pos_jitter/msc winter: 1026.1993522592197
+[18:46:42] [INFO]   pos_jitter/msc spring: 1682.4809764803524
+[18:46:42] [INFO]   pos_jitter/msc summer: 1882.1430733673121
+[18:46:42] [INFO]   pos_jitter/msc autumn: 1364.9598799223122
+[18:46:42] [INFO]   pos_jitter/phase_alignment winter: 2891.866221047468
+[18:46:42] [INFO]   pos_jitter/phase_alignment spring: 4664.679208945214
+[18:46:42] [INFO]   pos_jitter/phase_alignment summer: 3928.799920787197
+[18:46:42] [INFO]   pos_jitter/phase_alignment autumn: 3062.1068656749967
+[18:46:42] [INFO] 
+Processing metric: clock_drift...
+[18:47:34] [INFO]   clock_drift/msc winter: 1011.6397323840464
+[18:47:34] [INFO]   clock_drift/msc spring: 1303.1233642064374
+[18:47:34] [INFO]   clock_drift/msc summer: 1429.0424378223656
+[18:47:34] [INFO]   clock_drift/msc autumn: 1139.2650801794355
+[18:47:34] [INFO]   clock_drift/phase_alignment winter: 1251.166870128824
+[18:47:34] [INFO]   clock_drift/phase_alignment spring: 1102.1166624703365
+[18:47:34] [INFO]   clock_drift/phase_alignment summer: 1087.2366314169751
+[18:47:34] [INFO]   clock_drift/phase_alignment autumn: 1250.9087283241058
+[18:47:34] [SUCCESS]   Saved: step_2_4_diurnal_analysis_all_stations.json
+[18:47:34] [INFO] 
+################################################################################
+[18:47:34] [INFO] # FILTER: OPTIMAL_100
+[18:47:34] [INFO] ################################################################################
+[18:47:34] [INFO]   Using 100 stations
+[18:47:34] [INFO] 
+  MODE: BASELINE
+[18:47:34] [INFO] 
+Processing metric: clock_bias...
+[18:47:36] [INFO]   clock_bias/msc winter: 639.724500557603
+[18:47:36] [INFO]   clock_bias/msc spring: 576.120877420607
+[18:47:36] [INFO]   clock_bias/msc summer: 694.3301066933498
+[18:47:36] [INFO]   clock_bias/msc autumn: 620.5465528381915
+[18:47:36] [INFO]   clock_bias/phase_alignment winter: 1732.5528657274458
+[18:47:36] [INFO]   clock_bias/phase_alignment spring: 2711.0823945243815
+[18:47:36] [INFO]   clock_bias/phase_alignment summer: 2536.127528266907
+[18:47:36] [INFO]   clock_bias/phase_alignment autumn: 1671.2595625960812
+[18:47:36] [INFO] 
+Processing metric: pos_jitter...
+[18:47:38] [INFO]   pos_jitter/msc winter: 661.2085601415251
+[18:47:38] [INFO]   pos_jitter/msc spring: 626.6925164836897
+[18:47:38] [INFO]   pos_jitter/msc summer: 782.4190276642746
+[18:47:38] [INFO]   pos_jitter/msc autumn: 675.9851306193399
+[18:47:38] [INFO]   pos_jitter/phase_alignment winter: 2811.729228919833
+[18:47:38] [INFO]   pos_jitter/phase_alignment spring: 3100.194130825147
+[18:47:38] [INFO]   pos_jitter/phase_alignment summer: 3270.2026885157625
+[18:47:38] [INFO]   pos_jitter/phase_alignment autumn: 2806.474732571633
+[18:47:38] [INFO] 
+Processing metric: clock_drift...
+[18:47:40] [INFO]   clock_drift/msc winter: 622.3280702317996
+[18:47:40] [INFO]   clock_drift/msc spring: 565.7206242461316
+[18:47:40] [INFO]   clock_drift/msc summer: 699.2576301761939
+[18:47:40] [INFO]   clock_drift/msc autumn: 614.9303218594855
+[18:47:40] [INFO]   clock_drift/phase_alignment winter: 1073.6341800340967
+[18:47:40] [INFO]   clock_drift/phase_alignment spring: 987.5064367302025
+[18:47:40] [INFO]   clock_drift/phase_alignment summer: 1099.163824308778
+[18:47:40] [INFO]   clock_drift/phase_alignment autumn: 1080.0777354723496
+[18:47:40] [INFO] 
+  MODE: IONOFREE
+[18:47:40] [INFO] 
+Processing metric: clock_bias...
+[18:47:42] [INFO]   clock_bias/msc winter: 708.8553783870345
+[18:47:42] [INFO]   clock_bias/msc spring: 759.642077846704
+[18:47:42] [INFO]   clock_bias/msc summer: 1000.909541077305
+[18:47:42] [INFO]   clock_bias/msc autumn: 804.6860201245781
+[18:47:42] [INFO]   clock_bias/phase_alignment winter: 2019.5925164363236
+[18:47:42] [INFO]   clock_bias/phase_alignment spring: 1841.9137263963005
+[18:47:42] [INFO]   clock_bias/phase_alignment summer: 1978.013909877557
+[18:47:42] [INFO]   clock_bias/phase_alignment autumn: 1874.7066436302175
+[18:47:42] [INFO] 
+Processing metric: pos_jitter...
+[18:47:44] [INFO]   pos_jitter/msc winter: 583.7648980738686
+[18:47:44] [INFO]   pos_jitter/msc spring: 708.9851147585865
+[18:47:44] [INFO]   pos_jitter/msc summer: 840.8186052609223
+[18:47:44] [INFO]   pos_jitter/msc autumn: 650.4441816571195
+[18:47:44] [INFO]   pos_jitter/phase_alignment winter: 2440.3951452199262
+[18:47:44] [INFO]   pos_jitter/phase_alignment spring: 5065.239696226979
+[18:47:44] [INFO]   pos_jitter/phase_alignment summer: 6059.532082112236
+[18:47:44] [INFO]   pos_jitter/phase_alignment autumn: 3112.581285528253
+[18:47:44] [INFO] 
+Processing metric: clock_drift...
+[18:47:46] [INFO]   clock_drift/msc winter: 717.796261185785
+[18:47:46] [INFO]   clock_drift/msc spring: 763.273289332922
+[18:47:46] [INFO]   clock_drift/msc summer: 1002.5562209639312
+[18:47:46] [INFO]   clock_drift/msc autumn: 825.6701179794511
+[18:47:46] [INFO]   clock_drift/phase_alignment winter: 1033.4652585895838
+[18:47:46] [INFO]   clock_drift/phase_alignment spring: 907.742801153983
+[18:47:46] [INFO]   clock_drift/phase_alignment summer: 1164.3008764834444
+[18:47:46] [INFO]   clock_drift/phase_alignment autumn: 1170.3652181291457
+[18:47:46] [INFO] 
+  MODE: MULTI_GNSS
+[18:47:46] [INFO] 
+Processing metric: clock_bias...
+[18:47:48] [INFO]   clock_bias/msc winter: 756.9730719472468
+[18:47:48] [INFO]   clock_bias/msc spring: 680.3935987105689
+[18:47:48] [INFO]   clock_bias/msc summer: 655.3869068173625
+[18:47:48] [INFO]   clock_bias/msc autumn: 753.2320266241217
+[18:47:48] [INFO]   clock_bias/phase_alignment winter: 1765.584041194
+[18:47:48] [INFO]   clock_bias/phase_alignment spring: 3337.7135152105348
+[18:47:48] [INFO]   clock_bias/phase_alignment summer: 3181.9998271876043
+[18:47:48] [INFO]   clock_bias/phase_alignment autumn: 1606.8859726550172
+[18:47:48] [INFO] 
+Processing metric: pos_jitter...
+[18:47:50] [INFO]   pos_jitter/msc winter: 880.8408719252247
+[18:47:50] [INFO]   pos_jitter/msc spring: 744.9923385219137
+[18:47:50] [INFO]   pos_jitter/msc summer: 762.4113377561499
+[18:47:50] [INFO]   pos_jitter/msc autumn: 817.6359418175966
+[18:47:50] [INFO]   pos_jitter/phase_alignment winter: 2707.7697101972713
+[18:47:50] [INFO]   pos_jitter/phase_alignment spring: 2783.3823058591734
+[18:47:50] [INFO]   pos_jitter/phase_alignment summer: 2666.382289310074
+[18:47:50] [INFO]   pos_jitter/phase_alignment autumn: 2788.230545536052
+[18:47:50] [INFO] 
+Processing metric: clock_drift...
+[18:47:52] [INFO]   clock_drift/msc winter: 718.8108249311024
+[18:47:52] [INFO]   clock_drift/msc spring: 657.9331392382431
+[18:47:52] [INFO]   clock_drift/msc summer: 649.0011869651613
+[18:47:52] [INFO]   clock_drift/msc autumn: 719.5954468762023
+[18:47:52] [INFO]   clock_drift/phase_alignment winter: 1305.8592876852874
+[18:47:52] [INFO]   clock_drift/phase_alignment spring: 1096.795688785603
+[18:47:52] [INFO]   clock_drift/phase_alignment summer: 1135.9801047355293
+[18:47:52] [INFO]   clock_drift/phase_alignment autumn: 1195.4091774471121
+[18:47:52] [INFO] 
+  MODE: PRECISE
+[18:47:52] [INFO] 
+Processing metric: clock_bias...
+[18:47:54] [INFO]   clock_bias/msc winter: 860.4129069427388
+[18:47:54] [INFO]   clock_bias/msc spring: 948.733967778834
+[18:47:54] [INFO]   clock_bias/msc summer: 1269.0423263853477
+[18:47:54] [INFO]   clock_bias/msc autumn: 886.5262798895894
+[18:47:54] [INFO]   clock_bias/phase_alignment winter: 2120.6685934505945
+[18:47:54] [INFO]   clock_bias/phase_alignment spring: 1689.0089378331313
+[18:47:54] [INFO]   clock_bias/phase_alignment summer: 1818.931383307754
+[18:47:54] [INFO]   clock_bias/phase_alignment autumn: 1791.648820811456
+[18:47:54] [INFO] 
+Processing metric: pos_jitter...
+[18:47:56] [INFO]   pos_jitter/msc winter: 631.7938722952603
+[18:47:56] [INFO]   pos_jitter/msc spring: 774.3638793399335
+[18:47:56] [INFO]   pos_jitter/msc summer: 1309.8019680194323
+[18:47:56] [INFO]   pos_jitter/msc autumn: 710.7257054290837
+[18:47:56] [INFO]   pos_jitter/phase_alignment winter: 3431.8793061587894
+[18:47:56] [INFO]   pos_jitter/phase_alignment spring: 13485.066918553299
+[18:47:56] [INFO]   pos_jitter/phase_alignment summer: 6259.47200177316
+[18:47:56] [INFO]   pos_jitter/phase_alignment autumn: 3470.8036782120425
+[18:47:56] [INFO] 
+Processing metric: clock_drift...
+[18:47:58] [INFO]   clock_drift/msc winter: 888.8527392188388
+[18:47:58] [INFO]   clock_drift/msc spring: 949.9107380403245
+[18:47:58] [INFO]   clock_drift/msc summer: 1284.3674960981768
+[18:47:58] [INFO]   clock_drift/msc autumn: 939.9843994361727
+[18:47:58] [INFO]   clock_drift/phase_alignment winter: 1335.4350466743986
+[18:47:58] [INFO]   clock_drift/phase_alignment spring: 1000.3756039863989
+[18:47:58] [INFO]   clock_drift/phase_alignment summer: 1144.8373248378361
+[18:47:58] [INFO]   clock_drift/phase_alignment autumn: 1313.6634489511632
+[18:47:59] [SUCCESS]   Saved: step_2_4_diurnal_analysis_optimal_100.json
+[18:47:59] [INFO] 
+################################################################################
+[18:47:59] [INFO] # FILTER: DYNAMIC_50
+[18:47:59] [INFO] ################################################################################
+[18:47:59] [INFO]   Using 400 stations
+[18:47:59] [INFO] 
+  MODE: BASELINE
+[18:47:59] [INFO] 
+Processing metric: clock_bias...
+[18:48:29] [INFO]   clock_bias/msc winter: 772.6962594254621
+[18:48:29] [INFO]   clock_bias/msc spring: 730.8957995859214
+[18:48:29] [INFO]   clock_bias/msc summer: 807.8309236413788
+[18:48:29] [INFO]   clock_bias/msc autumn: 752.1458485601504
+[18:48:29] [INFO]   clock_bias/phase_alignment winter: 1750.3914284074924
+[18:48:29] [INFO]   clock_bias/phase_alignment spring: 1898.4549850046037
+[18:48:29] [INFO]   clock_bias/phase_alignment summer: 1780.0467283987591
+[18:48:29] [INFO]   clock_bias/phase_alignment autumn: 1724.1746051977086
+[18:48:29] [INFO] 
+Processing metric: pos_jitter...
+[18:49:00] [INFO]   pos_jitter/msc winter: 876.6043486073055
+[18:49:00] [INFO]   pos_jitter/msc spring: 855.1488362582345
+[18:49:00] [INFO]   pos_jitter/msc summer: 968.2492730075818
+[18:49:00] [INFO]   pos_jitter/msc autumn: 893.5593305714342
+[18:49:00] [INFO]   pos_jitter/phase_alignment winter: 2078.698464042446
+[18:49:00] [INFO]   pos_jitter/phase_alignment spring: 1981.643881853666
+[18:49:00] [INFO]   pos_jitter/phase_alignment summer: 2169.524028539904
+[18:49:00] [INFO]   pos_jitter/phase_alignment autumn: 2095.4020840030735
+[18:49:00] [INFO] 
+Processing metric: clock_drift...
+[18:49:30] [INFO]   clock_drift/msc winter: 738.8717696314251
+[18:49:30] [INFO]   clock_drift/msc spring: 716.0680804090788
+[18:49:30] [INFO]   clock_drift/msc summer: 813.3734965930392
+[18:49:30] [INFO]   clock_drift/msc autumn: 719.0661038639271
+[18:49:30] [INFO]   clock_drift/phase_alignment winter: 1050.2910597522516
+[18:49:30] [INFO]   clock_drift/phase_alignment spring: 1036.603730864305
+[18:49:30] [INFO]   clock_drift/phase_alignment summer: 1023.1135939345213
+[18:49:30] [INFO]   clock_drift/phase_alignment autumn: 1030.3211435410874
+[18:49:31] [INFO] 
+  MODE: IONOFREE
+[18:49:31] [INFO] 
+Processing metric: clock_bias...
+[18:50:02] [INFO]   clock_bias/msc winter: 857.2820483286773
+[18:50:02] [INFO]   clock_bias/msc spring: 1114.5918572880987
+[18:50:02] [INFO]   clock_bias/msc summer: 1317.2850597400932
+[18:50:02] [INFO]   clock_bias/msc autumn: 1088.0624684997476
+[18:50:02] [INFO]   clock_bias/phase_alignment winter: 1978.9458495561553
+[18:50:02] [INFO]   clock_bias/phase_alignment spring: 1734.9634176159825
+[18:50:02] [INFO]   clock_bias/phase_alignment summer: 1785.368950598886
+[18:50:02] [INFO]   clock_bias/phase_alignment autumn: 1954.651286041211
+[18:50:02] [INFO] 
+Processing metric: pos_jitter...
+[18:50:34] [INFO]   pos_jitter/msc winter: 868.3755864087179
+[18:50:34] [INFO]   pos_jitter/msc spring: 1310.2761703605497
+[18:50:34] [INFO]   pos_jitter/msc summer: 1442.3318049011991
+[18:50:34] [INFO]   pos_jitter/msc autumn: 1181.9019403027949
+[18:50:34] [INFO]   pos_jitter/phase_alignment winter: 3157.6566160268144
+[18:50:34] [INFO]   pos_jitter/phase_alignment spring: 2929.992651389522
+[18:50:34] [INFO]   pos_jitter/phase_alignment summer: 4108.977947314021
+[18:50:34] [INFO]   pos_jitter/phase_alignment autumn: 3157.778616981884
+[18:50:34] [INFO] 
+Processing metric: clock_drift...
+[18:51:06] [INFO]   clock_drift/msc winter: 847.3271511925999
+[18:51:06] [INFO]   clock_drift/msc spring: 1132.4002650737852
+[18:51:06] [INFO]   clock_drift/msc summer: 1346.3832730184522
+[18:51:06] [INFO]   clock_drift/msc autumn: 1089.0411149966628
+[18:51:06] [INFO]   clock_drift/phase_alignment winter: 1110.8185477473999
+[18:51:06] [INFO]   clock_drift/phase_alignment spring: 1087.2117396956064
+[18:51:06] [INFO]   clock_drift/phase_alignment summer: 1144.3615044667283
+[18:51:06] [INFO]   clock_drift/phase_alignment autumn: 1180.7363481185605
+[18:51:06] [INFO] 
+  MODE: MULTI_GNSS
+[18:51:06] [INFO] 
+Processing metric: clock_bias...
+[18:51:36] [INFO]   clock_bias/msc winter: 947.9737670659173
+[18:51:36] [INFO]   clock_bias/msc spring: 753.2701510923774
+[18:51:36] [INFO]   clock_bias/msc summer: 763.5283663077996
+[18:51:36] [INFO]   clock_bias/msc autumn: 965.5274288591999
+[18:51:36] [INFO]   clock_bias/phase_alignment winter: 1703.4975926338227
+[18:51:36] [INFO]   clock_bias/phase_alignment spring: 1808.3830156297722
+[18:51:36] [INFO]   clock_bias/phase_alignment summer: 1791.5175097257088
+[18:51:36] [INFO]   clock_bias/phase_alignment autumn: 1687.6035264129782
+[18:51:36] [INFO] 
+Processing metric: pos_jitter...
+[18:52:07] [INFO]   pos_jitter/msc winter: 1016.5965989662194
+[18:52:07] [INFO]   pos_jitter/msc spring: 800.4447971397451
+[18:52:07] [INFO]   pos_jitter/msc summer: 852.7325359227683
+[18:52:07] [INFO]   pos_jitter/msc autumn: 1031.4299649219674
+[18:52:07] [INFO]   pos_jitter/phase_alignment winter: 1921.6129154903576
+[18:52:07] [INFO]   pos_jitter/phase_alignment spring: 1703.3447626160169
+[18:52:07] [INFO]   pos_jitter/phase_alignment summer: 1826.1702191913084
+[18:52:07] [INFO]   pos_jitter/phase_alignment autumn: 1832.696963441507
+[18:52:07] [INFO] 
+Processing metric: clock_drift...
+[18:52:37] [INFO]   clock_drift/msc winter: 875.298057171695
+[18:52:37] [INFO]   clock_drift/msc spring: 729.4797158368324
+[18:52:37] [INFO]   clock_drift/msc summer: 753.9443350857476
+[18:52:37] [INFO]   clock_drift/msc autumn: 884.3861485978811
+[18:52:37] [INFO]   clock_drift/phase_alignment winter: 1040.5694237923153
+[18:52:37] [INFO]   clock_drift/phase_alignment spring: 984.9922892686388
+[18:52:37] [INFO]   clock_drift/phase_alignment summer: 960.200108327418
+[18:52:37] [INFO]   clock_drift/phase_alignment autumn: 1006.2792028746309
+[18:52:37] [INFO] 
+  MODE: PRECISE
+[18:52:37] [INFO] 
+Processing metric: clock_bias...
+[18:53:08] [INFO]   clock_bias/msc winter: 1046.4147856781315
+[18:53:08] [INFO]   clock_bias/msc spring: 1264.3214844022157
+[18:53:08] [INFO]   clock_bias/msc summer: 1404.4534004654215
+[18:53:08] [INFO]   clock_bias/msc autumn: 1168.9828863589316
+[18:53:08] [INFO]   clock_bias/phase_alignment winter: 1961.2439760308218
+[18:53:08] [INFO]   clock_bias/phase_alignment spring: 1617.499681335406
+[18:53:08] [INFO]   clock_bias/phase_alignment summer: 1701.471716976209
+[18:53:08] [INFO]   clock_bias/phase_alignment autumn: 1865.9374676310993
+[18:53:08] [INFO] 
+Processing metric: pos_jitter...
+[18:53:40] [INFO]   pos_jitter/msc winter: 989.9484420275568
+[18:53:40] [INFO]   pos_jitter/msc spring: 1448.233465216186
+[18:53:40] [INFO]   pos_jitter/msc summer: 1807.8544207553512
+[18:53:40] [INFO]   pos_jitter/msc autumn: 1344.9124630823492
+[18:53:40] [INFO]   pos_jitter/phase_alignment winter: 2701.274474278107
+[18:53:40] [INFO]   pos_jitter/phase_alignment spring: 4392.786920668888
+[18:53:40] [INFO]   pos_jitter/phase_alignment summer: 3850.2498358571925
+[18:53:40] [INFO]   pos_jitter/phase_alignment autumn: 3000.622312581995
+[18:53:40] [INFO] 
+Processing metric: clock_drift...
+[18:54:11] [INFO]   clock_drift/msc winter: 1039.3256309264414
+[18:54:11] [INFO]   clock_drift/msc spring: 1280.7995088797848
+[18:54:11] [INFO]   clock_drift/msc summer: 1428.4397357887835
+[18:54:11] [INFO]   clock_drift/msc autumn: 1177.4112484301231
+[18:54:11] [INFO]   clock_drift/phase_alignment winter: 1284.7772657709834
+[18:54:11] [INFO]   clock_drift/phase_alignment spring: 1127.225604369611
+[18:54:11] [INFO]   clock_drift/phase_alignment summer: 1100.0527900924765
+[18:54:11] [INFO]   clock_drift/phase_alignment autumn: 1293.153135420155
+[18:54:11] [SUCCESS]   Saved: step_2_4_diurnal_analysis_dynamic_50.json
+[18:54:11] [SUCCESS] COMPLETE: 3 filters x 4 modes

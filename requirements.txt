@@ -1,0 +1,25 @@
+# TEP-GNSS-RINEX: Raw GNSS Data Analysis
+# Core stack for multi-constellation RINEX processing
+
+# Download and processing
+gnssrefl>=3.0.0          # Multi-archive RINEX download
+georinex>=1.16.0         # Fast RINEX parsing to xarray
+gnss-lib-py>=1.0.0       # Stanford NAV Lab analysis tools
+
+# Scientific computing
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+xarray>=2023.1.0
+
+# Visualization
+matplotlib>=3.7.0
+cartopy>=0.21.0
+
+# Data storage
+h5py>=3.8.0
+netCDF4>=1.6.0
+
+# Utilities
+tqdm>=4.65.0
+requests>=2.28.0

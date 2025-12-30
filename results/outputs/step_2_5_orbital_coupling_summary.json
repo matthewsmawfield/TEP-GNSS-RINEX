@@ -1,0 +1,150 @@
+{
+  "step": "2.5",
+  "name": "orbital_coupling_comprehensive",
+  "timestamp": "2025-12-17T21:47:52.209514",
+  "methodology": "Monthly EW/NS lambda ratio vs orbital velocity correlation",
+  "n_combinations": 12,
+  "filters_tested": [
+    "ALL_STATIONS",
+    "OPTIMAL_100",
+    "DYNAMIC_50"
+  ],
+  "modes_tested": [
+    "baseline",
+    "precise",
+    "ionofree",
+    "multi_gnss"
+  ],
+  "summary": {
+    "all_stations": {
+      "baseline": {
+        "metric": "pos_jitter",
+        "coherence_type": "msc",
+        "pearson_r": -0.509223952920894,
+        "p_value": 0.0015147203336467626,
+        "sigma": 3.1718484441428036,
+        "n_months": 36,
+        "seasonal_contrast": 1.388301108782088
+      },
+      "precise": {
+        "metric": "pos_jitter",
+        "coherence_type": "msc",
+        "pearson_r": -0.556191168803072,
+        "p_value": 0.0004279338969497443,
+        "sigma": 3.52222925858607,
+        "n_months": 36,
+        "seasonal_contrast": 1.2174551684743842
+      },
+      "ionofree": {
+        "metric": "pos_jitter",
+        "coherence_type": "msc",
+        "pearson_r": -0.3135259154158492,
+        "p_value": 0.06259964046755141,
+        "sigma": 1.8620244747550396,
+        "n_months": 36,
+        "seasonal_contrast": 1.4989311227834519
+      },
+      "multi_gnss": {
+        "metric": "pos_jitter",
+        "coherence_type": "phase_alignment",
+        "pearson_r": -0.7626573388028475,
+        "p_value": 6.436035559752324e-08,
+        "sigma": 5.406243304813989,
+        "n_months": 36,
+        "seasonal_contrast": 1.0339685737545048
+      }
+    },
+    "optimal_100": {
+      "baseline": {
+        "metric": "pos_jitter",
+        "coherence_type": "msc",
+        "pearson_r": -0.5287891412572036,
+        "p_value": 0.0009146592311958699,
+        "sigma": 3.315540999224226,
+        "n_months": 36,
+        "seasonal_contrast": 1.1319132287667273
+      },
+      "precise": {
+        "metric": "pos_jitter",
+        "coherence_type": "phase_alignment",
+        "pearson_r": -0.5373942205366264,
+        "p_value": 0.001515553192546165,
+        "sigma": 3.1716887982174384,
+        "n_months": 32,
+        "seasonal_contrast": 1.1016890532100658
+      },
+      "ionofree": {
+        "metric": "clock_drift",
+        "coherence_type": "msc",
+        "pearson_r": -0.4164906269881124,
+        "p_value": 0.011512866650888076,
+        "sigma": 2.5267339927790458,
+        "n_months": 36,
+        "seasonal_contrast": 1.0097705214764705
+      },
+      "multi_gnss": {
+        "metric": "pos_jitter",
+        "coherence_type": "msc",
+        "pearson_r": -0.4080048280025859,
+        "p_value": 0.013504093993175169,
+        "sigma": 2.4701909698375526,
+        "n_months": 36,
+        "seasonal_contrast": 1.425885587609361
+      }
+    },
+    "dynamic_50": {
+      "baseline": {
+        "metric": "pos_jitter",
+        "coherence_type": "msc",
+        "pearson_r": -0.43519470663247717,
+        "p_value": 0.007985439001888885,
+        "sigma": 2.6526848499260844,
+        "n_months": 36,
+        "seasonal_contrast": 1.372957910697581
+      },
+      "precise": {
+        "metric": "pos_jitter",
+        "coherence_type": "msc",
+        "pearson_r": -0.4347876380111242,
+        "p_value": 0.008050997104811946,
+        "sigma": 2.649923614931044,
+        "n_months": 36,
+        "seasonal_contrast": 1.2638441258278479
+      },
+      "ionofree": {
+        "metric": "clock_drift",
+        "coherence_type": "msc",
+        "pearson_r": -0.31519250995419956,
+        "p_value": 0.06114320188566277,
+        "sigma": 1.8724584732723561,
+        "n_months": 36,
+        "seasonal_contrast": 1.2903222071994744
+      },
+      "multi_gnss": {
+        "metric": "pos_jitter",
+        "coherence_type": "phase_alignment",
+        "pearson_r": -0.7323046843569181,
+        "p_value": 3.84523218942584e-07,
+        "sigma": 5.076464194356498,
+        "n_months": 36,
+        "seasonal_contrast": 1.0235996528306086
+      }
+    }
+  },
+  "code_reference": {
+    "code_r": -0.888,
+    "code_sigma": 5.1,
+    "code_n_months": 300
+  },
+  "best_result": {
+    "metric": "pos_jitter",
+    "coherence_type": "phase_alignment",
+    "pearson_r": -0.7626573388028475,
+    "p_value": 6.436035559752324e-08,
+    "sigma": 5.406243304813989,
+    "n_months": 36,
+    "seasonal_contrast": 1.0339685737545048,
+    "filter": "all_stations",
+    "mode": "multi_gnss"
+  }
+}

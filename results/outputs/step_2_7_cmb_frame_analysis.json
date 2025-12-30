@@ -1,0 +1,56 @@
+{
+  "step": "2.7",
+  "name": "cmb_frame_analysis",
+  "timestamp": "2025-12-25T00:04:48.151319",
+  "methodology": "Grid search over background RA/Dec using monthly EW/NS ratios",
+  "data_source": "step_2_5_orbital_coupling_all_stations_multi_gnss.json",
+  "n_months": 36,
+  "ew_ns_ratio_range": {
+    "min": 0.7338600216723679,
+    "max": 1.267226455449874,
+    "mean": 0.9795790935834177,
+    "std": 0.1439458649544058
+  },
+  "best_fit": {
+    "ra": 188.0,
+    "dec": -5.0,
+    "correlation": 0.5010401745802964,
+    "p_value": 0.0018543034480769105,
+    "global_p_value": 0.03199360127974405,
+    "mc_hits": 159,
+    "ra_ci_68": [
+      160.0,
+      190.0
+    ],
+    "dec_ci_68": [
+      -30.0,
+      40.0
+    ]
+  },
+  "cmb_comparison": {
+    "cmb_ra": 167.94,
+    "cmb_dec": -6.94,
+    "separation_deg": 20.043210090095354,
+    "correlation_at_cmb": 0.4239621731743167
+  },
+  "solar_apex_comparison": {
+    "apex_ra": 271.0,
+    "apex_dec": 30.0,
+    "separation_deg": 86.47049920927512,
+    "correlation_at_apex": -0.005447538882706222
+  },
+  "variance_ratio": 8459.466189952398,
+  "comparison_to_code": {
+    "code_ra": 186,
+    "code_dec": -4,
+    "code_cmb_sep": 18.2,
+    "code_variance_ratio": 5570,
+    "rinex_cmb_sep": 20.043210090095354,
+    "rinex_variance_ratio": 8459.466189952398
+  },
+  "interpretation": {
+    "significant": true,
+    "cmb_aligned": true,
+    "conclusion": "CMB alignment detected"
+  }
+}

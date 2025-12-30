@@ -1,0 +1,98 @@
+[0;37m[18:45:21] [INFO] [0m
+[0;37m[18:45:21] [INFO] ================================================================================[0m
+[0;37m[18:45:21] [INFO] RUNNING SINGLE FILTER: ALL STATIONS[0m
+[0;37m[18:45:21] [INFO] ================================================================================[0m
+[0;37m[18:45:21] [INFO] [0m
+[0;37m[18:45:21] [INFO] [0m
+[0;37m[18:45:21] [INFO] ================================================================================[0m
+[0;37m[18:45:21] [INFO] TEP-GNSS-RINEX Analysis - STEP 2.2: Anisotropy (ALL STATIONS)[0m
+[0;37m[18:45:21] [INFO] ================================================================================[0m
+[1;32m[18:45:21] [SUCCESS] [FAST PATH] Found pre-generated CSV files for all_stations[0m
+[0;37m[18:45:21] [INFO]   Baseline: step_2_0_pairs_baseline_all_stations.csv (15367.7 MB)[0m
+[0;37m[18:45:21] [INFO]   Ionofree: step_2_0_pairs_ionofree_all_stations.csv[0m
+[0;37m[18:45:21] [INFO]   Multi-GNSS: step_2_0_pairs_multi_gnss_all_stations.csv[0m
+[0;37m[18:45:21] [INFO]   Precise: step_2_0_pairs_precise_all_stations.csv[0m
+[0;34m[18:45:21] [PROCESS] [1/8] Loading station data...[0m
+[0;37m[18:45:21] [INFO]   Using ALL stations (no filter)[0m
+[1;32m[18:45:21] [SUCCESS]   [FAST PATH] Skipping NPZ file scanning (using CSV files)[0m
+[0;37m[18:45:21] [INFO]   Mode availability (from CSV files):[0m
+[0;37m[18:45:21] [INFO]     baseline: ✓[0m
+[0;37m[18:45:21] [INFO]     precise: ✓[0m
+[0;37m[18:45:21] [INFO]     ionofree: ✓[0m
+[0;37m[18:45:21] [INFO]     multi_gnss: ✓[0m
+[0;34m[18:45:21] [PROCESS] Loading pre-computed pairs from step_2_0_pairs_baseline_all_stations.csv (Chunked)...[0m
+[0;37m[18:45:21] [INFO]   Will filter for 'clock_bias' metric only[0m
+[0;37m[18:45:22] [INFO]   Loaded 0.9M pairs...[0m
+[0;37m[18:45:23] [INFO]   Loaded 1.7M pairs...[0m
+[0;37m[18:45:25] [INFO]   Loaded 2.6M pairs...[0m
+[0;37m[18:45:26] [INFO]   Loaded 3.4M pairs...[0m
+[0;37m[18:45:27] [INFO]   Loaded 4.2M pairs...[0m
+[0;37m[18:45:28] [INFO]   Loaded 5.1M pairs...[0m
+[0;37m[18:45:30] [INFO]   Loaded 5.9M pairs...[0m
+[0;37m[18:45:31] [INFO]   Loaded 6.7M pairs...[0m
+[0;37m[18:45:33] [INFO]   Loaded 7.6M pairs...[0m
+[0;37m[18:45:34] [INFO]   Loaded 8.4M pairs...[0m
+[0;37m[18:45:35] [INFO]   Loaded 9.2M pairs...[0m
+[0;37m[18:45:36] [INFO]   Loaded 10.0M pairs...[0m
+[0;37m[18:45:37] [INFO]   Loaded 10.8M pairs...[0m
+[0;37m[18:45:39] [INFO]   Loaded 11.7M pairs...[0m
+[0;37m[18:45:40] [INFO]   Loaded 12.5M pairs...[0m
+[0;37m[18:45:41] [INFO]   Loaded 13.4M pairs...[0m
+[0;37m[18:45:42] [INFO]   Loaded 14.2M pairs...[0m
+[0;37m[18:45:43] [INFO]   Loaded 15.1M pairs...[0m
+[0;37m[18:45:44] [INFO]   Loaded 15.9M pairs...[0m
+[0;37m[18:45:45] [INFO]   Loaded 16.8M pairs...[0m
+[0;37m[18:45:47] [INFO]   Loaded 17.6M pairs...[0m
+[0;37m[18:45:48] [INFO]   Loaded 18.4M pairs...[0m
+[0;37m[18:45:49] [INFO]   Loaded 19.2M pairs...[0m
+[0;37m[18:45:50] [INFO]   Loaded 20.0M pairs...[0m
+[0;37m[18:45:52] [INFO]   Loaded 20.9M pairs...[0m
+[0;37m[18:45:53] [INFO]   Loaded 21.8M pairs...[0m
+[0;37m[18:45:54] [INFO]   Loaded 22.6M pairs...[0m
+[0;37m[18:45:55] [INFO]   Loaded 23.4M pairs...[0m
+[0;37m[18:45:57] [INFO]   Loaded 24.2M pairs...[0m
+[0;37m[18:45:58] [INFO]   Loaded 25.0M pairs...[0m
+[0;37m[18:45:59] [INFO]   Loaded 25.9M pairs...[0m
+[0;37m[18:46:01] [INFO]   Loaded 26.7M pairs...[0m
+[0;37m[18:46:02] [INFO]   Loaded 27.6M pairs...[0m
+[0;37m[18:46:03] [INFO]   Loaded 28.4M pairs...[0m
+[0;37m[18:46:04] [INFO]   Loaded 29.2M pairs...[0m
+[0;37m[18:46:06] [INFO]   Loaded 30.1M pairs...[0m
+[0;37m[18:46:07] [INFO]   Loaded 30.9M pairs...[0m
+[0;37m[18:46:08] [INFO]   Loaded 31.8M pairs...[0m
+[0;37m[18:46:09] [INFO]   Loaded 32.5M pairs...[0m
+[0;37m[18:46:11] [INFO]   Loaded 33.4M pairs...[0m
+Traceback (most recent call last):
+  File "/Users/matthewsmawfield/www/TEP-GNSS-RINEX/scripts/steps/step_2_2_anisotropy_analysis.py", line 4166, in <module>
+    main()
+    ~~~~^^
+  File "/Users/matthewsmawfield/www/TEP-GNSS-RINEX/scripts/steps/step_2_2_anisotropy_analysis.py", line 4157, in main
+    run_analysis_pipeline(name, config, observables=args.observables)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/matthewsmawfield/www/TEP-GNSS-RINEX/scripts/steps/step_2_2_anisotropy_analysis.py", line 3440, in run_analysis_pipeline
+    pairs_all_loaded = load_pairs_from_csv(pair_file_baseline, primary_observable, list(station_coords.keys()), station_coords)
+  File "/Users/matthewsmawfield/www/TEP-GNSS-RINEX/scripts/steps/step_2_2_anisotropy_analysis.py", line 3004, in load_pairs_from_csv
+    for i, chunk in enumerate(pd.read_csv(csv_file, usecols=use_cols, chunksize=chunk_size)):
+                    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/matthewsmawfield/opt/miniconda3/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1843, in __next__
+    return self.get_chunk()
+           ~~~~~~~~~~~~~~^^
+  File "/Users/matthewsmawfield/opt/miniconda3/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1985, in get_chunk
+    return self.read(nrows=size)
+           ~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/matthewsmawfield/opt/miniconda3/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "/Users/matthewsmawfield/opt/miniconda3/lib/python3.13/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 850, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2053, in pandas._libs.parsers.raise_parser_error
+  File "<frozen codecs>", line 334, in getstate
+KeyboardInterrupt

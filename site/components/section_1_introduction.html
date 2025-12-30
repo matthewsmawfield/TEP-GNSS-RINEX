@@ -1,0 +1,56 @@
+<h2>1. Introduction: The TEP Research Program</h2>
+
+<h2>1.1 The Theoretical Hypothesis</h2>
+
+<p>The Temporal Equivalence Principle (TEP) represents a proposed extension to the foundations of General Relativity, positing a fundamental coupling between spatial and temporal fluctuations in geodetic measurements. Unlike standard screened scalar field theories (Burrage & Sakstein, 2018) which predict strictly spatial gradients, TEP implies that local variations in the gravitational potential should manifest as synchronized fluctuations in the rate of proper time flow, observable in the phase coherence of spatially separated atomic clocks. Based on a Bi-Metric Geometry framework (Smawfield, 2025), this theory predicts a breakdown of global simultaneity while preserving exact local Lorentz invariance. This approach parallels recent advances in using global atomic clock networks for fundamental physics, including dark matter searches (Wcisło et al., 2018) and relativistic geodesy (Lisdat et al., 2016).</p>
+
+<p>This hypothesis yields a specific, falsifiable prediction: Inter-station clock coherence should exhibit exponential decay with distance ($C(r) \propto e^{-r/\lambda}$), driven by a scalar field correlation length $\lambda$ on the order of 10³ km.</p>
+
+<h2>1.2 The Empirical Foundation</h2>
+
+<p>To date, this hypothesis has been tested through two comprehensive analyses:</p>
+
+<div class="experimental-section">
+    <h3>Paper 1: Multi-Center Validation</h3>
+    <p>Analysis of precise orbit and clock products from three independent analysis centers (CODE, ESA, IGS) found exponential decay signatures with λ ≈ 3,500–4,500 km. The consistency across centers (R² > 0.92) disfavors center-specific software artifacts.</p>
+    <p><a href="https://matthewsmawfield.github.io/TEP-GNSS/">→ View Paper 1</a></p>
+</div>
+
+<div class="experimental-section">
+    <h3>Paper 2: 25-Year Temporal Stability</h3>
+    <p>A longitudinal study of 25 years of CODE data (2000-2025) found that these signatures are not confined to a transient interval. They persist across solar cycles, hardware generations, and reference frame updates, exhibiting statistically significant coupling with orbital dynamics.</p>
+    <p><a href="https://matthewsmawfield.github.io/TEP-GNSS-II/">→ View Paper 2</a></p>
+</div>
+
+<h3>1.3 The Processing Artifact Objection</h3>
+
+<p>Despite these successes, a critical scientific objection remains valid:</p>
+<blockquote>
+    "Are these signatures artifacts of the sophisticated processing chains used to generate precise products, or do they exist in the raw observations themselves?"
+</blockquote>
+
+<p>Precise Point Positioning (PPP) products rely on sophisticated network adjustments, integer ambiguity resolution, and inter-station constraints—processes that could, in principle, introduce spurious long-range correlations. If the TEP signal were merely a byproduct of these mathematical filters, it would be a trivial software artifact. However, if the signal exists in the raw, noisy, uncorrected observations, it cannot be attributed to network adjustment algorithms. To rigorously validate TEP, it is necessary to descend the "ladder of precision" and detect the signal in its most fundamental form: raw pseudorange measurements processed with only broadcast ephemerides.</p>
+
+<h2>1.4 Objectives of This Capstone Study</h2>
+
+<p>This paper serves as the final study of the TEP-GNSS research program. Its primary objective is to perform an independent test of the TEP signal by:</p>
+<ol>
+    <li><strong>Addressing the Processing Artifact Objection</strong> by detecting distance-structured signatures in raw RINEX data using Single Point Positioning (SPP) with broadcast ephemerides as the primary methodology, supplemented by precise ephemeris validation.</li>
+    <li><strong>Validating directional anisotropy</strong> — testing whether E-W correlations exceed N-S as found in CODE's 25-year analysis.</li>
+    <li><strong>Comparing spatial vs. temporal correlation lengths</strong> to test the core Space-Time Coupling prediction.</li>
+    <li><strong>Validating environmental independence</strong> — stratifying by geomagnetic activity and season to assess ionospheric and atmospheric origins.</li>
+    <li><strong>Synthesizing findings across all three papers</strong> to establish a unified evidence framework.</li>
+</ol>
+
+<h3>1.5 Paper Structure</h3>
+
+<p>The remainder of this paper is organized as follows:</p>
+<ul>
+    <li><strong>Section 2:</strong> Methodology — A fundamental, first-principles approach using raw RINEX data</li>
+    <li><strong>Section 3:</strong> Results — Detection of exponential decay and directional anisotropy</li>
+    <li><strong>Section 4:</strong> Validation — Null tests, geomagnetic stratification, and systematic effects</li>
+    <li><strong>Section 5:</strong> Synthesis — The convergence of evidence across Papers 1, 2, and 3</li>
+    <li><strong>Section 6:</strong> Discussion — Physical implications and future directions</li>
+    <li><strong>Section 7:</strong> Conclusions — Final assessment</li>
+    <li><strong>Section 8:</strong> Analysis Package — Reproducibility documentation</li>
+</ul>
