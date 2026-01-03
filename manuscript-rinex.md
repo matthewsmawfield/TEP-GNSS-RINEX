@@ -4,7 +4,7 @@
 **Version:** v0.3 (Kathmandu)  
 **Date:** First published: 9 December 2025 · Last updated: 17 December 2025  
 **DOI:** 10.5281/zenodo.17860166  
-**Generated:** 2025-12-31  
+**Generated:** 2026-01-03  
 **Paper Series:** TEP-GNSS Paper 3 (Raw RINEX Validation)
 
 ---
@@ -123,7 +123,7 @@ To date, this hypothesis has been tested through two comprehensive analyses:
 
     Analysis of precise orbit and clock products from three independent analysis centers (CODE, ESA, IGS) found exponential decay signatures with λ ≈ 3,500–4,500 km. The consistency across centers (R² > 0.92) disfavors center-specific software artifacts.
 
-    [→ View Paper 1](https://matthewsmawfield.github.io/TEP-GNSS/)
+    [→ View Paper 1 (TEP-GNSS)](https://matthewsmawfield.github.io/TEP-GNSS/)
 
 **Experimental Section:**
 
@@ -131,7 +131,7 @@ To date, this hypothesis has been tested through two comprehensive analyses:
 
     A longitudinal study of 25 years of CODE data (2000-2025) found that these signatures are not confined to a transient interval. They persist across solar cycles, hardware generations, and reference frame updates, exhibiting statistically significant coupling with orbital dynamics.
 
-    [→ View Paper 2](https://matthewsmawfield.github.io/TEP-GNSS-II/)
+    [→ View Paper 2 (TEP-GNSS-II)](https://matthewsmawfield.github.io/TEP-GNSS-II/)
 
 ### 1.3 The Processing Artifact Objection
 
@@ -3658,11 +3658,11 @@ Wcisło, P., et al. (2018). New bounds on dark matter coupling from a global net
 
 ### TEP-GNSS Research Series
 
-Smawfield, M. L. (2025). Global Time Echoes: Distance-Structured Correlations in GNSS Clocks. *Preprint*. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229). Site: [matthewsmawfield.github.io/TEP-GNSS/](https://matthewsmawfield.github.io/TEP-GNSS/)
+Smawfield, M. L. (2025). Global Time Echoes: Distance-Structured Correlations in GNSS Clocks. *Preprint*. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229). Site: [TEP-GNSS](https://matthewsmawfield.github.io/TEP-GNSS/)
 
-Smawfield, M. L. (2025). Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks. *Preprint*. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141). Site: [matthewsmawfield.github.io/TEP-GNSS-II/](https://matthewsmawfield.github.io/TEP-GNSS-II/)
+Smawfield, M. L. (2025). Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks. *Preprint*. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141). Site: [TEP-GNSS-II](https://matthewsmawfield.github.io/TEP-GNSS-II/)
 
-Smawfield, M. L. (2025). Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks. *Preprint*. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166). PDF: [Download](https://zenodo.org/records/17860166/files/Smawfield_2025_GlobalTimeEchoes_Rinex_v0.4_Kathmandu.pdf?download=1). Site: [matthewsmawfield.github.io/TEP-GNSS-RINEX/](https://matthewsmawfield.github.io/TEP-GNSS-RINEX/) (this paper)
+Smawfield, M. L. (2025). Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks. *Preprint*. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166). PDF: [Download](https://zenodo.org/records/17860166/files/Smawfield_2025_GlobalTimeEchoes_Rinex_v0.4_Kathmandu.pdf?download=1). Site: [TEP-GNSS-RINEX](https://matthewsmawfield.github.io/TEP-GNSS-RINEX/) (this paper)
 
 Smawfield, M. L. (2025). The Temporal Equivalence Principle: A Bi-Metric Framework for Gravitational Time Dilation. *Preprint*. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911). PDF: [Download](https://zenodo.org/records/16921911/files/Smawfield_2025_TemporalEquivalencePrinciple_Preprint_v0.6_Jakarta.pdf?download=1). (companion theory paper)
 
@@ -3724,11 +3724,11 @@ Klobuchar, J. A. (1987). Ionospheric time-delay algorithm for single-frequency G
 
 #### Related Projects
 
-        - Paper 1 (Multi-Center): [matthewsmawfield.github.io/TEP-GNSS/](https://matthewsmawfield.github.io/TEP-GNSS/)
+        - Paper 1 (Multi-Center): [TEP-GNSS](https://matthewsmawfield.github.io/TEP-GNSS/)
 
-        - Paper 2 (25-Year CODE): [matthewsmawfield.github.io/TEP-GNSS-II/](https://matthewsmawfield.github.io/TEP-GNSS-II/)
+        - Paper 2 (25-Year CODE): [TEP-GNSS-II](https://matthewsmawfield.github.io/TEP-GNSS-II/)
 
-        - Paper 3 (Raw RINEX): [matthewsmawfield.github.io/TEP-GNSS-RINEX/](https://matthewsmawfield.github.io/TEP-GNSS-RINEX/) (this paper)
+        - Paper 3 (Raw RINEX): [TEP-GNSS-RINEX](https://matthewsmawfield.github.io/TEP-GNSS-RINEX/) (this paper)
 
 #### Code Repositories
 
