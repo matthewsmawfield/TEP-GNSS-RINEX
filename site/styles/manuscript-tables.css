@@ -1,0 +1,387 @@
+/* TEP Manuscript Tables - Specialized Table Styles */
+
+/* ============================================
+   PREDICTION & OBSERVATION TABLES
+   ============================================ */
+
+.prediction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+    background: white;
+}
+
+.prediction-table thead tr {
+    background-color: rgba(45, 1, 64, 0.1);
+}
+
+.prediction-table th {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #495773;
+    font-weight: 600;
+    color: #220126;
+}
+
+.prediction-table td {
+    padding: 8px;
+    border: 1px solid #495773;
+    vertical-align: top;
+}
+
+.prediction-table tbody tr:nth-child(odd) {
+    background-color: rgba(73, 87, 115, 0.03);
+}
+
+.prediction-table tbody tr:hover {
+    background-color: rgba(73, 87, 115, 0.08);
+}
+
+/* ============================================
+   RESULTS SUMMARY TABLES
+   ============================================ */
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 13px;
+}
+
+.results-table thead {
+    background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+    color: white;
+}
+
+.results-table th {
+    padding: 12px 10px;
+    text-align: left;
+    border: 1px solid #1565c0;
+    font-weight: 600;
+}
+
+.results-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.results-table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.results-table tbody tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* Numeric columns */
+.results-table td.numeric {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Status indicators */
+.results-table td.status-pass {
+    color: #4caf50;
+    font-weight: 600;
+}
+
+.results-table td.status-fail {
+    color: #f44336;
+    font-weight: 600;
+}
+
+.results-table td.status-warning {
+    color: #ff9800;
+    font-weight: 600;
+}
+
+/* ============================================
+   COMPARISON TABLES
+   ============================================ */
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.comparison-table th {
+    padding: 10px;
+    background: #495773;
+    color: white;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.comparison-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.comparison-table tbody tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+/* Highlight column */
+.comparison-table td.highlight {
+    background-color: #fff3e0;
+    font-weight: 600;
+}
+
+/* ============================================
+   VALIDATION TABLES
+   ============================================ */
+
+.validation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 13px;
+}
+
+.validation-table thead {
+    background: #37474f;
+    color: white;
+}
+
+.validation-table th {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #263238;
+}
+
+.validation-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.validation-table tbody tr:hover {
+    background-color: #eceff1;
+}
+
+/* Test result indicators */
+.validation-table .test-pass {
+    background-color: #c8e6c9;
+}
+
+.validation-table .test-fail {
+    background-color: #ffcdd2;
+}
+
+.validation-table .test-skip {
+    background-color: #fff9c4;
+}
+
+/* ============================================
+   PARAMETER TABLES
+   ============================================ */
+
+.parameter-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.parameter-table th {
+    padding: 8px 10px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.parameter-table td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+}
+
+.parameter-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Parameter name column */
+.parameter-table td:first-child {
+    font-weight: 500;
+    color: #333;
+}
+
+/* Value column */
+.parameter-table td:nth-child(2) {
+    font-family: 'Courier New', monospace;
+    color: #1976d2;
+}
+
+/* ============================================
+   DATASET TABLES
+   ============================================ */
+
+.dataset-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 13px;
+}
+
+.dataset-table thead {
+    background: linear-gradient(135deg, #37474f 0%, #263238 100%);
+    color: white;
+}
+
+.dataset-table th {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #1a1a1a;
+}
+
+.dataset-table td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+}
+
+.dataset-table tbody tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+/* Dataset name */
+.dataset-table .dataset-name {
+    font-weight: 600;
+    color: #1976d2;
+}
+
+/* ============================================
+   STATISTICAL TABLES
+   ============================================ */
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.stats-table th {
+    padding: 10px;
+    background: #e3f2fd;
+    border: 1px solid #90caf9;
+    text-align: left;
+    font-weight: 600;
+}
+
+.stats-table td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-variant-numeric: tabular-nums;
+}
+
+.stats-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Significance indicators */
+.stats-table .sig-high {
+    background-color: #c8e6c9;
+    font-weight: 600;
+}
+
+.stats-table .sig-medium {
+    background-color: #fff9c4;
+}
+
+.stats-table .sig-low {
+    background-color: #ffcdd2;
+}
+
+/* ============================================
+   RESPONSIVE TABLE WRAPPER
+   ============================================ */
+
+.table-wrapper {
+    overflow-x: auto;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.table-wrapper table {
+    margin: 0;
+}
+
+/* ============================================
+   TABLE CAPTIONS
+   ============================================ */
+
+.table-caption {
+    font-size: 14px;
+    color: #666;
+    margin-top: 8px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.table-caption strong {
+    color: #333;
+    font-style: normal;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .prediction-table,
+    .results-table,
+    .comparison-table,
+    .validation-table,
+    .parameter-table,
+    .dataset-table,
+    .stats-table {
+        font-size: 11px;
+    }
+    
+    .prediction-table th,
+    .prediction-table td,
+    .results-table th,
+    .results-table td,
+    .comparison-table th,
+    .comparison-table td,
+    .validation-table th,
+    .validation-table td,
+    .parameter-table th,
+    .parameter-table td,
+    .dataset-table th,
+    .dataset-table td,
+    .stats-table th,
+    .stats-table td {
+        padding: 6px;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .prediction-table,
+    .results-table,
+    .comparison-table,
+    .validation-table,
+    .parameter-table,
+    .dataset-table,
+    .stats-table {
+        page-break-inside: avoid;
+    }
+    
+    .results-table thead {
+        background: #ddd;
+        color: black;
+    }
+    
+    .dataset-table thead {
+        background: #ddd;
+        color: black;
+    }
+}

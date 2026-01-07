@@ -1,0 +1,468 @@
+/* TEP Manuscript Common Styles - Shared CSS Framework */
+/* Eliminates inline styles across all manuscript sites */
+
+/* ============================================
+   EXECUTIVE SUMMARY STYLES
+   ============================================ */
+
+.executive-summary {
+    background: linear-gradient(135deg, rgba(34, 1, 38, 0.05) 0%, rgba(73, 87, 115, 0.05) 100%);
+    border: 1px solid rgba(73, 87, 115, 0.3);
+    border-radius: 8px;
+    padding: 25px;
+    margin: 25px 0;
+}
+
+.executive-summary h2 {
+    color: #220126;
+    margin-top: 0;
+    text-align: center;
+    font-size: 24px;
+}
+
+.executive-summary-section {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.executive-summary-section h3 {
+    color: #220126;
+    margin-top: 0;
+}
+
+.executive-summary-section ul,
+.executive-summary-section ol {
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.executive-summary-conclusion {
+    background-color: rgba(73, 87, 115, 0.08);
+    border: 1px solid rgba(73, 87, 115, 0.4);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.executive-summary-conclusion h3 {
+    color: #220126;
+    margin-top: 0;
+}
+
+.executive-summary-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(73, 87, 115, 0.2);
+}
+
+.executive-summary-footnote {
+    font-size: 12px;
+    color: #888;
+    margin: 5px 0 0 0;
+}
+
+/* ============================================
+   CALLOUT BOXES
+   ============================================ */
+
+.callout-box {
+    background-color: rgba(245, 245, 245, 0.6);
+    border-left: 3px solid #666;
+    padding: 12px;
+    margin: 15px 0;
+}
+
+.callout-box-primary {
+    background-color: rgba(33, 150, 243, 0.1);
+    border-left: 3px solid #2196f3;
+    padding: 12px;
+    margin: 15px 0;
+}
+
+.callout-box-warning {
+    background-color: rgba(255, 152, 0, 0.1);
+    border-left: 3px solid #ff9800;
+    padding: 12px;
+    margin: 15px 0;
+}
+
+.callout-box-success {
+    background-color: rgba(76, 175, 80, 0.1);
+    border-left: 3px solid #4caf50;
+    padding: 12px;
+    margin: 15px 0;
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+
+.experimental-section {
+    background-color: #f8f8ff;
+    border: 2px solid #495773;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 6px;
+}
+
+.experimental-section h3 {
+    margin-top: 0;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.data-table thead tr {
+    background-color: rgba(45, 1, 64, 0.1);
+}
+
+.data-table th {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #495773;
+    font-weight: 600;
+}
+
+.data-table td {
+    padding: 8px;
+    border: 1px solid #495773;
+    vertical-align: top;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: rgba(73, 87, 115, 0.03);
+}
+
+.data-table tbody tr:hover {
+    background-color: rgba(73, 87, 115, 0.08);
+}
+
+/* Compact table variant */
+.data-table-compact {
+    font-size: 13px;
+}
+
+.data-table-compact th,
+.data-table-compact td {
+    padding: 6px 8px;
+}
+
+/* ============================================
+   FIGURE CAPTIONS
+   ============================================ */
+
+.figure-container {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.figure-caption {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.figure-caption strong {
+    color: #333;
+}
+
+/* ============================================
+   SECTION HEADERS
+   ============================================ */
+
+.section-header {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #495773;
+}
+
+.section-header h2 {
+    margin: 0;
+    color: #220126;
+}
+
+.subsection-header {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.subsection-header h3 {
+    margin: 0;
+    color: #220126;
+}
+
+/* ============================================
+   STATISTICS & METRICS
+   ============================================ */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2196f3;
+    margin-bottom: 5px;
+}
+
+.stat-description {
+    font-size: 13px;
+    color: #666;
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+
+.list-spaced {
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.list-spaced li {
+    margin-bottom: 10px;
+}
+
+.list-compact {
+    line-height: 1.4;
+    margin: 10px 0;
+}
+
+/* ============================================
+   METHODOLOGY SECTIONS
+   ============================================ */
+
+.methodology-step {
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.methodology-step h4 {
+    margin-top: 0;
+    color: #220126;
+}
+
+.methodology-step-number {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #2196f3;
+    color: white;
+    border-radius: 50%;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+/* ============================================
+   VALIDATION BADGES
+   ============================================ */
+
+.validation-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.validation-badge-pass {
+    background: #4caf50;
+    color: white;
+}
+
+.validation-badge-fail {
+    background: #f44336;
+    color: white;
+}
+
+.validation-badge-warning {
+    background: #ff9800;
+    color: white;
+}
+
+.validation-badge-info {
+    background: #2196f3;
+    color: white;
+}
+
+/* ============================================
+   EQUATIONS & FORMULAS
+   ============================================ */
+
+.equation-block {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 20px 0;
+    overflow-x: auto;
+    text-align: center;
+}
+
+.equation-number {
+    float: right;
+    color: #666;
+    font-size: 14px;
+}
+
+/* ============================================
+   RESULTS HIGHLIGHTS
+   ============================================ */
+
+.result-highlight {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border: 2px solid #2196f3;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 25px 0;
+}
+
+.result-highlight h3 {
+    margin-top: 0;
+    color: #1565c0;
+}
+
+.result-highlight-critical {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    border: 2px solid #ff9800;
+}
+
+.result-highlight-critical h3 {
+    color: #e65100;
+}
+
+/* ============================================
+   REFERENCES & CITATIONS
+   ============================================ */
+
+.reference-list {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.reference-list li {
+    margin-bottom: 12px;
+}
+
+.citation-inline {
+    color: #2196f3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.citation-inline:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   APPENDIX SECTIONS
+   ============================================ */
+
+.appendix-section {
+    background: #fafafa;
+    border-top: 3px solid #495773;
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+
+.appendix-section h2 {
+    color: #220126;
+    margin-top: 0;
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+
+@media (max-width: 768px) {
+    .executive-summary {
+        padding: 15px;
+    }
+    
+    .executive-summary-section {
+        padding: 15px;
+    }
+    
+    .data-table {
+        font-size: 12px;
+    }
+    
+    .data-table th,
+    .data-table td {
+        padding: 6px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-value {
+        font-size: 20px;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .executive-summary {
+        background: white;
+        border: 1px solid #ccc;
+    }
+    
+    .executive-summary-section {
+        background: white;
+        page-break-inside: avoid;
+    }
+    
+    .callout-box,
+    .callout-box-primary,
+    .callout-box-warning,
+    .callout-box-success {
+        background: white;
+        border: 1px solid #ccc;
+    }
+    
+    .result-highlight,
+    .result-highlight-critical {
+        background: white;
+        border: 2px solid #ccc;
+    }
+}
