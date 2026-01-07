@@ -3662,7 +3662,7 @@ Smawfield, M. L. (2025). Global Time Echoes: Distance-Structured Correlations in
 
 Smawfield, M. L. (2025). Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks. *Preprint*. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141). Site: [TEP-GNSS-II](https://matthewsmawfield.github.io/TEP-GNSS-II/)
 
-Smawfield, M. L. (2025). Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks. *Preprint*. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166). PDF: [Download](https://zenodo.org/records/17860166/files/Smawfield_2025_GlobalTimeEchoes_Rinex_v0.4_Kathmandu.pdf?download=1). Site: [TEP-GNSS-RINEX](https://matthewsmawfield.github.io/TEP-GNSS-RINEX/) (this paper)
+Smawfield, M. L. (2025). Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks. *Preprint*. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166). PDF: [Download](https://zenodo.org/records/17860166/files/Smawfield_2025_GlobalTimeEchoes_Rinex_v0.3_Kathmandu.pdf?download=1). Site: [TEP-GNSS-RINEX](https://matthewsmawfield.github.io/TEP-GNSS-RINEX/) (this paper)
 
 Smawfield, M. L. (2025). The Temporal Equivalence Principle: A Bi-Metric Framework for Gravitational Time Dilation. *Preprint*. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911). PDF: [Download](https://zenodo.org/records/16921911/files/Smawfield_2025_TemporalEquivalencePrinciple_Preprint_v0.6_Jakarta.pdf?download=1). (companion theory paper)
 
@@ -3738,7 +3738,7 @@ Klobuchar, J. A. (1987). Ionospheric time-delay algorithm for single-frequency G
 
         License: This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
-        Version: v0.4 (Kathmandu) · Last updated: 24 December 2025
+        Version: v0.3 (Kathmandu) · Last updated: 17 December 2025
 
 ---
 
