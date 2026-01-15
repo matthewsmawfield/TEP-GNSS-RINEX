@@ -222,3 +222,8 @@ These are working preprints shared in the spirit of open science—all manuscrip
 - NASA CDDIS for data distribution
 - International GNSS Service (IGS) and contributing station operators
 - Tomoji Takasu (RTKLIB)
+
+---
+
+**Contact:** matthewsmawfield@gmail.com  
+**ORCID:** [0009-0003-8219-3159](https://orcid.org/0009-0003-8219-3159)
