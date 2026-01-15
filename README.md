@@ -10,7 +10,8 @@
 **Date:** 17 December 2025  
 **Status:** Preprint  
 **DOI:** [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166)  
-**Website:** [https://mlsmawfield.com/tep/gnss-iii/](https://mlsmawfield.com/tep/gnss-iii/)
+**Website:** [https://mlsmawfield.com/tep/gnss-iii/](https://mlsmawfield.com/tep/gnss-iii/)  
+**ORCID:** [0009-0003-8219-3159](https://orcid.org/0009-0003-8219-3159)
 
 ## Abstract
 
@@ -98,30 +99,55 @@ python scripts/steps/step_2_0_raw_spp_analysis.py
 | 2.6 | `step_2_6_planetary_events.py` | Planetary conjunction/opposition |
 | 2.7 | `step_2_7_cmb_frame_analysis.py` | CMB frame grid search |
 
-## Key Results
+## Summary of Key Results and Findings
 
-**Dataset**: 539 stations × 3 years (2022–2024) = 1.17 billion pairs
+### Primary Results Table
+
+| Metric | Value | Uncertainty | Significance |
+|--------|-------|-------------|--------------|
+| **Dataset Size** | 1.17 billion pair-samples | — | 539 stations |
+| **Temporal Coverage** | 3 years | 2022–2024 | Raw RINEX data |
+| **Signal Detection Rate** | 100% | 72/72 metric combinations | Mean R² = 0.93 |
+| **Processing** | Single Point Positioning (SPP) | Broadcast ephemerides | No precise products |
+
+### Correlation Length by Processing Mode
 
 | Mode | λ (km) | R² | Interpretation |
 |------|--------|-----|----------------|
 | **Baseline (GPS L1)** | 727 | 0.971 | Ionosphere included |
 | **Ionofree (L1+L2)** | 1,072 | 0.973 | Ionosphere removed |
 | **Multi-GNSS** | 815 | 0.928 | All constellations |
+| **CODE Cross-Validation** | 4,811 | — | Matches 25-year benchmark |
 
-**Key Findings (4 Pillars)**:
-- **Orbital Velocity Coupling**: r = −0.763 (5.4σ), independently replicating CODE's 25-year finding (r = −0.888).
-- **CMB Frame Alignment**: Best-fit at RA = 188°, Dec = −5° (20.0° from CMB dipole, matching CODE's 18.2°). Solar Apex disfavored (86.5° separation).
-- **Spacetime Symmetry**: Position jitter and clock bias exhibit identical orbital coupling (Δ ≈ 5%), consistent with spacetime metric fluctuation.
-- **Planetary Modulation**: Coherence modulation detected around 37 planetary events (2.8× above null, p < 0.001) with no tidal GM/r² scaling, ruling out tidal forcing.
+### Four Pillars of Validation
 
-**Validation**:
-- **Directional Anisotropy**: E-W > N-S at short distances (<500 km): Coherence 1.033, Phase Alignment 1.224 (p < 10⁻¹⁵).
-- **Temporal Stability**: E-W > N-S detected in 94–100% of all 36 months across all processing modes.
-- **Geometry-Corrected Ratio**: 1.80–1.86 (matches CODE's 2.16 within 17%).
-- **Geomagnetic Independence**: Signal invariant under storm conditions (Kp<3 vs Kp≥3: median Δλ ≈ −1%).
-- **Filter Independence**: All three station filters converge to consistent results (CV < 15%).
+| Finding | Value | Significance | Comparison to CODE |
+|---------|-------|--------------|-------------------|
+| **Orbital Velocity Coupling** | r = −0.763 | 5.4σ | CODE: r = −0.888 ✓ |
+| **CMB Frame Alignment** | RA=188°, Dec=−5° | 20.0° from dipole | CODE: 18.2° ✓ |
+| **Spacetime Symmetry** | Δ ≈ 5% (pos/clock) | Identical coupling | Metric fluctuation |
+| **Planetary Modulation** | 2.8× above null | p < 0.001 | No GM/r² scaling |
 
-**CODE Cross-Validation**: Ionofree λ = 4,811 km (2024) matches CODE's 25-year benchmark (4,201 ± 1,967 km)
+### Directional Anisotropy (Short Distances <500 km)
+
+| Metric | E-W/N-S Ratio | t-statistic | Cohen's d |
+|--------|---------------|-------------|-----------|
+| **MSC Coherence** | 1.033 | — | — |
+| **Phase Alignment** | 1.224 | up to 112 | up to 0.304 |
+| **Temporal Stability** | 94–100% | 34–36/36 months | Persistent |
+| **Geometry-Corrected** | 1.80–1.86 | — | Matches CODE (2.16) within 17% |
+
+### Robustness Tests
+
+| Test | Result | Interpretation |
+|------|--------|----------------|
+| **Geomagnetic (Kp) Independence** | Δλ ≈ −1% | Invariant under storm conditions |
+| **Filter Independence** | CV < 15% | All three filters converge |
+| **Solar Apex Rejection** | 86.5° separation | Disfavored vs CMB |
+
+### Key Interpretation
+
+This analysis eliminates the processing artifact hypothesis. By detecting the same signatures in raw RINEX observations processed with only broadcast ephemerides (no precise products), the findings demonstrate that distance-structured correlations exist in the fundamental data, not just sophisticated analysis center outputs. The replication of CODE's 25-year orbital velocity coupling (r = −0.763 vs r = −0.888) using completely independent methodology provides strong cross-validation. The identical coupling between position jitter and clock bias (Δ ≈ 5%) suggests spacetime metric fluctuations rather than clock-only effects—a key discriminant favoring TEP over instrumental explanations.
 
 ## File Structure
 
