@@ -23,6 +23,12 @@ Key validations include: (1) orbital velocity coupling detected at 3.2–5.4σ (
 
 This paper constitutes Paper 3 of the TEP-GNSS Research Series. Together with Paper 1 (multi-center validation) and Paper 2 (25-year temporal stability), these three complementary analyses—using different data sources, processing chains, and time periods—provide consistent evidence for planetary-scale, directionally-structured correlations in GNSS clock measurements.
 
+## Key Findings
+
+Raw RINEX processing confirms distance-structured correlations without reliance on precise orbit/clock products: 72/72 metric combinations detect the signal with mean R² = 0.93. Directional anisotropy persists at short ranges (East–West stronger by 2–22%), and a geometry-corrected comparison yields EW/NS ratios of 1.80–1.86, consistent with the CODE benchmark (2.16). Orbital velocity coupling is replicated at 3.2–5.4σ (best r = −0.763), and CMB frame alignment matches the long-span solution (RA = 188°, Dec = −5°, 20.0° from the dipole). These results exclude processing artifacts while preserving the same spatial and kinematic structure found in the multi-center and 25-year analyses.
+
+---
+
 ## The TEP Research Program
 
 | Paper | Repository | Title | DOI |
