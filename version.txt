@@ -1,0 +1,5 @@
+v0.4 (Kathmandu) — Temporal Topology Alignment
+
+- Replaced thin-shell terminology with continuous Temporal Topology: Updated screening mechanism descriptions from discrete phase boundaries to fluid, continuous spatial profiles throughout synthesis and discussion sections.
+- Formalized Temporal Shear nomenclature: Introduced explicit field gradient terminology linking local coupling strength to the spatial gradient of the Temporal Topology profile.
+- Added Temporal Topology Model (§3.7.5): Unified interpretation framework explaining seasonal correlation length variations as density-driven modulation of Temporal Shear.

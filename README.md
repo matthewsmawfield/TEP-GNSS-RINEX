@@ -6,8 +6,9 @@
 ![Global Time Echoes: Raw RINEX Validation](site/public/og-image.jpg)
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.3 (Kathmandu)  
+**Version:** v0.4 (Kathmandu)  
 **Date:** 17 December 2025  
+**Last Updated:** 24 April 2026  
 **Status:** Preprint  
 **DOI:** [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166)  
 **Website:** [https://mlsmawfield.com/tep/gnss-iii/](https://mlsmawfield.com/tep/gnss-iii/)  
@@ -19,9 +20,9 @@ This paper validates that distance-structured correlations in GNSS clocks exist 
 
 The primary finding is directional anisotropy: East-West correlations are 2–5% (MSC) to 22% (Phase Alignment) stronger than North-South at short distances (<500 km), with t-statistics up to 112 and Cohen's d up to 0.304. Month-by-month stratification shows stable polarity (E-W > N-S) at the 94–100% level across modes and metrics (worst case 34/36 months), consistent with a persistent underlying effect. A critical audit indicates this is not an artifact of distance distribution: E-W pairs are actually 13 km *longer* than N-S pairs (bias against signal), and robust distance-matching strengthens the ratio (1.033 → 1.041). At full distances, raw λ ratios can appear suppressed by distance-dependent biases; a geometry-corrected comparison yields ratios of 1.80–1.86, within 17% of CODE's benchmark (2.16).
 
-Key validations include: (1) orbital velocity coupling detected at 3.2–5.4σ (best: r = −0.763), replicating CODE's 25-year finding (r = −0.888), with signal persisting under ionospheric removal (best ionofree: r = −0.416, 2.5σ); (2) position jitter and clock bias show similar orbital coupling (Δ ≈ 5%), consistent with spacetime—not just temporal—modulation; (3) CMB frame alignment at RA = 188°, Dec = −5° (20.0° from CMB dipole), matching CODE's benchmark (18.2°), with Solar Apex disfavored (86.5° separation); (4) geomagnetic stratification using real GFZ Kp data shows near-invariance at the primary threshold (Kp < 3 vs. Kp ≥ 3; median Δλ ≈ −1%); (5) year-specific planetary event modulation detected (2.8× above null, p < 0.001) with no consistent tidal GM/r² scaling, consistent with alignment-driven geometric coupling rather than tidal forcing.
+Key validations include: (1) orbital velocity coupling detected at 3.2–5.4σ (best: r = −0.763), replicating CODE's 25-year finding (r = −0.888), with signal persisting under ionospheric removal (best ionofree: r = −0.416, 2.5σ); (2) position jitter and clock bias show similar orbital coupling (Δ ≈ 5%), consistent with spacetime—not just temporal—modulation; (3) CMB frame alignment at RA = 188°, Dec = −5° (20.0° from CMB dipole), matching CODE's benchmark (18.2°), with Solar Apex disfavored (86.5° separation); (4) geomagnetic stratification using real GFZ Kp data shows near-invariance at the primary threshold (Kp < 3 vs. Kp ≥ 3; median Δλ ≈ −1%, with 60/72 tests within ±5% across all station filters and processing modes), while higher storm thresholds (Kp ≥ 4/5) are treated as sensitivity checks due to small storm-day counts; (5) hemisphere-stratified results show E-W > N-S in the ALL_STATIONS analysis, while higher-quality subsets motivate additional hemisphere-controlled falsification tests; (6) year-specific planetary event modulation detected (2.8× above null, p < 0.001 for all 6 metrics) with detection rates of 59–68% and no consistent tidal GM/r² scaling (σ-level vs GM/r²: p = 0.317–0.989), consistent with alignment-driven geometric coupling rather than a tidal forcing mechanism whose amplitude scales with planetary mass.
 
-This paper constitutes Paper 3 of the TEP-GNSS Research Series. Together with Paper 1 (multi-center validation) and Paper 2 (25-year temporal stability), these three complementary analyses—using different data sources, processing chains, and time periods—provide consistent evidence for planetary-scale, directionally-structured correlations in GNSS clock measurements.
+This paper constitutes Paper 3 of the TEP-GNSS Research Series. Together with Paper 1 (multi-center validation) and Paper 2 (25-year temporal stability), these three complementary analyses—using different data sources, processing chains, and time periods—provide consistent evidence for planetary-scale, directionally-structured correlations in GNSS clock measurements. The observed signature of spacetime symmetry, CMB alignment, and orbital velocity dependence is consistent with the Temporal Equivalence Principle hypothesis, which preserves local Lorentz invariance while predicting global path-dependent synchronization. Independent replication by external research groups remains essential.
 
 ## Key Findings
 
@@ -38,11 +39,15 @@ Raw RINEX processing confirms distance-structured correlations without reliance 
 | **Paper 2** | [TEP-GNSS-II](https://github.com/matthewsmawfield/TEP-GNSS-II) | Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks | [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) |
 | **Paper 3** | **TEP-GNSS-RINEX** (This repo) | Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks | [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) |
 | **Paper 4** | [TEP-GL](https://github.com/matthewsmawfield/TEP-GL) | Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations | [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) |
-| **Synthesis** | [TEP-GTE](https://github.com/matthewsmawfield/TEP-GTE) | Global Time Echoes: Empirical Validation of the Temporal Equivalence Principle | [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) |
-| **Paper 7** | [TEP-UCD](https://github.com/matthewsmawfield/TEP-UCD) | Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales | [10.5281/zenodo.18064366](https://doi.org/10.5281/zenodo.18064366) |
-| **Paper 8** | [TEP-RBH](https://github.com/matthewsmawfield/TEP-RBH) | The Soliton Wake: A Runaway Black Hole as a Gravitational Soliton | [10.5281/zenodo.18059251](https://doi.org/10.5281/zenodo.18059251) |
-| **Paper 9** | [TEP-SLR](https://github.com/matthewsmawfield/TEP-SLR) | Global Time Echoes: Optical Validation of the Temporal Equivalence Principle via Satellite Laser Ranging | [10.5281/zenodo.18064582](https://doi.org/10.5281/zenodo.18064582) |
-| **Paper 10** | [TEP-EXP](https://github.com/matthewsmawfield/TEP-EXP) | What Do Precision Tests of General Relativity Actually Measure? | [10.5281/zenodo.18109761](https://doi.org/10.5281/zenodo.18109761) |
+| **Paper 5** | [TEP-GTE](https://github.com/matthewsmawfield/TEP-GTE) | Global Time Echoes: Empirical Validation of the Temporal Equivalence Principle | [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) |
+| **Paper 6** | [TEP-UCD](https://github.com/matthewsmawfield/TEP-UCD) | Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales | [10.5281/zenodo.18064366](https://doi.org/10.5281/zenodo.18064366) |
+| **Paper 7** | [TEP-RBH](https://github.com/matthewsmawfield/TEP-RBH) | The Soliton Wake: A Runaway Black Hole as a Gravitational Soliton | [10.5281/zenodo.18059251](https://doi.org/10.5281/zenodo.18059251) |
+| **Paper 8** | [TEP-SLR](https://github.com/matthewsmawfield/TEP-SLR) | Global Time Echoes: Optical Validation of the Temporal Equivalence Principle via Satellite Laser Ranging | [10.5281/zenodo.18064582](https://doi.org/10.5281/zenodo.18064582) |
+| **Paper 9** | [TEP-EXP](https://github.com/matthewsmawfield/TEP-EXP) | What Do Precision Tests of General Relativity Actually Measure? | [10.5281/zenodo.18109761](https://doi.org/10.5281/zenodo.18109761) |
+| **Paper 10** | [TEP-COS](https://github.com/matthewsmawfield/TEP-COS) | The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars | [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) |
+| **Paper 11** | [TEP-H0](https://github.com/matthewsmawfield/TEP-H0) | The Cepheid Bias: Resolving the Hubble Tension | [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) |
+| **Paper 12** | [TEP-JWST](https://github.com/matthewsmawfield/TEP-JWST) | The Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies | [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) |
+| **Paper 13** | [TEP-WB](https://github.com/matthewsmawfield/TEP-WB) | The Temporal Equivalence Principle: Density-Dependent Screening in Gaia DR3 Wide Binaries | [10.5281/zenodo.19102062](https://doi.org/10.5281/zenodo.19102062) |
 
 When using this code or results, please cite the paper and data sources listed below.
 
@@ -174,7 +179,7 @@ TEP-GNSS-RINEX/
 │   ├── figures/                    # Generated plots (PNG)
 │   └── outputs/                    # Analysis results (JSON)
 ├── logs/                           # Step execution logs
-├── manuscript-rinex.md             # Auto-generated markdown
+├── 3-TEP-GNSS-RINEX-v0.4-Kathmandu.md  # Auto-generated markdown
 └── VERSION.json                    # Version metadata
 ```
 

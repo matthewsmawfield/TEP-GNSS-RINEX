@@ -178,7 +178,7 @@ def download_multi_gnss_nav(year, doy, auth):
                 with open(nav_file, 'wb') as f:
                     f.write(content)
                 return nav_file
-        except:
+        except (OSError, IOError, requests.RequestException):
             continue
     
     # Try 2: GPS-only broadcast nav (fallback)
@@ -200,7 +200,7 @@ def download_multi_gnss_nav(year, doy, auth):
                 with open(nav_file, 'wb') as f:
                     f.write(content)
                 return nav_file
-        except:
+        except (OSError, IOError, requests.RequestException):
             continue
     
     return None
@@ -289,7 +289,7 @@ def download_nav_individual(year, auth):
                         f.write(content)
                     count += 1
                     break
-            except:
+            except (OSError, IOError, requests.RequestException):
                 continue
     
     return count
@@ -540,24 +540,10 @@ def batch_download_rinex_for_doy(year, doy, auth):
         
     except requests.exceptions.Timeout:
         log("FAILED", f"Download timeout after {_time.time() - start_time:.0f}s")
-        try:
             tar_file.unlink()
-        except:
+        except (OSError, IOError, PermissionError):
             pass
         return []
-    except Exception as e:
-        log("FAILED", f"Download error: {type(e).__name__}: {e}")
-        try:
-            tar_file.unlink()
-        except:
-            pass
-        return []
-    
-    # -------------------------------------------------------------------------
-    # STEP 3: Extract RINEX files from TAR
-    # -------------------------------------------------------------------------
-    try:
-        extract_start = _time.time()
         rinex_files = []
         
         # Verify TAR magic bytes
@@ -586,7 +572,7 @@ def batch_download_rinex_for_doy(year, doy, auth):
         # Clean up TAR
         try:
             tar_file.unlink()
-        except:
+        except (OSError, IOError, PermissionError):
             pass
         
         got_count = len(rinex_files)
@@ -754,7 +740,7 @@ pos1-navsys        =1
     
     try:
         subprocess.run(cmd, capture_output=True, timeout=120)
-    except:
+    except (OSError, IOError, subprocess.SubprocessError):
         return None
     
     if not pos_file.exists():
@@ -788,7 +774,7 @@ pos1-navsys        =1
                     z_data.append(z)
                     nsat_data.append(ns)
                     q_data.append(q)
-                except:
+                except (ValueError, IndexError):
                     continue
         
         if len(x_data) < 100:
@@ -804,7 +790,7 @@ pos1-navsys        =1
                             parts = line.split(',')
                             if len(parts) >= 6:
                                 clock_data.append(float(parts[5]))
-                        except:
+                        except (ValueError, IndexError):
                             continue
         
         # Need actual clock data for meaningful results
@@ -853,7 +839,7 @@ pos1-navsys        =1
             'n_epochs': len(ts_arr)
         }
         
-    except:
+    except (OSError, IOError, ValueError, IndexError) as e:
         return None
 
 
@@ -896,7 +882,7 @@ def process_rinex_file(args):
                     if has_baseline and has_ionofree and has_galileo and has_multi and has_precise:
                         return {"key": key, "status": "exists"}
                     # File exists but missing modes - will reprocess
-            except:
+            except (OSError, IOError, KeyError, ValueError):
                 pass
         
         # Verify file exists before processing

@@ -126,24 +126,24 @@ if [ -z "$CDDIS_USER" ] || [ -z "$CDDIS_PASS" ]; then
 fi
 
 echo "✅ GCP Configuration:"
-echo "   Project: $PROJECT_ID"
-echo "   Zone: $ZONE"
-echo "   Instance: $INSTANCE_NAME"
-echo "   CDDIS User: $CDDIS_USER"
+echo "   Project: ${PROJECT_ID}"
+echo "   Zone: ${ZONE}"
+echo "   Instance: ${INSTANCE_NAME}"
+echo "   CDDIS User: ${CDDIS_USER}"
 
 # Set the project
-gcloud config set project $PROJECT_ID
+gcloud config set project "${PROJECT_ID}"
 
 # Get instance external IP
-EXTERNAL_IP=$(gcloud compute instances describe $INSTANCE_NAME \
-    --zone=$ZONE \
+EXTERNAL_IP=$(gcloud compute instances describe "${INSTANCE_NAME}" \
+    --zone="${ZONE}" \
     --format='get(networkInterfaces[0].accessConfigs[0].natIP)' 2>/dev/null || echo "")
 
-if [ -z "$EXTERNAL_IP" ]; then
-    echo "⚠️  Instance may not be running or doesn't exist yet."
+if [ -z "${EXTERNAL_IP}" ]; then
+    echo "  Instance may not be running or doesn't exist yet."
     echo "   Create instance with (SPOT instance recommended):"
-    echo "   gcloud compute instances create $INSTANCE_NAME \\"
-    echo "       --zone=$ZONE \\"
+    echo "   gcloud compute instances create ${INSTANCE_NAME} \\"
+    echo "       --zone=${ZONE} \\"
     echo "       --machine-type=t2d-standard-8 \\"
     echo "       --provisioning-model=SPOT \\"
     echo "       --boot-disk-size=50GB \\"
@@ -153,11 +153,11 @@ if [ -z "$EXTERNAL_IP" ]; then
     exit 1
 fi
 
-echo "   External IP: $EXTERNAL_IP"
+echo "   External IP: ${EXTERNAL_IP}"
 
 # Create analysis package
-echo "📦 Creating TEP-GNSS-RINEX analysis package..."
-rm -f $PACKAGE_NAME
+echo " Creating TEP-GNSS-RINEX analysis package..."
+rm -f "${PACKAGE_NAME}"
 
 # Package the RINEX project (exclude large data files and compiled binaries)
 # RTKLIB will be recompiled on Linux - only need source code
@@ -177,22 +177,22 @@ tar --exclude='*.pyc' --exclude='__pycache__' --exclude='.git' \
     --exclude='RTKLIB/lib/iers' \
     --exclude='RTKLIB/app/winapp' \
     --exclude='RTKLIB/app/qtapp' \
-    -czf $PACKAGE_NAME \
+    -czf "${PACKAGE_NAME}" \
     scripts/ RTKLIB/src/ RTKLIB/app/consapp/rnx2rtkp/ \
     run_full_analysis.py \
     data/processed/optimal_100_metadata.json \
     data/processed/station_coordinates.json 2>/dev/null || \
-tar -czf $PACKAGE_NAME scripts/ RTKLIB/src/ RTKLIB/app/consapp/rnx2rtkp/ \
+tar -czf "${PACKAGE_NAME}" scripts/ RTKLIB/src/ RTKLIB/app/consapp/rnx2rtkp/ \
     run_full_analysis.py \
     data/processed/optimal_100_metadata.json data/processed/station_coordinates.json
 
-PACKAGE_SIZE=$(du -h $PACKAGE_NAME | cut -f1)
-echo "   Package size: $PACKAGE_SIZE"
+PACKAGE_SIZE=$(du -h "${PACKAGE_NAME}" | cut -f1)
+echo "   Package size: ${PACKAGE_SIZE}"
 
 # Test SSH connection
-echo "🔗 Testing SSH connection..."
-if ! gcloud compute ssh $INSTANCE_NAME --zone=$ZONE --command="echo 'SSH OK'" >/dev/null 2>&1; then
-    echo "❌ SSH connection failed!"
+echo " Testing SSH connection..."
+if ! gcloud compute ssh "${INSTANCE_NAME}" --zone="${ZONE}" --command="echo 'SSH OK'" >/dev/null 2>&1; then
+    echo " SSH connection failed!"
     echo "   Please check:"
     echo "   1. Instance is running"
     echo "   2. Firewall rules allow SSH (port 22)"
@@ -200,36 +200,36 @@ if ! gcloud compute ssh $INSTANCE_NAME --zone=$ZONE --command="echo 'SSH OK'" >/
     exit 1
 fi
 
-echo "✅ SSH connection established"
+echo " SSH connection established"
 
 # Transfer package
-echo "📤 Transferring analysis package to GCP..."
-gcloud compute scp $PACKAGE_NAME $INSTANCE_NAME:~/ --zone=$ZONE
+echo " Transferring analysis package to GCP..."
+gcloud compute scp "${PACKAGE_NAME}" "${INSTANCE_NAME}":~/ --zone="${ZONE}"
 
 # Create the setup script that will run on GCP
-echo "🚀 Creating GCP setup and execution script..."
+echo " Creating GCP setup and execution script..."
 cat > /tmp/gcp_run_rinex.sh << REMOTE_SCRIPT_EOF
 #!/bin/bash
 set -e
 
-echo "🔧 Setting up GCP environment for TEP-GNSS-RINEX analysis..."
+echo " Setting up GCP environment for TEP-GNSS-RINEX analysis..."
 
 # CDDIS credentials (passed from local machine)
-export CDDIS_USER="$CDDIS_USER"
-export CDDIS_PASS="$CDDIS_PASS"
+export CDDIS_USER="${CDDIS_USER}"
+export CDDIS_PASS="${CDDIS_PASS}"
 
 # Create .netrc for CDDIS authentication
-echo "🔐 Setting up CDDIS authentication..."
+echo " Setting up CDDIS authentication..."
 cat > ~/.netrc << NETRC_EOF
 machine urs.earthdata.nasa.gov
-    login $CDDIS_USER
-    password $CDDIS_PASS
+    login ${CDDIS_USER}
+    password ${CDDIS_PASS}
 NETRC_EOF
 chmod 600 ~/.netrc
-echo "   ✅ .netrc configured"
+echo "   .netrc configured"
 
 # Update system and install dependencies
-echo "📦 Installing system dependencies..."
+echo " Installing system dependencies..."
 sudo apt update >/dev/null 2>&1
 sudo apt install -y python3 python3-pip python3-venv python3-dev \
     build-essential gfortran gcc g++ make cmake \
@@ -237,58 +237,58 @@ sudo apt install -y python3 python3-pip python3-venv python3-dev \
     >/dev/null 2>&1
 
 # Get system specs
-CORES=\$(nproc)
-MEMORY_GB=\$(free -g | awk "/^Mem:/{print int(\\\$2*0.8)}")
+CORES=$(nproc)
+MEMORY_GB=$(free -g | awk "/^Mem:/{print int(\$2*0.8)}")
 
 echo ""
-echo "⚡ GCP System Configuration:"
-echo "  CPU cores: \$CORES"
-echo "  Memory: \${MEMORY_GB}GB"
+echo " GCP System Configuration:"
+echo "  CPU cores: ${CORES}"
+echo "  Memory: ${MEMORY_GB}GB"
 echo "  Analysis: OPTIMIZED 100 stations × 5 years (2020-2024)"
 echo "  Expected: 182,600 station-days → 3.2σ TEP signal"
 
 # Setup working directory
-WORK_DIR=\$HOME/tep-gnss-rinex
-mkdir -p \$WORK_DIR
+WORK_DIR=${HOME}/tep-gnss-rinex
+mkdir -p "${WORK_DIR}"
 
 # MOUNT ATTACHED SSD (Critical for storage)
 # Check multiple possible device paths for attached disks
-echo "💾 Looking for attached data disk..."
+echo " Looking for attached data disk..."
 DISK_DEVICE=""
 for dev in /dev/sdb /dev/nvme0n2 /dev/disk/by-id/google-data-disk; do
-    if [ -b "\$dev" ] || [ -L "\$dev" ]; then
-        DISK_DEVICE="\$dev"
-        echo "   Found disk at: \$DISK_DEVICE"
+    if [ -b "${dev}" ] || [ -L "${dev}" ]; then
+        DISK_DEVICE="${dev}"
+        echo "   Found disk at: ${DISK_DEVICE}"
         break
     fi
 done
 
-if [ -n "\$DISK_DEVICE" ]; then
+if [ -n "${DISK_DEVICE}" ]; then
     # Check if already mounted
-    if mount | grep -q "\$WORK_DIR"; then
-        echo "   ✅ Disk already mounted to \$WORK_DIR"
+    if mount | grep -q "${WORK_DIR}"; then
+        echo "   Disk already mounted to ${WORK_DIR}"
     else
         # Check if formatted
-        if ! sudo blkid "\$DISK_DEVICE" >/dev/null 2>&1; then
+        if ! sudo blkid "${DISK_DEVICE}" >/dev/null 2>&1; then
             echo "   Formatting disk..."
-            sudo mkfs.ext4 -m 0 -E lazy_itable_init=0,lazy_journal_init=0,discard "\$DISK_DEVICE"
+            sudo mkfs.ext4 -m 0 -E lazy_itable_init=0,lazy_journal_init=0,discard "${DISK_DEVICE}"
         fi
         
         # Mount it
-        echo "   Mounting disk to \$WORK_DIR..."
-        sudo mount -o discard,defaults "\$DISK_DEVICE" "\$WORK_DIR"
-        sudo chown \$USER:\$USER "\$WORK_DIR"
-        echo "   ✅ 200GB SSD mounted successfully"
+        echo "   Mounting disk to ${WORK_DIR}..."
+        sudo mount -o discard,defaults "${DISK_DEVICE}" "${WORK_DIR}"
+        sudo chown ${USER}:${USER} "${WORK_DIR}"
+        echo "   200GB SSD mounted successfully"
     fi
 else
-    echo "⚠️  No secondary disk found. Using boot disk (watch space!)."
+    echo "  No secondary disk found. Using boot disk (watch space!)."
 fi
 
-cd \$WORK_DIR
-echo "  Working directory: \$(pwd)"
+cd "${WORK_DIR}"
+echo "  Working directory: $(pwd)"
 
 # Extract package
-echo "📦 Extracting analysis package..."
+echo " Extracting analysis package..."
 cp ~/tep-gnss-rinex-gcp.tar.gz ./
 tar -xzf tep-gnss-rinex-gcp.tar.gz
 
@@ -297,48 +297,48 @@ mkdir -p data/{rinex,nav,sp3,processed}
 mkdir -p logs results/{outputs,figures}
 
 # Build RTKLIB - ALWAYS recompile for Linux (Mac binaries won't work)
-echo "🔧 Building RTKLIB for Linux..."
+echo " Building RTKLIB for Linux..."
 cd RTKLIB/app/consapp/rnx2rtkp/gcc
 
 # Check if binary works on this platform
 if ./rnx2rtkp --help >/dev/null 2>&1; then
-    echo "  ✅ RTKLIB already built for this platform"
+    echo "  RTKLIB already built for this platform"
 else
     echo "  Compiling RTKLIB from source..."
     make clean 2>/dev/null || true
     make
-    echo "  ✅ RTKLIB compiled successfully"
+    echo "  RTKLIB compiled successfully"
 fi
 
-cd \$WORK_DIR
+cd "${WORK_DIR}"
 
 # Verify RTKLIB
 if [ -x "RTKLIB/app/consapp/rnx2rtkp/gcc/rnx2rtkp" ]; then
-    echo "  ✅ RTKLIB executable ready"
+    echo "  RTKLIB executable ready"
 else
-    echo "  ❌ RTKLIB build failed!"
+    echo "  RTKLIB build failed!"
     exit 1
 fi
 
 # Setup Python virtual environment
-echo "🐍 Setting up Python environment..."
+echo " Setting up Python environment..."
 python3 -m venv venv
 source venv/bin/activate
 pip install --upgrade pip setuptools wheel >/dev/null 2>&1
 pip install numpy scipy requests tqdm pandas matplotlib hatanaka astropy jplephem unlzw3 >/dev/null 2>&1
-echo "  ✅ Python environment ready"
+echo "  Python environment ready"
 
 # Set environment variables for processing
-export TEP_WORKERS=\$CORES
+export TEP_WORKERS=${CORES}
 export PYTHONUNBUFFERED=1
-export OMP_NUM_THREADS=\$CORES
+export OMP_NUM_THREADS=${CORES}
 
 echo ""
-echo "🚀 Starting TEP-GNSS-RINEX OPTIMIZED analysis..."
+echo " Starting TEP-GNSS-RINEX OPTIMIZED analysis..."
 echo "   Date Range: 2020-01-01 to 2024-12-31 (5 years)"
 echo "   Stations: 100 optimal (50 N / 50 S balanced)"
-echo "   Workers: \$CORES parallel workers"
-echo "   CDDIS User: \$CDDIS_USER"
+echo "   Workers: ${CORES} parallel workers"
+echo "   CDDIS User: ${CDDIS_USER}"
 echo ""
 echo "   Pipeline:"
 echo "     1. Download RINEX for 100 curated stations"
@@ -348,21 +348,21 @@ echo "     4. Extract clock bias and position jitter"
 echo "     5. Run Step 2.0 coherence analysis"
 echo "     6. Run Step 2.2 orbital coupling analysis"
 echo ""
-echo "   Start time: \$(date)"
+echo "   Start time: $(date)"
 echo ""
 
 # Run the full analysis pipeline
-echo "📡 Starting TEP-GNSS-RINEX full pipeline..."
+echo " Starting TEP-GNSS-RINEX full pipeline..."
 source venv/bin/activate
 
 # Create a wrapper script that runs the full TEP pipeline using run_full_analysis.py
 cat > run_full_pipeline.sh << 'PIPELINE_EOF'
 #!/bin/bash
 set -e
-cd \$HOME/tep-gnss-rinex
+cd ${HOME}/tep-gnss-rinex
 source venv/bin/activate
 
-echo "[\$(date)] =========================================="
+echo "[$(date)] =========================================="
 echo "TEP-GNSS-RINEX FULL PIPELINE (All Steps)"
 echo "=========================================="
 echo ""
@@ -371,7 +371,7 @@ echo ""
 python run_full_analysis.py --filters optimal_100 all_stations
 
 echo ""
-echo "[\$(date)] ===== PIPELINE COMPLETE ====="
+echo "[$(date)] ===== PIPELINE COMPLETE ====="
 echo ""
 echo "Results saved to:"
 echo "  - results/outputs/step_*.json"
@@ -394,64 +394,62 @@ chmod +x run_full_pipeline.sh
 
 # Run the pipeline in background
 nohup ./run_full_pipeline.sh > rinex_processing.log 2>&1 &
-PROC_PID=\$!
-echo "  ✅ Full pipeline started with PID: \$PROC_PID"
-echo "  Monitor: tail -f \$WORK_DIR/rinex_processing.log"
+PROC_PID=$!
+echo "  Full pipeline started with PID: ${PROC_PID}"
+echo "  Monitor: tail -f ${WORK_DIR}/rinex_processing.log"
 
 # Save PID for later
-echo \$PROC_PID > processing.pid
+echo ${PROC_PID} > processing.pid
 
 echo ""
-echo "✅ TEP-GNSS-RINEX full pipeline is now running on GCP!"
+echo " TEP-GNSS-RINEX full pipeline is now running on GCP!"
 echo "   Step 1: Download & Process RINEX files"
 echo "   Step 2: Run correlation analysis (automatically after Step 1)"
 echo "   You can disconnect safely - the process will keep running."
 echo ""
-echo "📊 Useful commands:"
-echo "   Monitor progress: tail -f \$WORK_DIR/rinex_processing.log"
-echo "   Check status: ps aux | grep \$PROC_PID"
-echo "   Count processed: ls \$WORK_DIR/data/processed/*.npz 2>/dev/null | wc -l"
+echo " Useful commands:"
+echo "   Monitor progress: tail -f ${WORK_DIR}/rinex_processing.log"
+echo "   Check status: ps aux | grep ${PROC_PID}"
+echo "   Count processed: ls ${WORK_DIR}/data/processed/*.npz 2>/dev/null | wc -l"
 REMOTE_SCRIPT_EOF
 
 # Transfer the script to GCP
-echo "📤 Transferring setup script to GCP..."
-gcloud compute scp /tmp/gcp_run_rinex.sh $INSTANCE_NAME:~/ --zone=$ZONE
+echo " Transferring setup script to GCP..."
+gcloud compute scp /tmp/gcp_run_rinex.sh "${INSTANCE_NAME}":~/ --zone="${ZONE}"
 
 # Execute the script on GCP - RUN INTERACTIVELY for real-time output
-echo "▶️  Executing setup and analysis script on GCP..."
+echo "  Executing setup and analysis script on GCP..."
 echo "   (You will see real-time output from the remote machine)"
 echo ""
-gcloud compute ssh $INSTANCE_NAME --zone=$ZONE --command="chmod +x ~/gcp_run_rinex.sh && ~/gcp_run_rinex.sh"
+gcloud compute ssh "${INSTANCE_NAME}" --zone="${ZONE}" --command="chmod +x ~/gcp_run_rinex.sh && ~/gcp_run_rinex.sh"
 
 echo ""
-echo "✅ GCP RINEX analysis setup initiated!"
+echo " GCP RINEX analysis setup initiated!"
 echo ""
-echo "📊 Monitor setup progress:"
-echo "gcloud compute ssh $INSTANCE_NAME --zone=$ZONE --command='tail -f ~/gcp_setup.log'"
+echo " Monitor setup progress:"
+echo "gcloud compute ssh ${INSTANCE_NAME} --zone=${ZONE} --command='tail -f ~/gcp_setup.log'"
 echo ""
-echo "📊 Monitor processing progress (after setup completes):"
-echo "gcloud compute ssh $INSTANCE_NAME --zone=$ZONE --command='tail -f ~/tep-gnss-rinex/rinex_processing.log'"
+echo " Monitor processing progress (after setup completes):"
+echo "gcloud compute ssh ${INSTANCE_NAME} --zone=${ZONE} --command='tail -f ~/tep-gnss-rinex/rinex_processing.log'"
 echo ""
-echo "📊 Connect to instance:"
-echo "gcloud compute ssh $INSTANCE_NAME --zone=$ZONE"
+echo " Connect to instance:"
+echo "gcloud compute ssh ${INSTANCE_NAME} --zone=${ZONE}"
 echo ""
-echo "📊 Check processed file count:"
-echo "gcloud compute ssh $INSTANCE_NAME --zone=$ZONE --command='ls ~/tep-gnss-rinex/data/processed/*.npz 2>/dev/null | wc -l'"
+echo " Check processed file count:"
+echo "gcloud compute ssh ${INSTANCE_NAME} --zone=${ZONE} --command='ls ~/tep-gnss-rinex/data/processed/*.npz 2>/dev/null | wc -l'"
 echo ""
-echo "📥 Download results when complete:"
-echo "gcloud compute scp --recurse $INSTANCE_NAME:~/tep-gnss-rinex/data/processed/ ./gcp_processed/ --zone=$ZONE"
-echo "gcloud compute scp --recurse $INSTANCE_NAME:~/tep-gnss-rinex/results/ ./gcp_results/ --zone=$ZONE"
+echo " Download results when complete:"
+echo "gcloud compute scp --recurse ${INSTANCE_NAME}:~/tep-gnss-rinex/data/processed/ ./gcp_processed/ --zone=${ZONE}"
+echo "gcloud compute scp --recurse ${INSTANCE_NAME}:~/tep-gnss-rinex/results/ ./gcp_results/ --zone=${ZONE}"
 echo ""
-echo "💰 To stop instance (saves money):"
-echo "gcloud compute instances stop $INSTANCE_NAME --zone=$ZONE"
+echo " To stop instance (saves money):"
+echo "   gcloud compute instances stop ${INSTANCE_NAME} --zone=${ZONE}"
+echo "   gcloud compute instances delete ${INSTANCE_NAME} --zone=${ZONE}"
 echo ""
-echo "🛑 To delete instance:"
-echo "gcloud compute instances delete $INSTANCE_NAME --zone=$ZONE"
+echo "Instance: ${INSTANCE_NAME}"
+echo "External IP: ${EXTERNAL_IP}"
 echo ""
-echo "Instance: $INSTANCE_NAME"
-echo "External IP: $EXTERNAL_IP"
-echo ""
-echo "💡 Optimized Instance for 100-Station TEP Analysis:"
+echo " Optimized Instance for 100-Station TEP Analysis:"
 echo "   - n2d-highcpu-16: 16 AMD vCPUs, 16 GB RAM (RECOMMENDED)"
 echo "   - SPOT pricing: ~\$0.12/hr (65% savings)"
 echo "   - Estimated runtime: ~3 days for 5-year dataset"

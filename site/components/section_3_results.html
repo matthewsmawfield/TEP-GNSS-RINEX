@@ -98,7 +98,7 @@
 <div>
     <h4>Primary Results: Multi-Mode Comparison (ALL_STATIONS)</h4>
     <p>The analysis reports correlation patterns consistent with the TEP framework across all 24 metrics (4 modes × 3 variables × 2 coherence types). Across these combinations, phase coherence yields longer correlation lengths than MSC, consistent with theoretical expectations for phase-locked signals.</p>
-    
+
     <table style="font-size: 13px;">
 <tr>
 <th>Mode</th>
@@ -156,7 +156,7 @@
 <td>0.982</td>
 <td>YES</td>
         </tr>
-        
+
         <!-- IONOFREE -->
 <tr>
 <td rowspan="6" style="border-bottom: 2px solid #ccc;">Ionofree<br>(L1+L2)</td>
@@ -252,7 +252,7 @@
 <td>0.987</td>
 <td>YES</td>
         </tr>
-        
+
         <!-- PRECISE -->
 <tr>
 <td rowspan="6">Precise<br>(IGS SP3)</td>
@@ -397,7 +397,7 @@
         <li>This hierarchy is <em>consistent with TEP predictions</em>: MSC measures amplitude correlation (sensitive to ionospheric decorrelation at ~700–900 km), while phase alignment measures timing synchronization that persists over longer distances</li>
         <li>Phase alignment λ values (1,600–2,100 km) remain shorter than CODE longspan findings (λ ~ 4,200 km), consistent with residual ionospheric noise in single-frequency data. <em>When ionospheric effects are removed (Ionofree mode, see §3.2.1.1), λ increases to ~3,800 km, closer to the CODE benchmark.</em></li>
     </ul>
-    
+
     <p>2. The Southern Hemisphere Enhancement (observed pattern)</p>
     <p>Southern Hemisphere shows systematically longer correlation lengths than Northern:</p>
     <ul>
@@ -406,7 +406,7 @@
         <li>This is consistent with CODE longspan (Paper 2): Southern Hemisphere orbital coupling r = −0.79 (p = 0.006) vs Northern r = +0.25 (p = 0.49)</li>
         <li>Interpretation: The Southern Hemisphere's sparser network (fewer short baselines) may reduce the dominance of local atmospheric effects, improving sensitivity to longer-range structure</li>
     </ul>
-    
+
     <p>3. The Europe Anomaly as a Negative Control</p>
     <p>The Europe-only subset serves as a useful <em>negative control</em>. If the TEP-related structure is long-range (λ ≈ 1,000+ km), it may be difficult to resolve in a network dominated by short baselines (&lt;200 km) where tropospheric turbulence contributes strong local correlations. Furthermore, Europe's specific geometry can reduce sensitivity to an east–west dominated anisotropy:</p>
     <ul>
@@ -415,7 +415,7 @@
         <li>Fit dominated by short-range structure: Europe Position Jitter/MSC achieves <em>R² = 0.998</em>, consistent with a fit dominated by local atmospheric correlation (~500 km scale).</li>
         <li>Conclusion: The reduced long-range signature in Europe, compared with sparser regions, is consistent with the expectation that network geometry and baseline distribution modulate sensitivity to long-range structure.</li>
     </ul>
-    
+
 <p>4. Clock ≈ Position Behavior (spacetime coupling interpretation)</p>
 <p>Both metrics show similar regional patterns, which is consistent with the TEP interpretation of coupled <em>spacetime</em> (not just temporal) fluctuations. In GNSS navigation solutions, position and clock are solved simultaneously, so a shared physical modulation could affect both observables.</p>
 
@@ -691,7 +691,7 @@
 
 <div style="background: #f9f9f9; border-left: 4px solid #6c757d; padding: 15px; margin: 20px 0; border-radius: 4px;">
     <h5 style="margin-top: 0; color: #495057;">Scientific Interpretation: What Altitude-Invariance Means</h5>
-    
+
     <p>Atmospheric/Site-Dependent Hypothesis (Disfavored): If the observed correlation structure were primarily driven by residual atmospheric propagation errors, local multipath, or hydrological loading, one would expect:</p>
     <ul>
         <li>Systematic λ variation with altitude (low-altitude stations sample thicker tropospheric columns with higher water vapor variability)</li>
@@ -699,7 +699,7 @@
         <li>Consistent sign across modes/metrics (e.g., always positive or always negative)</li>
     </ul>
     <p>Observed: Only 3.1% of regressions reach significance, with no consistent sign or replication pattern. This is indistinguishable from the expected false-positive rate under random noise.</p>
-    
+
     <p>Network-Scale Geometric Hypothesis (Supported): If the correlation structure arises from a network-wide geometric or gravitational coupling (as predicted by TEP), station altitude differences of ~4 km are negligible compared to:</p>
     <ul>
         <li>Earth radius: 6,371 km (altitude differences are 0.06% of planetary scale)</li>
@@ -707,7 +707,7 @@
         <li>Correlation length scale: λ ~ 1,000–3,000 km (altitude differences are 0.1–0.4% of λ)</li>
     </ul>
     <p>Observed: λ is statistically invariant across the full altitude range, consistent with a signal that couples to planetary-scale geometry rather than local site conditions.</p>
-    
+
     <p>Configuration-Specific Trends: The three replicated trends (4.2% of tested combinations) are best interpreted as:</p>
     <ul>
         <li>Mode-specific sensitivities: Different processing pipelines (baseline vs multi_gnss vs precise) have different noise characteristics and systematic error profiles</li>
@@ -884,7 +884,7 @@
 <div>
     <h3>Ionosphere-Free Analysis Results</h3>
     <p>A key validation comes from comparing baseline (L1-only) and ionosphere-free (L1+L2) processing:</p>
-    
+
     <table>
 <tr>
 <th>Mode</th>
@@ -909,7 +909,7 @@
 <td colspan="2">1.47×</td>
         </tr>
     </table>
-    
+
     <p>Interpretation: If the correlation were purely ionospheric, the ionofree mode would be expected to show <em>weaker</em> or <em>no</em> correlation. Instead:</p>
     <ul>
         <li>Ionofree shows 48% longer correlation length (1,073 km vs 727 km)</li>
@@ -1570,9 +1570,9 @@
 <div style="background: #f5f5f7; border-left: 4px solid #6b6b80; padding: 15px; margin: 20px 0; border-radius: 4px;">
     <h4 style="margin-top: 0; color: #4a148c;">The Three Signatures of TEP</h4>
     <ol style="margin-bottom: 0;">
-        <li>The "Summer Enhancement" (OPTIMAL_100/Ionofree): λ ≈ 6060 km — largest seasonal estimate when atmospheric screening is reduced</li>
-        <li>The "Core Baseline" (DYNAMIC_50/Multi-GNSS): λ = 1700–1900 km — lower-variation baseline across seasons</li>
-        <li>The "All-stations Baseline" (ALL_STATIONS/Baseline): λ = 1750–1890 km (Δ &lt; 8%) — baseline detectable in the full network</li>
+        <li>The "Summer Enhancement" (OPTIMAL_100/Ionofree): λ ≈ 6060 km — largest seasonal estimate when Temporal Topology is most relaxed (reduced atmospheric density permits stronger Temporal Shear)</li>
+        <li>The "Core Baseline" (DYNAMIC_50/Multi-GNSS): λ = 1700–1900 km — lower-variation baseline across seasons, reflecting intermediate topology flattening</li>
+        <li>The "All-stations Baseline" (ALL_STATIONS/Baseline): λ = 1750–1890 km (Δ &lt; 8%) — baseline detectable in the full network with intermediate Temporal Topology flattening</li>
     </ol>
 </div>
 
@@ -1631,13 +1631,13 @@
 
 <div style="background: #f8f6f3; border-left: 4px solid #8a8580; padding: 15px; margin: 20px 0; border-radius: 4px;">
     <h4 style="margin-top: 0; color: #5a5a5a;">The "Summer Enhancement": λ ≈ 6000–6200 km</h4>
-    <p>Finding: When ionospheric screening is removed (Ionofree) and the network has optimal spatial balance (OPTIMAL_100), the summer-season correlation length (for pos_jitter) is <em>6,060 km</em>. This is closely corroborated by the Precise mode (using IGS SP3 products), which yields <em>6,259 km</em> in the same condition—a 3% agreement. Both values are within 1σ of CODE's 25-year PPP benchmark (4201 ± 1967 km; upper 1σ bound 6168 km).</p>
-    <p>Physical interpretation:</p>
+    <p>Finding: When ionospheric delay is removed (Ionofree) and the network has optimal spatial balance (OPTIMAL_100), the summer-season correlation length (for pos_jitter) is <em>6,060 km</em>. This is closely corroborated by the Precise mode (using IGS SP3 products), which yields <em>6,259 km</em> in the same condition—a 3% agreement. Both values are within 1σ of CODE's 25-year PPP benchmark (4201 ± 1967 km; upper 1σ bound 6168 km).</p>
+    <p>Physical interpretation within TEP v0.7:</p>
     <ul style="margin-bottom: 0;">
-        <li>Summer ionosphere: More stable/homogeneous (solar zenith angle effects)</li>
-        <li>Ionofree processing: Removes bulk ionospheric delay (first-order term)</li>
-        <li>OPTIMAL_100 geometry: Global spatial coverage improves sensitivity to long-range correlations</li>
-        <li>Result: Under these conditions, longer-range correlations (λ ~ 6000 km) are observed</li>
+        <li>Summer ionosphere: Lower ambient electron density reduces local flattening of the Temporal Topology, permitting stronger Temporal Shear (field gradient) and longer apparent correlation lengths</li>
+        <li>Ionofree processing: Removes bulk ionospheric delay (first-order term), reducing a source of density-driven gradient suppression</li>
+        <li>OPTIMAL_100 geometry: Global spatial coverage improves sensitivity to the intrinsic spatial profile of the time field</li>
+        <li>Result: Under reduced-density conditions, the Temporal Topology relaxes and longer-range correlations (λ ~ 6000 km) emerge, consistent with active Temporal Shear</li>
     </ul>
 </div>
 
@@ -1762,24 +1762,24 @@
     <p>Conclusion: The correlation structure is detectable without restrictive station selection, suggesting it is not confined to a small subset of stations or conditions.</p>
 </div>
 
-<h3>3.7.5 The "Screened Signal" Model: Unified Interpretation</h3>
+<h3>3.7.5 The Temporal Topology Model: Unified Interpretation</h3>
 
-<p>The three signatures can be interpreted within a unified physical model:</p>
+<p>The three signatures can be interpreted within the continuous geometric screening framework of TEP v0.7:</p>
 
 <div style="background: #fafafa; border: 2px solid #9e9e9e; padding: 15px; margin: 20px 0; border-radius: 4px;">
-    <h4 style="margin-top: 0;">Interpretive Model: Long-range Component + Atmospheric Screening</h4>
-    <p>Inferred long-range component:</p>
+    <h4 style="margin-top: 0;">Interpretive Model: Temporal Topology Relaxation and Temporal Shear Modulation</h4>
+    <p>Intrinsic correlation scale (unrelaxed Temporal Topology):</p>
     <ul>
         <li>Intrinsic scale: ~6000 km (seen in OPTIMAL_100/Ionofree/Summer)</li>
-        <li>Seasonal sensitivity: Lower variation in DYNAMIC_50/Multi-GNSS relative to OPTIMAL_100/Ionofree</li>
+        <li>Physical basis: The continuous spatial profile of the time field is least flattened under low ambient density, permitting the field gradient (Temporal Shear) to remain active over long baselines</li>
     </ul>
-    <p>Atmospheric screening (ionosphere + troposphere):</p>
+    <p>Density-driven gradient suppression (ionosphere + troposphere):</p>
     <ul>
-        <li>Effect: Can reduce effective λ by ~60–70% (from ~6000 km to ~1800 km)</li>
-        <li>Seasonal variation: Stronger in winter, weaker in summer</li>
-        <li>Removal method: Ionofree (L1+L2 combination) + optimal conditions</li>
+        <li>Effect: Higher ambient density flattens the Temporal Topology, suppressing Temporal Shear and reducing effective λ by ~60–70% (from ~6000 km to ~1800 km)</li>
+        <li>Seasonal variation: Stronger suppression in winter (higher atmospheric density), weaker in summer (lower density)</li>
+        <li> Mitigation: Ionofree (L1+L2 combination) removes one source of density-driven suppression, permitting the underlying topology to emerge</li>
     </ul>
-    <p style="margin-bottom: 0;">Observable result: A baseline scale of ~1800 km is consistently observed, while the larger extent (~6060 km) is most apparent when screening is reduced (Ionofree + Summer + Optimal geometry).</p>
+    <p style="margin-bottom: 0;">Observable result: A baseline scale of ~1800 km is consistently observed when Temporal Topology is partially flattened, while the larger extent (~6060 km) emerges when density-driven suppression is minimized (Ionofree + Summer + Optimal geometry), consistent with the v0.7 prediction that the field gradient vanishes continuously with increasing ambient density rather than at a discrete boundary.</p>
 </div>
 
 <h3>3.7.6 Comparison with CODE Benchmark</h3>
@@ -2408,7 +2408,7 @@
 <div>
     <h4>Hemispheric Consistency</h4>
     <p>In the ALL_STATIONS filter, both hemispheres show the same directional polarity (E-W &gt; N-S) across both metrics. If the effect were driven primarily by local seasonal factors (temperature, ionospheric density, solar illumination), the Northern and Southern hemispheres might be expected to show <em>opposite</em> patterns (NH peaks in July, SH peaks in January). The ALL_STATIONS result is consistent with a <em>heliocentric</em> rather than purely local origin, while recognizing that subset selection can change hemispheric behavior.</p>
-    
+
     <h4>Phase Alignment Shows Larger Anisotropy</h4>
     <p>Phase alignment anisotropy exceeds coherence in both hemispheres, with the Southern Hemisphere exhibiting a larger effect (1.348 vs 1.200). This hierarchy is consistent with:</p>
     <ul>
@@ -2416,7 +2416,7 @@
         <li>Phase alignment measures phase relationship consistency—often more stable over longer distances as amplitude decorrelates</li>
     </ul>
     <p>This pattern suggests that directional anisotropy is preserved even when amplitude correlations weaken due to ionospheric effects.</p>
-    
+
     <h4>Cross-Validation with CODE Longspan (Paper 2)</h4>
     <p>This finding is independently corroborated by the 25-year CODE longspan analysis:</p>
     <ul>
@@ -2425,7 +2425,7 @@
         <li>CMB frame alignment: Best-fit declination = −5° (southern celestial)</li>
     </ul>
     <p>Three independent analyses (CODE orbital coupling, CMB frame, RINEX phase alignment) are consistent with enhanced sensitivity in the Southern Hemisphere / southern celestial direction. This convergence across different datasets, time periods, and methodologies supports further investigation of regional asymmetries.</p>
-    
+
     <p><em>Note:</em> The unbalanced pair counts (51M NH vs 8.6M SH) arise from the IGS network's geographic bias (238 NH vs 106 SH stations), not from the analysis methodology.</p>
     <p><em>Diagnostic:</em> In the higher-quality DYNAMIC_50 subset, hemisphere-stratified short-distance ratios exhibit a Southern Hemisphere inversion (E-W/N-S &lt; 1) for the short-distance estimator, motivating the additional falsification tests proposed in §4.</p>
 </div>
@@ -2565,9 +2565,9 @@
 <p>The low CV of short-distance ratios can be reconciled with the orbital velocity coupling (r = −0.509 to −0.763) reported in Section 3.10. These analyses measure <em>different quantities</em>:</p>
 <ul>
     <li>Short-distance ratio (&lt;500 km): The E-W/N-S coherence at short baselines, before ionospheric decorrelation becomes dominant. These ratios show low variation (CV ~1%).</li>
-    <li>Full-distance λ ratio: The correlation length from exponential fitting across all distances. This includes atmospheric screening effects, which modulate with orbital velocity.</li>
+    <li>Full-distance λ ratio: The correlation length from exponential fitting across all distances. This incorporates density-driven Temporal Topology modulation, which varies annually with Earth's orbital position.</li>
 </ul>
-<p>This distinction is compatible with the "Screened Signal Model" (§3.7.5): a baseline directional asymmetry is observed at short baselines, while full-distance λ ratios incorporate screening effects that can vary annually with Earth's orbital position.</p>
+<p>This distinction is compatible with the Temporal Topology Model (§3.7.5): a baseline directional asymmetry is observed at short baselines where local density effects are uniform, while full-distance λ ratios incorporate the continuous flattening and relaxation of the field profile that varies with Earth's position in its orbit.</p>
 </div>
 
     <p>Conclusion: The monthly stratification shows E-W &gt; N-S in 94–100% of months across modes and metrics. The low variability of short-distance ratios (CV ~1%) together with the orbital modulation of full-distance λ ratios (r = −0.509 to −0.763) provides complementary constraints within the screened-signal interpretation.</p>
@@ -3034,7 +3034,7 @@
         <li>Compute significance: σ = amplitude / uncertainty (threshold: σ ≥ 2.0)</li>
     </ol>
     <p>This year-specific approach correctly handles events near year boundaries and avoids artificial signal dilution from pooling unrelated years.</p>
-    
+
     <h4>Permutation Null Control</h4>
     <p>To validate significance, a rigorous permutation test was employed:</p>
     <ul>
@@ -3519,7 +3519,7 @@
         </tr>
     </table>
     <p>The best-fit direction is nearly perpendicular to the Solar Apex (86.5° separation). This favors the CMB dipole over the Solar Apex as a reference direction in this dataset and is less consistent with an interpretation tied primarily to local solar-apex motion.</p>
-    
+
     <h4>Variance Explained Comparison</h4>
     <ul>
         <li>CMB frame: r² = 0.32 (32% of annual variance explained)</li>
@@ -3601,7 +3601,7 @@
 
     <h4>Ionofree Performance in Higher-Stability Subsets</h4>
     <p>When examining the subset of high-stability clocks (DYNAMIC_50) where thermal noise is minimized, the Ionofree mode yields a CMB separation of 22.3°:</p>
-    
+
     <table>
         <tr><th>Ionofree Result</th><th>RA</th><th>Dec</th><th>CMB Sep</th><th>r</th><th>Interpretation</th></tr>
         <tr style="background-color: #f5f7fa;">
@@ -3614,7 +3614,7 @@
             <td>Most Ionofree combinations</td><td>Scattered</td><td>—</td><td>>50°</td><td><0.3</td><td>Thermal noise dominates</td>
         </tr>
     </table>
-    
+
     <p>Interpretation: If the signal were purely an ionospheric artifact, Ionofree processing would be expected to substantially reduce it. In these data, some Ionofree combinations retain alignment signals in subsets with low thermal noise, while many combinations degrade. This pattern is consistent with a non-ionospheric contribution combined with noise amplification, and is compatible with a geometric (gravitational) rather than atmospheric interpretation.</p>
 </div>
 
@@ -3624,7 +3624,7 @@
     <h4>The CMB as the Cosmic Rest Frame</h4>
     <p>The Cosmic Microwave Background (CMB) defines a unique reference frame—the frame in which the 2.7 K blackbody radiation pervading the universe is isotropic. Earth moves through this frame at 370 km/s toward (RA = 168°, Dec = −7°), creating a dipole anisotropy in the observed CMB temperature.</p>
     <p>The CMB dipole defines a commonly used cosmological rest frame, in the sense that the CMB temperature field is most nearly isotropic in that frame. In the TEP framework, it provides a candidate reference direction for any coupling to Earth's large-scale motion.</p>
-    
+
      <h4>Why the Solar Apex Is Disfavored</h4>
     <p>The Solar Apex (RA = 271°, Dec = +30°) represents the Sun's motion at ~20 km/s toward the constellation Hercules (near Vega) through the local standard of rest. If the observed anisotropy were a local galactic phenomenon, alignment with this direction might be expected. Here, the best-fit direction is far from the Solar Apex:</p>
     <ul>
@@ -3633,7 +3633,7 @@
         <li>Variance explained ratio is 32× in favor of CMB</li>
     </ul>
     <p>This reduces support for explanations based on the Sun's motion through the galaxy, stellar encounters, or other local galactic phenomena.</p>
-    
+
     <h4>The RA-Dec Asymmetry: A Physical Explanation</h4>
     <p>All combinations show systematic positive Declination (+9° to +46°), offset from the CMB's Dec = −7°. This asymmetry has a physical origin:</p>
     <ul>

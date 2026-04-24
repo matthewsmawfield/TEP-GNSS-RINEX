@@ -246,8 +246,31 @@ class HTMLToMarkdownConverter {
             // Build the complete markdown document
             const markdown = this.buildMarkdownDocument(metadata, markdownContent);
             
-            // Write to file
-            const outputPath = path.join(__dirname, '..', 'manuscript-rinex.md');
+            // Read manifest for version info
+            const manifestPath = path.join(__dirname, 'manifest.json');
+            let versionStr = 'v0.4';
+            let codename = 'Kathmandu';
+            if (fs.existsSync(manifestPath)) {
+                const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+                if (manifest.version) {
+                    versionStr = manifest.version;
+                }
+            }
+            // Also try VERSION.json for codename
+            const versionPath = path.join(__dirname, '..', 'VERSION.json');
+            if (fs.existsSync(versionPath)) {
+                const versionData = JSON.parse(fs.readFileSync(versionPath, 'utf8'));
+                if (versionData.codename) {
+                    codename = versionData.codename;
+                }
+            }
+            
+            // Build output filename: 3-TEP-GNSS-RINEX-v{version}-{codename}.md
+            // Extract version number (e.g., "0.4" from "v0.4 (Kathmandu)")
+            const versionMatch = versionStr.match(/v?([0-9]+\.[0-9]+)/);
+            const cleanVersion = versionMatch ? versionMatch[1] : versionStr.replace(/^v/, '').split(' ')[0];
+            const outputFilename = `3-TEP-GNSS-RINEX-v${cleanVersion}-${codename}.md`;
+            const outputPath = path.join(__dirname, '..', outputFilename);
             fs.writeFileSync(outputPath, markdown, 'utf8');
             
             console.log('✅ Markdown conversion complete!');
@@ -291,6 +314,7 @@ ${content}
 *This document was automatically generated from the TEP-GNSS-RINEX research site. For the interactive version with figures and enhanced formatting, visit: https://matthewsmawfield.github.io/TEP-GNSS-RINEX/*
 
 *Related Papers:*
+- *Paper 0 (Theory — Temporal Equivalence Principle): https://matthewsmawfield.github.io/TEP/*
 - *Paper 1 (Multi-Center Validation): https://matthewsmawfield.github.io/TEP-GNSS/*
 - *Paper 2 (25-Year CODE Analysis): https://matthewsmawfield.github.io/TEP-GNSS-II/*
 
