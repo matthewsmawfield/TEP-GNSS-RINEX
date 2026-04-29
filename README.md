@@ -1,24 +1,24 @@
-# Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks
+# Global Time Echoes: Raw RINEX Consistency Test
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17860166.svg)](https://doi.org/10.5281/zenodo.17860166)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-![Global Time Echoes: Raw RINEX Validation](site/public/og-image.jpg)
+![Global Time Echoes: Raw RINEX Consistency Test](site/public/og-image.jpg)
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.4 (Kathmandu)  
-**Date:** 17 December 2025  
-**Last Updated:** 24 April 2026  
+**Version:** v0.5 (Kathmandu)  
+**Date:** 29 April 2026  
+**Last Updated:** 29 April 2026  
 **Status:** Preprint  
 **DOI:** [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166)  
-**Website:** [https://mlsmawfield.com/tep/gnss-iii/](https://mlsmawfield.com/tep/gnss-iii/)  
+**Website:** [https://mlsmawfield.com/tep/gnss-rinex/](https://mlsmawfield.com/tep/gnss-rinex/)  
 **ORCID:** [0009-0003-8219-3159](https://orcid.org/0009-0003-8219-3159)
 
 ## Abstract
 
-This paper validates that distance-structured correlations in GNSS clocks exist in raw observations, not just processed products—eliminating the processing artifact hypothesis. Prior TEP analyses relied on precise orbit and clock products from global analysis centers, leaving open the possibility that observed signatures were artifacts of sophisticated processing chains. This paper addresses that concern by detecting distance-structured signatures in raw GNSS observations processed using Single Point Positioning (SPP) with broadcast ephemerides as the primary methodology, supplemented by precise ephemeris validation. Analysis of 539 globally distributed stations over 3 years (2022–2024, comprising 1.17 billion pair-samples across three independent filtering strategies) achieves 100% signal detection (72/72 metric combinations) with mean R² = 0.93, revealing directionally-structured correlations consistent with CODE's 25-year PPP findings (p < 10⁻¹⁵).
+This paper validates that distance-structured correlations in GNSS clocks exist in raw observations using broadcast ephemerides, not just precise products—strongly constraining precise-product processing artifacts. Broadcast ephemerides still contain control-segment information, so Satellite Laser Ranging and non-GNSS optical checks remain necessary for definitive confirmation. Prior TEP analyses relied on precise orbit and clock products from global analysis centers, leaving open the possibility that observed signatures were artifacts of sophisticated processing chains. This paper addresses that concern by detecting distance-structured signatures in raw GNSS observations processed using Single Point Positioning (SPP) with broadcast ephemerides as the primary methodology, supplemented by precise ephemeris validation. Analysis of 539 globally distributed stations over 3 years (2022–2024, comprising 1.17 billion pair-samples across three independent filtering strategies) achieves consistent signal detection across all 72 metric combinations with mean R² = 0.93, revealing directionally-structured correlations consistent with CODE's 25-year PPP findings (p < 10⁻¹⁵). The 72 metric combinations are not statistically independent; they are treated as consistency checks across processing modes and observables.
 
-The primary finding is directional anisotropy: East-West correlations are 2–5% (MSC) to 22% (Phase Alignment) stronger than North-South at short distances (<500 km), with t-statistics up to 112 and Cohen's d up to 0.304. Month-by-month stratification shows stable polarity (E-W > N-S) at the 94–100% level across modes and metrics (worst case 34/36 months), consistent with a persistent underlying effect. A critical audit indicates this is not an artifact of distance distribution: E-W pairs are actually 13 km *longer* than N-S pairs (bias against signal), and robust distance-matching strengthens the ratio (1.033 → 1.041). At full distances, raw λ ratios can appear suppressed by distance-dependent biases; a geometry-corrected comparison yields ratios of 1.80–1.86, within 17% of CODE's benchmark (2.16).
+The primary finding is directional anisotropy: East-West correlations are 2–5% (MSC) to 22% (Phase Alignment) stronger than North-South at short distances (<500 km), with t-statistics up to 112 and Cohen's d up to 0.304. Month-by-month stratification shows stable polarity (E-W > N-S) at 94% or higher level across modes and metrics (worst case 34/36 months), consistent with a persistent underlying effect. A critical audit indicates this is not an artifact of distance distribution: E-W pairs are actually 13 km *longer* than N-S pairs (bias against signal), and robust distance-matching strengthens the ratio (1.033 → 1.041). At full distances, raw λ<sub>T</sub> ratios can appear suppressed by distance-dependent biases; a geometry-corrected comparison yields ratios of 1.80–1.86, within 17% of CODE's benchmark (2.16).
 
 Key validations include: (1) orbital velocity coupling detected at 3.2–5.4σ (best: r = −0.763), replicating CODE's 25-year finding (r = −0.888), with signal persisting under ionospheric removal (best ionofree: r = −0.416, 2.5σ); (2) position jitter and clock bias show similar orbital coupling (Δ ≈ 5%), consistent with spacetime—not just temporal—modulation; (3) CMB frame alignment at RA = 188°, Dec = −5° (20.0° from CMB dipole), matching CODE's benchmark (18.2°), with Solar Apex disfavored (86.5° separation); (4) geomagnetic stratification using real GFZ Kp data shows near-invariance at the primary threshold (Kp < 3 vs. Kp ≥ 3; median Δλ ≈ −1%, with 60/72 tests within ±5% across all station filters and processing modes), while higher storm thresholds (Kp ≥ 4/5) are treated as sensitivity checks due to small storm-day counts; (5) hemisphere-stratified results show E-W > N-S in the ALL_STATIONS analysis, while higher-quality subsets motivate additional hemisphere-controlled falsification tests; (6) year-specific planetary event modulation detected (2.8× above null, p < 0.001 for all 6 metrics) with detection rates of 59–68% and no consistent tidal GM/r² scaling (σ-level vs GM/r²: p = 0.317–0.989), consistent with alignment-driven geometric coupling rather than a tidal forcing mechanism whose amplitude scales with planetary mass.
 
@@ -26,7 +26,7 @@ This paper constitutes Paper 3 of the TEP-GNSS Research Series. Together with Pa
 
 ## Key Findings
 
-Raw RINEX processing confirms distance-structured correlations without reliance on precise orbit/clock products: 72/72 metric combinations detect the signal with mean R² = 0.93. Directional anisotropy persists at short ranges (East–West stronger by 2–22%), and a geometry-corrected comparison yields EW/NS ratios of 1.80–1.86, consistent with the CODE benchmark (2.16). Orbital velocity coupling is replicated at 3.2–5.4σ (best r = −0.763), and CMB frame alignment matches the long-span solution (RA = 188°, Dec = −5°, 20.0° from the dipole). These results exclude processing artifacts while preserving the same spatial and kinematic structure found in the multi-center and 25-year analyses.
+Raw RINEX processing confirms distance-structured correlations without reliance on precise orbit/clock products: all 72 metric combinations detect the signal with mean R² = 0.93. Directional anisotropy persists at short ranges (East–West stronger by 2–22%), and a geometry-corrected comparison yields EW/NS ratios of 1.80–1.86, consistent with the CODE benchmark (2.16). Orbital velocity coupling is replicated at 3.2–5.4σ (best r = −0.763), and CMB frame alignment matches the long-span solution (RA = 188°, Dec = −5°, 20.0° from the dipole). These results exclude processing artifacts while preserving the same spatial and kinematic structure found in the multi-center and 25-year analyses.
 
 ---
 
@@ -36,18 +36,18 @@ Raw RINEX processing confirms distance-structured correlations without reliance 
 |-------|-----------|-------|-----|
 | **Paper 0** | [TEP](https://github.com/matthewsmawfield/TEP) | Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed | [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) |
 | **Paper 1** | [TEP-GNSS](https://github.com/matthewsmawfield/TEP-GNSS) | Global Time Echoes: Distance-Structured Correlations in GNSS Clocks | [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) |
-| **Paper 2** | [TEP-GNSS-II](https://github.com/matthewsmawfield/TEP-GNSS-II) | Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks | [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) |
-| **Paper 3** | **TEP-GNSS-RINEX** (This repo) | Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks | [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) |
+| **Paper 2** | [TEP-GNSS-II](https://github.com/matthewsmawfield/TEP-GNSS-II) | Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products | [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) |
+| **Paper 3** | **TEP-GNSS-RINEX** (This repo) | Global Time Echoes: Raw RINEX Consistency Test | [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) |
 | **Paper 4** | [TEP-GL](https://github.com/matthewsmawfield/TEP-GL) | Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations | [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) |
-| **Paper 5** | [TEP-GTE](https://github.com/matthewsmawfield/TEP-GTE) | Global Time Echoes: Empirical Validation of the Temporal Equivalence Principle | [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) |
-| **Paper 6** | [TEP-UCD](https://github.com/matthewsmawfield/TEP-UCD) | Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales | [10.5281/zenodo.18064366](https://doi.org/10.5281/zenodo.18064366) |
-| **Paper 7** | [TEP-RBH](https://github.com/matthewsmawfield/TEP-RBH) | The Soliton Wake: A Runaway Black Hole as a Gravitational Soliton | [10.5281/zenodo.18059251](https://doi.org/10.5281/zenodo.18059251) |
-| **Paper 8** | [TEP-SLR](https://github.com/matthewsmawfield/TEP-SLR) | Global Time Echoes: Optical Validation of the Temporal Equivalence Principle via Satellite Laser Ranging | [10.5281/zenodo.18064582](https://doi.org/10.5281/zenodo.18064582) |
-| **Paper 9** | [TEP-EXP](https://github.com/matthewsmawfield/TEP-EXP) | What Do Precision Tests of General Relativity Actually Measure? | [10.5281/zenodo.18109761](https://doi.org/10.5281/zenodo.18109761) |
-| **Paper 10** | [TEP-COS](https://github.com/matthewsmawfield/TEP-COS) | The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars | [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) |
+| **Paper 5** | [TEP-GTE](https://github.com/matthewsmawfield/TEP-GTE) | Global Time Echoes: Empirical Synthesis | [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) |
+| **Paper 6** | [TEP-UCD](https://github.com/matthewsmawfield/TEP-UCD) | Universal Critical Density: Cross-Scale Consistency of ρ_T | [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365) |
+| **Paper 7** | [TEP-RBH](https://github.com/matthewsmawfield/TEP-RBH) | The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate | [10.5281/zenodo.18059250](https://doi.org/10.5281/zenodo.18059250) |
+| **Paper 8** | [TEP-SLR](https://github.com/matthewsmawfield/TEP-SLR) | Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging | [10.5281/zenodo.18064581](https://doi.org/10.5281/zenodo.18064581) |
+| **Paper 9** | [TEP-EXP](https://github.com/matthewsmawfield/TEP-EXP) | What Do Precision Tests of General Relativity Actually Measure? | [10.5281/zenodo.18109760](https://doi.org/10.5281/zenodo.18109760) |
+| **Paper 10** | [TEP-COS](https://github.com/matthewsmawfield/TEP-COS) | Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars | [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) |
 | **Paper 11** | [TEP-H0](https://github.com/matthewsmawfield/TEP-H0) | The Cepheid Bias: Resolving the Hubble Tension | [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) |
 | **Paper 12** | [TEP-JWST](https://github.com/matthewsmawfield/TEP-JWST) | The Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies | [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) |
-| **Paper 13** | [TEP-WB](https://github.com/matthewsmawfield/TEP-WB) | The Temporal Equivalence Principle: Density-Dependent Screening in Gaia DR3 Wide Binaries | [10.5281/zenodo.19102062](https://doi.org/10.5281/zenodo.19102062) |
+| **Paper 13** | [TEP-WB](https://github.com/matthewsmawfield/TEP-WB) | The Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries | [10.5281/zenodo.19102061](https://doi.org/10.5281/zenodo.19102061) |
 
 When using this code or results, please cite the paper and data sources listed below.
 
@@ -77,7 +77,7 @@ This project uses publicly available GNSS data from the following sources:
 - **Software**: RTKLIB v2.4.3 (demo5 branch)
 - **Author**: Tomoji Takasu
 - **Repository**: https://github.com/tomojitakasu/RTKLIB
-- **Note**: RTKLIB is no longer bundled. Install independently and ensure `rnx2rtkp` is available in your PATH or at a configurable location.
+- **Note**: RTKLIB is no longer bundled. Install independently and ensure `rnx2rtkp` binary is in your PATH or at a configurable location.
 
 **Required Citation:**
 > Takasu, T. (2009). RTKLIB: Open Source Program Package for RTK-GPS. FOSS4G 2009 Tokyo, Japan, November 2, 2009.
@@ -118,12 +118,12 @@ python scripts/steps/step_2_0_raw_spp_analysis.py
 |--------|-------|-------------|--------------|
 | **Dataset Size** | 1.17 billion pair-samples | — | 539 stations |
 | **Temporal Coverage** | 3 years | 2022–2024 | Raw RINEX data |
-| **Signal Detection Rate** | 100% | 72/72 metric combinations | Mean R² = 0.93 |
+| **Signal Detection Rate** | All combinations | 72/72 metric combinations | Mean R² = 0.93 |
 | **Processing** | Single Point Positioning (SPP) | Broadcast ephemerides | No precise products |
 
 ### Correlation Length by Processing Mode
 
-| Mode | λ (km) | R² | Interpretation |
+| Mode | λ<sub>T</sub> (km) | R² | Interpretation |
 |------|--------|-----|----------------|
 | **Baseline (GPS L1)** | 727 | 0.971 | Ionosphere included |
 | **Ionofree (L1+L2)** | 1,072 | 0.973 | Ionosphere removed |
@@ -145,7 +145,7 @@ python scripts/steps/step_2_0_raw_spp_analysis.py
 |--------|---------------|-------------|-----------|
 | **MSC Coherence** | 1.033 | — | — |
 | **Phase Alignment** | 1.224 | up to 112 | up to 0.304 |
-| **Temporal Stability** | 94–100% | 34–36/36 months | Persistent |
+| **Temporal Stability** | 94%+ | 34–36/36 months | Persistent |
 | **Geometry-Corrected** | 1.80–1.86 | — | Matches CODE (2.16) within 17% |
 
 ### Robustness Tests
@@ -158,7 +158,7 @@ python scripts/steps/step_2_0_raw_spp_analysis.py
 
 ### Key Interpretation
 
-This analysis eliminates the processing artifact hypothesis. By detecting the same signatures in raw RINEX observations processed with only broadcast ephemerides (no precise products), the findings demonstrate that distance-structured correlations exist in the fundamental data, not just sophisticated analysis center outputs. The replication of CODE's 25-year orbital velocity coupling (r = −0.763 vs r = −0.888) using completely independent methodology provides strong cross-validation. The identical coupling between position jitter and clock bias (Δ ≈ 5%) suggests spacetime metric fluctuations rather than clock-only effects—a key discriminant favoring TEP over instrumental explanations.
+This analysis strongly constrains the processing artifact hypothesis. By detecting the same signatures in raw RINEX observations processed with only broadcast ephemerides (no precise products), the findings demonstrate that distance-structured correlations exist in the fundamental data, not just sophisticated analysis center outputs. The replication of CODE's 25-year orbital velocity coupling (r = −0.763 vs r = −0.888) using completely independent methodology provides strong cross-validation. The identical coupling between position jitter and clock bias (Δ ≈ 5%) suggests spacetime metric fluctuations rather than clock-only effects—a key discriminant favoring TEP over instrumental explanations.
 
 ## File Structure
 
@@ -179,7 +179,7 @@ TEP-GNSS-RINEX/
 │   ├── figures/                    # Generated plots (PNG)
 │   └── outputs/                    # Analysis results (JSON)
 ├── logs/                           # Step execution logs
-├── 3-TEP-GNSS-RINEX-v0.4-Kathmandu.md  # Auto-generated markdown
+├── 3-TEP-GNSS-RINEX-v0.5-Kathmandu.md  # Auto-generated markdown
 └── VERSION.json                    # Version metadata
 ```
 
@@ -201,12 +201,12 @@ TEP-GNSS-RINEX/
 
 ```bibtex
 @article{smawfield2025rinex,
-  title={Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks},
+  title={Global Time Echoes: Raw RINEX Consistency Test},
   author={Smawfield, Matthew Lukin},
   journal={Zenodo},
   year={2025},
   doi={10.5281/zenodo.17860166},
-  note={Preprint v0.4 (Kathmandu)}
+  note={Preprint v0.5 (Kathmandu)}
 }
 ```
 
@@ -230,5 +230,5 @@ These are working preprints shared in the spirit of open science—all manuscrip
 
 ---
 
-**Contact:** matthewsmawfield@gmail.com  
+**Contact:** matthew@mlsmawfield.com  
 **ORCID:** [0009-0003-8219-3159](https://orcid.org/0009-0003-8219-3159)

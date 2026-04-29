@@ -130,6 +130,27 @@ class HTMLToMarkdownConverter {
         // Clean up any remaining formatting issues
         html = html.replace(/\n{3,}/g, '\n\n');
         
+        // Trim leading whitespace from each line (preserving code blocks and blockquotes)
+        const lines = html.split('\n');
+        let inCodeBlock = false;
+        const cleanedLines = lines.map(line => {
+            // Toggle code block state
+            if (line.trim().startsWith('```')) {
+                inCodeBlock = !inCodeBlock;
+                return line.trimStart();
+            }
+            // Preserve code block content and blockquotes
+            if (inCodeBlock || line.trim().startsWith('> ')) {
+                return line;
+            }
+            // Trim leading whitespace from regular lines (including list items)
+            return line.trimStart();
+        });
+        html = cleanedLines.join('\n');
+        
+        // Final cleanup of excess blank lines
+        html = html.replace(/\n{3,}/g, '\n\n');
+        
         return html;
     }
 
@@ -173,7 +194,7 @@ class HTMLToMarkdownConverter {
      */
     extractMetadata(html) {
         const titleMatch = html.match(/<title[^>]*>(.*?)<\/title>/i);
-        const title = titleMatch ? titleMatch[1] : 'Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks';
+        const title = titleMatch ? titleMatch[1] : 'Global Time Echoes: Raw RINEX Consistency Test';
         
         const authorMatch = html.match(/<meta[^>]*name=["']author["'][^>]*content=["']([^"']*)["']/i);
         const author = authorMatch ? authorMatch[1] : 'Matthew Lukin Smawfield';
@@ -291,19 +312,14 @@ class HTMLToMarkdownConverter {
      * Build the complete markdown document with metadata
      */
     buildMarkdownDocument(metadata, content) {
-        const timestamp = new Date().toISOString().split('T')[0];
-        
         // Clean up the title to remove the author part
         const cleanTitle = metadata.title.replace(' | Matthew Lukin Smawfield', '');
         
         return `# ${cleanTitle}
-
-**Author:** ${metadata.author}  
-**Version:** ${metadata.version}  
-**Date:** ${metadata.date}  
-**DOI:** ${metadata.doi}  
-**Generated:** ${timestamp}  
-**Paper Series:** TEP-GNSS Paper 3 (Raw RINEX Validation)
+**${metadata.author}**
+Version: ${metadata.version}
+${metadata.date}
+DOI: ${metadata.doi}
 
 ---
 

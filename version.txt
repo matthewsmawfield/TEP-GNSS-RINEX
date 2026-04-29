@@ -1,5 +1,8 @@
-v0.4 (Kathmandu) — Temporal Topology Alignment
+v0.5 (Kathmandu) - Terminology Alignment and Theory Clarification
 
-- Replaced thin-shell terminology with continuous Temporal Topology: Updated screening mechanism descriptions from discrete phase boundaries to fluid, continuous spatial profiles throughout synthesis and discussion sections.
-- Formalized Temporal Shear nomenclature: Introduced explicit field gradient terminology linking local coupling strength to the spatial gradient of the Temporal Topology profile.
-- Added Temporal Topology Model (§3.7.5): Unified interpretation framework explaining seasonal correlation length variations as density-driven modulation of Temporal Shear.
+- Unified terminology: "temporal equivalence principle" replaces "conformal model" throughout
+- Signal description clarified: path-dependent clock drift → path-dependent synchronization
+- Mathematical notation aligned: proper time perturbation δτ defined explicitly
+- Physical interpretation strengthened: local Lorentz invariance preserved, global anisotropy constrained
+- Consistency edits across all sections to align with TEP theoretical framework
+- Bibliographic references updated for precision and completeness

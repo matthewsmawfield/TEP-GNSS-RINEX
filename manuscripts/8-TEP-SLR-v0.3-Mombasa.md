@@ -1,14 +1,14 @@
-# Global Time Echoes: Optical Validation of TEP via Satellite Laser Ranging (SLR)
+# Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging
 **Matthew Lukin Smawfield**
-v0.2 (Mombasa)
-First published: 30 December 2025 · Last updated: 24 April 2026
-DOI: 10.5281/zenodo.18064582
+v0.3 (Mombasa)
+First published: 30 December 2025 · Last updated: 29 April 2026
+DOI: 10.5281/zenodo.18064581
 
 ---
 
 ## Abstract
 
-An independent, optical-domain test of the Temporal Equivalence Principle (TEP) is presented using 11 years (2015–2025) of Satellite Laser Ranging (SLR) data from passive ILRS geodetic satellites (LAGEOS-1/2 and Etalon-1/2). This analysis constrains "clock-artifact" explanations by employing two-way optical ranging to passive retroreflectors—a methodology orthogonal to the microwave measurements of active atomic clocks used in Global Navigation Satellite Systems (GNSS).
+An optical-domain consistency test of TEP is presented using 11 years (2015–2025) of Satellite Laser Ranging (SLR) data from passive ILRS geodetic satellites (LAGEOS-1/2 and Etalon-1/2). This analysis constrains "clock-artifact" explanations by employing two-way optical ranging to passive retroreflectors—a methodology orthogonal to the microwave measurements of active atomic clocks used in Global Navigation Satellite Systems (GNSS).
 
 Under strict 5-minute contemporaneous binning, distance-binned mean pass-correlations fluctuate with high variance. However, widening the overlap window to 15 minutes (thereby increasing multi-station overlap) reveals statistically significant, distance-structured inter-station correlations (Fisher-combined $\chi^2=15.35$ with 4 d.o.f.; $p=0.0040$) under a family-wise circular-shift test.
 
@@ -16,7 +16,7 @@ This signal is driven primarily by LAGEOS-2 ($p=0.0005$), which exhibits a stron
 
 To validate this finding with more robust statistics, a daily-aggregation analysis ($N=190$ station pairs) was performed. This confirmed a subtler but statistically significant negative correlation at shorter ranges (500–1,000 km, $p=0.017$), suggesting a persistent global background structure independent of the high-amplitude LAGEOS-2 events.
 
-The detection of matching low-frequency structure in a system devoid of active clocks and microwave propagation challenges receiver electronics, clock steering, and ionospheric modeling errors as complete explanations. While current network sparsity limits testing to the conformal sector, this work demonstrates SLR as an independent, technology-orthogonal line of evidence for TEP phenomenology.
+The observation of matching low-frequency structure in a system devoid of active clocks and microwave propagation challenges receiver electronics, clock steering, and ionospheric modeling errors as complete explanations. While current network sparsity limits testing to the conformal sector, this work demonstrates SLR as an independent, technology-orthogonal line of evidence for TEP phenomenology.
 
 ## 1. Introduction
 
@@ -24,11 +24,11 @@ The detection of matching low-frequency structure in a system devoid of active c
 
 The Temporal Equivalence Principle (TEP) posits that proper time is a
 dynamical field governed by a conformal factor $A(\phi) =
-\exp(2\beta\phi/M_{\text{Pl}})$, leading to path-dependent
+\exp(\beta\phi/M_{\text{Pl}})$, leading to path-dependent
 synchronization effects that manifest as spatial correlations in
 distributed timing networks. Previous analyses of the GNSS network
 (Smawfield 2025b, 2025c, 2025d; Papers 1-3) identified a persistent
-correlation structure with a length scale of $\lambda \approx 4,000$ km,
+correlation structure with Temporal Topology correlation length $\lambda_T \approx 4,000$ km,
 providing evidence consistent with TEP's conformal-sector phenomenology.
 While robust across processing centers (CODE, IGS, ESA; $R^2 =
 0.92-0.97$), temporally stable over 25 years, and present in raw RINEX
@@ -61,8 +61,8 @@ physically distinct sectors with different observational signatures:
 #### Conformal Sector (Clock-Rate Modulation)
 
 **Coupling:** Universal conformal factor $A(\phi) =
-\exp(2\beta\phi/M_{\text{Pl}})$ modulates proper time rates:
-$\mathrm{d}\tau/\mathrm{d}t \propto A(\phi)^{1/2}$.
+\exp(\beta\phi/M_{\text{Pl}})$ modulates proper time rates:
+$\mathrm{d}\tau/\mathrm{d}t \propto A(\phi)$.
 
 **Observable:** Spatial correlations in clock
 frequencies with characteristic length $\lambda \sim m_\phi^{-1}$,
@@ -70,11 +70,10 @@ set by the scale of the scalar field's continuous spatial profile
 (Temporal Topology).
 
 **Constraint Status:**
-*Unconstrained by GW170817* (multi-messenger bounds apply
-only to disformal sector).
+*Not directly constrained by photon–graviton differential-propagation bounds; indirectly constrained by PPN, source-screening, clock-comparison, and equivalence-principle tests.*
 
 **GNSS Evidence (Smawfield 2025b,c,d; Papers 1-3):**
-Supported by distance-structured correlations ($\lambda = 4,201 \pm
+Supported by distance-structured correlations ($\lambda_T = 4,201 \pm
 1,967$ km), orbital velocity coupling ($r = -0.888$, 5.1$\sigma$),
 and CMB frame alignment (18.2° from dipole).
 
@@ -84,8 +83,8 @@ and CMB frame alignment (18.2° from dipole).
 \nabla_\nu\phi$ tilts photon light cones, creating path-dependent
 one-way time asymmetries.
 
-**Observable:** Synchronization holonomy $H = \oint_C
-\Omega_\mu \mathrm{d}x^\mu \neq 0$ in closed-loop time transfer
+**Observable:** Synchronization holonomy $H_{\rm resid} = \oint_C
+(\tilde{\sigma} - \sigma_{\rm GR}) \neq 0$ in closed-loop time transfer
 (after GR subtraction).
 
 **Constraint Status:**
@@ -139,13 +138,13 @@ achromatic; optical (SLR, $\sim 500$ THz) and microwave (GNSS, $\sim
 their respective ambient density profiles (accounting for local
 matter density differences).
 Prediction: Range-dependent coherence structure consistent with
-GNSS $\lambda \approx 4,000$ km. Observed: consistent scaling
+GNSS $\lambda_T \approx 4,000$ km. Observed: consistent scaling
 (§5.1).
 
 -
 **Spatial Coherence:** Residuals should exhibit
 distance-dependent spatial correlations consistent with the
-characteristic scale of the Temporal Topology, $\lambda$.
+characteristic scale of the Temporal Topology, $\lambda_T$.
 Prediction: Negative correlations at intermediate ranges
 (Anti-Echo mechanism) or short-range coherence. Observed:
 Significant signals in daily aggregation ($p=0.017$) and
@@ -162,7 +161,7 @@ experiments remain to be performed.
 
 ### 2.1 The Target: LAGEOS
 
-The Laser Geodynamics Satellites (LAGEOS-1 and LAGEOS-2) represent excellent test masses for this investigation. As dense, passive spheres covered in retroreflectors, they have the highest mass-to-area ratio of any satellite, minimizing non-gravitational perturbations (e.g., drag, radiation pressure). Crucially, they carry no active electronics and no clocks. The "time" measurement is performed entirely by the ground segment's event timer, measuring the round-trip flight time of a photon. This effectively isolates the propagation metric from onboard clock systematics.
+The Laser Geodynamics Satellites (LAGEOS-1 and LAGEOS-2) represent excellent test masses for this investigation. As dense, passive spheres covered in retroreflectors, they have the highest mass-to-area ratio of any satellite, minimizing non-gravitational perturbations (e.g., drag, radiation pressure). They carry no active electronics and no clocks. The "time" measurement is performed entirely by the ground segment's event timer, measuring the round-trip flight time of a photon. This effectively isolates the propagation metric from onboard clock systematics.
 
 ### 2.2 Dataset & Processing
 
@@ -176,7 +175,7 @@ Residuals were computed relative to high-precision SP3 orbits (ASI/GFZ). For the
 
 - **Corrections:** Standard Marini-Murray troposphere model, Shapiro delay, and Sagnac corrections were applied. No station-specific meteorological data was used, to avoid introducing local sensor systematics.
 
-- **Parameter Estimation Strategy:** Crucially, this analysis avoids the standard practice of estimating frequent empirical accelerations or "geographically correlated" parameters, which are often used in precise orbit determination (POD) to whiten residuals. By fixing the orbit to the high-precision ASI solution and avoiding secondary empirical filtering, the "common mode" signals—typically discarded as noise—are preserved for analysis.
+- **Parameter Estimation Strategy:** This analysis avoids the standard practice of estimating frequent empirical accelerations or "geographically correlated" parameters, which are often used in precise orbit determination (POD) to whiten residuals. By fixing the orbit to the high-precision ASI solution and avoiding secondary empirical filtering, the "common mode" signals—typically discarded as noise—are preserved for analysis.
 
 ### 2.3 Inter-Station Metric: Contemporaneous Pass-Bin & Daily Aggregation
 
@@ -339,7 +338,7 @@ Based on the conformal-sector evidence presented, future experimental directions
 
 ### 4.1 Conformal vs. Disformal: Two Distinct Predictions
 
-The TEP bi-metric geometry $\tilde{g}_{\mu\nu} = A(\phi) g_{\mu\nu} + B(\phi) \nabla_\mu\phi \nabla_\nu\phi$ contains two physically distinct coupling mechanisms:
+The TEP bi-metric geometry $\tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu} + B(\phi) \nabla_\mu\phi \nabla_\nu\phi$ contains two physically distinct coupling mechanisms:
 
 - **Conformal Coupling $A(\phi)$:** Modulates clock rates universally. Creates spatial correlations in timing residuals with length scale $\lambda \sim m_\phi^{-1}$. *This is the sector probed in GNSS and SLR analyses.*
 
@@ -383,11 +382,11 @@ The current SLR dataset does not meet these requirements. Future targeted SLR ca
 
 ### 5.1 The Ladder of Evidence: Conformal Sector Assessment
 
-The TEP-SLR analysis provides an independent optical-domain test of the
+The TEP-SLR analysis provides an optical-domain consistency test of the
 Temporal Equivalence Principle's conformal sector. By integrating these
 findings with the previous GNSS results (Smawfield 2025b, 2025c, 2025d;
 Papers 1-3), a "Ladder of Evidence" is proposed that supports the
-conformal interpretation while clearly distinguishing it from untested
+conformal interpretation while distinguishing it from untested
 disformal predictions. Throughout, robust empirical observables are
 distinguished from interpretive inferences that remain contingent on
 additional systematics controls:
@@ -420,7 +419,7 @@ is threshold-sensitive (e.g.,
 $\Delta(\mathrm{low}-\mathrm{high})=-0.044$, 95% CI: −0.208 to 0.100
 at $|\Delta\rho|<1.0$ m), and is therefore treated as qualitative
 support for a path-accumulated component rather than a precisely
-estimated amplitude. Crucially, standard tropospheric corrections
+estimated amplitude. Standard tropospheric corrections
 (Marini-Murray) were applied prior to this analysis; the structure
 persists in the *post-correction* residuals, motivating
 deeper atmospheric-systematics testing rather than serving as a
@@ -428,7 +427,7 @@ refutation of the baseline refraction model.
 
 #### 3. Scale Consistency (The Characteristic Scale)
 
-The GNSS correlation length ($\lambda = 4,201 \pm 1,967$ km) and the
+The GNSS correlation length ($\lambda_T = 4,201 \pm 1,967$ km) and the
 SLR path-length dependent contrast (over a $\sim 3{,}000$ km path
 difference between the high- and low-range selections) are both
 consistent with the characteristic scale of the scalar field's
@@ -556,8 +555,8 @@ specific network geometry viewing LAGEOS-2, they might masquerade as
 spatial correlations. Although standard CoM corrections (251 mm)
 were applied uniformly, further investigation using precise
 spin-vector evolution models is required to assess array-response
-artifacts as a potential source of the LAGEOS-2 signal. Crucially,
-however, thermal thrusting and spin-vector artifacts are typically
+artifacts as a potential source of the LAGEOS-2 signal. However,
+thermal thrusting and spin-vector artifacts are typically
 associated with orbital-arc timescales or station-specific passes,
 which would tend to decorrelate inter-station noise. In contrast,
 the signal observed here exhibits a coherent distance-dependent
@@ -609,7 +608,7 @@ in station coordinate time series and "spatially correlated errors"
 2004). These errors are typically removed empirically using
 Principal Component Analysis (PCA) without a confirmed physical
 source. The TEP analysis demonstrates that such spatially coherent,
-colored noise is a *prediction* of the theory ($\lambda
+colored noise is a *prediction* of the theory ($\lambda_T
 \approx 4,000$ km), not merely atmospheric residue. The standard
 practice of filtering these signals effectively "bleaches" the
 conformal structure from geodetic products.
@@ -639,7 +638,7 @@ roadmap for future targeted SLR campaigns.
 
 ## 6. Conclusion
 
-This study presents an independent optical-domain test of the Temporal
+This study presents an optical-domain consistency test of the Temporal
 Equivalence Principle's conformal sector using Satellite Laser Ranging.
 By analyzing 11 years of LAGEOS data, a spatially coherent residual
 structure has been isolated that mirrors the conformal signatures
@@ -657,7 +656,7 @@ Taken together with the GNSS results, the SLR evidence is consistent
 with the conformal-sector interpretation across five orders of magnitude
 in frequency (microwave to optical) and across two independent
 measurement technologies (GNSS and SLR). The observed correlation length
-in GNSS ($\lambda = 4,201 \pm 1,967$ km) and the SLR path-length
+in GNSS ($\lambda_T = 4,201 \pm 1,967$ km) and the SLR path-length
 dependent diagnostic (over a $\sim 3{,}000$ km path difference between
 the high- and low-range selections) are both consistent with the
 characteristic scale of the scalar field's continuous spatial profile
@@ -696,23 +695,33 @@ possibility bounded to negligibility by multi-messenger constraints.
 
 ### TEP Research Program
 
-Smawfield, M. L. (2025a). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Zenodo (Preprint). [DOI: 10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0: Theory)
+Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.8 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
 
-Smawfield, M. L. (2025b). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Zenodo (Preprint). [DOI: 10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1: Multi-Center)
+Smawfield, M. L. (2025). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Preprint v0.25 (Jaipur). Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1)
 
-Smawfield, M. L. (2025c). *Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks*. Zenodo (Preprint). [DOI: 10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2: Longspan)
+Smawfield, M. L. (2025). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.18 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2)
 
-Smawfield, M. L. (2025d). *Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks*. Zenodo (Preprint). [DOI: 10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3: Raw RINEX)
+Smawfield, M. L. (2025). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.5 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3)
 
-Smawfield, M. L. (2025e). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Zenodo (Preprint). [DOI: 10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4: TEP-GL)
+Smawfield, M. L. (2025). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.5 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4)
 
-Smawfield, M. L. (2025f). *Global Time Echoes: Empirical Validation of the Temporal Equivalence Principle*. Zenodo (Preprint). [DOI: 10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Synthesis: TEP-GTE)
+Smawfield, M. L. (2025). *Global Time Echoes: Empirical Synthesis*. Preprint v0.4 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
 
-Smawfield, M. L. (2025g). *Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales*. Zenodo (Preprint). [DOI: 10.5281/zenodo.18064366](https://doi.org/10.5281/zenodo.18064366) (Paper 6: TEP-UCD)
+Smawfield, M. L. (2025). *Universal Critical Density: Cross-Scale Consistency of ρ_T*. Preprint v0.3 (New Delhi). Zenodo. DOI: [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365) (Paper 6)
 
-Smawfield, M. L. (2025h). *The Soliton Wake: A Runaway Black Hole as a Gravitational Soliton*. Zenodo (Preprint). [DOI: 10.5281/zenodo.18059251](https://doi.org/10.5281/zenodo.18059251) (Paper 7: TEP-RBH)
+Smawfield, M. L. (2025). *The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate*. Preprint v0.3 (Blantyre). Zenodo. DOI: [10.5281/zenodo.18059250](https://doi.org/10.5281/zenodo.18059250) (Paper 7)
 
-Smawfield, M. L. (2025i). *Global Time Echoes: Optical Validation of the Temporal Equivalence Principle via Satellite Laser Ranging*. Zenodo (Preprint). [DOI: 10.5281/zenodo.18064582](https://doi.org/10.5281/zenodo.18064582) (Paper 8: This Work)
+Smawfield, M. L. (2025). *Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging*. Preprint v0.3 (Mombasa). Zenodo. DOI: [10.5281/zenodo.18064581](https://doi.org/10.5281/zenodo.18064581) (Paper 8 — this work)
+
+Smawfield, M. L. (2025). *What Do Precision Tests of General Relativity Actually Measure?*. Preprint v0.3 (Istanbul). Zenodo. DOI: [10.5281/zenodo.18109760](https://doi.org/10.5281/zenodo.18109760) (Paper 9)
+
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars*. Preprint v0.6 (Caracas). Zenodo. DOI: [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) (Paper 10)
+
+Smawfield, M. L. (2026). *The Cepheid Bias: Resolving the Hubble Tension*. Preprint v0.6 (Kingston upon Hull). Zenodo. DOI: [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) (Paper 11)
+
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies*. Preprint v0.4 (Kos). Zenodo. DOI: [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) (Paper 12)
+
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries*. Preprint v0.3 (Kilifi). Zenodo. DOI: [10.5281/zenodo.19102061](https://doi.org/10.5281/zenodo.19102061) (Paper 13)
 
 ### SLR & Geodesy References
 

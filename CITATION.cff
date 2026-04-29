@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+title: "Global Time Echoes: Raw RINEX Consistency Test"
+message: "If you use this software, please cite it as below."
+type: article
+authors:
+  - family-names: "Smawfield"
+    given-names: "Matthew Lukin"
+    orcid: "https://orcid.org/0009-0003-8219-3159"
+license: CC-BY-4.0
+repository-code: "https://github.com/matthewsmawfield/TEP-GNSS-RINEX"
+url: "https://matthewsmawfield.github.io/TEP-GNSS-RINEX/"
+doi: 10.5281/zenodo.17860166
+
+preferred-citation:
+  type: article
+  title: "Global Time Echoes: Raw RINEX Consistency Test"
+  authors:
+    - family-names: Smawfield
+      given-names: Matthew Lukin
+      orcid: "https://orcid.org/0009-0003-8219-3159"
+  year: 2025
+  journal: Zenodo
+  doi: 10.5281/zenodo.17860166
+  identifiers:
+  - type: doi
+    value: 10.5281/zenodo.17860166
+    description: Pre-print DOI
+  url: "https://doi.org/10.5281/zenodo.17860166"
+  notes: "Preprint"

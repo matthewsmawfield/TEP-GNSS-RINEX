@@ -1,4 +1,4 @@
-# robots.txt for TEP-GNSS-RINEX: Global Time Echoes (Raw RINEX Validation)
+# robots.txt for TEP-GNSS-RINEX: Global Time Echoes (Raw RINEX Consistency Test)
 User-agent: *
 Allow: /
 

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://matthewsmawfield.github.io/TEP-GNSS-RINEX/sitemap.xml

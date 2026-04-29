@@ -48,7 +48,7 @@
     <p>A legitimate concern in large-N studies is that the 713 million pair-samples (ALL_STATIONS filter) are not fully independent—each station participates in many pairs, potentially inflating t-statistics beyond their true significance. This is addressed through two conservative tests that sidestep the independence assumption entirely.</p>
     
     <h5>Conservative Test 1: Month-as-Sample</h5>
-    <p>If each calendar month is treated as a single independent observation (discarding all within-month pair statistics), the E-W > N-S anisotropy is still detected in 36 of 36 months (100%) for the Multi-GNSS mode. Under a null hypothesis of random directional bias, this consistency has probability:</p>
+    <p>If each calendar month is treated as a single independent observation (discarding all within-month pair statistics), the E-W > N-S anisotropy is still detected in all 36 months for the Multi-GNSS mode. Under a null hypothesis of random directional bias, this consistency has probability:</p>
     
     <p style="text-align: center; font-family: monospace; font-size: 14px; background: #f5f5f5; padding: 10px; border-radius: 4px;">
         P = (0.5)<sup>36</sup> ≈ 1.5 × 10<sup>−11</sup>
@@ -77,7 +77,7 @@
         <th>Condition</th>
         <th>Days</th>
         <th>Pairs</th>
-        <th>λ (clock_bias/MSC)</th>
+        <th>λ<sub>T</sub> (clock_bias/MSC)</th>
         <th>R²</th>
     </tr>
     <tr>
@@ -101,9 +101,9 @@
     <table>
         <tr>
             <th>Metric</th>
-            <th>Quiet λ</th>
-            <th>Storm λ</th>
-            <th>Δλ</th>
+            <th>Quiet λ<sub>T</sub></th>
+            <th>Storm λ<sub>T</sub></th>
+            <th>Δλ<sub>T</sub></th>
             <th>Interpretation</th>
         </tr>
         <tr>
@@ -141,8 +141,8 @@
     <h4>Ionosphere Hypothesis: Unsupported</h4>
     <p>Key findings from real Kp data:</p>
     <ul>
-        <li><strong>λ changes only slightly:</strong> Storm λ is only 3–4% shorter than quiet λ (MSC metrics)</li>
-        <li><strong>Phase alignment changes little:</strong> Phase-alignment λ is typically stable at the percent level at the primary threshold (Kp &lt; 3 vs. Kp ≥ 3)</li>
+        <li><strong>λ<sub>T</sub> changes only slightly:</strong> Storm λ<sub>T</sub> is only 3–4% shorter than quiet λ<sub>T</sub> (MSC metrics)</li>
+        <li><strong>Phase alignment changes little:</strong> Phase-alignment λ<sub>T</sub> is typically stable at the percent level at the primary threshold (Kp &lt; 3 vs. Kp ≥ 3)</li>
         <li><strong>R² remains high:</strong> 0.95+ in both conditions—signal remains detectable</li>
         <li><strong>Physical interpretation:</strong> Storms add short-range ionospheric noise, slightly reducing apparent λ, while the inferred ~700–1,800 km correlation structure remains detectable</li>
     </ul>
@@ -164,7 +164,7 @@
             <th>Conclusion</th>
         </tr>
         <tr>
-            <td>λ (km)</td>
+            <td>λ<sub>T</sub> (km)</td>
             <td>727</td>
             <td>702</td>
             <td>Consistent (Δ = 3.4%)</td>
@@ -241,7 +241,7 @@
     <table>
         <tr>
             <th>Metric</th>
-            <th>λ (km)</th>
+            <th>λ<sub>T</sub> (km)</th>
             <th>R²</th>
             <th>Physical Interpretation</th>
         </tr>
@@ -271,7 +271,7 @@
         </tr>
     </table>
     
-    <p>Key observation: The ionofree mode shows λ = 1,072 km, which is 47% longer than baseline (727 km). Removing ionospheric effects increases the correlation length because ionospheric decorrelation was shortening the apparent λ. An artificial methodology effect would not "know" to respond this way to ionospheric correction. This physically meaningful response is consistent with a real signal rather than a fitting artifact.</p>
+    <p>Key observation: The ionofree mode shows λ<sub>T</sub> = 1,072 km, which is 47% longer than baseline (727 km). Removing ionospheric effects increases the Temporal Topology correlation length because ionospheric decorrelation was shortening the apparent λ<sub>T</sub>. An artificial methodology effect would not "know" to respond this way to ionospheric correction. This physically meaningful response is consistent with a real signal rather than a fitting artifact.</p>
 </div>
 
 <h3>4.4 Systematic Effect Discrimination</h3>
@@ -279,7 +279,7 @@
 <div class="critical-analysis">
     <h4>Can Alternative Effects Explain the Observed λ?</h4>
     
-    <p>Observed correlation lengths range from 700–1,100 km (MSC) to 1,700–3,500 km (Phase Alignment), depending on metric and processing mode:</p>
+    <p>Observed Temporal Topology correlation lengths range from 700–1,100 km (MSC) to 1,700–3,500 km (Phase Alignment), depending on metric and processing mode:</p>
     
     <table>
         <tr>
@@ -350,17 +350,17 @@
         <th>Formal Error</th>
     </tr>
     <tr>
-        <td>λ (Clock Bias)</td>
+        <td>λ<sub>T</sub> (Clock Bias)</td>
         <td>727 km</td>
         <td>± 50 km</td>
     </tr>
     <tr>
-        <td>λ (Clock Drift)</td>
+        <td>λ<sub>T</sub> (Clock Drift)</td>
         <td>702 km</td>
         <td>± 47 km</td>
     </tr>
     <tr>
-        <td>λ (Position Jitter)</td>
+        <td>λ<sub>T</sub> (Position Jitter)</td>
         <td>883 km</td>
         <td>± 41 km</td>
     </tr>
@@ -484,8 +484,8 @@
         </tr>
         <tr>
             <td>Ionofree control</td>
-            <td>λ unchanged</td>
-            <td>λ increases 47%</td>
+            <td>λ<sub>T</sub> unchanged</td>
+            <td>λ<sub>T</sub> increases 47%</td>
         </tr>
         <tr>
             <td>Regional subsets</td>

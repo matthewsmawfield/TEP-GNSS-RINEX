@@ -1,7 +1,7 @@
-# Global Time Echoes: Empirical Validation
+# Global Time Echoes: Empirical Synthesis
 **Matthew Lukin Smawfield**
-Version: v0.3 (Singapore)
-21 December 2025 · Last updated: 24 April 2026
+Version: v0.4 (Singapore)
+21 December 2025 · Last updated: 29 April 2026
 DOI: 10.5281/zenodo.18004832
 
 ---
@@ -13,69 +13,74 @@ persistent, distance-structured correlation in global atomic clock
 networks that tests an empirically untested assumption of general
 relativity: the global integrability of proper time. Examination of
 165.2 million station pairs from 474 unique receivers demonstrates a
-spatial correlation signal decaying exponentially with distance (λ =
+spatial correlation signal decaying exponentially with distance (λT =
 4,201 ± 1,967 km, R² = 0.92–0.97 across three independent analysis
 centers). These findings emerge from a systematic five-paper research
-program: theoretical framework development with quantitative predictions
-(Paper 0), multi-center validation across independent processing
+program: theoretical framework development with pre-specified expectations and theoretical search ranges
+(Paper 0), multi-center consistency across independent processing
 pipelines (Paper 1), 25-year longitudinal analysis enabling long-period
-geophysical detection (Paper 2), raw data confirmation eliminating
-processing artifacts (Paper 3), and cosmological extension connecting
-terrestrial correlations to dark matter phenomenology through
-gravitational lensing (Paper 4).
+geophysical detection (Paper 2), raw-data consistency test strongly constraining
+precise-product processing artifacts (Paper 3), and speculative cosmological extension exploring whether temporal covariance
+or gradient effects contribute to dark-sector phenomenology (Paper 4).
 
-Seven statistically independent signatures emerge with joint probability
-p ≈ 2×10−27 (>10σ): exponential spatial decay;
+Seven convergent signatures support the Temporal Topology interpretation:
+exponential spatial decay;
 East-West/North-South anisotropy (ratio 2.16, p < 10−15);
 orbital velocity coupling (r = −0.888, 5.1σ); alignment with the Cosmic
 Microwave Background dipole (18.2° separation, 5,570× variance ratio
 over galactic motion); planetary event responses (56/156 significant at
 ≥2σ); 18.6-year lunar nutation coupling (R² = 0.641); and semiannual
-nutation coupling (R² = 0.904). Raw RINEX validation using Single Point
-Positioning with broadcast ephemerides achieves 100% detection rate
-across 72 metric combinations (t-statistics up to 112, Cohen's d up to
-0.304), excluding processing artifacts as the origin. The network's
+nutation coupling (R² = 0.904). Raw RINEX consistency test using Single Point
+Positioning with broadcast ephemerides achieves consistent signal detection
+across all 72 metric combinations (t-statistics up to 112, Cohen's d up to
+0.304), strongly constraining precise-product processing artifacts as the sole origin. Broadcast ephemerides still contain control-segment information, so Satellite Laser Ranging and non-GNSS optical checks remain necessary for definitive confirmation. The network's
 selectivity profile—sensitive to velocity-dependent dynamics while blind
 to GM/r² scaling and solar rotation—characterizes it as an inertial
 interferometer measuring correlation geometry rather than a gravimeter
 measuring Newtonian force.
 
-These observations match a priori predictions of the Temporal
+These observations match pre-specified expectations of the Temporal
 Equivalence Principle, a bi-metric scalar-tensor framework in which
 proper time is a dynamical field governed by a conformal factor A(φ) =
-exp(2βφ/MPl). Fifth-force suppression operates through the
+exp(βφ/MPl). Fifth-force suppression operates through the
 continuous spatial profile of the φ field (Temporal Topology), with
 suppression arising from the non-linear superposition of field gradients
 (Temporal Shear), replacing discrete thin-shell approximations with a
-geometrically continuous mechanism. The observed correlation length corresponds to a scalar field
-mass mφ ≈ (4.34–5.93)×10−14 eV/c², consistent with
-Vainshtein screening at the dark energy scale Λ ~ 10−13 eV.
+geometrically continuous mechanism. The observed correlation length λT
+represents the characteristic scale of Temporal Topology. Compton-mass,
+environmental screening, derivative-screened, and saturation-radius
+interpretations are candidate theoretical completions, not the primary
+empirical claim.
 The framework preserves local Lorentz invariance while predicting global
 path-dependent synchronization through spatial correlations in the φ
-field. Critically, the conformal sector responsible for clock-rate
-modulation remains unconstrained by GW170817, which bounds only
-disformal (cone-tilting) effects.
+field.
 
-If validated through independent replication, TEP implies that dark
-matter phenomenology in gravitational lensing arises from temporal-field
-gradients (active Temporal Shear) rather than particulate matter—the
-projection of differential proper-time accumulation onto observations
-that assume the Isochrony Axiom. The 4,000 km correlation on Earth and
-the 50 kpc dark matter halo in galaxies represent the same scalar field
-at different density scales, connected by the universal M1/3
-Vainshtein scaling law and the continuous relaxation of Temporal
-Topology from deep potential wells to the weak-field regime. Explicit
+**Evidence Tiers:** A (Paper 0/EXP): Foundational theory with
+pre-specified search ranges; B (GNSS I–III, SLR): Primary empirical
+tests; C (H₀, COS, WB): Secondary corroboration; D (JWST, GL, UCD,
+RBH): Speculative extensions. The seven signatures are convergent but
+not statistically independent. Critically, the conformal sector responsible for clock-rate
+modulation is not directly constrained by photon–graviton differential-propagation tests such as GW170817, although local conformal-gradient/source-charge sectors remain constrained by PPN, clock, and equivalence-principle tests.
+
+If validated through independent replication, TEP predicts that part
+of the phenomenology attributed to dark matter may include temporal-field
+gradient or covariance contributions—the projection of differential proper-time accumulation
+onto observations that assume the Isochrony Axiom—without assuming a new particulate matter component. The 4,000 km correlation on Earth and
+the 50 kpc galactic phenomenology are interpreted within TEP as possible manifestations of the same topology/shear framework, pending independent replication and completion-dependent transfer calculations, connected by the continuous
+relaxation of Temporal Topology from deep potential wells to the
+weak-field regime. The M1/3 scaling realized in some candidate
+derivative-screened completions remains testable through interplanetary missions. Explicit
 falsification criteria include: failure of independent groups to
-replicate the raw carrier-phase signal; correlation length falling
-outside the 500–20,000 km range; confirmation that the signal arises
+replicate the raw carrier-phase signal; Temporal Topology correlation
+length falling outside the 500–20,000 km range; confirmation that the signal arises
 from ephemeris artifacts rather than physical clock correlations (via
-Satellite Laser Ranging validation); and null synchronization holonomy
+Satellite Laser Ranging check); and null synchronization holonomy
 in closed-loop triangular time-transfer experiments.
 
 *Keywords:* Temporal Equivalence Principle, GNSS, atomic clocks,
 CMB alignment, dark matter, gravitational lensing, scalar-tensor
-gravity, synchronization holonomy, Vainshtein screening, Temporal
-Topology, Temporal Shear
+gravity, synchronization holonomy, Temporal Topology, Temporal Shear,
+nonlinear screening mechanisms
 
 ## 1. Introduction
 
@@ -125,11 +130,11 @@ long-period geophysical coupling that was inaccessible to earlier studies.
 Analyses conducted prior to 2010 lacked sufficient temporal leverage to
 distinguish such signals from transient artifacts.
 
-The second is multi-constellation cross-validation. The maturation of
+The second is multi-constellation cross-check. The maturation of
 GLONASS, Galileo, and BeiDou provides independent verification across
 different satellite geometries and processing chains. Single-constellation
 analyses are vulnerable to constellation-specific artifacts that
-multi-constellation cross-validation can identify and exclude.
+multi-constellation cross-check can identify and exclude.
 
 The third is methodological. Standard GNSS processing employs Kalman
 filtering and network adjustment algorithms designed to eliminate
@@ -172,15 +177,13 @@ This integrated manuscript synthesizes results from a systematic five-paper
 research program designed to establish, validate, and independently confirm
 the TEP predictions through progressively rigorous empirical tests and
 cosmological extension. The program follows a theory-first methodology:
-quantitative predictions established before empirical analysis, followed by
-multiple independent validations using complementary methodologies,
+pre-specified expectations and theoretical search ranges established before empirical analysis, followed by
+multiple independent checks using complementary methodologies,
 culminating in cosmological implications.
 
 Paper 0: Theoretical Foundation (Smawfield 2025a, DOI:
 10.5281/zenodo.16921911) — The Temporal Equivalence Principle framework was
-developed independently of any GNSS analysis, establishing quantitative
-predictions including a correlation length λ = 1,000–10,000 km derived from
-Vainshtein screening theory, exponential
+developed independently of any GNSS analysis, establishing pre-specified expectations and theoretical search ranges including a Temporal Topology correlation length, exponential
 spatial decay form, velocity-dependent anisotropy, and absence of GM/r²
 scaling. Screening operates via the continuous spatial profile of the φ field
 (Temporal Topology), with fifth-force suppression arising from the non-linear superposition of field
@@ -190,12 +193,12 @@ accessible to dynamics. This theory-first approach ensures that subsequent
 empirical findings represent genuine predictions rather than post-hoc
 explanations.
 
-Paper 1: Multi-Center Validation (Smawfield 2025b, DOI:
+Paper 1: Multi-Center Consistency (Smawfield 2025b, DOI:
 10.5281/zenodo.17127229) — Initial empirical investigation analyzed 62.7
 million station-pair measurements from 364 GNSS stations across three
 independent analysis centers (CODE, IGS, ESA) over 2.5 years (2023–2025).
 Cross-center consistency (R² = 0.92–0.97) established that the correlation
-structure is not processing-specific, with λ = 3,330–4,549 km falling within
+structure is not processing-specific, with λT = 3,330–4,549 km falling within
 the predicted range. This multi-center approach eliminated center-specific
 artifacts as a viable explanation.
 
@@ -206,19 +209,21 @@ Paper 2: 25-Year Longitudinal Analysis (Smawfield 2025c, DOI:
 previously inaccessible signatures including 18.6-year lunar nutation
 coupling (R² = 0.641), CMB frame alignment (18.2° from dipole, 5,570×
 variance ratio over galactic motion), and confirmed temporal stability of
-the correlation structure with λ = 4,201 ± 1,967 km. The 25-year baseline
+the correlation structure with λT = 4,201 ± 1,967 km. The 25-year baseline
 provided access to long-period geophysical phenomena impossible to detect in
 shorter studies.
 
-Paper 3: Raw RINEX Validation (Smawfield 2025d, DOI:
-10.5281/zenodo.17860166) — Definitive processing artifact elimination
-through analysis of raw GNSS observations using Single Point Positioning
-with broadcast ephemerides only. Analysis of 1.17 billion pair-samples
-across 539 stations (2022–2024) achieved 100% detection rate across 72
+Paper 3: Raw RINEX Test (Smawfield 2025d, DOI:
+10.5281/zenodo.17860166) — Processing artifact constraint through analysis
+of raw GNSS observations using Single Point Positioning with broadcast
+ephemerides only. Note: broadcast ephemerides still contain control-segment
+information, so Satellite Laser Ranging and non-GNSS optical checks remain
+necessary for definitive confirmation. Analysis of 1.17 billion pair-samples
+across 539 stations (2022–2024) achieved consistent signal detection across all 72
 independent metric combinations (t-statistics up to 112, Cohen's d up to
 0.304), confirming the signal exists in fundamental observables independent
-of sophisticated processing chains. This raw data validation eliminated the
-most plausible remaining artifact hypothesis.
+of sophisticated processing chains. This raw-data consistency test strongly
+constrains precise-product processing artifacts as the origin.
 
 Paper 4: Cosmological Implications (Smawfield 2025e, DOI:
 10.5281/zenodo.17982540) — Developed the connection between TEP and
@@ -228,10 +233,9 @@ introduced the Isochrony Axiom as a critical but untested assumption in
 standard lensing analysis, showed how its violation by TEP produces "Phantom
 Mass" through differential proper-time accumulation, and established the
 Earth-Galaxy scaling argument connecting the ~4,000 km GNSS correlation to
-~50 kpc dark matter halos through the universal M1/3 Vainshtein
-scaling law. The continuous relaxation of Temporal Topology from deep
-potential wells to the weak-field regime unifies terrestrial and galactic
-phenomenology without discrete boundary approximations. This cosmological
+~50 kpc galactic phenomenology. The continuous relaxation of Temporal Topology
+from deep potential wells to the weak-field regime unifies terrestrial and
+galactic scales. This cosmological
 extension transforms TEP from a terrestrial metrology curiosity into a
 framework with profound implications for dark matter and cosmological
 tensions.
@@ -297,35 +301,34 @@ TEP predictions—substantiates the framework's empirical foundation beyond
 the primary GNSS correlation analysis presented in this manuscript.
 
 The present manuscript integrates these five studies into a unified
-narrative, demonstrating that the TEP framework made specific quantitative
-predictions before empirical analysis, that three independent empirical
-investigations using progressively rigorous validation methods all confirm
-the predicted signatures, and that the framework's cosmological extension
-offers testable predictions for gravitational lensing and dark matter
-phenomenology. This theory-prediction-validation-cosmology sequence, with
+narrative, demonstrating that the TEP framework established pre-specified expectations and theoretical search ranges
+before empirical analysis, that three independent empirical
+investigations using progressively rigorous methods are each consistent with
+the expected signatures, and that the framework's cosmological extension
+offers testable expectations for gravitational lensing and dark matter
+phenomenology. This theory-expectation-evidence-cosmology sequence, with
 each empirical study addressing distinct artifact hypotheses
 (processing-specific, temporal transience, sophisticated processing) and the
 cosmological paper extending implications beyond terrestrial scales, follows
-the standard structure of scientific confirmation and theoretical
-development.
+the standard structure of scientific hypothesis development and theoretical
+refinement.
 
 ## 1.4 Prediction Timeline
 
 The TEP framework was developed independently of the GNSS analysis, with
-specific quantitative predictions established in prior theoretical work
-(Smawfield 2025a). The predicted correlation length range of λ =
-1,000–10,000 km was derived from environmental screening theory before any
+pre-specified expectations and theoretical search ranges established in prior theoretical work
+(Smawfield 2025a). The predicted Temporal Topology correlation length range of
+λT = 1,000–10,000 km was derived from environmental screening theory before any
 GNSS data analysis was conducted.
 
 The chronology is significant: the TEP theory paper was published in August
-2025 with quantitative predictions (DOI: 10.5281/zenodo.16921911);
+2025 with pre-specified expectations and theoretical search ranges (DOI: 10.5281/zenodo.16921911);
 multi-center GNSS analysis was conducted from September through November
 2025; the 25-year CODE longspan analysis was completed in November 2025; and
-raw RINEX validation confirmed the signal in fundamental observables in
-December 2025. The observed correlation length of λ = 4,201 ± 1,967 km falls
-within the predicted range, representing an a priori prediction confirmed by
-subsequent observation—the standard by which physics has validated theories
-from Einstein's perihelion precession to the Higgs boson mass.
+raw RINEX test confirmed the signal in fundamental observables in
+December 2025. The observed Temporal Topology correlation length of λT = 4,201 ± 1,967 km falls
+within the predicted range, representing consistency with a pre-specified theoretically motivated search
+range.
 
 ## 1.5 The Temporal Equivalence Principle
 
@@ -382,13 +385,13 @@ principles.
 Tier 1: Empirical Claim (Primary)
 
 GNSS clock residuals exhibit a persistent, distance-structured,
-anisotropic spatial correlation with exponential decay length λ = 4,201
+anisotropic spatial correlation with exponential decay length λT = 4,201
 ± 1,967 km. This correlation is robust across three independent
 processing centers (CODE, IGS, ESA; R² = 0.92–0.97), persists over 25.3
 years spanning multiple satellite constellation changes, and appears in
-raw RINEX observations processed with Single Point Positioning (100%
-detection rate across 72 metric combinations, t-statistics up to 112).
-The correlation exhibits seven independent signatures: exponential
+raw RINEX observations processed with Single Point Positioning (consistent
+signal detection across all 72 metric combinations, t-statistics up to 112).
+The correlation exhibits seven convergent signatures: exponential
 spatial decay, East-West/North-South anisotropy (ratio 2.16), orbital
 velocity coupling (r = −0.888, 5.1σ), CMB frame alignment (18.2° from
 dipole), planetary event responses (56/156 significant), 18.6-year lunar
@@ -407,33 +410,33 @@ dynamics and CMB frame alignment while blind to mass scaling and solar
 rotation—distinguishes it from conventional systematic errors. However,
 the possibility of a presently unmodeled GNSS systematic tied to
 fundamental constellation geometry cannot be definitively excluded
-without independent non-GNSS validation (Section 3.6).
+without independent non-GNSS check (Section 3.6).
 
 Tier 3: Theoretical Hypothesis (Tertiary)
 
 The observations are consistent with the Temporal Equivalence Principle
 (TEP), a bi-metric scalar-tensor framework in which proper time is
-modulated by a dynamical conformal field A(φ) = exp(2βφ/MPl).
-TEP made quantitative predictions before empirical analysis (λ =
+modulated by a dynamical conformal field A(φ) = exp(βφ/MPl).
+TEP established pre-specified expectations and theoretical search ranges before empirical analysis (λT =
 1,000–10,000 km, exponential decay, velocity-dependent anisotropy,
 absence of mass scaling), which are confirmed by the data. The framework
 preserves local Lorentz invariance while predicting global
 path-dependent synchronization. This hypothesis is testable through
-independent experiments: SLR validation (Section 6.3.1.1),
-multi-constellation cross-validation, and triangle holonomy test
+independent experiments: SLR check (Section 6.3.1.1),
+multi-constellation cross-check, and triangle holonomy test
 (Section 6.3.3). The validity of Tier 1 (empirical observations) does
 not depend on the correctness of Tier 3 (TEP interpretation).
 
-This paper establishes Tier 1 through extensive validation, argues for Tier
+This paper establishes Tier 1 through extensive empirical testing, argues for Tier
 2 through systematic exclusion of conventional explanations, and tests
-consistency with Tier 3 through a priori predictions. Independent
+consistency with Tier 3 through pre-specified expectations. Independent
 replication is essential for all three tiers.
 
 ## 1.8 Paper Structure
 
 This paper presents evidence for TEP through systematic analysis of GNSS
 timing data. Section 2 characterizes the phenomenology of the observed
-signal. Section 3 validates the signal against artifact hypotheses through
+signal. Section 3 tests the signal against artifact hypotheses through
 multiple independent tests. Section 4 presents the theoretical framework and
 its predictions. Section 5 develops the cosmological implications, including
 connections to gravitational lensing and dark matter phenomenology. Section
@@ -442,21 +445,25 @@ path to a definitive verdict.
 
 Falsification is central to this work. Concrete rejection criteria are
 specified, including failure of independent groups to replicate the signal
-in raw carrier-phase data, correlation length falling outside the 500–20,000
-km range, confirmation that the signal arises from ephemeris artifacts
+in raw carrier-phase data, Temporal Topology correlation length falling
+outside the 500–20,000 km range, confirmation that the signal arises from ephemeris artifacts
 rather than physical clock correlations (via Satellite Laser Ranging
-validation), and null synchronization holonomy in closed-loop triangular
+check), and null synchronization holonomy in closed-loop triangular
 time-transfer experiments.
 
 ## 2. Phenomenology
 
-This section presents the empirical findings without theoretical interpretation. The signal characteristics are established through three complementary empirical studies, each designed to address distinct validation requirements:
+This section presents the empirical findings without theoretical interpretation. The signal characteristics are established through three complementary empirical studies, each designed to address distinct testing requirements:
 
-Paper 1 (Multi-Center Validation, 2023–2025): Cross-validation across three independent analysis centers (CODE, IGS, ESA) using 62.7 million station-pair measurements from 364 stations. This study established that the correlation structure is not processing-specific, achieving R² = 0.92–0.97 consistency across independent pipelines.
+Paper 1 (Multi-Center Consistency, 2023–2025): Cross-validation across three independent analysis centers (CODE, IGS, ESA) using 62.7 million station-pair measurements from 364 stations. This study established that the correlation structure is not processing-specific, achieving R² = 0.92–0.97 consistency across independent pipelines.
 
 Paper 2 (25-Year Longitudinal Analysis, 2000–2025): Extended temporal baseline using CODE products with 165.2 million station pairs from 474 unique receivers. This long-span analysis enabled detection of previously inaccessible signatures including 18.6-year lunar nutation coupling and CMB frame alignment, confirming temporal stability over 25.3 years.
 
-Paper 3 (Raw RINEX Validation, 2022–2024): Processing artifact elimination through analysis of raw GNSS observations using Single Point Positioning with broadcast ephemerides only. Analysis of 1.17 billion pair-samples across 539 stations achieved 100% detection rate across 72 independent metric combinations, confirming the signal exists in fundamental observables.
+Paper 3 (Raw RINEX Test, 2022–2024): Processing artifact constraint
+through analysis of raw GNSS observations using Single Point Positioning
+with broadcast ephemerides only. Broadcast ephemerides still contain
+control-segment information, so Satellite Laser Ranging and non-GNSS optical
+checks remain necessary for definitive confirmation. Analysis of 1.17 billion pair-samples across 539 stations achieved consistent signal detection across all 72 independent metric combinations, confirming the signal exists in fundamental observables.
 
 The convergence of findings across these three independent methodologies—each addressing different potential artifact sources—provides robust empirical foundation for the reported signatures.
 
@@ -464,21 +471,24 @@ The convergence of findings across these three independent methodologies—each 
 
 Clock frequency residuals exhibit systematic spatial structure that persists after removal of all modeled relativistic effects. The phase coherence between station pairs decays exponentially with geodesic distance according to:
 
-$C(r) = A \cdot \exp(-r/\lambda) + C_0$
+$C(r) = A \cdot \exp(-r/\lambda_{\mathrm{T}}) + C_0$
 
-where r denotes the inter-station distance, λ the characteristic correlation length, A the amplitude, and C0 the baseline offset. Fits to distance-binned means across approximately 28 bins achieve R² = 0.920–0.970 across all three analysis centers.
+where r denotes the inter-station distance, λT the Temporal Topology correlation length, A the amplitude, and C0 the baseline offset. Fits to distance-binned means across approximately 28 bins achieve R² = 0.920–0.970 across all three analysis centers.
 
 The correlation metric employed is the magnitude-weighted phase alignment index, computed via cross-spectral density analysis in the 10–500 μHz band (corresponding to periods of 33 minutes to 28 hours). This approach measures whether clock fluctuations are in phase regardless of amplitude—information that survives GNSS processing because network adjustment removes common-mode offsets while preserving differential phase structure. Magnitude weighting ensures that frequency bins with stronger cross-spectral power contribute proportionally more to the phase average, so the metric reflects genuine correlated signals rather than noise.
 
-The primary result from the CODE 25-year analysis is a correlation length of λ = 4,201 ± 1,967 km. Cross-center validation yields consistent values: CODE reports λ = 3,330 km (95% CI: 1,198–5,918 km); IGS reports λ = 4,549 km (95% CI: 3,197–4,871 km); and ESA reports λ = 3,758 km (95% CI: 2,532–3,984 km). The coefficient of variation across centers is 18.2%, indicating consistency across independent processing pipelines and substantially reducing the likelihood of center-specific artifacts.
+The primary result from the CODE 25-year analysis is a Temporal Topology correlation length of λT = 4,201 ± 1,967 km. Cross-center validation yields consistent values: CODE reports λT = 3,330 km (95% CI: 1,198–5,918 km); IGS reports λT = 4,549 km (95% CI: 3,197–4,871 km); and ESA reports λT = 3,758 km (95% CI: 2,532–3,984 km). The coefficient of variation across centers is 18.2%, indicating consistency across independent processing pipelines and substantially reducing the likelihood of center-specific artifacts.
 
-## 2.2 Seven Independent Signatures
+## 2.2 Seven Convergent Signatures
 
-The 25-year longitudinal analysis identifies seven statistically independent signatures, summarized in Table 1. Their joint occurrence under the null hypothesis has probability p ≈ 2×10−27, exceeding 10σ significance.
+The 25-year longitudinal analysis identifies seven convergent signatures,
+summarized in Table 1. Each signature independently constrains the space of
+viable explanations; their collective pattern consistently points toward a
+velocity-dependent, CMB-aligned geometric mechanism.
 
 | Signature | Observed Value | Significance |
 | --- | --- | --- |
-| Exponential Decay | λ = 4,201 ± 1,967 km | R² = 0.92–0.97 |
+| Exponential Decay | λT = 4,201 ± 1,967 km | R² = 0.92–0.97 |
 | Spatial Anisotropy | EW/NS = 2.16 | p < 10−15 |
 | Orbital Velocity Coupling | r = −0.888 | 5.1σ (0/5M surrogates) |
 | CMB Frame Alignment | 18.2° from CMB dipole | 5,570× variance ratio |
@@ -541,23 +551,23 @@ The distinction is fundamental. A gravimeter would show GM/r² (force) scaling, 
 
 ## 2.6 Statistical Power
 
-The raw RINEX validation analysis achieves extraordinary statistical power. Across 1.17 billion pair-samples, the directional anisotropy yields t-statistics up to 112 with Cohen's d up to 0.304. The signal is detected in 72 of 72 independent metric combinations (100% detection rate) with mean R² = 0.93.
+The raw RINEX test analysis achieves extraordinary statistical power. Across 1.17 billion pair-samples, the directional anisotropy yields t-statistics up to 112 with Cohen's d up to 0.304. The signal is detected across all 72 independent metric combinations with mean R² = 0.93.
 
 Hemisphere asymmetry provides independent corroboration. Southern stations show stronger orbital velocity coupling (r = −0.79) than Northern stations (r = +0.25), matching the geometry expected from Earth's motion through the CMB frame. Both hemispheres independently show East-West exceeding North-South correlation (Northern: 1.20×, Southern: 1.35×), ruling out hemisphere-specific artifacts.
 
-Monthly consistency is equally striking. East-West exceeds North-South in 94–100% of all 36 months analyzed, with short-distance coherence ratios showing coefficient of variation below 1%. The underlying signal is constant; the annual modulation in full-distance correlation lengths reflects atmospheric screening effects that vary seasonally.
+Monthly consistency is equally striking. East-West exceeds North-South in 94% or more of all 36 months analyzed, with short-distance coherence ratios showing coefficient of variation below 1%. The underlying signal is constant; the annual modulation in full-distance Temporal Topology correlation lengths reflects atmospheric screening effects that vary seasonally.
 
-## 3. Validation
+## 3. Testing
 
-Extraordinary claims require extraordinary validation. This section systematically addresses the most plausible artifact hypotheses, demonstrating that the signal survives each challenge.
+Extraordinary claims require extraordinary testing. This section systematically addresses the most plausible artifact hypotheses, demonstrating that the signal survives each challenge.
 
 ## 3.1 Processing Artifact Hypothesis
 
 The most immediate concern is that the signal arises from sophisticated processing chains—network adjustments, Kalman filtering, or integer ambiguity resolution. To address this possibility, raw RINEX observation files were processed using Single Point Positioning with broadcast ephemerides only, representing the simplest possible processing chain and one entirely independent of the network adjustments employed by CODE, IGS, and ESA.
 
-The raw RINEX validation dataset comprises 539 stations over three years (2022–2024), totaling 1.17 billion pair-samples. The signal is detected in all 72 metric combinations tested (100% detection rate), with mean R² = 0.93. Directional anisotropy matches the CODE findings, with East-West exceeding North-South by 2–22% at short distances (<500 km). A critical audit confirms this is robust to distance bias: E-W pairs are 13 km longer than N-S pairs (a bias *against* the signal), and distance-matching strengthens the ratio.
+The raw RINEX test dataset comprises 539 stations over three years (2022–2024), totaling 1.17 billion pair-samples. The signal is detected with consistent results across all 72 metric combinations tested, with mean R² = 0.93. Directional anisotropy matches the CODE findings, with East-West exceeding North-South by 2–22% at short distances (<500 km). A critical audit confirms this is robust to distance bias: E-W pairs are 13 km longer than N-S pairs (a bias *against* the signal), and distance-matching strengthens the ratio.
 
-The correlation length in raw data (λ ≈ 700–1,100 km) is shorter than in precise products (λ ≈ 4,000 km), consistent with ionospheric noise masking the long-range structure. When ionospheric effects are removed (Ionofree mode), the raw correlation length increases, supporting a "Ladder of Precision" where the signal scale converges toward the CODE benchmark as noise is mitigated. Orbital velocity coupling is detected at r = −0.763 (5.4σ) in multi-GNSS mode, and CMB alignment yields RA = 188°, Dec = −5° (20.0° from the CMB dipole), consistent with the 25-year analysis. The signal therefore exists in the fundamental observables and cannot be attributed to processing artifacts.
+The correlation length in raw data (λ ≈ 700–1,100 km) is shorter than in precise products (λ ≈ 4,000 km), consistent with ionospheric noise masking the long-range structure. When ionospheric effects are removed (Ionofree mode), the raw correlation length increases, supporting a "Ladder of Precision" where the signal scale converges toward the CODE benchmark as noise is mitigated. Orbital velocity coupling is detected at r = −0.763 (5.4σ) in multi-GNSS mode, and CMB alignment yields RA = 188°, Dec = −5° (20.0° from the CMB dipole), consistent with the 25-year analysis. The signal therefore exists in the fundamental observables and is difficult to attribute solely to tested processing artifacts.
 
 ## 3.2 Ionospheric Hypothesis
 
@@ -577,7 +587,7 @@ Analysis of 360 regressions spanning global and latitude-controlled altitude qui
 
 The tropospheric column depth varies by approximately 20–30% between sea-level and high-altitude stations. If the correlation structure were tropospheric, one would expect systematic increase in λ at high altitude, latitude dependence correlated with tropopause height, and seasonal modulation correlated with monsoon patterns. None of these signatures are observed. The signal is altitude-invariant, consistent with a phenomenon operating at gravitational potential scales (~6,400 km) rather than atmospheric scales (~10 km).
 
-**Comprehensive Validation Summary:** The altitude independence test represents one component of a broader validation framework spanning 388 independent statistical tests across multiple analysis families. False Discovery Rate correction (FDR-BH: 52.3%, Hierarchical Empirical Bayes: 39.7%, Bonferroni: 40.0%) demonstrates robustness against multiple comparison artifacts. This extensive validation, combined with cross-center consistency (coefficient of variation 18.2% across CODE, IGS, ESA), establishes that the observed correlations survive rigorous scrutiny across independent processing pipelines, environmental conditions, and statistical frameworks.
+**Comprehensive Test Summary:** The altitude independence test represents one component of a broader testing framework spanning 388 independent statistical tests across multiple analysis families. False Discovery Rate correction (FDR-BH: 52.3%, Hierarchical Empirical Bayes: 39.7%, Bonferroni: 40.0%) demonstrates robustness against multiple comparison artifacts. This extensive empirical testing, combined with cross-center consistency (coefficient of variation 18.2% across CODE, IGS, ESA), establishes that the observed correlations survive rigorous scrutiny across independent processing pipelines, environmental conditions, and statistical frameworks.
 
 ## 3.5 Long-Period Stability
 
@@ -587,53 +597,39 @@ The data reveal clear coupling to multiple geophysical cycles. The 18.6-year lun
 
 ## 3.6 Most Plausible Remaining Conventional Explanation
 
-The strongest remaining conventional hypothesis is that the observed correlations arise from a presently unmodeled, long-baseline GNSS systematic that survives both network adjustment and raw SPP processing. This section addresses this hypothesis with intellectual honesty: while extensive validation constrains conventional explanations, it cannot definitively exclude all possible systematics.
+The strongest remaining conventional hypothesis is that the observed correlations arise from a presently unmodeled, long-baseline GNSS systematic that survives both network adjustment and raw SPP processing. This section addresses this hypothesis with intellectual honesty: while extensive empirical testing constrains conventional explanations, it cannot definitively exclude all possible systematics.
 
-**The Hypothesis:** A sophisticated, distance-dependent systematic error exists in GNSS observations that: (1) produces exponential decay with λ ≈ 4,000 km; (2) exhibits East-West/North-South anisotropy ratio of 2.16; (3) couples to Earth's orbital velocity with r = −0.888; (4) aligns with the CMB dipole to 18.2°; (5) responds to planetary configurations without mass scaling; (6) couples to 18.6-year lunar nutation and semiannual nutation; (7) survives independent processing by CODE, IGS, and ESA; (8) persists in raw RINEX data processed with broadcast ephemerides only; and (9) appears identically across 72 independent metric combinations with 100% detection rate.
+**The Hypothesis:** A sophisticated, distance-dependent systematic error exists in GNSS observations that: (1) produces exponential decay with λ ≈ 4,000 km; (2) exhibits East-West/North-South anisotropy ratio of 2.16; (3) couples to Earth's orbital velocity with r = −0.888; (4) aligns with the CMB dipole to 18.2°; (5) responds to planetary configurations without mass scaling; (6) couples to 18.6-year lunar nutation and semiannual nutation; (7) survives independent processing by CODE, IGS, and ESA; (8) persists in raw RINEX data processed with broadcast ephemerides only; and (9) appears identically across all 72 independent metric combinations.
 
-**Constraints from Validation:** Each validation step constrains this hypothesis without claiming impossibility:
+**Constraints from Tests:** Each test step constrains this hypothesis without claiming impossibility:
 
 - **Multi-center consistency (R² = 0.92–0.97, CV = 18.2%):** The systematic must be present in three independent processing pipelines using different algorithms, software, and analysis centers. This excludes center-specific artifacts but does not exclude systematics inherent to GNSS observation geometry or satellite constellation design.
 
-- **Raw RINEX validation (100% detection, t-stats up to 112):** The systematic must survive Single Point Positioning with broadcast ephemerides, which processes each station independently without network adjustment. This excludes network-adjustment artifacts but does not exclude systematics in the broadcast ephemeris itself (the "ephemeris loophole" addressed in Section 6.3.1.1).
+- **Raw RINEX test (all combinations, t-stats up to 112):** The systematic must survive Single Point Positioning with broadcast ephemerides, which processes each station independently without network adjustment. This excludes network-adjustment artifacts but does not exclude systematics in the broadcast ephemeris itself (the "ephemeris loophole" addressed in Section 6.3.1.1).
 
 - **25-year temporal stability:** The systematic must persist across satellite constellation changes, hardware upgrades, and processing methodology evolution spanning 1.4 complete cycles of the 18.6-year lunar nutation. This excludes transient artifacts but does not exclude systematics tied to fundamental GNSS geometry.
 
 - **CMB frame alignment (5,570× variance ratio):** The systematic must preferentially align with the cosmological rest frame rather than galactic motion, solar motion, or ecliptic plane. This is geometrically difficult to explain through satellite constellation geometry but not impossible if some unrecognized coupling exists between GNSS observation geometry and Earth's motion through the CMB frame.
 
-**Remaining Possibility:** The most plausible remaining conventional explanation is a systematic tied to the fundamental geometry of GNSS satellite constellations that couples to Earth's motion through space in a way not previously recognized. Such a systematic would need to produce all observed signatures through a single coherent mechanism—a requirement that becomes increasingly implausible as the number of independent signatures grows, but cannot be definitively excluded without independent validation through non-GNSS methods (SLR, triangle holonomy test).
+**Remaining Possibility:** The most plausible remaining conventional explanation is a systematic tied to the fundamental geometry of GNSS satellite constellations that couples to Earth's motion through space in a way not previously recognized. Such a systematic would need to produce all observed signatures through a single coherent mechanism—a requirement that becomes increasingly implausible as the number of convergent signatures grows, but cannot be definitively excluded without independent check through non-GNSS methods (SLR, triangle holonomy test).
 
-**Path to Resolution:** Definitive exclusion of this hypothesis requires: (1) SLR validation (Section 6.3.1.1) to close the ephemeris loophole; (2) multi-constellation cross-validation showing identical λ across GPS, GLONASS, Galileo, and BeiDou; and (3) triangle holonomy test (Section 6.3.3) providing direct measurement of synchronization non-closure. Until these tests are completed, the possibility of an unrecognized GNSS systematic, however implausible given the convergence of evidence, cannot be completely excluded.
+**Path to Resolution:** Definitive exclusion of this hypothesis requires: (1) SLR check (Section 6.3.1.1) to close the ephemeris loophole; (2) multi-constellation cross-check showing identical λ across GPS, GLONASS, Galileo, and BeiDou; and (3) triangle holonomy test (Section 6.3.3) providing direct measurement of synchronization non-closure. Until these tests are completed, the possibility of an unrecognized GNSS systematic, however implausible given the convergence of evidence, cannot be completely excluded.
 
-## 3.7 Preliminary SLR Evidence
+## 3.7 SLR Check: Optical Domain Evidence
 
-Satellite Laser Ranging provides an independent validation pathway for TEP predictions. While dedicated SLR analysis remains a priority for future work (Section 6.3.1.1), existing anomalies in the SLR literature exhibit signatures consistent with the geometric screening effects predicted by TEP.
+Satellite Laser Ranging (SLR) provides a technology-orthogonal test pathway that strongly constrains "clock-artifact" hypotheses. Unlike GNSS, which uses active atomic clocks and microwave L-band transmission, SLR employs two-way optical pulses reflected off passive retroreflectors (LAGEOS-1/2 and Etalon-1/2). The "clock" is a ground-based event timer, and the observable is the round-trip flight time. Any TEP signal detected in SLR cannot be attributed to receiver electronics, clock steering algorithms, or microwave-specific modeling errors.
 
-### 3.7.1 The Blue-Sky Effect
+Analysis of 11 years (2015–2025) of SLR data (Paper 8) identifies four distinct signatures matching the TEP-GNSS phenomenology:
 
-SLR stations systematically measure Earth's crust as depressed during clear-sky (high atmospheric pressure) conditions compared to microwave-based techniques. This phenomenon, termed the "Blue-Sky effect," produces vertical displacements of 1.1–4.4 mm across the global SLR network, with the average effect of 1.1 mm corresponding to a scale discrepancy of approximately 0.2 ppb relative to Earth's radius. The maximum displacement of 4.4 mm occurs at inland stations in Eastern Europe and Central Asia.
+- **Spectral Concentration:** Residuals exhibit a 14.00× power enhancement (95% CI: 13.53–14.47) in the predicted TEP frequency band (10–500 µHz) relative to the broadband floor. This matches the spectral "clumping" observed in GNSS clocks.
 
-The standard explanation attributes this effect to atmospheric pressure loading—elastic deformation of Earth's crust under varying atmospheric mass. This explanation is well-established in the geodetic literature and successfully accounts for the observed magnitudes. The Blue-Sky effect is noted here not as evidence against the standard model, but as an observation whose phenomenology (systematic vertical offsets correlated with atmospheric conditions) is also consistent with TEP's prediction of path-dependent proper time accumulation. Distinguishing between these interpretations would require dedicated analysis beyond the scope of this preliminary survey.
+- **Achromatic Universality:** The detection of the signal in the optical domain (~500 THz) matching the microwave domain (~1 GHz) provides a strong argument against dispersive propagation effects (ionospheric delay), which scale as 1/f².
 
-### 3.7.2 Persistent Range Bias Residuals
+- **Distance-Structured Correlations:** High-cadence (15-minute) pass-bin analysis yields statistically significant evidence for distance-structured inter-station correlations (Fisher-combined p = 0.0040), driven by strong negative correlations at intermediate ranges.
 
-Despite decades of refinement, high-performance SLR stations exhibit persistent systematic residuals at the 10–20 mm level that resist conventional explanation. Historical analysis of the NASA MOBLAS network documented centimeter-level systematic biases through collocation analysis, with survey uncertainties and apparent system delays showing discrepancies up to 20 mm between calibration targets. These residuals persist even after corrections for tropospheric delay, relativistic effects, tidal loading, and hardware calibration.
+- **Geodetic Resolution:** The SLR analysis reinterprets persistent geodetic anomalies—such as the VLBI-SLR scale drift (0.2 ppb) and the "flicker noise" floor in station coordinates—as physical evidence of conformal metric coupling.
 
-The International Laser Ranging Service Analysis Standing Committee continues to investigate station-satellite-specific range biases for LAGEOS satellites, noting that range biases correlate strongly with station height over short periods—a correlation that may influence SLR's ability to provide absolute scale. The magnitude of these unexplained residuals (10–20 mm) falls within the range predicted by TEP for proper time delays accumulated through Earth's gravitational screening field.
-
-### 3.7.3 Elevation-Dependent Systematics
-
-SLR residuals exhibit elevation- and azimuth-dependent errors that standard tropospheric mapping functions fail to fully remove. At low elevation angles, these errors can reach 20 mm after mapping from zenith values. Recent work has demonstrated that estimating tropospheric biases absorbs these elevation-dependent errors but does not explain their physical origin.
-
-From the TEP perspective, elevation dependence maps directly to path length through Earth's screening field. A signal decaying with characteristic length λ ≈ 4,200 km would produce precisely the elevation-dependent curve that standard atmospheric models fail to capture—the residual structure represents not tropospheric error but geometric screening accumulated along the signal path.
-
-### 3.7.4 Interpretation and Caveats
-
-These SLR anomalies are presented as preliminary supporting evidence rather than independent confirmation. The geodetic community has proposed conventional explanations for each phenomenon: atmospheric pressure loading for the Blue-Sky effect, hardware calibration issues for range biases, and tropospheric modeling limitations for elevation dependence. TEP does not claim these explanations are incorrect—rather, that the same observations admit an alternative interpretation consistent with geometric screening of proper time.
-
-Definitive SLR validation requires dedicated analysis of LAGEOS residuals stratified by elevation angle, with explicit comparison to TEP predictions. The publicly available data from stations such as Yarragadee (Australia) provide immediate opportunity for such analysis. If TEP is correct, plotting SLR residuals against elevation angle should reveal the characteristic exponential decay structure with λ consistent with GNSS-derived values.
-
-**Key References:** Sośnica et al. (2013), Journal of Geodesy 87(8):751-769; Luceri et al. (2019), Journal of Geodesy 93:2357-2379; Strugarek et al. (2022), EGU General Assembly, EGU22-9834.
+The convergence of microwave GNSS results and optical SLR results establishes that the "Time Echo" is a universal metric phenomenon. The signal is technology-independent, frequency-independent, and persists in systems devoid of active clocks and microwave propagation.
 
 ## 3.8 Why the Signal Was Not Previously Identified
 
@@ -651,15 +647,46 @@ Table 3 summarizes the artifact hypotheses tested and their outcomes.
 
 | Hypothesis | Test | Result |
 | --- | --- | --- |
-| Processing artifact | Raw RINEX/SPP | Signal persists (100% detection) |
+| Processing artifact | Raw RINEX/SPP | Signal persists (all combinations) |
 | Ionospheric | 25-year solar cycle | No correlation (r ≈ 0) |
 | Tropospheric | Altitude stratification | No altitude dependence (Q5/Q1 = 0.97) |
 | Geomagnetic | Kp stratification | Near-invariant (Δλ ≈ −1%) |
 | Tidal forcing | GM/r² and GM/r³ scaling | Neither force nor tidal scaling (p > 0.5) |
 | Random noise | Shuffle test | 30× R² ratio (real vs. shuffled) |
-| Center-specific bias | Multi-center validation | CV = 18.2% across CODE/IGS/ESA |
+| Center-specific bias | Multi-center consistency | CV = 18.2% across CODE/IGS/ESA |
 
 Each row represents an independent test. The signal survives all challenges, constraining viable explanations to physical mechanisms operating at planetary scales with velocity-dependent, CMB-aligned geometry.
+
+## 3.10 Evidence Tier Classification
+
+The convergent signatures supporting the Temporal Topology interpretation
+span three tiers of empirical confidence, reflecting both statistical strength
+and resilience to alternative explanations.
+
+| Tier | Signature | Statistical Strength | Artifact Resilience |
+| --- | --- | --- | --- |
+| **Tier 1**
+(Primary) | Exponential spatial decay | R² = 0.92–0.97 | Survives all processing modes; raw RINEX confirmed |
+|  | East-West/North-South anisotropy | Ratio 2.16, p < 10⁻¹⁵ | Microwave-to-optical domain; SLR matched |
+|  | Orbital velocity coupling | r = −0.888, 5.1σ | Phase-stable over 25 years; multi-constellation |
+| **Tier 2**
+(Confirmatory) | CMB frame alignment | 18.2° separation, 5,570× variance ratio | Cosmological frame; not ephemeris-tied |
+|  | Semiannual nutation coupling | R² = 0.904, p < 10⁻²⁰ | 50+ complete cycles; physical period (182.6d) |
+|  | Planetary event responses | 56/156 events ≥2σ | No GM/r² scaling; SPP confirmed |
+| **Tier 3**
+(Corroborating) | 18.6-year lunar nutation | R² = 0.641, p < 10⁻⁸ | 1.4 complete cycles; longer baseline needed |
+|  | SLR optical domain detection | 14× spectral enhancement | Technology-orthogonal; passive retroreflectors |
+|  | Selectivity profile (null results) | Solar rotation: null; Tides: null | Demonstrates physical specificity |
+
+Tier 1 signatures constitute the foundational empirical evidence: they are
+detected with high statistical confidence across all test modes and
+processing pipelines. Tier 2 signatures provide convergent support through
+distinct physical mechanisms that would be difficult to replicate via
+any single systematic artifact. Tier 3 signatures offer corroborating
+evidence that strengthens the overall picture while acknowledging greater
+uncertainty or limited observational baseline. The pattern across all tiers
+consistently favors a velocity-dependent, CMB-aligned geometric mechanism
+over conventional explanations.
 
 ## 4. Theoretical Framework
 
@@ -667,7 +694,7 @@ Having established that the signal is robust and not attributable to known
 artifacts, this section presents the theoretical framework that predicted
 these observations. The Temporal Equivalence Principle is a principled
 extension of general relativity within the well-established class of
-scalar-tensor theories, with specific quantitative predictions that preceded
+scalar-tensor theories, with pre-specified expectations and theoretical search ranges that preceded
 the GNSS analysis.
 
 ## 4.1 Two-Metric Geometry
@@ -675,13 +702,13 @@ the GNSS analysis.
 TEP posits that spacetime is endowed with two metrics related by a scalar
 field φ:
 
-$\tilde{g}_{\mu\nu} = A(\phi)\, g_{\mu\nu} + B(\phi)\, \nabla_\mu \phi\,
+$\tilde{g}_{\mu\nu} = A^2(\phi)\, g_{\mu\nu} + B(\phi)\, \nabla_\mu \phi\,
 \nabla_\nu \phi$
 
 The gravitational metric gμν determines geodesics of test masses
 and gravitational wave propagation. The matter metric g̃μν
 determines atomic clock rates, electromagnetic propagation, and all Standard
-Model physics. The conformal factor A(φ) = exp(2βφ/MPl) provides
+Model physics. The conformal factor A(φ) = exp(βφ/MPl) provides
 isotropic rescaling of proper time, while the disformal factor B(φ)
 introduces anisotropic light-cone tilts and is tightly constrained by
 GW170817.
@@ -721,53 +748,51 @@ profile (Temporal Topology), with fifth-force suppression arising from
 the non-linear superposition of field gradients (Temporal Shear), suppressing
 fifth forces in dense environments while leaving cosmology accessible to dynamics.
 
-## 4.4 Compton Energy Scale
+## 4.4 Candidate Theoretical Completions
 
-The observed correlation length λ corresponds to the scale at which Temporal
-Shear recovers from deep suppression in Earth's gravitational well to the
-weak-field regime where spatial correlations become detectable. Via the
-Compton relation this yields a specific scalar field mass λ =
-ℏ/(mφc). For λ = 3,330–4,549 km, the effective field mass is:
+The observed correlation length λT is the Temporal Topology
+correlation length—the characteristic scale at which Temporal Shear recovers
+from deep suppression in Earth's gravitational well to the weak-field regime
+where spatial correlations become detectable. This empirical parameter admits
+multiple theoretical interpretations as candidate completions, not as unique
+predictions. Three classes of completion are sketched below.
+
+### 4.4.1 Compton-Mass Interpretation
+
+One completion identifies λT with the Compton wavelength of a
+scalar field: λ = ℏ/(mφc). For λ = 3,330–4,549 km, this yields:
 
 $m_\phi \approx (4.34\text{--}5.93) \times 10^{-14}\, \text{eV}/c^2$
 
 This mass scale is consistent with environmental screening mechanisms where
 the effective field mass varies with local matter density. The apparent
 inconsistency with existing precision tests—which are typically sensitive to
-scales around 10−15 eV/c²—is resolved by screening: the field
-mass increases in dense environments where most precision tests are
-conducted, while remaining at the observed value in the sparse terrestrial
-environment sampled by the GNSS network.
+scales around 10−15 eV/c²—may be reconciled in candidate screening
+completions: the field mass increases in dense environments where most
+precision tests are conducted, while remaining at the observed value in the
+sparse terrestrial environment sampled by the GNSS network.
 
-### 4.4.1 Vainshtein Screening and the Terrestrial Correlation Length
+### 4.4.2 Candidate Derivative-Screened Completion
 
-Two complementary screening layers reconcile terrestrial observations with
-precision local tests. The chameleon sector, encoded in Axiom A4, suppresses
-Temporal Shear through the continuous spatial profile of the φ field
-(Temporal Topology), ensuring PPN compliance via vanishing field gradients
-rather than discrete thin-shell truncations. The Vainshtein mechanism
-provides the quantitative correlation length: derivative self-interactions
-in the scalar field Lagrangian (cubic Galileon terms) generate nonlinear
-screening that sets the scale over which Temporal Shear relaxes near massive
-objects. The screening radius rV scales as:
+A second completion invokes derivative self-interactions (cubic Galileon
+terms) that generate nonlinear screening. The Vainshtein radius scales as:
 
 $r_V = \left(\frac{GM}{\Lambda^3}\right)^{1/3}$
 
-This M1/3 scaling is universal, applying from planetary to
-galactic masses without additional free parameters. For Earth with M = M⊕
-≈ 6 × 1024 kg and taking Λ ~ 10−13 eV (the dark energy
-scale, consistent with cosmological observations):
+This M1/3 scaling applies from planetary to galactic masses. For
+Earth with M = M⊕ ≈ 6 × 1024 kg and taking
+Λ ~ 10−13 eV (the dark energy scale):
 
 $r_V \sim \left(\frac{G \times 6 \times 10^{24}\text{ kg}}{(10^{-13}\text{
 eV})^3}\right)^{1/3} \approx 4{,}000\text{ km}$
 
-This prediction matches the observed GNSS correlation length λ = 4,201 ±
-1,967 km with no adjustable parameters. The physical mechanism operates as
-follows:
+This is consistent with the observed λT = 4,201 ± 1,967 km,
+though the agreement is not unique to this completion. The mechanism operates
+as follows:
 
 **Deep field (r ≪ rV):** Nonlinear derivative
 interactions dominate and Temporal Shear |∇φ| is strongly suppressed.
-The effective coupling to matter decreases continuously, reaching αeff
+The effective coupling to matter decreases continuously, reaching αPPNeff
 ≪ α0 well inside the Vainshtein radius, rendering TEP effects
 undetectable in laboratory tests and solar system observations.
 
@@ -796,9 +821,14 @@ array correlations within clusters.
 rV ~ 50 kpc, matching the observed dark matter halo radius.
 This connection is developed in Section 5.5.
 
-The Vainshtein mechanism thus provides a unified explanation spanning 15
-orders of magnitude in mass scale, from Earth to galaxy clusters, with a
-single fundamental parameter Λ set by cosmological observations.
+If the Vainshtein completion were correct, it would provide a unified
+explanation spanning 15 orders of magnitude in mass scale, from Earth to
+galaxy clusters, with a single fundamental parameter Λ. This M1/3
+scaling is the same continuous gradient-suppression behavior described by
+Temporal Topology at the macroscopic level; the Galileon terms here are the
+candidate microscopic origin of that suppression. However, this remains one
+candidate completion among several; the empirical correlation length
+λT = 4,201 ± 1,967 km does not uniquely select this interpretation.
 
 ## 4.5 Synchronization Holonomy and Spatial Correlations
 
@@ -865,9 +895,7 @@ dτprop. This observable requires B(φ) ≠ 0 (disformal coupling)
 because only non-exact structure in the time-transport connection generates
 path-dependent accumulation. In the conformal-only limit (B = 0), the
 one-form Ωμ = ∂μ(½ ln A) is exact, its curl vanishes
-identically, and holonomy is zero by Stokes' theorem. The triangle holonomy
-test (Section 6.3.3) targets this observable and will definitively measure
-whether B(φ) is nonzero at the 10−19 fractional level.
+identically, and holonomy is zero by Stokes' theorem. The triangle holonomy test (Section 6.3.3) targets this observable and would measure whether B(φ) is nonzero at the 10−19 fractional level.
 
 **Observable 2: Spatial Correlation Structure (C(r))** — The
 statistical covariance of clock frequency residuals as a function of
@@ -877,7 +905,7 @@ different from holonomy: clocks at different spatial locations sample
 different values of the scalar field φ(x), and the two-point correlation
 function ⟨φ(x)φ(x+r)⟩ ∝ exp(−r/λ) of the underlying field induces
 correlations in clock rates through the conformal factor A(φ) =
-exp(2βφ/MPl). The exponential decay length λ = ℏ/(mφc)
+exp(βφ/MPl). The exponential decay length λ = ℏ/(mφc)
 reflects the Compton wavelength of the screened scalar field.
 
 **Physical Analogy:** Consider a field of thermometers
@@ -911,7 +939,7 @@ the former; the latter awaits dedicated triangle tests.
 
 ## 4.6 Prediction Comparison
 
-TEP made specific quantitative predictions in August 2025 (Smawfield 2025a)
+TEP established pre-specified expectations and theoretical search ranges in August 2025 (Smawfield 2025a)
 before the GNSS analysis was conducted. Table 3 compares these forecasts to
 observations.
 
@@ -1094,7 +1122,7 @@ the terrestrial environment where screening is less effective.
 
 The TEP framework is not a novel field theory but rather a phenomenological
 application of well-established scalar-tensor gravity to precision timing.
-TEP with B = 0 and A(φ) = exp(2βφ/MPl) reduces to Brans-Dicke
+TEP with B = 0 and A(φ) = exp(βφ/MPl) reduces to Brans-Dicke
 gravity in the Jordan frame, with the coupling β related to the Brans-Dicke
 parameter ωBD. The screening mechanism employed (Vainshtein)
 arises naturally in the cubic Galileon sector of Horndeski gravity—the most
@@ -1129,10 +1157,10 @@ filtered. The TEP signal, by contrast, manifests as differential phase
 structure—the correlation between clock pairs depends on their geometric
 relationship—and is therefore preserved.
 
-This mechanism makes a specific prediction: GM/r² scaling should be absent
-in processed data because it is common-mode, while geometric signatures
-(anisotropy, CMB alignment) should survive because they are differential.
-The observations confirm both predictions. The processing filter is not a
+This mechanism implies: GM/r² scaling should be absent in processed data
+because it is common-mode, while geometric signatures (anisotropy, CMB
+alignment) should survive because they are differential. The observations
+are consistent with both expectations. The processing filter is not a
 bug but a feature: it explains why the signal was categorized as systematic
 error rather than physical phenomenon, and why it can now be detected by
 examining the residuals that standard processing discards.
@@ -1177,8 +1205,8 @@ correlation function of the underlying φ field, which has nonzero spatial
 gradients and therefore survives network adjustment. (Detailed mathematical
 formulation is provided in Appendix B.)
 
-**Prediction Verification:** This mathematical framework makes
-two testable predictions, both confirmed by observations:
+**Expectation Verification:** This mathematical framework yields
+two testable expectations, both consistent with observations:
 
 **Null Prediction:** Classical gravitational effects (GM/r²
 force and GM/r³ tidal gradient) should be absent in processed data
@@ -1223,33 +1251,32 @@ definitive test is achievable with current technology.
 The following section does not constitute an independent detection of
 cosmological effects. Instead, it addresses the question: if the
 terrestrial clock correlations reported in Sections 2–4 arise from a
-conformally coupled scalar field with Vainshtein screening and
-continuous geometric suppression (Temporal Topology), then what are the
-necessary consequences for astrophysical observations that already
-exist? The empirical GNSS result stands independently of the validity of
+conformally coupled scalar field (whether screened via Vainshtein
+mechanisms or other completions), then what are the necessary
+consequences for astrophysical observations that already exist?
+The empirical GNSS result stands independently of the validity of
 this extension.
 
 This section demonstrates that the same scalar field producing λ ≈ 4,000
 km correlations on Earth would generically contribute to gravitational
 lensing observables in a manner that is degenerate with particulate dark
 matter under the Isochrony Axiom—the assumption that all photons in a
-lensed image represent a synchronous snapshot. The framework makes
-specific, testable predictions that provide clean discriminators between
+lensed image represent a synchronous snapshot. The framework yields
+testable expectations that may provide discriminators between
 particulate dark matter and conformal time-field interpretations at
 astrophysical scales.
 
 Within the TEP framework, the same conformal factor A(φ) that modulates
 clock correlations on Earth would affect light propagation across
-cosmological distances. The universal M1/3 Vainshtein scaling law
-connects terrestrial and galactic scales without additional free parameters:
-the screening radius rV = (GM/Λ³)1/3 scales from Earth
-(λ ≈ 4,000 km) to galaxies (≈50 kpc) across 15 orders of magnitude in mass.
-The correlation length at each scale reflects the relaxation of Temporal
-Topology—the distance over which Temporal Shear (∇φ) recovers from deep
-suppression in a massive body's potential well to the weak-field regime
-where spatial correlations become detectable. This quantitative continuity
-argument constrains the theory space and provides falsifiable predictions
-for gravitational lensing observations.
+cosmological distances. If the Vainshtein completion were correct, the
+M1/3 scaling would connect terrestrial and galactic scales without
+additional free parameters: the screening radius rV = (GM/Λ³)1/3
+scales from Earth (λ ≈ 4,000 km) to galaxies (≈50 kpc) across 15 orders of
+magnitude in mass. More generally, the correlation length at each scale
+reflects the relaxation of Temporal Topology—the distance over which Temporal
+Shear (∇φ) recovers from deep suppression in a massive body's potential well
+to the weak-field regime where spatial correlations become detectable. This
+provides falsifiable predictions for gravitational lensing observations.
 
 ## 5.1 GW170817 Constraints
 
@@ -1279,12 +1306,12 @@ observations.
 
 This can be seen explicitly in the conformal metric limit (B = 0):
 
-$ds^2 = A(\phi) g_{\mu\nu} dx^\mu dx^\nu = 0$
+$ds^2 = A^2(\phi) g_{\mu\nu} dx^\mu dx^\nu = 0$
 
 Since A(φ) is an overall prefactor, the null condition ds² = 0 is identical
 for both the matter metric g̃μν (governing photons) and the
 gravitational metric gμν (governing gravitational waves). Their
-speeds are identical: cγ = cg = c/√A(φ). Both signals
+speeds are identical: cγ = cg = c/A(φ). Both signals
 are delayed by the scalar field by exactly the same amount, and the
 differential arrival time is zero.
 
@@ -1328,7 +1355,7 @@ factor A(φ) varies spatially—forming halo-like configurations around mass
 concentrations—then photons taking different paths through the lens
 accumulate different proper times:
 
-$\Delta \tilde{\tau} = \frac{1}{c} \int (\sqrt{A(\phi)} - 1)\, dl$
+$\Delta \tilde{\tau} = \frac{1}{c} \int (A(\phi) - 1)\, dl$
 
 For an evolving source, this differential delay creates a temporal composite
 image: photons arriving simultaneously at the detector left the source at
@@ -1408,8 +1435,8 @@ $\Delta \tau_{\text{static}} \sim \frac{\epsilon}{2}
 \frac{L_{\text{halo}}}{c} \sim 3\text{ years} \quad \text{(not }
 \frac{D_L}{c} \sim 10^9\text{ years)}$
 
-**Quantitative Prediction for Time-Delay Cosmography:** TEP
-predicts systematic offsets in H0 measurements from time-delay
+**Testable Expectation for Time-Delay Cosmography:** TEP
+implies systematic offsets in H0 measurements from time-delay
 cosmography of 5–10%. Standard analysis assumes that measured time delays
 Δtobs between images directly constrain the Fermat potential
 differences ΔΦ via Δt = (1+zL)ΔΦ/c². However, if the static
@@ -1478,9 +1505,9 @@ where M is the central mass and Λ is the strong-coupling scale. This M1/3
 scaling is universal, applying from planetary to galactic masses without
 free parameters.
 
-If TEP is correct, the ~4,000 km correlation on Earth (λ = 4,201 ± 1,967 km)
-and the ~50 kpc dark matter halo in galaxies represent the same scalar field
-at different density scales. This constitutes a falsifiable prediction: dark
+If TEP is correct, the ~4,000 km correlation on Earth (λT = 4,201 ± 1,967 km)
+and the ~50 kpc dark matter halo in galaxies are interpreted within TEP as manifestations of the same scalar field
+framework at different density scales, pending independent replication and completion-dependent transfer calculations. This constitutes a falsifiable prediction: dark
 matter halos would not be arbitrary structures but would follow a strict
 density-dependent scaling law determined by the field's coupling parameters.
 
@@ -1515,7 +1542,29 @@ ME) should exhibit a correlation length of approximately 25,000
 km, while globular clusters should show intermediate screening lengths of
 approximately 1–10 pc.
 
-## 5.6 Emergent MOND Scale
+## 5.6 Resolving the Hubble Tension: The Cepheid Bias
+
+The Hubble Tension—the persistent 5σ discrepancy between local distance-ladder measurements (H₀ ≈ 73 km/s/Mpc) and early-universe CMB inference (H₀ = 67.4 ± 0.5 km/s/Mpc)—finds a natural resolution in the TEP framework through the violation of the Isochrony Axiom in stellar environments.
+
+### 5.6.1 Cepheids as Environmental Clocks
+
+Cepheid variable stars function as "standard clocks" whose pulsation periods P are governed by the internal physics of their stellar envelopes. Standard cosmology assumes that these periods are invariant for stars of a given mass and luminosity. TEP predicts that these periods are modulated by the local gravitational potential Φ through the conformal factor A(φ). In deep potentials (high velocity dispersion σ), the scalar field induces period contraction:
+
+$P_{\text{obs}} = P_{\text{true}} (1 - \eta |\Phi|/c^2)$
+
+When observers apply a universal Period-Luminosity (P-L) relation, this period contraction is misinterpreted as diminished intrinsic luminosity. This leads to systematically underestimated distances to host galaxies with deep potential wells, which in turn inflates the derived local Hubble constant.
+
+### 5.6.2 Empirical Detection of the Bias
+
+Analysis of the SH0ES Cepheid sample (Paper 11), stratified by host galaxy velocity dispersion σ (a TEP-independent kinematic proxy for potential depth), reveals a statistically significant correlation between potential depth and derived H₀ (p = 0.019). Host galaxies with σ > 90 km/s yield H₀ ≈ 72.5 km/s/Mpc, while lower-potential hosts (σ < 90 km/s) yield H₀ ≈ 67.8 km/s/Mpc.
+
+Applying the TEP conformal correction—derived using a Cepheid response coefficient κCep ∼ 10⁶ that matches the millisecond-pulsar spin-down excess—unifies the sample and yields a local Hubble constant of:
+
+$H_0 = 68.37 \pm 1.54 \text{ km/s/Mpc}$
+
+This value is statistically consistent with the Planck CMB benchmark (0.60σ tension), effectively resolving the tension without invoking new early-universe energy components or modified expansion histories. The discrepancy is revealed to be a systematic, environment-dependent measurement bias in the distance ladder's primary calibration clock.
+
+## 5.7 Emergent MOND Scale
 
 A notable prediction of TEP with Vainshtein screening and continuous
 Temporal Topology is the natural emergence of the MOND acceleration scale.
@@ -1535,9 +1584,9 @@ This value lies within a factor of 5 of the empirical MOND value (a0
 unexplained input emerges automatically in TEP from the scalar field's
 strong-coupling scale being set by the Hubble parameter.
 
-## 5.7 Observational Predictions
+## 5.8 Observational Predictions
 
-TEP makes quantitative predictions for existing and near-future
+TEP yields testable expectations for existing and near-future
 observations, summarized in Table 7.
 
 | Observable | TEP Prediction | Dataset |
@@ -1553,7 +1602,7 @@ ongoing surveys. A single null result does not exclude TEP, but a pattern of
 null results across all five observables would constitute strong evidence
 against the framework.
 
-## 5.8 Connection to Cosmological Tensions
+## 5.9 Connection to Cosmological Tensions
 
 TEP offers potential resolution to persistent tensions in precision
 cosmology.
@@ -1609,17 +1658,16 @@ confirmed:
 Tier 1: Terrestrial Falsification (GNSS Signal)
 
 **Independent replication failure:** Independent
-research groups fail to reproduce exponential decay (λ ≈ 3,000–5,000
+research groups fail to reproduce exponential decay (λT ≈ 3,000–5,000
 km) using either raw carrier-phase observables (RINEX data with
 Single Point Positioning) or independent clock solutions (CLK files
 from CODE, IGS, ESA, or JPL). This would exclude the entire GNSS
 evidence base.
 
 **Correlation length out of bounds:** Independently
-replicated correlation length falls outside λ = 500–20,000 km range.
-This would exclude the TEP screening model, which predicts λ ~ 4,000
-km for Earth based on the relaxation of Temporal Topology at the
-Vainshtein scale Λ ~ 10⁻¹³ eV.
+replicated correlation length falls outside λT = 500–20,000 km range.
+This would exclude the TEP prediction of λT ~ 4,000 km based on the
+relaxation of Temporal Topology from Earth's potential well.
 
 **Ephemeris loophole confirmed:** Satellite Laser
 Ranging (SLR) residuals show no distance-structured correlation when
@@ -1694,17 +1742,17 @@ the original analysis pipeline.
 These tests can be performed by any institution with GNSS processing
 capability, including IGS, NIST, PTB, SYRTE, and JPL. The publicly available
 data (both raw RINEX observations and processed CLK solutions) enable
-independent verification of the λ ≈ 4,000 km exponential decay, and the
+independent verification of the λT ≈ 4,000 km exponential decay, and the
 analysis can be completed in weeks using standard GNSS processing tools.
 
 #### 6.3.1.1 Addressing the Ephemeris Loophole
 
 A legitimate concern exists regarding the Single Point Positioning
-validation: SPP relies on broadcast ephemerides generated by control
+test: SPP relies on broadcast ephemerides generated by control
 segments using network adjustments. If the artifact originates in the
 broadcast orbit determination, SPP would reproduce rather than eliminate it.
 This represents a potential systematic loophole requiring independent
-validation.
+check.
 
 Satellite Laser Ranging (SLR) provides the definitive test. SLR is a purely
 geometric, optical measurement independent of the GNSS microwave clock and
@@ -1721,14 +1769,14 @@ co-located with IGS GNSS stations. Analysis would proceed as follows: (1)
 Extract SLR range residuals after precise orbit determination; (2) Compute
 cross-correlation between SLR residuals and GNSS clock residuals for station
 pairs as a function of distance; (3) Test whether the exponential decay
-structure (λ ≈ 4,000 km) appears in SLR data.
+structure (λT ≈ 4,000 km) appears in SLR data.
 
 Expected Outcome: If TEP is correct and the signal reflects physical
 clock-rate modulation, SLR residuals should show distance-structured
 correlations because the laser round-trip time depends on both the satellite
 orbit and the ground station clock. If the signal is an ephemeris artifact,
 SLR residuals (which use independent orbit determination) should show no
-correlation structure. This test definitively closes the ephemeris loophole
+correlation structure. This test would conclusively close the ephemeris loophole
 and can be performed with existing ILRS data.
 
 ### 6.3.2 Tier 2: Direct Holonomy Test
@@ -1742,7 +1790,7 @@ after averaging, with a signal forecast of H/Tloop ~
 10−16–10−18 for parameters saturating current bounds.
 This test requires a dedicated mission.
 
-### 6.3.3 Tier 3: Cosmological Validation
+### 6.3.3 Tier 3: Cosmological Testing
 
 CMB-S4 combined with LSST weak lensing would test for source-dependent
 kinematic noise. TEP predicts that galaxy surveys (LSST) will infer S8
@@ -1761,7 +1809,7 @@ Table 9 summarizes the experimental program and its decision structure.
 | --- | --- | --- | --- |
 | Tier 1 | Raw carrier-phase replication | Signal absent | Entire GNSS evidence base |
 | Multi-constellation cross-check | Different λ across constellations | Universal coupling |
-| SLR ephemeris validation | No correlation in SLR residuals | Physical clock origin |
+| SLR ephemeris check | No correlation in SLR residuals | Physical clock origin |
 | Tier 2 | Triangle holonomy test | Null < 10−19 | Holonomy mechanism |
 | Tier 3 | CMB-S4 + LSST S8 | Agreement < 1σ | Kinematic noise |
 
@@ -1780,59 +1828,30 @@ proper time.
 
 ## 7.1 Summary of Findings
 
-This integrated manuscript synthesizes results from a systematic five-paper
-research program that establishes, validates, and independently confirms the
-Temporal Equivalence Principle predictions through progressively rigorous
-empirical tests and cosmological extension. The convergence of evidence
-across five independent studies—theoretical prediction (Paper 0),
-multi-center validation (Paper 1), 25-year longitudinal analysis (Paper 2),
-raw data confirmation (Paper 3), and cosmological implications (Paper
-4)—establishes a robust empirical foundation for TEP and extends its
-implications to dark matter phenomenology.
+This integrated manuscript synthesizes results from a systematic research program that establishes, validates, and independently confirms the Temporal Equivalence Principle predictions through progressively rigorous empirical tests and cosmological extension. The convergence of evidence across seven independent domains—theoretical prediction (Paper 0), multi-center microwave consistency (Paper 1), 25-year longitudinal stability (Paper 2), raw RINEX test (Paper 3), optical SLR check (Paper 8), pulsar timing (Paper 10), and Hubble Tension resolution (Paper 11)—establishes a robust empirical foundation for TEP.
 
-The theoretical framework (Paper 0) made specific quantitative predictions
-before any empirical analysis: correlation length λ = 1,000–10,000 km,
-exponential spatial decay, velocity-dependent anisotropy, and absence of
-GM/r² scaling. Three subsequent empirical investigations confirmed these
-predictions through complementary methodologies, each addressing distinct
-artifact hypotheses. Paper 4 then extended the framework to cosmological
-scales, demonstrating how the same scalar field producing ~4,000 km
-correlations on Earth could manifest as apparent dark matter in
-gravitational lensing through violation of the Isochrony Axiom and the
-universal M1/3 Vainshtein scaling law. The continuous relaxation
-of Temporal Topology from deep potential wells to the weak-field regime
-unifies terrestrial and galactic phenomenology without discrete boundary
-approximations.
+The theoretical framework (Paper 0) established pre-specified expectations and theoretical search ranges before any empirical analysis: correlation length λ = 1,000–10,000 km, exponential spatial decay, velocity-dependent anisotropy, and absence of GM/r² scaling. These forecasts have been confirmed across multiple independent measurement technologies. The detection of matching TEP-band spectral concentration and distance-structured correlations in Satellite Laser Ranging (Paper 8) strongly constrains "clock-artifact" hypotheses, as SLR utilizes passive retroreflectors and optical-domain propagation entirely orthogonal to microwave GNSS L-band systems.
 
-Paper 1 (Multi-Center Validation) analyzed 62.7 million station-pair
-measurements across CODE, IGS, and ESA analysis centers, achieving R² =
-0.92–0.97 consistency and demonstrating the correlation structure is not
-processing-specific. Paper 2 (25-Year Longitudinal) extended the temporal
-baseline to 25.3 years with 165.2 million station pairs, enabling detection
-of long-period signatures including 18.6-year lunar nutation coupling (R² =
-0.641) and CMB frame alignment (18.2° separation, 5,570× variance ratio).
-Paper 3 (Raw RINEX Validation) analyzed 1.17 billion pair-samples using
-Single Point Positioning with broadcast ephemerides, achieving 100%
-detection rate across 72 metric combinations and confirming the signal
-exists in fundamental observables.
+Paper 11 (Hubble Tension) demonstrates the theory's explanatory power at cosmological scales. By identifying a systematic, environment-dependent period-contraction bias in Cepheid variable stars, the framework unifies local and early-universe measurements of H₀, reducing the long-standing 5σ tension to a negligible 0.6σ. This resolution uses a Cepheid response coefficient κCep ∼ 10⁶ that is numerically consistent with the spin-down excess detected in globular cluster pulsars (Paper 10), establishing cross-probe consistency between astrophysical and local timing observables.
 
-Seven statistically independent signatures emerge with joint probability p ≈
-2×10−27 (>10σ): exponential spatial decay (λ = 4,201 ± 1,967 km),
-spatial anisotropy (EW/NS = 2.16), orbital velocity coupling (r = −0.888,
-5.1σ), CMB frame alignment, planetary event responses (56/156 significant),
-18.6-year nutation coupling, and semiannual nutation coupling (R² = 0.904).
-The signal remains invariant to solar cycles, geomagnetic storms, and
-altitude, exhibits no GM/r² scaling, and persists across independent
-processing pipelines and raw data—systematically excluding conventional
-artifact explanations.
+Nine convergent signatures support the Temporal Topology interpretation:
+(1) exponential spatial decay (λ ≈ 4,200 km), (2) spatial anisotropy
+(EW/NS = 2.16), (3) orbital velocity coupling (r = −0.888, 5.1σ), (4) CMB
+frame alignment (18.2°), (5) achromatic universality (microwave-to-optical
+matching), (6) planetary event responses, (7) 18.6-year nutation coupling,
+(8) pulsar spin-down excess, and (9) host-potential H₀ correlation. The
+signal survives all challenges across solar cycles, geomagnetic storms,
+altitude, and independent processing pipelines—systematically excluding
+conventional artifact explanations.
 
 ## 7.2 Theoretical Interpretation
 
 These observations match the predictions of the Temporal Equivalence
 Principle, a bi-metric framework in which proper time is a dynamical field.
-TEP made specific, quantitative forecasts—correlation length, exponential
-decay, velocity-dependent anisotropy, absence of GM/r² (force) and GM/r³
-(tidal) scaling—all of which are confirmed by the data. The theory paper was
+TEP established pre-specified expectations and theoretically motivated
+search ranges—including correlation length range, exponential decay,
+velocity-dependent anisotropy, and absence of GM/r² (force) and GM/r³
+(tidal) scaling—consistent with the observed data. The theory paper was
 published in August 2025 with these predictions; the GNSS analysis was
 conducted from September through December 2025.
 
@@ -1844,15 +1863,14 @@ modulation remains unconstrained by multi-messenger observations.
 
 ## 7.3 Cosmological Implications
 
-If validated, TEP implies that dark matter phenomenology in gravitational
-lensing arises from temporal-field gradients (active Temporal Shear) rather
-than particulate matter—the projection of differential proper-time
-accumulation onto observations that assume synchrony. The Earth-Galaxy
-scaling argument connects the ~4,000 km GNSS correlation to the ~50 kpc dark
-matter halo radius through the universal M1/3 Vainshtein scaling
-law, with the correlation length at each scale reflecting the relaxation of
-Temporal Topology from deep suppression in potential wells to the weak-field
-regime.
+If validated through independent replication, TEP predicts that part of the phenomenology attributed to
+dark matter may include temporal-field gradient or covariance contributions—the projection of
+differential proper-time accumulation onto observations that assume the Isochrony Axiom—without assuming a new particulate matter component. The Earth-Galaxy
+scaling argument connects the ~4,000 km GNSS correlation to galactic-scale
+phenomenology (~50 kpc), with the correlation length at each scale reflecting
+the relaxation of Temporal Topology from deep suppression in potential wells
+to the weak-field regime. This scaling, if confirmed, would be consistent
+with M1/3 behavior expected from certain screening completions.
 
 The framework naturally produces the MOND acceleration scale (a0
 ~ cH0) and offers potential resolution to the H0 and
@@ -1898,11 +1916,11 @@ proper time accumulation is itself a dynamical field. The speed of light
 remains exactly invariant locally, but global synchronization becomes
 path-dependent.
 
-The ~4,000 km correlation on Earth (λ = 4,201 ± 1,967 km) and the ~50 kpc
-dark matter halo in galaxies may represent the same scalar field at
-different density scales, connected by the universal M1/3
-Vainshtein scaling law and the continuous relaxation of Temporal Topology
-from deep potential wells to the weak-field regime. This hypothesis is
+The ~4,000 km correlation on Earth (λT = 4,201 ± 1,967 km) and the ~50 kpc
+dark matter halo in galaxies are interpreted within TEP as manifestations of the same underlying topology/shear framework, pending independent replication and completion-dependent transfer calculations, connected by the continuous relaxation of Temporal
+Topology from deep potential wells to the weak-field regime. The M1/3
+scaling appearing in some candidate completions remains testable through
+interplanetary missions and pulsar timing arrays, but it is not the primary empirical claim. This hypothesis is
 falsifiable through the experimental program outlined in Section 6.
 Independent replication is essential, and the data and analysis code are
 publicly available. The community is invited to verify, challenge, or refute
@@ -1916,7 +1934,7 @@ pipelines are publicly available:
 Multi-center and 25-year CODE analysis:
 github.com/matthewsmawfield/TEP-GNSS
 
-Raw RINEX validation:
+Raw RINEX test:
 github.com/matthewsmawfield/TEP-GNSS-RINEX
 
 Benchmark dataset: A simplified CSV file containing binned residuals
@@ -1972,15 +1990,33 @@ Riess, A. G. et al. (2022). A comprehensive measurement of the local value of th
 
 Santamaria-Gomez, A., Ray, J. & Collilieux, X. (2017). GNSS related periodic signals in coordinate time-series from Precise Point Positioning. *Geophysical Journal International* 208(3), 1449–1462. DOI: [10.1093/gji/ggw454](https://doi.org/10.1093/gji/ggw454)
 
-Smawfield, M. L. (2025a). The Temporal Equivalence Principle: Dynamic Time, Emergent Light Speed, and a Two-Metric Geometry of Measurement. Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911)
+Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.8 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
 
-Smawfield, M. L. (2025b). Global Time Echoes: Distance-Structured Correlations in GNSS Clocks. Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229)
+Smawfield, M. L. (2025). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Preprint v0.25 (Jaipur). Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1)
 
-Smawfield, M. L. (2025c). Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks. Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141)
+Smawfield, M. L. (2025). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.18 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2)
 
-Smawfield, M. L. (2025d). Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks. Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166)
+Smawfield, M. L. (2025). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.5 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3)
 
-Smawfield, M. L. (2025e). Global Time Echoes: Cosmological Implications of Distance-Structured Correlations in GNSS Clocks. Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540)
+Smawfield, M. L. (2025). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.5 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4)
+
+Smawfield, M. L. (2025). *Global Time Echoes: Empirical Synthesis*. Preprint v0.4 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5 — this work)
+
+Smawfield, M. L. (2025). *Universal Critical Density: Cross-Scale Consistency of ρ_T*. Preprint v0.3 (New Delhi). Zenodo. DOI: [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365) (Paper 6)
+
+Smawfield, M. L. (2025). *The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate*. Preprint v0.3 (Blantyre). Zenodo. DOI: [10.5281/zenodo.18059250](https://doi.org/10.5281/zenodo.18059250) (Paper 7)
+
+Smawfield, M. L. (2025). *Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging*. Preprint v0.3 (Mombasa). Zenodo. DOI: [10.5281/zenodo.18064581](https://doi.org/10.5281/zenodo.18064581) (Paper 8)
+
+Smawfield, M. L. (2025). *What Do Precision Tests of General Relativity Actually Measure?*. Preprint v0.3 (Istanbul). Zenodo. DOI: [10.5281/zenodo.18109760](https://doi.org/10.5281/zenodo.18109760) (Paper 9)
+
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars*. Preprint v0.6 (Caracas). Zenodo. DOI: [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) (Paper 10)
+
+Smawfield, M. L. (2026). *The Cepheid Bias: Resolving the Hubble Tension*. Preprint v0.6 (Kingston upon Hull). Zenodo. DOI: [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) (Paper 11)
+
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies*. Preprint v0.4 (Kos). Zenodo. DOI: [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) (Paper 12)
+
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries*. Preprint v0.3 (Kilifi). Zenodo. DOI: [10.5281/zenodo.19102061](https://doi.org/10.5281/zenodo.19102061) (Paper 13)
 
 Teunissen, P. J. G. & Montenbruck, O. (Eds.) (2017). *Springer Handbook of Global Navigation Satellite Systems*. Springer.
 
@@ -2058,11 +2094,18 @@ Variation with respect to the scalar field yields:
 
 $\nabla_\mu \left[ K(\phi) \nabla^\mu \phi \right] - \frac{\partial K}{\partial \phi} \frac{1}{2} g^{\mu\nu} \partial_\mu \phi \partial_\nu \phi - \frac{\partial V}{\partial \phi} = -\alpha(\phi) T + S_{\text{disf}}$
 
-where α(φ) ≡ d ln A/dφ = 2β/MPl is the conformal coupling strength, T is the trace of the matter stress-energy tensor in the Jordan frame, and Sdisf contains disformal source terms proportional to B(φ).
+where α(φ) ≡ d ln A/dφ = β/MPl is the conformal coupling strength (for A(φ) = exp(βφ/MPl)), T is the trace of the matter stress-energy tensor in the Jordan frame, and Sdisf contains disformal source terms proportional to B(φ).
 
-## A.3 Galileon Terms and Vainshtein Screening
+## A.3 Galileon Terms and Nonlinear Screening
 
-The cubic Galileon term in the action generates nonlinear screening:
+**Illustrative Only:** This appendix presents one candidate microscopic completion. The empirical claims of this paper do not depend on the cubic Galileon/Vainshtein realization.
+
+The following derivation illustrates one candidate microscopic completion (cubic
+Galileon) that realizes the continuous gradient suppression described as
+Temporal Shear in Section 4; it is not required for the empirical results.
+
+One candidate completion invokes cubic Galileon terms in the action to
+generate nonlinear screening:
 
 $S_{\text{Galileon}} = \int d^4x \sqrt{-g} \left[\frac{c_3}{\Lambda^3} (\partial\phi)^2 \Box\phi\right]$
 
@@ -2078,7 +2121,7 @@ For a spherically symmetric source of mass M, the scalar field profile in the Va
 
 $\phi(r) \sim \frac{\beta M_{\text{Pl}}}{M_{\text{Pl}}^2} \frac{GM}{r} \left(\frac{r}{r_V}\right)^3$
 
-This suppresses the fifth force by a factor of (r/rV)3 inside the screening radius, reconciling the weak-field cosmological behavior with strong-field solar system constraints.
+This suppresses the fifth force by a factor of (r/rV)3 inside the screening radius, reconciling weak-field cosmological behavior with strong-field solar system constraints. Other completions (e.g., chameleon mechanisms, symmetry-breaking potentials) may produce similar phenomenology.
 
 ## A.4 Conservation Laws
 
@@ -2136,7 +2179,8 @@ The exponential decay C(r) ∝ exp(−r/λ) reflects the two-point correlation f
 
 $\langle \phi(\mathbf{x}) \phi(\mathbf{x}') \rangle = \phi_0^2 \exp\left(-\frac{|\mathbf{x} - \mathbf{x}'|}{\lambda}\right)$
 
-where λ = ℏ/(mφc) is the Compton wavelength of the screened scalar field. This correlation function has nonzero spatial gradients (k ≠ 0 in Fourier space) and therefore survives network adjustment, which only removes the k = 0 component.
+where λ = ℏ/(mφc) is the Compton wavelength under the mass-completion
+interpretation. This correlation function has nonzero spatial gradients (k ≠ 0 in Fourier space) and therefore survives network adjustment, which only removes the k = 0 component.
 
 ## B.6 Tidal vs. TEP Signal Discrimination
 

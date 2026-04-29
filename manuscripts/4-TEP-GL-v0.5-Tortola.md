@@ -1,7 +1,7 @@
 # Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations
 **Matthew Lukin Smawfield**
-Version: v0.4 (Tortola)
-First published: 19 December 2025 · Last updated: 24 April 2026
+Version: v0.5 (Tortola)
+First published: 19 December 2025 · Last updated: 29 April 2026
 DOI: 10.5281/zenodo.17982540
 
 ---
@@ -16,21 +16,11 @@ metric couplings, creating a "temporal composite" image. This projects
 temporal depth onto the spatial plane, generating a
 *Temporal Shear* contribution—arising from gradients in the
 scalar field's continuous spatial profile (*Temporal Topology*,
-TEP v0.7)—that is mathematically indistinguishable from gravitational
-shear. This phenomenon is defined here as *Phantom Mass*.
-Crucially,
-*GW170817 does not constrain the conformal component* of this
-coupling; because photons and gravitational waves traverse the same
-path, conformal time dilation is common-mode and cancels in differential
-measurements. While GW170817 constrains disformal propagation speeds, it
-leaves the conformal "rate of time" unconstrained. Screening operates
+TEP v0.8)—that is degenerate with gravitational shear in standard static lens reconstructions unless time-domain or variability-dependent observables are included.
+This phenomenon is defined here as *Phantom Mass*. GW170817 primarily constrains differential propagation and disformal cone tilt; it does not directly test common-mode conformal clock-rate structure along a shared path, although conformal scalar sectors remain indirectly constrained by PPN, equivalence-principle, source-screening, and clock-comparison tests. Because photons and gravitational waves traverse the same path, conformal time dilation is common-mode and cancels in differential measurements. Screening operates
 via the continuous flattening of Temporal Topology in dense
 environments, suppressing local field gradients without invoking
-discrete thin-shell boundaries. Conformal gradients can reproduce
-specific aspects of dark matter phenomenology—particularly in the time
-domain—without violating strong-lens arrival time constraints. The dark
-sector is thus reinterpreted not as an invisible substance, but as the
-shadow of temporal transport.
+discrete thin-shell boundaries. Conformal gradients may reproduce specific timing-sensitive aspects of dark-matter-like phenomenology—particularly in the time domain—without violating strong-lens arrival time constraints. The component conventionally attributed to dark matter may contain an unmodeled temporal-transport contribution. These results are derived in two regimes: a conservative Reference Envelope (millisecond-scale corrections, directly testable with lensed FRBs) and an Extended Regime (year-scale delays, possible dark-sector reinterpretation) whose validity is determined by the Variability-Mass Correlation test in existing strong-lens catalogs. Within the Extended Regime, where the Isochrony Axiom fails, temporal-field gradients produce an observational degeneracy with particulate dark matter. This is a conditional claim; the Reference Envelope result is the primary, unconditional contribution.
 
 *Keywords:* gravitational lensing – dark matter – modified
 gravity – cosmology: theory – galaxies: kinematics and dynamics –
@@ -64,9 +54,9 @@ Consider two mathematically equivalent interpretations of the same Fermat potent
 
 **Interpretation B (TEP Framework):** Rejects the Isochrony Axiom. The observed image is recognized as a *temporal composite*: photons arriving simultaneously at the detector left the source at different emission epochs, with differential delays set by the two-metric structure along each ray. For an evolving source, this temporal depth projects onto the image plane as an apparent spatial distortion. The differential proper-time accumulation across the lens is computed, and the "excess convergence" is identified as the signature of temporal-field gradients \(\nabla(\Delta \tilde{\tau})\) in the lens environment. The "dark matter" is reinterpreted not as a substance, but as the shadow of unmodeled time.
 
-**The Critical Point:** Both frameworks fit the data equally well. The difference is not observational but *interpretive*—it depends on which axiom (Isochrony vs. TEP) is taken as fundamental. The two frameworks become distinguishable only when tested against observables that break the degeneracy: time-domain signatures in rapidly varying sources, achromatic residual timing anomalies across multiple images, and the correlation of inferred "dark" components with source evolution timescales.
+**The Critical Point:** Both frameworks can reproduce the static lensing observables considered here at the level of the reconstructed Fermat potential. The distinction is not settled by static image geometry alone, but by additional time-domain, variability-dependent, and multi-epoch observables. The difference is not purely observational but *interpretive*—it depends on which axiom (Isochrony vs. TEP) is taken as fundamental.
 
-This bifurcation illustrates that the existence of "dark matter" is a conclusion contingent on the Isochrony Axiom. If that axiom is false, the conclusion does not necessarily follow.
+This bifurcation illustrates that the inference of particulate dark matter from static lensing reconstructions is contingent, in part, on the Isochrony Axiom. If that axiom fails, at least some lensing-inferred dark mass need not correspond to a new substance.
 
 ## 1.4 The Temporal Equivalence Principle (TEP)
 
@@ -80,17 +70,19 @@ Under TEP, the central question is not "how much mass is bending the light?" but
 
 ## 1.5 Redefining the Dark Sector
 
-This paper develops the TEP framework to show that two-metric temporal coupling can reproduce the phenomenology of dark matter in gravitational lensing without invisible mass. It is demonstrated that:
+This paper develops the TEP framework to show that two-metric temporal coupling may reproduce part of the phenomenology conventionally attributed to dark matter in gravitational lensing without introducing a new invisible substance. It is demonstrated that:
 
-- **The "dark" signal is a temporal artifact:** In a spatially varying conformal field, lens-local differential delays create temporal-composite images. When interpreted through standard static lens models (which assume Isochrony), these delays manifest as apparent additional convergence and shear—"phantom mass."
+- **The "dark" signal may contain a temporal-composite contribution:** In a spatially varying conformal field, lens-local differential delays create temporal-composite images. When interpreted through standard static lens models (which assume Isochrony), these delays can manifest as apparent additional convergence and shear—"phantom mass."
 
-- **GW170817 is a differential constraint:** The multi-messenger constraint \(|c_{\gamma}-c_g|/c \lesssim 10^{-15}\) is explicitly reanalyzed. It is shown that this bounds only the *disformal* (cone-tilt) component of the coupling. The *conformal* component, which governs clock rates and drives the "dark matter" phenomenology, is unconstrained because photons and gravitational waves share the same null cone and thus experience common-mode dilation.
+- **GW170817 is a differential constraint:** The multi-messenger constraint \(|c_{\gamma}-c_g|/c \lesssim 10^{-15}\) is explicitly reanalyzed. It is shown that this bounds only the *disformal* (cone-tilt) component of the coupling. The *conformal* component, which governs clock rates and drives the "dark matter" phenomenology, is not directly constrained by photon–graviton differential-propagation bounds because conformal transformations preserve null cones. It remains indirectly constrained by PPN, source-screening, gravitational-redshift, clock-comparison, and equivalence-principle tests.
 
-- **The Reference Envelope vs. The Reality:** The standard translation of GW170817 timing to propagation-speed bounds is treated as a conservative Reference Envelope for the disformal sector. However, for the unconstrained conformal sector, it is demonstrated that the temporal-field gradients required to reproduce lensing anomalies are physically viable. This transforms the "dark matter problem" from a search for particles into a search for unmodeled temporal structure.
+- **The Reference Envelope vs. The Reality:** The standard translation of GW170817 timing to propagation-speed bounds is treated as a conservative Reference Envelope for the disformal sector. However, for the unconstrained conformal sector, it is demonstrated that the temporal-field gradients required to reproduce lensing anomalies are physically viable. This reframes at least part of the dark matter problem as a test of whether unmodeled temporal structure has been absorbed into inferred mass.
 
-By abandoning the Isochrony Axiom, the dark matter problem is transformed from a search for missing particles into a search for unmodeled temporal structure. The parameter space where this structure masquerades as dark matter is defined, offering a falsifiable alternative to the particle paradigm.
+By abandoning the Isochrony Axiom, at least part of the dark matter problem is reframed as a search for unmodeled temporal structure that may have been absorbed into inferred mass. The parameter space where this structure masquerades as dark matter is defined, offering a falsifiable alternative to the particle paradigm.
 
 The TEP thesis holds that what is conventionally called "dark matter" can be modeled as temporal structure—the accumulated effect of unmodeled proper-time variations across lensing observations. The particle interpretation serves as an effective model under the assumption of synchrony. TEP does not posit an alternative substance; it holds that the phenomenology traditionally attributed to dark matter may be better understood as a metric artifact.
+
+This paper does not deny the empirical phenomena conventionally attributed to dark matter. It challenges the inference that those phenomena uniquely require a new particulate matter component. Within TEP-GL, the dark sector is reinterpreted as an observational degeneracy: temporal-field gradients and differential proper-time accumulation can project into lensing reconstructions as apparent convergence and shear when the Isochrony Axiom is assumed. The central question is therefore not whether the observed anomalies exist, but whether they continue to require invisible mass after temporal-composite image formation is included in the forward model.
 
 ## 2. Theoretical Framework
 
@@ -104,7 +96,7 @@ macroscopic test masses and the causal structure of gravitational waves. The
 standard model fields, atomic clocks, and electromagnetic propagation. The
 general two-metric relation (Bekenstein 1993) is adopted:
 
-$\tilde{g}_{\mu\nu} = A(\phi) g_{\mu\nu} + B(\phi)\nabla_\mu\phi
+$\tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu} + B(\phi)\nabla_\mu\phi
 \nabla_\nu\phi$
 
 Here, \(\tilde{g}_{\mu\nu}\) is the metric measured by atomic clocks (matter
@@ -126,7 +118,7 @@ The TEP framework is not a novel field theory but a
 gravity to gravitational lensing. Specifically:
 
 **Brans-Dicke Theory:** TEP with \(B=0\) and \(A(\phi)
-= e^{2\beta\phi/M_{\text{Pl}}}\) reduces to Brans-Dicke gravity in the
+= e^{\beta\phi/M_{\text{Pl}}}\) reduces to Brans-Dicke gravity in the
 Jordan frame. The scalar field \(\phi\) plays the role of the
 Brans-Dicke field, with the coupling \(\beta\) related to the
 Brans-Dicke parameter \(\omega_{BD}\).
@@ -138,7 +130,7 @@ second-order equations of motion. TEP inherits the theoretical
 consistency (no Ostrogradsky ghosts) of this framework.
 
 **Screening and Temporal Topology:** The core TEP
-framework (v0.7) formulates screening as a continuous spatial
+framework (v0.8) formulates screening as a continuous spatial
 profile governed by the non-linear superposition of field gradients
 (Temporal Shear), replacing discrete thin-shell boundaries. TEP-GL
 phenomenologically employs Vainshtein screening (from the Galileon
@@ -168,10 +160,10 @@ phenomenology arises from two distinct optical effects of the scalar field
 #### 1. The Static Refractive Index (Geometric Lensing)
 
 The scalar field acts as a locally variable optical factor \(n_{eff} \approx
-\sqrt{A(\phi)}\) in the travel-time functional governing image formation.
+A(\phi)\) in the travel-time functional governing image formation.
 The associated excess matter proper-time delay is:
 
-$\Delta \tilde{\tau}_{\rm static} = \frac{1}{c} \int (\sqrt{A(\phi)} - 1)\,
+$\Delta \tilde{\tau}_{\rm static} = \frac{1}{c} \int (A(\phi) - 1)\,
 dl$
 
 This *Static Halo* contributes a source-independent term to the
@@ -237,7 +229,7 @@ loop \(C = \gamma_1 \circ \gamma_2^{-1}\) is \(\mathcal{H}[C] \equiv
 \mathcal{T}[\gamma_1] - \mathcal{T}[\gamma_2]\). This holonomy is the
 invariant discriminator: it is directly observable and cannot be reduced
 to a coordinate "speed" parameter. In the conformal limit,
-\(d\tilde{\tau} = \sqrt{A(\phi)} d\tau_g\) is common-mode for
+\(d\tilde{\tau} = A(\phi) d\tau_g\) is common-mode for
 co-propagating messengers; disformal coupling contributes the genuinely
 path-dependent component that generates differential delays across an
 image plane.
@@ -301,7 +293,7 @@ suppressing fifth forces and lensing anomalies in dense environments
 while leaving cosmology accessible to dynamics. Rather than invoking
 discrete thin-shell boundaries or step-function density cutoffs, the
 suppression of local field gradients in deep potential wells reduces the
-effective coupling continuously, preserving PPN bounds without rigid
+$\alpha_{\text{PPN}}^{\text{eff}}$ continuously, preserving PPN bounds without rigid
 approximations. Existing multi-messenger constraints (e.g., GW170817)
 are interpreted within the standard framework that assumes a single
 metric governs all sectors; in the TEP framework, these constraints
@@ -345,7 +337,7 @@ Furthermore, it necessitates a redefinition of the "speed of light":
 \(c\) is locally invariant (measured as \(299,792,458\) m/s by
 any local clock), the *global effective speed* is
 variable. Because the rate of proper time accumulation
-\(d\tilde{\tau} = \sqrt{A(\phi)} d\tau_g\) varies with location,
+\(d\tilde{\tau} = A(\phi) d\tau_g\) varies with location,
 the time required to traverse a fixed spatial interval depends
 on the scalar field value. To an observer assuming a universal
 clock, light appears to speed up or slow down depending on the
@@ -510,13 +502,13 @@ values
 If \(A(\phi)\) varies spatially—forming a halo-like configuration around the
 lens—then:
 
-$\Delta t_{\rm path} = \int_{\rm path} \frac{\sqrt{A(\phi)}}{c}\,dl$
+$\Delta t_{\rm path} = \int_{\rm path} \frac{A(\phi)}{c}\,dl$
 
 differs between rays at different impact parameters. For halo-scale
 propagation distances \(L \sim 2\) Mpc and conformal variations \(\Delta A/A
 \sim 10^{-6}\), the differential delay is:
 
-$\Delta t \sim \frac{1}{2} \frac{\Delta A}{A} \cdot \frac{L}{c} \sim
+$\Delta t \sim \frac{\Delta A}{A} \cdot \frac{L}{c} \sim
 \text{years}$
 
 This delay is
@@ -575,7 +567,7 @@ The Phantom Mass mechanism is derived from first principles, starting from the T
 
 In the weak-field limit, the TEP framework modifies the standard Newtonian gauge metric by introducing a scalar-field-dependent conformal factor \(A(\phi)\) in the spatial sector:
 
-$ds^2 = -\left(1 + 2\Psi\right)c^2 dt^2 + \left(1 - 2\Psi\right)A(\phi)\, \delta_{ij}\, dx^i dx^j$
+$ds^2 = -\left(1 + 2\Psi\right)c^2 dt^2 + \left(1 - 2\Psi\right)A^2(\phi)\, \delta_{ij}\, dx^i dx^j$
 
 where \(\Psi\) is the Newtonian potential and \(A(\phi) = 1 + \alpha(\phi)\) with \(|\alpha| \ll 1\). The scalar field \(\phi\) is sourced by the local matter distribution and varies on galactic/cluster scales. Crucially, \(A(\phi)\) modifies the *proper spatial distance* traversed by photons, which—via the null condition \(ds^2 = 0\)—translates into a modification of the coordinate travel time.
 
@@ -583,15 +575,15 @@ where \(\Psi\) is the Newtonian potential and \(A(\phi) = 1 + \alpha(\phi)\) wit
 
 For null rays (\(ds^2 = 0\)), the coordinate velocity satisfies:
 
-$\frac{|d\vec{x}|}{dt} = c\sqrt{\frac{1 + 2\Psi}{(1 - 2\Psi)A(\phi)}} \approx c\left(1 + 2\Psi - \frac{\alpha(\phi)}{2}\right)$
+$\frac{|d\vec{x}|}{dt} = c\sqrt{\frac{1 + 2\Psi}{(1 - 2\Psi)A^2(\phi)}} \approx \frac{c}{A(\phi)}\left(1 + 2\Psi\right) \approx c\left(1 + 2\Psi - \alpha(\phi)\right)$
 
 to first order in \(\Psi\) and \(\alpha\). This defines an effective refractive index:
 
-$n_{\text{eff}}(\vec{x}) = \frac{c}{v_{\text{coord}}} \approx 1 - 2\Psi + \frac{\alpha(\phi)}{2}$
+$n_{\text{eff}}(\vec{x}) = \frac{c}{v_{\text{coord}}} \approx A(\phi)(1 - 2\Psi) \approx 1 - 2\Psi + \alpha(\phi)$
 
 The total coordinate time delay along a ray path \(\gamma\) is:
 
-$T = \int_\gamma \frac{n_{\text{eff}}}{c}\, d\ell = T_0 + \underbrace{\frac{2}{c^3}\int |\Psi|\, d\ell}_{\text{Shapiro (geometric)}} + \underbrace{\frac{1}{2c}\int \alpha(\phi)\, d\ell}_{\Delta\tilde{\tau}\text{ (TEP)}}$
+$T = \int_\gamma \frac{n_{\text{eff}}}{c}\, d\ell = T_0 + \underbrace{\frac{2}{c^3}\int |\Psi|\, d\ell}_{\text{Shapiro (geometric)}} + \underbrace{\frac{1}{c}\int \alpha(\phi)\, d\ell}_{\Delta\tilde{\tau}\text{ (TEP)}}$
 
 The TEP contribution \(\Delta\tilde{\tau}\) is the *excess proper time* accumulated due to the scalar field.
 
@@ -690,7 +682,7 @@ The order-of-magnitude estimate is robust to profile shape; realistic NFW profil
 
 ### Box 3.2: Order of Magnitude Estimate for Stochastic Shear
 
-To estimate the magnitude of the *stochastic* shear contribution (the dynamic term \(\mu_s \nabla(\Delta \tilde{\tau})\)), we use the updated halo-scale delays:
+To estimate the magnitude of the *stochastic* shear contribution (the dynamic term \(\mu_s \nabla(\Delta \tilde{\tau})\)), the analysis uses the updated halo-scale delays:
 
 - **Source Velocity:** Typical cluster transverse velocity \(v_s \sim 1000\) km/s at distance \(D_A \sim 1\) Gpc yields an angular proper motion \(\mu_s \approx 2 \times 10^{-4}\) arcsec/year.
 
@@ -718,17 +710,17 @@ TEP phenomenology divides into two distinct regimes, distinguished by the magnit
 | **Reference Envelope** | \(\alpha \lesssim 10^{-9}\) | \(\Delta\tilde{\tau} \sim\) ms–s | Time-domain corrections only; static lensing unchanged |
 | **Extended Regime** | \(\alpha \sim 10^{-6}\text{--}10^{-1}\) | \(\Delta\tilde{\tau} \sim\) years | Full "dark matter" phenomenology via static refraction |
 
-**Operational Distinction:** The Reference Envelope accepts the standard GW170817 translation (arrival-time offset → propagation-speed bound) at face value. The Extended Regime applies if TEP's dynamical-time interpretation is correct, in which case the standard translation may require revision—the observed \(\Delta t = 1.74\) s constrains the *disformal* sector but leaves the *conformal* sector unconstrained (Section 4).
+**Operational Distinction:** The Reference Envelope accepts the standard GW170817 translation (arrival-time offset → propagation-speed bound) at face value. The Extended Regime applies if TEP's dynamical-time interpretation is correct, in which case the standard translation may require revision—the observed \(\Delta t = 1.74\) s constrains the *disformal* sector; it does not directly test the *conformal* sector, although conformal scalar sectors remain indirectly constrained by PPN, equivalence-principle, source-screening, and clock-comparison tests (Section 4).
 
 **Empirical Discriminator:** The regime is determined by observation, not assumption. If lensed FRBs show only millisecond residuals, the Reference Envelope applies. If strong-lens time delays show source-dependent anomalies at the year level, the Extended Regime is indicated.
 
-**Independent Regime Criterion (Breaking Circularity):** To avoid circular reasoning, we specify an observable that determines the regime *independently* of TEP's correctness:
+**Independent Regime Criterion (Breaking Circularity):** To avoid circular reasoning, the following observable specifies the regime *independently* of TEP's correctness:
 
 - **The Variability-Mass Correlation Test:** In the Extended Regime, the inferred "dark matter" mass of a lens should correlate with the variability timescale of the background source population. Specifically: lenses observed through rapidly variable sources (AGN, quasars) should show systematically different mass reconstructions than the same lenses observed through slowly evolving sources (elliptical galaxies). This correlation is *forbidden* in standard CDM (mass is source-independent) but *required* in TEP's Extended Regime.
 
 - **Decision Rule:** If existing strong-lens catalogs show no statistically significant correlation between inferred lens mass and source variability class at the >3σ level, the Extended Regime is disfavored. If such a correlation exists, it constitutes positive evidence for TEP independent of FRB timing.
 
-- **Current Status:** This test can be performed with existing data (HST strong-lens archives, SDSS quasar lenses vs. galaxy-galaxy lenses). We flag this as a priority observational test.
+- **Current Status:** This test can be performed with existing data (HST strong-lens archives, SDSS quasar lenses vs. galaxy-galaxy lenses). This is flagged as a priority observational test.
 
 Under the conservative *Reference Envelope*, \(\Delta \tilde{\tau}\) is small (milliseconds to seconds). In this regime:
 
@@ -782,7 +774,7 @@ spatial trajectory through the scalar field \(\phi(\vec{x})\).
 
 Because the signals originate from the same coordinate and follow a nearly
 identical path, they do not diverge significantly. If the metric coupling
-contains a conformal component \(\tilde{g}_{\mu\nu} = A(\phi) g_{\mu\nu}\),
+contains a conformal component \(\tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu}\),
 this factor rescales the proper time along the path for
 *both* species identically. Any time dilation caused by passing
 through "time-warped regions" of space is experienced by both messengers. If
@@ -830,7 +822,7 @@ Conformal sector gradients (the "rate of time").
 
 This decoupling makes the TEP framework robust against propagation speed
 constraints. Consistent with the general disformal relation (Bekenstein
-1993), we emphasize that the speed of gravitational waves (\(c_g\))
+1993), note that the speed of gravitational waves ($c_g$))
 constrains the causal structure (the light cone) governed by the disformal
 term \(B(\phi)\), while the Dark Matter phenomenology in TEP arises from the
 conformal factor \(A(\phi)\) (the clock rate). As long as \(c_g =
@@ -884,7 +876,7 @@ non-linear term \(\frac{1}{\Lambda^3}(\partial \phi)^2 \square \phi\)
 dominates, suppressing the spatial gradients of \(\phi\)—the
 *Temporal Shear*—and restoring General Relativity to high precision.
 This gradient suppression is a specific realization of the continuous
-geometric screening paradigm (Temporal Topology) introduced in TEP v0.7:
+geometric screening paradigm (Temporal Topology) introduced in TEP v0.8:
 rather than invoking discrete thin-shell boundaries, the field profile
 flattens continuously in deep potential wells, with the degree of
 suppression governed by the non-linear superposition of gradients. On
@@ -952,8 +944,7 @@ of conformal coupling required at cluster scales (\(\alpha \sim
 10^{-1}\)) to that permitted at Solar System scales (\(\alpha \lesssim
 10^{-5}\)) spans four orders of magnitude. In the continuous geometric
 framework of Temporal Topology, this hierarchy emerges naturally from
-the density-driven suppression of Temporal Shear. The effective coupling
-scales with the degree of gradient suppression:
+the density-driven suppression of Temporal Shear. The locally active Temporal Shear/source-charge response scales with the degree of gradient suppression:
 
 $\frac{\alpha_{\text{cluster}}}{\alpha_{\text{Solar}}} \sim
 \left(\frac{r_V}{r}\right)^{3/2} \gtrsim 10^4$
@@ -1089,6 +1080,7 @@ The following table summarizes the distinguishing predictions of the two framewo
 | --- | --- | --- |
 | **Lensed FRB timing** | Achromatic, GR time delays only | Achromatic *residual* anomaly (ms-scale) |
 | **Source-dependent Shear** | None (shear noise is constant) | **Excess Scatter** (noise scales with \(\mu_s\)) |
+| **Source variability–lens mass correlation** | None (mass is source-independent) | **~20% higher inferred mass** for AGN-backlit vs. galaxy-backlit lenses at same redshift |
 | **CMB lensing** | Standard convergence | Identical (CMB is static; no temporal smearing) |
 | **Galaxy weak lensing** | Identical to CMB lensing | Systematic offset from CMB (source-dependent) |
 | **Chromatic dependence** | None | None (both achromatic) |
@@ -1149,7 +1141,7 @@ progression of physical theory:
 By treating the rate of proper time accumulation as a physical field with
 its own degrees of freedom (rather than a fixed function of the metric), TEP
 unifies the "stack" into a single framework. The "dark matter" anomaly is
-simply the observation that this field has spatial gradients.
+the observation that this field has spatial gradients.
 
 ### 6.2 CMB Lensing and the Integrated Sachs-Wolfe Constraint
 
@@ -1248,12 +1240,12 @@ profile—a constraint that effectively fixes the relationship between
 
 #### 6.2.3 Parameter Space Constraints
 
-Combining ISW and CMB lensing constraints with the Vainshtein screening
-requirements (Box 4.1) defines a narrow but viable parameter window:
+Combining ISW and CMB lensing constraints with the continuous gradient-suppression
+screening framework (Box 4.1) defines a narrow but viable parameter window:
 
 | Constraint | Requirement | Status |
 | --- | --- | --- |
-| Solar System (Cassini) | \(\alpha_{\text{local}} \lesssim 10^{-5}\) | Satisfied via Vainshtein |
+| Solar System (Cassini) | \(\alpha_{\text{local}} \lesssim 10^{-5}\) | Satisfied via screening |
 | Cluster Lensing | \(\alpha_{\text{halo}} \sim 10^{-1}\) | Required for DM phenomenology |
 | ISW (*Planck*) | \(\partial_t \ln A / H_0 \lesssim 0.1\) | Requires quasi-static \(\phi\) |
 | CMB Lensing | \(\kappa_{\text{refraction}} \propto \kappa_{\text{mass}}\) | Requires \(\alpha \propto \Psi\) scaling |
@@ -1290,7 +1282,7 @@ Solar System (AU): \(\alpha < 10^{-15}\) (Microsecond residuals)
 
 **Mechanism:** The required suppression factor is
 \(10^{10}\). In the continuous geometric framework of Temporal Topology
-(TEP v0.7), the scalar field gradient is suppressed smoothly as a
+(TEP v0.8), the scalar field gradient is suppressed smoothly as a
 function of ambient density, without invoking discrete thin-shell
 boundaries. The non-linear kinetic term in the Galileon Lagrangian
 flattens the field profile continuously in deep potential wells; the
@@ -1362,7 +1354,7 @@ anomaly in \(t\) must be due to extra path length (spatial curvature) or
 extra mass (Shapiro delay). Conclusion: *dark matter* exists.
 
 **TEP Reality:** \(t\) is modulated by the field
-\(\sqrt{A(\phi)}\); \(c\) is effectively variable along the path. The
+\(A(\phi)\); \(c\) is effectively variable along the path. The
 anomaly in \(t\) is due to the scalar field gradient. Conclusion:
 *dark matter* admits the interpretation of variable light speed.
 
@@ -1443,7 +1435,7 @@ assumption.
 | **Source-Dependent Shear**
 (Kinematic noise bias) | **\(S_8\) Tension**
 Galaxy lensing (\(S_8 \approx 0.79\)) consistently lower
-than static CMB (\(S_8 \approx 0.83\)). | **Strong Support** |
+than static CMB (\(S_8 \approx 0.83\)). | **Motivating Consistency** |
 | **Mass-Sheet Degeneracy**
 (Temporal vs Spatial) | **\(H_0\) Tension**
 Time-delay cosmography (\(H_0 \approx 73\)) conflicts with
@@ -1463,9 +1455,10 @@ provides a unified explanation for *existing* anomalies that
 ### 6.8 The Path Forward
 
 The analysis suggests that
-*dark matter phenomenology can be reproduced without a substance*.
-What exists is a temporal field with spatial gradients, and what has been
-measured as "dark matter" is the projection of those gradients onto
+*some dark-matter phenomenology may be reproducible without a new substance*,
+if temporal-composite projection effects survive the proposed time-domain tests.
+What may exist is a temporal field with spatial gradients, and some of what has been
+inferred as "dark matter" may be the projection of those gradients onto
 observations that assume temporal synchrony. To maintain the particle
 interpretation, it is necessary to demonstrate that the universe is
 synchronous to a precision that excludes TEP effects. TEP offers a geometric
@@ -1503,7 +1496,7 @@ dilation onto the spatial image plane.
 gradient in proper-time accumulation across an image plane acts as a
 "temporal shear" on evolving sources. In a static reconstruction, this
 is mathematically indistinguishable from the gravitational shear of a
-dark matter halo. The "dark sector" may simply be the difference between
+dark matter halo. The "dark sector" may be the difference between
 the gravitational metric (which guides orbits) and the matter metric
 (which guides clocks).
 
@@ -1513,10 +1506,9 @@ component of the metric coupling preserves null cones, it is
 *invisible* to differential speed-of-gravity tests. Photons and
 gravitational waves share the common-mode dilation. While GW170817
 constrains disformal propagation speeds to \(|c_\gamma - c_g|/c \lesssim
-10^{-15}\), it leaves the conformal "rate of time" unconstrained. We
-demonstrate that conformal gradients can reproduce specific aspects of
-dark matter phenomenology—particularly coherent lensing shear and
-time-domain signatures—subject to Vainshtein screening constraints that
+10^{-15}$, it does not directly constrain common-mode conformal clock-rate structure along the shared path, although conformal scalar sectors remain indirectly constrained by PPN, equivalence-principle, source-screening, and clock-comparison tests. The analysis demonstrates that conformal gradients may reproduce specific timing-sensitive aspects of
+dark-matter-like phenomenology—particularly coherent lensing shear and
+time-domain signatures—subject to continuous gradient-suppression screening that
 ensure consistency with Solar System tests.
 
 **A New Observational Era:** Two regimes for testing TEP
@@ -1551,6 +1543,9 @@ attributed to a particulate dark sector can be reinterpreted as the
 projection of two-metric time transport onto inference pipelines that assume
 isochrony. The anomalies are real; the claim is that their standard "missing
 mass" interpretation is not unique once the Isochrony Axiom is relaxed.
+
+The dark sector is thus reinterpreted not as an invisible substance, but as the
+shadow of temporal transport.
 
 The observational program outlined herein—time-domain lensing of fast
 transients, precision strong-lens residual timing, and
@@ -1688,35 +1683,33 @@ J. 2012, *A&A*, 544, A62
 
 Smette, A., Surdej, J., et al. 1992, *ApJ*, 389, 39
 
-Smawfield, M. L. (2025a).
-Temporal Equivalence Principle: Dynamic Time & Emergent Light
-Speed. Zenodo. DOI:
-10.5281/zenodo.16921911
-(Paper 0: Theory)
+Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.8 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
 
-Smawfield, M. L. (2025b).
-Global Time Echoes: Distance-Structured Correlations in GNSS
-Clocks. Zenodo. DOI:
-10.5281/zenodo.17127229
-(Paper 1: Multi-Center)
+Smawfield, M. L. (2025). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Preprint v0.25 (Jaipur). Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1)
 
-Smawfield, M. L. (2025c).
-Global Time Echoes: 25-Year Temporal Evolution of
-Distance-Structured Correlations in GNSS Clocks. Zenodo. DOI:
-10.5281/zenodo.17517141
-(Paper 2: Longspan)
+Smawfield, M. L. (2025). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.18 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2)
 
-Smawfield, M. L. (2025d).
-Global Time Echoes: Raw RINEX Validation of Distance-Structured
-Correlations in GNSS Clocks. Zenodo. DOI:
-10.5281/zenodo.17860166
-(Paper 3: Raw RINEX)
+Smawfield, M. L. (2025). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.5 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3)
 
-Smawfield, M. L. (2025e).
-Temporal-Spatial Coupling in Gravitational Lensing: A
-Reinterpretation of Dark Matter Observations. Zenodo. DOI:
-10.5281/zenodo.17982540
-(Paper 4: This Work)
+Smawfield, M. L. (2025). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.5 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4 — this work)
+
+Smawfield, M. L. (2025). *Global Time Echoes: Empirical Synthesis*. Preprint v0.4 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
+
+Smawfield, M. L. (2025). *Universal Critical Density: Cross-Scale Consistency of ρ_T*. Preprint v0.3 (New Delhi). Zenodo. DOI: [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365) (Paper 6)
+
+Smawfield, M. L. (2025). *The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate*. Preprint v0.3 (Blantyre). Zenodo. DOI: [10.5281/zenodo.18059250](https://doi.org/10.5281/zenodo.18059250) (Paper 7)
+
+Smawfield, M. L. (2025). *Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging*. Preprint v0.3 (Mombasa). Zenodo. DOI: [10.5281/zenodo.18064581](https://doi.org/10.5281/zenodo.18064581) (Paper 8)
+
+Smawfield, M. L. (2025). *What Do Precision Tests of General Relativity Actually Measure?*. Preprint v0.3 (Istanbul). Zenodo. DOI: [10.5281/zenodo.18109760](https://doi.org/10.5281/zenodo.18109760) (Paper 9)
+
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars*. Preprint v0.6 (Caracas). Zenodo. DOI: [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) (Paper 10)
+
+Smawfield, M. L. (2026). *The Cepheid Bias: Resolving the Hubble Tension*. Preprint v0.6 (Kingston upon Hull). Zenodo. DOI: [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) (Paper 11)
+
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies*. Preprint v0.4 (Kos). Zenodo. DOI: [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) (Paper 12)
+
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries*. Preprint v0.3 (Kilifi). Zenodo. DOI: [10.5281/zenodo.19102061](https://doi.org/10.5281/zenodo.19102061) (Paper 13)
 
 Tie, S. S., & Kochanek, C. S. 2018, *MNRAS*, 473, 80
 (arXiv:1707.01908)
@@ -1744,7 +1737,7 @@ Zwicky, F. 1933, *Helv. Phys. Acta*, 6, 110
 **Affiliation:** Independent Researcher
 
 **Email:**
-matthewsmawfield@gmail.com
+matthew@mlsmawfield.com
 
 **ORCID:**
 [0009-0003-8219-3159](https://orcid.org/0009-0003-8219-3159)
@@ -1755,7 +1748,7 @@ github.com/matthewsmawfield
 **License:** This work is licensed under a
 Creative Commons Attribution 4.0 International License.
 
-Version: v0.4 (Tortola) · Last updated: 24 April 2026
+Version: v0.5 (Tortola) · Last updated: 29 April 2026
 
 ## Data Availability & Reproducibility
 
@@ -1847,23 +1840,23 @@ The TEP-GL framework derives from three foundational postulates:
 
 ### A.1 Proof of Null Cone Invariance in the Conformal Limit
 
-**Proposition:** If two metrics are conformally related by \(\tilde{g}_{\mu\nu} = A(\phi) g_{\mu\nu}\), they share the same null geodesics as unparameterized curves.
+**Proposition:** If two metrics are conformally related by \(\tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu}\), they share the same null geodesics as unparameterized curves.
 
 **Proof:**
 
 Let \(k^\mu = dx^\mu / d\lambda\) be a null vector in \(g_{\mu\nu}\), satisfying \(g_{\mu\nu}k^\mu k^\nu = 0\) and the geodesic equation \(k^\nu \nabla_\nu k^\mu = 0\) (where \(\nabla\) is the Levi-Civita connection of \(g\)).
 
 In the metric \(\tilde{g}_{\mu\nu}\), the null condition holds immediately:
-$\tilde{g}_{\mu\nu} k^\mu k^\nu = A g_{\mu\nu} k^\mu k^\nu = 0$
+$\tilde{g}_{\mu\nu} k^\mu k^\nu = A^2(\phi) g_{\mu\nu} k^\mu k^\nu = 0$
 The connection coefficients \(\tilde{\Gamma}^\lambda_{\mu\nu}\) for \(\tilde{g}\) are related to \(\Gamma^\lambda_{\mu\nu}\) by:
 
-$\tilde{\Gamma}^\lambda_{\mu\nu} = \Gamma^\lambda_{\mu\nu} + \frac{1}{2}(\delta^\lambda_\mu \partial_\nu \ln A + \delta^\lambda_\nu \partial_\mu \ln A - g_{\mu\nu} g^{\lambda\sigma} \partial_\sigma \ln A)$
+$\tilde{\Gamma}^\lambda_{\mu\nu} = \Gamma^\lambda_{\mu\nu} + \delta^\lambda_\mu \partial_\nu \ln A(\phi) + \delta^\lambda_\nu \partial_\mu \ln A(\phi) - g_{\mu\nu} g^{\lambda\sigma} \partial_\sigma \ln A(\phi)$
 Substituting this into the geodesic equation for \(\tilde{g}\):
 
-$k^\nu \tilde{\nabla}_\nu k^\mu = k^\nu \nabla_\nu k^\mu + \frac{1}{2}(2 k^\mu k^\nu \partial_\nu \ln A - g_{\nu\sigma} k^\nu k^\sigma \dots)$
+$k^\nu \tilde{\nabla}_\nu k^\mu = k^\nu \nabla_\nu k^\mu + 2 k^\mu k^\nu \partial_\nu \ln A(\phi) - g_{\nu\sigma} k^\nu k^\sigma \dots$
 Since \(k\) is null (\(g_{\nu\sigma}k^\nu k^\sigma = 0\)) and \(k^\nu \nabla_\nu k^\mu = 0\), this yields:
 
-$k^\nu \tilde{\nabla}_\nu k^\mu = (k^\nu \partial_\nu \ln A) k^\mu$
+$k^\nu \tilde{\nabla}_\nu k^\mu = 2(k^\nu \partial_\nu \ln A(\phi)) k^\mu$
 This is the geodesic equation with a non-affine parameterization (\(Dk/d\lambda \propto k\)). Thus, the curve is a geodesic of \(\tilde{g}\), differing only by the parameterization (the clock rate). \(\square\)
 
 ---

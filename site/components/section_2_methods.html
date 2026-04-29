@@ -227,7 +227,7 @@ flowchart LR
 
 <div>
     <h5>Multi-Mode Processing Strategy</h5>
-    <p>Each RINEX file is processed in four modes to enable comprehensive cross-validation. This multi-mode approach is a validation strategy: if TEP is real, ALL modes should show similar correlation lengths (λ). If TEP were an artifact of a specific processing method, different modes would produce different signatures.</p>
+    <p>Each RINEX file is processed in four modes to enable comprehensive cross-validation. This multi-mode approach is a validation strategy: if TEP is real, ALL modes should show similar Temporal Topology correlation lengths (λ<sub>T</sub>). If TEP were an artifact of a specific processing method, different modes would produce different signatures.</p>
     <table>
         <tr><th>Mode</th><th>Frequencies</th><th>Systems</th><th>Ephemeris</th><th>Ionosphere</th><th>Purpose</th></tr>
         <tr><td>Baseline</td><td>L1 only</td><td>GPS</td><td>Broadcast</td><td>Klobuchar model</td><td>Reference (simplest processing)</td></tr>
@@ -240,7 +240,7 @@ flowchart LR
     <ul>
         <li>Baseline: GPS-only SPP with broadcast ephemeris and Klobuchar ionosphere model. This is the reference mode using the simplest processing chain.</li>
         <li>Ionofree: GPS SPP with dual-frequency (L1+L2) ionosphere-free linear combination. Eliminates ~99% of first-order ionospheric delay. If TEP were an ionospheric artifact, it would disappear in this mode.</li>
-        <li>Multi-GNSS: Combined GPS+GLONASS+Galileo+BeiDou processing. Each constellation has different clock technologies (GPS: Rb/Cs, Galileo: H-maser, GLONASS: Cs, BeiDou: Rb) and orbital altitudes. If TEP were constellation-specific, this mode would show different λ.</li>
+        <li>Multi-GNSS: Combined GPS+GLONASS+Galileo+BeiDou processing. Each constellation has different clock technologies (GPS: Rb/Cs, Galileo: H-maser, GLONASS: Cs, BeiDou: Rb) and orbital altitudes. If TEP were constellation-specific, this mode would show different λ<sub>T</sub>.</li>
         <li>Precise: GPS SPP using IGS precise orbit and clock products (SP3 files) instead of broadcast ephemeris. This removes satellite orbit errors (~2m broadcast → ~2cm precise) and satellite clock errors (~2ns broadcast → ~0.1ns precise). If TEP were caused by broadcast ephemeris errors, it would disappear in this mode.</li>
     </ul>
     
@@ -249,7 +249,7 @@ flowchart LR
     <p>$$L_{IF} = \frac{f_1^2}{f_1^2 - f_2^2} L_1 - \frac{f_2^2}{f_1^2 - f_2^2} L_2 \approx 2.546 \, L_1 - 1.546 \, L_2$$</p>
     <p>where $f_1 = 1575.42$ MHz (L1) and $f_2 = 1227.60$ MHz (L2). This combination removes the ionospheric delay but amplifies receiver thermal noise by a factor of approximately 3× due to the large coefficients (Kaplan & Hegarty, 2017; Misra & Enge, 2011):</p>
     <p>$$\sigma_{IF} = \sqrt{(2.546)^2 + (1.546)^2} \, \sigma_{L1} \approx 2.98 \, \sigma_{L1}$$</p>
-    <p>This noise penalty is a fundamental trade-off in dual-frequency GNSS processing. The ionofree mode is critical for validation: if correlations were purely ionospheric, they would disappear in this mode. Instead, longer correlation lengths are observed (λ = 1,072 km vs 727 km), which is less consistent with a purely ionospheric artifact.</p>
+    <p>This noise penalty is a fundamental trade-off in dual-frequency GNSS processing. The ionofree mode is critical for validation: if correlations were purely ionospheric, they would disappear in this mode. Instead, longer Temporal Topology correlation lengths are observed (λ<sub>T</sub> = 1,072 km vs 727 km), which is less consistent with a purely ionospheric artifact.</p>
 </div>
 
 <h4>2.3.2 Time Series Extraction</h4>
@@ -293,7 +293,7 @@ flowchart LR
     <ul>
         <li>Directly measures temporal fluctuations at the receiver</li>
         <li>Shows strongest directional anisotropy (E-W/N-S ≈ 1.22 at short distances)</li>
-        <li>Correlation length λ ≈ 700–1,100 km matches theoretical TEP scales</li>
+        <li>Temporal Topology correlation length λ<sub>T</sub> ≈ 700–1,100 km matches theoretical TEP scales</li>
     </ul>
 </div>
 
@@ -481,13 +481,13 @@ $$C_{ij} = \frac{\left| \sum_{t} A_i(t) \cdot A_j(t) \cdot e^{i\Delta\phi_{ij}(t
 <p>Coherence values were binned by inter-station distance and fit to an exponential decay model:</p>
 
 <div class="equation">
-$$C(r) = A \cdot \exp(-r/\lambda) + C_0$$
+$$C(r) = A \cdot \exp(-r/\lambda_T) + C_0$$
 </div>
 
 <p>Where:</p>
 <ul>
     <li>$A$ = amplitude (coherence at $r=0$ minus offset)</li>
-    <li>$\lambda$ = correlation length (km) — the key TEP parameter</li>
+    <li>$\lambda_T$ = Temporal Topology correlation length (km) — the key TEP parameter</li>
     <li>$C_0$ = asymptotic offset (noise floor)</li>
 </ul>
 
@@ -520,7 +520,7 @@ $$C(r) = A \cdot \exp(-r/\lambda) + C_0$$
     <p>Fits where parameters converge to the imposed bounds are flagged as <em>boundary-hit</em>. These fits should be interpreted with caution:</p>
     <ul>
         <li>Amplitude (A): bounds [0.01, 2.0]</li>
-        <li>Correlation length (λ): bounds [100, 20000] km</li>
+        <li>Temporal Topology Correlation length (λ<sub>T</sub>): bounds [100, 20000] km</li>
         <li>Offset (C<sub>0</sub>): bounds [−1.0, 1.0]</li>
     </ul>
     <p>A boundary-hit typically indicates the exponential model is poorly constrained for that subset (e.g., insufficient distance range or dominated by short-range noise).</p>

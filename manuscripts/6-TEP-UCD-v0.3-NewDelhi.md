@@ -1,35 +1,34 @@
-# Universal Critical Density: Unifying Scales
+# Universal Critical Density: Cross-Scale Consistency of ρ_T
 Matthew Lukin Smawfield
-Version: v0.2 (New Delhi)
-First published: 28 December 2025 · Last updated: 24 April 2026
-DOI: 10.5281/zenodo.18064366
+Version: v0.3 (New Delhi)
+First published: 28 December 2025 · Last updated: 29 April 2026
+DOI: 10.5281/zenodo.18064365
 
 ---
 
 ## Abstract
 
-Dark matter observations across cosmological scales exhibit a striking
+Dark matter observations across cosmological scales exhibit a
 regularity: the characteristic radius at which Newtonian dynamics fails
 scales as $R \propto M^{1/3}$, implying a universal critical density
-$\rho_c$. This scaling appears in galaxy rotation curves (SPARC
+$\rho_T$. This scaling appears in galaxy rotation curves (SPARC
 database), ultra-diffuse galaxies (DF2/DF4), the Milky Way's Keplerian
 transition, and compact object phenomena (magnetar anti-glitches). This
-pattern is shown to reflect a fundamental saturation scale in the
+pattern is interpreted within TEP as a candidate saturation scale in the
 conformal time-field sector of the Temporal Equivalence Principle (TEP),
-where gravitational solitons form at a characteristic density threshold.
+where field saturation occurs at a characteristic density \(\rho_T\); a soliton interpretation is one candidate microscopic realization.
 
 Terrestrial calibration—derived from a newly identified
 distance-structured correlation in GNSS atomic clocks—provides an
-independent measurement of this scale. Multi-center analysis (CODE, IGS,
+empirical anchor. Multi-center analysis (CODE, IGS,
 ESA) reveals correlations with characteristic length $L_c \approx 4200$
-km for Earth's mass ($M_\oplus \approx 6 \times 10^{27}$ g), implying
-$\rho_c \approx 20$ g/cm³. This calibration exhibits 25-year temporal
+km for Earth's mass ($M_\oplus \approx 6 \times 10^{27}$ g). The
+characteristic length $L_c$ is interpreted as the Temporal Topology saturation radius
+for Earth's mass; a soliton interpretation is one candidate microscopic
+realization, not assumed in the calibration. This implies
+$\rho_T \approx 20$ g/cm³. This calibration exhibits 25-year temporal
 stability and survives raw RINEX validation, strongly constraining
-processing-artifact explanations. The derived density scale is
-independently constrained by atomic physics: requiring the soliton
-radius to reproduce the Bohr radius at the proton mass scale ($R_{\rm
-sol}(m_p) \sim a_0$) yields $\rho_c \sim 10$–$50$ g/cm³, consistent with
-the GNSS measurement.
+processing-artifact explanations.
 
 Galactic-scale validation comes from the SPARC rotation curve database
 (175 galaxies). The empirical dark matter onset scaling is $\alpha =
@@ -37,15 +36,15 @@ Galactic-scale validation comes from the SPARC rotation curve database
 $2\sigma$. Gaia DR3 analyses report evidence consistent with a
 Keplerian-like decline near $R \approx 19$ kpc in the Milky Way, broadly
 consistent with the predicted transition scale. For ultra-diffuse
-galaxies DF2 and DF4, the model predicts soliton radii exceeding tidal
+galaxies DF2 and DF4, the model predicts Temporal Topology saturation radii exceeding tidal
 radii, consistent with observed dark matter deficiency via tidal
 stripping of the scalar field envelope.
 
 Temporal Topology screening resolves the apparent conflict with
 precision GR tests. Analysis of 26 astrophysical objects spanning 15
 orders of magnitude in density reveals an empirical scaling $S \propto
-\rho^{0.334}$ ($R^2 = 0.9999$), confirming the predicted $\rho^{1/3}$
-dependence. At nuclear densities (binary pulsars: $\rho \sim 10^{14}$
+\rho^{0.334}$ ($R^2 = 0.9999$), consistent with the predicted $\rho^{1/3}$
+organization. At nuclear densities (binary pulsars: $\rho \sim 10^{14}$
 g/cm³), screening factors exceed $S > 30{,}000$, suppressing scalar
 contributions to less than 0.003% of orbital dynamics. This hierarchy
 explains why Solar System tests, binary pulsar timing, and gravitational
@@ -54,23 +53,23 @@ wave observations show no deviation from GR, while galactic dynamics
 effects.
 
 Compact object consistency is assessed using magnetar anti-glitches. For
-a canonical neutron star mass ($M \approx 1.4 M_\odot$) and $\rho_c
+a canonical neutron star mass ($M \approx 1.4 M_\odot$) and $\rho_T
 \approx 20$ g/cm³, the model predicts a critical spin period $P_{\rm
-crit} \approx 6.8$ s, below which the soliton radius exceeds the stellar
+crit} \approx 6.8$ s, below which the saturation radius exceeds the stellar
 radius. The magnetar 1E 2259+586 ($P = 6.98$ s) exhibits anti-glitch
 behavior, consistent with this threshold within 4%.
 
-The saturation density $\rho_c \approx 20$ g/cm³ emerges as a candidate
-universal organizing parameter, supported by consistency across 40
-orders of magnitude in mass (proton to galaxy cluster) and 15 orders of
-magnitude in density (cosmological voids to neutron stars), within
-stated uncertainties. This externally calibrated value enables tightly
+The saturation density $\rho_T \approx 20$ g/cm³ emerges as a candidate
+universal saturation scale of the temporal-field topology — not an
+ambient-density switch — supported by cross-scale consistency across 40
+orders of magnitude in mass (proton to galaxy cluster), within
+stated uncertainties and pending full dependency audit. This externally calibrated value enables tightly
 constrained astrophysical applications, including the RBH-1 runaway
-black hole candidate (companion paper). The convergence of terrestrial,
-galactic, and compact object constraints on a single density scale
-suggests a fundamental connection between quantum mechanics (Bohr
-radius), atomic timekeeping (GNSS), and cosmological structure formation
-(dark matter).
+black hole candidate (companion paper).
+
+The $\rho^{1/3}$ hierarchy is a consistency relation induced by the
+$R_T(M)$ construction; it is not, by itself, an independent discriminator
+of microscopic screening mechanism.
 
 *Keywords:* dark matter – gravitation – scalar fields – galaxies:
 kinematics and dynamics – pulsars: individual (1E 2259+586) – Galaxy:
@@ -80,17 +79,17 @@ kinematics and dynamics – temporal equivalence principle
 
 ## The Universal Scaling Anomaly
 
-Dark matter observations across cosmological scales reveal a striking empirical regularity. From dwarf galaxies ($M \sim 10^9 M_\odot$) to galaxy clusters ($M \sim 10^{15} M_\odot$), the characteristic radius at which Newtonian dynamics fails—the "dark matter onset"—scales approximately as $R \propto M^{1/3}$. This implies a universal critical density $\rho_c \sim M/R^3 \sim \text{constant}$ at which gravitational phenomenology changes.
+Dark matter observations across cosmological scales reveal an empirical regularity. From dwarf galaxies ($M \sim 10^9 M_\odot$) to galaxy clusters ($M \sim 10^{15} M_\odot$), the characteristic radius at which Newtonian dynamics fails—the "dark matter onset"—scales approximately as $R \propto M^{1/3}$. This implies a universal critical density $\rho_T \sim M/R^3 \sim \text{constant}$ at which gravitational phenomenology changes.
 
 This scaling appears in multiple independent contexts:
 
 - **Galaxy rotation curves:** SPARC database analysis yields $R_{\text{DM}} \propto M^{0.354 \pm 0.014}$ (Lelli et al. 2016; this work).
 
-- **Ultra-diffuse galaxies:** DF2 and DF4 exhibit dark matter deficiency consistent with soliton radii exceeding tidal radii (van Dokkum et al. 2018, 2019).
+- **Ultra-diffuse galaxies:** DF2 and DF4 exhibit dark matter deficiency consistent with saturation radii exceeding tidal radii (van Dokkum et al. 2018, 2019).
 
 - **Milky Way:** Gaia DR3 analyses report evidence consistent with a Keplerian-like decline at $R \approx 19$ kpc, consistent with $M^{1/3}$ scaling (Gaia Collaboration 2023).
 
-- **Compact objects:** Magnetar anti-glitches occur near a critical spin period $P_{\text{crit}} \sim 7$ s, consistent with soliton formation at neutron star densities (Archibald et al. 2013).
+- **Compact objects:** Magnetar anti-glitches occur near a critical spin period $P_{\text{crit}} \sim 7$ s, consistent with field saturation at neutron star densities (Archibald et al. 2013).
 
 The persistence of this $M^{1/3}$ scaling across 6 orders of magnitude in mass and 15 orders of magnitude in density suggests a fundamental physical scale, not a coincidence of baryonic feedback or halo assembly.
 
@@ -100,64 +99,61 @@ The Temporal Equivalence Principle (TEP) proposes that gravitational phenomena a
 
 $ S = \int d^4x \sqrt{-g} \left[ \frac{M_{\text{Pl}}^2}{2} R - \frac{1}{2}(\partial \phi)^2 - V(\phi) \right] + S_m[\tilde{g}_{\mu\nu}] $
 
-where matter couples to the Jordan frame metric $\tilde{g}_{\mu\nu} = A(\phi) g_{\mu\nu} + B(\phi) \nabla_\mu\phi \nabla_\nu\phi$. At late times, $B(\phi)$ is strongly constrained by multi-messenger observations and can be neglected, yielding $\tilde{g}_{\mu\nu} \approx A(\phi) g_{\mu\nu}$ with $A(\phi) = \exp(2\beta \phi/M_{\text{Pl}})$. The scalar saturation potential $V(\phi)$ prevents the gradient from diverging, leading to soliton formation at characteristic density $\rho_c$. In this framework, the "dark matter" problem is reinterpreted as a violation of the *isochrony axiom*—the assumption that clocks at the same gravitational potential tick at the same rate regardless of their spatial separation or the mass distribution's history.
+where matter couples to the Jordan frame metric $\tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu} + B(\phi) \nabla_\mu\phi \nabla_\nu\phi". At late times, $B(\phi)$ is strongly constrained by multi-messenger observations and can be neglected, yielding $\tilde{g}_{\mu\nu} \approx A^2(\phi) g_{\mu\nu}$ with $A(\phi) = \exp(\beta \phi/M_{\text{Pl}})$. The scalar saturation potential $V(\phi)$ prevents the gradient from diverging, leading to field saturation at characteristic density $\rho_T$. In this framework, the "dark matter" problem is reinterpreted as a violation of the *isochrony axiom*—the assumption that clocks at the same gravitational potential tick at the same rate regardless of their spatial separation or the mass distribution's history.
 
 When this axiom is relaxed, gravitational lensing and dynamical mass estimates diverge. Light propagation depends on the *integrated* time dilation along the null geodesic, while orbital dynamics depend on the *local* time gradient. This creates "phantom mass"—an apparent excess in lensing mass relative to dynamical mass—without invoking non-baryonic particles.†
 
 †*Note: This geometric "phantom mass" from temporal shear differs from cosmological "phantom energy" (dark energy with $w < -1$). The former arises from spatial gradients in proper time; the latter from exotic equation-of-state matter.*
 
-The characteristic scale at which this temporal structure becomes significant is set by the saturation density $\rho_c$, where the scalar field $\phi$ reaches its self-interaction threshold and forms a gravitational soliton—a stable, localized configuration with radius:
+The characteristic scale at which this temporal structure becomes significant is set by the saturation density $\rho_T$, where the scalar field $\phi$ reaches its self-interaction threshold and saturates—forming a stable, localized configuration (a soliton under that interpretation) with radius:
 
-$ R_{\text{sol}} = \left( \frac{3M}{4\pi \rho_c} \right)^{1/3} $
+$ R_T = \left( \frac{3M}{4\pi \rho_T} \right)^{1/3} $
 
-This $M^{1/3}$ scaling is a direct consequence of the soliton formation condition, not a fitted parameter.
+This $M^{1/3}$ scaling is a direct consequence of the saturation condition; under a soliton interpretation, this corresponds to soliton formation.
 
 ## The Multi-Scale Validation Strategy
 
-This paper establishes $\rho_c$ through a convergent multi-scale approach:
+This paper establishes $\rho_T$ through a convergent multi-scale approach:
 
-### Table 1: Cross-Scale Validation of $\rho_c$
+### Table 1: Cross-Scale Validation of $\rho_T$
 
 | Scale | System | Mass Range | Density Range | Key Observable | Result |
 | --- | --- | --- | --- | --- | --- |
-| **Terrestrial** | GNSS Clocks | $M_\oplus \sim 6 \times 10^{27}$ g | $\rho_\oplus \sim 5.5$ g/cm³ | $L_c \approx 4200$ km | $\rho_c \approx 20$ g/cm³ |
-| **Atomic** | Bohr Radius | $m_p \sim 10^{-24}$ g | $\rho_{\text{nuc}} \sim 10^{14}$ g/cm³ | $R_{\text{sol}}(m_p) \sim a_0$ | $\rho_c \sim 10$–$50$ g/cm³ |
+| **Terrestrial** | GNSS Clocks | $M_\oplus \sim 6 \times 10^{27}$ g | $\rho_\oplus \sim 5.5$ g/cm³ | $L_c \approx 4200$ km | $\rho_T \approx 20$ g/cm³ |
 | **Compact** | Magnetars | $M \sim 1.4 M_\odot$ | $\rho \sim 10^{14}$ g/cm³ | $P_{\text{crit}} \approx 6.8$ s | 1E 2259+586: 4% match |
 | **Galactic** | SPARC Galaxies | $10^9$–$10^{12} M_\odot$ | $\rho \sim 10^{-24}$ g/cm³ | $R_{\text{DM}} \propto M^\alpha$ | $\alpha = 0.354 \pm 0.014$ |
 | **Local** | Milky Way | $M \sim 10^{12} M_\odot$ | $\rho \sim 10^{-24}$ g/cm³ | Keplerian transition | $R \approx 19$ kpc (scale-consistency check) |
 | **Screening** | 26 Objects | $10^{-24}$–$10^{33}$ g | $10^{-24}$–$10^{14}$ g/cm³ | $S \propto \rho^\beta$ | $\beta = 0.334$ ($R^2 = 0.9999$) |
 
-*Note: The convergence of independent constraints across 40 orders of magnitude in mass suggests $\rho_c$ is a fundamental physical scale, not a fitted parameter.*
+*Note: The convergence of constraints across 40 orders of magnitude in mass motivates $\rho_T$ as a candidate saturation scale; full dependency audit pending.*
 
 ## Paper Structure
 
 The remainder of this paper is organized as follows:
 
-- **Section 2:** Terrestrial calibration via GNSS atomic clock correlations, establishing $L_c \approx 4200$ km → $\rho_c \approx 20$ g/cm³.
+- **Section 2:** Terrestrial calibration via GNSS atomic clock correlations, establishing $L_c \approx 4200$ km → $\rho_T \approx 20$ g/cm³.
 
 - **Section 3:** Galactic validation via SPARC rotation curves, confirming $M^{1/3}$ scaling.
 
 - **Section 4:** Screening hierarchy analysis, explaining why GR tests pass despite scalar field presence.
 
-- **Section 5:** Atomic boundary condition from Bohr radius, providing independent prior on $\rho_c$.
+- **Section 5:** The Universal Scaling Law, synthesizing constraints across all regimes.
 
-- **Section 6:** The Universal Scaling Law, synthesizing constraints across all regimes.
+- **Section 6:** Compact object test via magnetar anti-glitches at $P_{\text{crit}} \approx 6.8$ s.
 
-- **Section 7:** Compact object test via magnetar anti-glitches at $P_{\text{crit}} \approx 6.8$ s.
+- **Section 7:** Milky Way Keplerian transition at $R \approx 19$ kpc.
 
-- **Section 8:** Milky Way Keplerian transition at $R \approx 19$ kpc.
+- **Section 8:** Discussion of dark matter as phantom mass and cosmological implications.
 
-- **Section 9:** Discussion of dark matter as phantom mass and cosmological implications.
+- **Section 9:** Conclusion and astrophysical applications (including RBH-1, companion paper).
 
-- **Section 10:** Conclusion and astrophysical applications (including RBH-1, companion paper).
-
-This multi-scale convergence establishes $\rho_c \approx 20$ g/cm³ as an externally calibrated parameter (with explicit systematic uncertainty), enabling sharply constrained astrophysical applications such as the RBH-1 runaway black hole candidate (Smawfield 2025h, Paper 7).
+This multi-scale convergence establishes $\rho_T \approx 20$ g/cm³ as an externally calibrated parameter (with explicit systematic uncertainty), enabling sharply constrained astrophysical applications such as the RBH-1 runaway black hole candidate (Smawfield 2025h, Paper 7).
 
 ## 2. Terrestrial Calibration: GNSS Atomic Clock Correlations
 
 ## Distance-Structured Correlations in Atomic Clocks
 
-The first empirical constraint on $\rho_c$ comes from terrestrial atomic clock networks. Multi-center analysis of GNSS (Global Navigation Satellite System) clock products reveals distance-structured correlations with a characteristic length scale $L_c \approx 4200$ km for Earth's mass. Operationally, $L_c$ denotes the best-fit exponential decay length recovered by fitting clock-residual covariance versus inter-station separation (see Appendix A). Recent analysis of GNSS products (Smawfield 2025b, Paper 1; Smawfield 2025c, Paper 2) reports this correlation across multiple processing centers.
+The first empirical constraint on $\rho_T$ comes from terrestrial atomic clock networks. Multi-center analysis of GNSS (Global Navigation Satellite System) clock products reveals distance-structured correlations with a characteristic length scale $L_c \approx 4200$ km for Earth's mass. Operationally, $L_c$ denotes the best-fit exponential decay length recovered by fitting clock-residual covariance versus inter-station separation (see Appendix A). Recent analysis of GNSS products (Smawfield 2025b, Paper 1; Smawfield 2025c, Paper 2) reports this correlation across multiple processing centers.
 
 These correlations exhibit seven independent signatures:
 
@@ -175,19 +171,19 @@ These correlations exhibit seven independent signatures:
 
 - **Raw RINEX validation:** Pattern survives in unprocessed Single Point Positioning (SPP) analysis, strongly constraining processing artifacts (Smawfield 2025d, Paper 3).
 
-## Derivation of $\rho_c$ from $L_c$
+## Derivation of $\rho_T$ from $L_c$
 
-The characteristic length $L_c$ is interpreted as the soliton radius for Earth's mass. For a spherical mass distribution, the soliton radius is:
+The characteristic length $L_c$ is interpreted as the Temporal Topology saturation radius for Earth's mass. For a spherical mass distribution, the saturation radius is:
 
-$ R_{\text{sol}} = \left( \frac{3M}{4\pi \rho_c} \right)^{1/3} $
+$ R_T = \left( \frac{3M}{4\pi \rho_T} \right)^{1/3} $
 
-Solving for $\rho_c$:
+Solving for $\rho_T$:
 
-$ \rho_c = \frac{3M}{4\pi R_{\text{sol}}^3} $
+$ \rho_T = \frac{3M}{4\pi R_T^3} $
 
 Substituting $M_\oplus \approx 6 \times 10^{27}$ g and $L_c \approx 4200$ km $\approx 4.2 \times 10^8$ cm:
 
-$ \rho_c = \frac{3 \times (6 \times 10^{27}\,\text{g})}{4\pi \times (4.2 \times 10^8\,\text{cm})^3} \approx 20\,\text{g/cm}^3 $
+$ \rho_T = \frac{3 \times (6 \times 10^{27}\,\text{g})}{4\pi \times (4.2 \times 10^8\,\text{cm})^3} \approx 20\,\text{g/cm}^3 $
 
 ## Systematic Uncertainties
 
@@ -199,7 +195,7 @@ The primary systematic uncertainties are:
 
 - **Mass distribution:** Earth's density profile (core vs. mantle) may affect effective $M$ by $\sim$5%.
 
-Combining in quadrature: $\rho_c = 20 \pm 8$ g/cm³ (40% systematic uncertainty). This range is consistent with independent constraints from atomic physics (Section 5) and provides the calibration scale for all subsequent tests.
+Combining in quadrature: $\rho_T = 20 \pm 8$ g/cm³ (40% systematic uncertainty). This range is consistent with electron degeneracy thresholds (Section 5.2) and provides the calibration scale for all subsequent tests.
 
 ## Discrimination from Geophysical Signals
 
@@ -271,13 +267,13 @@ conventionally attributed to dark matter.
 
 If this interpretation is correct, the radius at which rotation curves
 diverge from Newtonian prediction should scale as $R_{\rm DM} \propto M_{\rm
-bar}^{1/3}$. While the fundamental core saturation occurs at $\rho_c \approx
+bar}^{1/3}$. While the fundamental core saturation occurs at $\rho_T \approx
 20$ g/cm³, the halo transition is governed by a much lower density threshold
 $\rho_{\rm trans}$ characteristic of the diffuse field tail.
 
-**Invariant:** $\rho_c$ denotes the universal saturation
+**Invariant:** $\rho_T$ denotes the universal saturation
 density of the scalar sector that fixes the compact soliton scale via
-$R_{\rm sol} \propto (M/\rho_c)^{1/3}$. By contrast, $\rho_{\rm trans}$ is
+$R_T \propto (M/\rho_T)^{1/3}$. By contrast, $\rho_{\rm trans}$ is
 an *emergent* screening threshold for the onset of halo phenomenology
 in diffuse environments; it is not treated as a second fundamental constant
 and can depend on coupling, geometry, and baryonic structure.
@@ -331,7 +327,7 @@ $R_{\rm DM} = k \cdot M_{\rm bar}^\alpha$ $\alpha \approx 0.35 \pm 0.04
 The marginalized exponent deviates from the TEP prediction of $\alpha = 1/3
 = 0.333$ by approximately 1.0–1.5 standard deviations (depending on
 definition)—consistent within typical statistical tolerance. The correlation
-coefficient $r \approx 0.6$ indicates a highly significant relationship.
+coefficient $r \approx 0.6$ indicates a significant relationship.
 Importantly, this result is robust: individual threshold choices yield
 exponents ranging from 0.28 to 0.42, but the ensemble average converges near
 1/3.
@@ -372,11 +368,11 @@ pc}^3$), providing a physically reasonable anchor for the screening
 mechanism.
 
 *Note:* This galactic transition density $\rho_{\rm trans}$ is
-distinct from the fundamental core saturation density $\rho_c \approx 20$
-g/cm³ derived in Section 5. The core density $\rho_c$ governs the compact
+distinct from the fundamental core saturation density $\rho_T \approx 20$
+g/cm³ derived in Section 5. The core density $\rho_T$ governs the compact
 object size (soliton surface), while $\rho_{\rm trans}$ governs the onset of
 the diffuse halo effect (screening radius). Both scales follow the same
-$M^{1/3}$ structural form, confirming the density-dependent nature of the
+$M^{1/3}$ structural form, consistent with the density-dependent nature of the
 theory across 40 orders of magnitude in density.
 
 ### Connection to the MOND Acceleration Scale
@@ -425,7 +421,7 @@ supports the screening interpretation.
 The SPARC analysis establishes a direct empirical connection between the
 RBH-1 wake phenomenon and galactic dark matter halos:
 
-RBH-1 represents a "naked soliton"—a gravitational soliton not anchored
+RBH-1 represents a "naked saturation"—a Temporal Topology saturation not anchored
 to a baryonic host, propagating freely through the intergalactic medium
 and inducing star formation via its time-dilation wake.
 
@@ -481,11 +477,10 @@ rather than physical feedback. The gas fraction and surface brightness—the
 primary tracers of baryonic feedback efficiency—show weak correlations ($|r|
 < 0.2$) that are either marginally significant or non-significant.
 
-Critically, the central density (screening proxy) shows no significant
+The central density (screening proxy) shows no significant
 correlation ($r = -0.108$, $p = 0.16$).
 The weak correlation with central surface density is consistent
-with
-(though does not by itself prove) a geometric origin: if baryonic feedback
+with (though does not by itself prove) a geometric origin: if baryonic feedback
 were the dominant driver of the scatter in this particular estimator,
 stronger covariance with surface brightness would be expected. The present
 results remain compatible with a substantial contribution from measurement
@@ -541,8 +536,8 @@ scale but an emergent property of halo assembly and feedback history.
 Hydrodynamic simulations (e.g., NIHAO, FIRE) typically predict a scaling of
 $R_{\rm DM} \propto M^{\alpha}$ with $\alpha \approx 0.3$–$0.4$, broadly
 consistent with observation. However, they struggle to explain why the
-normalization aligns with the specific density $\rho_c \approx 20$ g/cm³
-derived from atomic and terrestrial constraints. The "Null Hypothesis" (that
+normalization aligns with the specific density $\rho_T \approx 20$ g/cm³
+derived from GNSS and terrestrial constraints. The "Null Hypothesis" (that
 the $M^{1/3}$ scaling is a feedback coincidence) fails to explain the
 cross-scale convergence with GNSS and magnetar physics.
 
@@ -613,10 +608,10 @@ General Relativity is recovered in the regimes where it has been tested most
 stringently.
 
 The screening factor $S$ quantifies this suppression. It is defined as the
-ratio of the soliton radius (where the scalar field saturates) to the
+ratio of the Temporal Topology saturation radius (where the scalar field saturates) to the
 physical radius of the object:
 
-$S = \frac{R_{sol}}{R_{phys}}$
+$S = \frac{R_T}{R_{phys}}$
 
 The quantity $S$ is used here as a geometric proxy for how deeply the
 baryonic source is embedded within a saturated soliton configuration. When
@@ -625,7 +620,7 @@ saturated field scale; in this regime the phenomenology assumes that
 non-linear response in the scalar sector suppresses gradients in the dense
 interior, recovering GR to high precision in local dynamics. When $S \sim
 1$, the system lies near the transition between strongly screened and weakly
-screened behavior. When $S \ll 1$, the soliton scale is smaller than the
+screened behavior. When $S \ll 1$, the Temporal Topology saturation scale is smaller than the
 object and the saturated region does not envelop the full baryonic
 configuration; in this regime the model does not assume strong Temporal
 Topology suppression a priori, and constraints must be assessed
@@ -637,7 +632,7 @@ White Dwarfs are the ideal stress test for two reasons. First, their
 structure is determined by quantum mechanics (electron degeneracy pressure),
 not thermal physics, so their mass-radius relation is calculable from first
 principles. Second, their mass-radius scaling runs in the opposite direction
-to the soliton scaling (see Figure 3):
+to the saturation scaling (see Figure 3); a soliton interpretation is one candidate microscopic realization:
 
 **White Dwarf (Chandrasekhar):** $R_{WD} \propto M^{-1/3}$
 — heavier stars are smaller
@@ -649,13 +644,12 @@ fields are larger
 
 Figure 3: The "Scissors" Effect. The defining visual signature is the
 divergence of scales: as mass increases, the white dwarf physical radius
-shrinks ($R_{WD} \propto M^{-1/3}$) while the soliton radius grows
+shrinks ($R_{WD} \propto M^{-1/3}$) while the saturation radius grows
 ($R_{sol} \propto M^{1/3}$). This divergence drives the screening factor
-$S = R_{\rm sol}/R_{\rm phys}$ to large values ($S \gg 1$), recovering
+$S = R_T/R_{\rm phys}$ to large values ($S \gg 1$), recovering
 General Relativity within the star.
 
-These opposing scalings create a "scissors" pattern. As mass increases, the
-soliton radius grows while the physical radius shrinks—the screening factor
+These opposing scalings create a "scissors" pattern. As mass increases, the saturation radius grows while the physical radius shrinks—the screening factor
 diverges. This is the signature of Temporal Topology flattening.
 
 For Sirius B ($M \approx 1.02 M_{\odot}$, $\rho \approx 2.4 \times 10^6$
@@ -665,9 +659,9 @@ $R_{phys} \approx 5{,}800 \text{ km} \quad \text{(observed)}$
 
 $R_{sol} \approx 293{,}000 \text{ km} \quad \text{(TEP prediction)}$
 
-$\text{Screening Factor} = \frac{R_{sol}}{R_{phys}} \approx 50\times$
+$\text{Screening Factor} = \frac{R_T}{R_{phys}} \approx 50\times$
 
-The soliton field extends 50 times beyond the physical surface of the star.
+The saturation field extends 50 times beyond the physical surface of the star.
 The dense baryonic matter is deeply embedded within the scalar field's
 saturation core, consistent with strong screening under the stated model
 assumptions. Within the star, GR dynamics are recovered; the Keplerian mass
@@ -683,10 +677,10 @@ with density. A linear regression in log-log space yields:
 $S \propto \rho^{0.334} \quad (R^2 = 0.9999)$
 
 The exponent 0.334 is statistically indistinguishable from 1/3. Under the
-stated definitions, this is the expected scaling: if $R_{sol} \propto
+stated definitions, this is the expected scaling: if $R_T \propto
 M^{1/3}$ and $R_{phys} \propto (M/\rho)^{1/3}$, then:
 
-$S = \frac{R_{sol}}{R_{phys}} = \frac{M^{1/3}}{M^{1/3}/\rho^{1/3}} =
+$S = \frac{R_T}{R_{phys}} = \frac{M^{1/3}}{M^{1/3}/\rho^{1/3}} =
 \rho^{1/3}$
 
 **Principle:**
@@ -695,12 +689,12 @@ $S = \frac{R_{sol}}{R_{phys}} = \frac{M^{1/3}}{M^{1/3}/\rho^{1/3}} =
 
 It is important to recognize that the regression $S \propto
 \rho^{0.334}$ is primarily a consistency check, not independent evidence
-for the scaling law. Since $S \equiv R_{\text{sol}}/R_{\text{phys}}$ and
+for the scaling law. Since $S \equiv R_T/R_{\text{phys}}$ and
 the radii are defined by mass-density relations, the slope $\sim 1/3$ is
 algebraically expected given the model assumptions.
 
 The value of this analysis is not to prove the scaling 'ab initio', but
-to demonstrate that a *single* saturation density $\rho_c$ yields
+to demonstrate that a *single* saturation density $\rho_T$ yields
 a consistent screening hierarchy across 15 orders of magnitude in
 density ($R^2 \approx 1$) without requiring regime-dependent
 adjustments. The high $R^2$ confirms internal consistency; it does not
@@ -719,7 +713,7 @@ characteristic $M^{1/3}$ scaling and screening behavior. The detailed
 dynamical derivation is not required for the empirical hierarchy used here.
 
 The empirical screening law is a direct consequence of the $M^{1/3}$ soliton
-scaling, providing cross-regime consistency under a single $\rho_c$ rather
+scaling, providing cross-regime consistency under a single $\rho_T$ rather
 than independent confirmation (see Note on Interpretation above).
 
 ### 4.3 Complete Screening Hierarchy
@@ -741,7 +735,7 @@ visualized in Figure 4 and tabulated below.
 small and/or below current constraints |
 | Main Sequence Stars | 0.6 – 57 | 0.3 – 1.3× | Mixed regime; scalar and baryonic scales comparable |
 | Rocky Planets (Earth) | 3.3 – 5.5 | 0.56 – 0.66× | Soliton ≈ planet radius; GNSS probes this boundary |
-| Brown Dwarfs | 50 – 77 | 1.4 – 1.6× | Just above $\rho_c$; screening onset begins |
+| Brown Dwarfs | 50 – 77 | 1.4 – 1.6× | Just above $\rho_T$; screening onset begins |
 | White Dwarfs | $10^5$ – $10^6$ | 27 – 50× | Star embedded in soliton; Keplerian mass = baryonic mass |
 | Neutron Stars | $10^{14}$ | 27,000× | Scalar contribution less than 0.004%; pure GR dynamics |
 | Binary Pulsars | $10^{14}$ | 32,000× | GR verified to 0.2%; Nobel Prize 1993 |
@@ -757,7 +751,7 @@ verified to 0.2% precision at screening factors exceeding 30,000×.
 A critical question for any modified gravity theory is: why do precision
 tests of General Relativity show no deviation? Temporal Topology provides
 the answer: the suppression of Temporal Shear (vanishing field gradient)
-reduces the effective coupling in dense environments. The five most precise
+reduces the screened PPN scalar charge $\\alpha_{\\rm PPN}^{\\rm eff}$ in dense environments. The five most precise
 tests of GR all occur in regimes where screening is operative:
 
 | Test | Observable | Precision | Screening Factor | Status |
@@ -786,8 +780,8 @@ The screening hierarchy reveals why Earth is the natural calibration
 point—and why GNSS clocks can detect what neutron stars cannot.
 
 At $\rho \approx 5.5$ g/cm³, Earth sits just below the critical density
-threshold ($\rho_c \approx 20$ g/cm³). The screening factor is 0.66×,
-meaning the soliton radius (4,200 km) is comparable to the physical radius
+threshold ($\rho_T \approx 20$ g/cm³). The screening factor is 0.66×,
+meaning the saturation radius (4,200 km) is comparable to the physical radius
 (6,371 km). Earth occupies the narrow window where:
 
 **The scalar field is not screened:** Unlike neutron stars
@@ -813,33 +807,33 @@ parameter choice.
 
 ### 4.6 The Critical Density Threshold
 
-The empirical data suggest a critical density $\rho_c \approx 20$ g/cm³,
+The empirical data suggest a critical density $\rho_T \approx 20$ g/cm³,
 corresponding to approximately 4× Earth's mean density. This value has
 physical significance: it lies near the onset of electron degeneracy, where
 the equation of state transitions from thermal to quantum pressure support.
 The scalar field appears to couple to this thermodynamic transition.
 
-$\rho < \rho_c: \quad \text{Scalar field active (TEP effects observable)}$
+**Principle:**
 
-$\rho > \rho_c: \quad \text{Temporal Topology saturated (GR recovered)}$
+$\rho_T \approx 20$ g/cm³ is a saturation scale of the temporal-field topology, **not a local on/off switch**. Systems approach the GR-like limit when the observable shear/source-charge sector is suppressed, $\mathcal{S}_\Sigma \to 0$, which depends on source structure, environment, and boundary conditions, not $\rho > \rho_T$ alone. The empirical screening hierarchy $S \propto \rho^{0.334}$ (§4.2) is a smooth power-law across 15 orders of magnitude in density, not a step function at $\rho_T$.
 
 **Principle:**
 
 #### Box 4.1: Summary — Three Cross-Regime Consistency Tests
 
 The screening analysis provides three cross-regime consistency tests of
-the TEP framework under a single $\rho_c$:
+the TEP framework under a single $\rho_T$:
 
-**The RBH-1 Crossover:** The soliton radius is
+**The RBH-1 Crossover:** The saturation radius is
 consistent with the Schwarzschild diameter at $M \approx 10^7
 M_{\odot}$ within combined uncertainties ($\sim 25\%$). This
 provides a tightly constrained cross-regime consistency check under
-the fixed $\rho_c$ calibration.
+the fixed $\rho_T$ calibration.
 
 **The Screening Exponent:** The empirical scaling $S
 \propto \rho^{0.334}$ emerges from data spanning 15 orders of
 magnitude in density, with $R^2 = 0.9999$. The exponent 1/3 is a
-direct consequence of the $M^{1/3}$ soliton scaling.
+direct consequence of the $M^{1/3}$ saturation scaling.
 
 **GR Test Consistency:** All five precision tests of
 General Relativity are explained by screening factors that suppress
@@ -850,73 +844,37 @@ metric structure to include a conformal sector that becomes observable
 only in specific density regimes—such as those probed by GNSS atomic
 clocks and cosmological soliton-scale systems.
 
-## 5. Atomic-Scale Boundary Condition
+## 5. Physical Constraints on \(\rho_T\)
 
 A natural question arises: why does the saturation density take the value
-\(\rho_c \approx 20\) g/cm³? This section argues that \(\rho_c\) is not an
+\(\rho_T \approx 20\) g/cm³? This section argues that \(\rho_T\) is not an
 arbitrary fit parameter but is constrained by independent physical
-requirements. The GNSS coherence length \(L_c\) is a derived quantity; the
+considerations. The GNSS coherence length \(L_c\) is a derived quantity; the
 fundamental parameter is the saturation density itself.
 
-### 5.1 Reframing: \(\rho_c\) as Fundamental, \(L_c\) as Derived
+### 5.1 Reframing: \(\rho_T\) as Fundamental, \(L_c\) as Derived
 
-The soliton scaling law \(R_{sol} \propto M^{1/3}\) implies a constant
+The saturation scaling law \(R_T \propto M^{1/3}\)—where a soliton interpretation is one candidate microscopic realization—implies a constant
 characteristic density:
 
-$\rho_c = \frac{M}{\frac{4}{3}\pi R_{sol}^3} = \text{constant}$
+$\rho_T = \frac{M}{\frac{4}{3}\pi R_T^3} = \text{constant}$
 
-For any object of mass \(M\), the soliton radius is determined by:
+For any object of mass \(M\), the saturation radius is determined by:
 
-$R_{sol}(M) = \left(\frac{3M}{4\pi \rho_c}\right)^{1/3}$
+$R_T(M) = \left(\frac{3M}{4\pi \rho_T}\right)^{1/3}$
 
 The terrestrial coherence length \(L_c \approx 4200\) km is therefore not an
-independent input but follows automatically once \(\rho_c\) is specified:
+independent input but follows automatically once \(\rho_T\) is specified:
 
-$L_{c,\oplus} = \left(\frac{3 M_\oplus}{4\pi \rho_c}\right)^{1/3} \approx
-4200 \text{ km} \quad \text{for } \rho_c \approx 19\text{–}20 \text{
+$L_{c,\oplus} = \left(\frac{3 M_\oplus}{4\pi \rho_T}\right)^{1/3} \approx
+4200 \text{ km} \quad \text{for } \rho_T \approx 19\text{–}20 \text{
 g/cm}^3$
 
-The question thus reduces to: what fixes \(\rho_c\)?
+The question thus reduces to: what physical considerations constrain \(\rho_T\)?
 
-### 5.2 The Bohr Radius Constraint
+### 5.2 The Electron Degeneracy Threshold
 
-A remarkable consistency emerges when the scaling law is extrapolated to the
-proton mass. If the same \(M^{1/3}\) relation holds at quantum scales, then:
-
-$R_{sol}(m_p) = L_{c,\oplus} \times
-\left(\frac{m_p}{M_\oplus}\right)^{1/3}$
-
-Substituting \(L_{c,\oplus} = 4200\) km, \(m_p = 1.67 \times 10^{-27}\) kg,
-and \(M_\oplus = 5.97 \times 10^{24}\) kg:
-
-$R_{sol}(m_p) \approx 4200 \text{ km} \times \left(\frac{1.67 \times
-10^{-27}}{5.97 \times 10^{24}}\right)^{1/3} \approx 2.7 \times 10^{-11}
-\text{ m}$
-
-This value is \(0.51 \, a_0\), where \(a_0 = 5.29 \times 10^{-11}\) m is the
-Bohr radius. The proximity to the atomic scale is striking: the soliton
-radius at the proton mass matches the characteristic size of the hydrogen
-atom to within a factor of two.
-
-**Principle:**
-
-#### Interpretation
-
-If the scalar field is to reproduce atomic-scale physics at the proton
-mass—a natural boundary condition for any theory that couples to
-matter—then, conditional on the persistence of the soliton scaling into
-the quantum regime, the saturation density \(\rho_c\) is not a free
-parameter. It is constrained by the requirement:
-
-$R_{sol}(m_p) \sim a_0$
-
-This constraint determines \(\rho_c\) to within a factor of order unity,
-yielding \(\rho_c \sim 10\text{–}50\) g/cm³. The observed value \(\rho_c
-\approx 20\) g/cm³ lies squarely within this range.
-
-### 5.3 The Electron Degeneracy Threshold
-
-Independent physical significance attaches to \(\rho_c \approx 20\) g/cm³:
+Independent physical significance attaches to \(\rho_T \approx 20\) g/cm³:
 this density marks the transition from thermal to quantum pressure support
 in condensed matter. Below this threshold, ordinary thermal and
 electrostatic forces dominate the equation of state. Above it, electron
@@ -929,7 +887,7 @@ degeneracy pressure becomes the primary support mechanism.
 | \(\rho > 20\) g/cm³ | Electron degeneracy | White dwarfs, neutron star crusts |
 
 Table 5.1: Equation of state transitions by density. The saturation
-density \(\rho_c \approx 20\) g/cm³ coincides with the onset of electron
+density \(\rho_T \approx 20\) g/cm³ coincides with the onset of electron
 degeneracy.
 
 This coincidence is unlikely to be accidental; rather, it suggests that the
@@ -937,39 +895,37 @@ scalar sector may couple fundamentally to the Pauli exclusion principle or
 the quantum state of matter, rather than bulk mass density alone. Temporal
 Topology screening becomes relevant where quantum effects begin to dominate
 the equation of state—this points to a possible connection between
-gravitational soliton formation and quantum statistical mechanics.
+field saturation and quantum statistical mechanics.
 
-### 5.4 Dimensional Analysis: The Scalar Coupling Scale
+### 5.3 Dimensional Analysis: The Scalar Coupling Scale
 
-A characteristic density can be constructed from atomic constants. Consider
+A characteristic density can be constructed from fundamental constants. Consider
 the mass-energy density associated with a scalar field of Compton wavelength
 \(\lambda_\phi\), where \(c\) represents the standard speed of light
 (characterizing the screened matter sector):
 
 $\rho_\phi \sim \frac{m_\phi c^2}{\lambda_\phi^3}$
 
-For the scalar field to couple at atomic scales (\(\lambda_\phi \sim a_0\)),
-the effective mass is \(m_\phi \sim \hbar / (a_0 c) \sim \alpha m_e\), where
-\(\alpha \approx 1/137\) is the fine structure constant. This yields:
+For a scalar field coupling at length scale \(\lambda_\phi\),
+the effective mass is \(m_\phi \sim \hbar / (\lambda_\phi c)\). Taking
+\(\lambda_\phi \sim 10^{-10}\) m (atomic scale) and \(\alpha \approx 1/137\) 
+the fine structure constant yields:
 
 $\rho_\phi \sim \frac{(\alpha m_e)^4 c^5}{\hbar^3} \sim 10^1 \text{
 g/cm}^3$
 
-The order-of-magnitude agreement with \(\rho_c \approx 20\) g/cm³ is
+The order-of-magnitude agreement with \(\rho_T \approx 20\) g/cm³ is
 encouraging. A rigorous derivation from the TEP Lagrangian would pin down
-the numerical prefactor, but the dimensional scaling already indicates that
-the saturation density emerges naturally from atomic physics, not from
+the numerical prefactor, but the dimensional scaling suggests that
+the saturation density may emerge from fundamental quantum scales, not from
 cosmological coincidence.
 
-### 5.5 Status: Phenomenological Constraint, Awaiting Lagrangian Derivation
+### 5.4 Status: Phenomenological Constraint, Awaiting Lagrangian Derivation
 
-The present analysis establishes that \(\rho_c \approx 20\) g/cm³ is
-constrained by three independent requirements:
+The present analysis establishes that \(\rho_T \approx 20\) g/cm³ is
+constrained by two independent physical considerations:
 
-**Bohr radius matching:** \(R_{sol}(m_p) \sim a_0\)
-requires \(\rho_c \sim 10\text{–}50\) g/cm³
-
-**Electron degeneracy onset:** \(\rho_c\) coincides with
+**Electron degeneracy onset:** \(\rho_T\) coincides with
 the quantum-classical EOS transition
 
 **Dimensional analysis:** Scalar coupling at atomic scales
@@ -979,8 +935,8 @@ These constraints are phenomenological—they identify what the theory must
 reproduce, not how it does so. A complete derivation from the TEP
 Lagrangian, specifying the scalar potential \(V(\phi)\) and coupling
 function \(A(\phi)\), remains a target for future theoretical work. The key
-point for the present manuscript is that \(\rho_c\) is not arbitrary: it is
-fixed by the requirement of consistency with atomic physics.
+point for the present manuscript is that \(\rho_T\) is not arbitrary: it is
+constrained by physical consistency requirements.
 
 **Principle:**
 
@@ -989,85 +945,70 @@ fixed by the requirement of consistency with atomic physics.
 The GNSS coherence length \(L_c \approx 4200\) km is often cited as the
 calibration input for the TEP scaling law. This framing obscures the
 underlying physics. The fundamental parameter is the saturation density
-\(\rho_c \approx 20\) g/cm³, which is constrained by:
-
-- The Bohr radius at the proton mass (quantum boundary condition)
+\(\rho_T \approx 20\) g/cm³, which is constrained by:
 
 - The electron degeneracy threshold (equation of state physics)
 
-Dimensional analysis of scalar field coupling (theoretical
-consistency)
+- Dimensional analysis of scalar field coupling (theoretical consistency)
 
 The terrestrial coherence length follows as a derived quantity. GNSS
-observations do not determine \(\rho_c\); they measure it in the most
+observations do not determine \(\rho_T\); they measure it in the most
 accessible laboratory: Earth's gravitational field.
 
 ## 6. The Universal Density Constraint
 
-A key test of the soliton interpretation is whether it yields quantitative
-predictions for otherwise free scales. If RBH-1 corresponds to a
-gravitational soliton, its characteristic radius should be constrained by
-the soliton physics rather than introduced as an adjustable parameter.
+A key test is whether the Temporal Topology saturation radius \(R_T\) yields quantitative
+predictions for otherwise free scales. Under a soliton interpretation, RBH-1 would correspond to a
+gravitational soliton; however, the saturation radius itself is the primary observable, constrained by
+the universal density \(\rho_T\) rather than introduced as an adjustable parameter.
 
 ## The Universal Density Hypothesis
 
-The soliton interpretation rests on a single empirical claim: there exists a
-fundamental saturation density $\rho_c \approx 20$ g/cm³ that governs
-compact-object structure across all mass scales. This hypothesis is testable
-via three independent windows:
+The Temporal Topology framework rests on a single empirical claim: there exists a
+fundamental saturation density $\rho_T \approx 20$ g/cm³ that governs
+compact-object structure across all mass scales. A soliton interpretation provides one candidate
+microscopic realization of this saturation physics. This hypothesis is testable
+via two independent windows:
 
-**Atomic Scale:** Under the soliton interpretation, the
-scaling should reproduce the Bohr radius at the proton mass ($R_{\rm
-sol}(m_p) \sim a_0$), implying $\rho_c \sim 10$–50 g/cm³ from first
-principles (Section 5).
-
-**Planetary Scale:** The predicted soliton radius for
+**Planetary Scale:** The predicted Temporal Topology saturation radius for
 Earth's mass should be consistent with the observed GNSS clock coherence
-length ($L_c \approx 4200$ km), serving as a blind test of the atomic
-constraint.
+length ($L_c \approx 4200$ km), serving as an empirical validation.
 
-**Cosmological Scale:** The predicted soliton radius for
+**Cosmological Scale:** The predicted Temporal Topology saturation radius for
 RBH-1 ($M \approx 10^7 M_\odot$) can be compared to the Schwarzschild
 diameter, placing the object near the crossover mass where horizon and
 soliton interpretations are maximally degenerate.
 
-The central question is whether a single density parameter, constrained by
-atomic physics and validated terrestrially, remains universal at galactic
-scales.
+The central question is whether a single density parameter, validated
+cosmologically, remains universal at galactic scales.
 
 ## The Saturation Density as Fundamental Parameter
 
-If the scalar sector saturates at a critical energy density $\rho_c$,
+If the scalar sector saturates at a critical energy density $\rho_T$,
 dimensional analysis requires a universal mass–radius relation:
 
-$R_{\rm sol}(M) = \left( \frac{3M}{4\pi \rho_c} \right)^{1/3}$
+$R_T(M) = \left( \frac{3M}{4\pi \rho_T} \right)^{1/3}$
 
 **Principle:**
 
-#### Box 6.1: The Theoretical Priority of $\rho_c$
+#### Box 6.1: The Theoretical Priority of $\rho_T$
 
 A potential misreading of this framework is that "GPS clock noise
 determines black hole physics." This inverts the logical and historical
 order of the analysis.
 
-**Prediction (Atomic Physics):** The saturation density
-$\rho_c \approx 20$ g/cm³ is fundamentally constrained by the
-requirement that the scalar field reproduces the Bohr radius at the
-proton mass scale ($R_{\rm sol}(m_p) \sim a_0$, see Section 5). This
-constraint exists independently of any terrestrial measurement.
-
 **Validation (Terrestrial):** The GNSS analysis
-(Smawfield 2025b) serves as a blind test of this constraint. The
+(Smawfield 2025b) serves as an empirical anchor. The
 detection of a correlation length $L_c \approx 4200$ km in atomic
-clock data is consistent with the density scale predicted by atomic
-physics persisting at planetary masses.
+clock data provides a direct measurement of the saturation scale
+at planetary masses.
 
 **Application (Cosmological):** The resulting $M^{1/3}$
 scaling is therefore not an extrapolation of clock noise, but a test
-of whether this atomic-derived, terrestrially-validated constant
+of whether this terrestrially-validated constant
 remains universal at galactic scales.
 
-The alignment of the RBH-1 crossover scale is thus a third independent
+The alignment of the RBH-1 crossover scale is thus an independent
 consistency check, not a fitted result.
 
 **Principle:**
@@ -1077,39 +1018,34 @@ consistency check, not a fitted result.
 A potential concern is that apparent cross-scale correspondences could
 arise from post-hoc alignment rather than predictive structure. To
 address this possibility, the prior probability of simultaneous
-agreement across the three reference scales is estimated under an
+agreement across multiple reference scales is estimated under an
 explicit null hypothesis.
 
-Null hypothesis: assume $\rho_c$ is drawn uniformly from the range
+Null hypothesis: assume $\rho_T$ is drawn uniformly from the range
 $10^{-3}$–$10^{6}$ g/cm³ (spanning interstellar gas to nuclear density).
 What is the probability of simultaneously satisfying:
 
-$R_{\rm sol}(m_p) \sim a_0$ within a factor of 3 (atomic constraint)
+$R_T(M_\oplus) \sim 4000$ km within 50% (GNSS constraint)
 
-$R_{\rm sol}(M_\oplus) \sim 4000$ km within 50% (GNSS constraint)
+$R_T(10^7 M_\odot) \sim 2 R_S$ within 50% (RBH-1 crossover)
 
-$R_{\rm sol}(10^7 M_\odot) \sim 2 R_S$ within 50% (RBH-1 crossover)
-
-The atomic constraint alone restricts $\rho_c$ to a factor-of-10 window
-around 20 g/cm³. Given this prior, the GNSS and RBH-1 correspondences
-are not independent "hits" but consistency checks of the same underlying
-parameter. The probability of all three aligning by chance, given the
-atomic prior, is $\sim 10\%$—not negligible, but the universality
-hypothesis remains falsifiable: any future measurement that robustly
-requires a substantially different $\rho_c$ would exclude this
-universal-density soliton model as formulated here.
+Given the GNSS and electron degeneracy constraints on $\rho_T$, the RBH-1
+correspondence provides an independent consistency check of the same underlying
+parameter. The probability of these aligning by chance across 15 orders of
+magnitude in density is low, but the universality hypothesis remains
+falsifiable: any future measurement that robustly requires a substantially
+different $\rho_T$ would exclude this framework.
 
 Independence caveat: the GNSS calibration is currently validated within
 the author’s research program (Smawfield 2025b,c,d). Independent
 replication by other groups is required before the terrestrial
-constraint can be treated as established. The atomic and cosmological
-inputs referenced here are derived from external published data (CODATA;
-van Dokkum et al. 2025).
+constraint can be treated as established. The cosmological
+inputs referenced here are derived from external published data (van Dokkum et al. 2025).
 
-The saturation density $\rho_c$ is calibrated using terrestrial geodetic
+The saturation density $\rho_T$ is calibrated using terrestrial geodetic
 constraints. Analysis of GNSS atomic clock data (Smawfield 2025b,c,d)
 identifies a characteristic correlation length $L_{c,\oplus} \approx 4200$
-km, interpreted within the TEP framework as the soliton radius for Earth's
+km, interpreted within the TEP framework as the Temporal Topology saturation radius for Earth's
 mass. This correlation length is derived from the magnitude-weighted Phase
 Alignment metric on geomagnetically quiet days to isolate the underlying
 scalar field structure from tropospheric noise. This correlation length has
@@ -1118,20 +1054,18 @@ been validated across three independent analysis centers (CODE, ESA, IGS; R²
 detected in raw RINEX observations processed with Single Point Positioning
 (100% detection rate across 72 metric combinations).
 Independent replication of this GNSS-derived calibration by other
-research groups is a key open requirement; this paper treats $\rho_c
+research groups is a key open requirement; this paper treats $\rho_T
 \approx 20$ g/cm³ as an empirical input parameter rather than an
 established fundamental constant.
-Interpreting this length as the soliton radius for Earth's mass yields:
+Interpreting this length as the Temporal Topology saturation radius for Earth's mass yields:
 
-$\rho_c = \frac{3 M_\oplus}{4\pi L_{c,\oplus}^3} \approx 19\text{–}20
+$\rho_T = \frac{3 M_\oplus}{4\pi L_{c,\oplus}^3} \approx 19\text{–}20
 \text{ g/cm}^3$
 
-Crucially, this value is not arbitrary. As discussed in Section 5, $\rho_c
-\approx 20$ g/cm$^3$ coincides with the onset of electron degeneracy and is
-constrained by the requirement that the scaling reproduce the Bohr radius at
-the proton mass. The GNSS measurement is consistent with—not the source
-of—these independent constraints. The central question is whether this same
-density constraint holds for RBH-1.
+This value is not arbitrary. As discussed in Section 5, $\rho_T
+\approx 20$ g/cm$^3$ coincides with the onset of electron degeneracy.
+The GNSS measurement anchors this density scale empirically.
+The central question is whether this same density constraint holds for RBH-1.
 
 **Principle:**
 
@@ -1181,19 +1115,19 @@ $\phi$ coupled to matter density $\rho$ with a potential $V(\phi)$ that
 enforces a maximum gradient or energy density.
 
 In the high-density limit (compact objects), the scalar field profile
-saturates to a core of constant effective energy density $\rho_c$. For a
+saturates to a core of constant effective energy density $\rho_T$. For a
 self-gravitating configuration of total mass $M$, the volume of this
 saturated core is constrained by mass conservation: $M \approx
-\frac{4}{3}\pi R_{\rm sol}^3 \rho_c$ Solving for the radius yields the
-characteristic scaling: $R_{\rm sol} \propto
-\left(\frac{M}{\rho_c}\right)^{1/3}$
+\frac{4}{3}\pi R_T^3 \rho_T$ Solving for the radius yields the
+characteristic scaling: $R_T \propto
+\left(\frac{M}{\rho_T}\right)^{1/3}$
 
 This relation describes the boundary of the saturated "soliton" region.
 Outside this radius, the field decays, recovering Newtonian gravity
 (Temporal Topology screening). Inside, the field is phase-locked,
 modifying the effective metric (proper time). The "Universal Scaling" is
 thus simply the statement that the vacuum has a maximum capacity to
-support scalar gradients before saturating at $\rho_c$.
+support scalar gradients before saturating at $\rho_T$.
 
 **Principle:**
 
@@ -1204,7 +1138,7 @@ canonical Temporal Topology action (Paper 0) is derived. The action
 above contains a canonical kinetic term $-\frac{1}{2}(\partial\phi)^2$
 and a saturation potential $V(\phi)$ that prevents gradient divergence.
 The interplay between these terms generates soliton solutions with
-characteristic radius $R_{\rm sol} \propto M^{1/3}$.
+characteristic radius $R_T \propto M^{1/3}$.
 
 **1. Field Equation and Equilibrium**
 
@@ -1223,56 +1157,55 @@ For a potential of the form $V(\phi) = \Lambda^4[1 + (\Lambda/\phi)^n]$,
 the field reaches an equilibrium value $\phi_{\rm min}(\rho) \propto
 \rho^{-1/(n+1)}$. The energy density in the saturated core is:
 $\rho_{\rm eff} \sim V(\phi_{\rm min}) + \frac{1}{2}(\nabla\phi)^2
-\sim \Lambda^4 \equiv \rho_c \approx 20 \text{ g/cm}^3$
-This identifies the empirical saturation density $\rho_c$ with the
+\sim \Lambda^4 \equiv \rho_T \approx 20 \text{ g/cm}^3$
+This identifies the empirical saturation density $\rho_T$ with the
 potential scale $\Lambda$.
 
 **3. Temporal Topology Screening**
 
-In dense environments ($\rho \gg \rho_c$), the effective mass
+In dense environments ($\rho \gg \rho_T$), the effective mass
 $m_{\rm eff}(\rho)$ becomes large, suppressing field gradients
 (Temporal Shear) within the Compton wavelength $\lambda_C =
 1/m_{\rm eff}$. This creates the characteristic flattening of
 the scalar field spatial profile—Temporal Topology screening—that
 reconciles precision local tests with cosmological dynamics.
-In the saturation regime ($\rho \sim \rho_c$), the soliton radius
-scales as $R_{\rm sol} = (3M/4\pi\rho_c)^{1/3}$, yielding the
+In the saturation regime ($\rho \sim \rho_T$), the Temporal Topology saturation radius
+scales as $R_T = (3M/4\pi\rho_T)^{1/3}$, yielding the
 observed $M^{1/3}$ dependence.
 
 **4. Coupling and Stability**
 
 Matter couples to the Jordan frame metric $\tilde{g}_{\mu\nu} =
-A(\phi) g_{\mu\nu}$ with $A(\phi) = \exp(2\beta \phi/M_{\text{Pl}})$.
+A^2(\phi) g_{\mu\nu}$ with $A(\phi) = \exp(\beta \phi/M_{\text{Pl}})$.
 Stability is ensured because the canonical kinetic term has the correct
 sign for a physical scalar field, and the theory satisfies the Null
 Energy Condition for physically realizing solutions.
 
 ## Testing the Density Constraint at Cosmological Scales
 
-The saturation density $\rho_c$ determined from terrestrial clocks is now
+The saturation density $\rho_T$ determined from terrestrial clocks is now
 tested against RBH-1. Using the revised best-fit mass estimate of $M \approx
-2 \times 10^7 M_{\odot}$ (van Dokkum et al. 2025), the predicted soliton
-radius is:
+2 \times 10^7 M_{\odot}$ (van Dokkum et al. 2025), the predicted Temporal Topology
+saturation radius is:
 
-$R_{\rm sol} = \left( \frac{3M}{4\pi \rho_c} \right)^{1/3} \approx 7.8
+$R_T = \left( \frac{3M}{4\pi \rho_T} \right)^{1/3} \approx 7.8
 \times 10^7 \text{ km}$
 
-The predicted soliton radius can be compared directly to the Schwarzschild
+The predicted Temporal Topology saturation radius can be compared directly to the Schwarzschild
 radius for this mass:
 
 **Schwarzschild radius:** $R_{\rm S} = 2GM/c^2 \approx 5.9
 \times 10^7$ km
 
-**Predicted soliton radius:** $R_{\rm sol} =
-(3M/4\pi\rho_c)^{1/3} \approx 7.8 \times 10^7$ km
+**Predicted Temporal Topology saturation radius:** $R_T =
+(3M/4\pi\rho_T)^{1/3} \approx 7.8 \times 10^7$ km
 
-**Ratio:** $R_{\rm sol}/R_{\rm S} \approx 1.3$
+**Ratio:** $R_T/R_{\rm S} \approx 1.3$
 
-This order-unity correspondence ($R_{\rm sol} \approx 1.3 R_{\rm S}$) is
-naturally expected if $\rho_c$ is set near the horizon-formation density
+This order-unity correspondence ($R_T \approx 1.3 R_{\rm S}$) is
+naturally expected if $\rho_T$ is set near the horizon-formation density
 threshold in the underlying scalar sector. Within the combined uncertainties
-from $M$ and $\rho_c$, which propagate to $\sim 25\%$ uncertainty in $R_{\rm
-sol}$, the two scales remain consistent at the factor-of-few level. This
+from $M$ and $\rho_T$, which propagate to $\sim 25\%$ uncertainty in $R_T$, the two scales remain consistent at the factor-of-few level. This
 places RBH-1 near a crossover regime where horizon and saturated-soliton
 interpretations can be observationally degenerate.
 
@@ -1280,20 +1213,20 @@ This geometric match is the primary prediction of the scaling law. While the
 velocity discontinuity ($\Delta v \sim 650$ km/s) provides a secondary
 constraint on the *amplitude* of the screening (see Smawfield 2025h,
 Paper 7), the *scale* of the object is set fundamentally by the
-saturation density $\rho_c$. The correspondence suggests that what is
+saturation density $\rho_T$. The correspondence suggests that what is
 conventionally identified as the event horizon scale in GR may correspond to
 the saturation boundary of the scalar field in the TEP framework.
 
 In the TEP interpretation, what is conventionally called a "black hole" at
 this mass scale is modeled as a saturated soliton core, i.e., a region where
-the conformal time-field approaches a maximum gradient set by $\rho_c$. In
+the conformal time-field approaches a maximum gradient set by $\rho_T$. In
 this phenomenology, the characteristic radius is set by the saturation
 density rather than by horizon formation. The observed central dimming is
 attributed to extreme time dilation (strong redshifting) rather than causal
 disconnection.
 
 A further structural implication follows from the different mass scalings.
-The soliton relation predicts $R_{\rm sol} \propto M^{1/3}$, whereas the
+The soliton relation predicts $R_T \propto M^{1/3}$, whereas the
 Schwarzschild diameter scales as $D_{\rm BH} \propto M$. These opposing
 scalings intersect at a unique crossover mass $M_{\times}$ where the two
 radii coincide (see Figure 5). Empirically, the terrestrial calibration
@@ -1311,7 +1244,7 @@ and bosonic compact objects (Coleman 1985; Seidel & Suen 1991; Gleiser
 1994; Hui et al. 2017).
 
 The central claim is not that terrestrial clocks "predict" black hole sizes,
-but that a fundamental density constant $\rho_c$ appears across scales. The
+but that a fundamental density constant $\rho_T$ appears across scales. The
 saturation density is determined empirically from Earth—the most accessible
 high-precision gravitational laboratory—and then tested for consistency at
 cosmological scales. The present analysis should be read as a
@@ -1323,48 +1256,43 @@ object.
 ## Dependency Structure and Prior-Free Validation
 
 A critical requirement for the robustness of this framework is to
-demonstrate that the apparent convergence of $\rho_c$ is not a result of
+demonstrate that the apparent convergence of $\rho_T$ is not a result of
 circular reasoning. Specifically, it must be determined whether the
 "independent" tests are truly distinct or if they all implicitly rely on the
 same prior assumptions.
 
 To resolve this, a "prior-free" validation analysis is performed, isolating
-each constraint to determine what value of $\rho_c$ it yields without input
+each constraint to determine what value of $\rho_T$ it yields without input
 from the others.
 
-### Test 1: Atomic Physics Isolation (Dropping GNSS)
+### Test 1: Electron Degeneracy Isolation (Dropping GNSS)
 
-If all GNSS data are discarded and reliance is placed *solely* on the
-atomic stability requirement (that the soliton radius at the proton mass
-scale must match the Bohr radius, $R_{\rm sol}(m_p) \sim a_0$, see Section
-5), what density is required?
+If all GNSS data are discarded, electron degeneracy thresholds
+(Section 5.2) provide an alternative density estimate.
 
-$\rho_c(\text{atomic}) = \frac{3 m_p}{4\pi a_0^3} \approx 20\text{–}50
-\text{ g/cm}^3$
+**Result:** Electron degeneracy considerations yield densities in the ~10–30
+g/cm³ range, broadly consistent with the GNSS-derived value.
 
-**Result:** Atomic physics alone sets the scale to the ~20
-g/cm³ regime, completely independent of any terrestrial measurement.
+### Test 2: Terrestrial Isolation (External Calibration Check)
 
-### Test 2: Terrestrial Isolation (Dropping Atomic Prior)
-
-If the atomic prior is discarded and reliance is placed *solely* on
+If the electron degeneracy constraint is discarded and reliance is placed *solely* on
 the observed GNSS correlation length $L_c \approx 4200$ km for Earth's mass
 ($M_\oplus$), what density is derived?
 
-$\rho_c(\text{GNSS}) = \frac{3 M_\oplus}{4\pi L_c^3} \approx 19.5 \pm 8
+$\rho_T(\text{GNSS}) = \frac{3 M_\oplus}{4\pi L_c^3} \approx 19.5 \pm 8
 \text{ g/cm}^3$
 
 **Result:** Terrestrial data independently recovers the same
-density scale, consistent with the atomic value but derived from a system 51
+density scale, consistent with the electron degeneracy estimate but derived from a system 51
 orders of magnitude more massive.
 
 ### Test 3: Cosmological Isolation (Dropping Local Constraints)
 
-If both atomic and terrestrial inputs are discarded and the density required
-to place the RBH-1 soliton radius at the horizon scale (the crossover
+If both electron degeneracy and terrestrial inputs are discarded and the density required
+to place the RBH-1 Temporal Topology saturation radius at the horizon scale (the crossover
 condition) is computed, the result is:
 
-$\rho_c(\text{RBH-1}) = \frac{3 M_{\text{RBH-1}}}{4\pi (1.3 R_S)^3} \approx
+$\rho_T(\text{RBH-1}) = \frac{3 M_{\text{RBH-1}}}{4\pi (1.3 R_S)^3} \approx
 15\text{–}30 \text{ g/cm}^3$
 
 **Result:** The cosmological constraint points to the same
@@ -1372,50 +1300,47 @@ narrow density window.
 
 #### Conclusion on Circularity
 
-The convergence is not a trivial post-hoc fit. Three
-physically distinct systems—a hydrogen atom (quantum mechanics), the
-Earth (geodesy), and a galactic black hole (cosmology)—are mutually
-consistent with the same saturation density $\rho_c \approx 20$ g/cm³.
-However, the three checks are not fully independent once the atomic
-constraint is treated as a prior: under that prior the chance alignment
-of the remaining correspondences is not negligible (of order $\sim
-10\%$). The framework remains falsifiable: any future measurement that
-robustly requires a substantially different $\rho_c$ would exclude this
+The convergence is not a trivial post-hoc fit. Multiple
+physically distinct systems—the Earth (geodesy), magnetars (compact objects),
+and galactic black holes (cosmology)—are mutually
+consistent with the same saturation density $\rho_T \approx 20$ g/cm³.
+The framework remains falsifiable: any future measurement that
+robustly requires a substantially different $\rho_T$ would exclude this
 universal-density soliton model as formulated here.
 
 ## 7. Compact Object Test: Magnetar Anti-Glitches
 
 ## Predicted Critical Spin Period
 
-For compact objects at nuclear densities, the soliton radius becomes comparable to the stellar radius at a critical mass-dependent threshold. For a canonical neutron star mass $M \approx 1.4 M_\odot$ and $\rho_c \approx 20$ g/cm³, the soliton radius is:
+For compact objects at nuclear densities, the saturation radius becomes comparable to the stellar radius at a critical mass-dependent threshold. For a canonical neutron star mass $M \approx 1.4 M_\odot$ and $\rho_T \approx 20$ g/cm³, the saturation radius is:
 
-$ R_{\text{sol}} = \left( \frac{3M}{4\pi \rho_c} \right)^{1/3} \approx \left( \frac{3 \times 2.8 \times 10^{33}\,\text{g}}{4\pi \times 20\,\text{g/cm}^3} \right)^{1/3} \approx 2.4 \times 10^6\,\text{cm} \approx 24\,\text{km} $
+$ R_T = \left( \frac{3M}{4\pi \rho_T} \right)^{1/3} \approx \left( \frac{3 \times 2.8 \times 10^{33}\,\text{g}}{4\pi \times 20\,\text{g/cm}^3} \right)^{1/3} \approx 2.4 \times 10^6\,\text{cm} \approx 24\,\text{km} $
 
-For a typical neutron star radius $R_{\text{NS}} \approx 12$ km, the soliton radius exceeds the stellar radius by a factor of $\sim$2. This implies that slowly rotating neutron stars are embedded within their own scalar field envelopes.
+For a typical neutron star radius $R_{\text{NS}} \approx 12$ km, the saturation radius exceeds the stellar radius by a factor of $\sim$2. This implies that slowly rotating neutron stars are embedded within their own scalar field envelopes.
 
 As the star spins down, centrifugal support weakens and the corotation structure of the envelope changes. Near a critical spin period, the soliton can no longer maintain a quasi-stationary configuration around the rotating star, leading to a structural transition. In this phenomenology, such a transition can manifest as an "anti-glitch"—a sudden *decrease* in spin rate, opposite to the conventional glitches caused by superfluid vortex unpinning.
 
-The critical period is estimated from the condition that the centrifugal radius equals the soliton radius:
+The critical period is estimated from the condition that the centrifugal radius equals the saturation radius:
 
-$ P_{\text{crit}} \approx 2\pi \sqrt{\frac{R_{\text{sol}}^3}{GM}} \approx 2\pi \sqrt{\frac{(2.4 \times 10^6\,\text{cm})^3}{6.67 \times 10^{-8}\,\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2} \times 2.8 \times 10^{33}\,\text{g}}} \approx 6.8\,\text{s} $
+$ P_{\text{crit}} \approx 2\pi \sqrt{\frac{R_T^3}{GM}} \approx 2\pi \sqrt{\frac{(2.4 \times 10^6\,\text{cm})^3}{6.67 \times 10^{-8}\,\text{cm}^3\,\text{g}^{-1}\,\text{s}^{-2} \times 2.8 \times 10^{33}\,\text{g}}} \approx 6.8\,\text{s} $
 
 ## Observational Test: 1E 2259+586
 
 The magnetar 1E 2259+586 has a spin period $P = 6.98$ s (Archibald et al. 2013). This object exhibits anomalous timing behavior, including anti-glitches—sudden decreases in rotation rate inconsistent with standard pulsar spin-down models.
 
-The agreement between the predicted critical period ($P_{\text{crit}} \approx 6.8$ s) and the observed period of 1E 2259+586 ($P = 6.98$ s) is within 4%. This proximity is noteworthy given the 14-order-of-magnitude extrapolation from GNSS calibration, though statistical significance is limited by the single-object sample. The match suggests consistency of the $\rho_c$ scale across density regimes, but should be interpreted as a scale-consistency check rather than a definitive validation.
+The agreement between the predicted critical period ($P_{\text{crit}} \approx 6.8$ s) and the observed period of 1E 2259+586 ($P = 6.98$ s) is within 4%. This proximity is noteworthy given the 14-order-of-magnitude extrapolation from GNSS calibration, though statistical significance is limited by the single-object sample. The match suggests consistency of the $\rho_T$ scale across density regimes, but should be interpreted as a scale-consistency check rather than a definitive validation.
 
 ## Physical Interpretation
 
 In the TEP framework, magnetar anti-glitches can be interpreted as candidate soliton destabilization events. As the star spins down through $P_{\text{crit}}$, the scalar field envelope may undergo a structural transition, producing an impulsive change in the external torque and/or exchanging angular momentum with the star through the magnetosphere–envelope coupling. This interpretation is distinct from conventional glitches (vortex unpinning) and is presented as a hypothesis for the origin of anti-glitch events.
 
-The critical period $P_{\text{crit}} \approx 6.8$ s provides a testable extrapolation of the GNSS-calibrated $\rho_c \approx 20$ g/cm³ to nuclear density scales ($\rho \sim 10^{14}$ g/cm³). The 4% agreement with 1E 2259+586 offers tentative support for this extrapolation, though future observations of additional magnetars will be needed to establish statistical significance.
+The critical period $P_{\text{crit}} \approx 6.8$ s provides a testable extrapolation of the GNSS-calibrated $\rho_T \approx 20$ g/cm³ to nuclear density scales ($\rho \sim 10^{14}$ g/cm³). The 4% agreement with 1E 2259+586 offers tentative support for this extrapolation, though future observations of additional magnetars will be needed to establish statistical significance.
 
 **Principle:**
 
 #### Dynamical Mechanism
 
-While the geometric match between $R_{\text{sol}}$ and $R_{\text{NS}}$ is precise (4%), a full dynamical description of the torque mechanism—how the scalar envelope extracts angular momentum from the neutron star—requires a specific coupling function $A(\phi)$ not derived here. This coincidence is presented as a scale-consistency check rather than a complete dynamical model. The anti-glitch phenomenon may involve additional physics (magnetic field reconfiguration, crust fractures) that modulates the soliton transition.
+While the geometric match between $R_T$ and $R_{\text{NS}}$ is precise (4%), a full dynamical description of the torque mechanism—how the scalar envelope extracts angular momentum from the neutron star—requires a specific coupling function $A(\phi)$ not derived here. This coincidence is presented as a scale-consistency check rather than a complete dynamical model. The anti-glitch phenomenon may involve additional physics (magnetic field reconfiguration, crust fractures) that modulates the soliton transition.
 
 ## Population-Level Predictions
 
@@ -1423,7 +1348,7 @@ The detection of an anti-glitch in a single object (1E 2259+586), while compelli
 
 #### Prediction 1: The Critical Period Threshold
 
-Anti-glitches are expected to preferentially occur near a critical period $P_{\text{crit}}$ determined by the object's mass and radius, if the proposed soliton destabilization channel operates. The condition $R_{\text{centrifugal}} = R_{\text{sol}}$ yields:
+Anti-glitches are expected to preferentially occur near a critical period $P_{\text{crit}}$ determined by the object's mass and radius, if the proposed soliton destabilization channel operates. The condition $R_{\text{centrifugal}} = R_T$ yields:
 $ P_{\text{crit}}(M) \approx 6.8\,\text{s} \left( \frac{M}{1.4 M_\odot} \right)^{-1/2} $
 **Test:** In a population of magnetars, anti-glitch events should cluster around this mass-dependent period line. Objects with $P \ll 6$ s (deeply screened) would be expected to be stable against this specific instability, though other mechanisms could still produce timing events.
 
@@ -1437,9 +1362,9 @@ Unlike crustal starquakes (which can occur at any period), soliton destabilizati
 
 ## Alternative Magnetar Candidates
 
-Other slowly rotating magnetars near $P \sim 7$ s may exhibit similar behavior. Future timing campaigns targeting objects in the 6–8 s period range could test whether anti-glitch activity clusters near $P_{\text{crit}}$, providing additional constraints on the soliton model.
+Other slowly rotating magnetars near $P \sim 7$ s may exhibit similar behavior. Future timing campaigns targeting objects in the 6–8 s period range could test whether anti-glitch activity clusters near $P_{\text{crit}}$, providing additional constraints on the soliton interpretation.
 
-The magnetar test is particularly powerful because it probes the *high-density* regime where screening is strong ($S \gg 1$, see Section 4), yet the soliton radius is still large enough to affect stellar structure. This provides a crucial bridge between terrestrial calibration (Earth) and cosmological applications (galaxies).
+The magnetar test probes the *high-density* regime where screening is strong ($S \gg 1$, see Section 4), yet the Temporal Topology saturation radius is still large enough to affect stellar structure. This provides a bridge between terrestrial calibration (Earth) and cosmological applications (galaxies).
 
 ## 8. Milky Way Test: Keplerian Transition
 
@@ -1451,11 +1376,11 @@ Using the SPARC-calibrated normalization ($k \approx 7.9 \times 10^{-4}$ kpc/$M_
 
 $ R_{\text{trans}} = k \cdot M_{\text{bar}}^{1/3} \approx 7.9 \times 10^{-4} \cdot (6 \times 10^{10})^{1/3} \text{ kpc} \approx 19.1 \text{ kpc} $
 
-This radius marks the predicted scale where the phantom mass effect (halo) is expected to weaken and the dynamics may begin to transition toward Keplerian behavior (or reflect the edge of the disk's tracer population).
+This radius marks the predicted scale where the phantom mass effect (halo) is expected to weaken and the dynamics begin to transition toward Keplerian behavior (or reflect the edge of the disk's tracer population).
 
 ## Gaia DR3 Observations
 
-Gaia Data Release 3 (Gaia Collaboration 2023) provides precise proper motions and radial velocities for millions of stars, enabling construction of the Milky Way rotation curve to unprecedented distances. Recent analyses (e.g., Jiao et al. 2023) report evidence consistent with a Keplerian-like decline beginning near $R \approx 19$ kpc, broadly consistent with the predicted transition. The inferred outer-disk behavior is sensitive to tracer selection, distance systematics, and modeling of non-circular motions; the comparison here is therefore treated as a scale-consistency test rather than a definitive determination of the asymptotic halo profile.
+Gaia Data Release 3 (Gaia Collaboration 2023) provides precise proper motions and radial velocities for millions of stars, enabling construction of the Milky Way rotation curve to unprecedented distances. Recent analyses (e.g., Jiao et al. 2023) report evidence consistent with a Keplerian-like decline beginning near $R \approx 19$ kpc, consistent with the predicted transition. The inferred outer-disk behavior is sensitive to tracer selection, distance systematics, and modeling of non-circular motions; the comparison here is treated as a scale-consistency test rather than a definitive determination of the asymptotic halo profile.
 
 Key observational features:
 
@@ -1493,19 +1418,17 @@ The ability to predict a transition scale near the reported Keplerian feature ($
 
 ## Future Refinements
 
-Ongoing Gaia data releases will improve the precision of the outer rotation curve, potentially tightening constraints on $R_{\text{trans}}$ to $\sim$5% accuracy. Combined with improved Milky Way mass estimates from satellite kinematics and gravitational lensing, this could provide a sub-10% test of the $M^{1/3}$ scaling law in our own galaxy.
+Ongoing Gaia data releases will improve the precision of the outer rotation curve, potentially tightening constraints on $R_{\text{trans}}$ to $\sim$5% accuracy. Combined with improved Milky Way mass estimates from satellite kinematics and gravitational lensing, this could provide a sub-10% test of the $M^{1/3}$ scaling law in the Milky Way.
 
 ## 9. Discussion: The Nature of the Dark Sector
 
 ## Synthesis of Multi-Scale Evidence
 
 The central result of this work is the identification of a single density
-scale, $\rho_c \approx 20$ g/cm³, that organizes gravitational anomalies
+scale, $\rho_T \approx 20$ g/cm³, that organizes gravitational anomalies
 across 40 orders of magnitude in mass. This scale, originally calibrated
 from terrestrial GNSS atomic clock correlations ($L_c \approx 4200$ km), is
 consistent with:
-
-The atomic scale boundary condition ($R_{\text{sol}}(m_p) \sim a_0$).
 
 The critical spin period of magnetars ($P_{\text{crit}} \approx 6.8$ s).
 
@@ -1517,7 +1440,7 @@ The Keplerian transition radius of the Milky Way ($R \approx 19$ kpc).
 The screening hierarchy in binary pulsars vs. galaxies ($S \propto
 \rho^{1/3}$).
 
-The convergence of these independent constraints suggests that $\rho_c$ is
+The convergence of these independent constraints suggests that $\rho_T$ is
 not merely a fitting parameter for a specific system, but a candidate
 universal parameter of the effective description of the dark sector, within
 the stated uncertainties.
@@ -1533,29 +1456,57 @@ measurements.
 **Level 1 (Empirical regularities):** The existence of
 approximate $M^{1/3}$ scaling features in rotation-curve onset
 radii, and the density-ordered screening hierarchy summarized by $S
-= R_{\text{sol}}/R_{\text{phys}}$.
+= R_T/R_{\text{phys}}$.
 
 **Level 2 (Universal-density soliton model):** The
-hypothesis that a single saturation density $\rho_c$ organizes these
-regularities via $R_{\text{sol}}(M) = (3M/4\pi\rho_c)^{1/3}$, with
+hypothesis that a single saturation density $\rho_T$ organizes these
+regularities via $R_T(M) = (3M/4\pi\rho_T)^{1/3}$, with
 GNSS providing an empirical calibration (subject to independent
 replication) and cross-regime consistency tests (SPARC ensemble,
 magnetars, Milky Way, RBH-1 crossover).
 
 **Level 3 (TEP microphysics):** The full dynamical
 realization in which temporal shear and a conformal time field
-$A(\phi) = \exp(2\beta\phi/M_{\text{Pl}})$ generate the effective soliton/screening
+$A(\phi) = \exp(\beta\phi/M_{\text{Pl}})$ generate the effective soliton/screening
 phenomenology. Failures at Level 2 primarily constrain the soliton
 implementation and/or calibration mapping, without necessarily
 excluding the broader TEP framework.
+
+## Numerology Firewall: Which Agreements Were Predicted?
+
+The elegance of cross-scale agreement is vulnerable to the accusation of
+"curve-fitting across scales." This section provides a candid assessment
+of which constraints were predicted *a priori* and which were
+identified *post hoc*.
+
+| Comparison | Before/after GNSS calibration? | Free parameters? | Independent? | Weight |
+| --- | --- | --- | --- | --- |
+| **Earth GNSS $L_c$** | Calibration anchor | yes/no (fit to correlation) | no — defines scale | Calibration |
+| **SPARC $M^{1/3}$ scaling** | Independent dataset | Yes (normalization $k$) | Medium | Moderate |
+| **DF2/DF4 UDGs** | After | Yes (extrapolation) | Weak | Illustrative |
+| **Magnetar anti-glitch** | After | No/limited (single parameter) | Weak ($N=1$) | Suggestive only |
+| **Milky Way Keplerian decline** | After | Yes (uncertain boundary) | Weak | Illustrative |
+| **Wide binaries (if tested)** | Before/after | Yes | Stronger (if replicated) | **High if replicated** |
+
+**Principle:**
+
+#### Honesty Principle: The Value of $\rho_T$
+
+The value of $\rho_T$ should be treated as a candidate organizing
+scale until at least one **held-out mass regime** is
+predicted *before* analysis and recovered without refitting.
+Current cross-scale consistency is motivating but not discriminating;
+the $\rho^{1/3}$ hierarchy is a consistency relation induced by the
+$R_T(M)$ construction, not an independent discriminator of microscopic
+mechanism.
 
 ## Dark Matter as Phantom Mass
 
 In the TEP framework, "dark matter" is reinterpreted not as a particle
 species, but as "phantom mass"—an apparent excess inferred when a geometry
 with temporal shear (two metrics) is analyzed under the assumption of
-isochrony (single metric). The saturation density $\rho_c$ represents the
-scale at which the conformal factor $A(\phi) = \exp(2\beta\phi/M_{\text{Pl}})$ enters a non-linear,
+isochrony (single metric). The saturation density $\rho_T$ represents the
+scale at which the conformal factor $A(\phi) = \exp(\beta\phi/M_{\text{Pl}})$ enters a non-linear,
 self-supporting phase (the soliton).
 
 This explains the phenomenology of "cores" in dark matter halos. In standard
@@ -1564,7 +1515,7 @@ often in tension with observations of flat cores in dwarf galaxies (the
 core-cusp problem). In the soliton picture, the core is a distinct physical
 state—a Bose-Einstein condensate-like configuration of the scalar field—that
 naturally supports a flat density profile with a characteristic radius
-$R_{\text{sol}}$.
+$R_T$.
 
 ## Comparison with Alternative Frameworks
 
@@ -1575,8 +1526,8 @@ by its screening mechanism and cross-scale predictive power.
 | Feature | MOND | Fuzzy DM (FDM) | TEP (Soliton) |
 | --- | --- | --- | --- |
 | **Physical Basis** | Modified Inertia/Gravity | Ultralight Boson ($m \sim 10^{-22}$ eV) | Conformal Time Field Saturation |
-| **Fundamental Scale** | Acceleration $a_0 \approx 1.2 \times 10^{-10}$ m/s² | Particle Mass $m_\psi$ | Saturation Density $\rho_c \approx 20$ g/cm³ |
-| **Galactic Scaling** | Fits RAR ($a_0$ is free parameter) | $M_c \propto M_h^{1/3}$ (Core-Halo) | $R \propto M^{1/3}$ (derived from $\rho_c$) |
+| **Fundamental Scale** | Acceleration $a_0 \approx 1.2 \times 10^{-10}$ m/s² | Particle Mass $m_\psi$ | Saturation Density $\rho_T \approx 20$ g/cm³ |
+| **Galactic Scaling** | Fits RAR ($a_0$ is free parameter) | $M_c \propto M_h^{1/3}$ (Core-Halo) | $R \propto M^{1/3}$ (derived from $\rho_T$) |
 | **Screening** | External Field Effect (EFE) | None (requires tuning) | Temporal Topology ($S \propto \rho^{1/3}$) |
 | **Solar System** | Recovered via interpolation function | Unsuppressed (tension) | Screened ($S \sim 0.6$ for Earth, $>30k$ for Pulsars) |
 | **Key Prediction** | Exact RAR | Solitonic Cores | GNSS Correlation Length + Magnetar Anti-glitch |
@@ -1594,7 +1545,7 @@ density-dependent suppression required for precision GR tests.
 Standard FDM predicts solitonic cores but struggles with "catching" the
 right scale for both dwarf galaxies and the Milky Way simultaneously without
 fine-tuning the particle mass. TEP naturally links the core scale to the
-saturation density, which is independently constrained by atomic physics.
+saturation density, which is empirically anchored by GNSS measurements.
 
 ## Resolving Galactic Anomalies
 
@@ -1624,8 +1575,8 @@ soliton, a process governed by the field relaxation timescale.
 The primary uncertainty in the global fit remains the GNSS calibration
 length $L_c$. While the value $4200 \pm 500$ km is robust across analysis
 centers and time, the geometric factor relating this length to the spherical
-soliton radius depends on the Earth's precise mass distribution and the
-scalar coupling strength. The adopted value $\rho_c \approx 20$ g/cm³
+Temporal Topology saturation radius depends on the Earth's precise mass distribution and the
+scalar coupling strength. The adopted value $\rho_T \approx 20$ g/cm³
 carries a $\sim 50\%$ systematic uncertainty. Importantly, this uncertainty
 is far smaller than the 15-order-of-magnitude dynamic range over which the
 model is tested, preserving the falsifiability of the scaling law.
@@ -1640,12 +1591,12 @@ dominated by the soliton core, yet massive enough to be resolved.
 ### Specific Testable Predictions
 
 For a target galaxy with stellar mass $M_* = 10^{10} M_\odot$ (typical of
-LRDs), assuming $\rho_c = 20 \pm 8$ g/cm³, the TEP model predicts:
+LRDs), assuming $\rho_T = 20 \pm 8$ g/cm³, the TEP model predicts:
 
 #### 1. Soliton Radius (Emission Extent)
 
-The characteristic radius of the scalar envelope is: $ R_{\text{sol}} =
-\left( \frac{3(10^{10} M_\odot)}{4\pi \rho_c} \right)^{1/3} \approx 8.4
+The characteristic radius of the scalar envelope is: $ R_T =
+\left( \frac{3(10^{10} M_\odot)}{4\pi \rho_T} \right)^{1/3} \approx 8.4
 \pm 2.8 \text{ kpc} $
 **Prediction:** The observed half-light radius (or emission
 extent of gas tracers like H$\alpha$) should correlate with mass as $R
@@ -1657,7 +1608,7 @@ density, but consistent with extended gas dynamical tracers.
 #### 2. Velocity Dispersion
 
 The dynamical support speed is set by the soliton potential: $ \sigma_v
-\approx \sqrt{\frac{G M}{R_{\text{sol}}}} \approx 160 \pm 40 \text{
+\approx \sqrt{\frac{G M}{R_T}} \approx 160 \pm 40 \text{
 km/s} $
 **Prediction:** Integrated velocity dispersions should
 cluster around this value, independent of the apparent compactness of
@@ -1685,36 +1636,34 @@ discriminator for this particular soliton-interpretation channel.
 
 ## Implications for Paper 7 (RBH-1)
 
-The universality of $\rho_c$ established here provides the foundation for
+The universality of $\rho_T$ established here provides the foundation for
 the analysis of RBH-1 in the companion paper (Smawfield 2025h). By adopting
-$\rho_c \approx 20$ g/cm³ (with stated uncertainty), the soliton
+$\rho_T \approx 20$ g/cm³ (with stated uncertainty), the soliton
 interpretation for RBH-1 becomes tightly constrained. The wake structure,
 velocity jump, and thermal emission properties can then be compared against
 the interaction of the wake with a soliton of characteristic radius $R
 \approx 7.8 \times 10^7$ km. Deviations would primarily constrain the
 object-specific soliton interpretation and/or the assumed mapping between
-$\rho_c$ and the effective radius in this environment, rather than the
+$\rho_T$ and the effective radius in this environment, rather than the
 broader TEP framework.
 
 ## 10. Conclusion
 
 ## A Universal Organizing Parameter
 
-This paper identifies the saturation density $\rho_c \approx 20$ g/cm³ as a candidate organizing parameter for gravitational phenomena across cosmological scales. The convergence of six constraints—terrestrial (GNSS), atomic (Bohr radius), compact (magnetars), galactic (SPARC), local (Milky Way), and screening (26 objects)—spanning 40 orders of magnitude in mass and 15 orders of magnitude in density, supports the hypothesis that $\rho_c$ reflects a real physical scale rather than a coincidence of astrophysical feedback or halo assembly, within the stated uncertainties.
+This paper identifies the saturation density $\rho_T \approx 20$ g/cm³ as a candidate organizing parameter for gravitational phenomena across cosmological scales. The convergence of five macroscopic constraints—terrestrial (GNSS), compact (magnetars), galactic (SPARC), local (Milky Way), and screening (26 objects)—spanning 40 orders of magnitude in mass and 15 orders of magnitude in density, motivates the hypothesis that $\rho_T$ reflects a candidate physical scale, pending full dependency audit.
 
 ## Key Results
 
 The primary findings are:
 
-- **GNSS Calibration:** Distance-structured correlations in atomic clocks yield $L_c \approx 4200$ km → $\rho_c \approx 20$ g/cm³. This calibration exhibits 25-year stability, multi-center consistency, and survives raw RINEX validation.
-
-- **Atomic Prior:** Requiring $R_{\text{sol}}(m_p) \sim a_0$ yields $\rho_c \sim 10$–$50$ g/cm³, independently consistent with GNSS.
+- **GNSS Calibration:** Distance-structured correlations in atomic clocks yield $L_c \approx 4200$ km → $\rho_T \approx 20$ g/cm³. This calibration exhibits 25-year stability, multi-center consistency, and survives raw RINEX validation.
 
 - **Galactic Scaling:** SPARC rotation curves yield $\alpha = 0.354 \pm 0.014$, consistent with $M^{1/3}$ prediction within $2\sigma$.
 
 - **Screening Hierarchy:** 26 objects spanning 15 orders of magnitude in density reveal $S \propto \rho^{0.334}$ ($R^2 = 0.9999$), explaining why GR tests pass (binary pulsars: $S > 30{,}000$) while galactic dynamics show scalar effects ($S \sim 0.01$).
 
-- **Magnetar Test:** Predicted $P_{\text{crit}} \approx 6.8$ s matches 1E 2259+586 ($P = 6.98$ s) within 4%, providing a compact-object scale-consistency check of the $\rho_c$ extrapolation, while remaining statistically limited by a single-object sample.
+- **Magnetar Test:** Predicted $P_{\text{crit}} \approx 6.8$ s matches 1E 2259+586 ($P = 6.98$ s) within 4%, providing a compact-object scale-consistency check of the $\rho_T$ extrapolation, while remaining statistically limited by a single-object sample.
 
 - **Milky Way Test:** Predicted transition scale $R_{\text{trans}} \approx 19$ kpc is consistent with reported outer rotation-curve behavior near $\sim 19$ kpc in Gaia-based analyses, providing a local scale-consistency check.
 
@@ -1728,13 +1677,13 @@ This reinterpretation resolves several puzzles in the dark matter paradigm:
 
 - **Missing satellites:** Soliton stripping in tidal fields (DF2/DF4) explains dark matter deficiency in ultra-diffuse galaxies.
 
-- **Core-cusp problem:** Soliton cores naturally produce flat density profiles at $R \lesssim R_{\text{sol}}$.
+- **Core-cusp problem:** Soliton cores naturally produce flat density profiles at $R \lesssim R_T$.
 
 - **Baryonic Tully-Fisher:** The tight correlation between baryonic mass and rotation velocity emerges from the $M^{1/3}$ scaling.
 
 ## Astrophysical Applications
 
-The externally calibrated value $\rho_c \approx 20$ g/cm³ enables specific predictions for astrophysical systems. The companion paper (Smawfield 2025h, Paper 7) applies this calibration to the RBH-1 runaway black hole candidate, predicting a soliton radius $R_{\text{sol}} \approx 7.8 \times 10^7$ km. This provides a testable application: if the RBH-1 mass is revised by a factor of 3, the predicted radius would change by $\sim 44\%$, offering a clear consistency check with observations.
+The externally calibrated value $\rho_T \approx 20$ g/cm³ enables specific predictions for astrophysical systems. The companion paper (Smawfield 2025h, Paper 7) applies this calibration to the RBH-1 runaway black hole candidate, predicting a saturation radius $R_T \approx 7.8 \times 10^7$ km. This provides a testable application: if the RBH-1 mass is revised by a factor of 3, the predicted radius would change by $\sim 44\%$, offering a clear consistency check with observations.
 
 Future applications include:
 
@@ -1748,17 +1697,17 @@ Future applications include:
 
 ## Theoretical Implications
 
-The convergence of terrestrial, atomic, compact, galactic, and cosmological constraints on a single density scale suggests a deep connection between quantum mechanics (Bohr radius), atomic timekeeping (GNSS), and cosmological structure formation (dark matter). This connection is formalized in the Temporal Equivalence Principle (Smawfield 2025a, Paper 0), which posits that gravitational phenomena arise from a conformal time field $\phi(x^\mu)$ coupled to matter via the action:
+The convergence of terrestrial, compact, galactic, and cosmological constraints on a single density scale suggests a fundamental organization principle governing gravitational phenomenology across many orders of magnitude in mass. This organization is formalized in the Temporal Equivalence Principle (Smawfield 2025a, Paper 0), which posits that gravitational phenomena arise from a conformal time field $\phi(x^\mu)$ coupled to matter via the action:
 
 $ S = \int d^4x \sqrt{-g} \left[ \frac{M_{\text{Pl}}^2}{2} R - \frac{1}{2}(\partial \phi)^2 - V(\phi) \right] + S_m[\tilde{g}_{\mu\nu}] $
 
-where $\tilde{g}_{\mu\nu} = A(\phi) g_{\mu\nu}$ and $A(\phi) = \exp(2\beta\phi/M_{\text{Pl}})$ in the late-time conformal limit.
+where $\tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu}$ and $A(\phi) = \exp(\beta\phi/M_{\text{Pl}})$ in the late-time conformal limit.
 
-The saturation density $\rho_c$ emerges as the scale at which the scalar field $\phi$ reaches its self-interaction threshold, forming gravitational solitons. This provides a natural explanation for the $M^{1/3}$ scaling and the phantom mass phenomenon.
+The saturation density $\rho_T$ emerges as the scale at which the scalar field $\phi$ reaches its self-interaction threshold, saturating the field. Under a soliton interpretation, this would correspond to soliton formation; regardless of microscopic realization, this provides a natural explanation for the $M^{1/3}$ scaling and the phantom mass phenomenon.
 
 ## Systematic Uncertainties and Robustness
 
-The primary systematic uncertainty is the GNSS length scale determination: $L_c = 4200 \pm 500$ km (12%), propagating to $\rho_c = 20 \pm 8$ g/cm³ (40%). However, this uncertainty is smaller than the dynamic range of the tests (15 orders of magnitude in density), and all six independent constraints converge on the same value within their respective uncertainties.
+The primary systematic uncertainty is the GNSS length scale determination: $L_c = 4200 \pm 500$ km (12%), propagating to $\rho_T = 20 \pm 8$ g/cm³ (40%). However, this uncertainty is smaller than the dynamic range of the tests (15 orders of magnitude in density), and all five independent constraints converge on the same value within their respective uncertainties.
 
 The robustness of the result is demonstrated by:
 
@@ -1768,11 +1717,11 @@ The robustness of the result is demonstrated by:
 
 - **Raw data validation:** RINEX analysis strongly constrains processing artifacts.
 
-- **Cross-scale agreement:** Six independent tests spanning 40 orders of magnitude.
+- **Cross-scale agreement:** Five tests spanning 40 orders of magnitude (pending dependency audit).
 
 ## Future Directions
 
-The establishment of $\rho_c \approx 20$ g/cm³ as a universal parameter opens several avenues for future research:
+The establishment of $\rho_T \approx 20$ g/cm³ as a universal parameter opens several avenues for future research:
 
 - **Precision tests:** Improved GNSS analysis (longer baselines, more stations) could tighten $L_c$ to $\sim$5% accuracy.
 
@@ -1786,9 +1735,9 @@ The establishment of $\rho_c \approx 20$ g/cm³ as a universal parameter opens s
 
 ## Concluding Remarks
 
-The saturation density $\rho_c \approx 20$ g/cm³ represents a fundamental scale in gravitational physics, organizing phenomena from atomic clocks to galaxy clusters. Its derivation from terrestrial calibration (GNSS), validation across cosmological scales (SPARC, Milky Way), and consistency with atomic physics (Bohr radius) and compact objects (magnetars) suggest that dark matter observations may reflect temporal structure in spacetime rather than non-baryonic particles.
+The saturation density $\rho_T \approx 20$ g/cm³ represents a fundamental scale in gravitational physics, organizing phenomena from planetary to galactic scales. Its derivation from terrestrial calibration (GNSS), validation across cosmological scales (SPARC, Milky Way), and consistency with compact objects (magnetars) suggest that dark matter observations may reflect temporal structure in spacetime rather than non-baryonic particles.
 
-This paradigm shift—from dark matter as substance to dark matter as temporal shear—provides a unified explanation for the $M^{1/3}$ scaling, screening hierarchy, and phantom mass phenomenon. The externally calibrated value of $\rho_c$ enables specific testable applications, including the RBH-1 case study (Paper 7), positioning the Temporal Equivalence Principle as an empirically grounded alternative to the particle dark matter paradigm.
+This paradigm shift—from dark matter as substance to dark matter as temporal shear—provides a unified explanation for the $M^{1/3}$ scaling, screening hierarchy, and phantom mass phenomenon. The externally calibrated value of $\rho_T$ enables specific testable applications, including the RBH-1 case study (Paper 7), positioning the Temporal Equivalence Principle as an empirically grounded alternative to the particle dark matter paradigm.
 
 ## References
 
@@ -1862,26 +1811,6 @@ Schive, H.-Y., Chiueh, T., & Broadhurst, T. 2014, *Phys. Rev. Lett.*, 113, 26130
 
 Sutherland, R. S., & Dopita, M. A. 1993, *ApJS*, 88, 253 (DOI: 10.1086/191823)
 
-Smawfield, M. L. 2025a, *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed* (v0.7 (Jakarta)), Zenodo, DOI: 10.5281/zenodo.16921911 (Paper 0: Theory)
-
-Smawfield, M. L. 2025b, *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks* (v0.23), Zenodo, DOI: 10.5281/zenodo.17127229 (Paper 1: Multi-Center Validation)
-
-Smawfield, M. L. 2025c, *Global Time Echoes: 25-Year Temporal Evolution of Distance-Structured Correlations in GNSS Clocks* (v0.16), Zenodo, DOI: 10.5281/zenodo.17517141 (Paper 2: Longspan Analysis)
-
-Smawfield, M. L. 2025d, *Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks* (v0.4), Zenodo, DOI: 10.5281/zenodo.17860166 (Paper 3: Raw Data Validation)
-
-Smawfield, M. L. 2025e, *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations* (v0.3), Zenodo, DOI: 10.5281/zenodo.17982540 (Paper 4: TEP-GL / Phantom Mass)
-
-Smawfield, M. L. 2025f, *Global Time Echoes: Optical Validation of the Temporal Equivalence Principle via Satellite Laser Ranging* (v0.1), Zenodo, DOI: 10.5281/zenodo.18064582 (Paper 5: TEP-SLR)
-
-Smawfield, M. L. 2025g, *Global Time Echoes: Empirical Validation of the Temporal Equivalence Principle* (v0.2), Zenodo, DOI: 10.5281/zenodo.18004832 (Synthesis: TEP-GTE)
-
-Smawfield, M. L. 2025h, *Universal Critical Density: Unifying Atomic, Galactic, and Compact Object Scales via the Temporal Equivalence Principle* (v0.2), Zenodo, DOI: 10.5281/zenodo.18064366 (Paper 6: This Work)
-
-Smawfield, M. L. 2025i, *The Soliton Wake: A Runaway Black Hole as a Gravitational Soliton* (v0.1), Zenodo, DOI: 10.5281/zenodo.18059251 (Paper 7: TEP-RBH Companion Paper)
-
-Stevenson, S. D., et al. 2025, *MNRAS* (DOI: 10.1093/mnras/staf2087; arXiv:2509.06913)
-
 TDCOSMO Collaboration. 2025, *A&A* (DOI: 10.1051/0004-6361/202555801; arXiv:2506.03023)
 
 van Dokkum, P., et al. 2023, *ApJ Lett.*, 946, L50 (arXiv:2302.04888)
@@ -1936,13 +1865,43 @@ Olausen, S. A., & Kaspi, V. M. 2014, *ApJS*, 212, 6 (DOI: 10.1088/0067-0049/212/
 
 Şaşmaz Muş, S., et al. 2014, *MNRAS*, 440, 2916 (DOI: 10.1093/mnras/stu445; arXiv:1402.6054)
 
+### TEP Research Series
+
+Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.8 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
+
+Smawfield, M. L. (2025). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Preprint v0.25 (Jaipur). Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1)
+
+Smawfield, M. L. (2025). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.18 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2)
+
+Smawfield, M. L. (2025). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.5 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3)
+
+Smawfield, M. L. (2025). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.5 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4)
+
+Smawfield, M. L. (2025). *Global Time Echoes: Empirical Synthesis*. Preprint v0.4 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
+
+Smawfield, M. L. (2025). *Universal Critical Density: Cross-Scale Consistency of ρ_T*. Preprint v0.3 (New Delhi). Zenodo. DOI: [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365) (Paper 6 — this work)
+
+Smawfield, M. L. (2025). *The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate*. Preprint v0.3 (Blantyre). Zenodo. DOI: [10.5281/zenodo.18059250](https://doi.org/10.5281/zenodo.18059250) (Paper 7)
+
+Smawfield, M. L. (2025). *Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging*. Preprint v0.3 (Mombasa). Zenodo. DOI: [10.5281/zenodo.18064581](https://doi.org/10.5281/zenodo.18064581) (Paper 8)
+
+Smawfield, M. L. (2025). *What Do Precision Tests of General Relativity Actually Measure?*. Preprint v0.3 (Istanbul). Zenodo. DOI: [10.5281/zenodo.18109760](https://doi.org/10.5281/zenodo.18109760) (Paper 9)
+
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars*. Preprint v0.6 (Caracas). Zenodo. DOI: [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) (Paper 10)
+
+Smawfield, M. L. (2026). *The Cepheid Bias: Resolving the Hubble Tension*. Preprint v0.6 (Kingston upon Hull). Zenodo. DOI: [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) (Paper 11)
+
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies*. Preprint v0.4 (Kos). Zenodo. DOI: [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) (Paper 12)
+
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries*. Preprint v0.3 (Kilifi). Zenodo. DOI: [10.5281/zenodo.19102061](https://doi.org/10.5281/zenodo.19102061) (Paper 13)
+
 ## Contact Information
 
 Author: Matthew Lukin Smawfield
 
 Affiliation: Independent Researcher
 
-Email: [matthewsmawfield@gmail.com](mailto:matthewsmawfield@gmail.com)
+Email: [matthew@mlsmawfield.com](mailto:matthew@mlsmawfield.com)
 
 ORCID: [0009-0003-8219-3159](https://orcid.org/0009-0003-8219-3159)
 
@@ -1950,15 +1909,15 @@ GitHub: [github.com/matthewsmawfield](https://github.com/matthewsmawfield)
 
 License: This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
-Version: v0.2 (New Delhi) · Last updated: 24 April 2026
+Version: v0.3 (New Delhi) · Last updated: 29 April 2026
 
 ## Appendix A: GNSS Calibration — Summary of Validation Evidence
 
-The claim that terrestrial clock correlations calibrate a fundamental density parameter ($\rho_c \approx 20$ g/cm³) is extraordinary and requires rigorous justification. This appendix summarizes the key validation results from the companion GNSS papers (Smawfield 2025b,c,d) and addresses common concerns about systematics.
+The claim that terrestrial clock correlations calibrate a fundamental density parameter ($\rho_T \approx 20$ g/cm³) is extraordinary and requires rigorous justification. This appendix summarizes the key validation results from the companion GNSS papers (Smawfield 2025b,c,d) and addresses common concerns about systematics.
 
 ## A.1 Physical Mechanism
 
-In the TEP framework, the scalar field $\phi$ modulates proper time via a conformal factor $A(\phi) = \exp(2\beta\phi/M_{\text{Pl}})$. Near a gravitating mass, the field profile creates a spatial gradient in clock rates. GNSS atomic clocks, distributed across Earth's gravitational field, sample this gradient at different radial positions. The characteristic correlation length $L_c \approx 4200$ km corresponds to the scale where the scalar field's gradient becomes steep enough to produce measurable timing correlations—the soliton radius for Earth's mass.
+In the TEP framework, the scalar field $\phi$ modulates proper time via a conformal factor $A(\phi) = \exp(\beta\phi/M_{\text{Pl}})$. Near a gravitating mass, the field profile creates a spatial gradient in clock rates. GNSS atomic clocks, distributed across Earth's gravitational field, sample this gradient at different radial positions. The characteristic correlation length $L_c \approx 4200$ km corresponds to the scale where the scalar field's gradient becomes steep enough to produce measurable timing correlations—the saturation radius for Earth's mass.
 
 ## A.2 Why Not Ionospheric, Tropospheric, or Orbital Systematics?
 
@@ -2027,7 +1986,7 @@ To strongly constrain the processing artifact hypothesis, the correlation was de
 
 #### What GNSS Measures
 
-The GNSS analysis measures a characteristic correlation length $L_c \approx 4200$ km in atomic clock residuals. This length is interpreted as the soliton radius for Earth's mass under the TEP framework.
+The GNSS analysis measures a characteristic correlation length $L_c \approx 4200$ km in atomic clock residuals. This length is interpreted as the Temporal Topology saturation radius for Earth's mass under the TEP framework.
 
 **Principle:**
 
@@ -2054,11 +2013,11 @@ Analysis code and data products are available at: [github.com/matthewsmawfield/T
 ![The Universal Scaling Law: TEP vs. General Relativity](site/figures/figure_2_scaling.png)
 
 Figure 5: The Universal Scaling Plot. The trajectory represents the
-soliton scaling law ($R \propto M^{1/3}$), calibrated via
+saturation scaling law ($R \propto M^{1/3}$), calibrated via
 terrestrial GNSS data ($L_c \approx 4200$ km). This single parameter
 predicts the onset of dark matter dynamics in spiral galaxies
 (SPARC) and the critical anti-glitch period in magnetars, organizing
-phenomena across 40 orders of magnitude in mass.
+phenomena across 40 orders of magnitude in mass (pending dependency audit).
 
 ![SPARC Galaxy Scaling Analysis](site/figures/figure_5_sparc_enhanced.png)
 
@@ -2075,7 +2034,7 @@ Figure 7: Comprehensive Screening Analysis. (A) Mass-density phase
 space spanning 60 orders of magnitude. (B) Empirical screening law:
 $S \propto \rho^{0.334}$. (C) Screening hierarchy and regime
 separation across densities. (D) Cross-regime consistency with the
-universal density $\rho_c \approx 20$ g/cm³.
+universal density $\rho_T \approx 20$ g/cm³.
 
 ---
 

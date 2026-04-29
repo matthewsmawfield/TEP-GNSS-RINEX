@@ -540,10 +540,14 @@ def batch_download_rinex_for_doy(year, doy, auth):
         
     except requests.exceptions.Timeout:
         log("FAILED", f"Download timeout after {_time.time() - start_time:.0f}s")
+        try:
             tar_file.unlink()
         except (OSError, IOError, PermissionError):
             pass
         return []
+
+    try:
+        extract_start = _time.time()
         rinex_files = []
         
         # Verify TAR magic bytes

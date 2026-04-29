@@ -1,7 +1,8 @@
 {
   "name": "tep-gnss-rinex-site",
-  "version": "1.0.0",
-  "description": "Global Time Echoes: Raw RINEX Validation of Distance-Structured Correlations in GNSS Clocks",
+  "version": "0.5.0",
+  "description": "Global Time Echoes: Raw RINEX Consistency Test",
+  "_comment": "Package version matches manuscript version v0.5 (Kathmandu)",
   "main": "index.html",
   "scripts": {
     "dev": "node dev-server.js",
@@ -23,7 +24,7 @@
     "temporal equivalence principle",
     "physics"
   ],
-  "author": "Matthew Lukin Smawfield <matthewsmawfield@gmail.com>",
+  "author": "Matthew Lukin Smawfield <matthew@mlsmawfield.com>",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",

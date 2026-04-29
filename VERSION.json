@@ -1,5 +1,6 @@
 {
-  "version": "0.4",
+  "version": "0.5",
   "codename": "Kathmandu",
-  "description": "Global Time Echoes: Raw RINEX Validation"
+  "date": "2026-04-29",
+  "description": "Paper 3: Global Time Echoes: Raw RINEX Consistency Test"
 }
