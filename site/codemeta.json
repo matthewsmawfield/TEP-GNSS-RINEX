@@ -1,6 +1,9 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
-  "@type": "ScholarlyArticle",
+  "@type": [
+    "ScholarlyArticle",
+    "SoftwareSourceCode"
+  ],
   "identifier": "https://doi.org/10.5281/zenodo.17860166",
   "name": "Global Time Echoes: Raw RINEX Consistency Test",
   "description": "Consistency test of TEP signatures using raw RINEX observations and Single Point Positioning (SPP), analyzing 539 globally distributed stations over 3 years (2022-2024; 1.17 billion pair-samples).",
@@ -17,7 +20,7 @@
   "version": "0.5 (Kathmandu)",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "codeRepository": "https://github.com/matthewsmawfield/TEP-GNSS-RINEX",
-  "url": "https://matthewsmawfield.github.io/TEP-GNSS-RINEX/",
+  "url": "https://mlsmawfield.com/tep/gnss-iii/",
   "keywords": [
     "GNSS",
     "RINEX",
@@ -28,5 +31,8 @@
     "distance correlations",
     "phase coherence",
     "temporal equivalence principle"
-  ]
+  ],
+  "developmentStatus": "active",
+  "runtimePlatform": "Python",
+  "applicationCategory": "Scientific/Research"
 }

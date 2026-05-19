@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msvalidate.01" content="F8DFE14889E215877815871325AAE778">
     <meta name="theme-color" content="#220126">
     <meta name="msapplication-TileColor" content="#220126">
     <meta name="mobile-web-app-capable" content="yes">
@@ -10,8 +11,8 @@
     <title>Global Time Echoes: Raw RINEX Consistency Test</title>
     
     <!-- Primary Meta Tags -->
-    <meta name="title" content="Global Time Echoes: Raw RINEX">
-    <meta name="description" content="Raw RINEX validation via Single Point Positioning. Analysis of 539 stations over 3 years (1.17B pair-samples) confirms TEP signatures exist in unprocessed data.">
+    <meta name="title" content="Global Time Echoes: Raw RINEX Consistency Test">
+    <meta name="description" content="Raw RINEX supports distance-structured clock correlations without precise analysis-center products. Reproducible pipeline and data in this repository.">
     <meta name="keywords" content="TEP-GNSS, RINEX, raw GNSS, Single Point Positioning, SPP, RTKLIB, temporal equivalence principle, phase coherence, CDDIS, IGS, raw observations, clock bias, pseudorange, carrier phase, geodesy, satellite navigation, empirical validation, independent confirmation, clock synchronization, relativistic effects, modified gravity">
     <meta name="author" content="Matthew Lukin Smawfield">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -26,9 +27,11 @@
     {
       "@context": "https://schema.org",
       "@type": "ScholarlyArticle",
+  "@id": "https://mlsmawfield.com/tep/gnss-iii/#article",
+  "sameAs": "https://doi.org/10.5281/zenodo.17860166",
       "headline": "Global Time Echoes: Raw RINEX Consistency Test",
       "name": "Global Time Echoes: Raw RINEX Consistency Test",
-      "description": "Raw RINEX validation using Single Point Positioning with broadcast ephemerides. 539 stations, 1.17B pair-samples, 72 metric combinations. Directional anisotropy E-W > N-S confirmed at 94% consistency.",
+      "description": "Raw RINEX supports distance-structured clock correlations without precise analysis-center products.",
       "url": "https://matthewsmawfield.github.io/TEP-GNSS-RINEX/",
       "datePublished": "2025-12-09",
       "author": {
@@ -69,13 +72,13 @@
     <link rel="alternate" href="https://mlsmawfield.com/tep/gnss-iii/">
     
     <!-- Alternate PDF Version (for Google Scholar) -->
-    <link rel="alternate" type="application/pdf" title="Global Time Echoes: Raw RINEX Consistency Test" href="./public/docs/3-TEP-GNSS-RINEX-v0.5-Kathmandu.pdf">
+    <link rel="alternate" type="application/pdf" title="Global Time Echoes: Raw RINEX Consistency Test" href="https://matthewsmawfield.github.io/TEP-GNSS-RINEX/public/docs/3-TEP-GNSS-RINEX-v0.5-Kathmandu.pdf">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://matthewsmawfield.github.io/TEP-GNSS-RINEX/">
     <meta property="og:title" content="Global Time Echoes: Raw RINEX Consistency Test">
-    <meta property="og:description" content="Independent confirmation of TEP signatures using raw RINEX observations and Single Point Positioning. Analysis of 539 globally distributed stations over 3 years (1.17B pair-samples) supports that the signal is present in the raw data.">
+    <meta property="og:description" content="Raw RINEX supports distance-structured clock correlations without precise analysis-center products. Reproducible pipeline and data in this repository.">
     <meta property="og:image" content="https://matthewsmawfield.github.io/TEP-GNSS-RINEX/public/og-image.jpg">
     <meta property="og:image:alt" content="TEP-GNSS-RINEX Raw Validation">
     <meta property="og:image:width" content="1200">
@@ -96,7 +99,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://matthewsmawfield.github.io/TEP-GNSS-RINEX/">
     <meta name="twitter:title" content="Global Time Echoes: Raw RINEX Consistency Test">
-    <meta name="twitter:description" content="Independent confirmation of TEP signatures using raw RINEX observations and Single Point Positioning. Analysis of 539 stations over 3 years (1.17B pair-samples).">
+    <meta name="twitter:creator" content="@matthewsmawfield">
+    <meta name="twitter:site" content="@matthewsmawfield">
+    <meta name="twitter:description" content="Raw RINEX supports distance-structured clock correlations without precise analysis-center products.">
     <meta name="twitter:image" content="https://matthewsmawfield.github.io/TEP-GNSS-RINEX/public/twitter-image.jpg">
     <meta name="twitter:image:alt" content="TEP-GNSS-RINEX Raw Validation">
     
@@ -117,7 +122,7 @@
     <!-- Google Scholar Meta Tags -->
     <meta name="citation_title" content="Global Time Echoes: Raw RINEX Consistency Test">
     <meta name="citation_author" content="Smawfield, Matthew Lukin">
-    <meta name="citation_date" content="2025-12-09">
+    <meta name="citation_date" content="2025/12/09">
     <meta name="citation_author_institution" content="Independent Researcher">
     <meta name="citation_author_email" content="matthew@mlsmawfield.com">
     <meta name="citation_author_orcid" content="https://orcid.org/0009-0003-8219-3159">
@@ -140,7 +145,7 @@
     <meta name="dc.title" content="Global Time Echoes: Raw RINEX Consistency Test">
     <meta name="dc.creator" content="Smawfield, Matthew Lukin">
     <meta name="dc.subject" content="Physics; GNSS; RINEX; Raw Observations; Temporal Equivalence Principle">
-    <meta name="dc.description" content="Independent confirmation of TEP signatures using raw RINEX observations and Single Point Positioning. Analysis of 539 globally distributed stations over 3 years (1.17B pair-samples) supports that the signal is present in the raw data.">
+    <meta name="dc.description" content="This paper validates that distance-structured correlations in GNSS clocks exist in raw observations, not just processed products—eliminating the processing artifact hypothesis. Prior TEP analyses relied on precise orbit and clock products from global analysis centers, leaving open the possibility that observed signatures were artifacts of sophisticated processing chains. This paper addresses that concern by detecting distance-structured signatures in raw GNSS observations processed using Single Point Positioning (SPP) with broadcast ephemerides as the primary methodology, supplemented by precise ephemeris validation. Analysis of 539 globally distributed stations over 3 years (2022–2024, comprising 1.17 billion pair-samples across three independent filtering strategies) achieves consistent signal detection across all 72 metric combinations with mean R² = 0.93, revealing directionally-structured correlations consistent with CODE's 25-year PPP findings (p &lt; 10^-15). The primary finding is directional anisotropy: East-West correlations are 2–5% (MSC) to 22% (Phase Alignment) stronger than North-South at short distances (&lt;500 km), with t-statistics up to 112 and Cohen's d up to 0.304. Month-by-month stratification shows stable polarity (E-W &gt; N-S) at 94% or higher level across modes and metrics (worst case 34/36 months), consistent with a persistent underlying effect. A critical audit indicates this is not an artifact of distance distribution: E-W pairs are actually 13 km longer than N-S pairs (bias against signal), and robust distance-matching strengthens the ratio (1.033 → 1.041). At full distances, raw λ ratios can appear suppressed by distance-dependent biases; a geometry-corrected comparison yields ratios of 1.80–1.86, within 17% of CODE's benchmark (2.16).">
     <meta name="dc.publisher" content="Independent Research">
     <meta name="dc.date" content="2025-12-09">
     <meta name="dc.type" content="Text.Article">
@@ -784,6 +789,7 @@
     </header>
 
     <main id="main-content" role="main">
+    <article itemscope itemtype="https://schema.org/ScholarlyArticle">
         <div id="loading" class="loading">
             Loading manuscript components...
         </div>
@@ -802,7 +808,8 @@
 
 
 
-    </main>
+        </article>
+</main>
 
     <!-- Component Loading Script -->
     <script>
