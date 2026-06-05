@@ -1,0 +1,128 @@
+<div class="section appendix">
+<h2>Appendix: TEP Parameter Registry</h2>
+<p>
+This table records the flow of parameters across the TEP corpus.  Each parameter is classified as
+<strong>fundamental</strong>, <strong>calibrated</strong>, <strong>observable response</strong>,
+<strong>nuisance</strong>, or <strong>exploratory</strong>.
+</p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Value</th>
+<th>Class</th>
+<th>First calibrated</th>
+<th>Used in</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&beta;</td>
+<td>Conformal coupling strength in A(&phi;) = exp(&beta;&phi;/M<sub>Pl</sub>)</td>
+<td>&minus;1.0</td>
+<td><span class="tag-fundamental">fundamental</span></td>
+<td>Paper 0</td>
+<td>0, 1, 2, 3, 6, 10, 11, 14, 17, 18, 19, 21, 22, 23, 24, 25, 26</td>
+</tr>
+<tr>
+<td>&rho;<sub>c</sub></td>
+<td>Temporal Topology saturation density</td>
+<td>20.0 g/cm<sup>3</sup></td>
+<td><span class="tag-calibrated">calibrated</span></td>
+<td>Paper 6</td>
+<td>6, 14, 17, 18, 21, 23, 24</td>
+</tr>
+<tr>
+<td>&lambda;<sub>T</sub></td>
+<td>Clock-correlation length (Temporal Topology coherence)</td>
+<td>4200 km</td>
+<td><span class="tag-calibrated">calibrated</span></td>
+<td>Papers 1&ndash;2</td>
+<td>1, 2, 3, 6, 14, 17, 21</td>
+</tr>
+<tr>
+<td>&alpha;<sub>log</sub></td>
+<td>Lab-scale density-sector coupling</td>
+<td>&minus;7.66 &times; 10<sup>&minus;3</sup></td>
+<td><span class="tag-calibrated">calibrated</span></td>
+<td>Paper 21</td>
+<td>21</td>
+</tr>
+<tr>
+<td>&beta;<sub>geom</sub></td>
+<td>Mass-sector geometric coupling</td>
+<td>1.50 &times; 10<sup>&minus;4</sup></td>
+<td><span class="tag-calibrated">calibrated</span></td>
+<td>Paper 21</td>
+<td>21</td>
+</tr>
+<tr>
+<td>M<sub>ref</sub></td>
+<td>Reference mass scale for geometric coupling</td>
+<td>10<sup>18</sup> kg</td>
+<td><span class="tag-fundamental">fundamental</span></td>
+<td>Paper 21</td>
+<td>21</td>
+</tr>
+<tr>
+<td>&kappa;<sub>Cep</sub></td>
+<td>Cepheid observable response coefficient</td>
+<td>&mdash;</td>
+<td><span class="tag-response">observable response</span></td>
+<td>Paper 11</td>
+<td>11, 12</td>
+</tr>
+<tr>
+<td>&kappa;<sub>MSP</sub></td>
+<td>Pulsar observable response coefficient</td>
+<td>&mdash;</td>
+<td><span class="tag-response">observable response</span></td>
+<td>Paper 10</td>
+<td>10, 17</td>
+</tr>
+<tr>
+<td>&epsilon;<sub>T</sub></td>
+<td>Cosmology shear amplitude</td>
+<td>&mdash;</td>
+<td><span class="tag-exploratory">exploratory</span></td>
+<td>Paper 26</td>
+<td>18, 26</td>
+</tr>
+<tr>
+<td>&phi;<sub>0</sub></td>
+<td>Present-day scalar field amplitude (phenomenological)</td>
+<td>&mdash;</td>
+<td><span class="tag-exploratory">exploratory</span></td>
+<td>Paper 22</td>
+<td>18, 22, 26</td>
+</tr>
+<tr>
+<td>n</td>
+<td>Redshift exponent in phenomenological conformal factor</td>
+<td>&mdash;</td>
+<td><span class="tag-exploratory">exploratory</span></td>
+<td>Paper 22</td>
+<td>18, 22</td>
+</tr>
+<tr>
+<td>B(&phi;)</td>
+<td>Disformal coupling function</td>
+<td>0 (leading order)</td>
+<td><span class="tag-fundamental">fundamental</span></td>
+<td>Paper 0</td>
+<td>0, 4, 9, 22</td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong>Class definitions:</strong>
+</p>
+<ul>
+<li><strong>fundamental</strong> &mdash; Axiomatic or theoretically fixed; changes would alter the framework itself.</li>
+<li><strong>calibrated</strong> &mdash; Determined from experimental data with well-defined uncertainty; shared across analyses.</li>
+<li><strong>observable response</strong> &mdash; Domain-level empirical transfer coefficient; specific to a measurement domain.</li>
+<li><strong>nuisance</strong> &mdash; Required for analysis but not a TEP parameter of direct physical interest.</li>
+<li><strong>exploratory</strong> &mdash; Under investigation; value or existence not yet firmly established.</li>
+</ul>
+</div>

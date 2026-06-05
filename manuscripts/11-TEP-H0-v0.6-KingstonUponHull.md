@@ -108,7 +108,7 @@ with the action $S = \int d^4x \sqrt{-g} \left[ \frac{M_{\rm Pl}^2}{2} R - \frac
 and $S_m$ is the matter action. The key feature is the disformal coupling:
 matter fields $\Psi_m$ couple not to the Einstein-frame metric $g_{\mu\nu}$
 but to the Jordan-frame metric $\tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu} + B(\phi) \nabla_\mu\phi \nabla_\nu\phi$,
-where $A(\phi) = \exp(\beta\phi/M_{\rm Pl})$ is the conformal factor and $B(\phi)$ encodes
+where $A(\phi) = \exp(\beta_A\phi/M_{\rm Pl})$ is the conformal factor and $B(\phi)$ encodes
 the disformal coupling. In the weak-field limit relevant to galactic potentials,
 the disformal term is subdominant and the conformal factor expands as
 
@@ -180,8 +180,10 @@ reddening).
 As proposed in recent studies on pulsar timing (Smawfield 2026a; Paper 10), the TEP
 scalar field in active-shear astrophysical environments induces a clock rate
 enhancement—manifesting observationally as "period contraction" in periodic
-phenomena. Paper 10 reports a 0.58 dex spin-down excess in globular cluster
-pulsars compared to field controls, consistent with TEP predictions for
+phenomena. Paper 10 reports a primary hybrid-controlled spin-down residual of
+0.40 dex in globular cluster pulsars compared to field controls (primary empirical
+result), while its nested-domain model predicts an unshielded cluster-bath enhancement
+of ~0.58 dex prior to companion-shielding effects, consistent with TEP predictions for
 intermediate-scale time-dilation enhancement ($\kappa_{\rm Cep} \sim 10^6$–$10^7$). Consequently, Cepheids in deep galactic potentials (high velocity
 dispersion $\sigma$) experience accelerated time flow relative to
 calibration environments, causing their pulsation periods to appear
@@ -300,13 +302,13 @@ intrinsic period by a conformal factor $A(\phi)$ that depends on the local
 potential depth $|\Phi|$:
 
 $P_{\rm obs} = P_{\rm true} \cdot A(\phi)^{k_{\rm clock}/2}$
-where $A(\phi) = \exp(\beta\phi/M_{\rm Pl})$ is the conformal factor to
+where $A(\phi) = \exp(\beta_A\phi/M_{\rm Pl})$ is the conformal factor to
 which matter couples (Jakarta v0.8). In the unscreened regime, the scalar
 field tracks the gravitational potential as $\phi/M_{\rm Pl} \approx
-2\beta \Phi/c^2$, yielding a clock rate $d\tau/dt = \exp(2\beta^2 \Phi/c^2)$.
+2\beta_A \Phi/c^2$, yielding a clock rate $d\tau/dt = \exp(2\beta_A^2 \Phi/c^2)$.
 The fitted coefficient $\kappa_{\rm Cep}$ is an observable Cepheid
 period-luminosity response coefficient. It should not be identified with
-the microscopic conformal coupling $\beta$, the scalar-tensor coupling
+the microscopic conformal coupling $\beta_A$, the scalar-tensor coupling
 $\alpha_0$, or a PPN coupling. It absorbs the Cepheid pulsation response,
 the P-L slope, the environmental activation factor, the virial mapping
 between $\sigma^2$ and potential depth, and the calibration geometry
@@ -372,11 +374,11 @@ $\mu_{\rm corr} = \mu_{\rm obs} + \kappa_{\rm Cep} \cdot S(\rho) \cdot
 
 where $\kappa_{\rm Cep}$ is the **Observable Response Coefficient**
 for Cepheid period-luminosity anomalies—an astrophysical response parameter
-that absorbs the intrinsic coupling $\beta$, the virial proportionality
+that absorbs the intrinsic coupling $\beta_A$, the virial proportionality
 between $|\Phi|$ and $\sigma^2$, the P-L slope $b$, the factor $1/\ln 10$,
 stellar physics, environmental activation, and transfer functions. This is
 distinct from a bare scalar coupling: Cassini bounds the bare coupling
-$\beta \lesssim 10^{-3}$, while $\kappa_{\rm Cep} \sim 10^6$ is an
+$\beta_A \lesssim 10^{-3}$, while $\kappa_{\rm Cep} \sim 10^6$ is an
 *observable response* that includes all astrophysical amplification
 mechanisms. $S(\rho)$ encodes the environment-dependent attenuation of Temporal
 Shear. In this convention $\kappa_{\rm Cep}$ has units of magnitude, and with
@@ -1589,8 +1591,9 @@ overall $H_0$–$\sigma$ trend. The SH0ES host sample is biased toward
 low-$N_{\rm mb}$ (field) galaxies relative to the anchor calibrators,
 consistent with the Hubble-flow selection criterion favoring isolated
 environments. The response-coefficient values show qualitative consistency across probes:
-the 0.58 dex pulsar spin-down excess (Paper 10, with response coefficient
-$\kappa_{\rm Cep}\sim10^6$), the Temporal Topology scaling
+the 0.40 dex primary hybrid-controlled pulsar spin-down residual (Paper 10,
+with response coefficient $\kappa_{\rm Cep}\sim10^6$; the nested-domain model
+predicts an unshielded cluster-bath amplitude of ~0.58 dex), the Temporal Topology scaling
 ($\rho_{\rm T}$, Paper 6), and this Hubble Tension analysis
 ($\kappa_{\rm Cep} = (1.05 \pm 0.43)\times10^6$ mag) all indicate environment-dependent
 temporal modifications. This pattern is consistent with the possibility
@@ -1600,7 +1603,8 @@ Temporal Shear governing where the effect is active.
 
 **Quantitative Cross-Probe Comparison.** Paper 10 (TEP-COS)
 reports $\kappa_{\rm Cep} \sim 10^6$–$10^7$ for millisecond pulsars in
-globular clusters, derived from the 0.58 dex spin-down excess. Paper 11
+globular clusters, derived from the primary 0.40 dex hybrid-controlled residual
+(nested-domain model: ~0.58 dex unshielded cluster-bath amplitude). Paper 11
 measures $\kappa_{\rm Cep} = (1.05 \pm 0.43) \times 10^6$ mag from the
 Cepheid $H_0$–$\sigma$ correlation. The Cepheid central value ($1.05 \times 10^6$ mag) falls squarely within the pulsar range,
 representing a *quantitative* (not merely qualitative) agreement
@@ -1671,16 +1675,15 @@ not constrained by the *photon-sector* bounds from solar-system
 tests. This structural distinction, unique to TEP's two-metric
 formulation, resolves the apparent magnitude mismatch without fine-tuning.
 
-### 4.8 Cross-Scale Consistency: From GNSS to JWST
+### 4.8 Cross-Probe Response-Coefficient Consistency
 
 The TEP framework's cross-domain consistency is suggested by its ability to unify
 phenomena across vastly different scales using the same physical response-coefficient
-regime ($\kappa_{\rm Cep} \sim 10^6$). The distance-structured correlations
-identified in terrestrial geodetic networks (Papers 1-3, 8) establish the
-metric nature of the temporal field with a characteristic length scale
-$\lambda \approx 4,000$ km. This same scale, when mapped to galactic
-potentials, correctly predicts the observed Hubble Tension bias (Paper 11)
-and the anomalous high-redshift galaxy evolution observed by JWST (Paper 12).
+regime ($\kappa_{\rm Cep} \sim 10^6$). The Cepheid period-luminosity analysis
+in this work (Paper 11) establishes the observable response in the galactic
+regime using SH0ES and Pantheon+ data alone. This same response coefficient,
+when mapped to high-redshift potentials, correctly predicts the anomalous
+galaxy evolution observed by JWST (Paper 12).
 
 Crucially, Paper 12 (TEP-JWST) applies the Paper 11 response-coefficient values directly
 to the potential-linear $\Gamma_t$ enhancement factor, explaining the
@@ -2035,8 +2038,9 @@ disk ($S \approx 1$) remains in the active-shear regime.
 
 These findings support the hypothesis that the Hubble Tension could reflect
 an environmental systematic rather than new early-universe physics. The
-Temporal Equivalence Principle—supported by the 0.58 dex spin-down signal
-observed in globular cluster pulsars (Paper 10) and by the potential- and
+Temporal Equivalence Principle—supported by the 0.40 dex primary pulsar
+spin-down residual observed in globular cluster pulsars (Paper 10; nested-domain
+model ~0.58 dex unshielded cluster-bath amplitude) and by the potential- and
 density-dependent structure identified here—provides a concrete framework
 for organizing these correlations and for generating falsifiable
 predictions.
@@ -2335,7 +2339,7 @@ correction
 $\Delta\mu = \kappa_{\rm Cep} \cdot S(\rho) \cdot \frac{\sigma^2 - \sigma_{\rm ref}^2}{c^2}.$
 
 It should not be identified with the microscopic conformal coupling
-$\beta$, the scalar-tensor coupling $\alpha_0$, or a PPN coupling.
+$\beta_A$, the scalar-tensor coupling $\alpha_0$, or a PPN coupling.
 It absorbs the Cepheid pulsation response, the P-L slope, the environmental
 activation factor, the virial mapping between $\sigma^2$ and potential
 depth, and the calibration geometry of the distance ladder.
@@ -2357,9 +2361,9 @@ source-screening tests.
 This paper does not infer a microscopic coupling from $\kappa_{\rm Cep}$.
 In particular, it does not assume
 
-$\kappa_{\rm Cep} \rightarrow \beta, \quad \kappa_{\rm Cep} \rightarrow \alpha_0, \quad \kappa_{\rm Cep} \rightarrow \alpha_{\rm clock}.$
+$\kappa_{\rm Cep} \rightarrow \beta_A, \quad \kappa_{\rm Cep} \rightarrow \alpha_0, \quad \kappa_{\rm Cep} \rightarrow \alpha_{\rm clock}.$
 
-A microscopic mapping would require a transfer calculation from $\beta$
+A microscopic mapping would require a transfer calculation from $\beta_A$
 through the scalar-field boundary-value problem, environmental activation,
 source screening, and Cepheid pulsation physics. The present result
 should therefore be interpreted as a measurement of the Cepheid response
@@ -2381,34 +2385,3 @@ mechanism previously referred to as "Temporal Shear" (v0.5) is now
 standardized as Temporal Shear, referring to the
 gradient-based suppression of scalar field activity in high-density
 environments.
-
-[← Home](/)
-
-### TEP Research Series
-
-- [Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed 18 Aug 2025](/tep/theory/)
-
-- [Global Time Echoes: Distance-Structured Correlations in GNSS Clocks 17 Sep 2025](/tep/gnss-i/)
-
-- [Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products 3 Nov 2025](/tep/gnss-ii/)
-
-- [Global Time Echoes: Raw RINEX Consistency Test 9 Dec 2025](/tep/gnss-iii/)
-
-- [Temporal-Spatial Coupling in Gravitational Lensing 19 Dec 2025](/tep/gl/)
-
-- [Global Time Echoes: Empirical Synthesis 21 Dec 2025](/tep/gte/)
-
-- [Universal Critical Density: Cross-Scale Consistency of ρ_T 28 Dec 2025](/tep/ucd/)
-
-- [The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate 28 Dec 2025](/tep/rbh/)
-
-- [Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging 30 Dec 2025](/tep/slr/)
-
-- [What Do Precision Tests of General Relativity Measure? 31 Dec 2025](/tep/exp/)
-
-- [The Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars 9 Jan 2026](/tep/cos/)
-
-- [The Cepheid Bias: Resolving the Hubble Tension 11 Jan 2026](/tep/h0/)
-
-← Previous
-Next →

@@ -1,4 +1,4 @@
-# Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging
+# Global Time Echoes: Optical-Domain Consistency Test via SLR
 **Matthew Lukin Smawfield**
 v0.3 (Mombasa)
 First published: 30 December 2025 · Last updated: 29 April 2026

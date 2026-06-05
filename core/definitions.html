@@ -1,0 +1,91 @@
+<div class="section appendix">
+<h2>Appendix: Canonical TEP Definitions</h2>
+<p>
+This appendix states the canonical definitions used throughout the TEP corpus.
+Every paper in the series adopts these conventions unless an explicit deviation is noted.
+</p>
+
+<h3>A.1 Matter Metric</h3>
+<p>
+The TEP framework operates on a single manifold with two metrics.  Gravity is described by a Lorentzian metric <em>g</em><sub>&mu;&nu;</sub>; matter fields, clocks, and rulers couple to a causal matter metric <em>g&#771;</em><sub>&mu;&nu;</sub>:
+</p>
+<p style="text-align: center;">
+<em>g&#771;</em><sub>&mu;&nu;</sub> = A<sup>2</sup>(&phi;) <em>g</em><sub>&mu;&nu;</sub> + B(&phi;) &nabla;<sub>&mu;</sub>&phi; &nabla;<sub>&nu;</sub>&phi;
+</p>
+<p>
+where &phi; is the time field, A(&phi;) = exp(&beta;&phi;/M<sub>Pl</sub>) is the universal conformal factor, and B(&phi;) is a small disformal function consistent with multi-messenger constraints.
+</p>
+
+<h3>A.2 Sector Mapping</h3>
+<table>
+<thead>
+<tr><th>Sector</th><th>Physical effect</th><th>Coupling</th><th>Key bound</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Conformal A(&phi;)</td>
+<td>Clock rates, proper-time rescaling</td>
+<td>Universal (&beta;)</td>
+<td>Cassini PPN-&gamma;, redshift tests</td>
+</tr>
+<tr>
+<td>Disformal B(&phi;)</td>
+<td>Null-cone tilts, direction-dependent propagation</td>
+<td>Small, environment-dependent</td>
+<td>GW170817: |c<sub>&gamma;</sub> &minus; c<sub>g</sub>|/c &lesssim; 10<sup>-15</sup></td>
+</tr>
+<tr>
+<td>Temporal Topology</td>
+<td>Spatial/covariance structure of ln A(&phi;)</td>
+<td>Field configuration + gradient suppression</td>
+<td>Clock/covariance correlation length &lambda;<sub>T</sub></td>
+</tr>
+</tbody>
+</table>
+<p>
+The conformal sector governs clock rates; the disformal sector governs cone tilts.
+</p>
+
+<h3>A.3 Temporal Shear</h3>
+<p>
+The Temporal Shear is the gradient of the conformal factor:
+</p>
+<p style="text-align: center;">
+&Sigma;<sub>&mu;</sub> = &nabla;<sub>&mu;</sub> ln A(&phi;) = (&beta;/M<sub>Pl</sub>) &nabla;<sub>&mu;</sub>&phi;
+</p>
+<p>
+It measures the local rate of change of the conformal clock-rate rescaling and is the source charge for fifth-force-like effects.
+</p>
+
+<h3>A.4 Temporal Topology</h3>
+<p>
+The spatial profile and coherence structure of the scalar field &phi; (equivalently, of ln A).  It describes how the scalar field is organised in space and time, including its correlation lengths, domain boundaries, and topological defects.  The coherence length &lambda;<sub>T</sub> is the characteristic scale over which the field remains correlated; at smaller separations the field behaves coherently, while at larger scales random-phase superposition suppresses the net observable effect.
+</p>
+
+<h3>A.5 Screening</h3>
+<p>
+Screening is the continuous, spatially varying suppression of locally observable Temporal Shear due to the local matter density.  It is not a binary on/off switch but a smooth transition governed by the dimensionless screening function:
+</p>
+<p style="text-align: center;">
+f(&rho;) = 1 / [1 + (&rho;/&rho;<sub>c</sub>)<sup>n</sup>]
+</p>
+<p>
+where &rho;<sub>c</sub> is the phenomenological saturation density (calibrated from terrestrial data) and n controls the steepness of the transition.  When &rho; &Lt; &rho;<sub>c</sub>, f &rarr; 1 (full TEP effect); when &rho; &Gt; &rho;<sub>c</sub>, f &rarr; 0 (saturated, A &rarr; 1).  The transition from 10% to 90% screened typically spans &rho; ~ 2&ndash;30 g/cm<sup>3</sup>.
+</p>
+
+<h3>A.6 Observable Response Coefficient</h3>
+<p>
+An observable response coefficient, denoted &kappa; with an appropriate subscript (e.g. &kappa;<sub>Cep</sub>, &kappa;<sub>MSP</sub>), is a domain-level empirical transfer coefficient that maps a TEP field structure to a specific observable shift in a given experiment.  It is not a bare microscopic coupling; it absorbs the combined effect of local screening, instrument bandwidth, calibration conventions, and systematic residuals.  Different experiments constrain different response coefficients, and the same underlying &beta; can manifest through different &kappa; values in different domains.
+</p>
+
+<h3>A.7 Synchronization Holonomy</h3>
+<p>
+The residual non-closure of synchronization transport around a closed loop, after subtracting all known GR corrections (Sagnac, gravitomagnetic / Lense&ndash;Thirring, Shapiro delay, gravitational redshift, station motion, clock-scale realization, and reference-frame corrections):
+</p>
+<p style="text-align: center;">
+H<sub>resid</sub>(C) &equiv; &oint;<sub>C</sub> (<em>&sigma;&#771;</em> &minus; <em>&sigma;</em><sub>GR</sub>) = &iint;<sub>&Sigma;</sub> (<em>F&#771;</em> &minus; <em>F</em><sub>GR</sub>)
+</p>
+<p>
+This quantity is invariant under admissible synchronization re-gaugings because the matter-frame connection &sigma;&#771; and the corresponding GR reference connection &sigma;<sub>GR</sub> shift by the same exact one-form, leaving the residual connection &Delta;&sigma; = &sigma;&#771; &minus; &sigma;<sub>GR</sub> unchanged. In the conformal-only limit (B = 0), the scalar contribution to closed-loop transport is generated by the exact one-form d ln A, so &oint;<sub>C</sub> d ln A = 0 and H<sub>resid</sub> vanishes at leading order.  A non-zero H<sub>resid</sub> requires the disformal sector, non-metricity, or other explicitly non-exact transport structure.
+</p>
+</div>

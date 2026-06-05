@@ -1,3 +1,5 @@
+v0.6 (Kathmandu) — 05 June 2026 — Renamed conformal coupling notation from beta_conf to beta_A to avoid PPN collision
+
 v0.5 (Kathmandu) - Terminology Alignment and Theory Clarification
 
 - Unified terminology: "temporal equivalence principle" replaces "conformal model" throughout

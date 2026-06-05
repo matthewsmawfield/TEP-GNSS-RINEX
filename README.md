@@ -6,7 +6,7 @@
 ![Global Time Echoes: Raw RINEX Consistency Test](site/public/og-image.jpg)
 
 **Author:** Matthew Lukin Smawfield  
-**Version:** v0.5 (Kathmandu)  
+**Version:** v0.6 (Kathmandu)  
 **Date:** 29 April 2026  
 **Last Updated:** 29 April 2026  
 **Status:** Preprint  
@@ -209,7 +209,7 @@ TEP-GNSS-RINEX/
   journal={Zenodo},
   year={2025},
   doi={10.5281/zenodo.17860166},
-  note={Preprint v0.5 (Kathmandu)}
+  note={Preprint v0.6 (Kathmandu)}
 }
 ```
 

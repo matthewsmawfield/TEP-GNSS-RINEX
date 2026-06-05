@@ -3367,6 +3367,44 @@ spatial gradients are <0.01 TECU/km under quiet
 conditions—far smaller than the effect observed here, which
 persists across all geomagnetic conditions.
 
+### 6.1b Multiplicity, Preregistration, and the Cross-Paper Synthesis
+
+A concern sometimes raised is that the large number of metric combinations
+reported in this paper (72 combinations across 3 filters, 4 modes, 3
+metrics, and 2 coherence types) constitutes a "look-elsewhere" problem.
+This concern is addressed through three complementary arguments.
+
+**Preregistration of the primary comparison.** The single
+most important comparison was predefined before inspection of the raw-SPP
+results: the phase-alignment index from the precise-ephemeris mode, matched
+against the PPP phase-alignment index from Paper 1.  All other
+combinations (baseline GPS, ionofree, multi-GNSS, MSC metrics, etc.) are
+treated as *consistency checks*, not independent tests of the TEP
+hypothesis.  They serve to ask whether the signal form is robust across
+processing choices, not to accumulate significance.
+
+**Cross-paper synthesis (Step 5.0).** A direct comparison of
+PPP-derived λ (Paper 1: CODE 4,549 km, IGS Combined 3,764 km, ESA Final
+3,330 km) with raw-SPP phase-alignment λ (this paper: precise-mode range
+1,166&ndash;3,581 km) reveals a systematic and directional shift: in 99 of
+108 matched comparisons, raw-SPP λ is *shorter* than PPP λ (sign-test
+p = 2.6 × 10−20).  This is precisely the direction
+predicted by a noise-dilution model: higher uncorrelated noise in raw SPP
+should shorten the apparent correlation length because the exponential
+signal is buried in a larger incoherent background.  The mean ratio
+λraw/λPPP = 0.52 &pm; 0.26, with a median of 0.47.
+The fact that the shift is directional and predictable constrains the
+forward-model space: a software artifact would not necessarily produce this
+systematic shortening, whereas a physical signal attenuated by noise would.
+
+**Multiplicity is bounded by the physical prediction.** The
+TEP theoretical framework specifies a single search range (1,000&ndash;10,000
+km) and a single functional form (exponential decay).  The 72 combinations
+do not scan 72 independent hypotheses; they are 72 realizations of the
+*same* hypothesis under different noise conditions.  Treating them
+as independent tests would be a methodological error; treating them as
+consistency checks, as done here, is the correct statistical framing.
+
 ### 6.2 Physical Implications
 
 #### 6.2.1 Space-Time Coupling Supported

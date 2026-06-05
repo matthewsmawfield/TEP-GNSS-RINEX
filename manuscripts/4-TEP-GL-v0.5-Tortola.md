@@ -1,4 +1,4 @@
-# Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations
+# Temporal-Spatial Coupling in Gravitational Lensing
 **Matthew Lukin Smawfield**
 Version: v0.5 (Tortola)
 First published: 19 December 2025 · Last updated: 29 April 2026
@@ -118,9 +118,9 @@ The TEP framework is not a novel field theory but a
 gravity to gravitational lensing. Specifically:
 
 **Brans-Dicke Theory:** TEP with \(B=0\) and \(A(\phi)
-= e^{\beta\phi/M_{\text{Pl}}}\) reduces to Brans-Dicke gravity in the
+= e^{\beta_A\phi/M_{\text{Pl}}}\) reduces to Brans-Dicke gravity in the
 Jordan frame. The scalar field \(\phi\) plays the role of the
-Brans-Dicke field, with the coupling \(\beta\) related to the
+Brans-Dicke field, with the coupling \(\beta_A\) related to the
 Brans-Dicke parameter \(\omega_{BD}\).
 
 **Horndeski/Galileon Theories:** The Lagrangian in
@@ -1100,7 +1100,7 @@ TEP-GL is a falsifiable hypothesis. The following observations would exclude spe
 
 - **Chromatic Anomaly:** If any timing or morphological anomaly shows wavelength dependence after correction for plasma dispersion and dust, the achromatic prediction of two-metric coupling is falsified. This would indicate conventional astrophysical systematics rather than metric effects.
 
-- **Direct Detection:** A confirmed detection of dark matter particles in direct-detection experiments would establish the existence of a particulate dark sector. TEP would then be relegated to a sub-dominant correction rather than a primary explanation.
+- **Direct Detection:** A confirmed detection of dark matter particles in direct-detection experiments would falsify the strong TEP claim that the dark sector is wholly non-particulate. TEP would then survive only as a possible temporal-transport correction, not as the primary replacement explanation.
 
 The framework stands or falls on empirical grounds. It does not claim immunity from observation; the claim is that the observations required to test TEP have not yet been performed with sufficient precision.
 
@@ -1351,12 +1351,13 @@ astrophysical data.
 
 **Standard Assumption:** \(c\) is constant; therefore, any
 anomaly in \(t\) must be due to extra path length (spatial curvature) or
-extra mass (Shapiro delay). Conclusion: *dark matter* exists.
+extra mass (Shapiro delay). Conclusion: particulate *dark matter*
+is inferred.
 
 **TEP Reality:** \(t\) is modulated by the field
 \(A(\phi)\); \(c\) is effectively variable along the path. The
 anomaly in \(t\) is due to the scalar field gradient. Conclusion:
-*dark matter* admits the interpretation of variable light speed.
+apparent *dark matter* is reconstructed temporal transport.
 
 TEP removes the need for an invisible substance by correcting the assumption
 about the constancy of the global speed of light.
@@ -1455,10 +1456,10 @@ provides a unified explanation for *existing* anomalies that
 ### 6.8 The Path Forward
 
 The analysis suggests that
-*some dark-matter phenomenology may be reproducible without a new substance*,
+*dark-matter phenomenology may be reproducible without a new substance*,
 if temporal-composite projection effects survive the proposed time-domain tests.
-What may exist is a temporal field with spatial gradients, and some of what has been
-inferred as "dark matter" may be the projection of those gradients onto
+In TEP ontology, what exists is a temporal field with spatial gradients, and what has been
+inferred as "dark matter" is the projection of those gradients onto
 observations that assume temporal synchrony. To maintain the particle
 interpretation, it is necessary to demonstrate that the universe is
 synchronous to a precision that excludes TEP effects. TEP offers a geometric
@@ -1466,9 +1467,8 @@ identification of the phenomenology, explaining the universality of dark
 matter profiles and the success of MOND on galactic scales through a single
 parsimonious framework.
 
-"Dark Time" is not merely an alternative to dark matter; it offers a
-geometric identification of the phenomenology that admits this
-interpretation.
+"Dark Time" is not merely an alternative label for dark matter; it is the
+proposed geometric identity of the phenomenology.
 
 ## 7. Conclusions
 
@@ -1480,7 +1480,10 @@ treating the photons in telescopes as representing a single spatial slice of
 the source, standard models have been forced to interpret all observed
 distortions as spatial deflections caused by mass. It has been shown that
 this *Isochrony Axiom* is an effective approximation that may break
-down in the presence of generalized metric couplings.
+down in the presence of generalized metric couplings. In the TEP ontology,
+the dark sector is not fundamental matter or energy; it is the residual
+produced when temporal transport is forced into a synchronous mass-and-expansion
+reconstruction.
 
 The *Temporal Equivalence Principle (TEP)*, introduced in a companion
 paper (Smawfield 2025a), provides a corrected framework. Under TEP,
@@ -1496,7 +1499,8 @@ dilation onto the spatial image plane.
 gradient in proper-time accumulation across an image plane acts as a
 "temporal shear" on evolving sources. In a static reconstruction, this
 is mathematically indistinguishable from the gravitational shear of a
-dark matter halo. The "dark sector" may be the difference between
+dark matter halo under a static reconstruction. The "dark sector" is interpreted
+in TEP as the difference between
 the gravitational metric (which guides orbits) and the matter metric
 (which guides clocks).
 
@@ -1517,7 +1521,7 @@ effects are millisecond-scale and detectable only in
 high-time-resolution astrophysics (FRBs, pulsars). In the
 *Extended Regime*, where environmental screening and/or a revised
 operational mapping allow larger effective delays, TEP becomes a full
-dynamical alternative to particle dark matter.
+temporal-geometry replacement for particle dark matter.
 
 ### 7.3 Future Outlook: Time, Not Mass
 

@@ -1,0 +1,155 @@
+# TEP Parameter Registry
+# ======================
+# Canonical source of truth for all parameters used across the TEP corpus.
+# When updated in the main TEP repo, run scripts/bump_papers.py to propagate.
+
+schema_version: 1
+last_updated: "2026-06-05"
+
+parameter_classes:
+  fundamental: "Axiomatic or theoretically fixed parameter; changes would alter the framework itself."
+  calibrated: "Determined from experimental data with well-defined uncertainty; shared across analyses."
+  observable_response: "Domain-level empirical transfer coefficient; specific to a measurement domain."
+  nuisance: "Required for analysis but not a TEP parameter of direct physical interest."
+  exploratory: "Under investigation; value or existence not yet firmly established."
+
+parameters:
+  - symbol: "beta_A"
+    latex: "\\beta_A"
+    meaning: "Conformal coupling strength in A(phi) = exp(beta_A * phi / M_Pl)"
+    value: -1.0
+    units: "dimensionless"
+    class: "fundamental"
+    first_paper: 0
+    used_in: [0, 1, 2, 3, 6, 10, 11, 14, 17, 18, 19, 21, 22, 23, 24, 25, 26]
+    description: "Locked lab-scale convention. Universal conformal coupling governing clock-rate rescaling."
+
+  - symbol: "rho_c"
+    latex: "\\rho_c"
+    meaning: "Temporal Topology saturation density"
+    value: 20.0
+    units: "g cm^{-3}"
+    class: "calibrated"
+    first_paper: 6
+    used_in: [6, 14, 17, 18, 21, 23, 24]
+    description: "Phenomenological density at which collective many-body screening suppresses observable temporal shear. Determined from terrestrial clock correlation data."
+
+  - symbol: "lambda_T"
+    latex: "\\lambda_T"
+    meaning: "Clock-correlation length (Temporal Topology coherence length)"
+    value: 4200.0
+    units: "km"
+    class: "calibrated"
+    first_paper: 1
+    used_in: [1, 2, 3, 6, 14, 17, 21]
+    description: "Characteristic scale over which the scalar field remains correlated. Long-duration GNSS analysis yields ~4200 km. Replaces the 2590 km short-hold-out estimate from TEP-GNSS-MGEX. Lab-scale crustal value is LAB_COHERENCE_LENGTH_M = 50 km."
+
+  - symbol: "alpha_log"
+    latex: "\\alpha_{\\log}"
+    meaning: "Lab-scale density-sector coupling"
+    value: -7.66e-3
+    units: "dimensionless"
+    class: "calibrated"
+    first_paper: 21
+    used_in: [21]
+    description: "Negative by field-equation sign. Magnitude determined from requirement that TEP reproduce correct order of magnitude for laboratory metrology shifts."
+
+  - symbol: "beta_geom"
+    latex: "\\beta_{\\text{geom}}"
+    meaning: "Mass-sector geometric coupling"
+    value: 1.50e-4
+    units: "dimensionless"
+    class: "calibrated"
+    first_paper: 21
+    used_in: [21]
+    description: "Geometric coupling for mass-dependent scalar field contributions."
+
+  - symbol: "M_ref"
+    latex: "M_{\\text{ref}}"
+    meaning: "Reference mass scale for geometric coupling"
+    value: 1.0e18
+    units: "kg"
+    class: "fundamental"
+    first_paper: 21
+    used_in: [21]
+    description: "Threshold mass where phi_mass ~ beta_geom."
+
+  - symbol: "kappa_Cep"
+    latex: "\\kappa_{\\text{Cep}}"
+    meaning: "Cepheid observable response coefficient"
+    value: null
+    units: "dimensionless"
+    class: "observable_response"
+    first_paper: 11
+    used_in: [11, 12]
+    description: "Domain-level transfer coefficient mapping TEP structure to Cepheid period-luminosity shifts. Fitted, not fundamental."
+
+  - symbol: "kappa_MSP"
+    latex: "\\kappa_{\\text{MSP}}"
+    meaning: "Pulsar observable response coefficient"
+    value: null
+    units: "dimensionless"
+    class: "observable_response"
+    first_paper: 10
+    used_in: [10, 17]
+    description: "Domain-level transfer coefficient for millisecond-pulsar timing residuals."
+
+  - symbol: "epsilon_T"
+    latex: "\\epsilon_T"
+    meaning: "Cosmology shear amplitude"
+    value: null
+    units: "dimensionless"
+    class: "exploratory"
+    first_paper: 26
+    used_in: [18, 26]
+    description: "Amplitude of large-scale temporal shear in cosmological evolution. Under investigation; value not yet firmly established."
+
+  - symbol: "phi0"
+    latex: "\\phi_0"
+    meaning: "Present-day scalar field amplitude (phenomenological)"
+    value: null
+    units: "dimensionless"
+    class: "exploratory"
+    first_paper: 22
+    used_in: [18, 22, 26]
+    description: "Phenomenological amplitude parameter in redshift-dependent ansatz. Not the fundamental scalar field value."
+
+  - symbol: "n_phi"
+    latex: "n"
+    meaning: "Redshift exponent in phenomenological conformal factor"
+    value: null
+    units: "dimensionless"
+    class: "exploratory"
+    first_paper: 22
+    used_in: [18, 22]
+    description: "Exponent in A(z) phenomenological template. Under investigation."
+
+  - symbol: "beta_spin"
+    latex: "\\beta_{\\text{spin}}"
+    meaning: "Phenomenological screening coefficient in tanh ansatz"
+    value: 0.01
+    units: "dimensionless"
+    class: "calibrated"
+    first_paper: 24
+    used_in: [24]
+    description: "Coefficient in the phenomenological screening ansatz A(ρ) = exp(-β tanh(ρ/ρ_c)). NOT the fundamental conformal coupling β_A = -1.0. Determined by requiring the screening transition span the observed density range."
+
+  - symbol: "beta_cassini_max"
+    latex: "\\beta_{\\text{Cassini}}"
+    meaning: "Upper bound on conformal coupling from Cassini PPN test"
+    value: 0.0034
+    units: "dimensionless"
+    class: "observable_response"
+    first_paper: 0
+    used_in: [0, 6, 18, 22, 24]
+    description: "Solar-system PPN bound |β| < 3.4×10⁻³ from Cassini time-delay measurements (Bertotti et al. 2003). The lab-scale bare coupling β_A = -1.0 must be screened by a factor ~300 in the solar system; this is achieved by the density-dependent coupling model f(ρ) = 1/[1+(ρ_transition/ρ)^n]."
+
+  - symbol: "B"
+    latex: "B(\\phi)"
+    meaning: "Disformal coupling function"
+    value: 0
+    units: "dimensionless (leading order)"
+    class: "fundamental"
+    first_paper: 0
+    used_in: [0, 4, 9, 22]
+    description: "Vanishing at leading order in late-time astrophysical regimes. Constrained by GW170817 to |c_gamma - c_g|/c < 1e-15. Non-zero values explored in propagation and holonomy analyses."

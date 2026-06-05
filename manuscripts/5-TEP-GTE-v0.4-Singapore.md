@@ -477,7 +477,7 @@ where r denotes the inter-station distance, λT the Temporal Topology correlatio
 
 The correlation metric employed is the magnitude-weighted phase alignment index, computed via cross-spectral density analysis in the 10–500 μHz band (corresponding to periods of 33 minutes to 28 hours). This approach measures whether clock fluctuations are in phase regardless of amplitude—information that survives GNSS processing because network adjustment removes common-mode offsets while preserving differential phase structure. Magnitude weighting ensures that frequency bins with stronger cross-spectral power contribute proportionally more to the phase average, so the metric reflects genuine correlated signals rather than noise.
 
-The primary result from the CODE 25-year analysis is a Temporal Topology correlation length of λT = 4,201 ± 1,967 km. Cross-center validation yields consistent values: CODE reports λT = 3,330 km (95% CI: 1,198–5,918 km); IGS reports λT = 4,549 km (95% CI: 3,197–4,871 km); and ESA reports λT = 3,758 km (95% CI: 2,532–3,984 km). The coefficient of variation across centers is 18.2%, indicating consistency across independent processing pipelines and substantially reducing the likelihood of center-specific artifacts.
+The primary result from the CODE 25-year analysis is a Temporal Topology correlation length of λT = 4,201 ± 1,967 km. Cross-center validation on the 2023–2025 multi-center sample (exponential fits to binned phase-alignment means) yields: CODE λT = 4,549 km (95% CI: 1,198–5,918 km); IGS λT = 3,764 km (95% CI: 3,197–4,871 km); ESA λT = 3,330 km (95% CI: 2,532–3,984 km). The 25-year CODE long-span headline is a separate estimand from these center-specific exponential fits. The coefficient of variation across the three center fits is ~13%, indicating consistency across independent processing pipelines and substantially reducing the likelihood of center-specific artifacts.
 
 ## 2.2 Seven Convergent Signatures
 
@@ -998,8 +998,8 @@ not can be formalized through the synchronization holonomy (after GR
 subtraction), where σ is the time-transport one-form whose line integral
 equals the calibrated proper-time increment along a leg:
 
-$\mathcal{H}_{\text{resid}} = \oint_{\partial\Sigma} (\tilde{\sigma} -
-\sigma_{\text{GR}}) = \iint_{\Sigma} (\tilde{F} - F_{\text{GR}})$
+$\mathcal{H}_{\rm resid} = \oint_{\partial\Sigma} (\tilde{\sigma} -
+\sigma_{\rm GR}) = \iint_{\Sigma} (\tilde{F} - F_{\rm GR})$
 
 This represents the loop non-closure of time transport built from
 measured proper times (in time units; right-hand rule on Σ). It is gauge
@@ -1104,11 +1104,11 @@ deviations in scalar-tensor theories through composition-dependent
 couplings. However, TEP's universal conformal coupling ensures that the
 Nordtvedt parameter:
 
-$\eta = 4\beta^2 - \gamma - 3$
+$\eta = 4\beta_A^2 - \gamma - 3$
 
-remains within observational bounds for the coupling strength β ~ 10−3
+remains within observational bounds for the coupling strength β_A ~ 10−3
 required to explain the GNSS correlation length. With γ ≈ 1 (Cassini
-constraint) and β ~ 10−3, the predicted Nordtvedt parameter is η
+constraint) and β_A ~ 10−3, the predicted Nordtvedt parameter is η
 ~ 4 × 10−6, well below the LLR bound.
 
 Furthermore, both Earth and Moon are within each other's screening radii
@@ -1625,11 +1625,11 @@ biases correlated with source properties.
 
 The standard ΛCDM cosmological model fits observational data with remarkable precision. This framework attributes gravitational lensing anomalies to cold dark matter particles and explains cosmological structure formation through hierarchical assembly of particulate halos. ΛCDM is empirically successful and theoretically well-motivated.
 
-TEP does not claim that ΛCDM is incorrect. Rather, TEP proposes that the same observational phenomena can be reinterpreted under a different axiom set. The key distinction is operational, not observational at current precision:
+TEP treats ΛCDM as the successful control reconstruction, not as the final ontology. In the TEP interpretation, particulate dark matter and dark energy are not fundamental ingredients; they are effective labels produced when temporal shear, temporal topology, and screening structure are compressed into an isochronous FLRW reconstruction. The key distinction is therefore ontological, while many current static-source observables remain operationally degenerate:
 
-- **ΛCDM interpretation:** Gravitational lensing mass reconstructions directly measure matter distribution. Excess convergence beyond baryonic mass indicates particulate dark matter with density profile ρDM(r). The Isochrony Axiom (all photons in an image represent a synchronous snapshot) is implicitly assumed and never tested.
+- **ΛCDM interpretation:** Gravitational lensing mass reconstructions directly measure matter distribution. Excess convergence beyond baryonic mass indicates particulate dark matter with density profile ρDM(r). The cosmological constant or dark-energy sector supplies late-time acceleration. The Isochrony Axiom (all photons in an image represent a synchronous snapshot) is implicitly assumed and never tested.
 
-- **TEP interpretation:** Gravitational lensing mass reconstructions measure the effective Fermat potential, which includes both matter distribution and temporal-field gradients. Excess convergence can arise from differential proper-time accumulation along different light paths. The Isochrony Axiom is empirically testable through achromatic timing residuals in lensed transients.
+- **TEP interpretation:** Gravitational lensing mass reconstructions measure the effective Fermat potential, which includes both baryonic matter distribution and temporal-field gradients. Excess convergence can arise from differential proper-time accumulation along different light paths, while apparent dark energy arises from reconstructing non-integrable temporal transport as a global acceleration term. The Isochrony Axiom is empirically testable through achromatic timing residuals in lensed transients.
 
 Both frameworks fit existing lensing data because they make identical predictions for static sources observed under the assumption of isochrony. The degeneracy is broken by observations that probe temporal structure:
 
@@ -1639,9 +1639,9 @@ Both frameworks fit existing lensing data because they make identical prediction
 
 - **CMB vs. galaxy lensing S8:** ΛCDM predicts convergence of CMB-inferred and galaxy-inferred S8 as systematics are controlled. TEP predicts persistent tension arising from kinematic noise in galaxy surveys that is absent in CMB (static source).
 
-The frameworks compete rather than contradict. ΛCDM remains the default interpretation given its theoretical maturity and empirical success. TEP offers an alternative interpretation that becomes distinguishable through specific tests designed to probe temporal structure in lensing observations. Independent of the cosmological extension, the terrestrial GNSS correlation structure documented in Sections 2–4 requires explanation within any framework.
+The frameworks compete at the level of ontology. ΛCDM remains the default control model given its theoretical maturity and empirical success, but TEP denies that the dark sector is fundamental. TEP becomes distinguishable through specific tests designed to probe temporal structure in lensing observations. Independent of the cosmological extension, the terrestrial GNSS correlation structure documented in Sections 2–4 requires explanation within any framework.
 
-**Falsification asymmetry:** Null results in the tests above would exclude TEP's cosmological extension while leaving ΛCDM intact. Positive results would require reinterpretation of dark matter phenomenology but would not exclude particulate dark matter in all contexts—only in regimes where temporal-field gradients dominate the lensing signal. This asymmetry reflects TEP's status as a challenger framework rather than an established paradigm.
+**Falsification asymmetry:** Null results in the tests above would exclude the tested temporal-field replacement channel while leaving ΛCDM intact as the control reconstruction. Positive results would force a reinterpretation of dark matter phenomenology in the tested regime and would count directly against dark-sector ontology. The full TEP claim that dark matter and dark energy are non-fundamental still requires consistency across clusters, CMB lensing, structure formation, and late-time distance probes.
 
 ## 6. Falsification and Experimental Program
 
@@ -2119,7 +2119,7 @@ $r_V = \left(\frac{GM}{\Lambda^3}\right)^{1/3}$
 
 For a spherically symmetric source of mass M, the scalar field profile in the Vainshtein regime (r < rV) is:
 
-$\phi(r) \sim \frac{\beta M_{\text{Pl}}}{M_{\text{Pl}}^2} \frac{GM}{r} \left(\frac{r}{r_V}\right)^3$
+$\phi(r) \sim \frac{\beta_A M_{\text{Pl}}}{M_{\text{Pl}}^2} \frac{GM}{r} \left(\frac{r}{r_V}\right)^3$
 
 This suppresses the fifth force by a factor of (r/rV)3 inside the screening radius, reconciling weak-field cosmological behavior with strong-field solar system constraints. Other completions (e.g., chameleon mechanisms, symmetry-breaking potentials) may produce similar phenomenology.
 

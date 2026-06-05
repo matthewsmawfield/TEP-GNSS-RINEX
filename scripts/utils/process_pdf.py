@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""Unified PDF Processing Script
-Compresses PDF and embeds project-specific metadata from CITATION.cff.
+"""Generic PDF Processing Script
+Compresses PDF and embeds metadata from CITATION.cff in one operation.
 
-This script processes TEP manuscript PDFs by compressing them for web distribution
-and embedding complete academic metadata for proper indexing and citation.
-Metadata is auto-detected from the project's CITATION.cff file.
+Reads title, abstract, keywords, version, date, DOI, URL, and authors
+from the project's CITATION.cff file, then compresses the PDF with
+Ghostscript and writes the metadata using exiftool.
 
 Usage:
     python process_pdf.py <input_pdf> [--quality ebook|printer|prepress|default]
-    
+
 Example:
-    python process_pdf.py site/public/docs/Smawfield_2026_TEP-J0437_v0.1_Sintra.pdf --quality ebook
+    python process_pdf.py site/public/docs/26-TEP-C0-v0.1-Athens.pdf --quality ebook
 """
 
 import subprocess
@@ -21,302 +21,191 @@ from pathlib import Path
 import argparse
 import tempfile
 
+from compress_pdf import compress_pdf as _compress_pdf
+
 try:
     import yaml
 except ImportError:
     yaml = None
 
 
-def compress_pdf(input_path, output_path, quality='ebook'):
-    """Compress PDF using Ghostscript."""
-    # Validate inputs are safe paths (prevent directory traversal)
-    input_path = Path(input_path).resolve()
-    output_path = Path(output_path).resolve()
-    
-    # Ensure input exists and is a file
-    if not input_path.is_file():
-        raise ValueError(f"Input path must be an existing file: {input_path}")
-    
-    # Ensure output parent directory exists
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    
-    quality_settings = {
-        'screen': '/screen',      # 72 dpi
-        'ebook': '/ebook',        # 150 dpi
-        'printer': '/printer',    # 300 dpi
-        'prepress': '/prepress',  # 300 dpi, color preserving
-        'default': '/default'
-    }
-    
-    if quality not in quality_settings:
-        raise ValueError(f"Quality must be one of: {', '.join(quality_settings.keys())}")
-    
-    gs_quality = quality_settings[quality]
-    
-    # Get original size
-    original_size = input_path.stat().st_size
-    
-    # Compress using Ghostscript
-    cmd = [
-        'gs',
-        '-sDEVICE=pdfwrite',
-        '-dCompatibilityLevel=1.4',
-        f'-dPDFSETTINGS={gs_quality}',
-        '-dNOPAUSE',
-        '-dQUIET',
-        '-dBATCH',
-        f'-sOutputFile={output_path}',
-        str(input_path)
-    ]
-    
-    try:
-        subprocess.run(cmd, check=True, capture_output=True)
-        compressed_size = output_path.stat().st_size
-        reduction = ((original_size - compressed_size) / original_size) * 100
-        
-        return {
-            'original_mb': original_size / (1024 * 1024),
-            'compressed_mb': compressed_size / (1024 * 1024),
-            'reduction_pct': reduction
-        }
-    except subprocess.CalledProcessError as e:
-        raise RuntimeError(f"Ghostscript compression failed: {e.stderr.decode()}")
+def _extract_yaml_value(content, key):
+    """Extract a scalar string value from CFF content."""
+    # Match key: 'value' or key: value (non-greedy, single line)
+    pattern = rf'^{re.escape(key)}:\s*[\'"]?(.+?)[\'"]?\s*$'
+    match = re.search(pattern, content, re.MULTILINE)
+    if match:
+        return match.group(1).strip()
+    return ''
 
 
-def load_citation_metadata(pdf_path):
-    """Load metadata from CITATION.cff in the same project as the PDF."""
-    pdf_path = Path(pdf_path).resolve()
-    
-    # Find project root (look for CITATION.cff)
-    project_dir = pdf_path.parent
-    while project_dir != project_dir.parent:
-        citation_file = project_dir / 'CITATION.cff'
-        if citation_file.exists():
-            break
-        project_dir = project_dir.parent
-    else:
-        # Fallback: assume 3 levels up from docs folder
-        project_dir = pdf_path.parent.parent.parent.parent
-        citation_file = project_dir / 'CITATION.cff'
-    
+def parse_citation_cff():
+    """Parse CITATION.cff for PDF metadata."""
+    base_dir = Path(__file__).parent.parent
+    citation_file = base_dir / 'CITATION.cff'
+
     if not citation_file.exists():
-        print(f"⚠️  CITATION.cff not found, using minimal defaults")
-        return {
-            'title': 'TEP Manuscript',
-            'author': 'Matthew Lukin Smawfield',
-            'version': 'v0.1',
-            'codename': 'Unknown',
-            'doi': '',
-            'abstract': '',
-            'keywords': [],
-            'date': '2026-01-01',
-            'url': '',
-            'project_short': 'TEP'
-        }
-    
+        return None
+
     try:
+        content = citation_file.read_text()
+
         if yaml:
-            with open(citation_file, 'r') as f:
-                data = yaml.safe_load(f)
+            data = yaml.safe_load(content)
         else:
             # Manual parsing fallback
-            with open(citation_file, 'r') as f:
-                content = f.read()
             data = {}
-            # Extract key fields with regex
-            title_match = re.search(r'title:\s*"([^"]+)"', content)
-            data['title'] = title_match.group(1) if title_match else 'TEP Manuscript'
-            
-            version_match = re.search(r'version:\s*"?([^"\n]+)"?', content)
-            data['version'] = version_match.group(1).strip() if version_match else 'v0.1'
-            
-            doi_match = re.search(r'doi:\s*"?([^"\n]+)"?', content)
-            data['doi'] = doi_match.group(1).strip() if doi_match else ''
-            
-            abstract_match = re.search(r'abstract:\s*>?\s*"?([^"\n]+(?:\n[^"]+)*)"?', content, re.DOTALL)
-            data['abstract'] = abstract_match.group(1).strip() if abstract_match else ''
-            
-            url_match = re.search(r'url:\s*"([^"]+)"', content)
-            data['url'] = url_match.group(1) if url_match else ''
-            
-            date_match = re.search(r'date-released:\s*"?([^"\n]+)"?', content)
-            data['date-released'] = date_match.group(1).strip() if date_match else '2026-01-01'
-            
-            # Parse authors
-            author_matches = re.findall(r'family-names:\s*"([^"]+)"\s*\n\s*given-names:\s*"([^"]+)"', content)
-            if author_matches:
-                data['authors'] = [{'family-names': fam, 'given-names': giv} for fam, giv in author_matches]
+            data['title'] = _extract_yaml_value(content, 'title')
+            data['version'] = _extract_yaml_value(content, 'version')
+            data['date-released'] = _extract_yaml_value(content, 'date-released')
+            data['doi'] = _extract_yaml_value(content, 'doi')
+            data['url'] = _extract_yaml_value(content, 'url')
+            data['license'] = _extract_yaml_value(content, 'license')
+
+            # Abstract may span multiple lines in CFF
+            abstract_match = re.search(
+                r'^abstract:\s*[\'"]?((?:.*?\n)+?)(?:\n\w|\Z)',
+                content, re.MULTILINE
+            )
+            if abstract_match:
+                data['abstract'] = abstract_match.group(1).strip().replace("\n  ", " ")
             else:
-                data['authors'] = [{'family-names': 'Smawfield', 'given-names': 'Matthew Lukin'}]
-            
-            # Parse keywords
-            kw_section = re.search(r'keywords:\s*\n((?:\s+-\s*[^\n]+\n?)+)', content)
-            if kw_section:
-                keywords = re.findall(r'-\s*([^\n]+)', kw_section.group(1))
-                data['keywords'] = [k.strip() for k in keywords]
+                data['abstract'] = _extract_yaml_value(content, 'abstract')
+
+            # Keywords list
+            kw_match = re.search(r'^keywords:\n((?:- .+\n)+)', content, re.MULTILINE)
+            if kw_match:
+                kws = re.findall(r'- (.+)', kw_match.group(1))
+                data['keywords'] = [k.strip() for k in kws]
             else:
                 data['keywords'] = []
-        
-        # Extract version and codename
-        version_str = data.get('version', 'v0.1')
-        pattern = r'^(v?[\d.]+)(?:\s*\(([^)]+)\))?$'
-        match = re.match(pattern, version_str.strip())
-        
-        if match:
-            version = match.group(1).lstrip('v')
-            codename = match.group(2) or 'Unknown'
-        else:
-            version = version_str.lstrip('v')
-            codename = 'Unknown'
-        
-        # Get author
-        authors = data.get('authors', [])
-        author_name = "Matthew Lukin Smawfield"  # default
-        if authors:
-            first_author = authors[0]
-            family = first_author.get('family-names', '')
-            given = first_author.get('given-names', '')
-            author_name = f"{given} {family}".strip()
-        
-        # Get date
-        date = data.get('date-released', '2026-01-01')
-        if hasattr(date, 'strftime'):
-            date = date.strftime('%Y-%m-%d')
-        else:
-            date = str(date)
-        
-        # Get project short name from directory
-        project_short = project_dir.name.replace('TEP-', '') if project_dir.name.startswith('TEP-') else 'TEP'
-        
-        # Get URL from data or construct from project name
-        url = data.get('url', '')
-        if not url and 'repository-code' in data:
-            url = data['repository-code']
-        
-        return {
-            'title': data.get('title', 'TEP Manuscript'),
-            'author': author_name,
-            'version': version,
-            'codename': codename,
-            'doi': data.get('doi', ''),
-            'abstract': data.get('abstract', ''),
-            'keywords': data.get('keywords', []),
-            'date': date,
-            'url': url,
-            'project_short': project_short,
-            'project_dir': project_dir
-        }
-        
-    except Exception as e:
-        print(f"⚠️  Error parsing CITATION.cff: {e}, using defaults")
-        return {
-            'title': 'TEP Manuscript',
-            'author': 'Matthew Lukin Smawfield',
-            'version': 'v0.1',
-            'codename': 'Unknown',
-            'doi': '',
-            'abstract': '',
-            'keywords': [],
-            'date': '2026-01-01',
-            'url': '',
-            'project_short': 'TEP'
-        }
+
+            # Authors
+            authors = re.findall(r'family-names:\s*(.+)', content)
+            givens = re.findall(r'given-names:\s*(.+)', content)
+            data['authors'] = [
+                {'family-names': f.strip(), 'given-names': g.strip()}
+                for f, g in zip(authors, givens)
+            ]
+
+        return data
+    except Exception:
+        return None
+
+
+def build_metadata(cff_data):
+    """Build PDF metadata dict from parsed CFF data."""
+    title = cff_data.get('title', '')
+
+    # Author name
+    authors = cff_data.get('authors', [])
+    if authors and isinstance(authors, list) and len(authors) > 0:
+        fam = authors[0].get('family-names', 'Smawfield')
+        giv = authors[0].get('given-names', 'Matthew Lukin')
+        author_name = f"{giv} {fam}"
+    else:
+        author_name = 'Matthew Lukin Smawfield'
+
+    version = cff_data.get('version', 'v0.1')
+    v_match = re.match(r'v?([\d.]+)(?:\s*\(([^)]+)\))?', str(version))
+    if v_match:
+        version_num = v_match.group(1)
+        codename = v_match.group(2) or ''
+    else:
+        version_num = str(version).lstrip('v')
+        codename = ''
+
+    date = cff_data.get('date-released', '')
+    if date:
+        date_pdf = date.replace('-', ':')
+    else:
+        date_pdf = ''
+
+    doi = cff_data.get('doi', '')
+    url = cff_data.get('url', '')
+    abstract = cff_data.get('abstract', '')
+    license_str = cff_data.get('license', 'CC-BY-4.0')
+
+    keywords_list = cff_data.get('keywords', [])
+    if isinstance(keywords_list, list):
+        keywords = '; '.join(str(k) for k in keywords_list)
+    else:
+        keywords = str(keywords_list)
+
+    producer_label = f"TEP Research Project - Version {version_num}"
+    if codename:
+        producer_label += f" ({codename})"
+
+    metadata = {
+        'Title': title,
+        'Author': author_name,
+        'Creator': author_name,
+        'Subject': abstract,
+        'Keywords': keywords,
+        'Producer': producer_label,
+        'Copyright': f'Creative Commons Attribution 4.0 International License ({license_str})',
+    }
+
+    if date_pdf:
+        metadata['CreationDate'] = f'{date_pdf} 00:00:00'
+        metadata['ModifyDate'] = f'{date_pdf} 00:00:00'
+
+    metadata['XMP-dc:Creator'] = author_name
+    metadata['XMP-dc:Title'] = title
+    metadata['XMP-dc:Description'] = abstract[:500] if abstract else ''
+    metadata['XMP-dc:Rights'] = license_str
+    metadata['XMP-dc:Publisher'] = 'Zenodo'
+    metadata['XMP-dc:Type'] = 'Preprint'
+    metadata['XMP-dc:Format'] = 'application/pdf'
+    metadata['XMP-dc:Language'] = 'en'
+
+    if doi:
+        metadata['XMP-dc:Identifier'] = f'doi:{doi}'
+        metadata['XMP-prism:DOI'] = doi
+    if url:
+        metadata['XMP-dc:Source'] = url
+        metadata['XMP-prism:URL'] = url
+    if date:
+        metadata['XMP-dc:Date'] = date
+    if version_num:
+        metadata['XMP-prism:VersionIdentifier'] = version_num
+
+    metadata['XMP-prism:PublicationName'] = 'TEP Research Series'
+    metadata['XMP-pdfaid:Part'] = '1'
+    metadata['XMP-pdfaid:Conformance'] = 'B'
+
+    # Remove empty values
+    metadata = {k: v for k, v in metadata.items() if v}
+    return metadata
+
+
+def compress_pdf(input_path, output_path, quality='ebook'):
+    """Compress PDF using Ghostscript (wrapper with legacy return format)."""
+    result = _compress_pdf(input_path, output_path, quality=quality)
+    return {
+        'original_mb': result['original_size'] / (1024 * 1024),
+        'compressed_mb': result['compressed_size'] / (1024 * 1024),
+        'reduction_pct': result['reduction_percent']
+    }
 
 
 def embed_metadata(pdf_path, metadata):
     """Embed metadata into PDF using exiftool."""
     cmd = ['exiftool']
-    
-    # Add all metadata fields
     for key, value in metadata.items():
         cmd.extend([f'-{key}={value}'])
-    
-    # Overwrite original
     cmd.extend(['-overwrite_original', pdf_path])
-    
     try:
         subprocess.run(cmd, check=True, capture_output=True)
         return True
     except subprocess.CalledProcessError as e:
-        raise RuntimeError(f"Exiftool metadata embedding failed: {e.stderr.decode()}")
-
-
-def build_metadata_dict(meta):
-    """Build complete metadata dict from CITATION.cff data."""
-    
-    # Format keywords as semicolon-separated string
-    keywords_str = '; '.join(meta['keywords']) if meta['keywords'] else 'TEP; Temporal Equivalence Principle'
-    
-    # Format creation date for PDF
-    date_parts = meta['date'].split('-')
-    creation_date = f"{date_parts[0]}:{date_parts[1]}:{date_parts[2]} 00:00:00" if len(date_parts) == 3 else meta['date']
-    
-    # Build subject/abstract
-    subject = meta['abstract'][:2000] if meta['abstract'] else f"TEP manuscript: {meta['title']}"
-    
-    # Project identifier
-    project_id = f"TEP-{meta['project_short']} v{meta['version']} ({meta['codename']})"
-    
-    # DOI with prefix
-    doi_full = f"doi:{meta['doi']}" if meta['doi'] else ''
-    
-    metadata = {
-        # Core identification
-        'Title': meta['title'],
-        'Author': meta['author'],
-        'Creator': meta['author'],
-        
-        # Abstract/Subject
-        'Subject': subject,
-        
-        # Keywords
-        'Keywords': keywords_str,
-        
-        # Production metadata
-        'Producer': project_id,
-        
-        # Rights
-        'Copyright': 'Creative Commons Attribution 4.0 International License (CC BY 4.0)',
-        
-        # Dates
-        'CreationDate': creation_date,
-        'ModifyDate': creation_date,
-    }
-    
-    # XMP Dublin Core
-    metadata['XMP-dc:Creator'] = meta['author']
-    metadata['XMP-dc:Title'] = meta['title']
-    metadata['XMP-dc:Description'] = meta['abstract'][:500] if meta['abstract'] else meta['title']
-    metadata['XMP-dc:Rights'] = 'CC BY 4.0'
-    if doi_full:
-        metadata['XMP-dc:Identifier'] = doi_full
-    if meta['url']:
-        metadata['XMP-dc:Source'] = meta['url']
-    metadata['XMP-dc:Publisher'] = 'Zenodo'
-    metadata['XMP-dc:Date'] = meta['date']
-    metadata['XMP-dc:Type'] = 'Preprint'
-    metadata['XMP-dc:Format'] = 'application/pdf'
-    metadata['XMP-dc:Language'] = 'en'
-    
-    # PRISM metadata
-    if meta['doi']:
-        metadata['XMP-prism:DOI'] = meta['doi']
-    if meta['url']:
-        metadata['XMP-prism:URL'] = meta['url']
-    metadata['XMP-prism:VersionIdentifier'] = meta['version']
-    metadata['XMP-prism:PublicationName'] = 'TEP Research Series'
-    
-    # PDF/A
-    metadata['XMP-pdfaid:Part'] = '1'
-    metadata['XMP-pdfaid:Conformance'] = 'B'
-    
-    return metadata
+        stderr = e.stderr.decode() if e.stderr else str(e)
+        raise RuntimeError(f"Exiftool metadata embedding failed: {stderr}")
 
 
 def verify_metadata(pdf_path, expected_fields):
     """Verify metadata was embedded correctly."""
     cmd = ['exiftool'] + [f'-{field}' for field in expected_fields] + [pdf_path]
-    
     try:
         result = subprocess.run(cmd, check=True, capture_output=True, text=True)
         return result.stdout
@@ -335,71 +224,70 @@ def main():
         default='ebook',
         help='Compression quality (default: ebook)'
     )
+
     args = parser.parse_args()
-    
+
     input_path = Path(args.input_pdf).resolve()
-    
+
     if not input_path.exists():
         print(f"Error: File not found: {input_path}")
         sys.exit(1)
-    
+
     print(f"Processing: {input_path}")
     print(f"Quality: {args.quality}")
     print()
-    
+
+    # Load metadata from CITATION.cff
+    cff_data = parse_citation_cff()
+    if cff_data:
+        metadata = build_metadata(cff_data)
+        print(f"Loaded metadata from CITATION.cff")
+        print(f"  Title: {metadata.get('Title', 'N/A')[:60]}...")
+    else:
+        print("Warning: Could not load CITATION.cff, using minimal metadata")
+        metadata = {
+            'Title': 'TEP Manuscript',
+            'Author': 'Matthew Lukin Smawfield',
+            'Creator': 'Matthew Lukin Smawfield',
+        }
+    print()
+
     # Step 1: Compress PDF
     print("Step 1: Compressing PDF...")
     with tempfile.NamedTemporaryFile(suffix='.pdf', delete=False) as tmp:
         tmp_path = tmp.name
-    
+
     try:
         stats = compress_pdf(str(input_path), tmp_path, args.quality)
-        
-        # Replace original with compressed version
         os.replace(tmp_path, str(input_path))
-        
         print(f"  Original:    {stats['original_mb']:.2f} MB")
         print(f"  Compressed:  {stats['compressed_mb']:.2f} MB")
         print(f"  Reduction:   {stats['reduction_pct']:.1f}%")
         print()
-        
+
     except Exception as e:
         if os.path.exists(tmp_path):
             os.unlink(tmp_path)
         print(f"Error during compression: {e}")
         sys.exit(1)
-    
+
     # Step 2: Embed metadata
-    print("Step 2: Loading metadata from CITATION.cff...")
-    
-    # Load project-specific metadata from CITATION.cff
-    citation_meta = load_citation_metadata(str(input_path))
-    print(f"  Project: TEP-{citation_meta['project_short']}")
-    print(f"  Title: {citation_meta['title'][:50]}...")
-    print(f"  Version: v{citation_meta['version']} ({citation_meta['codename']})")
-    print()
-    
-    print("Step 3: Embedding metadata...")
-    
-    # Build complete metadata dict
-    metadata = build_metadata_dict(citation_meta)
-    
+    print("Step 2: Embedding metadata...")
     try:
         embed_metadata(str(input_path), metadata)
         print("  Metadata embedded successfully")
         print()
-        
     except Exception as e:
         print(f"Error during metadata embedding: {e}")
         sys.exit(1)
-    
-    # Step 4: Verify
-    print("Step 4: Verifying metadata...")
+
+    # Step 3: Verify
+    print("Step 3: Verifying metadata...")
     verification = verify_metadata(
         str(input_path),
         ['Title', 'Author', 'Subject', 'Keywords', 'Creator', 'Copyright']
     )
-    
+
     if verification:
         print("  ✓ Metadata verified")
         print()
@@ -407,7 +295,7 @@ def main():
         print(verification)
     else:
         print("  ⚠ Could not verify metadata")
-    
+
     print()
     print(f"✓ Processing complete: {input_path}")
     print(f"  Final size: {os.path.getsize(input_path) / (1024 * 1024):.2f} MB")

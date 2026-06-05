@@ -1,4 +1,4 @@
-# The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate
+# The Soliton Wake: Exploring RBH-1 as Temporal Topology
 **Matthew Lukin Smawfield**
 Version: v0.3 (Blantyre)
 First published: 28 December 2025 · Last updated: 29 April 2026

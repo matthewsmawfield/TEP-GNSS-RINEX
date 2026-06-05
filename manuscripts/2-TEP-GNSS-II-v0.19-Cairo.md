@@ -1,7 +1,7 @@
-# Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products
+# Global Time Echoes: 25-Year Analysis of CODE Precise Clock
 **Matthew Lukin Smawfield**
-Version: v0.18 (Cairo)
-First published: 3 November 2025 · Last updated: 29 April 2026
+Version: v0.19 (Cairo)
+First published: 3 November 2025 · Last updated: 4 June 2026
 DOI: 10.5281/zenodo.17517141
 
 ---
@@ -279,7 +279,7 @@ equation:
 
 □φ − V'(φ) = −α(φ)T + ∇μ(B Tμν ∂νφ)
 
-where the coupling strength is α(φ) ≡ 2β/MPl.
+where the coupling strength is α(φ) ≡ β/MPl.
 
 **3. Predicted Correlation Function:** Arising from the
 velocity-dependent disformal metric, the timing correlation
@@ -2762,7 +2762,7 @@ differential phase-coherence structure (where geometric ratios manifest).
 For the detailed filter architecture, see §2.1.3.2.
 
 **Context - The Naive Prediction:** From the TEP framework, the
-conformal coupling A(φ) = exp(2βφ/MPl) implies a naive energetic
+conformal coupling A(φ) = exp(βφ/MPl) implies a naive energetic
 modulation:
 
 ΔC/C ~ (α₀ × Δv/c) × exp(-r/λscr)
@@ -4088,7 +4088,7 @@ Hofmann-Wellenhof, B., Lichtenegger, H., & Wasle, E. (2008). *GNSS–Global Navi
 Schaer, S., Villiger, A., Arnold, D., et al. (2021). The CODE ambiguity-fixed clock and phase bias analysis products: generation, properties, and performance. *Journal of Geodesy*, 95, 87.
 Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.8 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
 Smawfield, M. L. (2025). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Preprint v0.25 (Jaipur). Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1)
-Smawfield, M. L. (2025). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.18 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2 — this work)
+Smawfield, M. L. (2025). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.19 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2 — this work)
 Smawfield, M. L. (2025). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.5 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3)
 Smawfield, M. L. (2025). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.5 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4)
 Smawfield, M. L. (2025). *Global Time Echoes: Empirical Synthesis*. Preprint v0.4 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
@@ -4133,12 +4133,12 @@ Astropy Collaboration, Robitaille, T. P., Tollerud, E. J., et al. (2013). Astrop
 
 ## How to cite
 
-**Cite as:** Smawfield, M. L. (2025). Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products. Preprint v0.18 (Cairo). Zenodo. DOI: 10.5281/zenodo.17517141
+**Cite as:** Smawfield, M. L. (2025). Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products. Preprint v0.19 (Cairo). Zenodo. DOI: 10.5281/zenodo.17517141
 
 **BibTeX:**
 @misc{Smawfield_TEP_GNSS_Longspan_2025,
 author       = {Matthew Lukin Smawfield},
-title        = {Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products (v0.18 Cairo)},
+title        = {Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products (v0.19 Cairo)},
 year         = {2025},
 publisher    = {Zenodo},
 doi          = {10.5281/zenodo.17517141},
