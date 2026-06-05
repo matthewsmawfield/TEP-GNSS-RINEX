@@ -36,34 +36,34 @@ def _return_scalar_if_scalar(original, value):
     return value
 
 
-def conformal_factor(phi, beta=BETA_A):
+def conformal_factor(phi, beta_A=BETA_A):
     """
-    Compute conformal factor A(phi) = exp(beta * phi).
+    Compute conformal factor A(phi) = exp(beta_A * phi).
 
     In the TEP framework, phi is dimensionless (measured in Planck-mass
     units: phi = phi_tilde / M_pl). The conformal factor relates the
     effective metric to the background metric.
     """
     phi_arr = _as_numeric_array(phi, "phi")
-    if not np.isfinite(beta):
-        raise ValueError("beta must be finite")
-    factor = np.exp(beta * phi_arr)
+    if not np.isfinite(beta_A):
+        raise ValueError("beta_A must be finite")
+    factor = np.exp(beta_A * phi_arr)
     return _return_scalar_if_scalar(phi, factor)
 
 
-def conformal_factor_small(phi, beta=BETA_A):
+def conformal_factor_small(phi, beta_A=BETA_A):
     """
     Linearized conformal factor for small phi:
-    A(phi) ~ 1 + beta*phi
+    A(phi) ~ 1 + beta_A*phi
     """
     phi_arr = _as_numeric_array(phi, "phi")
-    if not np.isfinite(beta):
-        raise ValueError("beta must be finite")
-    factor = 1.0 + beta * phi_arr
+    if not np.isfinite(beta_A):
+        raise ValueError("beta_A must be finite")
+    factor = 1.0 + beta_A * phi_arr
     return _return_scalar_if_scalar(phi, factor)
 
 
-def temporal_shear_from_scalar_field(phi, grad_phi, beta=BETA_A):
+def temporal_shear_from_scalar_field(phi, grad_phi, beta_A=BETA_A):
     """
     Compute Temporal Shear vector Sigma_mu = nabla_mu ln A(phi).
 
@@ -81,16 +81,16 @@ def temporal_shear_from_scalar_field(phi, grad_phi, beta=BETA_A):
     magnitude : float
         |Sigma| in m^-1
     """
-    if not np.isfinite(beta):
-        raise ValueError("beta must be finite")
+    if not np.isfinite(beta_A):
+        raise ValueError("beta_A must be finite")
     _as_numeric_array(phi, "phi")
     grad = _as_numeric_array(grad_phi, "grad_phi")
-    sigma = beta * grad
+    sigma = beta_A * grad
     magnitude = float(np.linalg.norm(sigma))
     return sigma, magnitude
 
 
-def effective_g(newton_g, phi, beta=BETA_A):
+def effective_g(newton_g, phi, beta_A=BETA_A):
     r"""
     Effective gravitational constant under TEP (Jordan frame).
 
@@ -104,11 +104,11 @@ def effective_g(newton_g, phi, beta=BETA_A):
     """
     if not np.isfinite(newton_g) or newton_g <= 0:
         raise ValueError("newton_g must be finite and strictly positive")
-    a = conformal_factor(phi, beta)
+    a = conformal_factor(phi, beta_A)
     return newton_g / (a ** 2)
 
 
-def g_eff_variance(phi_1, phi_2, beta=BETA_A, beta_2=None):
+def g_eff_variance(phi_1, phi_2, beta_A=BETA_A, beta_2=None):
     r"""
     Predicted relative variance in G_eff between two sites.
 
@@ -119,24 +119,24 @@ def g_eff_variance(phi_1, phi_2, beta=BETA_A, beta_2=None):
     Delta_G / G = [G_eff(site_2) - G_eff(site_1)] / G_eff(site_1)
                 = [A(phi_1)/A(phi_2)]^2 - 1
 
-    For small phi differences with equal beta:
-    Delta_G / G ~ -2*beta*(phi_2 - phi_1)
+    For small phi differences with equal beta_A:
+    Delta_G / G ~ -2*beta_A*(phi_2 - phi_1)
 
     Parameters
     ----------
     phi_1, phi_2 : float
         Scalar field at sites 1 and 2.
-    beta : float
+    beta_A : float
         Conformal coupling at site 1 (default BETA_A).
     beta_2 : float, optional
-        Conformal coupling at site 2. If None, uses beta.
+        Conformal coupling at site 2. If None, uses beta_A.
     """
-    b2 = beta_2 if beta_2 is not None else beta
+    b2 = beta_2 if beta_2 is not None else beta_A
     _as_numeric_array(phi_1, "phi_1")
     _as_numeric_array(phi_2, "phi_2")
-    if not np.isfinite(beta) or not np.isfinite(b2):
-        raise ValueError("beta and beta_2 must be finite")
-    a1 = conformal_factor(phi_1, beta)
+    if not np.isfinite(beta_A) or not np.isfinite(b2):
+        raise ValueError("beta_A and beta_2 must be finite")
+    a1 = conformal_factor(phi_1, beta_A)
     a2 = conformal_factor(phi_2, b2)
     return (a1 / a2) ** 2 - 1.0
 
@@ -174,8 +174,8 @@ def beta_screened(rho_local_g_cm3, beta_A=BETA_A,
     Density-dependent conformal coupling (chameleon-like screening).
 
     The lab-scale locked coupling |beta_A| = 1.0 violates the Cassini PPN
-    bound |beta| < 0.0034 (solar-system scale). A density-dependent
-    coupling suppresses beta in low-density environments while preserving
+    bound |beta_PPN| < 0.0034 (solar-system scale). A proximity-dependent
+    coupling suppresses beta_A in dilute environments while preserving
     the full lab-scale strength inside dense matter:
 
         beta_eff(rho) = beta_A / [1 + (rho_transition / rho)^n]

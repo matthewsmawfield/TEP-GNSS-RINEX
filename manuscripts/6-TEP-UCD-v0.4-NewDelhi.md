@@ -1,7 +1,7 @@
 # Universal Critical Density: Cross-Scale Consistency of ρ_T
 Matthew Lukin Smawfield
-Version: v0.3 (New Delhi)
-First published: 28 December 2025 · Last updated: 29 April 2026
+Version: v0.4 (New Delhi)
+05 June 2026
 DOI: 10.5281/zenodo.18064365
 
 ---

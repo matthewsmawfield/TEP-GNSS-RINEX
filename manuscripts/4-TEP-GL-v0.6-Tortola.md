@@ -1,7 +1,7 @@
 # Temporal-Spatial Coupling in Gravitational Lensing
 **Matthew Lukin Smawfield**
-Version: v0.5 (Tortola)
-First published: 19 December 2025 · Last updated: 29 April 2026
+Version: v0.6 (Tortola)
+05 June 2026
 DOI: 10.5281/zenodo.17982540
 
 ---

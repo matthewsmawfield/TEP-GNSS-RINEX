@@ -1,7 +1,7 @@
 # Global Time Echoes: Raw RINEX Consistency Test
 **Matthew Lukin Smawfield**
-Version: v0.5 (Kathmandu)
-First published: 9 December 2025 · Last updated: 29 April 2026
+Version: v0.6 (Kathmandu)
+05 June 2026
 DOI: 10.5281/zenodo.17860166
 
 ---

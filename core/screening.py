@@ -86,7 +86,7 @@ def beta_screened(rho_local_g_cm3, beta_A=tep_const.BETA_A,
     Returns
     -------
     float or ndarray
-        Effective beta after density screening.
+        Effective conformal coupling after density screening.
     """
     f = coupling_screening_factor(rho_local_g_cm3, rho_transition, n)
     return beta_A * f

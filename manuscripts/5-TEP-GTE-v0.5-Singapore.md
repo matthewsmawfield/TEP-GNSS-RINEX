@@ -1,7 +1,7 @@
 # Global Time Echoes: Empirical Synthesis
 **Matthew Lukin Smawfield**
-Version: v0.4 (Singapore)
-21 December 2025 · Last updated: 29 April 2026
+Version: v0.5 (Singapore)
+05 June 2026
 DOI: 10.5281/zenodo.18004832
 
 ---

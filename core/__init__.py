@@ -44,6 +44,12 @@ from .constants import (
     ALPHA_LOG,
     BETA_GEOM,
     SCREENING_LENGTH_KM,
+    LAMBDA_T_MGEX_KM,
+    LAMBDA_T_MGEX_ERR_KM,
+    LAMBDA_T_MGEX_R2,
+    GNSS_LAMBDA_T_LONGSPAN_CODE_KM,
+    GNSS_LAMBDA_T_LONGSPAN_CODE_ERR_KM,
+    GNSS_LAMBDA_T_EXPONENTIAL_BY_CENTER,
 )
 from .screening import screening_factor, universal_screening_function
 from .conformal_scaling import (
@@ -65,4 +71,5 @@ from .scalar_field import (
     solve_scalar_field_layered_weighted,
     scalar_field_logarithmic,
     scalar_field_difference,
+    compute_temporal_shear_from_mass_gradient,
 )

@@ -206,7 +206,7 @@ def luminosity_distance_lcdm(z, H0, Om=0.315):
     return dl if np.ndim(z) else float(dl[0])
 
 
-def phenomenological_redshift_factor(z, phi0, n=1.0, beta=tep_const.BETA_A):
+def phenomenological_redshift_factor(z, phi0, n=1.0, beta_A=tep_const.BETA_A):
     """
     Phenomenological redshift fit template.
 
@@ -218,38 +218,38 @@ def phenomenological_redshift_factor(z, phi0, n=1.0, beta=tep_const.BETA_A):
     Accepts scalar or array-like z.
     """
     z_arr = np.asarray(z, dtype=float)
-    return np.exp(beta * phi0 * np.power(1.0 + z_arr, n))
+    return np.exp(beta_A * phi0 * np.power(1.0 + z_arr, n))
 
 
-def conformal_factor_derivative(z, phi0, n=1.0, beta=tep_const.BETA_A):
+def conformal_factor_derivative(z, phi0, n=1.0, beta_A=tep_const.BETA_A):
     """
     Analytical derivative dA/dz of the TEP conformal factor.
 
-    A(z) = exp(beta * phi0 * (1+z)^n)
-    dA/dz = A(z) * beta * phi0 * n * (1+z)^(n-1)
+    A(z) = exp(beta_A * phi0 * (1+z)^n)
+    dA/dz = A(z) * beta_A * phi0 * n * (1+z)^(n-1)
 
     For n == 0 the conformal factor is constant and the derivative is zero.
     Accepts scalar or array-like z.
     """
     z_arr = np.asarray(z, dtype=float)
-    a_z = phenomenological_redshift_factor(z_arr, phi0, n, beta)
+    a_z = phenomenological_redshift_factor(z_arr, phi0, n, beta_A)
     if n == 0:
         return np.zeros_like(a_z)
-    return a_z * beta * phi0 * n * np.power(1.0 + z_arr, n - 1.0)
+    return a_z * beta_A * phi0 * n * np.power(1.0 + z_arr, n - 1.0)
 
 
-def alpha_a_z(z, phi0, n=1.0, beta=tep_const.BETA_A):
+def alpha_a_z(z, phi0, n=1.0, beta_A=tep_const.BETA_A):
     """
     Jordan-frame alpha_A = d ln A / d ln a_J.
 
-    With A(z) = exp[beta * phi0 * (1+z)^n] and 1+z = a_J^-1,
-    alpha_A = - beta * phi0 * n * (1+z)^n.
+    With A(z) = exp[beta_A * phi0 * (1+z)^n] and 1+z = a_J^-1,
+    alpha_A = - beta_A * phi0 * n * (1+z)^n.
     """
     z_arr = np.asarray(z, dtype=float)
-    return -beta * phi0 * n * np.power(1.0 + z_arr, n)
+    return -beta_A * phi0 * n * np.power(1.0 + z_arr, n)
 
 
-def hubble_modifier_tep_c0(z, phi0, n=1.0, beta=tep_const.BETA_A):
+def hubble_modifier_tep_c0(z, phi0, n=1.0, beta_A=tep_const.BETA_A):
     """
     TEP-C0 Jordan-frame expansion modifier H_J / H_LCDM.
 
@@ -258,20 +258,20 @@ def hubble_modifier_tep_c0(z, phi0, n=1.0, beta=tep_const.BETA_A):
 
         H_J = A / (1 - alpha_A) * H_LCDM.
     """
-    alpha = alpha_a_z(z, phi0, n, beta)
+    alpha = alpha_a_z(z, phi0, n, beta_A)
     denom = 1.0 - alpha
     if np.any(denom <= 0.0):
         raise ValueError("Unphysical TEP-C0 modifier: 1 - alpha_A must be positive")
-    return phenomenological_redshift_factor(z, phi0, n, beta) / denom
+    return phenomenological_redshift_factor(z, phi0, n, beta_A) / denom
 
 
-def luminosity_distance_tep(z, H0, phi0, n=1.0, beta=tep_const.BETA_A, Om=0.315):
+def luminosity_distance_tep(z, H0, phi0, n=1.0, beta_A=tep_const.BETA_A, Om=0.315):
     """
     Endpoint-only TEP luminosity distance in Mpc: d_L^TEP = A(z) * d_L^LCDM.
 
     Accepts scalar or array-like z.
     """
-    return phenomenological_redshift_factor(z, phi0, n, beta) * luminosity_distance_lcdm(z, H0, Om)
+    return phenomenological_redshift_factor(z, phi0, n, beta_A) * luminosity_distance_lcdm(z, H0, Om)
 
 
 def luminosity_distance_tep_c0_jordan(
@@ -279,7 +279,7 @@ def luminosity_distance_tep_c0_jordan(
     H0,
     phi0,
     n=1.0,
-    beta=tep_const.BETA_A,
+    beta_A=tep_const.BETA_A,
     Om=0.315,
     include_gw_endpoint=True,
 ):
@@ -297,7 +297,7 @@ def luminosity_distance_tep_c0_jordan(
         raise ValueError("Redshift z must be non-negative")
 
     def integrand(zp):
-        modifier = hubble_modifier_tep_c0(zp, phi0, n, beta)
+        modifier = hubble_modifier_tep_c0(zp, phi0, n, beta_A)
         return 1.0 / (E_of_z(zp, Om) * modifier)
 
     integrals = np.array([
@@ -306,7 +306,7 @@ def luminosity_distance_tep_c0_jordan(
     ])
     dl = (1.0 + z_arr) * (C_KM_S / H0) * integrals
     if include_gw_endpoint:
-        dl = phenomenological_redshift_factor(z_arr, phi0, n, beta) * dl
+        dl = phenomenological_redshift_factor(z_arr, phi0, n, beta_A) * dl
     return dl if np.ndim(z) else float(dl[0])
 
 

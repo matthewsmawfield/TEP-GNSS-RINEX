@@ -1,7 +1,7 @@
 # Temporal Equivalence Principle: Temporal Shear in the Earth Flyby Anomaly
 **Matthew Lukin Smawfield**
 Version: v0.1 (Yogyakarta)
-First published: 17 May 2026
+First published: 7 June 2026
 DOI: 10.5281/zenodo.19454863
 
 ---

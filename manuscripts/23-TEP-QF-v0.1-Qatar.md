@@ -162,6 +162,8 @@ where *γ^{μ}* are the Dirac matrices satisfying the Clifford algebra *{γ^{μ}
 
 ### 3.2 Algebraic Flat-Space Recovery
 
+The historical inability to geometrically unify quantum mechanics with relativity stemmed from a fundamental metric misattribution. Previous frameworks attempted to map particle holonomy onto the gravitational spacetime metric while maintaining time as a universal parameter. TEP demonstrates that standard Quantum Field Theory and the Dirac equation are actually low-resolution, flat-frame tangent limits of a deeper dynamical proper-time phase transport. The geometric operator successfully reduces to the familiar Dirac operator only when the temporal background is artificially flattened. By treating proper time τ as a dynamical scalar field φ and deriving the action from the causal matter metric *g̃_{μν}*, the geometric language of a deeper temporal topology is naturally revealed.
+
 The standard Dirac equation is recovered as the local Clifford/tetrad representation in the isochronous (screened) limit. This is an exact mathematical result: the geometric operator reduces to the familiar Dirac operator when the temporal background is flat.
 
 In curved spacetime, spinors cannot be defined directly on the manifold. They require a local frame (tetrad) *e^{a}_{μ}* at each point, related to the metric by:

@@ -1,6 +1,6 @@
 # Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries
 **Matthew Lukin Smawfield**
-Version: v0.3 (Kilifi)
+Version: v0.4 (Kilifi)
 First published: 19 March 2026 · Last updated: 29 April 2026
 DOI: 10.5281/zenodo.19102061
 

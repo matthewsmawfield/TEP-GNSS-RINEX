@@ -26,13 +26,13 @@ parameters:
 
   - symbol: "rho_c"
     latex: "\\rho_c"
-    meaning: "Temporal Topology saturation density"
+    meaning: "Temporal Topology saturation proximity scale (observationally proxied by density)"
     value: 20.0
     units: "g cm^{-3}"
     class: "calibrated"
     first_paper: 6
     used_in: [6, 14, 17, 18, 21, 23, 24]
-    description: "Phenomenological density at which collective many-body screening suppresses observable temporal shear. Determined from terrestrial clock correlation data."
+    description: "Phenomenological proximity scale at which collective many-body screening suppresses observable temporal shear, observationally proxied by the density ρ_c ≈ 20 g/cm³. Determined from terrestrial clock correlation data. Density is an observable proxy, not the causal parameter; the fundamental scale is geometric overlap governed by the packing fraction η = (r_c/λ_F)³."
 
   - symbol: "lambda_T"
     latex: "\\lambda_T"
@@ -42,7 +42,7 @@ parameters:
     class: "calibrated"
     first_paper: 1
     used_in: [1, 2, 3, 6, 14, 17, 21]
-    description: "Characteristic scale over which the scalar field remains correlated. Long-duration GNSS analysis yields ~4200 km. Replaces the 2590 km short-hold-out estimate from TEP-GNSS-MGEX. Lab-scale crustal value is LAB_COHERENCE_LENGTH_M = 50 km."
+    description: "Characteristic scale over which the scalar field remains correlated. Long-duration multi-center GNSS analysis yields ~4200 km (canonical). MGEX held-out verification (Paper 14) yields ~1396 km and is not interchangeable with this baseline. Lab-scale crustal value is LAB_COHERENCE_LENGTH_M = 50 km."
 
   - symbol: "alpha_log"
     latex: "\\alpha_{\\log}"
