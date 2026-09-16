@@ -59,8 +59,7 @@
             </li>
             <li>
                 CMB Alignment: Weather patterns do not align with the Cosmic
-                Microwave Background dipole (20.0° separation, p &lt;
-                10<sup>−35</sup>) (Burde, 2016; Consoli & Pluchino, 2021).
+                Microwave Background dipole (20.0° separation, 78% RA clustering) (Burde, 2016; Consoli & Pluchino, 2021).
             </li>
             <li>
                 Ionospheric Gradient Scale: Lee & Lee (2019) show ionospheric
@@ -72,7 +71,7 @@
     </div>
 </div>
 
-<h3>6.1b Multiplicity, Preregistration, and the Cross-Paper Synthesis</h3>
+<h3>6.2 Multiplicity, Preregistration, and the Cross-Paper Synthesis</h3>
 
 <p>
     A concern sometimes raised is that the large number of metric combinations
@@ -82,14 +81,15 @@
 </p>
 
 <p>
-    <strong>Preregistration of the primary comparison.</strong> The single
-    most important comparison was predefined before inspection of the raw-SPP
-    results: the phase-alignment index from the precise-ephemeris mode, matched
-    against the PPP phase-alignment index from Paper 1.  All other
-    combinations (baseline GPS, ionofree, multi-GNSS, MSC metrics, etc.) are
-    treated as <em>consistency checks</em>, not independent tests of the TEP
-    hypothesis.  They serve to ask whether the signal form is robust across
-    processing choices, not to accumulate significance.
+    <strong>Primary tests and cross-paper comparison.</strong> The primary
+    raw-data test uses broadcast-ephemeris SPP to determine whether
+    distance-structured correlations are present without precise
+    analysis-center products. The cross-paper comparison uses precise-mode
+    mean phase-offset alignment against the PPP phase-alignment statistic from
+    Paper 1. The remaining configurations examine consistency across
+    processing choices rather than providing independent detections. No dated,
+    immutable protocol was located in this repository; accordingly, this
+    paper describes a predefined comparison, not a preregistered one.
 </p>
 
 <p>
@@ -118,9 +118,9 @@
     consistency checks, as done here, is the correct statistical framing.
 </p>
 
-<h3>6.2 Physical Implications</h3>
+<h3>6.3 Physical Implications</h3>
 
-<h4>6.2.1 Space-Time Coupling Supported</h4>
+<h4>6.3.1 Space-Time Coupling Supported</h4>
 
 <p>
     The comparable Temporal Topology correlation lengths for position jitter (spatial proxy, λ<sub>T</sub> =
@@ -140,7 +140,7 @@
     = −0.763, 5.4σ).
 </p>
 
-<h4>6.2.2 Directional Anisotropy as Physical Signature</h4>
+<h4>6.3.2 Directional Anisotropy as Physical Signature</h4>
 
 <p>
     The detected E-W/N-S anisotropy ratio of 1.033–1.224 (raw short-distance)
@@ -159,7 +159,7 @@
     </li>
 </ul>
 
-<h4>6.2.2a The Two-Mechanism Model: Geometry vs Ionosphere</h4>
+<h4>6.3.3 The Two-Mechanism Model: Geometry vs Ionosphere</h4>
 
 <p>
     First-principles GPS geometry simulation (Step 2.9) reveals two competing
@@ -260,27 +260,26 @@
     <p style="margin-top: 10px">
         Resolution: The short-distance E-W/N-S ratio (1.20–1.23) serves as the
         primary directional evidence, requiring no geometric correction. At long
-        distances (&gt;1000 km), both mechanisms are active with ionosphere
-        dominating, creating the observed sign reversal. After correcting for
-        the 15× geometric suppression factor (derived from first principles),
-        the long-distance ratio recovers to 1.46, within 32% of CODE's 25-year
-        benchmark (2.16). This provides secondary validation while maintaining
-        independence of the primary evidence.
+        distances (&gt;1000 km), the geometry simulation gives a 15× suppression
+        estimate and a corresponding corrected ratio of 1.46. This simulation is
+        independent of CODE, whereas the 2.42–3.16 empirical factors and
+        1.80–1.86 ratios are CODE-referenced. They are complementary diagnostics,
+        not interchangeable estimates of a unique correction.
     </p>
 </div>
 
 <div class="callout callout-info" style="margin-top: 20px">
-    <h5>Peer Review Response: Circularity Eliminated</h5>
+    <h5>Interpretation of the Independent Simulation</h5>
     <p>
         The primary directional evidence (short-distance E-W/N-S = 1.20–1.23) is
-        independent of CODE and requires no correction. The geometric
-        suppression factor (15×) is derived from first principles using only GPS
-        orbital parameters. The long-distance correction serves as secondary
-        validation, not primary evidence. Circularity is eliminated.
+        independent of CODE and requires no correction. The 15× simulation is
+        derived from first principles using only GPS orbital parameters. The
+        separate CODE-referenced sector calculation remains an empirical
+        comparison rather than independent validation.
     </p>
 </div>
 
-<h4>6.2.3 CMB Frame Alignment: A Cosmic Reference</h4>
+<h4>6.3.4 CMB Frame Alignment: A Cosmic Reference</h4>
 
 <p>
     The comprehensive 72-combination CMB frame analysis suggests that the annual
@@ -298,8 +297,8 @@
         </li>
         <li>
             78% RA clustering: Of 54 clean (non-Ionofree) combinations, 42 find
-            RA within 10° of CMB (p &lt; 10<sup>−35</sup> under a simplified
-            binomial model)
+            RA within 10° of CMB, demonstrating robustness to
+            processing choices (not an independent combined significance)
         </li>
         <li>
             Signal Booster: Aggressive quality filtering (Dynamic-50: daily
@@ -356,7 +355,7 @@
     methodologies.
 </p>
 
-<h3>6.2.4 Synthesis: A Unified Physical Picture</h3>
+<h3>6.3.5 Synthesis: A Unified Physical Picture</h3>
 
 <p>
     Taken together, the findings present a coherent physical narrative. The
@@ -388,7 +387,7 @@
     consistent with the Temporal Equivalence Principle.
 </p>
 
-<h3>6.2.5 Robustness to Noise</h3>
+<h3>6.3.6 Robustness to Noise</h3>
 
 <p>
     A notable feature is that TEP-related signatures remain detectable despite
@@ -401,7 +400,7 @@
     methodology.
 </p>
 
-<h3>6.2.6 Context: Atomic Clock Networks for Fundamental Physics</h3>
+<h3>6.3.7 Context: Atomic Clock Networks for Fundamental Physics</h3>
 
 <p>
     This work contributes to a growing body of research using
@@ -421,7 +420,7 @@
     &amp; Sakstein, 2018) and beyond-Standard-Model physics.
 </p>
 
-<h3>6.2.7 Reinterpreting Common Mode Error</h3>
+<h3>6.3.8 Reinterpreting Common Mode Error</h3>
 
 <p>
     Over the past decade, a substantial literature in the
@@ -448,9 +447,9 @@
     solely as an additional empirical noise component.
 </p>
 
-<h3>6.3 Methodological Implications</h3>
+<h3>6.4 Methodological Implications</h3>
 
-<h4>6.3.1 Enabling Independent Verification</h4>
+<h4>6.4.1 Enabling Independent Verification</h4>
 
 <p>
     The methodology established in this paper enables testing of the TEP
@@ -469,7 +468,7 @@
     access to proprietary analysis-center software.
 </p>
 
-<h4>6.3.2 Time Alignment via Pandas DatetimeIndex</h4>
+<h4>6.4.2 Time Alignment via Pandas DatetimeIndex</h4>
 
 <p>
     Time alignment uses Pandas DataFrame indexing with DatetimeIndex, identical
@@ -479,9 +478,9 @@
     datasets.
 </p>
 
-<h3>6.4 Limitations and Future Work</h3>
+<h3>6.5 Limitations and Future Work</h3>
 
-<h4>6.4.1 Current Limitations</h4>
+<h4>6.5.1 Current Limitations</h4>
 
 <ul>
     <li>
@@ -497,7 +496,7 @@
         statistical power
     </li>
     <li>
-        Kp as coarse diagnostic: While the Kp stratification test (Section 3.6)
+        Kp as coarse diagnostic: While the Kp stratification test (Section 3.8)
         demonstrates geomagnetic independence at the primary threshold (Kp &lt;
         3 vs. Kp ≥ 3; median Δλ ≈ −1%, with 60/72 tests within ±5%), Kp
         summarizes global conditions and does not capture all aspects of local
@@ -507,7 +506,7 @@
     </li>
 </ul>
 
-<h4>6.4.2 Completed Analyses</h4>
+<h4>6.5.2 Completed Analyses</h4>
 
 <div>
     <h5>Orbital Velocity Coupling — Detected</h5>
@@ -536,7 +535,7 @@
     </p>
 </div>
 
-<h3>6.5 TEP Framework Validation</h3>
+<h3>6.6 TEP Framework Validation</h3>
 
 <div>
     <h4>TEP Predictions vs. Observations</h4>
@@ -616,8 +615,8 @@
             <td>CMB frame alignment</td>
             <td>RA near CMB dipole</td>
             <td>
-                RA = 188° (20.0° from CMB), 78% within 10° (p &lt;
-                10<sup>−35</sup>)
+                RA = 188° (20.0° from CMB), 78% within 10°
+                (robustness check, not independent significance)
             </td>
             <td>Supported</td>
         </tr>
@@ -637,8 +636,8 @@
             <td>No mass scaling</td>
             <td>Geometric, not gravitational</td>
             <td>
-                No consistent tidal GM/r² scaling (σ-level: p = 0.317–0.989; one
-                |mod| anticorrelation: p = 0.0099)
+                No consistent positive dependence on the tested GM/r²
+                acceleration proxy; a GM/r³ tidal-gradient scaling was not tested
             </td>
             <td>Supported</td>
         </tr>
@@ -665,14 +664,14 @@
 
 <p>
     Across the sixteen comparisons summarized above, the observations are
-    broadly consistent with the expectations of TEP v0.7 (Jakarta), which posits
+    broadly consistent with the expectations of TEP v0.12 (Jakarta), which posits
     continuous geometric screening (manifesting as Temporal Topology governed by shear suppression) rather than discrete
     thin-shell boundaries. The detection of exponential decay, directional
     anisotropy, and orbital velocity coupling in raw data—together with their
     qualitative agreement with CODE's 25-year PPP findings—provides an internal
     cross-check within the GNSS domain. The observed density-driven modulation
     of correlation lengths (summer enhancement, altitude invariance, geomagnetic
-    independence) is specifically consistent with the v0.7 prediction that
+    independence) is specifically consistent with the v0.12 prediction that
     Temporal Shear is suppressed continuously by increasing ambient density, not
     at a step-function boundary. The agreement on Southern Hemisphere
     enhancement across Papers 2 and 3 (different datasets, different

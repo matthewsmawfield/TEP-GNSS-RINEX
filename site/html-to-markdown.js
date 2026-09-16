@@ -80,7 +80,7 @@ class HTMLToMarkdownConverter {
         html = html.replace(/<div[^>]*class=["'][^"']*theorem[^"']*["'][^>]*>/gi, '\n**Theorem:**\n');
         html = html.replace(/<div[^>]*class=["'][^"']*principle[^"']*["'][^>]*>/gi, '\n**Principle:**\n');
         html = html.replace(/<div[^>]*class=["'][^"']*proof[^"']*["'][^>]*>/gi, '\n*Proof:*\n');
-        html = html.replace(/<div[^>]*class=["'][^"']*experimental-section[^"']*["'][^>]*>/gi, '\n**Experimental Section:**\n');
+        html = html.replace(/<div[^>]*class=["'][^"']*experimental-section[^"']*["'][^>]*>/gi, '');
         html = html.replace(/<div[^>]*class=["'][^"']*critical-analysis[^"']*["'][^>]*>/gi, '\n**Critical Analysis:**\n');
         html = html.replace(/<div[^>]*class=["'][^"']*significance[^"']*["'][^>]*>/gi, '\n**Significance:**\n');
         html = html.replace(/<div[^>]*class=["'][^"']*key-finding[^"']*["'][^>]*>/gi, '\n**Key Finding:**\n');

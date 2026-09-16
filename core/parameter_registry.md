@@ -5,7 +5,7 @@ This table records the flow of parameters across the TEP corpus. Each parameter 
 | Symbol | Meaning | Value | Class | First calibrated | Used in |
 |---|---|---|---|---|---|
 | $\beta_A$ | Conformal coupling strength in $A(\phi) = \exp(\beta_A\phi/M_{\text{Pl}})$ | $-1.0$ | fundamental | Paper 0 | 0, 1, 2, 3, 6, 10, 11, 14, 17, 18, 19, 21, 22, 23, 24, 25, 26 |
-| $\rho_c$ | Temporal Topology saturation density | $20.0$ g/cm$^3$ | calibrated | Paper 6 | 6, 14, 17, 18, 21, 23, 24 |
+| $\rho_T$ | Temporal Topology saturation scale | $20.0$ g/cm$^3$ | calibrated | Paper 6 | 6, 14, 17, 18, 21, 23, 24 |
 | $\lambda_T$ | Clock-correlation length (Temporal Topology coherence) | $4200$ km | calibrated | Papers 1--2 | 1, 2, 3, 6, 14, 17, 21 |
 | $\alpha_{\log}$ | Lab-scale density-sector coupling | $-7.66 \times 10^{-3}$ | calibrated | Paper 21 | 21 |
 | $\beta_{\text{geom}}$ | Mass-sector geometric coupling | $1.50 \times 10^{-4}$ | calibrated | Paper 21 | 21 |

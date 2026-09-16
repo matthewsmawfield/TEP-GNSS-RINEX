@@ -64,13 +64,69 @@ The spatial profile and coherence structure of the scalar field &phi; (equivalen
 
 <h3>A.5 Screening</h3>
 <p>
-Screening is the continuous, spatially varying suppression of locally observable Temporal Shear due to the local matter density.  It is not a binary on/off switch but a smooth transition governed by the dimensionless screening function:
+Screening is the continuous suppression of the locally observable Temporal Shear/source-charge sector, expressed through the conformal factor ln <em>A</em>(&phi;), its gradient &Sigma;<sub>&mu;</sub>, and its covariance <em>C<sub>A</sub></em>. It is not a binary on/off switch but a smooth, environment-dependent suppression governed by the operator
 </p>
 <p style="text-align: center;">
-f(&rho;) = 1 / [1 + (&rho;/&rho;<sub>c</sub>)<sup>n</sup>]
+&Sigma;<sub>&mu;</sub><sup>obs</sup> = <em>S</em><sub>&Sigma;</sub>(<em>&Epsilon;</em>) &Sigma;<sub>&mu;</sub>,
 </p>
 <p>
-where &rho;<sub>c</sub> is the phenomenological saturation density (calibrated from terrestrial data) and n controls the steepness of the transition.  When &rho; &Lt; &rho;<sub>c</sub>, f &rarr; 1 (full TEP effect); when &rho; &Gt; &rho;<sub>c</sub>, f &rarr; 0 (saturated, A &rarr; 1).  The transition from 10% to 90% screened typically spans &rho; ~ 2&ndash;30 g/cm<sup>3</sup>.
+where <em>&Epsilon;</em> = {&rho;, &Phi;/<em>c</em><sup>2</sup>, source structure, ambient environment, boundary conditions, <em>z</em>, measurement channel}. The screening factor <em>S</em><sub>&Sigma;</sub> is not a density threshold; it is a smooth suppression of the locally active shear.
+</p>
+<p>
+Quantities such as &rho;<sub>T</sub>, <em>R</em><sub>T</sub>(<em>M</em>), <em>S</em><sub>&oplus;</sub>(<em>r</em>), compactness &Phi;/<em>c</em><sup>2</sup>, local stellar density, geometric coherence length, and channel-specific response coefficients are domain-specific projections of <em>&Epsilon;</em>, not independent screening mechanisms and not interchangeable universal thresholds. Each is an observational transfer model that parameterizes the same underlying operator in a regime-appropriate form.
+</p>
+<p>
+The saturation scale &rho;<sub>T</sub> &asymp; 20 g/cm<sup>3</sup> is the characteristic scale at which Temporal Topology effects saturate. It is <strong>not</strong> a local on/off condition of the form &rho; &gt; &rho;<sub>T</sub> &rArr; GR and &rho; &lt; &rho;<sub>T</sub> &rArr; active TEP. Rather, it is the scale at which the non-linear Temporal Topology response saturates. The subatomic core density (&rho;<sub>core</sub> &sim; 10<sup>4</sup> g/cm<sup>3</sup>, Paper 24), the macroscopic many-body suppression scale (&rho;<sub>c</sub> &asymp; 20 g/cm<sup>3</sup>, Paper 21), and the galactic transition density (&rho;<sub>half</sub> &asymp; 0.5 <em>M</em><sub>&odot;</sub>/pc<sup>3</sup>, Paper 26) are different effective projections of the same non-linear Temporal Topology response. The first-principles transfer relation between them remains an open derivation.
+</p>
+<p>
+Recovery of GR in local tests is controlled by suppression of the observable shear/source-charge sector. Source structure, environmental state, and boundary conditions suppress the locally active shear sector in screened regimes.
+</p>
+
+<h4>A.5.1 Screening Domain Table</h4>
+<p>
+The following canonical definitions are provided so that every paper in the TEP series references a single, unambiguous screening ontology. The underlying physics is one continuous suppression operator <em>S</em><sub>&Sigma;</sub>(<em>&Epsilon;</em>); the domain-specific forms listed below are observational transfer models, not separate fundamental laws.
+</p>
+<table>
+<thead>
+<tr><th>Domain</th><th>Screening variable</th><th>Observable response</th><th>Paper</th></tr>
+</thead>
+<tbody>
+<tr><td>GNSS / Earth</td><td>terrestrial topology, <em>L<sub>c</sub></em>, &rho;<sub>T</sub></td><td>clock covariance</td><td>1, 2, 3, 4</td></tr>
+<tr><td>Cepheids / <em>H</em><sub>0</sub></td><td>&sigma;<sup>2</sup>/<em>c</em><sup>2</sup> drives, <em>S</em>(&rho;) suppresses</td><td>period contraction, <em>H</em><sub>0</sub> bias</td><td>11</td></tr>
+<tr><td>Pulsars / clusters</td><td>cluster potential + suppressed density scaling</td><td>spin-down residual</td><td>10</td></tr>
+<tr><td>Wide binaries</td><td><em>R<sub>s</sub></em>, &epsilon;<sub>env</sub>, &rho;<sub>T</sub></td><td>velocity boost saturation</td><td>13</td></tr>
+<tr><td>LLR</td><td>compactness + interior shielding</td><td>&eta; residual channel</td><td>17</td></tr>
+<tr><td>JWST / high-<em>z</em></td><td>halo potential + density suppression</td><td>age/mass inflation</td><td>12</td></tr>
+<tr><td>Cosmology / C0</td><td><em>S</em>(&rho;) &epsilon;<sub>T</sub>, void vs mass-weighted average</td><td>redshift-distance transport</td><td>26</td></tr>
+<tr><td>LHC / quantum</td><td>channel-specific response &kappa;<sub>LHC</sub></td><td>topological charge form factor</td><td>20</td></tr>
+</tbody>
+</table>
+<p>
+Each entry uses a domain-appropriate parameterization of the same underlying operator <em>S</em><sub>&Sigma;</sub>(<em>&Epsilon;</em>). The LHC entry is explicitly marked as probing a channel-specific response under high-energy momentum transfer, not the macroscopic bulk-density screening that governs astrophysical and cosmological observables.
+</p>
+
+<h4>A.5.2 Screening Scales and Symbols</h4>
+<p>
+The following table lists the canonical screening-related symbols used across the TEP corpus, their meanings, and the papers in which they appear. This is provided to prevent symbol collisions and scale misattribution (e.g., <em>R<sub>s</sub></em> for wide binaries vs <em>R</em><sub>sol</sub> for pulsar companion saturation).
+</p>
+<table>
+<thead>
+<tr><th>Symbol</th><th>Meaning</th><th>Defined in</th><th>Typical value / formula</th><th>Used in</th></tr>
+</thead>
+<tbody>
+<tr><td>&rho;<sub>T</sub></td><td>Temporal Topology saturation scale</td><td>Paper 6</td><td>&asymp; 20 g/cm<sup>3</sup></td><td>Papers 6, 10, 11, 13, 17, 21</td></tr>
+<tr><td>&rho;<sub>half</sub></td><td>Galactic stellar half-suppression density</td><td>Paper 11</td><td>&asymp; 0.5 <em>M</em><sub>&odot;</sub>/pc<sup>3</sup> &asymp; 3&times;10<sup>&minus;23</sup> g/cm<sup>3</sup></td><td>Paper 11 (<em>S</em>(&rho;<sub>*</sub>) for Cepheids)</td></tr>
+<tr><td>&rho;<sub>c</sub></td><td>Macroscopic many-body suppression scale</td><td>Paper 21</td><td>&asymp; 20 g/cm<sup>3</sup> (equivalent to &rho;<sub>T</sub>)</td><td>Paper 21</td></tr>
+<tr><td><em>R</em><sub>T</sub></td><td>Geometric saturation radius</td><td>Paper 6</td><td>(3<em>M</em> / 4&pi;&rho;<sub>T</sub>)<sup>1/3</sup></td><td>Papers 6, 13</td></tr>
+<tr><td><em>R<sub>s</sub></em></td><td>Effective screening radius (wide binaries)</td><td>Paper 13</td><td>(3<em>M</em> / 4&pi;&epsilon;<sub>env</sub>&rho;<sub>T</sub>)<sup>1/3</sup></td><td>Paper 13</td></tr>
+<tr><td><em>R</em><sub>sol</sub></td><td>Companion saturation radius (pulsars)</td><td>Paper 10</td><td>&sim; companion orbital scale</td><td>Paper 10</td></tr>
+<tr><td>&lambda;<sub>T</sub></td><td>GNSS correlation length / relaxation scale</td><td>Papers 1&ndash;3</td><td>&sim; 4,200 km</td><td>Papers 1&ndash;3, 4, 14</td></tr>
+<tr><td>&rho;<sub>amb</sub></td><td>Ambient halo density</td><td>Context-dependent</td><td>&sim; 10<sup>&minus;18</sup> g/cm<sup>3</sup> (GC halo)</td><td>Papers 10, 11, 13</td></tr>
+<tr><td>&rho;<sub>*</sub></td><td>Local stellar mass density</td><td>Context-dependent</td><td>&sim; 0.5 <em>M</em><sub>&odot;</sub>/pc<sup>3</sup> (galactic disk)</td><td>Paper 11</td></tr>
+</tbody>
+</table>
+<p>
+Key distinction: &rho;<sub>half</sub> is a <strong>local stellar density</strong> parameter for the continuous suppression factor <em>S</em>(&rho;<sub>*</sub>) in galactic disks (Paper 11), not an ambient halo density. Globular clusters are active not because &rho;<sub>amb</sub> &ll; &rho;<sub>half</sub> but because their internal potential structure permits gradient coherence on scales larger than the cluster size. Conversely, &rho;<sub>T</sub> &asymp; 20 g/cm<sup>3</sup> is the asymptotic saturation scale of the conformal-factor sector; systems with &rho; &gg; &rho;<sub>T</sub> (e.g., Solar System interiors) are in the saturated/GR-recovered regime.
 </p>
 
 <h3>A.6 Observable Response Coefficient</h3>
@@ -80,12 +136,18 @@ An observable response coefficient, denoted &kappa; with an appropriate subscrip
 
 <h3>A.7 Synchronization Holonomy</h3>
 <p>
-The residual non-closure of synchronization transport around a closed loop, after subtracting all known GR corrections (Sagnac, gravitomagnetic / Lense&ndash;Thirring, Shapiro delay, gravitational redshift, station motion, clock-scale realization, and reference-frame corrections):
+The residual non-closure of synchronization transport around a closed loop, after subtraction of the full GR, kinematic, clock-scale, and reference-frame synchronization model:
 </p>
 <p style="text-align: center;">
 H<sub>resid</sub>(C) &equiv; &oint;<sub>C</sub> (<em>&sigma;&#771;</em> &minus; <em>&sigma;</em><sub>GR</sub>) = &iint;<sub>&Sigma;</sub> (<em>F&#771;</em> &minus; <em>F</em><sub>GR</sub>)
 </p>
 <p>
-This quantity is invariant under admissible synchronization re-gaugings because the matter-frame connection &sigma;&#771; and the corresponding GR reference connection &sigma;<sub>GR</sub> shift by the same exact one-form, leaving the residual connection &Delta;&sigma; = &sigma;&#771; &minus; &sigma;<sub>GR</sub> unchanged. In the conformal-only limit (B = 0), the scalar contribution to closed-loop transport is generated by the exact one-form d ln A, so &oint;<sub>C</sub> d ln A = 0 and H<sub>resid</sub> vanishes at leading order.  A non-zero H<sub>resid</sub> requires the disformal sector, non-metricity, or other explicitly non-exact transport structure.
+where <em>&sigma;</em><sub>GR</sub> includes the standard Sagnac, gravitomagnetic/Lense&ndash;Thirring, Shapiro, gravitational-redshift, station-motion, clock-scale, and reference-frame contributions. This residual vanishes in SR/GR with <em>B</em> = 0 and stationary <em>A</em>; it is generically nonzero with disformal corrections (<em>B</em> &ne; 0) and/or temporal variation of <em>A</em> combined with motion through &nabla;<em>&phi;</em>.
+</p>
+<p>
+This quantity is invariant under admissible synchronization re-gaugings because the matter-frame connection &sigma;&#771; and the corresponding GR reference connection &sigma;<sub>GR</sub> shift by the same exact one-form, leaving the residual connection &Delta;&sigma; = &sigma;&#771; &minus; &sigma;<sub>GR</sub> unchanged. In the conformal-only limit (<em>B</em> = 0), the scalar contribution to closed-loop transport is generated by the exact one-form d ln <em>A</em>, so &oint;<sub>C</sub> d ln <em>A</em> = 0 and H<sub>resid</sub> vanishes at leading order. A non-zero H<sub>resid</sub> requires the disformal sector, non-metricity, or other explicitly non-exact transport structure.
+</p>
+<p>
+Configurations in which <em>C</em> does not bound a smooth surface &mdash; non-simply-connected transport, or a connection that is locally closed but not globally exact &mdash; are not described by this Stokes expression and are treated as a separate topological case.
 </p>
 </div>

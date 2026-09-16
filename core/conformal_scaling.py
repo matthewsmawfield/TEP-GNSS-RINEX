@@ -3,7 +3,7 @@
 TEP Conformal Scaling
 =====================
 
-Version: TEP v0.9 (Jakarta)
+Version: TEP v0.10 (Jakarta)
 
 Computes the conformal factor A(phi), Temporal Shear Sigma_mu,
 and effective gravitational coupling from the scalar field profile phi.
@@ -14,6 +14,7 @@ definitions across the corpus.
 
 import numpy as np
 from . import constants as tep_const
+from .screening import universal_screening_function, coupling_screening_factor
 
 BETA_A = tep_const.BETA_A
 BETA_CASSINI_MAX = tep_const.BETA_CASSINI_MAX
@@ -47,7 +48,15 @@ def conformal_factor(phi, beta_A=BETA_A):
     phi_arr = _as_numeric_array(phi, "phi")
     if not np.isfinite(beta_A):
         raise ValueError("beta_A must be finite")
-    factor = np.exp(beta_A * phi_arr)
+    exponent = beta_A * phi_arr
+    max_exp = 700.0  # exp(±700) ≈ 10^±304, near float64 limits
+    if np.any(np.abs(exponent) > max_exp):
+        bad = np.abs(exponent) > max_exp
+        raise ValueError(
+            f"Conformal factor exponent exceeds float64 range: |beta_A*phi| = "
+            f"{np.max(np.abs(exponent[bad])):.2e} > {max_exp}"
+        )
+    factor = np.exp(exponent)
     return _return_scalar_if_scalar(phi, factor)
 
 
@@ -139,71 +148,6 @@ def g_eff_variance(phi_1, phi_2, beta_A=BETA_A, beta_2=None):
     a1 = conformal_factor(phi_1, beta_A)
     a2 = conformal_factor(phi_2, b2)
     return (a1 / a2) ** 2 - 1.0
-
-
-def coupling_screening_factor(rho_local_g_cm3, rho_transition=DEFAULT_RHO_TRANSITION,
-                              n=DEFAULT_SCREENING_STEEPNESS):
-    """
-    Dimensionless density-screening factor f(rho) for the coupling.
-
-    The implemented coupling screen can be written:
-
-        beta_eff(rho) = beta_A * f(rho)
-        f(rho) = 1 / [1 + (rho_transition / rho)^n]
-
-    This is the inverted power-law form of a density-threshold response.
-    It exposes the exact assumptions needed for PPN compatibility:
-    the transition density and steepness.
-    """
-    rho = _as_numeric_array(rho_local_g_cm3, "rho_local_g_cm3")
-    if np.any(rho <= 0):
-        raise ValueError("rho_local_g_cm3 must be strictly positive")
-    if not np.isfinite(rho_transition) or rho_transition <= 0:
-        raise ValueError("rho_transition must be finite and strictly positive")
-    if not np.isfinite(n) or n <= 0:
-        raise ValueError("n must be finite and strictly positive")
-
-    factor = tep_const.universal_screening_function(rho, rho_transition, n=n, invert=True)
-    return _return_scalar_if_scalar(rho_local_g_cm3, factor)
-
-
-def beta_screened(rho_local_g_cm3, beta_A=BETA_A,
-                  rho_transition=DEFAULT_RHO_TRANSITION,
-                  n=DEFAULT_SCREENING_STEEPNESS):
-    """
-    Density-dependent conformal coupling (chameleon-like screening).
-
-    The lab-scale locked coupling |beta_A| = 1.0 violates the Cassini PPN
-    bound |beta_PPN| < 0.0034 (solar-system scale). A proximity-dependent
-    coupling suppresses beta_A in dilute environments while preserving
-    the full lab-scale strength inside dense matter:
-
-        beta_eff(rho) = beta_A / [1 + (rho_transition / rho)^n]
-
-    Parameters
-    ----------
-    rho_local_g_cm3 : float or ndarray
-        Local matter density in g/cm^3.
-    beta_A : float
-        Bare conformal coupling (default BETA_A = -1.0).
-    rho_transition : float
-        Transition density in g/cm^3.
-    n : float
-        Steepness of the transition (default 4).
-
-    Returns
-    -------
-    beta_eff : float or ndarray
-        Screened coupling at the given density.
-    """
-    if not np.isfinite(beta_A):
-        raise ValueError("beta_A must be finite")
-    beta_eff = beta_A * coupling_screening_factor(
-        rho_local_g_cm3,
-        rho_transition=rho_transition,
-        n=n,
-    )
-    return _return_scalar_if_scalar(rho_local_g_cm3, beta_eff)
 
 
 def minimum_steepness_for_retention(rho_g_cm3, retention_fraction,

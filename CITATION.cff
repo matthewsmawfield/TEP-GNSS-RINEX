@@ -2,8 +2,8 @@ cff-version: 1.2.0
 title: 'Global Time Echoes: Raw RINEX Consistency Test'
 message: If you use this software, please cite it as below.
 type: article
-version: v0.6 (Kathmandu)
-date-released: 2026-06-05
+version: v0.7 (Kathmandu)
+date-released: 2025-12-09
 authors:
 - family-names: Smawfield
   given-names: Matthew Lukin
@@ -19,8 +19,8 @@ abstract: 'This paper validates that distance-structured correlations in GNSS cl
   stations over 3 years (2022–2024, comprising 1.17 billion pair-samples across three
   independent filtering strategies) achieves consistent signal detection across all
   72 metric combinations with mean R² = 0.93, revealing directionally-structured correlations
-  consistent with CODE''s 25-year PPP findings (p < 10^-15). The primary finding is
-  directional anisotropy: East-West correlations are 2–5% (MSC) to 22% (Phase Alignment)
+  consistent with CODE''s 25-year PPP findings (nominal pair-level p < 10^-15). The primary finding is
+  directional anisotropy: East-West correlations are 2–5% (MSC) to 22% (mean phase-offset alignment)
   stronger than North-South at short distances (<500 km), with t-statistics up to
   112 and Cohen''s d up to 0.304. Month-by-month stratification shows stable polarity
   (E-W > N-S) at 94% or higher level across modes and metrics (worst case 34/36 months),
@@ -28,8 +28,9 @@ abstract: 'This paper validates that distance-structured correlations in GNSS cl
   is not an artifact of distance distribution: E-W pairs are actually 13 km longer
   than N-S pairs (bias against signal), and robust distance-matching strengthens the
   ratio (1.033 → 1.041). At full distances, raw λ ratios can appear suppressed by
-  distance-dependent biases; a geometry-corrected comparison yields ratios of 1.80–1.86,
-  within 17% of CODE''s benchmark (2.16). Key validations include: (1) orbital velocity
+  distance-dependent biases; empirical CODE-referenced and independently simulated
+  geometry corrections provide supplementary comparisons; the primary short-distance
+  anisotropy is measured without either correction. Key validations include: (1) orbital velocity
   coupling detected at 3.2–5.4σ (best: r = -0.763), replicating CODE''s 25-year finding
   (r = -0.888), with signal persisting under ionospheric removal (best ionofree: r
   = -0.416, 2.5σ); (2) position jitter and clock bias show similar orbital coupling
@@ -42,10 +43,9 @@ abstract: 'This paper validates that distance-structured correlations in GNSS cl
   checks due to small storm-day counts; (5) hemisphere-stratified results show E-W
   > N-S in the ALL_STATIONS analysis, while higher-quality subsets motivate additional
   hemisphere-controlled falsification tests; (6) year-specific planetary event modulation
-  detected (2.8× above null, p < 0.001 for all 6 metrics) with detection rates of
-  59–68% and no consistent tidal GM/r² scaling (σ-level vs GM/r²: p = 0.317–0.989),
-  consistent with alignment-driven geometric coupling rather than a tidal forcing
-  mechanism whose amplitude scales with planetary mass. This paper constitutes Paper
+  detected (2.8× above null, p < 0.001 for all 6 metrics) with no consistent positive
+  dependence on the tested GM/r² planetary-acceleration proxy; a distinct GM/r³
+  tidal-gradient scaling was not tested. This paper constitutes Paper
   3 of the TEP-GNSS Research Series. Together with Paper 1 (multi-center validation)
   and Paper 2 (25-year temporal stability), these three complementary analyses—using
   different data sources, processing chains, and time periods—provide consistent evidence

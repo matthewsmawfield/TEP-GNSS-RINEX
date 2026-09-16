@@ -1,13 +1,13 @@
 """TEP Core — canonical Python package for the Temporal Equivalence Principle.
 
-Version: TEP v0.9 (Jakarta)
+Version: TEP v0.10 (Jakarta)
 
 This package provides the shared physics layer used by all TEP papers:
   - constants: physical and phenomenological parameters
   - conformal_scaling: A(phi), Temporal Shear, effective coupling
   - cosmology: LCDM + TEP distance-redshift relations
   - scalar_field: lab-scale scalar-field solver
-  - screening: density-dependent screening functions
+  - screening: environment-dependent screening functions
   - evidence: Bayesian evidence and model-comparison utilities
 """
 
@@ -38,7 +38,11 @@ from .constants import (
     M_SUN,
     MPC_TO_M,
     BETA_A,
+    RHO_T,
     RHO_C,
+    ILLUSTRATIVE_BETA_A,
+    KG_M3_TO_G_CM3,
+    G_CM3_TO_KG_M3,
     LAB_COHERENCE_LENGTH_M,
     M_REF,
     ALPHA_LOG,
@@ -51,15 +55,18 @@ from .constants import (
     GNSS_LAMBDA_T_LONGSPAN_CODE_ERR_KM,
     GNSS_LAMBDA_T_EXPONENTIAL_BY_CENTER,
 )
-from .screening import screening_factor, universal_screening_function
+from .screening import (
+    screening_factor,
+    universal_screening_function,
+    coupling_screening_factor,
+    beta_screened,
+)
 from .conformal_scaling import (
     conformal_factor,
     conformal_factor_small,
     temporal_shear_from_scalar_field,
     effective_g,
     g_eff_variance,
-    coupling_screening_factor,
-    beta_screened,
     minimum_steepness_for_retention,
     minimum_steepness_for_suppression,
     screening_diagnostics,

@@ -1,18 +1,18 @@
 # Global Time Echoes: Raw RINEX Consistency Test
 **Matthew Lukin Smawfield**
-Version: v0.6 (Kathmandu)
-05 June 2026
+Version: v0.7 (Kathmandu)
+First published: 9 December 2025 · Last updated: 16 September 2026
 DOI: 10.5281/zenodo.17860166
 
 ---
 
 ## Abstract
 
-This paper validates that distance-structured correlations in GNSS clocks exist in raw observations using broadcast ephemerides, not just precise products—strongly constraining precise-product processing artifacts. Broadcast ephemerides still contain control-segment information, so Satellite Laser Ranging and non-GNSS optical checks remain necessary for definitive confirmation. Prior TEP analyses relied on precise orbit and clock products from global analysis centers, leaving open the possibility that observed signatures were artifacts of sophisticated processing chains. This paper addresses that concern by detecting distance-structured signatures in raw GNSS observations processed using Single Point Positioning (SPP) with broadcast ephemerides as the primary methodology, supplemented by precise ephemeris validation. Analysis of 539 globally distributed stations over 3 years (2022–2024, comprising 1.17 billion pair-samples across three independent filtering strategies) achieves consistent signal detection across all 72 metric combinations with mean R² = 0.93, revealing directionally-structured correlations consistent with CODE's 25-year PPP findings (p < 10−15). The 72 metric combinations are not statistically independent; they are treated as consistency checks across processing modes and observables.
+This paper validates that distance-structured correlations in GNSS clocks exist in raw observations using broadcast ephemerides, not just precise products—strongly constraining precise-product processing artifacts. Broadcast ephemerides still contain control-segment information, so Satellite Laser Ranging and non-GNSS optical checks remain necessary for definitive confirmation. Prior TEP analyses relied on precise orbit and clock products from global analysis centers, leaving open the possibility that observed signatures were artifacts of sophisticated processing chains. This paper addresses that concern by detecting distance-structured signatures in raw GNSS observations processed using Single Point Positioning (SPP) with broadcast ephemerides as the primary methodology, supplemented by precise ephemeris validation. Analysis of 539 globally distributed stations over 3 years (2022–2024, comprising 1.17 billion pair-samples across three complementary filtering strategies) achieves consistent signal detection across all 72 metric combinations with mean R² = 0.93, revealing directionally-structured correlations consistent with CODE's 25-year PPP findings (nominal pair-level p < 10−15). The 72 metric combinations are not statistically independent; they are treated as consistency checks across processing modes and observables.
 
-The primary finding is directional anisotropy: East-West correlations are 2–5% (MSC) to 22% (Phase Alignment) stronger than North-South at short distances (<500 km), with t-statistics up to 112 and Cohen's d up to 0.304. Month-by-month stratification shows stable polarity (E-W > N-S) at 94% or higher level across modes and metrics (worst case 34/36 months), consistent with a persistent underlying effect. A critical audit indicates this is not an artifact of distance distribution: E-W pairs are actually 13 km *longer* than N-S pairs (bias against signal), and robust distance-matching strengthens the ratio (1.033 → 1.041). At full distances, raw λ ratios can appear suppressed by distance-dependent biases; a geometry-corrected comparison yields ratios of 1.80–1.86, within 17% of CODE's benchmark (2.16).
+The primary finding is directional anisotropy: East-West correlations are 2–5% (MSC) to 22% (mean phase-offset alignment) stronger than North-South at short distances (<500 km), with t-statistics up to 112 and Cohen's d up to 0.304. Month-by-month stratification shows stable polarity (E-W > N-S) at 94% or higher level across modes and metrics (worst case 34/36 months), consistent with a persistent underlying effect. A critical audit indicates this is not an artifact of distance distribution: E-W pairs are actually 13 km *longer* than N-S pairs (bias against signal), and robust distance-matching strengthens the ratio (1.033 → 1.041). At full distances, empirical CODE-referenced and independently simulated geometry corrections provide supplementary comparisons; the primary short-distance anisotropy is measured without either correction.
 
-Key validations include: (1) orbital velocity coupling detected at 3.2–5.4σ (best: r = −0.763), replicating CODE's 25-year finding (r = −0.888), with signal persisting under ionospheric removal (best ionofree: r = −0.416, 2.5σ); (2) position jitter and clock bias show similar orbital coupling (Δ ≈ 5%), consistent with spacetime—not just temporal—modulation; (3) CMB frame alignment at RA = 188°, Dec = −5° (20.0° from CMB dipole), matching CODE's benchmark (18.2°), with Solar Apex disfavored (86.5° separation); (4) geomagnetic stratification using real GFZ Kp data shows near-invariance at the primary threshold (Kp < 3 vs. Kp ≥ 3; median Δλ ≈ −1%, with 60/72 tests within ±5% across all station filters and processing modes), while higher storm thresholds (Kp ≥ 4/5) are treated as sensitivity checks due to small storm-day counts; (5) hemisphere-stratified results show E-W > N-S in the ALL_STATIONS analysis, while higher-quality subsets motivate additional hemisphere-controlled falsification tests; (6) year-specific planetary event modulation detected (2.8× above null, p < 0.001 for all 6 metrics) with detection rates of 59–68% and no consistent tidal GM/r² scaling (σ-level vs GM/r²: p = 0.317–0.989), consistent with alignment-driven geometric coupling rather than a tidal forcing mechanism whose amplitude scales with planetary mass.
+Key validations include: (1) orbital velocity coupling detected at 3.2–5.4σ (best: r = −0.763), replicating CODE's 25-year finding (r = −0.888), with signal persisting under ionospheric removal (best ionofree: r = −0.416, 2.5σ); (2) position jitter and clock bias show similar orbital coupling (Δ ≈ 5%), consistent with spacetime—not just temporal—modulation; (3) CMB frame alignment at RA = 188°, Dec = −5° (20.0° from CMB dipole), matching CODE's benchmark (18.2°), with Solar Apex disfavored (86.5° separation); (4) geomagnetic stratification using real GFZ Kp data shows near-invariance at the primary threshold (Kp < 3 vs. Kp ≥ 3; median Δλ ≈ −1%, with 60/72 tests within ±5% across all station filters and processing modes), while higher storm thresholds (Kp ≥ 4/5) are treated as sensitivity checks due to small storm-day counts; (5) hemisphere-stratified results show E-W > N-S in the ALL_STATIONS analysis, while higher-quality subsets motivate additional hemisphere-controlled falsification tests; (6) year-specific planetary event modulation detected (2.8× above null, p < 0.001 for all 6 metrics) with no consistent positive dependence on the tested GM/r² planetary-acceleration proxy. A distinct GM/r³ tidal-gradient scaling was not tested.
 
 This paper constitutes Paper 3 of the TEP-GNSS Research Series. Together with Paper 1 (multi-center validation) and Paper 2 (25-year temporal stability), these three complementary analyses—using different data sources, processing chains, and time periods—provide consistent evidence for planetary-scale, directionally-structured correlations in GNSS clock measurements. The observed signature of spacetime symmetry, CMB alignment, and orbital velocity dependence is consistent with the Temporal Equivalence Principle hypothesis, which preserves local Lorentz invariance while predicting global path-dependent synchronization. Independent replication by external research groups remains essential.
 
@@ -28,15 +28,15 @@ This study addresses this question. By analyzing raw RINEX pseudorange measureme
 
 ### Key Findings
 
-- **Raw Data Validation:** Distance-structured signatures detected in raw RINEX data using only broadcast ephemerides and Single Point Positioning. Analysis of 539 stations over 3 years (1.17 billion pair-samples) achieves signal-consistent structure in all 72 tested metric combinations with directional anisotropy matching CODE's 25-year findings (p < 10−15).
+- **Raw Data Validation:** Distance-structured signatures detected in raw RINEX data using only broadcast ephemerides and Single Point Positioning. Analysis of 539 stations over 3 years (1.17 billion pair-samples) achieves signal-consistent structure in all 72 tested metric combinations with directional anisotropy matching CODE's 25-year findings (nominal pair-level p < 10−15).
 
 - **Consistent Detection across all Metrics:** Signal consistent with TEP detected in all 72 non-independent metric combinations used as consistency checks across processing modes and observables (3 station filters × 4 processing modes × 3 observables × 2 coherence types). Mean R² = 0.93, with all fits exceeding the 0.5 threshold.
 
-- **Directional Anisotropy:** E-W correlations are 2–5% (MSC) to 22% (Phase Alignment) stronger than N-S at short distances (<500 km), matching CODE's directional signature with p < 10−15. A critical distance audit reveals E-W pairs are 13 km longer than N-S pairs (a bias *against* the signal); robust distance-matching strengthens the coherence ratio from 1.033 to 1.041.
+- **Directional Anisotropy:** E-W correlations are 2–5% (MSC) to 22% (mean phase-offset alignment) stronger than N-S at short distances (<500 km), matching CODE's directional signature with nominal pair-level p < 10−15. A critical distance audit reveals E-W pairs are 13 km longer than N-S pairs (a bias *against* the signal); robust distance-matching strengthens the coherence ratio from 1.033 to 1.041.
 
 - **Multi-Mode Validation:** Signal detected in GPS-only (ratio 1.033), dual-frequency ionofree (1.019), and multi-GNSS (1.050).
 
-- **Geometry-Corrected Match:** Full-distance λT ratios, after correcting for GPS orbital suppression, converge to 1.80–1.86, within 17% of CODE's 25-year PPP reference (2.16).
+- **Geometry Diagnostics:** Full-distance CODE-referenced and independently simulated geometry corrections provide supplementary comparisons; neither is used in the primary short-distance anisotropy result.
 
 - **Geomagnetic Independence:** Primary Kp stratification (Kp<3 vs Kp≥3) shows near-invariance (median ΔλT ≈ −1%, 60/72 tests within ±5% across filters/modes/metrics).
 
@@ -60,7 +60,7 @@ This study addresses this question. By analyzing raw RINEX pseudorange measureme
 
 - **Null Tests Passed:** Comprehensive validation across 72 combinations constrains several alternative explanations: (1) Solar rotation shows zero correlation, (2) Lunar tides show zero correlation, and (3) Shuffle test demonstrates real structure.
 
-- **Metric Complementarity:** MSC excels at detecting temporal modulation, while phase alignment excels at spatial structure.
+- **Metric Complementarity:** MSC measures magnitude-squared coherence, while the signed phase statistic reports mean phase offset; resultant magnitude is required to assess phase concentration.
 
 - **Planetary Event Modulation:** Year-specific coherence modulation detected around 37 planetary conjunction/opposition events with 2.8× higher detection rates than permutation null controls.
 
@@ -98,7 +98,7 @@ Together, these three complementary analyses provide consistent evidence for dis
 
 ### Conclusion
 
-This paper provides raw-data validation of TEP signatures. The unified signature of spacetime symmetry, CMB alignment, and orbital velocity dependence suggests that the observed correlations may not be purely instrumental, but could reflect a coupling between clocks and the spacetime metric through which Earth moves. The observed breakdown of global simultaneity (CMB alignment) is consistent with the Bi-Metric Geometry framework (Smawfield, 2025), which preserves local Lorentz invariance while predicting global path-dependent synchronization.
+This paper provides raw-observation validation of distance-structured GNSS correlations. The combined evidence of directional anisotropy, orbital-velocity coupling and consistency across processing modes suggests that the observed structure is not confined to precise analysis-center products. These clock-network covariance patterns are consistent with the Temporal Equivalence Principle's dynamical proper-time hypothesis. Synchronization holonomy is a distinct observable and is not directly measured by this analysis.
 
 Related: [Paper 1 (Multi-Center)](https://matthewsmawfield.github.io/TEP-GNSS/) · [Paper 2 (25-Year CODE)](https://matthewsmawfield.github.io/TEP-GNSS-II/)
 
@@ -109,7 +109,7 @@ Related: [Paper 1 (Multi-Center)](https://matthewsmawfield.github.io/TEP-GNSS/) 
 The Temporal Equivalence Principle (TEP) represents a proposed extension to
 the foundations of General Relativity, positing a fundamental coupling
 between spatial and temporal fluctuations in geodetic measurements.
-Formulated within a Bi-Metric Geometry framework (TEP v0.7, Jakarta;
+Formulated within a Bi-Metric Geometry framework (TEP v0.12, Jakarta;
 Smawfield, 2025), the theory employs continuous geometric screening rather
 than discrete thin-shell approximations: the scalar time field exhibits a
 spatially varying Temporal Topology, and its gradient (Temporal Shear)
@@ -136,8 +136,6 @@ $\lambda$ on the order of 10³ km.
 
 To date, this hypothesis has been tested through two comprehensive analyses:
 
-**Experimental Section:**
-
 ### Paper 1: Multi-Center Validation
 
 Analysis of precise orbit and clock products from three independent
@@ -146,8 +144,6 @@ with λ ≈ 3,500–4,500 km. The consistency across centers (R² > 0.92)
 disfavors center-specific software artifacts.
 
 → View Paper 1 (TEP-GNSS)
-
-**Experimental Section:**
 
 ### Paper 2: 25-Year Temporal Stability
 
@@ -287,8 +283,8 @@ To avoid ambiguity in statistical reporting, this manuscript distinguishes betwe
 
 | Term | Definition | Example |
 | --- | --- | --- |
-| Station Pairs | Unique spatial combinations of two stations | 539 stations → 144,891 unique pairs |
-| Pair-Samples | Daily observations of each station pair | 144,891 pairs × 1,096 days ≈ 159M pair-samples |
+| Station Pairs | Unique spatial combinations of two stations | 539 stations → 144,991 unique pairs |
+| Pair-Samples | Daily observations of each station pair | 144,991 pairs × 1,096 days ≈ 159M pair-samples |
 | Total Analyzed | Sum across all filters and modes | 1.17 billion pair-samples (all combinations) |
 
 Unless otherwise specified, "pairs" in statistical contexts refers to pair-samples (the unit of observation for coherence analysis), while "station pairs" refers to unique spatial combinations. The reported sample sizes (e.g., "61.9M pairs" for Baseline mode) represent pair-samples—daily observations that contribute to the coherence estimates.
@@ -333,7 +329,7 @@ exclude (noisy day for this station)
 
 This strict quality filtering passes 316,497 high-quality daily files from ~400 stations (77% pass rate), rejecting 93,240 files: 47,816 for excessive jumps, 4,045 for excessive range, and 41,379 for high standard deviation. This ensures only the most stable clock data contributes to the analysis.
 
-### 2.3 Processing Pipeline
+### 2.4 Processing Pipeline
 
 The processing chain transforms raw GNSS observations into signal detection results:
 
@@ -360,9 +356,9 @@ style E fill:#e0f7fa,stroke:#0097a7,stroke-width:2px,color:#006064
 style F fill:#e0f2f1,stroke:#00897b,stroke-width:2px,color:#004d40
 style G fill:#ffffff,stroke:#2962ff,stroke-width:3px,color:#2962ff
 
-*Figure 2.3.1: Processing pipeline. Four modes: Baseline (broadcast), Ionofree (dual-freq), Multi-GNSS (all constellations), Precise (IGS SP3). Station pairs: 50–13,000 km. TEP frequency band: 10–500 µHz (periods 33 min–28 hr). Two coherence metrics enable cross-validation: MSC (amplitude) and Phase Alignment (timing).*
+*Figure 2.4.1: Processing pipeline. Four modes: Baseline (broadcast), Ionofree (dual-freq), Multi-GNSS (all constellations), Precise (IGS SP3). Station pairs: 50–13,000 km. TEP frequency band: 10–500 µHz (periods 33 min–28 hr). Two coherence metrics enable cross-validation: MSC (amplitude) and Phase Alignment (timing).*
 
-#### 2.3.1 Single Point Positioning (SPP)
+#### 2.4.1 Single Point Positioning (SPP)
 
 Raw RINEX observations were processed using RTKLIB's `rnx2rtkp` utility in Single Point Positioning mode. SPP determines the receiver position and clock offset using pseudorange measurements from multiple satellites.
 
@@ -409,7 +405,7 @@ $\sigma_{IF} = \sqrt{(2.546)^2 + (1.546)^2} \, \sigma_{L1} \approx 2.98 \, \sigm
 
 This noise penalty is a fundamental trade-off in dual-frequency GNSS processing. The ionofree mode is critical for validation: if correlations were purely ionospheric, they would disappear in this mode. Instead, longer Temporal Topology correlation lengths are observed (λT = 1,072 km vs 727 km), which is less consistent with a purely ionospheric artifact.
 
-#### 2.3.2 Time Series Extraction
+#### 2.4.2 Time Series Extraction
 
 Three metrics were extracted from SPP solutions for each station, each serving a specific scientific purpose:
 
@@ -456,7 +452,7 @@ The time derivative of clock bias. Tests whether the signal is:
 
 Observed R² = 0.974 for clock drift is less consistent with a pure random-walk explanation.
 
-#### 2.3.3 Time Alignment Strategy (Critical)
+#### 2.4.3 Time Alignment Strategy (Critical)
 
 Pandas DatetimeIndex Alignment
 Time alignment uses Pandas DataFrame indexing with DatetimeIndex, identical to the CODE longspan methodology. This approach:
@@ -471,7 +467,7 @@ Time alignment uses Pandas DataFrame indexing with DatetimeIndex, identical to t
 
 This ensures precise temporal synchronization between stations, mirroring the rigorous alignment used in Papers 1 and 2.
 
-#### 2.3.4 Phase Coherence Computation
+#### 2.4.4 Phase Coherence Computation
 
 Two complementary coherence metrics were computed for all station pairs, enabling cross-validation and comparison with CODE longspan methodology:
 
@@ -501,10 +497,10 @@ Measures the strength of the linear relationship between signals. It asks: "How 
 
 - Best for short-distance analysis (<500 km)
 
-Metric 2: Phase Alignment Index
+Metric 2: Mean Phase-Offset Alignment Index
 $\text{PA} = \cos\left(\arg\left(\frac{\sum_f w_f \cdot e^{i\phi_f}}{\sum_f w_f}\right)\right)$
 
-Measures the consistency of the phase relationship. It asks: "When they vibrate, are they synchronized in time?" This metric is:
+The resultant magnitude $R = |\sum_f w_f e^{i\phi_f} / \sum_f w_f|$ quantifies the concentration of phase differences. Near-zero resultants make the mean phase angle unstable; a diagnostic of one representative station-day found that 1.5% of pairs had R < 0.10. The reported PA statistic retains its established definition and is interpreted as mean phase-offset alignment, not phase-locking strength. This metric is:
 
 - The *primary metric used by CODE longspan* (Paper 2)
 
@@ -519,7 +515,7 @@ The hemisphere analysis reveals that phase alignment consistently exceeds MSC in
 
 - Southern Hemisphere: MSC ratio 1.022, Phase Alignment ratio *1.348*
 
-This hierarchy is physically meaningful: phase alignment measures the timing relationship between clocks, which is preserved even when amplitude correlations decorrelate due to ionospheric effects. The underlying TEP signal is encoded in the phase structure.
+This hierarchy indicates a larger directional contrast in the mean phase-offset score than in MSC. Because the archived calculation does not retain the resultant magnitude, it does not by itself establish stronger phase locking.
 
 Complementary Sensitivity: MSC vs Phase Alignment
 A key observation from this analysis is that MSC and phase alignment probe different aspects of the same physical phenomenon, with each metric excelling at different types of analyses:
@@ -529,27 +525,27 @@ A key observation from this analysis is that MSC and phase alignment probe diffe
 | Orbital Velocity Coupling
 (temporal modulation) | 3.0–4.2σ | 5.4σ (multi_gnss) | MSC measures power correlation; orbital velocity modulates the *amplitude* of coupling month-to-month. Multi-GNSS phase alignment achieves strongest detection |
 | Directional Anisotropy
-(spatial structure) | E-W/N-S ≈ 1.02–1.05 | E-W/N-S ≈ 1.20–1.35 | Phase alignment measures phase locking; directional preference is encoded in *phase structure* that persists at long distance |
+(spatial structure) | E-W/N-S ≈ 1.02–1.05 | E-W/N-S ≈ 1.20–1.35 | Mean phase-offset alignment summarizes directional differences in average phase offset; its concentration must be evaluated separately |
 
 Mathematical basis:
 
 - MSC = |Pxy|²/(Pxx·Pyy) — Sensitive to the *magnitude* of cross-spectral density. Temporal variations in coupling strength (e.g., due to changing orbital velocity) directly modulate MSC values.
 
-- Phase Alignment = cos(arg(Σw·eiφ)) — Sensitive to *phase consistency* independent of amplitude. Spatial coherence structure (E-W vs N-S) is encoded in phase relationships that survive amplitude decorrelation.
+- Mean phase-offset alignment = cos(arg(Σw·eiφ)) — Sensitive to the direction of the weighted mean phase vector. Its concentration is R = |Σw·eiφ|/Σw and is not encoded in PA alone.
 
-Analogy: Think of two people dancing. MSC measures how loudly they stomp their feet (amplitude correlation). Phase Alignment measures whether they step in time with the music (phase synchronization). At long distances, the "sound" of the stomp fades (low MSC), but if they are both listening to the same global broadcast, they remain perfectly synchronized (high Phase Alignment). This explains why Phase Alignment is the superior metric for detecting long-range TEP signals.
+MSC measures the strength of a shared signal. Mean phase-offset alignment measures whether the *average* timing offset points near zero; the resultant magnitude is needed to tell whether that average is sharply defined or produced by cancelling phase values.
 
 Why this distinction matters:
 
 - Orbital coupling is a *temporal modulation* effect: Earth's changing velocity affects the *strength* of clock correlations month-to-month. MSC directly measures this strength.
 
-- Directional anisotropy is a *spatial structure* effect: E-W vs N-S preference depends on *which pairs lock in phase*, not how strongly. Phase alignment captures this even when amplitude is noisy.
+- Directional anisotropy is a *spatial structure* effect: the PA result reports a directional difference in mean phase offset. A concentration analysis using R can determine whether that difference is accompanied by phase locking.
 
 - SPP noise consideration: Single Point Positioning introduces ~1–3m pseudorange noise. This corrupts phase information more than power information, explaining why phase alignment is weaker for orbital coupling in SPP data but still excels at detecting spatial anisotropy (averaged over many pairs).
 
-*Conclusion:* Both metrics are necessary for complete TEP characterization. MSC captures temporal modulation; phase alignment captures spatial structure. Their complementary sensitivity is consistent with TEP predictions of coupled space-time fluctuations affecting both amplitude and phase of clock correlations.
+*Conclusion:* MSC and the mean phase-offset score provide complementary descriptive information. PA must not be interpreted as a phase-locking-strength statistic without its resultant magnitude.
 
-#### 2.3.5 Frequency Band Selection
+#### 2.4.5 Frequency Band Selection
 
 | Parameter | Frequency | Period | Rationale |
 | --- | --- | --- | --- |
@@ -557,7 +553,7 @@ Why this distinction matters:
 | Upper bound | 500 µHz | ~33 minutes | Removes high-frequency noise and multipath |
 | TEP Band | 10–500 µHz | 33 min – 28 hr | Matches theoretical TEP timescales |
 
-#### 2.3.6 Exponential Decay Fitting
+#### 2.4.6 Exponential Decay Fitting
 
 Coherence values were binned by inter-station distance and fit to an exponential decay model:
 
@@ -606,7 +602,7 @@ Fits where parameters converge to the imposed bounds are flagged as *boundary-hi
 
 A boundary-hit typically indicates the exponential model is poorly constrained for that subset (e.g., insufficient distance range or dominated by short-range noise).
 
-#### 2.3.7 Directional Anisotropy Analysis
+#### 2.4.7 Directional Anisotropy Analysis
 
 The critical validation test compares E-W and N-S correlations. Station pairs were stratified by azimuth:
 
@@ -624,9 +620,9 @@ $\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$
 
 To control for potential distance distribution biases (e.g., if E-W pairs have a different mean distance than N-S pairs within the <500 km bin), a robust distance-matched ratio is also computed. Pairs are binned into 50 km intervals, and the ratio is computed from distributions re-sampled to match the distance profile, ensuring that any observed anisotropy is not an artifact of mean distance differences.
 
-Statistical significance is assessed via Welch's t-test with 95% confidence intervals and Cohen's d effect size.
+Statistical significance is assessed via Welch's t-test with 95% confidence intervals and Cohen's d effect size. Welch-test probabilities are nominal pair-level results. Because station pairs share receivers, satellites and observation epochs, their effective statistical independence is lower than the raw pair-sample count implies.
 
-#### 2.3.8 Station Altitude Quintile Analysis (Step 2.1b)
+#### 2.4.8 Station Altitude Quintile Analysis (Step 2.1b)
 
 To test whether the correlation structure could be explained by station environment or atmospheric column effects, station pairs were stratified by station altitude (geodetic height above the WGS84 ellipsoid). *Important: This analysis examines station altitude, not satellite elevation angle.* Station altitude provides a site-based proxy for propagation-path and local-environment effects: higher-altitude sites observe through a thinner tropospheric column and often exhibit reduced multipath and hydrological variability relative to low-altitude sites.
 
@@ -691,7 +687,7 @@ Fit Quality Gates: To avoid overclaiming based on degenerate exponential fits (c
 
 Trends are considered robust only if they: (1) survive quality gates, (2) replicate across multiple suite configurations, and (3) show sign-consistency (all positive or all negative slopes).
 
-*Note: The geometric suppression correction is not required for the primary evidence. The primary finding—E-W > N-S at short distances (<500 km)—uses raw, uncorrected values that directly match CODE's prediction (see §3.9.1). This section addresses why full-distance λ ratios show the opposite pattern (E-W/N-S < 1), providing interpretive context rather than calibration for the core result.*
+*Note: The geometric suppression correction is not required for the primary evidence. The primary finding—E-W > N-S at short distances (<500 km)—uses raw, uncorrected values that directly match CODE's prediction (see §3.10.1). This section addresses why full-distance λ ratios show the opposite pattern (E-W/N-S < 1), providing interpretive context rather than calibration for the core result.*
 
 Geometric Suppression Correction
 GPS satellite orbits (55° inclination) create systematic coverage biases that suppress E-W correlations. Due to this inclination, satellites travel predominantly North-South relative to mid-latitude observers. This geometry allows N-S station pairs to view the same satellite for longer continuous arcs, significantly lowering the noise floor for N-S correlations. Conversely, satellites cut across E-W baselines more rapidly, reducing the duration of common-view periods and artificially suppressing the apparent coherence in raw SPP data.
@@ -712,7 +708,7 @@ $\text{Corrected ratio} = \text{raw ratio} \times \text{suppression factor}$
 
 The suppression factor is not a free parameter—it emerges from the sector-by-sector comparison and is consistent across all four processing modes (2.42×–3.16×), supporting its interpretation as a geometric effect rather than arbitrary tuning.
 
-### 2.3.9 Seasonal Stratification Analysis (Step 2.4)
+### 2.4.9 Seasonal Stratification Analysis (Step 2.4)
 
 To test whether the observed correlations are seasonal artifacts (e.g., temperature-dependent receiver behavior, seasonal ionospheric variations, or solar illumination effects), the 3-year dataset was stratified by meteorological season and analyzed correlation lengths independently for each period.
 
@@ -729,7 +725,7 @@ To test whether the observed correlations are seasonal artifacts (e.g., temperat
 
 #### Analysis Methodology
 
-For each season, independent exponential decay fits were computed across all three station filters (ALL_STATIONS, OPTIMAL_100, DYNAMIC_50) and all four processing modes (Baseline, Ionofree, Multi-GNSS, Precise). This produces 48 independent seasonal measurements (4 seasons × 3 filters × 4 modes) for each metric/coherence combination.
+For each season, exponential decay fits were computed across all three station filters (ALL_STATIONS, OPTIMAL_100, DYNAMIC_50) and all four processing modes (Baseline, Ionofree, Multi-GNSS, Precise). This produces 48 seasonal estimates across processing configurations (4 seasons × 3 filters × 4 modes) for each metric/coherence combination.
 
 Key Predictions:
 
@@ -747,7 +743,7 @@ The seasonal analysis tests two complementary hypotheses:
 
 These two filters test different aspects of the signal: OPTIMAL_100 tests the scale, DYNAMIC_50 tests the stability.
 
-## 2.4 Analysis Matrix Summary
+## 2.5 Analysis Matrix Summary
 
 The full analysis explores multiple dimensions to ensure robustness:
 
@@ -783,15 +779,15 @@ The combination of metrics provides a self-consistent validation framework:
 
 - Clock drift (any coherence): Weak anisotropy (E-W/N-S ≈ 1.07) — derivative preserves structure
 
-- Planetary events (all metrics): Year-specific modulation yields 2.8× higher detection than permutation null (59–68% vs. 20–26%, p < 0.001 for all 6 metrics), with no consistent tidal GM/r² scaling (clock-amplitude vs GM/r²: p = 0.647; σ-level vs GM/r²: p = 0.317–0.989) — consistent with a geometric (alignment) effect as in CODE longspan
+- Planetary events (all metrics): Year-specific modulation yields 2.8× higher detection than permutation null (59–68% vs. 20–26%, p < 0.001 for all 6 metrics), with no consistent positive dependence on the tested GM/r² acceleration proxy. A GM/r³ tidal-gradient scaling is distinct and was not tested.
 
 This hierarchy is consistent with TEP predictions: clock bias shows the strongest directional anisotropy as the primary temporal proxy, while position jitter shows similar orbital coupling (consistent with coupled space-time fluctuations) but with weaker directional structure due to atmospheric noise.
 
-## 2.5 Null Tests (Step 2.4b)
+## 2.6 Null Tests (Step 2.4b)
 
 A critical requirement for validating the TEP signal is to assess whether the observed exponential correlation structure is driven by known non-gravitational phenomena. A comprehensive null test suite was designed that examines three independent mechanisms that could potentially produce spurious distance-structured correlations.
 
-### 2.5.1 Test Design Rationale
+### 2.6.1 Test Design Rationale
 
 The null tests probe three distinct hypotheses:
 
@@ -801,7 +797,7 @@ The null tests probe three distinct hypotheses:
 
 - Spurious Structure Hypothesis: If the exponential decay is a statistical artifact of the analysis methodology rather than a physical property of the data, the structure should persist when temporal coherence is destroyed by randomization.
 
-### 2.5.2 Solar/Lunar Phase Correlation
+### 2.6.2 Solar/Lunar Phase Correlation
 
 For each metric/coherence combination, daily mean coherence values are computed and test for cyclic modulation:
 
@@ -811,7 +807,7 @@ where rsin and rcos are the Pearson correlations between daily coherence and the
 
 Acceptance Criterion: r < 0.1 for both solar (27-day) and lunar (29.5-day) cycles. This threshold corresponds to less than 1% of variance explained by the periodic driver.
 
-### 2.5.3 Shuffle Test (Critical Validation)
+### 2.6.3 Shuffle Test (Critical Validation)
 
 The shuffle test provides a direct validation of genuine spatial structure. The procedure:
 
@@ -827,21 +823,21 @@ Acceptance Criterion: R²shuffled < 0.3. If the exponential structure is a genui
 
 The shuffle test directly addresses the concern that exponential fitting might "force" structure onto any dataset. If the fitting procedure itself creates spurious curvature, it would do so equally on real and shuffled data. The ratio R²real/R²shuffled quantifies the evidence that the structure is physically real.
 
-### 2.5.4 Comprehensive Test Matrix
+### 2.6.4 Comprehensive Test Matrix
 
 The null tests are applied across the full analysis matrix:
 
 | Dimension | Values | Tests |
 | --- | --- | --- |
 | Station Filters | ALL_STATIONS, OPTIMAL_100, DYNAMIC_50 | 3 |
-| Processing Modes | Baseline, Ionofree, Multi-GNSS | 3 |
+| Processing Modes | Baseline, Ionofree, Multi-GNSS, Precise | 4 |
 | Metrics | clock_bias, pos_jitter, clock_drift | 3 |
 | Coherence Types | MSC, Phase Alignment | 2 |
-| Total Independent Tests | 54 |
+| Total Analysis Configurations | 72 |
 
 This comprehensive matrix is designed so that any positive result is less likely to be attributable to a specific station selection, processing algorithm, metric choice, or coherence definition.
 
-### 2.5.5 Expected Outcomes
+### 2.6.5 Expected Outcomes
 
 If TEP is correct and the signal represents genuine gravitational coupling to Earth's orbital motion:
 
@@ -853,11 +849,11 @@ If TEP is correct and the signal represents genuine gravitational coupling to Ea
 
 - Filter Independence: Results should be consistent across station filters (signal is network-wide, not station-specific)
 
-## 2.6 CMB Frame Analysis (Step 2.7)
+## 2.7 CMB Frame Analysis (Step 2.7)
 
-Following the CODE longspan methodology, a comprehensive full-sky grid search was performed across 72 independent analysis combinations to test whether the observed annual modulation of E-W/N-S anisotropy preferentially aligns with a cosmic reference frame. The full analysis matrix is evaluated to reduce selection bias and to assess robustness across processing choices.
+Following the CODE longspan methodology, a comprehensive full-sky grid search was performed across 72 analysis configurations to test whether the observed annual modulation of E-W/N-S anisotropy preferentially aligns with a cosmic reference frame. The full analysis matrix is evaluated to reduce selection bias and to assess robustness across processing choices.
 
-### 2.6.1 Physical Motivation
+### 2.7.1 Physical Motivation
 
 If TEP correctly describes velocity-dependent spacetime coupling, the anisotropy modulation should respond to Earth's total velocity through a preferred rest frame. Two candidate frames are tested:
 
@@ -869,7 +865,7 @@ The net velocity vector combines Earth's orbital motion (~30 km/s, rotating annu
 
 The CMB provides a well-defined cosmological reference frame in which the cosmic microwave background is (to high precision) isotropic. Under standard interpretation, the observed CMB dipole arises from Earth's motion relative to this frame. If the anisotropy modulation depends on a preferred velocity direction, the CMB dipole is therefore a physically motivated candidate to test.
 
-### 2.6.2 Comprehensive Analysis Matrix
+### 2.7.2 Comprehensive Analysis Matrix
 
 To ensure robustness and eliminate selection bias, the CMB frame analysis is performed across all 72 combinations of station filter, processing mode, metric, and coherence type:
 
@@ -880,11 +876,11 @@ To ensure robustness and eliminate selection bias, the CMB frame analysis is per
 | Metrics | clock_bias, pos_jitter, clock_drift | Test spacetime coupling |
 | Coherence Types | MSC (amplitude), Phase Alignment (phase) | Test signal structure |
 
-Total combinations: 3 × 4 × 3 × 2 = 72 independent analyses
+Total combinations: 3 × 4 × 3 × 2 = 72 analysis configurations
 
-This exhaustive approach allows us to identify which combinations recover the CMB signal most cleanly and to assess whether the signal is a robust network-wide phenomenon or an artifact of specific analysis choices.
+This exhaustive approach allows identification of which combinations recover the CMB signal most cleanly and assessment of whether the signal is a robust network-wide phenomenon or an artifact of specific analysis choices.
 
-### 2.6.3 Grid Search Methodology
+### 2.7.3 Grid Search Methodology
 
 #### Predictor Model
 
@@ -901,8 +897,10 @@ The predictor is cos(velocity_declination): low declination (equatorial velocity
 | RA range | 0°–359° | Full celestial sphere |
 | Dec range | −89° to +89° | Full celestial sphere (avoiding poles) |
 | Resolution | 1° | Matches CODE longspan finest setting; ~65,000 grid points |
-| Background speed | 20 km/s (fixed) | Same order as orbital velocity; matches CODE methodology |
+| Background speed | 20 km/s (fixed) | Prescribed phenomenological directional template; not the physical CMB-dipole speed |
 | Test statistic | Pearson correlation | cos(Dec) vs monthly E-W/N-S ratio (36 months) |
+
+The 20 km/s background speed is the fixed phenomenological parameter used to construct the directional predictor, not the physical 370 km/s CMB-dipole speed. The analysis tests directional alignment under this prescribed template; the dependence of the inferred direction on the assumed background speed is not established here.
 
 #### Statistical Validation
 
@@ -914,9 +912,9 @@ For each combination, the following is computed:
 
 - Global p-value (Monte Carlo): 1000 permutations of monthly E-W/N-S ratios with vectorized 5° grid search to account for look-elsewhere effect across ~2,600 independent sky pixels
 
-- Corrected global p-value: Šidák correction for 54 simultaneous tests: pcorrected = 1 − (1 − pglobal)54
+- Configuration-grid interpretation: the Monte Carlo global p-value is reported for the selected configuration; no experiment-wide aggregate significance across the 54 correlated configurations is claimed.
 
-### 2.6.4 Mode-Specific Expectations
+### 2.7.4 Mode-Specific Expectations
 
 The four processing modes provide complementary views of the signal:
 
@@ -938,7 +936,7 @@ Based on noise characteristics, it is predicted:
 
 - Widest scatter: Ionofree mode (3× noise amplification obscures weak signal)
 
-### 2.6.5 Falsification Criteria
+### 2.7.5 Falsification Criteria
 
 The CMB frame hypothesis is considered falsified if:
 
@@ -962,7 +960,19 @@ Conversely, CMB frame alignment is supported if:
 
 CODE's 25-year analysis found best-fit at RA = 186°, Dec = −4° (18.2° from CMB). With only 3 years of data, weaker Dec constraints are expected due to limited seasonal sampling, but RA should converge to within ~20° of the CMB dipole if the effect is real.
 
-## 2.7 Software and Reproducibility
+## 2.8 GPS-Geometry Null Simulation (Step 2.9)
+
+To interpret the full-distance E-W/N-S inversion without circularity, a first-principles simulation decomposes the directional bias into two candidate mechanisms using synthetic data only—no reference to CODE or to the empirical TEP results:
+
+- **Geometry-only simulation:** Synthetic clock time series are generated with noise weighted by position dilution of precision (PDOP) computed from the actual GPS constellation geometry (55° orbital inclination). This tests whether satellite visibility anisotropy alone suppresses E-W correlation lengths. The simulation yields E-W mean λ = 265 km versus N-S mean λ = 3,994 km (E-W/N-S ≈ 0.066, a ~15× suppression).
+
+- **Ionospheric local-time simulation:** Synthetic clocks are correlated by local solar time under a diurnal TEC model, TEC = TEC₀ × [1 + 0.5 cos(2π(LST − 14)/24)]. Because E-W pairs span different local times while N-S pairs share them, this mechanism produces E-W enhancement rather than suppression (E-W/N-S ≈ 19.6).
+
+- **Europe resolvability analysis:** A baseline-length calculation demonstrates that the dense, short-baseline European subnetwork cannot resolve a λ ≈ 1,000 km correlation length, explaining the non-convergent Europe-only fits reported in §3.2.1 as a resolution limit rather than a data-quality failure.
+
+The two mechanisms operate on different distance scales and are reported as complementary diagnostics in §3.10.4 and §6.3.3; the primary short-distance anisotropy result uses neither correction.
+
+## 2.9 Software and Reproducibility
 
 All analysis code is open source and available in the TEP-GNSS-RINEX repository:
 
@@ -997,14 +1007,14 @@ All analysis code is open source and available in the TEP-GNSS-RINEX repository:
 
 #### ✓ Consistent Signal Detection: 72/72 Metrics (100%)
 
-The analysis achieves consistent detection of distance-structured correlations across all 72 independent metric combinations:
+The analysis achieves consistent detection of distance-structured correlations across all 72 correlated metric configurations:
 
 | Coherence Type | Mean λT (km) | λT Range (km) | Mean R² | R² Range |
 | --- | --- | --- | --- | --- |
 | MSC (Amplitude) | 924 | 625 – 1,403 | 0.958 | 0.872 – 0.993 |
-| Phase Alignment | 2,018 | 984 – 5,026 | 0.903 | 0.666 – 0.987 |
+| Mean Phase-Offset Alignment | 2,018 | 984 – 5,026 | 0.903 | 0.666 – 0.987 |
 
-Key insight: Phase alignment shows ~2.2× longer correlation length than MSC across all filters. This is consistent with the "shaking vs dancing" interpretation: MSC measures amplitude correlation (sensitive to local noise at ~700–1,200 km), while phase alignment measures timing synchronization that persists over longer distances (~1,700–3,500 km).
+Key insight: Mean phase-offset alignment (labelled "Phase Alignment" in tables and figures throughout) shows ~2.2× longer correlation length than MSC across all filters. This is consistent with the "shaking vs dancing" interpretation: MSC measures amplitude correlation (sensitive to local noise at ~700–1,200 km), while the mean phase-offset score captures directional consistency in average timing offset that persists over longer distances (~1,700–3,500 km); as defined in §2.4.4, it is not a phase-locking-strength statistic without the resultant magnitude.
 
 #### Primary Results: Multi-Mode Comparison (ALL_STATIONS)
 
@@ -1047,7 +1057,7 @@ The analysis reports correlation patterns consistent with the TEP framework acro
 
 To verify that the exponential decay is not confined to any particular part of the IGS network, Step 2.1a repeats the baseline coherence analysis after splitting the station pairs into Global, Europe-only, Non-Europe, and Northern/Southern hemisphere subsets. All three metrics (clock bias, position jitter, clock drift) and both coherence measures (MSC and phase alignment) are evaluated in each subset. Cross-region pairs (e.g., a European station paired with a non-European station) are excluded from regional subsets to ensure clean separation—these pairs are included only in the Global analysis.
 
-Figure 3.1a: Regional control tests showing exponential decay fits for clock bias coherence across Global, Europe, Non-Europe, Northern, and Southern subsets. Phase alignment (solid lines) consistently shows longer correlation lengths than MSC (dashed lines), with the Southern Hemisphere exhibiting the longest MSC scales (1,315 km vs 688 km Northern). Europe-only fits fail to converge—a successful negative control, as the TEP signal (λ ≈ 1,000+ km) cannot be resolved in a network dominated by short baselines.
+Figure 3.1: Regional control tests showing exponential decay fits for clock bias coherence across Global, Europe, Non-Europe, Northern, and Southern subsets. Phase alignment (solid lines) consistently shows longer correlation lengths than MSC (dashed lines), with the Southern Hemisphere exhibiting the longest MSC scales (1,315 km vs 688 km Northern). Europe-only fits fail to converge—a successful negative control, as the TEP signal (λ ≈ 1,000+ km) cannot be resolved in a network dominated by short baselines.
 
 Table 3.2a: Regional MSC Results (Magnitude Squared Coherence)
 
@@ -1141,7 +1151,7 @@ Both metrics show similar regional patterns, which is consistent with the TEP in
 
 To test whether the inferred correlation scale depends on station altitude (a proxy for atmospheric column and local site conditions), a comprehensive suite of five stratification configurations was executed: global quintiles (sr200), latitude-controlled quintiles (lat10_sr100, lat10_sr200, lat20_sr100, lat20_sr200). Each configuration tested 72 combinations (3 filters × 4 modes × 3 metrics × 2 coherence types), yielding 360 independent λ-vs-altitude regressions. If atmospheric propagation or site-dependent effects dominated the observed decay structure, one would expect systematic variation of λ with altitude across most combinations. Conversely, weak dependence on altitude would be more consistent with a geometry- or network-wide origin.
 
-Table 3.2d-summary: Comprehensive Suite Statistical Summary
+Table 3.2d: Comprehensive Suite Statistical Summary
 
 | Configuration Tag | Combinations (N) | λT-trend p<0.05 | λT-trend (invvar) p<0.05 | Short-range p<0.05 | Degenerate Fits | Low R² (<0.6) |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -1154,7 +1164,7 @@ Table 3.2d-summary: Comprehensive Suite Statistical Summary
 
 *Note: "Degenerate fits" = λ > 10,000 km or boundary_hit flag. "Low R²" = R² < 0.6 for any quintile in the combination. Percentages represent fraction of 72 combinations per tag showing the specified characteristic.*
 
-Table 3.2d: Representative Quintile λ Values (global_sr200, ALL_STATIONS, precise mode)
+Table 3.2e: Representative Quintile λ Values (global_sr200, ALL_STATIONS, precise mode)
 
 | Metric/Type | Q1 (8m) | Q2 (70m) | Q3 (144m) | Q4 (441m) | Q5 (1453m) | Q5/Q1 | Slope (km/m) | p-value |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1196,7 +1206,7 @@ Null-Consistent Outcome: Across 360 independent regressions, only 3.1% show stat
 
 - Latitude-controlled stratification increases degeneracy: When geographic confounding is controlled by restricting pairs to same-latitude bands, fit quality degrades (9–12.5% degenerate) due to reduced pair counts and less uniform distance sampling, but the altitude-invariance conclusion remains unchanged.
 
-Table 3.2d-replicated: Only Replicated Significant Trends (p<0.05, Non-Degenerate, ≥2 Tags)
+Table 3.2f: Only Replicated Significant Trends (p<0.05, Non-Degenerate, ≥2 Tags)
 
 | Filter/Mode/Metric/Coherence | Tags Replicated | Signal Detected? | Representative Slope (km/m) | Interpretation |
 | --- | --- | --- | --- | --- |
@@ -1206,7 +1216,7 @@ Table 3.2d-replicated: Only Replicated Significant Trends (p<0.05, Non-Degenerat
 
 *Note: These are the only three combinations (out of 72 tested) that show significant altitude trends replicating across ≥2 suite configurations with consistent sign and non-degenerate fits. None replicate consistently across all tags or across multiple metrics/modes, indicating configuration-specific sensitivities rather than a general altitude law.*
 
-Table 3.2d-degeneracy: Fit Quality Patterns Across Suite (Combined 360 Regressions)
+Table 3.2g: Fit Quality Patterns Across Suite (Combined 360 Regressions)
 
 | Stratification Dimension | Category | N Combinations | Degenerate (%) | Low R² (%) | Median |Slope| (km/m) |
 | --- | --- | --- | --- | --- | --- |
@@ -1332,15 +1342,15 @@ The ≈96% reduction in pair count (61.9M → 2.4M) when moving from 539 to 100 
 
 ### 3.3.1 Clock Bias Coherence
 
-Figure 3.1: Phase coherence of clock bias between station pairs as a function of inter-station distance. Baseline GPS (L1) fit yields λT = 727 ± 50 km with R² = 0.971. Error bars represent standard error of the mean within each distance bin.
+Figure 3.2: Phase coherence of clock bias between station pairs as a function of inter-station distance. Baseline GPS (L1) fit yields λT = 727 ± 50 km with R² = 0.971. Error bars represent standard error of the mean within each distance bin.
 
 ### 3.3.2 Clock Drift Coherence
 
-Figure 3.2: Phase coherence of clock drift (derivative of clock bias). The persistence of spatial structure in the derivative is less consistent with a simple random walk artifact.
+Figure 3.3: Phase coherence of clock drift (derivative of clock bias). The persistence of spatial structure in the derivative is less consistent with a simple random walk artifact.
 
 ### 3.3.3 Position Jitter Coherence
 
-Figure 3.3: Phase coherence of 3D position jitter. The spatial proxy shows exponential decay consistent with the clock-based (temporal) metrics, consistent with the Space-Time coupling interpretation.
+Figure 3.4: Phase coherence of 3D position jitter. The spatial proxy shows exponential decay consistent with the clock-based (temporal) metrics, consistent with the Space-Time coupling interpretation.
 
 ## 3.4 Ionosphere Validation: A Key Test
 
@@ -1440,8 +1450,8 @@ The analysis of the *Multi-GNSS* dataset (GPS + GLONASS + Galileo + BeiDou) show
 
 | Analysis | Data Source | λT (km) | R² | Notes |
 | --- | --- | --- | --- | --- |
-| Paper 1 (CODE) | Precise products (PPP) | 1,000–2,000 | 0.920–0.970 | Baseline comparison |
-| Paper 2 (25-year) | CODE 2000-2025 | 4,201 | 0.985 | Long-term benchmark |
+| Paper 1 (CODE) | Precise products (PPP) | 3,330–4,549 | 0.920–0.970 | Baseline comparison |
+| Paper 2 (25-year) | CODE 2000-2025 | 4,201 | not reported | Long-term benchmark |
 | Current (2024 Ionofree) | Raw SPP (L1+L2) | 4,767 | 0.957 | Successful replication |
 
 ## 3.6 Seasonal Anisotropy Oscillation
@@ -1491,137 +1501,11 @@ All constellations
 
 ### Processing Independence
 
-Raw SPP results (λ = 727–1,072 km) are comparable to precise-product analyses (λ ~ 1,000–2,000 km), suggesting that the observed correlation structure is present in raw observations. The baseline GPS-only mode shows shorter λ (727 km) because ionospheric effects add short-range correlation. When removed via dual-frequency processing, the longer-range correlation (1,072 km) becomes more apparent. The Multi-GNSS mode (815 km) provides a cross-constellation check across GPS, GLONASS, Galileo, and BeiDou.
-
-## 3.6 Geomagnetic Independence: Comprehensive Kp Stratification
-
-To assess whether the observed correlations are associated with ionospheric or geomagnetic activity, a stratification analysis was performed using *real geomagnetic data* from GFZ Helmholtz Centre Potsdam (Kp index since 1932). This provides a targeted test: if the correlations were electromagnetic in origin, they would be expected to show systematic modulation with geomagnetic storm conditions.
-
-The primary stratification uses the conventional threshold Kp < 3 (quiet) versus Kp ≥ 3 (storm). The analysis was performed across *all four processing modes* (Baseline GPS L1, Ionofree L1+L2, Multi-GNSS, Precise) and *all six metric combinations* (3 time series × 2 coherence types), yielding *24 independent tests* per station filter (72 tests total across ALL_STATIONS, OPTIMAL_100, and DYNAMIC_50).
-
-To probe sensitivity to storm severity, stricter thresholds were also examined. As expected, the number of storm days decreases rapidly with increasing threshold:
-
-| Storm Definition | Quiet Days | Storm Days | Storm Fraction |
-| --- | --- | --- | --- |
-| Kp ≥ 3 | 936 | 160 | 14.6% |
-| Kp ≥ 4 | 1,055 | 41 | 3.7% |
-| Kp ≥ 5 | 1,086 | 10 | 0.9% |
-
-### 3.6.1 Dataset Summary
-
-| Condition | Days | % of Dataset | Baseline Pairs | Ionofree Pairs | Multi-GNSS Pairs | Precise Pairs |
-| --- | --- | --- | --- | --- | --- | --- |
-| Quiet (Kp < 3) | 936 | 85.4% | 31.6M | 30.6M | 29.8M | 30.2M |
-| Storm (Kp ≥ 3) | 160 | 14.6% | 5.1M | 4.9M | 4.8M | 4.9M |
-| Total | 1,096 | 100% | 36.7M | 35.5M | 34.7M | 35.1M |
-
-### 3.6.2 Primary Results: Phase Alignment (TEP Indicator)
-
-Phase alignment is used here as a TEP-motivated indicator, as it is amplitude-invariant and persists through GNSS processing. Across geomagnetic conditions, the phase-alignment λ estimates show only small changes:
-
-| Processing Mode | Metric | Quiet λ (km) | Storm λ (km) | Δλ (%) | Quiet R² | Storm R² | Interpretation |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Baseline (GPS L1) | clock_bias | 1,798 | 1,762 | −2.0% | 0.900 | 0.910 | Minimal change |
-| pos_jitter | 2,079 | 2,053 | −1.2% | 0.965 | 0.970 | Minimal change |
-| clock_drift | 1,038 | 1,011 | −2.7% | 0.942 | 0.946 | Minimal |
-| Ionofree (L1+L2) | clock_bias | 1,850 | 1,877 | +1.5% | 0.784 | 0.798 | Increases slightly |
-| pos_jitter | 3,343 | 3,386 | +1.3% | 0.950 | 0.949 | Increases slightly |
-| clock_drift | 1,131 | 1,137 | +0.6% | 0.900 | 0.900 | Minimal change |
-| Multi-GNSS (GREC) | clock_bias | 1,766 | 1,668 | −5.6% | 0.966 | 0.971 | Minimal |
-| pos_jitter | 1,821 | 1,770 | −2.8% | 0.956 | 0.961 | Minimal |
-| clock_drift | 999 | 984 | −1.5% | 0.965 | 0.970 | Minimal |
-| Precise (IGS SP3) | clock_bias | 1,763 | 1,814 | +2.9% | 0.703 | 0.726 | Increases slightly |
-| pos_jitter | 3,450 | 3,489 | +1.1% | 0.957 | 0.957 | Increases slightly |
-| clock_drift | 1,193 | 1,195 | +0.1% | 0.859 | 0.866 | Minimal |
-
-At the primary threshold (Kp < 3 vs. Kp ≥ 3), the full 72-test grid across all three station filters shows near-invariance: median Δλ ≈ −1%, with 60/72 tests within ±5%. This is inconsistent with a space-weather driver that would be expected to strengthen (not merely preserve) long-range structure on storm days.
-
-#### Ionofree Enhancement During Storms
-
-The ionofree results are informative. When ionospheric delay is removed via dual-frequency processing, the phase-alignment correlation length increases slightly during storms (+1.5% for clock_bias, +1.3% for pos_jitter, +0.6% for clock_drift).
-
-Implications for ionospheric explanations:
-
-- If the signal were ionospheric, storms would *increase* ionospheric delay
-
-- Removing the ionosphere would then *decrease* the signal (Δλ < 0)
-
-- Instead, Δλ > 0 is observed, which is less consistent with ionospheric damping
-
-One interpretation is that geomagnetic storms may act as a natural filter: while they inject amplitude noise (affecting MSC), they can disrupt coherent atmospheric structures that otherwise mask longer-range phase correlations.
-
-### 3.6.3 MSC Results: Amplitude Modulation
-
-Magnitude Squared Coherence (MSC) shows larger modulation (±3–5%) because it is amplitude-sensitive. This is the *expected behavior* when storms inject noise into an existing signal:
-
-| Processing Mode | Metric | Quiet λ (km) | Storm λ (km) | Δλ (%) | Physical Interpretation |
-| --- | --- | --- | --- | --- | --- |
-| Baseline | clock_bias | 772 | 742 | −3.9% | Storms add amplitude noise |
-| pos_jitter | 906 | 872 | −3.7% | Consistent noise injection |
-| clock_drift | 753 | 725 | −3.8% | Derivative preserves pattern |
-| Ionofree | clock_bias | 1,092 | 1,058 | −3.1% | Minimal modulation (ionosphere removed) |
-| pos_jitter | 1,173 | 1,171 | −0.2% | Minimal change |
-| clock_drift | 1,095 | 1,068 | −2.5% | Minimal modulation |
-| Multi-GNSS | clock_bias | 832 | 864 | +3.9% | Cross-constellation timing noise |
-| pos_jitter | 915 | 871 | −4.9% | Multi-system noise injection |
-| clock_drift | 793 | 825 | +4.0% | Inter-system biases |
-| Precise | clock_bias | 1,224 | 1,171 | −4.3% | Stable under precise products |
-| pos_jitter | 1,342 | 1,323 | −1.4% | Minimal change |
-| clock_drift | 1,229 | 1,186 | −3.5% | Minimal modulation |
-
-MSC modulation (±3–5%) is consistent with storms adding *amplitude noise* to an existing signal. The phase metrics (typically within ±3%, with a worst-case of ~5.6% in Multi-GNSS clock_bias) remain more stable because phase relationships can be preserved even when amplitude fluctuates.
-
-At stricter storm thresholds (Kp ≥ 4/5), several channels exhibit larger apparent modulations, most prominently *pos_jitter/phase_alignment* in multiple modes. These high-threshold results are treated as sensitivity checks because the storm-day sample becomes small (41 and 10 days at Kp ≥ 4 and Kp ≥ 5, respectively), even though the fitted decays remain well-conditioned (high R² and no bound-hit warnings in the fit diagnostics).
-
-### 3.6.4 Dataset Scale and Sensitivity
-
-The geomagnetic stratification was executed across *all three station filters* (ALL_STATIONS, OPTIMAL_100, DYNAMIC_50) and *all four processing modes*. For concreteness, the tables in Sections 3.6.2–3.6.3 display the DYNAMIC_50 results, which maximize statistical power while enforcing strict quality control. The cross-filter analysis shows the same qualitative conclusion: the primary Kp ≥ 3 stratification yields only small λ changes (median Δλ ≈ −1%), constraining space-weather explanations.
-
-### 3.6.5 Multi-GNSS Cross-Constellation Consistency
-
-The Multi-GNSS analysis shows similar Kp stratification behavior across satellite constellations:
-
-- GPS: Δλ = −2.0% (phase alignment, clock_bias; Baseline)
-
-- Multi-GNSS composite (GREC): Δλ = −5.6% (phase alignment, clock_bias)
-
-- Galileo: Included in Multi-GNSS composite
-
-- BeiDou: Included in Multi-GNSS composite
-
-All four constellations show similar Kp stratification behavior, despite different:
-
-- Atomic clock technologies (Rb, Cs, H-maser)
-
-- Orbital altitudes (19,100–23,222 km)
-
-- Orbital inclinations (55°–64.8°)
-
-- Signal frequencies (L1/L2/L5/E1/E5/B1/B2)
-
-Conclusion: The cross-constellation consistency is compatible with a coupling that is not strongly constellation-specific. In the TEP framework, this is more naturally associated with a gravitational (rather than purely electromagnetic) origin, while not excluding residual instrumental contributions.
-
-### 3.6.6 Summary: Constraints on Electromagnetic Origin
-
-#### Geomagnetic Stratification Summary
-
-Across 72 independent tests at the primary threshold (3 filters × 4 modes × 3 metrics × 2 coherence types):
-
-- Primary result (Kp < 3 vs. Kp ≥ 3): Median Δλ ≈ −1%, with 60/72 tests within ±5%
-
-- Amplitude sensitivity: MSC shows modest modulation consistent with storm-time noise injection
-
-- Phase robustness: Phase-alignment decays remain well-fit (high R²) and typically change at the percent level at the primary threshold
-
-- Sensitivity checks: Kp ≥ 4/5 produce fewer storm days (41 and 10) and show metric-specific modulation (notably pos_jitter/phase_alignment), without overturning the primary null result
-
-Interpretation: The stratified results do not show strong dependence on space-weather conditions, which disfavors purely ionospheric or geomagnetic drivers in the forms tested here.
-
-This stratification analysis is less consistent with ionospheric storms, geomagnetic activity, and electromagnetic phenomena as the sole signal source. The correlations appear relatively insensitive to space weather conditions, which is consistent with a gravitational interpretation.
+Raw SPP results (λ = 727–1,072 km) are comparable to precise-product analyses (λ ≈ 3,330–4,549 km, Papers 1, 2, 5), suggesting that the observed correlation structure is present in raw observations. The baseline GPS-only mode shows shorter λ (727 km) because ionospheric effects add short-range correlation. When removed via dual-frequency processing, the longer-range correlation (1,072 km) becomes more apparent. The Multi-GNSS mode (815 km) provides a cross-constellation check across GPS, GLONASS, Galileo, and BeiDou.
 
 ## 3.7 Seasonal Stability Analysis: The Test of Environmental Screening
 
-Having established geomagnetic independence (Section 3.6), a key question is whether the signal is a seasonal artifact. Temperature-dependent receiver behavior, seasonal ionospheric variations, and solar illumination effects could all produce spurious correlations that vary systematically with season. To test this, the 3-year dataset was stratified by meteorological season (Winter, Spring, Summer, Autumn) and analyzed correlation lengths independently for each period across all three station filters and processing modes.
+Complementing the seasonal anisotropy oscillation of Section 3.6, a further question is whether the signal is a seasonal artifact. Temperature-dependent receiver behavior, seasonal ionospheric variations, and solar illumination effects could all produce spurious correlations that vary systematically with season. To test this, the 3-year dataset was stratified by meteorological season (Winter, Spring, Summer, Autumn) and analyzed correlation lengths independently for each period across all three station filters and processing modes.
 
 ### 3.7.1 The "Three Signatures" Framework
 
@@ -1652,7 +1536,7 @@ The OPTIMAL_100 filter (100 spatially balanced stations) was designed to maximiz
 
 Finding: When ionospheric delay is removed (Ionofree) and the network has optimal spatial balance (OPTIMAL_100), the summer-season correlation length (for pos_jitter) is *6,060 km*. This is closely corroborated by the Precise mode (using IGS SP3 products), which yields *6,259 km* in the same condition—a 3% agreement. Both values are within 1σ of CODE's 25-year PPP benchmark (4201 ± 1967 km; upper 1σ bound 6168 km).
 
-Physical interpretation within TEP v0.7:
+Physical interpretation within TEP v0.12:
 
 - Summer ionosphere: Lower ambient electron density reduces local flattening of the Temporal Topology, permitting stronger Temporal Shear (field gradient) and longer apparent correlation lengths
 
@@ -1710,7 +1594,7 @@ Conclusion: The correlation structure is detectable without restrictive station 
 
 ### 3.7.5 The Temporal Topology Model: Unified Interpretation
 
-The three signatures can be interpreted within the continuous geometric screening framework of TEP v0.7:
+The three signatures can be interpreted within the continuous geometric screening framework of TEP v0.12:
 
 #### Interpretive Model: Temporal Topology Relaxation and Temporal Shear Modulation
 
@@ -1728,7 +1612,7 @@ Density-driven gradient suppression (ionosphere + troposphere):
 
 -  Mitigation: Ionofree (L1+L2 combination) removes one source of density-driven suppression, permitting the underlying topology to emerge
 
-Observable result: A baseline scale of ~1800 km is consistently observed when Temporal Topology is partially flattened, while the larger extent (~6060 km) emerges when density-driven suppression is minimized (Ionofree + Summer + Optimal geometry), consistent with the v0.7 prediction that the field gradient vanishes continuously with increasing ambient density rather than at a discrete boundary.
+Observable result: A baseline scale of ~1800 km is consistently observed when Temporal Topology is partially flattened, while the larger extent (~6060 km) emerges when density-driven suppression is minimized (Ionofree + Summer + Optimal geometry), consistent with the v0.12 prediction that the field gradient vanishes continuously with increasing ambient density rather than at a discrete boundary.
 
 ### 3.7.6 Comparison with CODE Benchmark
 
@@ -1757,22 +1641,148 @@ Key findings:
 
 Conclusion: The seasonal stratification is less consistent with a purely seasonal artifact and is consistent with atmospheric screening of an underlying correlation structure. The summer enhancement and core baseline provide complementary views of the correlation length under different screening conditions.
 
-## 3.8 Null Tests: Validation of Signal Origin
+## 3.8 Geomagnetic Independence: Comprehensive Kp Stratification
+
+To assess whether the observed correlations are associated with ionospheric or geomagnetic activity, a stratification analysis was performed using *real geomagnetic data* from GFZ Helmholtz Centre Potsdam (Kp index since 1932). This provides a targeted test: if the correlations were electromagnetic in origin, they would be expected to show systematic modulation with geomagnetic storm conditions.
+
+The primary stratification uses the conventional threshold Kp < 3 (quiet) versus Kp ≥ 3 (storm). The analysis was performed across *all four processing modes* (Baseline GPS L1, Ionofree L1+L2, Multi-GNSS, Precise) and *all six metric combinations* (3 time series × 2 coherence types), yielding 24 correlated analysis configurations per station filter (72 configurations total across ALL_STATIONS, OPTIMAL_100, and DYNAMIC_50).
+
+To probe sensitivity to storm severity, stricter thresholds were also examined. As expected, the number of storm days decreases rapidly with increasing threshold:
+
+| Storm Definition | Quiet Days | Storm Days | Storm Fraction |
+| --- | --- | --- | --- |
+| Kp ≥ 3 | 936 | 160 | 14.6% |
+| Kp ≥ 4 | 1,055 | 41 | 3.7% |
+| Kp ≥ 5 | 1,086 | 10 | 0.9% |
+
+### 3.8.1 Dataset Summary
+
+| Condition | Days | % of Dataset | Baseline Pairs | Ionofree Pairs | Multi-GNSS Pairs | Precise Pairs |
+| --- | --- | --- | --- | --- | --- | --- |
+| Quiet (Kp < 3) | 936 | 85.4% | 31.6M | 30.6M | 29.8M | 30.2M |
+| Storm (Kp ≥ 3) | 160 | 14.6% | 5.1M | 4.9M | 4.8M | 4.9M |
+| Total | 1,096 | 100% | 36.7M | 35.5M | 34.7M | 35.1M |
+
+### 3.8.2 Primary Results: Phase Alignment (TEP Indicator)
+
+Phase alignment is used here as a TEP-motivated indicator, as it is amplitude-invariant and persists through GNSS processing. Across geomagnetic conditions, the phase-alignment λ estimates show only small changes:
+
+| Processing Mode | Metric | Quiet λ (km) | Storm λ (km) | Δλ (%) | Quiet R² | Storm R² | Interpretation |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Baseline (GPS L1) | clock_bias | 1,798 | 1,762 | −2.0% | 0.900 | 0.910 | Minimal change |
+| pos_jitter | 2,079 | 2,053 | −1.2% | 0.965 | 0.970 | Minimal change |
+| clock_drift | 1,038 | 1,011 | −2.7% | 0.942 | 0.946 | Minimal |
+| Ionofree (L1+L2) | clock_bias | 1,850 | 1,877 | +1.5% | 0.784 | 0.798 | Increases slightly |
+| pos_jitter | 3,343 | 3,386 | +1.3% | 0.950 | 0.949 | Increases slightly |
+| clock_drift | 1,131 | 1,137 | +0.6% | 0.900 | 0.900 | Minimal change |
+| Multi-GNSS (GREC) | clock_bias | 1,766 | 1,668 | −5.6% | 0.966 | 0.971 | Minimal |
+| pos_jitter | 1,821 | 1,770 | −2.8% | 0.956 | 0.961 | Minimal |
+| clock_drift | 999 | 984 | −1.5% | 0.965 | 0.970 | Minimal |
+| Precise (IGS SP3) | clock_bias | 1,763 | 1,814 | +2.9% | 0.703 | 0.726 | Increases slightly |
+| pos_jitter | 3,450 | 3,489 | +1.1% | 0.957 | 0.957 | Increases slightly |
+| clock_drift | 1,193 | 1,195 | +0.1% | 0.859 | 0.866 | Minimal |
+
+At the primary threshold (Kp < 3 vs. Kp ≥ 3), the full 72-test grid across all three station filters shows near-invariance: median Δλ ≈ −1%, with 60/72 tests within ±5%. This is inconsistent with a space-weather driver that would be expected to strengthen (not merely preserve) long-range structure on storm days.
+
+#### Ionofree Enhancement During Storms
+
+The ionofree results are informative. When ionospheric delay is removed via dual-frequency processing, the phase-alignment correlation length increases slightly during storms (+1.5% for clock_bias, +1.3% for pos_jitter, +0.6% for clock_drift).
+
+Implications for ionospheric explanations:
+
+- If the signal were ionospheric, storms would *increase* ionospheric delay
+
+- Removing the ionosphere would then *decrease* the signal (Δλ < 0)
+
+- Instead, Δλ > 0 is observed, which is less consistent with ionospheric damping
+
+One interpretation is that geomagnetic storms may act as a natural filter: while they inject amplitude noise (affecting MSC), they can disrupt coherent atmospheric structures that otherwise mask longer-range phase correlations.
+
+### 3.8.3 MSC Results: Amplitude Modulation
+
+Magnitude Squared Coherence (MSC) shows larger modulation (±3–5%) because it is amplitude-sensitive. This is the *expected behavior* when storms inject noise into an existing signal:
+
+| Processing Mode | Metric | Quiet λ (km) | Storm λ (km) | Δλ (%) | Physical Interpretation |
+| --- | --- | --- | --- | --- | --- |
+| Baseline | clock_bias | 772 | 742 | −3.9% | Storms add amplitude noise |
+| pos_jitter | 906 | 872 | −3.7% | Consistent noise injection |
+| clock_drift | 753 | 725 | −3.8% | Derivative preserves pattern |
+| Ionofree | clock_bias | 1,092 | 1,058 | −3.1% | Minimal modulation (ionosphere removed) |
+| pos_jitter | 1,173 | 1,171 | −0.2% | Minimal change |
+| clock_drift | 1,095 | 1,068 | −2.5% | Minimal modulation |
+| Multi-GNSS | clock_bias | 832 | 864 | +3.9% | Cross-constellation timing noise |
+| pos_jitter | 915 | 871 | −4.9% | Multi-system noise injection |
+| clock_drift | 793 | 825 | +4.0% | Inter-system biases |
+| Precise | clock_bias | 1,224 | 1,171 | −4.3% | Stable under precise products |
+| pos_jitter | 1,342 | 1,323 | −1.4% | Minimal change |
+| clock_drift | 1,229 | 1,186 | −3.5% | Minimal modulation |
+
+MSC modulation (±3–5%) is consistent with storms adding *amplitude noise* to an existing signal. The phase metrics (typically within ±3%, with a worst-case of ~5.6% in Multi-GNSS clock_bias) remain more stable because phase relationships can be preserved even when amplitude fluctuates.
+
+At stricter storm thresholds (Kp ≥ 4/5), several channels exhibit larger apparent modulations, most prominently *pos_jitter/phase_alignment* in multiple modes. These high-threshold results are treated as sensitivity checks because the storm-day sample becomes small (41 and 10 days at Kp ≥ 4 and Kp ≥ 5, respectively), even though the fitted decays remain well-conditioned (high R² and no bound-hit warnings in the fit diagnostics).
+
+### 3.8.4 Dataset Scale and Sensitivity
+
+The geomagnetic stratification was executed across *all three station filters* (ALL_STATIONS, OPTIMAL_100, DYNAMIC_50) and *all four processing modes*. For concreteness, the tables in Sections 3.7.2–3.7.3 display the DYNAMIC_50 results, which maximize statistical power while enforcing strict quality control. The cross-filter analysis shows the same qualitative conclusion: the primary Kp ≥ 3 stratification yields only small λ changes (median Δλ ≈ −1%), constraining space-weather explanations.
+
+### 3.8.5 Multi-GNSS Cross-Constellation Consistency
+
+The Multi-GNSS analysis shows similar Kp stratification behavior across satellite constellations:
+
+- GPS: Δλ = −2.0% (phase alignment, clock_bias; Baseline)
+
+- Multi-GNSS composite (GREC): Δλ = −5.6% (phase alignment, clock_bias)
+
+- Galileo: Included in Multi-GNSS composite
+
+- BeiDou: Included in Multi-GNSS composite
+
+All four constellations show similar Kp stratification behavior, despite different:
+
+- Atomic clock technologies (Rb, Cs, H-maser)
+
+- Orbital altitudes (19,100–23,222 km)
+
+- Orbital inclinations (55°–64.8°)
+
+- Signal frequencies (L1/L2/L5/E1/E5/B1/B2)
+
+Conclusion: The cross-constellation consistency is compatible with a coupling that is not strongly constellation-specific. In the TEP framework, this is more naturally associated with a gravitational (rather than purely electromagnetic) origin, while not excluding residual instrumental contributions.
+
+### 3.8.6 Summary: Constraints on Electromagnetic Origin
+
+#### Geomagnetic Stratification Summary
+
+Across 72 correlated analysis configurations at the primary threshold (3 filters × 4 modes × 3 metrics × 2 coherence types):
+
+- Primary result (Kp < 3 vs. Kp ≥ 3): Median Δλ ≈ −1%, with 60/72 tests within ±5%
+
+- Amplitude sensitivity: MSC shows modest modulation consistent with storm-time noise injection
+
+- Phase robustness: Phase-alignment decays remain well-fit (high R²) and typically change at the percent level at the primary threshold
+
+- Sensitivity checks: Kp ≥ 4/5 produce fewer storm days (41 and 10) and show metric-specific modulation (notably pos_jitter/phase_alignment), without overturning the primary null result
+
+Interpretation: The stratified results do not show strong dependence on space-weather conditions, which disfavors purely ionospheric or geomagnetic drivers in the forms tested here.
+
+This stratification analysis is less consistent with ionospheric storms, geomagnetic activity, and electromagnetic phenomena as the sole signal source. The correlations appear relatively insensitive to space weather conditions, which is consistent with a gravitational interpretation.
+
+## 3.9 Null Tests: Validation of Signal Origin
 
 Having established the existence of distance-structured correlations across multiple processing modes, the signal is now subjected to a set of null tests that assess several non-gravitational alternatives. These tests examine whether the observed exponential decay could plausibly arise from solar activity, lunar tides, or statistical artifacts of the analysis methodology.
 
-### 3.8.1 Solar and Lunar Phase Correlations
+### 3.9.1 Solar and Lunar Phase Correlations
 
-If the correlation structure were driven by solar wind, radiation pressure, or geomagnetic storms, coherence would be expected to modulate with the 27-day solar rotation period. Similarly, if lunar tidal forces were responsible, a 29.5-day periodicity should emerge. Circular correlations were computed between daily mean coherence and the phase of these cycles across all 54 analysis combinations.
+If the correlation structure were driven by solar wind, radiation pressure, or geomagnetic storms, coherence would be expected to modulate with the 27-day solar rotation period. Similarly, if lunar tidal forces were responsible, a 29.5-day periodicity should emerge. Circular correlations were computed between daily mean coherence and the phase of these cycles across all 72 analysis configurations.
 
-#### Table 3.8.1: Solar/Lunar Correlation Summary
+#### Table 3.9.1: Solar/Lunar Correlation Summary
 
 | Statistic | Solar (27-day) | Lunar (29.5-day) | Threshold | Result |
 | --- | --- | --- | --- | --- |
 | Mean r | 0.042 | 0.050 | <0.1 | PASS |
-| Maximum r | 0.084 | 0.104 | <0.1 | PASS |
+| Maximum r | 0.084 | 0.104 | <0.1 | 1 threshold exceedance (lunar) |
 | Minimum r | 0.012 | 0.021 | — | — |
-| Tests passing (r < 0.1) | 72/72 (100%) | 71/72 (99%) | — | PASS |
+| Tests passing (r < 0.1) | 72/72 (100%) | 71/72 (99%) | — | 71/72 passed (lunar) |
 
 #### Interpretation: Zero Solar/Lunar Coupling
 
@@ -1780,11 +1790,11 @@ All correlations are below r = 0.11, corresponding to less than 1.2% of variance
 
 TEP context: The TEP mechanism predicts coupling to Earth's *orbital* motion (365-day period), not to solar rotation (27 days) or lunar orbit (29.5 days). The absence of short-period coupling is compatible with a gravitational interpretation.
 
-### 3.8.2 Shuffle Test: Assessing Spatial Structure
+### 3.9.2 Shuffle Test: Assessing Spatial Structure
 
 A stringent validation is the shuffle test, which assesses whether the exponential decay could arise as an artifact of the fitting methodology. By randomly permuting coherence values while preserving distance values, any real space-time relationship is removed while maintaining similar statistical properties.
 
-#### Table 3.8.2a: Shuffle Test Results by Station Filter (Phase Alignment)
+#### Table 3.9.2a: Shuffle Test Results by Station Filter (Phase Alignment)
 
 | Filter | Mode | Metric | Real R² | Shuffled R² | Ratio | Result |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -1798,18 +1808,18 @@ A stringent validation is the shuffle test, which assesses whether the exponenti
 | Ionofree | pos_jitter | 0.950 | 0.420 | 2.3× | Fail (R²>0.3) |
 | Multi-GNSS | clock_drift | 0.942 | 0.092 | 10× | Pass |
 
-#### Table 3.8.2b: Shuffle Test Summary Statistics
+#### Table 3.9.2b: Shuffle Test Summary Statistics
 
 | Statistic | Real R² | Shuffled R² | Ratio (Real/Shuffled) |
 | --- | --- | --- | --- |
 | Mean | 0.945 | 0.029 | 33× |
-| Maximum | 0.989 | 0.206 | ∞ (22 tests) |
+| Maximum | 0.989 | 0.506 | ∞ (22 tests) |
 | Minimum | 0.699 | −0.000 | 1.9× |
 | Pass Rate (Shuffled R² < 0.3) | — | 65/72 (90%) |
 
 #### Shuffle Test Summary
 
-The shuffle test indicates that the exponential correlation structure depends on the temporal ordering of the observations:
+The shuffle test indicates that the exponential correlation structure depends on the observed association between station-pair distance and coherence:
 
 - Discrimination: Real data maintains R² > 0.70 in all 72 tests (mean 0.95); shuffled data yields R² < 0.30 in 90% of tests (max 0.51 in one sensitive subset).
 
@@ -1817,13 +1827,13 @@ The shuffle test indicates that the exponential correlation structure depends on
 
 - Conclusion: Even in the worst-case subset (DYNAMIC_50/Precise), the real data fit is nearly twice as good as the shuffled fit (R² 0.96 vs 0.51). In the primary ALL_STATIONS dataset, the distinction is absolute (Shuffled R² < 0.1).
 
-If the fitting procedure were forcing spurious structure onto the data, it would be expected to do so similarly on real and shuffled inputs. The reduction of R² upon shuffling suggests the structure is tied to the *specific temporal ordering* of the observations.
+If the fitting procedure were forcing spurious structure onto the data, it would be expected to do so similarly on real and shuffled inputs. The reduction in fit quality after shuffling demonstrates that the exponential structure depends on the observed association between station-pair distance and coherence.
 
-### 3.8.3 Mode Independence: Checks Against Ionospheric Explanations
+### 3.9.3 Mode Independence: Checks Against Ionospheric Explanations
 
 A key check is whether the signal persists across processing modes with different ionospheric treatments:
 
-#### Table 3.8.3: Cross-Mode Consistency (Mean R² by Mode)
+#### Table 3.9.3: Cross-Mode Consistency (Mean R² by Mode)
 
 | Processing Mode | Ionospheric Treatment | Mean Real R² | Mean Shuffled R² | Verdict |
 | --- | --- | --- | --- | --- |
@@ -1835,13 +1845,13 @@ A key check is whether the signal persists across processing modes with differen
 
 The Ionofree mode mathematically eliminates first-order ionospheric delay via the linear combination PIF = (f₁²P₁ − f₂²P₂)/(f₁² − f₂²). Despite this removal (and the associated 3× thermal noise amplification), the exponential structure persists with R² = 0.921.
 
-Implication: If the signal were purely an ionospheric artifact, ionofree processing would be expected to substantially reduce or eliminate the structure. Its persistence suggests the dominant contribution is not first-order ionospheric delay. Remaining possibilities include tropospheric, instrumental, or gravitational contributions; the geomagnetic stratification (§3.6) provides additional constraints.
+Implication: If the signal were purely an ionospheric artifact, ionofree processing would be expected to substantially reduce or eliminate the structure. Its persistence suggests the dominant contribution is not first-order ionospheric delay. Remaining possibilities include tropospheric, instrumental, or gravitational contributions; the geomagnetic stratification (§3.8) provides additional constraints.
 
-### 3.8.4 Filter Independence: Network-Wide Phenomenon
+### 3.9.4 Filter Independence: Network-Wide Phenomenon
 
 The signal strength should not depend on which stations are selected if it represents a genuine global phenomenon:
 
-#### Table 3.8.4: Cross-Filter Consistency (Mean R² by Filter)
+#### Table 3.9.4: Cross-Filter Consistency (Mean R² by Filter)
 
 | Station Filter | Stations | Pairs (Baseline) | Mean Real R² | Mean Shuffled R² |
 | --- | --- | --- | --- | --- |
@@ -1851,7 +1861,7 @@ The signal strength should not depend on which stations are selected if it repre
 
 Cross-filter variance: σ² = 0.00005 (negligible). The signal is detected with statistically similar strength regardless of whether all available stations are used, a curated global subset, or dynamically selected high-stability clocks. This is less consistent with a station-specific artifact and suggests the phenomenon is broadly distributed across the network.
 
-### 3.8.5 Summary: Null Test Results
+### 3.9.5 Summary: Null Test Results
 
 #### Null Test Summary
 
@@ -1866,13 +1876,13 @@ The null test suite provides constraints indicating that the observed exponentia
 | Constellation artifact | Multi-GNSS mode | R² = 0.956 | Not supported |
 | Station selection bias | 3 independent filters | High consistency | Not supported |
 
-Conclusion: Across these tests, several candidate explanations (solar/lunar phase coupling, a simple ionospheric origin, constellation-specific effects, and station-selection artifacts) are not supported. Together with the geomagnetic stratification (§3.6) and seasonal analysis (§3.7), the results are consistent with a gravitational coupling interpretation in the TEP framework, while not excluding residual tropospheric or instrumental contributions.
+Conclusion: Across these tests, several candidate explanations (solar/lunar phase coupling, a simple ionospheric origin, constellation-specific effects, and station-selection artifacts) are not supported. Together with the seasonal analysis (§3.7) and geomagnetic stratification (§3.8), the results are consistent with a gravitational coupling interpretation in the TEP framework, while not excluding residual tropospheric or instrumental contributions.
 
-## 3.9 Directional Anisotropy Analysis
+## 3.10 Directional Anisotropy Analysis
 
 A key analysis in the TEP assessment is directional anisotropy—specifically, whether East-West (E-W) correlations differ from North-South (N-S) correlations. CODE's 25-year PPP analysis reported an E-W/N-S ratio of 2.16, with E-W correlations stronger. The raw SPP analysis reports a consistent directional signature, with high statistical significance in the short-distance tests.
 
-### 3.9.1 Short-Distance Analysis (Primary Metric)
+### 3.10.1 Short-Distance Analysis (Primary Metric)
 
 At short distances (<500 km), ionospheric local-time decorrelation is reduced, allowing a less biased estimate of directional asymmetry. This provides a primary measure used in the TEP assessment:
 
@@ -1884,11 +1894,11 @@ At short distances (<500 km), ionospheric local-time decorrelation is reduced, a
 | Ionofree (L1+L2) | 0.636 | 0.624 | 1.019 | [1.018, 1.019] | 49.69 | <10−15 | 0.134 |
 | Multi-GNSS (MGEX) | 0.654 | 0.623 | 1.050 | [1.049, 1.051] | 112.13 | <10−15 | 0.304 |
 
-Interpretation: E-W correlations are 1.9–5.0% stronger than N-S at short distances across all processing modes. A critical audit reveals this is a conservative estimate: E-W baselines are on average 13 km longer than N-S baselines (305 km vs 292 km), which suppresses the E-W signal due to distance decay. When strictly matched for distance (50-km bins), the Baseline coherence ratio increases from 1.033 to 1.041. The signal is robust to this distance bias and persists across 94–100% of analyzed months depending on mode/metric (see §3.9.9).
+Interpretation: E-W correlations are 1.9–5.0% stronger than N-S at short distances across all processing modes. A critical audit reveals this is a conservative estimate: E-W baselines are on average 13 km longer than N-S baselines (305 km vs 292 km), which suppresses the E-W signal due to distance decay. When strictly matched for distance (50-km bins), the Baseline coherence ratio increases from 1.033 to 1.041. The signal is robust to this distance bias and persists across 94–100% of analyzed months depending on mode/metric (see §3.10.9).
 
 #### Why Short-Distance Ratios Are Informative
 
-The short-distance ratios (1.02–1.05) provide an estimate of local anisotropy with reduced sensitivity to large-scale geometric and atmospheric effects. No geometric correction is applied in this primary short-distance estimator; the geometry-corrected comparison is used only as a secondary diagnostic for full-distance λ ratios (§3.9.4). The "sign reversal" (E-W/N-S < 1) observed at full distances does not contradict this because the suppression mechanisms are distance-dependent:
+The short-distance ratios (1.02–1.05) provide an estimate of local anisotropy with reduced sensitivity to large-scale geometric and atmospheric effects. No geometric correction is applied in this primary short-distance estimator; the geometry-corrected comparison is used only as a secondary diagnostic for full-distance λ ratios (§3.10.4). The "sign reversal" (E-W/N-S < 1) observed at full distances does not contradict this because the suppression mechanisms are distance-dependent:
 
 - Ionospheric Decorrelation: E-W pairs span time zones (dLon), causing decorrelation. This effect scales with distance. At <500 km, dLon is reduced, so this bias is substantially reduced. Lee & Lee (2019) show ionospheric spatial gradients are <0.01 TECU/km under quiet conditions—small at short baselines.
 
@@ -1896,15 +1906,15 @@ The short-distance ratios (1.02–1.05) provide an estimate of local anisotropy 
 
 Reduced-bias regime: As baseline length decreases, large-scale geometric and atmospheric biases are substantially reduced, allowing a less confounded estimate of the underlying local anisotropy (E-W > N-S). This supports the use of short-distance ratios as a comparatively direct measurement of directional asymmetry in the raw data, while not excluding residual direction-dependent systematics.
 
-### 3.9.2 Geomagnetic Condition Stratification
+### 3.10.2 Geomagnetic Condition Stratification
 
-The sensitivity of the signal to geomagnetic conditions was assessed in Section 3.6 using the primary exponential decay metrics ($\lambda$, $R^2$). At the primary threshold (Kp<3 vs Kp≥3), the full 72-test grid shows near-invariance (median Δλ ≈ −1%, with 60/72 tests within ±5%). Stricter storm thresholds (Kp≥4/5) were examined as sensitivity checks but involve far fewer storm days and show metric-specific modulation (notably pos_jitter/phase_alignment), without overturning the primary null result.
+The sensitivity of the signal to geomagnetic conditions was assessed in Section 3.8 using the primary exponential decay metrics ($\lambda$, $R^2$). At the primary threshold (Kp<3 vs Kp≥3), the full 72-test grid shows near-invariance (median Δλ ≈ −1%, with 60/72 tests within ±5%). Stricter storm thresholds (Kp≥4/5) were examined as sensitivity checks but involve far fewer storm days and show metric-specific modulation (notably pos_jitter/phase_alignment), without overturning the primary null result.
 
-Given that the underlying correlation length shows limited geomagnetic sensitivity, the directional anisotropy (which is a ratio of these lengths) is likewise expected to remain relatively stable. The persistence of high $R^2$ values (>0.95) during storms (Section 3.6) is consistent with preserved structure under both conditions.
+Given that the underlying correlation length shows limited geomagnetic sensitivity, the directional anisotropy (which is a ratio of these lengths) is likewise expected to remain relatively stable. The persistence of high $R^2$ values (>0.95) during storms (Section 3.8) is consistent with preserved structure under both conditions.
 
-Implication: If the anisotropy were ionospheric in origin, it would be expected to be dominated by storm-time disturbances. The small Δλ values observed in Section 3.6 are less consistent with that explanation.
+Implication: If the anisotropy were ionospheric in origin, it would be expected to be dominated by storm-time disturbances. The small Δλ values observed in Section 3.8 are less consistent with that explanation.
 
-### 3.9.3 Phase Metric Comparison
+### 3.10.3 Phase Metric Comparison
 
 Two distinct coherence metrics were analyzed to characterize the signal:
 
@@ -1915,15 +1925,15 @@ Two distinct coherence metrics were analyzed to characterize the signal:
 
 Key insight: Phase alignment shows 22.4% E-W enhancement versus coherence's 3.3%. This suggests the directional asymmetry is more pronounced in phase relationships than in amplitude correlations; within the TEP interpretation, this is consistent with a mechanism that preferentially affects phase synchronization.
 
-### 3.9.4 Geometric Suppression Analysis (Secondary Validation)
+### 3.10.4 Geometric Suppression Analysis (Secondary Validation)
 
 #### Context: Why This Analysis Exists
 
-The short-distance analysis (§3.9.1) already establishes E-W > N-S in raw data without any correction. This section addresses a *secondary* question: why do full-distance λ ratios show the opposite pattern (E-W/N-S < 1)? The answer involves two mechanisms: (1) ionospheric local-time decorrelation—E-W pairs span different time zones and thus experience different ionospheric TEC, which varies strongly with local solar time (Wang et al., 2022); and (2) orbital geometry—GPS satellites at 55° inclination create systematic N-S tracking advantages. The geometric suppression analysis quantifies the latter effect.
+The short-distance analysis (§3.10.1) already establishes E-W > N-S in raw data without any correction. This section addresses a *secondary* question: why do full-distance λ ratios show the opposite pattern (E-W/N-S < 1)? Two complementary geometry diagnostics are reported. The CODE-referenced sector comparison gives empirical suppression factors of 2.42–3.16 and corrected E-W/N-S correlation-length ratios of 1.80–1.86. The independent GPS-geometry simulation yields a larger suppression estimate of approximately 15 and a corresponding corrected ratio of 1.46. These calculations use different normalizations and therefore are not interchangeable. The primary directional result is the uncorrected short-distance E-W/N-S coherence excess, which requires neither correction.
 
-GPS satellites orbit at 55° inclination, creating systematic coverage biases. Due to this inclination, satellites travel predominantly North-South relative to mid-latitude observers, allowing N-S station pairs to view the same satellite for longer continuous arcs and significantly lowering the noise floor for N-S correlations. Conversely, satellites cut across E-W baselines more rapidly, suppressing apparent E-W correlations in SPP data. This is quantified by comparing sector-specific λ values from this SPP analysis to CODE's 25-year PPP reference values (see §2.3.7).
+GPS satellites orbit at 55° inclination, creating systematic coverage biases. Due to this inclination, satellites travel predominantly North-South relative to mid-latitude observers, allowing N-S station pairs to view the same satellite for longer continuous arcs and significantly lowering the noise floor for N-S correlations. Conversely, satellites cut across E-W baselines more rapidly, suppressing apparent E-W correlations in SPP data. This is quantified by comparing sector-specific λ values from this SPP analysis to CODE's 25-year PPP reference values (see §2.4.7).
 
-#### Table 3.9.4a: Sector Ratio Comparison (λSPP / λCODE)
+#### Table 3.10.4a: Sector Ratio Comparison (λSPP / λCODE)
 
 | Mode | N-S Mean Ratio | E-W Mean Ratio | Suppression Factor | Raw E-W/N-S | Corrected E-W/N-S |
 | --- | --- | --- | --- | --- | --- |
@@ -1935,7 +1945,7 @@ GPS satellites orbit at 55° inclination, creating systematic coverage biases. D
 
 #### Geometry-Corrected Results Compared with CODE
 
-After correcting for orbital geometry suppression, all four processing modes yield E-W/N-S ratios of 1.80–1.86, within 17% of CODE's reference value of 2.16.
+The CODE-referenced sector comparison yields corrected E-W/N-S ratios of 1.80–1.86. This is an empirical comparison, not an independent confirmation against CODE because its correction factor is constructed using the CODE reference.
 
 The 17% discrepancy may reflect:
 
@@ -1945,25 +1955,25 @@ The 17% discrepancy may reflect:
 
 - Network evolution: IGS station composition changed significantly 2000→2024
 
-Note: This geometric correction provides interpretive context for the full-distance results. The primary evidence (E-W > N-S at short distances, §3.9.1) is independent of this analysis and does not use CODE calibration values.
+Note: This empirical geometry diagnostic provides interpretive context for the full-distance results. The primary evidence (E-W > N-S at short distances, §3.10.1) is independent of this analysis and does not use CODE calibration values. The separately normalized GPS-geometry simulation is reported in §6.3.3.
 
-### 3.9.5 Validation of the Geometry Factor
+### 3.10.5 Validation of the Geometry Factor
 
 #### Consistency Across Modes: Check Against "Tuning"
 
-A potential critique is that the suppression factor (~2.4–3.1×) is an arbitrary "tuning parameter" chosen to force the SPP results to match CODE. The observed stability is less consistent with that explanation:
+A potential critique is that the suppression factor (~2.4–3.1×) is an arbitrary "tuning parameter" chosen to force the SPP results to match CODE. The factor is calculated from the sector comparison rather than freely fitted, but CODE enters its construction, so agreement with CODE afterward is not an independent validation:
 
 - Consistency: The suppression factor remains stable (2.42×–3.16×) across three completely different processing modes (Baseline, Ionofree, Multi-GNSS), despite their fundamentally different noise characteristics and absolute λ values (ranging from 725 km to 1,069 km).
 
 - Physical origin: If the factor were a statistical artifact or arbitrary tune, it should vary unpredictably between the single-frequency Baseline and the dual-frequency Ionofree modes. Instead, its stability is consistent with a constant geometric cause such as the orbital inclination (55°) of the GNSS constellations, which is identical for all modes.
 
-This consistency supports an interpretation in which the suppression is dominated by geometric visibility effects, rather than a post-hoc adjustment.
+This consistency is compatible with a stable direction-dependent suppression in this empirical comparison, rather than a mode-specific adjustment.
 
 #### Suppression Factor Consistency
 
-The suppression factor ranges from 2.42× to 3.16× across modes—all within the same order of magnitude. This consistency is compatible with a geometric effect (GPS orbital inclination) rather than a mode-specific artifact. The factor is computed directly from the sector-by-sector λ comparison and is not introduced as a free parameter.
+The suppression factor ranges from 2.42× to 3.16× across modes. The factor is computed directly from the sector-by-sector λ comparison and is not introduced as a free parameter; its use of CODE means it is an empirical, CODE-referenced diagnostic.
 
-### 3.9.6 Eight-Sector Analysis
+### 3.10.6 Eight-Sector Analysis
 
 | Sector | λT (km) | R² | Amplitude | N pairs |
 | --- | --- | --- | --- | --- |
@@ -1978,7 +1988,7 @@ The suppression factor ranges from 2.42× to 3.16× across modes—all within th
 
 Correlation length varies from 364 km (SE) to 791 km (N), with coefficient of variation CV = 0.093. All sectors show R² > 0.95, consistent with exponential decay fits in all directions.
 
-### 3.9.7 Hemisphere Analysis
+### 3.10.7 Hemisphere Analysis
 
 | Hemisphere | Pairs (M) | Coherence Ratio | Phase Align. Ratio | λ (km) | R² |
 | --- | --- | --- | --- | --- | --- |
@@ -2015,7 +2025,7 @@ Three independent analyses (CODE orbital coupling, CMB frame, RINEX phase alignm
 
 *Diagnostic:* In the higher-quality DYNAMIC_50 subset, hemisphere-stratified short-distance ratios exhibit a Southern Hemisphere inversion (E-W/N-S < 1) for the short-distance estimator, motivating the additional falsification tests proposed in §4.
 
-### 3.9.8 Latitude Band Analysis
+### 3.10.8 Latitude Band Analysis
 
 | Latitude Band | λT (km) | R² | Amplitude | Pairs (M) |
 | --- | --- | --- | --- | --- |
@@ -2025,11 +2035,11 @@ Three independent analyses (CODE orbital coupling, CMB frame, RINEX phase alignm
 
 Mid-latitudes show the highest R² (0.974), which is consistent with higher network density and moderate ionospheric activity. Low latitudes show reduced fit quality, consistent with the equatorial ionospheric anomaly, while high latitudes show reduced fit quality consistent with auroral activity.
 
-### 3.9.9 Monthly Temporal Stability: A Consistency Test
+### 3.10.9 Monthly Temporal Stability: A Consistency Test
 
 A key question is whether the E-W > N-S anisotropy persists consistently across time. The short-distance (<500 km) E-W/N-S ratio was computed independently for each of the 36 months (Jan 2022 – Dec 2024) across all processing modes and both coherence metrics.
 
-#### Table 3.9.9a: Monthly Anisotropy Summary (Short-Distance E-W/N-S Ratio)
+#### Table 3.10.9a: Monthly Anisotropy Summary (Short-Distance E-W/N-S Ratio)
 
 | Mode | Metric | Mean Ratio | Std Dev | E-W > N-S | Months |
 | --- | --- | --- | --- | --- | --- |
@@ -2060,9 +2070,9 @@ This supports the conclusion that the directional polarity is consistently E-W >
 
 - Ionofree coherence is smallest but present: Mean ratio 1.019 with E-W > N-S in 36/36 months (100%). The one case with reduced month-level polarity (34/36) occurs for Precise/Coherence.
 
-#### Reconciliation with Orbital Velocity Coupling (§3.10)
+#### Reconciliation with Orbital Velocity Coupling (§3.11)
 
-The low CV of short-distance ratios can be reconciled with the orbital velocity coupling (r = −0.509 to −0.763) reported in Section 3.10. These analyses measure *different quantities*:
+The low CV of short-distance ratios can be reconciled with the orbital velocity coupling (r = −0.509 to −0.763) reported in Section 3.11. These analyses measure *different quantities*:
 
 - Short-distance ratio (<500 km): The E-W/N-S coherence at short baselines, before ionospheric decorrelation becomes dominant. These ratios show low variation (CV ~1%).
 
@@ -2072,13 +2082,13 @@ This distinction is compatible with the Temporal Topology Model (§3.7.5): a bas
 
 Conclusion: The monthly stratification shows E-W > N-S in 94–100% of months across modes and metrics. The low variability of short-distance ratios (CV ~1%) together with the orbital modulation of full-distance λ ratios (r = −0.509 to −0.763) provides complementary constraints within the screened-signal interpretation.
 
-## 3.10 Orbital Velocity Coupling
+## 3.11 Orbital Velocity Coupling
 
 Having established directional anisotropy (E-W > N-S) and its persistence across processing modes, hemispheres, and geomagnetic conditions, a deeper prediction is now tested: does this anisotropy modulate with Earth's orbital velocity?
 
 Following the CODE longspan methodology, the monthly E-W/N-S anisotropy ratio was correlated with Earth's orbital velocity, which varies from ~29.3 km/s (July, aphelion) to ~30.3 km/s (January, perihelion). If TEP correctly describes velocity-dependent spacetime coupling, the directional signature should respond to this annual velocity cycle.
 
-### 3.10.1 Multi-Metric Comparison
+### 3.11.1 Multi-Metric Comparison
 
 The analysis examined 18 combinations of station filters, metrics, and coherence types:
 
@@ -2139,7 +2149,7 @@ MSC consistently shows stronger orbital velocity correlation than phase alignmen
 
 Physical interpretation: Orbital velocity coupling is a *temporal modulation* effect—Earth's changing velocity affects the *strength* of clock correlations month-to-month. While MSC (amplitude) often captures this well, the very strong pos_jitter phase result (5.4σ) indicates that for clean position solutions, the orbital modulation also strongly affects phase coherence structure.
 
-### 3.10.2 Filter Consistency
+### 3.11.2 Filter Consistency
 
 The orbital coupling estimates show high consistency across station filtering methods, with all filters producing significant negative correlations:
 
@@ -2176,7 +2186,7 @@ Each filter uses completely different selection logic:
 
 If the orbital coupling signal were caused by a few anomalous stations, these methods would give different results. The *consistent correlations across all filters* suggest the result is not driven by a small subset of stations and is stable across the network.
 
-### 3.10.3 Clock Drift Attenuation
+### 3.11.3 Clock Drift Attenuation
 
 Clock drift (the time derivative of clock bias) shows weaker orbital coupling than clock bias itself:
 
@@ -2200,7 +2210,7 @@ This transformation:
 
 The annual orbital velocity modulation (~30 nHz) is severely attenuated relative to higher-frequency noise. Despite this, a 2.7σ detection indicates the signal remains detectable after differentiation, consistent with a non-negligible low-frequency component in this metric.
 
-### 3.10.4 Comparison to CODE Reference
+### 3.11.4 Comparison to CODE Reference
 
 | Parameter | CODE (25-year PPP) | RINEX (3-year SPP) | Agreement |
 | --- | --- | --- | --- |
@@ -2222,7 +2232,7 @@ The weaker correlation in RINEX data is expected due to:
 
 Despite these limitations, the *same negative direction* and *exceeding 3σ significance* are consistent with the CODE result, using completely different data and methodology.
 
-### 3.10.5 Physical Interpretation
+### 3.11.5 Physical Interpretation
 
 #### What the Orbital Coupling Means
 
@@ -2248,7 +2258,7 @@ In GNSS navigation, position and time are solved simultaneously from the observa
 
 The receiver state vector [X, Y, Z, c·Δt] couples all four unknowns. Observing *similar orbital coupling in both position and time* is expected if the underlying phenomenon is a true *spacetime effect*—not just a temporal effect. This effectively rules out mechanisms that affect only clocks (e.g., thermal sensitivity of oscillators) or only orbits (e.g., ephemeris interpolation errors), as these would not propagate to the other domain with near 1:1 magnitude scaling. The 5% agreement suggests a metric perturbation affecting the invariant interval $ds^2$ itself.
 
-### 3.10.6 Summary: Orbital Coupling Evidence
+### 3.11.6 Summary: Orbital Coupling Evidence
 
 The orbital velocity coupling analysis yields several internally consistent indicators in the TEP framework:
 
@@ -2262,13 +2272,13 @@ The orbital velocity coupling analysis yields several internally consistent indi
 
 - Metric complementarity: MSC excels at temporal modulation (orbital), phase alignment at spatial structure (anisotropy) and achieves strongest orbital coupling (5.4σ)
 
-Together with the directional anisotropy (Section 3.9), null tests (Section 3.8), and processing mode validation, these results are not readily accounted for by the tested systematics alone, though residual systematic contributions cannot be fully excluded.
+Together with the directional anisotropy (Section 3.10), null tests (Section 3.9), and processing mode validation, these results are not readily accounted for by the tested systematics alone, though residual systematic contributions cannot be fully excluded.
 
-## 3.11 Planetary Event Analysis
+## 3.12 Planetary Event Analysis
 
 Following the CODE longspan methodology (Paper 2), coherence modulation was analyzed around planetary conjunction and opposition events for 2022–2024.
 
-### 3.11.1 Methodology
+### 3.12.1 Methodology
 
 #### Year-Specific Gaussian Pulse Detection
 
@@ -2296,7 +2306,7 @@ To validate significance, a rigorous permutation test was employed:
 
 This approach avoids the window overlap problem inherent in temporal shift controls (with 37 events and ±120 day windows, any shifted dates share >75% of the same data).
 
-### 3.11.2 Multi-Metric Results
+### 3.12.2 Multi-Metric Results
 
 #### All Six Metrics Show Significant Planetary Coupling
 
@@ -2311,7 +2321,7 @@ This approach avoids the window overlap problem inherent in temporal shift contr
 
 Key result: Average detection rate 63.5% vs. null rate 23.0% — planetary events show *2.8× higher* coherence modulation than shuffled controls. All six Mann-Whitney tests yield p < 0.001, with the year-specific methodology achieving higher detection rates than the previous DOY-pooled approach.
 
-### 3.11.3 Planet-by-Planet Detection
+### 3.12.3 Planet-by-Planet Detection
 
 | Planet | Events | Significant (range) | Rate | Mean σ (range) |
 | --- | --- | --- | --- | --- |
@@ -2331,7 +2341,7 @@ Note: Ranges reflect variation across the 6 metric combinations (3 observables �
 
 - Clock Drift MSC: Highest mean σ (4.25) across all planets, suggesting this metric is most sensitive to planetary modulation
 
-### 3.11.4 Mass Scaling Analysis
+### 3.12.4 Mass Scaling Analysis
 
 #### No Classical Mass Scaling — Consistent with Geometric (Alignment-Driven) Effect
 
@@ -2350,7 +2360,7 @@ Interpretation: The absence of mass scaling is consistent with the CODE longspan
 
 - Mechanism: In the TEP framework, the coupling is hypothesized to modulate *phase coherence structure*, not classical signal amplitude.
 
-### 3.11.5 Comparison with CODE Longspan (Paper 2)
+### 3.12.5 Comparison with CODE Longspan (Paper 2)
 
 | Parameter | RINEX (3 years) | CODE (25 years) | Agreement |
 | --- | --- | --- | --- |
@@ -2375,9 +2385,9 @@ The RINEX analysis provides *independent validation* of the CODE longspan findin
 
 The consistency across these independent methodologies strengthens confidence that planetary alignment effects on GNSS coherence are a *reproducible phenomenon*.
 
-### 3.11.6 Mass Scaling Analysis
+### 3.12.6 Planetary-Acceleration Proxy Analysis
 
-To distinguish TEP-predicted modulation from conventional tidal effects, mass scaling tests examined whether event detection strength correlates with gravitational parameters across all 37 planetary events (5 planets: Jupiter, Saturn, Mars, Venus, Mercury).
+The planetary-event analysis tested whether event detection strength correlates with the GM/r² gravitational-acceleration proxy across all 37 planetary events (5 planets: Jupiter, Saturn, Mars, Venus, Mercury).
 
 #### Mass Scaling Test Results (6 Channels)
 
@@ -2390,27 +2400,19 @@ To distinguish TEP-predicted modulation from conventional tidal effects, mass sc
 | clock_drift/msc | p > 0.5 | p > 0.5 | No scaling |
 | clock_drift/phase | p > 0.5 | p > 0.5 | No scaling |
 
-*One channel (clock_bias/phase) showed an anticorrelation with GM/r² (r = −0.42, p = 0.010), opposite to tidal expectation (which predicts positive correlation) and not reproduced across other metrics.
+*One channel (clock_bias/phase) showed an anticorrelation with GM/r² (r = −0.42, p = 0.010), opposite to a positive acceleration-proxy relationship and not reproduced across other metrics.
 
-#### Interpretation: Non-Tidal Mechanism
+#### Interpretation
 
-The absence of consistent positive GM/r² scaling across 6 independent channels distinguishes the observed planetary event modulation from conventional gravitational tides:
+The planetary-event analysis finds no consistent positive dependence on the tested GM/r² gravitational-acceleration proxy. Five of six channels show no significant relationship, while one exhibits a negative correlation. This disfavors a simple acceleration-amplitude explanation. A conventional tidal-gradient hypothesis, whose leading scaling is GM/r³, is distinct from the proxy tested here.
 
-- Tidal prediction: Event strength should increase with GM/r² (larger planets, closer distances → stronger tidal force)
-
-- Observation: 5/6 channels show no scaling (all p > 0.49), 1/6 shows anticorrelation (opposite direction)
-
-- Detection robustness: Despite null mass scaling, detection rates remain highly significant (59–68% vs 20–26% random, p < 0.001 for all 6 metrics)
-
-This pattern is consistent with a threshold-dependent or geometric (alignment) phenomenon rather than a continuous force-scaling effect. The modulation appears to depend on planetary configuration geometry rather than gravitational field strength, supporting the TEP interpretation of temporal-gravitational coupling as distinct from classical tidal forces.
-
-### 3.11.7 Summary: Planetary Event Evidence
+### 3.12.7 Summary: Planetary Event Evidence
 
 #### Key Findings
 
 - Statistically significant modulation: All 6 metrics show planetary events with 2.8× higher detection rates than null controls (p < 0.001 for all)
 
-- No tidal mass scaling: No consistent positive GM/r² dependence observed across 6 channels. Five channels show null results (p > 0.49), one shows anticorrelation (r = −0.42, p = 0.010) opposite to tidal prediction. This distinguishes the effect from conventional gravitational tides.
+- No consistent positive acceleration-proxy scaling: No consistent positive GM/r² dependence was observed across 6 channels. Five channels show null results (p > 0.49), and one shows an anticorrelation (r = −0.42, p = 0.010). A GM/r³ tidal-gradient scaling was not tested.
 
 - Cross-validation: Consistent with CODE 25-year longspan analysis, with higher detection rates achieved through year-specific methodology
 
@@ -2418,13 +2420,13 @@ This pattern is consistent with a threshold-dependent or geometric (alignment) p
 
 - Metric complementarity: Clock Drift MSC shows highest sensitivity (σ = 4.25), while Phase Alignment achieves highest detection rates (67.6%)
 
-This provides an *independent replication* of the CODE longspan planetary event findings using raw RINEX data, with the year-specific methodology achieving stronger statistical significance and the mass scaling analysis ruling out conventional tidal explanations.
+This provides a replication-oriented comparison with the CODE longspan planetary event findings using raw RINEX data. The year-specific methodology yields higher detection rates; the tested acceleration proxy does not establish or rule out a tidal-gradient mechanism.
 
-## 3.12 CMB Frame Analysis
+## 3.13 CMB Frame Analysis
 
-Following the comprehensive methodology described in Section 2.6, a full-sky grid search was performed across all 54 combinations of station filter, processing mode, metric, and coherence type. This analysis evaluates the full combination set to assess consistency across processing choices. The results show clustering of best-fit directions near the CMB dipole.
+Following the comprehensive methodology described in Section 2.7, a full-sky grid search was performed across the 72 analysis configurations of station filter, processing mode, metric, and coherence type. The subsequent directional-convergence assessment concentrates on the 54 non-ionofree configurations. The results show clustering of best-fit directions near the CMB dipole.
 
-### 3.12.1 Best Result: CMB Frame Alignment
+### 3.13.1 Best Result: CMB Frame Alignment
 
 #### Primary Result: ALL_STATIONS / Multi-GNSS / pos_jitter / phase_alignment
 
@@ -2442,7 +2444,7 @@ Following the comprehensive methodology described in Section 2.6, a full-sky gri
 
 This result achieves a CMB separation of 20.0°, statistically indistinguishable from CODE's 25-year benchmark of 18.2°. The vector (RA=188°, Dec=−5°) matches the CODE vector (RA=186°, Dec=−4°) to within 2.2°. This alignment is achieved with 3 years of raw SPP data compared to 25 years of precise PPP clocks.
 
-### 3.12.2 Top Results by Signal Strength
+### 3.13.2 Top Results by Signal Strength
 
 #### Quality Filtering Boosts Signal: DYNAMIC_50 Analysis
 
@@ -2454,11 +2456,11 @@ When the analysis is restricted to daily station files with clock stability < 50
 | 2 | DYNAMIC_50 | Multi-GNSS | pos_jitter | msc | 172° | +31° | 0.622 | 38.1° |
 | 3 | DYNAMIC_50 | Baseline | clock_bias | phase | 171° | +28° | 0.604 | 35.1° |
 
-Key Insight: Aggressive quality filtering boosts the correlation from typical r ≈ 0.5 to r > 0.6. The Right Ascension in these high-fidelity subsets clusters tightly around 171°–172° (CMB RA ≈ 168°), further confirming the cosmic frame alignment.
+Key Insight: Aggressive quality filtering boosts the correlation from typical r ≈ 0.5 to r > 0.6. The highest-correlation filtered configurations have right ascensions ranging from 156° to 172°, with two of the three listed results near 171°–172°.
 
-Figure 3.12: Sky map of correlation strength across all (RA, Dec) grid points for the best combination (DYNAMIC_50/Multi-GNSS/pos_jitter/phase_alignment). The best-fit direction (black star) at RA = 157°, Dec = +9° is within 11° of the CMB dipole in Right Ascension. The CMB dipole (white circle) and Solar Apex (white triangle) are marked. The best-fit is 19.3° from CMB but 105.6° from Solar Apex, favoring the CMB frame in this comparison.
+Figure 3.7. Full-sky correlation map for ALL_STATIONS / Multi-GNSS / pos_jitter / phase_alignment. The best-fit direction is RA = 188°, Dec = −5°, corresponding to an angular separation of 20.0° from the CMB dipole. The CMB dipole and Solar Apex reference directions are marked.
 
-### 3.12.3 Statistical Convergence of Right Ascension
+### 3.13.3 Statistical Convergence of Right Ascension
 
 #### RA Convergence Across 54 Clean Combinations†
 
@@ -2472,11 +2474,11 @@ Excluding the 18 Ionofree combinations (which have ~3× noise amplification), th
 
 - Within 20° of CMB (148°–188°): 50/54 combinations (93%)
 
-Probability by chance: Under a simplified null in which RA estimates are treated as independent draws from a uniform background, the random expectation for RA within 10° of any target is 20°/360° = 5.6%. Expected count: 54 × 0.056 = 3.0 combinations. Observed: 42 combinations. *Binomial p-value: p < 10−35* under this binomial model.
+The 54 combinations share station data, processing modes, and time windows; they are consistency checks, not independent Bernoulli trials. The 78% agreement rate (42/54 within 10° of the CMB RA, versus 5.6% expected by chance for a single draw) demonstrates that the CMB alignment is robust to processing choices. This consistency is reported as a robustness check, not as an independent combined significance; a binomial p-value assuming independence would be invalid here because the combinations are correlated.
 
 #### Three Exact RA Matches at 168°
 
-Three independent combinations yielded RA = 168° (the CMB dipole Right Ascension):
+Three configurations yielded RA = 168° (the CMB dipole Right Ascension):
 
 | Filter | Mode | Metric | Coherence | RA | r | p-value |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -2496,19 +2498,11 @@ Under an idealized null model (uncorrelated combinations and uniform RA backgrou
 
 The identical 78% success rate for Baseline and Multi-GNSS modes suggests the result is not mode-specific. Ionofree's lower success rate (17%) is consistent with the ~3× thermal noise amplification inherent to the L1+L2 combination (Kaplan & Hegarty, 2017).
 
-#### Combined Statistical Significance
+#### Statistical Interpretation
 
-Of all 54 combinations, 18 achieve global p < 0.05 after look-elsewhere correction:
+The 54 configurations share observations and processing choices and cannot be combined as independent tests. Their agreement demonstrates robustness across analysis settings rather than an independent combined significance. The selected best-fit configuration reports a Monte Carlo global p = 0.027. Nominal pair-level probabilities elsewhere in the paper are retained with their dependence limitation stated explicitly.
 
-- Expected by chance: 54 × 0.05 = 2.7 combinations
-
-- Observed: 18 combinations
-
-- Statistical strength: nominal p < 10−15 across 172 million pairs under the standard null; orbital coupling at 5.4σ; shuffle test shows strong evidence ratio (mean ~30×, min 2.7×) with 93% passing strict R² < 0.3 threshold
-
-Fisher combined p-value (top 10 results): χ² = 72.4, df = 20 → p < 10−8
-
-### 3.12.4 Solar Apex Comparison: Local Galactic Motion
+### 3.13.4 Solar Apex Comparison: Local Galactic Motion
 
 #### CMB is 4.3× Closer Than Solar Apex (Best Result)
 
@@ -2529,7 +2523,7 @@ The best-fit direction is nearly perpendicular to the Solar Apex (86.5° separat
 
 - Ratio: 32× better fit to CMB than Solar Apex
 
-### 3.12.5 Filter Independence: Low-Variance Direction Estimates
+### 3.13.5 Filter Independence: Low-Variance Direction Estimates
 
 #### All Station Filters Yield Similar Directions
 
@@ -2545,7 +2539,7 @@ RA statistics: Mean = 169.7°, Std Dev = 0.6°, *Coefficient of Variation = 0.3%
 
 This low variance across different network geometries suggests the inferred RA is not driven solely by a particular station subset or selection criterion.
 
-### 3.12.6 Comparison with CODE Longspan Benchmark
+### 3.13.6 Comparison with CODE Longspan Benchmark
 
 #### RINEX Compared with CODE Longspan (3 years vs 25 years)
 
@@ -2560,7 +2554,7 @@ This low variance across different network geometries suggests the inferred RA i
 
 Finding: The best RINEX result (20.0° CMB separation) is statistically consistent with CODE's benchmark (18.2° separation). The vector (RA=188°, Dec=−5°) agrees closely with the CODE vector (RA=186°, Dec=−4°). This convergence across independent data sources and methodologies supports the CMB-frame alignment interpretation.
 
-### 3.12.7 The Ionofree Paradox: Signal Penetration vs. Thermal Noise
+### 3.13.7 The Ionofree Paradox: Signal Penetration vs. Thermal Noise
 
 #### The Crucial Distinction: Removal vs. Amplification
 
@@ -2582,7 +2576,7 @@ When examining the subset of high-stability clocks (DYNAMIC_50) where thermal no
 
 Interpretation: If the signal were purely an ionospheric artifact, Ionofree processing would be expected to substantially reduce it. In these data, some Ionofree combinations retain alignment signals in subsets with low thermal noise, while many combinations degrade. This pattern is consistent with a non-ionospheric contribution combined with noise amplification, and is compatible with a geometric (gravitational) rather than atmospheric interpretation.
 
-### 3.12.8 Physical Interpretation: Why the CMB Frame?
+### 3.13.8 Physical Interpretation: Why the CMB Frame?
 
 #### The CMB as the Cosmic Rest Frame
 
@@ -2594,9 +2588,9 @@ The CMB dipole defines a commonly used cosmological rest frame, in the sense tha
 
 The Solar Apex (RA = 271°, Dec = +30°) represents the Sun's motion at ~20 km/s toward the constellation Hercules (near Vega) through the local standard of rest. If the observed anisotropy were a local galactic phenomenon, alignment with this direction might be expected. Here, the best-fit direction is far from the Solar Apex:
 
-- Best-fit RA (157°) is 114° from Solar Apex RA (271°)
+- Best-fit direction (RA = 188°, Dec = −5°) is 86.5° from the Solar Apex
 
-- Total angular separation is 106° (nearly perpendicular)
+- The Solar Apex separation is 4.3× the CMB separation
 
 - Variance explained ratio is 32× in favor of CMB
 
@@ -2614,17 +2608,17 @@ Analogy: Imagine looking at the sky through a narrow vertical slit. You can easi
 
 Given the IGS network's 2:1 Northern Hemisphere skew (238 NH vs 106 SH stations), the apparent modulation amplitude is compressed in the vertical direction, systematically biasing the Declination estimate northward. CODE's 25-year analysis converged to Dec = −4° only after accumulating decades of seasonal data; the RINEX RA convergence (2° from CMB) with just 3 years provides a comparatively tight RA estimate despite the shorter baseline.
 
-### 3.12.9 Summary: Evidence for CMB Frame Alignment
+### 3.13.9 Summary: Evidence for CMB Frame Alignment
 
 #### Five Independent Lines of Evidence
 
-- RA Clustering: 42/54 clean combinations (78%) find RA within 10° of CMB (p < 10−35 under a simplified binomial model)
+- RA Clustering: 42/54 clean combinations (78%) find RA within 10° of CMB, demonstrating robustness to processing choices
 
-- RA Matches: Three combinations find RA = 168° (a notable coincidence; match probabilities depend on the assumed background model and correlations among combinations)
+- RA Matches: Three configurations find RA = 168° (a notable coincidence; match probabilities depend on the assumed background model and correlations among configurations)
 
 - Filter Independence: Zero variance across all station filters (CV = 0.3%)
 
-- Solar Apex comparison: 106° separation (nearly perpendicular, 32× worse fit)
+- Solar Apex comparison: 86.5° separation (4.3× the CMB separation, 32× worse fit)
 
 - CODE Replication: 20.0° CMB separation matches 25-year benchmark of 18.2°
 
@@ -2637,13 +2631,13 @@ Given the IGS network's 2:1 Northern Hemisphere skew (238 NH vs 106 SH stations)
 | Filter independence (low variance) | CV < 10% | CV = 0.3% | PASSED |
 | Mode consistency (Baseline ≈ Multi-GNSS) | Same RA ± 20° | Both median 170° | PASSED |
 
-These criteria are satisfied for the best-fit combination. The annual modulation of GNSS clock correlations aligns more closely with the CMB dipole direction than with the Solar Apex in this analysis, consistent with a coupling to Earth's motion relative to the CMB rest frame (370 km/s).
+These criteria are satisfied for the best-fit combination. The annual modulation of GNSS clock correlations aligns more closely with the CMB dipole direction than with the Solar Apex in this analysis. The grid search uses a fixed 20 km/s phenomenological background-speed template; it does not estimate Earth's physical 370 km/s CMB-dipole speed.
 
 #### Conclusion: Independent Validation of Cosmic Frame Alignment
 
 This analysis provides an independent validation of the CODE longspan CMB frame alignment finding using different data (raw SPP vs. precise PPP clocks), different processing (broadcast vs. precise ephemerides), and a shorter time baseline (3 years vs. 25 years). The agreement between these approaches in the inferred cosmic direction—within 1° of each other's mean RA and matching CMB separation to within 1°—is consistent with a coupling between the observed annual anisotropy modulation and Earth's motion through the CMB rest frame, as predicted by the Temporal Equivalence Principle.
 
-## 3.13 Synthesis: The Ladder of Precision
+## 3.14 Synthesis: The Ladder of Precision
 
 The most compelling outcome of this study is not any single number, but the systematic evolution of the correlation signal as measurement noise is progressively removed. By comparing the Raw RINEX results with the CODE/IGS precise product analysis (Papers 1 & 2), a clear "Ladder of Precision" emerges where the correlation length $\lambda$ converges toward a stable value as ionospheric and orbital errors are mitigated.
 
@@ -2680,7 +2674,7 @@ Detecting a signal is only the first step. Validating it requires rigorous chara
 
 ### 4.1 Directional Anisotropy Validation
 
-An important validation step for signal detection is the directional anisotropy analysis (Section 3.9). Unlike isotropic noise sources or globally uniform effects, a distance-structured signal is expected to exhibit directional structure consistent with CODE's 25-year findings.
+An important validation step for signal detection is the directional anisotropy analysis (Section 3.10). Unlike isotropic noise sources or globally uniform effects, a distance-structured signal is expected to exhibit directional structure consistent with CODE's 25-year findings.
 
 #### Statistical Significance
 
@@ -2885,7 +2879,7 @@ Interpretation: The agreement between completely independent processing pipeline
 Why This Is Not Circular Reasoning
 A common concern with cross-validation is circularity: is this just comparing results to themselves? This is not the case here:
 
-- **Primary evidence requires no correction:** The core finding—E-W > N-S at short distances (<500 km)—uses raw, uncorrected values and matches CODE's prediction directly. The geometric suppression analysis (§3.9.4) is secondary validation only, explaining long-distance λ inversions
+- **Primary evidence requires no correction:** The core finding—E-W > N-S at short distances (<500 km)—uses raw, uncorrected values and matches CODE's prediction directly. The geometric suppression analysis (§3.10.4) is secondary validation only, explaining long-distance λ inversions
 
 - **Different data:** CODE products are network-adjusted; RINEX/SPP is purely local
 
@@ -2985,7 +2979,7 @@ seasonal aggregation, or statistical fluctuation alone, and it is
 observed across the full 2022–2024 interval.
 
 Key distinction: The low CV of short-distance ratios is compatible
-with the orbital velocity coupling (r = −0.509 to −0.763) in §3.10,
+with the orbital velocity coupling (r = −0.509 to −0.763) in §3.11,
 because these measure different quantities: short-distance ratios
 capture the short-baseline directional signature, while
 full-distance λ ratios incorporate density-driven Temporal Topology
@@ -3210,10 +3204,10 @@ Key consistencies:
 Detection rate: 59–68% (RINEX) vs. 35.9% (CODE) — both well
 above ~20% null
 
-No tidal mass scaling: no consistent GM/r² dependence is
-observed. Clock-amplitude vs GM/r² is non-significant (p =
-0.647), σ-level vs GM/r² is non-significant across channels (p =
-0.317–0.989), and one |coherence modulation| anticorrelation
+No consistent positive acceleration-proxy scaling: no consistent
+GM/r² dependence is observed. Clock-amplitude vs GM/r² is
+non-significant (p = 0.647), σ-level vs GM/r² is non-significant
+across channels (p = 0.317–0.989), and one |coherence modulation| anticorrelation
 appears in clock_bias/phase (p = 0.0099), opposite the tidal
 expectation and not reproduced across other metrics
 
@@ -3236,9 +3230,9 @@ comprehensive environmental stratification analysis.
 Using real Kp index data from GFZ Potsdam (936 quiet days with Kp < 3
 and 160 storm days with Kp ≥ 3; 1,096 total), the dataset was stratified
 by geomagnetic activity and analyzed correlation lengths independently
-for quiet and storm conditions across 24 independent tests per filter (4
+for quiet and storm conditions across 24 correlated analysis configurations per filter (4
 modes × 3 metrics × 2 coherence types), spanning all three station
-filters (72 tests total at the primary threshold).
+filters (72 configurations total at the primary threshold).
 
 | Mode | Metric | Coherence | Quiet λ (km) | Storm λ (km) | Δλ (%) |
 | --- | --- | --- | --- | --- | --- |
@@ -3272,8 +3266,8 @@ structure
 To test whether the signal is a seasonal artifact, the analysis
 stratified the 3-year dataset by meteorological season (Winter, Spring,
 Summer, Autumn) and analyzed correlation lengths independently for each
-period. This produced 48 independent seasonal measurements (4 seasons ×
-3 filters × 4 modes) for each metric/coherence combination.
+period. This produced 48 seasonal estimates across processing configurations
+(4 seasons × 3 filters × 4 modes) for each metric/coherence combination.
 
 | Signature | Filter/Mode | λ Range (km) | Δ (%) | Interpretation |
 | --- | --- | --- | --- | --- |
@@ -3284,7 +3278,7 @@ period. This produced 48 independent seasonal measurements (4 seasons ×
 The Temporal Topology Model
 
 Key insight: the observed seasonality is interpreted within the TEP
-v0.7 continuous geometric screening framework. Rather than a binary
+v0.12 continuous geometric screening framework. Rather than a binary
 screened/unscreened transition, the scalar time field exhibits a
 continuous spatial profile (Temporal Topology) whose local gradient
 (Temporal Shear) drives the observable response:
@@ -3359,29 +3353,29 @@ delay is non-dispersive and would not be selectively enhanced by
 the ionofree combination.
 
 CMB Alignment: Weather patterns do not align with the Cosmic
-Microwave Background dipole (20.0° separation, p <
-10−35) (Burde, 2016; Consoli & Pluchino, 2021).
+Microwave Background dipole (20.0° separation, 78% RA clustering) (Burde, 2016; Consoli & Pluchino, 2021).
 
 Ionospheric Gradient Scale: Lee & Lee (2019) show ionospheric
 spatial gradients are <0.01 TECU/km under quiet
 conditions—far smaller than the effect observed here, which
 persists across all geomagnetic conditions.
 
-### 6.1b Multiplicity, Preregistration, and the Cross-Paper Synthesis
+### 6.2 Multiplicity, Preregistration, and the Cross-Paper Synthesis
 
 A concern sometimes raised is that the large number of metric combinations
 reported in this paper (72 combinations across 3 filters, 4 modes, 3
 metrics, and 2 coherence types) constitutes a "look-elsewhere" problem.
 This concern is addressed through three complementary arguments.
 
-**Preregistration of the primary comparison.** The single
-most important comparison was predefined before inspection of the raw-SPP
-results: the phase-alignment index from the precise-ephemeris mode, matched
-against the PPP phase-alignment index from Paper 1.  All other
-combinations (baseline GPS, ionofree, multi-GNSS, MSC metrics, etc.) are
-treated as *consistency checks*, not independent tests of the TEP
-hypothesis.  They serve to ask whether the signal form is robust across
-processing choices, not to accumulate significance.
+**Primary tests and cross-paper comparison.** The primary
+raw-data test uses broadcast-ephemeris SPP to determine whether
+distance-structured correlations are present without precise
+analysis-center products. The cross-paper comparison uses precise-mode
+mean phase-offset alignment against the PPP phase-alignment statistic from
+Paper 1. The remaining configurations examine consistency across
+processing choices rather than providing independent detections. No dated,
+immutable protocol was located in this repository; accordingly, this
+paper describes a predefined comparison, not a preregistered one.
 
 **Cross-paper synthesis (Step 5.0).** A direct comparison of
 PPP-derived λ (Paper 1: CODE 4,549 km, IGS Combined 3,764 km, ESA Final
@@ -3405,9 +3399,9 @@ do not scan 72 independent hypotheses; they are 72 realizations of the
 as independent tests would be a methodological error; treating them as
 consistency checks, as done here, is the correct statistical framing.
 
-### 6.2 Physical Implications
+### 6.3 Physical Implications
 
-#### 6.2.1 Space-Time Coupling Supported
+#### 6.3.1 Space-Time Coupling Supported
 
 The comparable Temporal Topology correlation lengths for position jitter (spatial proxy, λT =
 883 km) and clock bias (temporal proxy, λT = 727 km) are consistent with the
@@ -3423,7 +3417,7 @@ coupling affecting spatial and temporal observables. Multi-GNSS
 pos_jitter/phase yields the strongest correlation among the tested modes (r
 = −0.763, 5.4σ).
 
-#### 6.2.2 Directional Anisotropy as Physical Signature
+#### 6.3.2 Directional Anisotropy as Physical Signature
 
 The detected E-W/N-S anisotropy ratio of 1.033–1.224 (raw short-distance)
 and 1.80–1.86 (geometry-corrected) provides a distinct directional
@@ -3440,7 +3434,7 @@ stratification, while higher-quality subsets motivate additional
 hemisphere-controlled falsification tests to assess subset-dependent
 behavior
 
-#### 6.2.2a The Two-Mechanism Model: Geometry vs Ionosphere
+#### 6.3.3 The Two-Mechanism Model: Geometry vs Ionosphere
 
 First-principles GPS geometry simulation (Step 2.9) reveals two competing
 mechanisms that explain the distance-dependent anisotropy pattern and
@@ -3489,22 +3483,21 @@ observed pattern:
 
 Resolution: The short-distance E-W/N-S ratio (1.20–1.23) serves as the
 primary directional evidence, requiring no geometric correction. At long
-distances (>1000 km), both mechanisms are active with ionosphere
-dominating, creating the observed sign reversal. After correcting for
-the 15× geometric suppression factor (derived from first principles),
-the long-distance ratio recovers to 1.46, within 32% of CODE's 25-year
-benchmark (2.16). This provides secondary validation while maintaining
-independence of the primary evidence.
+distances (>1000 km), the geometry simulation gives a 15× suppression
+estimate and a corresponding corrected ratio of 1.46. This simulation is
+independent of CODE, whereas the 2.42–3.16 empirical factors and
+1.80–1.86 ratios are CODE-referenced. They are complementary diagnostics,
+not interchangeable estimates of a unique correction.
 
-Peer Review Response: Circularity Eliminated
+Interpretation of the Independent Simulation
 
 The primary directional evidence (short-distance E-W/N-S = 1.20–1.23) is
-independent of CODE and requires no correction. The geometric
-suppression factor (15×) is derived from first principles using only GPS
-orbital parameters. The long-distance correction serves as secondary
-validation, not primary evidence. Circularity is eliminated.
+independent of CODE and requires no correction. The 15× simulation is
+derived from first principles using only GPS orbital parameters. The
+separate CODE-referenced sector calculation remains an empirical
+comparison rather than independent validation.
 
-#### 6.2.3 CMB Frame Alignment: A Cosmic Reference
+#### 6.3.4 CMB Frame Alignment: A Cosmic Reference
 
 The comprehensive 72-combination CMB frame analysis suggests that the annual
 modulation of EW/NS anisotropy is consistent with a direction close to the
@@ -3517,8 +3510,8 @@ Best-fit RA = 188°, Dec = −5°, only 20.0° from CMB dipole (168°,
 −7°)—matching CODE's 25-year benchmark of 18.2°
 
 78% RA clustering: Of 54 clean (non-Ionofree) combinations, 42 find
-RA within 10° of CMB (p < 10−35 under a simplified
-binomial model)
+RA within 10° of CMB, demonstrating robustness to
+processing choices (not an independent combined significance)
 
 Signal Booster: Aggressive quality filtering (Dynamic-50: daily
 files with clock std < 50 ns) boosts correlation to r = 0.660
@@ -3563,7 +3556,7 @@ CMB separation) and the CODE 25-year PPP analysis (18.2° CMB separation)
 provides a cross-check across independent data sources and processing
 methodologies.
 
-### 6.2.4 Synthesis: A Unified Physical Picture
+### 6.3.5 Synthesis: A Unified Physical Picture
 
 Taken together, the findings present a coherent physical narrative. The
 signal is not merely a collection of isolated anomalies but a unified
@@ -3587,7 +3580,7 @@ This triplet—Spacetime Symmetry, CMB Alignment, and Velocity
 Dependence—summarizes the central empirical signature reported here,
 consistent with the Temporal Equivalence Principle.
 
-### 6.2.5 Robustness to Noise
+### 6.3.6 Robustness to Noise
 
 A notable feature is that TEP-related signatures remain detectable despite
 the substantially higher noise floor of SPP solutions. Single-frequency SPP
@@ -3598,7 +3591,7 @@ correlation structure is not confined to ultra-clean precise products and is
 present in the raw observables at a level detectable with the current
 methodology.
 
-### 6.2.6 Context: Atomic Clock Networks for Fundamental Physics
+### 6.3.7 Context: Atomic Clock Networks for Fundamental Physics
 
 This work contributes to a growing body of research using
 globally-distributed atomic clock networks for fundamental physics. Wcisło
@@ -3614,7 +3607,7 @@ correlations with characteristic lengths of 1,000–4,000 km motivate further
 investigation within the frameworks of screened scalar field theory (Burrage
 & Sakstein, 2018) and beyond-Standard-Model physics.
 
-### 6.2.7 Reinterpreting Common Mode Error
+### 6.3.8 Reinterpreting Common Mode Error
 
 Over the past decade, a substantial literature in the
 *Journal of Geodesy* and related journals has documented that GNSS
@@ -3637,9 +3630,9 @@ geometry-dependent field reflects a dynamical temporal-gravitational
 component (the Temporal Equivalence Principle), rather than being treated
 solely as an additional empirical noise component.
 
-### 6.3 Methodological Implications
+### 6.4 Methodological Implications
 
-#### 6.3.1 Enabling Independent Verification
+#### 6.4.1 Enabling Independent Verification
 
 The methodology established in this paper enables testing of the TEP
 hypothesis using only:
@@ -3655,7 +3648,7 @@ reproducible with modest computational resources, enabling groups outside
 the traditional precise-orbit community to test the TEP hypothesis without
 access to proprietary analysis-center software.
 
-#### 6.3.2 Time Alignment via Pandas DatetimeIndex
+#### 6.4.2 Time Alignment via Pandas DatetimeIndex
 
 Time alignment uses Pandas DataFrame indexing with DatetimeIndex, identical
 to the CODE longspan methodology in Papers 1 and 2. This approach
@@ -3663,9 +3656,9 @@ automatically handles missing data through inner-join alignment, ensuring
 precise temporal synchronization between station pairs even with incomplete
 datasets.
 
-### 6.4 Limitations and Future Work
+### 6.5 Limitations and Future Work
 
-#### 6.4.1 Current Limitations
+#### 6.5.1 Current Limitations
 
 Single-frequency processing: Baseline SPP uses only L1 pseudoranges,
 limiting ionospheric correction accuracy
@@ -3676,7 +3669,7 @@ for precise products)
 Southern Hemisphere coverage: Only 8.6M pairs vs 51M Northern, limiting
 statistical power
 
-Kp as coarse diagnostic: While the Kp stratification test (Section 3.6)
+Kp as coarse diagnostic: While the Kp stratification test (Section 3.8)
 demonstrates geomagnetic independence at the primary threshold (Kp <
 3 vs. Kp ≥ 3; median Δλ ≈ −1%, with 60/72 tests within ±5%), Kp
 summarizes global conditions and does not capture all aspects of local
@@ -3684,7 +3677,7 @@ ionospheric structure. Stricter storm definitions (Kp ≥ 4/5) were
 examined as sensitivity checks but involve far fewer storm days.
 Regional or TEC-based indices could provide finer discrimination.
 
-#### 6.4.2 Completed Analyses
+#### 6.5.2 Completed Analyses
 
 Orbital Velocity Coupling — Detected
 
@@ -3705,7 +3698,7 @@ modes
 This completes the orbital dynamics validation originally planned for
 Paper 2 methodology.
 
-### 6.5 TEP Framework Validation
+### 6.6 TEP Framework Validation
 
 #### TEP Predictions vs. Observations
 
@@ -3722,26 +3715,26 @@ Paper 2 methodology.
 | Spacetime symmetry | Position Jitter ≈ Clock Bias | r = −0.509 vs −0.486 (Δ = 5%, baseline); r = −0.610 vs −0.581 (Δ
 = 5%, multi_gnss) | Supported |
 | Filter independence | Same result all methods | High consistency across 3 filters | Supported |
-| CMB frame alignment | RA near CMB dipole | RA = 188° (20.0° from CMB), 78% within 10° (p <
-10−35) | Supported |
+| CMB frame alignment | RA near CMB dipole | RA = 188° (20.0° from CMB), 78% within 10°
+(robustness check, not independent significance) | Supported |
 | Solar Apex rejection | Not local galactic | 86.5° from Apex (4.3× farther, 32× worse fit) | Supported |
 | Planetary modulation | Events > null rate | 2.8× detection rate (p < 0.001) | Supported |
-| No mass scaling | Geometric, not gravitational | No consistent tidal GM/r² scaling (σ-level: p = 0.317–0.989; one
-|mod| anticorrelation: p = 0.0099) | Supported |
+| No mass scaling | Geometric, not gravitational | No consistent positive dependence on the tested GM/r²
+acceleration proxy; a GM/r³ tidal-gradient scaling was not tested | Supported |
 | Density-driven gradient suppression (Temporal Topology) | Continuous modulation by ambient density | Summer λ ≈ 6060 km vs Winter λ ≈ 2440 km (Ionofree); altitude
 invariance; Kp independence | Supported |
 | Temporal Shear anisotropy | E-W > N-S at short baselines | Short-distance ratios 1.20–1.23 with CV ~1%, stable across 36
 months | Supported |
 
 Across the sixteen comparisons summarized above, the observations are
-broadly consistent with the expectations of TEP v0.7 (Jakarta), which posits
+broadly consistent with the expectations of TEP v0.12 (Jakarta), which posits
 continuous geometric screening (manifesting as Temporal Topology governed by shear suppression) rather than discrete
 thin-shell boundaries. The detection of exponential decay, directional
 anisotropy, and orbital velocity coupling in raw data—together with their
 qualitative agreement with CODE's 25-year PPP findings—provides an internal
 cross-check within the GNSS domain. The observed density-driven modulation
 of correlation lengths (summer enhancement, altitude invariance, geomagnetic
-independence) is specifically consistent with the v0.7 prediction that
+independence) is specifically consistent with the v0.12 prediction that
 Temporal Shear is suppressed continuously by increasing ambient density, not
 at a step-function boundary. The agreement on Southern Hemisphere
 enhancement across Papers 2 and 3 (different datasets, different
@@ -3753,17 +3746,17 @@ structure governed by a spatially varying field gradient.
 
 ### 7.1 Summary of Findings
 
-This paper validates that distance-structured correlations in GNSS clocks exist in raw observations using broadcast ephemerides, not just precise products—strongly constraining precise-product processing artifacts. Broadcast ephemerides still contain control-segment information, so Satellite Laser Ranging and non-GNSS optical checks remain necessary for definitive confirmation. Analysis of 539 globally distributed stations over 3 years (2022–2024), comprising 1.17 billion pair-samples across three independent filtering strategies, achieves signal-consistent structure in all 72 tested metric combinations with mean R² = 0.93. The directional anisotropy matches CODE's 25-year findings with high statistical significance (p −15), using broadcast ephemerides as the primary methodology with precise ephemeris validation, processed via standard Single Point Positioning. Key findings include:
+This paper validates that distance-structured correlations in GNSS clocks exist in raw observations using broadcast ephemerides, not just precise products—strongly constraining precise-product processing artifacts. Broadcast ephemerides still contain control-segment information, so Satellite Laser Ranging and non-GNSS optical checks remain necessary for definitive confirmation. Analysis of 539 globally distributed stations over 3 years (2022–2024), comprising 1.17 billion pair-samples across three complementary filtering strategies, achieves signal-consistent structure in all 72 tested metric combinations with mean R² = 0.93. The directional anisotropy matches CODE's 25-year findings with nominal pair-level p < 10−15 under the standard null, using broadcast ephemerides as the primary methodology with precise ephemeris validation, processed via standard Single Point Positioning. Key findings include:
 
 #### Primary Results
 
-- Directional anisotropy detected: E-W correlations are 2–5% (MSC) to 22% (Phase Alignment) stronger than N-S at short distances (<500 km), matching CODE's directional signature (nominal p < 10−15 under the standard null). This finding is robust to distance bias: audit confirms E-W pairs are 13 km longer than N-S (bias *against* signal), and distance-matched analysis strengthens the ratio (1.033 → 1.041). At short baselines, distance-dependent atmospheric and geometric confounds are substantially reduced, enabling a less biased estimate of local anisotropy without applying geometric correction in the primary estimator.
+- Directional anisotropy detected: E-W correlations are 2–5% (MSC) to 22% (mean phase-offset alignment) stronger than N-S at short distances (<500 km), matching CODE's directional signature (nominal p < 10−15 under the standard null). This finding is robust to distance bias: audit confirms E-W pairs are 13 km longer than N-S (bias *against* signal), and distance-matched analysis strengthens the ratio (1.033 → 1.041). At short baselines, distance-dependent atmospheric and geometric confounds are substantially reduced, enabling a less biased estimate of local anisotropy without applying geometric correction in the primary estimator.
 
 - Monthly temporal stability: Month-by-month short-distance anisotropy shows stable polarity (E-W > N-S) at the 94–100% level across modes and metrics (worst case 34/36 months). In the ALL_STATIONS monthly analysis, Multi-GNSS shows the strongest mean effect (phase alignment ratio 1.314). Short-distance ratios show low CV (~0.7–1.0% for coherence; ~3–6% for phase alignment). The stable short-distance signal combined with the orbitally-modulated full-distance λT ratio (r = −0.509 to −0.763) supports the "Screened Signal Model"—a constant baseline signal variably screened by atmospheric and geometric effects.
 
 - Multi-mode validation: Signal detected in GPS L1 (ratio 1.033), ionofree L1+L2 (1.019), multi-GNSS (1.050), and precise (IGS SP3), suggesting it is not ionospheric, constellation-specific, or caused by broadcast ephemeris errors
 
-- Geometry-corrected match: After correcting for GPS orbital suppression, E-W/N-S ratios converge to 1.80–1.86, within 17% of CODE's 25-year PPP reference (2.16)
+- Geometry diagnostics: The CODE-referenced sector comparison yields corrected E-W/N-S ratios of 1.80–1.86, while an independent GPS-geometry simulation gives a larger suppression (~15×) and a corrected ratio of 1.46; both are supplementary comparisons, as the primary short-distance anisotropy uses no correction
 
 - Geomagnetic independence (comprehensive): Kp stratification using real GFZ data (primary split Kp<3 vs Kp≥3; 72 tests) shows near-invariance (median Δλ ≈ −1%, with 60/72 tests within ±5%). Stricter thresholds (Kp≥4/5) are sensitivity checks with far fewer storm days and show metric-specific modulation (notably pos_jitter/phase_alignment), but do not overturn the primary Kp≥3 null result.
 
@@ -3777,13 +3770,13 @@ This paper validates that distance-structured correlations in GNSS clocks exist 
 
 - Regional control tests (Step 2.1a): Exponential coherence decay is reproduced in Global, Non-Europe, and hemisphere-specific subsets with MSC Temporal Topology correlation lengths of order 700–900 km and phase-alignment lengths ≈2–3× larger. The only systematic deviation occurs in the dense Europe-only subset, where very short baselines amplify local atmospheric noise and slightly degrade the exponential fit, acting as a diagnostic of network-density artifacts rather than a failure of the TEP signal.
 
-- Planetary event modulation: Year-specific coherence modulation detected around 37 planetary conjunction/opposition events with 2.8× higher detection rates than permutation null controls (p < 0.001 for all 6 metrics). Detection rates of 59–68% vs. 20–26% null rate. Mass scaling analysis rules out tidal mechanism: No consistent positive GM/r² scaling observed across 6 channels (5/6 show p > 0.49, 1/6 shows anticorrelation r = −0.42, p = 0.010 opposite to tidal prediction). Despite null mass scaling, detection remains highly significant, indicating a non-tidal, threshold-dependent or geometric mechanism consistent with TEP's prediction of temporal-gravitational coupling distinct from classical tidal forces. Clock Drift MSC shows highest sensitivity (mean σ = 4.25). This independently replicates and strengthens CODE 25-year longspan planetary event findings while ruling out conventional tidal explanations
+- Planetary event modulation: Year-specific coherence modulation detected around 37 planetary conjunction/opposition events with 2.8× higher detection rates than permutation null controls (p < 0.001 for all 6 metrics). Detection rates are 59–68% versus a 20–26% null rate. Mass scaling analysis finds no consistent positive dependence on the tested planetary-acceleration proxy: five of six channels show no significant relationship, while one shows an anticorrelation (r = −0.42, p = 0.010). This does not test the distinct GM/r³ tidal-gradient scaling.
 
-- CMB frame alignment: Comprehensive 72-combination full-sky grid search yields results consistent with the CODE 25-year benchmark. The Multi-GNSS/Pos_Jitter/Phase combination produces a best-fit vector (RA=188°, Dec=−5°) that is statistically indistinguishable from the CODE reference (RA=186°, Dec=−4°), with a separation of just 20.0° from the CMB dipole. Aggressive quality filtering (Dynamic-50: daily files with clock std < 50 ns) boosts the correlation to r = 0.660 (vs. typical r ≈ 0.51), confirming the signal is an underlying high-fidelity feature of the data. Of 54 clean combinations, 78% find RA within 10° of CMB (p < 10−35). Solar Apex is disfavored (86.5° separation, 4.3× farther, 32× worse variance explained). This provides independent support for CODE's finding that the annual anisotropy modulation is coupled to Earth's motion relative to the cosmic rest frame
+- CMB frame alignment: The full-sky analysis identifies a best-fit direction at RA = 188°, Dec = −5°, approximately 20° from the CMB dipole and close to the CODE longspan reference. Across the 54 non-ionofree configurations, 42 recover right ascension within 10° of the CMB dipole. These configurations share observations and processing choices; their agreement demonstrates robustness across analysis settings rather than independent combined significance. The selected best-fit configuration reports a Monte Carlo global p = 0.027.
 
-- Seasonal stability (comprehensive): Seasonal stratification analysis reveals three complementary signatures: (1) "Summer Breakthrough" (OPTIMAL_100/Ionofree: λT = 6060 km; confirmed by Precise mode: λT = 6259 km), (2) "Invariant Core" (DYNAMIC_50/Multi-GNSS: λT = 1700–1900 km, Δ < 13% across seasons), and (3) "Network-wide Baseline" (ALL_STATIONS/Baseline: Δ < 8%). The signal is not a seasonal artifact—it is a stable gravitational phenomenon variably screened by the atmosphere. The CODE result (4,201 ± 1,967 km) is statistically consistent with the Annual Ionofree average (~4,170 km) and encompasses the "Summer Breakthrough" within its uncertainty range.
+- Seasonal stability (comprehensive): Seasonal stratification provides 48 seasonal estimates across processing configurations (4 seasons × 3 filters × 4 modes) for each metric/coherence combination.
 
-- Null tests passed (comprehensive): Rigorous validation across 72 independent tests constrains several non-gravitational origins: (1) Solar rotation shows zero correlation (all r < 0.09, 72/72 tests pass), (2) Lunar tides show zero correlation (all r < 0.11, 71/72 tests pass), (3) Shuffle test confirms genuine structure (Real R² = 0.945 vs. Shuffled R² = 0.029 mean, min ratio 1.9×, 90% pass strict R² < 0.3). The signal survives ionospheric removal (Ionofree R² = 0.921), persists across four constellations (Multi-GNSS R² = 0.956), and shows direction-level filter convergence in the CMB frame analysis (CV = 0.3%). A non-gravitational explanation consistent with this complete evidence suite has not yet been identified; within the TEP framework, a gravitational coupling remains a plausible interpretation
+- Null tests passed (comprehensive): Rigorous validation across 72 correlated analysis configurations constrains several non-gravitational origins. Pair-level and configuration-level results are reported as consistency checks, not independent aggregate tests.
 
 - Statistical significance: t-statistics up to 112.13, Cohen's d up to 0.304, 95% CI excludes unity
 
@@ -3803,7 +3796,7 @@ This paper completes a comprehensive validation framework for TEP:
 
 The consistency of three complementary analyses—using different data sources (precise products vs. raw RINEX), different processing chains (PPP vs. SPP), different analysis centers, and different time periods—provides supporting evidence for the TEP hypothesis within the investigated datasets.
 
-The directional anisotropy analysis provides a cross-check: the same E-W > N-S structure found in CODE's 25-year PPP analysis is also observed in raw SPP data with high statistical significance (nominal p < 10−15 under the standard null). The geometry-corrected ratios (1.80–1.86) are within 17% of CODE's reference (2.16), suggesting close agreement despite different processing methodologies.
+The directional anisotropy analysis provides a cross-check: the same E-W > N-S structure found in CODE's 25-year PPP analysis is also observed in raw SPP data with high statistical significance (nominal p < 10−15 under the standard null). The CODE-referenced sector comparison yields corrected ratios of 1.80–1.86; because its correction factor is constructed using the CODE reference, this is a supplementary empirical comparison rather than independent confirmation. The independently simulated GPS-geometry correction (~15×, ratio 1.46) is likewise diagnostic.
 
 Hemispheric interpretation: Paper 2's Southern Hemisphere orbital coupling (r = −0.79, p = 0.006) and the ALL_STATIONS anisotropy stratification (SH phase alignment 1.348) suggest enhanced Southern sensitivity in some estimators. However, higher-quality subsets motivate explicit hemisphere-controlled falsification tests to resolve subset-dependent behavior (including a Southern inversion in the DYNAMIC_50 short-distance estimator) before treating hemispheric asymmetry as a primary physical conclusion.
 
@@ -3837,8 +3830,6 @@ If TEP represents genuine time-flow variations at the 10⁻¹⁵ level, this has
 
 ### 7.4 Reproducibility Statement
 
-**Experimental Section:**
-
 All data, code, and analysis scripts used in this paper are publicly available:
 
 - Raw Data: NASA CDDIS Archive ([cddis.nasa.gov](https://cddis.nasa.gov))
@@ -3861,23 +3852,23 @@ Several alternative explanations have been tested and found inconsistent with th
 
 - Not constellation-specific: Signal present across GPS, GLONASS, Galileo, BeiDou
 
-- Not geomagnetically driven: Comprehensive Kp stratification using real GFZ data (primary split: 936 quiet days with Kp < 3 and 160 storm days with Kp ≥ 3; 72 independent tests = 3 filters × 4 modes × 3 metrics × 2 coherence types) shows near-invariance of Temporal Topology correlation length across geomagnetic conditions (median ΔλT ≈ −1%, with 60/72 tests within ±5%). Stricter storm definitions (Kp ≥ 4 and Kp ≥ 5) were examined as sensitivity checks (41 and 10 storm days, respectively): these indicate metric-specific modulation (notably increased λT for pos_jitter/phase_alignment in several modes) but do not overturn the primary Kp≥3 null result. Overall, the signal is not strengthened by storm conditions, which disfavors a space-weather origin.
+- Not geomagnetically driven: Comprehensive Kp stratification using real GFZ data (72 correlated analysis configurations = 3 filters × 4 modes × 3 metrics × 2 coherence types) shows near-invariance of Temporal Topology correlation length across geomagnetic conditions.
 
-- Not local/seasonal: Seasonal stratification (48 independent measurements across 4 seasons × 3 filters × 4 modes) shows DYNAMIC_50/Multi-GNSS varies by only 7–13% across seasons, while OPTIMAL_100/Ionofree reveals the 6060 km extent in summer—matching CODE's 25-year benchmark. Seasonal variations are interpreted as screening modulation rather than signal absence; hemisphere-dependent anisotropy behavior is treated as a diagnostic requiring explicit hemisphere-controlled tests.
+- Not local/seasonal: Seasonal stratification provides 48 seasonal estimates across processing configurations. Seasonal variations are interpreted as screening modulation rather than signal absence.
 
-- Not station-selection dependent: High consistency across three independent filtering methods
+- Not station-selection dependent: High consistency across three complementary filtering methods
 
 - Not purely temporal: Position jitter shows similar orbital coupling to clock bias (Δ ≈ 5%), consistent with spacetime coupling
 
-- Not random noise: nominal p < 10−15 across 172 million pairs under the standard null; orbital coupling at 5.4σ; shuffle test shows 33× evidence ratio (real R² = 0.945 vs. shuffled R² = 0.029), passing all 72 tests
+- Not random noise: nominal p < 10−15 across 172 million pairs under the standard null; orbital coupling at 5.4σ; the shuffle test substantially reduces exponential-fit quality, with 65 of 72 configurations (90%) passing the prespecified shuffled-R² < 0.3 criterion — the mean real R² is 0.945 versus 0.029 for shuffled data (an approximately 33× ratio of mean real to mean shuffled R²)
 
 - Not solar-driven: Comprehensive null tests show zero correlation with 27-day solar rotation period (all r < 0.08, 72/72 tests pass), disfavoring solar wind, radiation pressure, and related solar activity effects
 
 - Not lunar-driven: Zero correlation with 29.5-day lunar synodic period (all r < 0.11, 71/72 tests pass), disfavoring lunar tidal forcing of atmospheric or clock behavior
 
-- Not tidally forced: Planetary event modulation shows no consistent *positive* GM/r² scaling (clock-amplitude vs GM/r²: p = 0.647; σ-level vs GM/r²: p = 0.317–0.989). One channel shows an anticorrelation in |coherence modulation| vs GM/r² (p = 0.0099), opposite the tidal expectation and not reproduced across other metrics; overall this disfavors a direct gravitational tidal mechanism and is more consistent with geometric alignment than mass-dependent coupling
+- Planetary-acceleration proxy: Planetary event modulation shows no consistent *positive* GM/r² dependence. This acceleration proxy is distinct from, and does not test, the GM/r³ leading tidal-gradient scaling.
 
-- Not solar-apex-aligned: CMB frame analysis disfavors Solar Apex as preferred direction (106° separation, 5.5× farther than CMB, 32× worse variance explained), consistent with cosmological rather than local galactic reference frame
+- Not solar-apex-aligned: CMB frame analysis disfavors Solar Apex as preferred direction (86.5° separation, 4.3× the CMB separation, 32× worse variance explained), consistent with cosmological rather than local galactic reference frame
 
 ### Significance of Mass-Independence in Raw Data
 
@@ -4041,8 +4032,6 @@ Generated figures are saved to `results/figures/`:
 
 ### 8.7 Quick Start
 
-**Experimental Section:**
-
 #### Reproduce in 5 Steps
 
 - Clone the repository: `git clone https://github.com/matthewsmawfield/TEP-GNSS-RINEX`
@@ -4096,33 +4085,33 @@ Wcisło, P., et al. (2018). New bounds on dark matter coupling from a global net
 
 ### TEP-GNSS Research Series
 
-Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.8 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
+Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.12 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Preprint v0.25 (Jaipur). Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1)
+Smawfield, M. L. (2025). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Preprint v0.27 (Jaipur). Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1)
 
-Smawfield, M. L. (2025). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.18 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2)
+Smawfield, M. L. (2025). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.20 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.5 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3 — this work)
+Smawfield, M. L. (2025). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.7 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3 — this work)
 
-Smawfield, M. L. (2025). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.5 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4)
+Smawfield, M. L. (2025). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.8 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Empirical Synthesis*. Preprint v0.4 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
+Smawfield, M. L. (2025). *Global Time Echoes: Empirical Synthesis*. Preprint v0.6 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
 
-Smawfield, M. L. (2025). *Universal Critical Density: Cross-Scale Consistency of ρ_T*. Preprint v0.3 (New Delhi). Zenodo. DOI: [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365) (Paper 6)
+Smawfield, M. L. (2025). *Temporal Topology Saturation Scale: Cross-Scale Consistency of ρ_T*. Preprint v0.8 (New Delhi). Zenodo. DOI: [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365) (Paper 6)
 
-Smawfield, M. L. (2025). *The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate*. Preprint v0.3 (Blantyre). Zenodo. DOI: [10.5281/zenodo.18059250](https://doi.org/10.5281/zenodo.18059250) (Paper 7)
+Smawfield, M. L. (2025). *The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate*. Preprint v0.4 (Blantyre). Zenodo. DOI: [10.5281/zenodo.18059250](https://doi.org/10.5281/zenodo.18059250) (Paper 7)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging*. Preprint v0.3 (Mombasa). Zenodo. DOI: [10.5281/zenodo.18064581](https://doi.org/10.5281/zenodo.18064581) (Paper 8)
+Smawfield, M. L. (2025). *Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging*. Preprint v0.4 (Mombasa). Zenodo. DOI: [10.5281/zenodo.18064581](https://doi.org/10.5281/zenodo.18064581) (Paper 8)
 
-Smawfield, M. L. (2025). *What Do Precision Tests of General Relativity Actually Measure?*. Preprint v0.3 (Istanbul). Zenodo. DOI: [10.5281/zenodo.18109760](https://doi.org/10.5281/zenodo.18109760) (Paper 9)
+Smawfield, M. L. (2025). *What Do Precision Tests of General Relativity Actually Measure?*. Preprint v0.7 (Istanbul). Zenodo. DOI: [10.5281/zenodo.18109760](https://doi.org/10.5281/zenodo.18109760) (Paper 9)
 
-Smawfield, M. L. (2026). *Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars*. Preprint v0.6 (Caracas). Zenodo. DOI: [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) (Paper 10)
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars*. Preprint v0.9 (Caracas). Zenodo. DOI: [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) (Paper 10)
 
-Smawfield, M. L. (2026). *The Cepheid Bias: Resolving the Hubble Tension*. Preprint v0.6 (Kingston upon Hull). Zenodo. DOI: [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) (Paper 11)
+Smawfield, M. L. (2026). *The Cepheid Bias: Resolving the Hubble Tension*. Preprint v0.10 (Kingston upon Hull). Zenodo. DOI: [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) (Paper 11)
 
-Smawfield, M. L. (2026). *Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies*. Preprint v0.4 (Kos). Zenodo. DOI: [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) (Paper 12)
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies*. Preprint v0.7 (Kos). Zenodo. DOI: [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) (Paper 12)
 
-Smawfield, M. L. (2026). *Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries*. Preprint v0.3 (Kilifi). Zenodo. DOI: [10.5281/zenodo.19102061](https://doi.org/10.5281/zenodo.19102061) (Paper 13)
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries*. Preprint v0.6 (Kilifi). Zenodo. DOI: [10.5281/zenodo.19102061](https://doi.org/10.5281/zenodo.19102061) (Paper 13)
 
 ### Supporting References
 
@@ -4196,7 +4185,7 @@ GitHub: [github.com/matthewsmawfield](https://github.com/matthewsmawfield)
 
 License: This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
-Version: v0.5 (Kathmandu) · Last updated: 29 April 2026 · Originally published: 9 December 2025
+Version: v0.7 (Kathmandu) · Last updated: 16 September 2026 · Originally published: 9 December 2025
 
 ---
 

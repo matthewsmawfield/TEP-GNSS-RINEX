@@ -1,10 +1,10 @@
-v0.6 (Kathmandu) — 05 June 2026 — Renamed conformal coupling notation from beta_conf to beta_A to avoid PPN collision
+v0.7 (Kathmandu) — 16 September 2026 — Statistical rigor and editorial cleanup
 
-v0.5 (Kathmandu) - Terminology Alignment and Theory Clarification
-
-- Unified terminology: "temporal equivalence principle" replaces "conformal model" throughout
-- Signal description clarified: path-dependent clock drift → path-dependent synchronization
-- Mathematical notation aligned: proper time perturbation δτ defined explicitly
-- Physical interpretation strengthened: local Lorentz invariance preserved, global anisotropy constrained
-- Consistency edits across all sections to align with TEP theoretical framework
-- Bibliographic references updated for precision and completeness
+- Section 3 restructured: seasonal analyses grouped (3.6–3.7), Kp moved to 3.8; table numbering corrected throughout
+- Statistical language tightened: nominal pair-level p-values, "analysis configurations" instead of independent tests, preregistration claim corrected
+- Phase Alignment relabelled "mean phase-offset alignment" with resultant-magnitude caveat
+- Geometry correction split into CODE-referenced empirical vs independent simulation diagnostics
+- Planetary section: GM/r² framed as acceleration proxy; GM/r³ tidal scaling noted as untested
+- CMB combined-significance claim replaced with robustness interpretation; Figure 3.12 caption corrected
+- Added missing §2.8 methods subsection for Step 2.9 GPS-geometry simulation; §6 subsections renumbered (6.1b→6.2, 6.2.2a→6.3.3); figures resequenced 3.1–3.7
+- Count corrections: station pairs 144,991; CMB grid 72 configurations with 54 non-ionofree convergence subset; null-test matrix corrected to 4 modes/72 configurations

@@ -3,13 +3,13 @@
 TEP Scalar Field Solver
 =======================
 
-Version: TEP v0.9 (Jakarta)
+Version: TEP v0.10 (Jakarta)
 
 Computes the dimensionless scalar field profile phi from local
 mass distributions using the TEP lab-scale logarithmic model.
 
 Phenomenological model (TEP Lab-Scale Logarithmic Form):
-    phi = alpha_log * ln(rho_local / rho_c) + beta_geom * ln(M / M_ref)
+    phi = alpha_log * ln(rho_local / rho_T) + beta_geom * ln(M / M_ref)
 
 where alpha_log is the lab-scale density coupling and
 beta_geom is the geometric coupling. Both are dimensionless.
@@ -24,9 +24,9 @@ scalar-field calculations across the corpus.
 
 import numpy as np
 from . import constants as tep_const
+from .screening import screening_factor
 
-RHO_C = tep_const.RHO_C
-screening_factor = tep_const.screening_factor
+RHO_T = tep_const.RHO_T
 
 # Lab-scale coupling constants (from TEP-NIST Paper 21)
 ALPHA_LOG = tep_const.ALPHA_LOG
@@ -62,10 +62,10 @@ def solve_scalar_field_cylinder(total_mass_kg, radius_m, height_m,
     screen : float
         Screening suppression factor (0-1)
     """
-    screen = screening_factor(density_g_cm3, RHO_C)
+    screen = screening_factor(density_g_cm3, RHO_T)
 
     # Density-sector contribution with screening
-    phi_rho = alpha_log * np.log(density_g_cm3 / RHO_C) * screen
+    phi_rho = alpha_log * np.log(density_g_cm3 / RHO_T) * screen
 
     # Mass-sector contribution (geometric)
     phi_mass = beta_geom * np.log(total_mass_kg / tep_const.M_REF)
@@ -191,8 +191,8 @@ def solve_scalar_field_layered_weighted(layers, radius_m=50000.0, z0_km=5.0,
     eff_density_g_cm3 = weighted_density_sum / total_weight
 
     # Calculate scalar field with the effective near-field weighted density
-    screen = screening_factor(eff_density_g_cm3, RHO_C)
-    phi_rho = alpha_log * np.log(eff_density_g_cm3 / RHO_C) * screen
+    screen = screening_factor(eff_density_g_cm3, RHO_T)
+    phi_rho = alpha_log * np.log(eff_density_g_cm3 / RHO_T) * screen
     phi_mass = beta_geom * np.log(total_mass_kg / tep_const.M_REF)
     phi = phi_rho + phi_mass
 
@@ -209,7 +209,7 @@ def scalar_field_logarithmic(density_g_cm3, total_mass_kg,
     """
     Scalar field from the TEP lab-scale logarithmic ansatz.
 
-    phi = alpha_log * ln(rho / rho_c) + beta_geom * ln(M / M_ref)
+    phi = alpha_log * ln(rho / rho_T) + beta_geom * ln(M / M_ref)
 
     Parameters
     ----------
@@ -232,7 +232,7 @@ def scalar_field_logarithmic(density_g_cm3, total_mass_kg,
     if total_mass_kg <= 0:
         raise ValueError("total_mass_kg must be strictly positive")
 
-    phi_rho = alpha_log * np.log(np.asarray(density_g_cm3) / RHO_C)
+    phi_rho = alpha_log * np.log(np.asarray(density_g_cm3) / RHO_T)
     phi_geom = beta_geom * np.log(total_mass_kg / tep_const.M_REF)
     return phi_rho + phi_geom
 

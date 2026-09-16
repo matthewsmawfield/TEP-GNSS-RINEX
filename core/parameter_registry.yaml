@@ -4,7 +4,7 @@
 # When updated in the main TEP repo, run scripts/bump_papers.py to propagate.
 
 schema_version: 1
-last_updated: "2026-06-05"
+last_updated: "2026-09-13"
 
 parameter_classes:
   fundamental: "Axiomatic or theoretically fixed parameter; changes would alter the framework itself."
@@ -21,18 +21,18 @@ parameters:
     units: "dimensionless"
     class: "fundamental"
     first_paper: 0
-    used_in: [0, 1, 2, 3, 6, 10, 11, 14, 17, 18, 19, 21, 22, 23, 24, 25, 26]
+    used_in: [0, 1, 2, 3, 4, 6, 10, 11, 12, 14, 15, 17, 18, 19, 21, 22, 23, 24, 25, 26, 28, 29, 31, 32]
     description: "Locked lab-scale convention. Universal conformal coupling governing clock-rate rescaling."
 
-  - symbol: "rho_c"
-    latex: "\\rho_c"
-    meaning: "Temporal Topology saturation proximity scale (observationally proxied by density)"
+  - symbol: "rho_T"
+    latex: "\\rho_T"
+    meaning: "Temporal Topology saturation scale (observationally proxied by density)"
     value: 20.0
     units: "g cm^{-3}"
     class: "calibrated"
     first_paper: 6
     used_in: [6, 14, 17, 18, 21, 23, 24]
-    description: "Phenomenological proximity scale at which collective many-body screening suppresses observable temporal shear, observationally proxied by the density ρ_c ≈ 20 g/cm³. Determined from terrestrial clock correlation data. Density is an observable proxy, not the causal parameter; the fundamental scale is geometric overlap governed by the packing fraction η = (r_c/λ_F)³."
+    description: "Phenomenological proximity scale at which collective many-body screening suppresses observable temporal shear, observationally proxied by the density ρ_T ≈ 20 g/cm³. Determined from terrestrial clock correlation data. Density is an observable proxy, not the causal parameter; the fundamental scale is geometric overlap governed by the packing fraction η = (r_c/λ_F)³. Note: ρ_c is reserved for per-cluster central density (Paper 10)."
 
   - symbol: "lambda_T"
     latex: "\\lambda_T"
@@ -42,7 +42,7 @@ parameters:
     class: "calibrated"
     first_paper: 1
     used_in: [1, 2, 3, 6, 14, 17, 21]
-    description: "Characteristic scale over which the scalar field remains correlated. Long-duration multi-center GNSS analysis yields ~4200 km (canonical). MGEX held-out verification (Paper 14) yields ~1396 km and is not interchangeable with this baseline. Lab-scale crustal value is LAB_COHERENCE_LENGTH_M = 50 km."
+    description: "Canonical terrestrial correlation length for all forward analysis (NIST FEM, rho_T chain, etc.). From 25-year multi-center GNSS (Papers 1–2/6). Paper 14 MGEX held-out verification (~1 yr, lambda ~1396 km) confirms the signal but is not adopted for dimensional normalization. Lab-scale crustal value is LAB_COHERENCE_LENGTH_M = 50 km."
 
   - symbol: "alpha_log"
     latex: "\\alpha_{\\log}"
@@ -74,6 +74,17 @@ parameters:
     used_in: [21]
     description: "Threshold mass where phi_mass ~ beta_geom."
 
+  - symbol: "kappa_canonical"
+    latex: "\\kappa_{\\text{canonical}}"
+    aliases: ["kappa_gal", "kappa_Gal"]
+    meaning: "Canonical galaxy-scale observable response coefficient"
+    value: 9.6e5
+    units: "mag"
+    class: "calibrated"
+    first_paper: 11
+    used_in: [11, 12]
+    description: "Expected bare-scale coupling for Cepheid P-L shifts before environmental screening. Used as prior in multi-anchor regression. Consistent with TEP geometric-factor estimate. Paper 12 uses the alias κ_gal ≡ κ_canonical."
+
   - symbol: "kappa_Cep"
     latex: "\\kappa_{\\text{Cep}}"
     meaning: "Cepheid observable response coefficient"
@@ -86,13 +97,24 @@ parameters:
 
   - symbol: "kappa_MSP"
     latex: "\\kappa_{\\text{MSP}}"
-    meaning: "Pulsar observable response coefficient"
-    value: null
+    meaning: "Pulsar in-equation acceleration coupling (screened)"
+    value: 0.05
     units: "dimensionless"
     class: "observable_response"
     first_paper: 10
     used_in: [10, 17]
-    description: "Domain-level transfer coefficient for millisecond-pulsar timing residuals."
+    description: "In-equation coupling in the pulsar spin-down equation; pre-screening geometric amplitude ~10⁶ suppressed by chameleon factor S~1e-8. The key observational signature is the suppressed density scaling (Gamma=0.39 vs Newtonian 0.75), reflecting the potential-based TEP clock response."
+
+  - symbol: "tilde_kappa_MSP"
+    latex: "\\tilde\\kappa_{\\text{MSP}}"
+    meaning: "Full empirical pulsar response coefficient (pipeline inversion)"
+    value: 29000.0
+    value_uncertainty: 45000.0
+    units: "dimensionless"
+    class: "observable_response"
+    first_paper: 10
+    used_in: [10, 11, 6]
+    description: "Full response coefficient from step_44_kappa_msp_prior.json, obtained by inverting the 0.63 dex raw excess with real cluster parameters: κ̃_MSP = (2.9 ± 4.5) × 10⁴. This is the observable response; the pre-screening geometric amplitude is ~10⁶ (see kappa_MSP). Suitable for cross-probe comparison with kappa_Cep. Effective screening factor S_MSP ~ 0.027 relative to unsuppressed ~10⁶."
 
   - symbol: "epsilon_T"
     latex: "\\epsilon_T"
@@ -142,14 +164,55 @@ parameters:
     class: "observable_response"
     first_paper: 0
     used_in: [0, 6, 18, 22, 24]
-    description: "Solar-system PPN bound |β| < 3.4×10⁻³ from Cassini time-delay measurements (Bertotti et al. 2003). The lab-scale bare coupling β_A = -1.0 must be screened by a factor ~300 in the solar system; this is achieved by the density-dependent coupling model f(ρ) = 1/[1+(ρ_transition/ρ)^n]."
+    description: "Solar-system PPN bound |β| < 3.4×10⁻³ from Cassini time-delay measurements (Bertotti et al. 2003). The lab-scale bare coupling β_A = -1.0 must be screened by a factor ~300 in the solar system; this is achieved by the environment-dependent coupling model f(ρ) = [1+(ρ/ρ_half)^n]⁻¹, which falls with density (dense environments screen more strongly)."
 
   - symbol: "B"
     latex: "B(\\phi)"
     meaning: "Disformal coupling function"
-    value: 0
-    units: "dimensionless (leading order)"
+    value: null
+    units: "dimensionless"
     class: "fundamental"
     first_paper: 0
-    used_in: [0, 4, 9, 22]
-    description: "Vanishing at leading order in late-time astrophysical regimes. Constrained by GW170817 to |c_gamma - c_g|/c < 1e-15. Non-zero values explored in propagation and holonomy analyses."
+    used_in: [0, 4, 9, 22, 28]
+    description: "Disformal coupling function B(phi). GW170817 constrains the path-integral combination B(phi)(dphi)^2 along observed late-time astrophysical paths: |c_gamma - c_g|/c < few x 1e-15. This does NOT require B to vanish identically in all regimes. B(phi) = 0 in the conformal limit (holonomy vanishes). The nonzero form B(phi) = B0 * |phi|^2 / (1 + |phi|^2) * exp(-phi^4 / (2*sigma_B^4)) (quartic-Gaussian ultra-damped shear bump) is implemented in Paper 28 bh_common.py, with B0, n_B, sigma_B as shape parameters. B activates the disformal shear near strong-field regions while decaying super-polynomially in the deep core, ensuring global Lorentzian signature. The path-dependent GW constraint is satisfied because B(phi)(dphi)^2 is negligible along weak-field late-time astrophysical paths."
+
+  - symbol: "H0"
+    latex: "H_0"
+    meaning: "Hubble constant (TEP-corrected local value)"
+    value: 66.65
+    value_uncertainty: 1.58
+    units: "km s^{-1} Mpc^{-1}"
+    class: "calibrated"
+    first_paper: 11
+    used_in: [11, 26]
+    description: "TEP-corrected local Hubble constant from per-host cz/d after removing ~1 km/s/Mpc host-potential clock distortion. Consistent with the TEP CMB (66.70 ± 0.58, Paper 26) at 0.03σ. The SH0ES ladder value 73.04 is the Hubble-flow temporal shear (cosmic-web path integral), not a correction to be closed."
+
+  - symbol: "S8"
+    latex: "S_8"
+    meaning: "Structure growth amplitude"
+    value: null
+    units: "dimensionless"
+    class: "exploratory"
+    first_paper: 26
+    used_in: [26]
+    description: "S_8 = σ_8 √(Ω_m/0.3) from TEP cosmological fit. Under investigation in Paper 26."
+
+  - symbol: "epsilon_T_HC"
+    latex: "\\epsilon_T^{\\text{HC}}"
+    meaning: "Temporal field gradient floor amplitude"
+    value: 0.472950
+    units: "dimensionless"
+    class: "fundamental"
+    first_paper: 0
+    used_in: [0, 29]
+    description: "Temporal field gradient floor μ²/(2K) with μ² = 3Ω_m ≈ 0.9459 and K = 1.0. Provides the frequency-independent amplification mechanism for the BBN absorber signal (Paper 29) and the recovery operator (§7.8 Target 1)."
+
+  - symbol: "rho_T"
+    latex: "\\rho_T"
+    meaning: "Screening density (alias of rho_T above)"
+    value: 20.0
+    units: "g cm^{-3}"
+    class: "calibrated"
+    first_paper: 6
+    used_in: [6, 10, 14, 17, 18, 21, 23, 24]
+    description: "Screening density ρ_T ≈ 20 g/cm³. Consensus screening length L_c ≈ 4200 km gives ρ_T = 3M_⊕/(4πL_c³) ≈ 19.2 g/cm³. Earth is in the partial/transition regime (ρ < ρ_T), not fully suppressed."
