@@ -3,7 +3,7 @@
 TEP Scalar Field Solver
 =======================
 
-Version: TEP v0.10 (Jakarta)
+Version: TEP v0.14 (Jakarta)
 
 Computes the dimensionless scalar field profile phi from local
 mass distributions using the TEP lab-scale logarithmic model.

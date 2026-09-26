@@ -3,7 +3,7 @@
 TEP Evidence and Model-Comparison Utilities
 ==========================================
 
-Version: TEP v0.10 (Jakarta)
+Version: TEP v0.14 (Jakarta)
 
 Provides Bayesian evidence calculations and model-comparison statistics
 used across the TEP corpus.

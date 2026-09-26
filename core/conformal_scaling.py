@@ -3,7 +3,7 @@
 TEP Conformal Scaling
 =====================
 
-Version: TEP v0.10 (Jakarta)
+Version: TEP v0.14 (Jakarta)
 
 Computes the conformal factor A(phi), Temporal Shear Sigma_mu,
 and effective gravitational coupling from the scalar field profile phi.

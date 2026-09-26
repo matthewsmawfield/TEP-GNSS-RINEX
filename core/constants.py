@@ -8,12 +8,12 @@ Principle (TEP) framework.  All TEP papers should import from this module to ens
 consistency across the corpus.  Human-readable registry: parameter_registry.yaml
 in this directory.  Do not duplicate these values in project scripts.
 
-Version: TEP v0.10 (Jakarta)
+Version: TEP v0.14 (Jakarta)
 """
 
 import numpy as np
 
-VERSION = "0.10"
+VERSION = "0.14"
 VERSION_CODENAME = "Jakarta"
 VERSION_STRING = f"TEP v{VERSION} ({VERSION_CODENAME})"
 
@@ -51,8 +51,13 @@ BETA_SPIN = 0.01                 # Dimensionless; Paper 24
 # to physical values using the mean-field ratio.
 ILLUSTRATIVE_BETA_A = 0.01       # Dimensionless; used in step_09 and legacy scripts
 
-# Solar-system PPN bound on conformal coupling from Cassini time-delay test.
-BETA_CASSINI_MAX = 0.0034        # Bertotti et al. 2003
+# Solar-system PPN bound from the Cassini time-delay test (Bertotti et al.
+# 2003, |gamma-1| < 2.3e-5). Under the canonical linear source-charge map
+# gamma-1 = -4 beta_A^2 S_Sigma / (1 + 2 beta_A^2 S_Sigma), the bound applies
+# to the screened solar source-charge fraction: |beta_A * S_Sigma| < 5.75e-6
+# for beta_A = -1 (equivalently S_Sigma < 5.8e-6). It is NOT a bound on the
+# bare coupling beta_A itself.
+BETA_CASSINI_MAX = 5.75e-6       # bound on |beta_eff| = |beta_A * S_Sigma|
 
 # Phenomenological saturation scale for Temporal Topology screening.
 # When local proximity approaches rho_T (observationally proxied by density),

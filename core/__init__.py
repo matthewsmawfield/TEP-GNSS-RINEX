@@ -1,6 +1,6 @@
 """TEP Core — canonical Python package for the Temporal Equivalence Principle.
 
-Version: TEP v0.10 (Jakarta)
+Version: TEP v0.14 (Jakarta)
 
 This package provides the shared physics layer used by all TEP papers:
   - constants: physical and phenomenological parameters
@@ -59,7 +59,9 @@ from .screening import (
     screening_factor,
     universal_screening_function,
     coupling_screening_factor,
-    beta_screened,
+    physical_shear,
+    screening_ratio,
+    matter_acceleration
 )
 from .conformal_scaling import (
     conformal_factor,
