@@ -1,14 +1,16 @@
 # TEP Parameter Registry
 # ======================
 # Canonical source of truth for all parameters used across the TEP corpus.
-# When updated in the main TEP repo, run scripts/bump_papers.py to propagate.
+# Keep YAML copies identical; render and verify from the corpus root with
+# corpus-notes/tools/render_parameter_registry.py --write / --check.
 
 schema_version: 1
-last_updated: "2026-09-20"
+last_updated: "2026-09-26"
 
 parameter_classes:
   fundamental: "Axiomatic or theoretically fixed parameter; changes would alter the framework itself."
   calibrated: "Determined from experimental data with well-defined uncertainty; shared across analyses."
+  benchmark: "Declared numerical reference or prior; not an empirical calibration or independently derived value."
   observable_response: "Domain-level empirical transfer coefficient; specific to a measurement domain."
   nuisance: "Required for analysis but not a TEP parameter of direct physical interest."
   exploratory: "Under investigation; value or existence not yet firmly established."
@@ -81,7 +83,7 @@ parameters:
     meaning: "Canonical galaxy-scale observable response coefficient"
     value: 9.6e5
     units: "mag"
-    class: "calibrated"
+    class: "benchmark"
     first_paper: 11
     used_in: [11, 12]
     description: "Expected bare-scale coupling for Cepheid P-L shifts before environmental screening. Declared theory benchmark used as prior in multi-anchor regression; the magnitude unit records the observational channel, not a physical dimension of the coupling. Step_05 derives the transfer structure (Gamma_gal inherited from the Cepheid projector with redshift transfer factor), but the numerical benchmark retains its declared provenance. Paper 12 uses the alias kappa_gal = kappa_canonical."
@@ -122,7 +124,8 @@ parameters:
     meaning: "Wide-binary observable response coefficient"
     value: null
     units: "dimensionless"
-    class: "partial"
+    class: "observable_response"
+    derivation_status: "partial; transition-scale structure only, amplitude not derived"
     first_paper: 0
     used_in: [0, 16]
     description: "Wide-binary channel. Only the transition radius is derived (step_05): R_s ~ 2609 AU from the cross-scale acceleration condition (M_binary, M_gal, r_gal, beta_A only, no wide-binary input), matching observed 2646 +/- 182 AU within 1.4%. kappa_WB itself is NOT derived: an earlier version asserted a screening fraction S(R_s)=0.5 without derivation to produce a velocity excess alpha=sqrt(2)-1~0.414 (~13% from observed 0.366), but the radial ODE's own computed screening at R_s is S_sigma~0.994 (essentially unscreened), which the same formula would instead put at alpha~0.73 -- the assumed 0.5 was doing the work, not the theory. Paper 13 (TEP-WB) does not independently derive alpha_sat=0.366 either: it reports a mass-dependent self-screening fit alpha_sat(M)=alpha_0*exp(-M/M_screen) (alpha_0=1.74+/-0.26, M_screen=0.46+/-0.04 Msun) fit to the same wide-binary sample used to validate it. No validated Gamma_WB exists; kappa_WB is left open pending a real derivation."
@@ -221,7 +224,7 @@ parameters:
     latex: "B(\\phi)"
     meaning: "Disformal coupling function"
     value: null
-    units: "dimensionless"
+    units: "mass^{-4} for a dimension-one canonical scalar; dimensionless only in explicitly nondimensionalized benchmark coordinates"
     class: "fundamental"
     first_paper: 0
     used_in: [0, 4, 9, 22, 28]

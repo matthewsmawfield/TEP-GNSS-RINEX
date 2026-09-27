@@ -116,6 +116,9 @@ python scripts/steps/step_2_0_raw_spp_analysis.py
 | 2.6 | `step_2_6_planetary_events.py` | Planetary conjunction/opposition |
 | 2.7 | `step_2_7_cmb_frame_analysis.py` | CMB frame grid search |
 | 2.9 | `step_2_9_geometry_simulation.py` | Independent GPS-geometry simulation |
+| 2.10 | `step_2_10_common_view_null.py` | Common-view common-mode null test |
+| 2.11 | `step_2_11_anisotropy_stratification.py` | Ionospheric fraction & Δlat/ΔLST stratification |
+| 2.12 | `step_2_12_channel_mode_null.py` | Broadcast-vs-precise channel-mode common-mode null |
 | 5.0 | `step_5_0_cross_paper_synthesis.py` | Cross-paper synthesis |
 
 Utility: `refit_existing_csvs.py` (re-fit existing CSV outputs without reprocessing).

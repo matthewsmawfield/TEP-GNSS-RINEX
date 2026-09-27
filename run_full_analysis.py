@@ -47,6 +47,7 @@ STEP_SCRIPTS = {
     "step_2_4_null": STEP_DIR / "step_2_4_null_tests.py",
     "step_2_5": STEP_DIR / "step_2_5_orbital_coupling.py",
     "step_2_6": STEP_DIR / "step_2_6_planetary_events.py",
+    "step_2_6b": STEP_DIR / "step_2_6b_seasonal_null.py",
     "step_2_7": STEP_DIR / "step_2_7_cmb_frame_analysis.py",
 }
 
@@ -61,6 +62,7 @@ STEP2_SEQUENCE = [
     ("STEP 2.4 • Null Tests", "step_2_4_null"),
     ("STEP 2.5 • Orbital Coupling Deep Dive", "step_2_5"),
     ("STEP 2.6 • Planetary Events", "step_2_6"),
+    ("STEP 2.6b • Season-Preserving Planetary Null", "step_2_6b"),
     ("STEP 2.7 • CMB Frame Analysis", "step_2_7"),
 ]
 

@@ -53,7 +53,7 @@
 
 <p>Unlike Papers 1 and 2, which used precise orbit and clock products, this analysis relies solely on broadcast navigation messages. Broadcast ephemerides provide satellite positions with ~1 meter accuracy (vs. ~2 cm for precise products) and satellite clocks with ~5 ns accuracy (vs. ~0.1 ns for precise products).</p>
     
-<p>This choice ensures complete independence from the processing chains used in previous analyses.</p>
+<p>This choice ensures complete independence from the processing chains used in previous analyses. The tracking network itself is shared: the same stations and constellations underlie the analysis-centre products of Papers 1, 2 and 14, so network-level or control-segment common modes remain a shared error budget, while estimation-chain artifacts — the dominant concern those papers could not internally exclude — are fully decoupled here.</p>
 
 <h4>2.1.3 External Auxiliary Data</h4>
 
@@ -162,7 +162,7 @@
         <li>Data availability: Minimum 100 daily files over 3 years</li>
         <li>Geographic distribution: Spread across continents to ensure global coverage</li>
     </ul>
-    <p>This addresses the IGS network's inherent bias (238 NH vs 106 SH stations globally) that would otherwise dominate statistical results.</p>
+    <p>This addresses the IGS network's inherent bias (238 NH vs 106 SH stations globally; the analyzed 539-station set itself contains 285 NH and 254 SH stations) that would otherwise dominate statistical results.</p>
 </div>
 
 <div>
@@ -676,7 +676,7 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
             <td>Transition period</td>
         </tr>
     </table>
-    <p><em>Note: Seasons are defined by Northern Hemisphere convention. The IGS network is NH-dominated (238 NH vs 106 SH stations), making NH seasons the natural stratification choice.</em></p>
+    <p><em>Note: Seasons are defined by Northern Hemisphere convention. The IGS network is NH-dominated (238 NH vs 106 SH stations globally; the analyzed set is nearer balance at 285 NH vs 254 SH stations, though NH stations contribute substantially more station-days), making NH seasons the natural stratification choice.</em></p>
 </div>
 
 <div>
@@ -686,7 +686,7 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
     <p>Key Predictions:</p>
     <ul>
         <li>If the signal is a seasonal artifact: Correlation length λ should vary by >20% between seasons, with systematic patterns (e.g., always strongest in summer).</li>
-        <li>If the signal is a stable gravitational phenomenon: λ should be constant (Δ &lt; 10%) across seasons, with any variations attributable to atmospheric screening (which Ionofree mode should remove).</li>
+        <li>If the signal reflects a stable terrestrial screening structure: λ should be stable across seasons in high-reliability multi-constellation channels (Δ &lt; 15%), with any seasonal excursions in noise-sensitive single-frequency channels bounding propagation-medium artifacts.</li>
     </ul>
 </div>
 
@@ -694,7 +694,7 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
     <h4>The "Two Views" Framework</h4>
     <p>The seasonal analysis tests two complementary hypotheses:</p>
     <ol>
-        <li>OPTIMAL_100 (Spatial Balance): Designed to capture the maximum spatial extent of correlations by ensuring global coverage. Expected to show seasonal modulation due to atmospheric screening, with summer revealing longer λ when ionosphere is more stable.</li>
+        <li>OPTIMAL_100 (Spatial Balance): Designed to capture the maximum spatial extent of correlations by ensuring global coverage. It diagnoses how long-distance exponential fits behave under global network geometry and varying seasonal noise conditions.</li>
         <li>DYNAMIC_50 (Temporal Stability): Designed to capture the most reliable, continuous stations. Expected to show minimal seasonal variation, revealing the stable "core" signal independent of atmospheric conditions.</li>
     </ol>
     <p>These two filters test different aspects of the signal: OPTIMAL_100 tests the scale, DYNAMIC_50 tests the stability.</p>
@@ -776,7 +776,7 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
         <li>Clock bias + MSC: Moderate anisotropy (E-W/N-S ≈ 1.02–1.05) — consistent but weaker</li>
         <li>Position jitter (any coherence): Similar orbital coupling to clock bias — consistent with TEP affecting spacetime, not just time</li>
         <li>Clock drift (any coherence): Weak anisotropy (E-W/N-S ≈ 1.07) — derivative preserves structure</li>
-        <li>Planetary events (all metrics): Year-specific modulation yields 2.8× higher detection than permutation null (59–68% vs. 20–26%, p &lt; 0.001 for all 6 metrics), with no consistent positive dependence on the tested GM/r² acceleration proxy. A GM/r³ tidal-gradient scaling is distinct and was not tested.</li>
+        <li>Planetary events (all metrics): Year-specific windows yield 2.8× higher detection than the date-shuffled null (59–68% vs. 20–26%, p &lt; 0.001 for all 6 metrics); season-preserving controls (Step 2.6b) attribute the excess to calendar-position sampling of the autocorrelated seasonal series rather than event-locking, and neither the GM/r² acceleration proxy nor the GM/r³ tidal-gradient scaling shows dependence.</li>
     </ul>
     <p>This hierarchy is consistent with TEP predictions: clock bias shows the strongest directional anisotropy as the primary temporal proxy, while position jitter shows similar orbital coupling (consistent with coupled space-time fluctuations) but with weaker directional structure due to atmospheric noise.</p>
 </div>
@@ -897,10 +897,11 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
         <tr><td>RA range</td><td>0°–359°</td><td>Full celestial sphere</td></tr>
         <tr><td>Dec range</td><td>−89° to +89°</td><td>Full celestial sphere (avoiding poles)</td></tr>
         <tr><td>Resolution</td><td>1°</td><td>Matches CODE longspan finest setting; ~65,000 grid points</td></tr>
-        <tr><td>Background speed</td><td>20 km/s (fixed)</td><td>Prescribed phenomenological directional template; not the physical CMB-dipole speed</td></tr>
+        <tr><td>Background speed</td><td>20 km/s (fixed) + scan over 5–370 km/s</td><td>Prescribed phenomenological directional template; not the physical CMB-dipole speed — a |V<sub>bg</sub>| scan is reported in §3.13.3a</td></tr>
         <tr><td>Test statistic</td><td>Pearson correlation</td><td>cos(Dec) vs monthly E-W/N-S ratio (36 months)</td></tr>
+        <tr><td>Control directions</td><td>Ecliptic poles, solar apex/antapex, Galactic center, perihelion/aphelion velocity tangents</td><td>Competitive-direction battery (§3.13.3a)</td></tr>
     </table>
-    <p>The 20 km/s background speed is the fixed phenomenological parameter used to construct the directional predictor, not the physical 370 km/s CMB-dipole speed. The analysis tests directional alignment under this prescribed template; the dependence of the inferred direction on the assumed background speed is not established here.</p>
+    <p>The 20 km/s background speed is the fixed phenomenological parameter used to construct the directional predictor, not the physical 370 km/s CMB-dipole speed. Because the predictor cos(declination of V<sub>orbital</sub> + V<sub>bg</sub>) is phase-dominated by the rotating orbital term, the inferred direction re-parametrizes the annual phase of the modulation; the dependence on the assumed speed is therefore measured directly by a |V<sub>bg</sub>| scan from 5 to 370 km/s (§3.13.3a), and the best-fit direction is compared against competitive controls that live in the ecliptic plane — where any orbit-driven modulation must lie — rather than only against the Solar Apex 53&deg; off the ecliptic.</p>
     
     <h4>Statistical Validation</h4>
     <p>For each combination, the following is computed:</p>
@@ -943,13 +944,15 @@ $$\text{E-W/N-S Ratio} = \frac{\overline{C}_{EW}}{\overline{C}_{NS}}$$
         <li>Baseline and Multi-GNSS modes find different preferred directions</li>
     </ul>
     
-    <p>Conversely, CMB frame alignment is supported if:</p>
+    <p>Conversely, support for a genuine frame detection — as distinct from an annual-phase measurement — would additionally require:</p>
     <ul>
         <li>Majority of clean (non-Ionofree) combinations find RA within 20° of CMB</li>
         <li>At least one combination achieves global p &lt; 0.05</li>
         <li>Zero variance across station filters (all converge to same RA)</li>
-        <li>Solar Apex is disfavored (separation > 80°)</li>
+        <li>The CMB dipole outperforms competitive in-ecliptic controls (perihelion/aphelion velocity tangents), not merely the off-ecliptic Solar Apex</li>
+        <li>The inferred direction is stable under a |V<sub>bg</sub>| scan up to the physical CMB speed of 370 km/s</li>
     </ul>
+    <p>As reported in §3.13.3a, the last two criteria are not met: the perihelion-velocity tangent is closer to the best fit than the CMB dipole, and the inferred direction migrates tens of degrees across the speed scan. The result is therefore reported as a well-defined annual phase expressible as an in-ecliptic preferred direction, with CMB proximity recorded as a consistency check rather than established as a frame detection.</p>
     
     <p>CODE's 25-year analysis found best-fit at RA = 186°, Dec = −4° (18.2° from CMB). With only 3 years of data, weaker Dec constraints are expected due to limited seasonal sampling, but RA should converge to within ~20° of the CMB dipole if the effect is real.</p>
 </div>

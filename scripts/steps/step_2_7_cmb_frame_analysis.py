@@ -86,8 +86,72 @@ SOLAR_APEX = {
     'speed_kms': 20.0  # Local Standard of Rest
 }
 
+# Competitive control directions (issue 3-3 audit): physically motivated
+# directions that are geometrically competitive with the CMB dipole under an
+# annual-phase template. The ecliptic-plane controls share the plane in which
+# any orbit-driven modulation must live; the perihelion/aphelion tangents test
+# whether the recovered direction is simply Earth's velocity vector at the
+# phase-locked extremum of the annual cycle.
+CONTROL_DIRECTIONS = {
+    'cmb_dipole':     {'ra': 167.94, 'dec': -6.94,  'label': 'CMB dipole (Planck 2018)'},
+    'solar_apex':     {'ra': 271.0,  'dec': 30.0,   'label': 'Solar apex'},
+    'solar_antapex':  {'ra': 91.0,   'dec': -30.0,  'label': 'Solar antapex'},
+    'ecliptic_np':    {'ra': 270.0,  'dec': 66.56,  'label': 'Ecliptic north pole'},
+    'ecliptic_sp':    {'ra': 90.0,   'dec': -66.56, 'label': 'Ecliptic south pole'},
+    'galactic_center':{'ra': 266.4,  'dec': -29.0,  'label': 'Galactic center'},
+}
+
+# Speeds for the background-magnitude scan, including the physical CMB speed.
+SPEED_SCAN_KMS = [5.0, 10.0, 20.0, 50.0, 100.0, 200.0, 369.82]
+
 # Earth orbital parameters
 ECLIPTIC_TILT_DEG = 23.44  # Obliquity of ecliptic
+
+
+def earth_perihelion_aphelion_tangents():
+    """
+    Physical directions of Earth's heliocentric orbital velocity at perihelion
+    and aphelion. Earth's longitude of perihelion is ϖ ≈ 102.9° (J2000); the
+    prograde velocity tangent leads the heliocentric radius vector by 90°,
+    i.e. ecliptic longitude λ_v ≈ ϖ + 90° ≈ 192.9° at perihelion (β = 0).
+    Returns equatorial (RA, Dec) pairs for (perihelion, aphelion).
+    """
+    lam_peri = 102.9 + 90.0   # Earth's velocity ecliptic longitude at perihelion
+    lam_aph = lam_peri - 180.0
+    return (ecliptic_to_equatorial(lam_peri, 0.0),
+            ecliptic_to_equatorial(lam_aph, 0.0))
+
+
+def ecliptic_to_equatorial(lam_deg, beta_deg=0.0):
+    """Convert ecliptic (lon, lat) to equatorial (RA, Dec), J2000 obliquity."""
+    eps = np.radians(ECLIPTIC_TILT_DEG)
+    lam, beta = np.radians(lam_deg), np.radians(beta_deg)
+    ra = np.degrees(np.arctan2(np.sin(lam) * np.cos(eps)
+                               - np.tan(beta) * np.sin(eps),
+                               np.cos(lam))) % 360.0
+    dec = np.degrees(np.arcsin(np.sin(beta) * np.cos(eps)
+                               + np.cos(beta) * np.sin(eps) * np.sin(lam)))
+    return ra, dec
+
+
+def equatorial_to_ecliptic_latitude(ra_deg, dec_deg):
+    """Ecliptic latitude beta of an equatorial direction (degrees)."""
+    eps = np.radians(ECLIPTIC_TILT_DEG)
+    ra, dec = np.radians(ra_deg), np.radians(dec_deg)
+    sinb = (np.sin(dec) * np.cos(eps)
+            - np.cos(dec) * np.sin(eps) * np.sin(ra))
+    return np.degrees(np.arcsin(np.clip(sinb, -1.0, 1.0)))
+
+
+# Perihelion and aphelion orbital-velocity tangents (physical heliocentric
+# convention), computed rather than hardcoded.
+(_peri_ra, _peri_dec), (_aph_ra, _aph_dec) = earth_perihelion_aphelion_tangents()
+CONTROL_DIRECTIONS['perihelion_vel'] = {
+    'ra': float(_peri_ra), 'dec': float(_peri_dec),
+    'label': "Earth velocity tangent at perihelion"}
+CONTROL_DIRECTIONS['aphelion_vel'] = {
+    'ra': float(_aph_ra), 'dec': float(_aph_dec),
+    'label': "Earth velocity tangent at aphelion"}
 
 # Orbital velocity varies ~29.3 to 30.3 km/s
 def get_orbital_speed(day_of_year):
@@ -506,6 +570,111 @@ def bootstrap_direction_uncertainty(monthly_data, n_bootstrap=500):
     return ra_ci, dec_ci
 
 
+def evaluate_control_directions(monthly_data, speed_kms=GRID_SEARCH_SPEED_KMS):
+    """
+    Evaluate the cos(declination) predictor correlation at each competitive
+    control direction under the fixed-speed template.
+
+    The review-level question is whether the CMB dipole is genuinely singled
+    out or merely one of several geometrically admissible directions for an
+    annual-phase template. Controls include the ecliptic poles, solar
+    antapex, Galactic center, and Earth's velocity tangents at perihelion and
+    aphelion — directions that live in or are tied to the ecliptic plane.
+    """
+    ratios = np.array([m['ratio'] for m in monthly_data])
+    out = {}
+    for key, d in CONTROL_DIRECTIONS.items():
+        preds = np.array([
+            np.cos(np.radians(calculate_3d_velocity_vectors(
+                m['doy'], m['orbital_speed'], d['ra'], d['dec'], speed_kms
+            )['v_net_dec_deg']))
+            for m in monthly_data
+        ])
+        if np.std(preds) > 1e-10:
+            r, p = stats.pearsonr(preds, ratios)
+        else:
+            r, p = 0.0, 1.0
+        out[key] = {
+            'label': d['label'],
+            'ra': float(d['ra']),
+            'dec': float(d['dec']),
+            'ecliptic_lat_deg': float(
+                equatorial_to_ecliptic_latitude(d['ra'], d['dec'])),
+            'r': float(r),
+            'p': float(p),
+            'r2': float(r**2),
+        }
+    return out
+
+
+def background_speed_scan(monthly_data, speeds=SPEED_SCAN_KMS,
+                          ra_step=2, dec_step=2):
+    """
+    Repeat the directional grid search across a range of assumed background
+    speeds |V_bg|, including the physical CMB speed 370 km/s.
+
+    Because the predictor cos(dec(V_orb + V_bg)) is dominated by the rotating
+    orbital term whenever |V_bg| is comparable to or larger than v_orb, the
+    recovered direction re-parametrizes the phase of the annual modulation;
+    this scan makes that dependence explicit rather than asserting it.
+    """
+    ratios = np.array([m['ratio'] for m in monthly_data])
+    ra_grid = np.arange(0, 360, ra_step)
+    dec_grid = np.arange(-90, 91, dec_step)
+    ra_mesh, dec_mesh = np.meshgrid(ra_grid, dec_grid)
+    ra_flat, dec_flat = ra_mesh.ravel(), dec_mesh.ravel()
+
+    scan = []
+    for speed in speeds:
+        predictors = np.zeros((len(monthly_data), len(ra_flat)))
+        apex_ra = np.radians(ra_flat)
+        apex_dec = np.radians(dec_flat)
+        vbg_x = speed * np.cos(apex_dec) * np.cos(apex_ra)
+        vbg_y = speed * np.cos(apex_dec) * np.sin(apex_ra)
+        vbg_z = speed * np.sin(apex_dec)
+        epsilon = np.radians(ECLIPTIC_TILT_DEG)
+        for i, m in enumerate(monthly_data):
+            orbit_progress = (m['doy'] - 80) / 365.25 * 2 * np.pi
+            v_ecl_x = -m['orbital_speed'] * np.sin(orbit_progress)
+            v_ecl_y = m['orbital_speed'] * np.cos(orbit_progress)
+            v_orb_x = v_ecl_x
+            v_orb_y = v_ecl_y * np.cos(epsilon)
+            v_orb_z = v_ecl_y * np.sin(epsilon)
+            vx = v_orb_x + vbg_x
+            vy = v_orb_y + vbg_y
+            vz = v_orb_z + vbg_z
+            mag = np.sqrt(vx**2 + vy**2 + vz**2)
+            sin_dec = vz / mag
+            predictors[i, :] = np.sqrt(1.0 - sin_dec**2)
+
+        pred_std = predictors.std(axis=0)
+        valid = pred_std > 1e-10
+        r_vec = np.zeros(len(ra_flat))
+        if valid.any():
+            pn = (predictors[:, valid]
+                  - predictors[:, valid].mean(axis=0)) / pred_std[valid]
+            rn = (ratios - ratios.mean()) / ratios.std()
+            r_vec[valid] = (pn.T @ rn) / len(ratios)
+
+        ibest = int(np.argmax(r_vec))
+        scan.append({
+            'speed_kms': float(speed),
+            'best_ra': float(ra_flat[ibest]),
+            'best_dec': float(dec_flat[ibest]),
+            'best_r': float(r_vec[ibest]),
+            'ecliptic_lat_deg': float(equatorial_to_ecliptic_latitude(
+                ra_flat[ibest], dec_flat[ibest])),
+            'cmb_sep_deg': float(angular_separation(
+                ra_flat[ibest], dec_flat[ibest],
+                CMB_DIPOLE['ra'], CMB_DIPOLE['dec'])),
+            'perihelion_tangent_sep_deg': float(angular_separation(
+                ra_flat[ibest], dec_flat[ibest],
+                CONTROL_DIRECTIONS['perihelion_vel']['ra'],
+                CONTROL_DIRECTIONS['perihelion_vel']['dec'])),
+        })
+    return scan
+
+
 def estimate_global_p_value_monte_carlo(monthly_data, observed_best_r, n_iterations=10000, ra_step=5, dec_step=5):
     """
     Estimate global p-value accounting for the "look-elsewhere effect" (scanning the whole sky).
@@ -808,6 +977,45 @@ def run_analysis():
     else:
         print_status("", "INFO")
         print_status("SOLAR APEX CLOSER TO BEST FIT", "WARNING")
+
+    # ==========================================================================
+    # 4b. Competitive Control Directions (3-3 audit)
+    # ==========================================================================
+    print_status("", "INFO")
+    print_status("[4b] Competitive control directions...", "PROCESS")
+
+    controls = evaluate_control_directions(monthly_data)
+    for key, c in controls.items():
+        sep = angular_separation(best_ra, best_dec, c['ra'], c['dec'])
+        c['sep_from_best_deg'] = float(sep)
+        print_status(
+            f"  {c['label']}: RA={c['ra']:.1f}°, Dec={c['dec']:.1f}°, "
+            f"β={c['ecliptic_lat_deg']:+.1f}°, r={c['r']:.4f}, "
+            f"sep={sep:.1f}°", "INFO")
+
+    peri_control = controls['perihelion_vel']
+    peri_sep = peri_control['sep_from_best_deg']
+    best_ecl_lat = equatorial_to_ecliptic_latitude(best_ra, best_dec)
+    print_status(f"  Best-fit ecliptic latitude: β = {best_ecl_lat:+.1f}°", "INFO")
+    print_status(
+        f"  Perihelion velocity tangent is {peri_sep:.1f}° from best fit "
+        f"(CMB: {cmb_sep:.1f}°)", "INFO")
+
+    # ==========================================================================
+    # 4c. Background-Speed Scan |V_bg|
+    # ==========================================================================
+    print_status("", "INFO")
+    print_status("[4c] Scanning assumed background speed |V_bg|...", "PROCESS")
+
+    speed_scan = background_speed_scan(monthly_data)
+    for row in speed_scan:
+        print_status(
+            f"  |V_bg|={row['speed_kms']:>7.1f} km/s -> "
+            f"RA={row['best_ra']:.0f}°, Dec={row['best_dec']:.0f}°, "
+            f"r={row['best_r']:.3f}, β={row['ecliptic_lat_deg']:+.1f}°, "
+            f"CMB sep={row['cmb_sep_deg']:.1f}°, "
+            f"perihelion-tangent sep={row['perihelion_tangent_sep_deg']:.1f}°",
+            "INFO")
     
     # ==========================================================================
     # Create Visualization
@@ -865,6 +1073,7 @@ def run_analysis():
         'best_fit': {
             'ra': float(best_ra),
             'dec': float(best_dec),
+            'ecliptic_lat_deg': float(best_ecl_lat),
             'correlation': float(best_r),
             'p_value': float(best_p),
             'global_p_value': float(global_p),
@@ -872,6 +1081,8 @@ def run_analysis():
             'ra_ci_68': [float(ra_ci[0]), float(ra_ci[1])],
             'dec_ci_68': [float(dec_ci[0]), float(dec_ci[1])]
         },
+        'control_directions': controls,
+        'speed_scan': speed_scan,
         'cmb_comparison': {
             'cmb_ra': CMB_DIPOLE['ra'],
             'cmb_dec': CMB_DIPOLE['dec'],
@@ -1048,7 +1259,46 @@ def main():
     print_status(f"ROBUSTNESS ANALYSIS:", "INFO")
     print_status(f"  Significant combinations (p<0.05): {n_significant}/{len(all_results)}", "INFO")
     print_status(f"  Consistency: {n_consistent}/10 top results align with CMB (<45°)", "INFO")
-    
+
+    # ==========================================================================
+    # COMPETITIVE CONTROLS + SPEED SCAN on the best combination (3-3 audit)
+    # ==========================================================================
+    print_status("", "INFO")
+    print_status("Evaluating competitive control directions and |V_bg| scan on best combination...", "PROCESS")
+
+    ctrl_monthly = None
+    best_data, _ = load_step_2_5_results(
+        best['filter'], best['metric'], best['coherence_type'],
+        best.get('mode', 'baseline'))
+    if best_data is not None:
+        ctrl_monthly = extract_monthly_data(best_data)
+
+    controls = {}
+    speed_scan = []
+    best_ecl_lat = None
+    if ctrl_monthly:
+        controls = evaluate_control_directions(ctrl_monthly)
+        for key, c in controls.items():
+            c['sep_from_best_deg'] = float(angular_separation(
+                best['best_ra'], best['best_dec'], c['ra'], c['dec']))
+            print_status(
+                f"  {c['label']}: RA={c['ra']:.1f}°, Dec={c['dec']:.1f}°, "
+                f"β={c['ecliptic_lat_deg']:+.1f}°, r={c['r']:.4f}, "
+                f"sep={c['sep_from_best_deg']:.1f}°", "INFO")
+        best_ecl_lat = float(equatorial_to_ecliptic_latitude(
+            best['best_ra'], best['best_dec']))
+        print_status(
+            f"  Best-fit ecliptic latitude: β = {best_ecl_lat:+.1f}°", "INFO")
+        speed_scan = background_speed_scan(ctrl_monthly)
+        for row in speed_scan:
+            print_status(
+                f"  |V_bg|={row['speed_kms']:>7.1f} km/s -> "
+                f"RA={row['best_ra']:.0f}°, Dec={row['best_dec']:.0f}°, "
+                f"r={row['best_r']:.3f}, "
+                f"CMB sep={row['cmb_sep_deg']:.1f}°, "
+                f"perihelion-tangent sep={row['perihelion_tangent_sep_deg']:.1f}°",
+                "INFO")
+
     # Create visualization for best result
     print_status("\nCreating sky map for best result...", "PROCESS")
     create_sky_map(
@@ -1075,8 +1325,15 @@ def main():
             'p_value': float(best['best_p']),
             'global_p_value': float(best['global_p']),
             'cmb_separation': float(best['cmb_sep']),
-            'apex_separation': float(best['apex_sep'])
+            'apex_separation': float(best['apex_sep']),
+            'ecliptic_lat_deg': best_ecl_lat,
+            'perihelion_tangent_separation': float(angular_separation(
+                best['best_ra'], best['best_dec'],
+                CONTROL_DIRECTIONS['perihelion_vel']['ra'],
+                CONTROL_DIRECTIONS['perihelion_vel']['dec']))
         },
+        'control_directions': controls,
+        'speed_scan': speed_scan,
         'robustness': {
             'n_significant': n_significant,
             'n_total': len(all_results),

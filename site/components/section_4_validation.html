@@ -284,43 +284,43 @@
     <table>
         <tr>
             <th>Effect</th>
-            <th>Expected λ</th>
-            <th>Observed λ</th>
+            <th>Expected Scale / Anisotropy</th>
+            <th>Observed Scale / Anisotropy</th>
             <th>Conclusion</th>
         </tr>
         <tr>
-            <td><strong>Ionosphere</strong></td>
-            <td>~500–1,000 km</td>
-            <td>727–3,485 km</td>
-            <td>Persists in ionofree</td>
+            <td>Ionosphere</td>
+            <td>λ ~ 500–1,000 km; E-W &gt; N-S (19.6× diurnal TEC on unconstrained baselines)</td>
+            <td>λ ~ 727–3,485 km; E-W &gt; N-S (1.02–1.31 at &lt;500 km)</td>
+            <td>Scale mismatch; diurnal TEC accounts for 45.2% of short-distance MSC excess and 22.6% of Phase Alignment excess; 54.8% (MSC) and 77.4% (PA) non-ionospheric residuals persist across dual-frequency ionofree removal ($p &lt; 10^{-15}$); the $\Delta$LST-stratified channel is detected with the opposite sign (E-W suppression) at $\Delta$LST = 8–16 min; enhanced in Multi-GNSS</td>
         </tr>
         <tr>
-            <td><strong>Troposphere</strong></td>
-            <td>~100–200 km</td>
-            <td>727–3,485 km</td>
+            <td>Troposphere</td>
+            <td>λ ~ 100–200 km; potential latitudinal delay gradient on N-S pairs</td>
+            <td>λ ~ 727–3,485 km; E-W &gt; N-S persists in latitude-matched pairs ($\Delta{\rm lat} &lt; 2^\circ$)</td>
+            <td>Scale too short; non-dispersive across microwave frequencies; altitude-invariant across 0–2,500 m; cannot explain +31% Multi-GNSS phase anisotropy</td>
+        </tr>
+        <tr>
+            <td>Satellite Geometry</td>
+            <td>Finite: 265 km (E-W) / 3,994 km (N-S) in the Step 2.9 PDOP-weighted simulation</td>
+            <td>λ ~ 727–3,485 km; E-W &gt; N-S at &lt;500 km</td>
+            <td>Geometry alone produces finite λ in the observed range; the observed anisotropy sign is opposite to the simulation's (E-W &gt; N-S vs E-W &lt; N-S)</td>
+        </tr>
+        <tr>
+            <td>Multipath</td>
+            <td>λ ~ 0 km (local site environment)</td>
+            <td>λ ~ 727–3,485 km</td>
             <td>Too short</td>
         </tr>
         <tr>
-            <td><strong>Satellite Geometry</strong></td>
-            <td>Global (∞)</td>
-            <td>727–3,485 km</td>
-            <td>Not global</td>
-        </tr>
-        <tr>
-            <td><strong>Multipath</strong></td>
-            <td>~0 km (local)</td>
-            <td>727–3,485 km</td>
-            <td>Too short</td>
-        </tr>
-        <tr>
-            <td><strong>TEP Prediction</strong></td>
-            <td>~1,000–4,000 km</td>
-            <td>727–3,485 km</td>
-            <td>Consistent</td>
+            <td>TEP Prediction</td>
+            <td>λ ~ 1,000–4,000 km; E-W &gt; N-S from kinematic orbital coupling</td>
+            <td>λ ~ 727–3,485 km; E-W &gt; N-S (1.02–1.31 at &lt;500 km)</td>
+            <td>Consistent across all modes and metrics</td>
         </tr>
     </table>
     
-    <p>None of the known systematic effects produce correlation lengths in the observed range across all processing modes. The observed scales are consistent with TEP predictions, especially for phase alignment metrics which reach 3,485 km in ionofree mode.</p>
+    <p>The ionosphere, troposphere, and multipath correlation scales do not match the observed range (727–3,485 km). When evaluated as anisotropy-sign alternatives, physical mechanisms are likewise constrained. Satellite visibility geometry — modeled directly by the Step 2.9 PDOP-weighted synthetic-clock simulation — generates finite fitted correlation lengths (265 km E-W, 3,994 km N-S) with an anisotropy sign opposite to observation (geometry-only simulation E-W &lt; N-S by ~15× versus observed E-W &gt; N-S). The common-view common-mode channel (shared satellite clock/orbit errors) is now tested directly rather than assumed: Step 2.10 reconstructs the actual common-view satellite overlap $f_{cv}$ for every station pair and epoch from the archived broadcast ephemerides (elevation mask calibrated to 15° against the recorded per-epoch satellite count, offset $-0.16$ satellites), across 26,954 pair-days spanning 12 days of 2023 and 70 stations. The mundane carrier fails on three independent legs: (i) scale — $f_{cv}$ remains above 0.9 out to $\sim$2,000 km and falls only on the 5,000–9,000 km constellation-footprint scale, whereas the measured coherence excess decays at $\sim$600–800 km, roughly two orders of magnitude shorter than the common-view scale; (ii) fixed-distance dependence — the partial correlation of coherence with $f_{cv}$ given distance is $\rho = 0.010$ ($p = 0.09$), with 0 of 20 distance bins showing significant positive within-bin correlation, and conditioning instead on the canonical weighted-overlap kernel $k_w$ (elevation-weighted overlap amplitude, the quantity entering the clock-error covariance) returns $\rho(C, k_w\,|\,r) = 0.014$ ($p = 0.026$) on an essentially flat kernel ($\lambda_{k_w} = 24{,}236$ km); (iii) floor — the distant-pair plateau ($\sim$0.55) equals the MSC estimator floor for independent 288-epoch series (0.542 white / 0.544 random-walk, Monte Carlo calibrated), so where common-view overlap collapses to $f_{cv} \approx 0.25$ the coherence carries no residual common-mode signature. A joint fit $C \sim a\,f_{cv} + A e^{-r/\lambda} + c_0$ returns $a = 0.015$ with the residual exponential intact ($\lambda = 584$ km, amplitude 0.247, $R^2 = 0.92$): the common-mode channel is bounded to a sub-percent share of the coherent variance, and the distance-decaying excess above the estimator floor remains the residual candidate signal (§6.3.8). Step 2.12 then isolates the carrier's content directly: the broadcast-minus-precise difference series (everything in the broadcast solve absent from the SP3 precise-products solve) carries 470&nbsp;ns² of shared power decaying at $\lambda \approx 5{,}200$ km — the constellation-footprint scale — and tracks the reconstructed $f_{cv}$ (Spearman $\rho = 0.74$), while the broadcast-free precise channel retains $\sim$300&nbsp;ns² of distance-structured shared power, exceeding the broadcast channel's entire 164&nbsp;ns² excess; the broadcast common mode is thereby measured, confirmed at its own scale, and excluded as the driver of the short-scale signal (§6.3.8). Conversely, diurnal-TEC local-time decorrelation (Step 2.9 simulation) generates an apparent E-W &gt; N-S enhancement on transcontinental baselines (19.59×) where stations span different local times ($\Delta{\rm LST} &gt; 1\ {\rm hr}$); however, at short baselines (&lt;500 km), local time differences are restricted to $\Delta{\rm LST} \le 25.5\ {\rm min}$ ($&lt;1.8\%$ of a 24-hr diurnal cycle). The quantitative ionospheric fraction diagnostic (§3.10.1) demonstrates that first-order ionospheric elimination removes 45.2% of the short-distance MSC excess and only 22.6% of the phase-alignment excess, with highly significant non-ionospheric residuals (54.8% MSC, 77.4% PA, $p &lt; 10^{-15}$) persisting unconditionally; the Step 2.11 $\Delta$LST stratification detects the local-time channel only at large $\Delta$LST, where it suppresses E-W Phase Alignment — the opposite sign from the measured excess. Similarly, latitudinal tropospheric delay gradients are non-dispersive and bounded by altitude invariance (§3.4) and latitude-matched pair analysis. The observed scales and directional residuals are consistent with TEP predictions, especially for phase alignment metrics which reach 3,485 km in ionofree mode and 1.31 in Multi-GNSS.</p>
 </div>
 
 <h3>4.5 Time Alignment Validation</h3>
@@ -410,7 +410,7 @@
         </tr>
     </table>
     
-    <p style="margin-top: 15px;">The two analyses share no common processing. Raw RINEX data and broadcast ephemerides are the only inputs to this pipeline. Any agreement between results therefore constitutes independent confirmation, not circular validation.</p>
+    <p style="margin-top: 15px;">The two analyses share no common processing (both observe the same physical tracking network). Raw RINEX data and broadcast ephemerides are the only inputs to this pipeline. Any agreement between results therefore constitutes confirmation on an estimation-chain-independent axis, not circular validation.</p>
 </div>
 
 <div>

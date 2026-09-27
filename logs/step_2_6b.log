@@ -1,0 +1,42 @@
+[0;37m[00:55:14] [INFO] ================================================================================[0m
+[0;37m[00:55:14] [INFO] STEP 2.6b: Season-Preserving Planetary-Event Null[0m
+[0;37m[00:55:14] [INFO] ================================================================================[0m
+[0;34m[00:55:14] [PROCESS] [1/3] Building daily coherence series (baseline clock_bias)...[0m
+[0;37m[00:55:14] [INFO]   Station filter: optimal_100_metadata.json (100 stations)[0m
+[0;34m[00:55:18] [PROCESS]   Loading 82 stations...[0m
+    0/82    10/82    20/82    30/82    40/82    50/82    60/82    70/82    80/82
+[1;32m[00:56:20] [SUCCESS]   Loaded 82 stations[0m
+[0;37m[00:56:20] [INFO]   2551 pairs x 1096 dates[0m
+[0;34m[00:56:20] [PROCESS]   Computing pair-day coherences: 2551 pairs x 1096 days (14 workers)...[0m
+    100/2551 pairs    200/2551 pairs    300/2551 pairs    400/2551 pairs    500/2551 pairs    600/2551 pairs    700/2551 pairs    800/2551 pairs    900/2551 pairs    1000/2551 pairs    1100/2551 pairs    1200/2551 pairs    1300/2551 pairs    1400/2551 pairs    1500/2551 pairs    1600/2551 pairs    1700/2551 pairs    1800/2551 pairs    1900/2551 pairs    2000/2551 pairs    2100/2551 pairs    2200/2551 pairs    2300/2551 pairs    2400/2551 pairs    2500/2551 pairs    2551/2551 pairs
+[1;32m[00:58:00] [SUCCESS]   2419544 valid pair-day coherences[0m
+[1;32m[00:58:01] [SUCCESS]   Daily series: 1096 days -> step_2_6b_daily_coherence_baseline_clock_bias.csv[0m
+[0;37m[00:58:02] [INFO]   Series: 1096 days, 2022-01-01 -> 2024-12-31, mean 0.5739 +/- 0.0132[0m
+[0;37m[00:58:02] [INFO]   Event-date coherence placement: z = +0.09 (mean at events 0.5751 vs series 0.5739)[0m
+[0;34m[00:58:02] [PROCESS] [2/3] Season-preserving nulls...[0m
+[0;37m[00:58:02] [INFO]   --- baseline clock_bias / mean_coherence ---[0m
+[0;37m[00:58:02] [INFO]     real events: 22/37 (59.5%), mean sigma 3.77[0m
+[0;37m[00:58:24] [INFO]     uniform-date null: 65.5% +/- 8.9% over 200 sets; p(rate)=0.805, MW p=0.3467[0m
+[0;37m[00:58:24] [INFO]     calendar twins (same DOY, other years): 44/74 (59.5%), mean sigma 3.72[0m
+/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/scripts/steps/step_2_6b_seasonal_null.py:386: RuntimeWarning: divide by zero encountered in matmul
+  resid = y - X @ coef
+/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/scripts/steps/step_2_6b_seasonal_null.py:386: RuntimeWarning: overflow encountered in matmul
+  resid = y - X @ coef
+/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/scripts/steps/step_2_6b_seasonal_null.py:386: RuntimeWarning: invalid value encountered in matmul
+  resid = y - X @ coef
+[0;37m[00:58:46] [INFO]     deseasonalized: real 56.8% vs null 61.6%; p(rate)=0.735, MW p=0.7186[0m
+[0;37m[00:58:46] [INFO]   --- baseline clock_bias / phase_alignment ---[0m
+[0;37m[00:58:46] [INFO]     real events: 22/37 (59.5%), mean sigma 2.53[0m
+[0;37m[00:59:07] [INFO]     uniform-date null: 53.4% +/- 8.0% over 200 sets; p(rate)=0.260, MW p=0.1404[0m
+[0;37m[00:59:07] [INFO]     calendar twins (same DOY, other years): 41/74 (55.4%), mean sigma 2.53[0m
+/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/scripts/steps/step_2_6b_seasonal_null.py:386: RuntimeWarning: divide by zero encountered in matmul
+  resid = y - X @ coef
+/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/scripts/steps/step_2_6b_seasonal_null.py:386: RuntimeWarning: overflow encountered in matmul
+  resid = y - X @ coef
+/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/scripts/steps/step_2_6b_seasonal_null.py:386: RuntimeWarning: invalid value encountered in matmul
+  resid = y - X @ coef
+[0;37m[00:59:27] [INFO]     deseasonalized: real 62.2% vs null 59.5%; p(rate)=0.420, MW p=0.3878[0m
+[0;34m[00:59:27] [PROCESS] [3/3] Tidal-gradient (GM/r^3) scaling on stored event data...[0m
+[0;37m[00:59:27] [INFO]     sigma vs GM/r^3: r=+0.011, p=0.9477[0m
+[0;37m[00:59:27] [INFO]     |mod| vs GM/r^3: r=-0.044, p=0.7973[0m
+[1;32m[00:59:27] [SUCCESS] Results saved: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/results/outputs/step_2_6b_seasonal_null.json[0m

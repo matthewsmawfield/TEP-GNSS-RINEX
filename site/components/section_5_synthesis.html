@@ -122,12 +122,12 @@
             with the orbital velocity coupling (r = −0.509 to −0.763) in §3.11,
             because these measure different quantities: short-distance ratios
             capture the short-baseline directional signature, while
-            full-distance λ ratios incorporate density-driven Temporal Topology
-            modulation that varies annually with Earth's orbital position. This
+            full-distance λ ratios incorporate orbital velocity coupling
+            ($u\cdot\nabla\phi$) that varies annually with Earth's orbital position. This
             complementarity is consistent with the Temporal Topology Model
             (§3.7.5): the underlying Temporal Shear structure is spatially
-            stable, while its observable magnitude is continuously modulated by
-            seasonal variations in ambient density.
+            stable, while its observable directional magnitude is modulated by
+            Earth's orbital velocity through the cosmological field gradient.
         </p>
     </div>
 
@@ -139,40 +139,46 @@
     </p>
 
     <div>
-        <h3>Processing Mode Independence</h3>
+        <h3>Processing Mode Independence and Ionospheric Fraction Diagnostic</h3>
         <table>
             <tr>
                 <th>Mode</th>
                 <th>Pairs (M)</th>
-                <th>E-W/N-S Ratio</th>
-                <th>Alternative explanation tested</th>
+                <th>MSC Ratio</th>
+                <th>PA Ratio</th>
+                <th>Diagnostic / Alternative Tested</th>
             </tr>
             <tr>
                 <td>Baseline (GPS L1)</td>
                 <td>61.9</td>
                 <td>1.033</td>
-                <td>—</td>
+                <td>1.224</td>
+                <td>Raw single-frequency baseline reference</td>
             </tr>
             <tr>
                 <td>Ionofree (L1+L2)</td>
                 <td>59.1</td>
                 <td>1.019</td>
-                <td>Ionosphere</td>
+                <td>1.180</td>
+                <td>Ionosphere: removes 45.2% MSC / 22.6% PA; non-ionospheric residuals (54.8% MSC, 77.4% PA) persist ($p &lt; 10^{-15}$)</td>
+            </tr>
+            <tr>
+                <td>Precise (IGS SP3)</td>
+                <td>59.0</td>
+                <td>1.016</td>
+                <td>1.183</td>
+                <td>Broadcast ephemeris: persists with precise products</td>
             </tr>
             <tr>
                 <td>Multi-GNSS (MGEX)</td>
                 <td>58.1</td>
                 <td>1.050</td>
-                <td>Constellation-specific</td>
+                <td>1.310</td>
+                <td>Constellation geometry: strengthens to +5.0% MSC / +31.0% PA across diverse orbits</td>
             </tr>
         </table>
         <p style="margin-top: 15px">
-            Interpretation: If the signal were ionospheric, it would be expected
-            to be reduced or absent in ionofree mode. If it were GPS-specific,
-            it would be expected to be absent in multi-GNSS. The persistence
-            across all modes, with the highest ratio in multi-GNSS, is
-            consistent with the phenomenon being neither predominantly
-            ionospheric nor constellation-dependent.
+            Interpretation: The attenuation between Baseline and Ionofree provides an explicit diagnostic of the ionospheric fraction: first-order ionospheric elimination accounts for 45.2% of the short-distance MSC excess and 22.6% of the Phase Alignment excess (Step 2.11, day-block bootstrap uncertainties ±1.0%). The remaining 54.8% of the MSC asymmetry (+1.87%, $t = 49.6$) and 77.4% of the Phase Alignment asymmetry (+17.01%, $t = 76.6$) persist unconditionally at $p &lt; 10^{-15}$. When constellation geometry is diversified in Multi-GNSS across GPS, GLONASS, Galileo, and BeiDou, the directional asymmetry reinforces to 1.050 (MSC) and 1.310 (PA), confirming that the non-ionospheric residual reflects a physical terrestrial directional property rather than a single-constellation orbital or atmospheric artifact.
         </p>
     </div>
 
@@ -307,7 +313,8 @@
         </ul>
         <p>
             One interpretation is that the Southern Hemisphere's sparser IGS
-            network (106 vs 238 stations) produces fewer short baselines where
+            network (106 vs 238 stations globally; 254 vs 285 in the analyzed
+            set, with substantially fewer SH station-days) produces fewer short baselines where
             local atmospheric noise dominates, which can improve sensitivity to
             longer-range structure.
         </p>
@@ -450,16 +457,18 @@
             </tr>
         </table>
         <p style="margin-top: 10px">
-            TEP predicts coupling in <em>spacetime</em>, not just temporal
-            effects. If the signal were a purely temporal clock artifact (e.g.,
-            oscillator thermal effects), it would be expected to propagate into
-            position solutions with specific geometric projections rather than
-            with near 1:1 magnitude scaling. The observed near-unity coupling
-            (Δr ≈ 5%) is consistent with a shared underlying contribution
-            affecting both observables (e.g., a perturbation to the spacetime
-            interval ds²) rather than a parameter-specific error. Among the
-            tested combinations, multi-GNSS pos_jitter yields r = −0.610 (4.0σ),
-            and phase alignment reaches r = −0.763 (5.4σ).
+            TEP predicts coupling across <em>spacetime</em>, not merely isolated temporal
+            effects. In Single Point Positioning, the receiver state vector $[X, Y, Z, c\cdot\delta t]^T$
+            solves spatial coordinates and clock bias jointly from pseudoranges. The observed near-unity coupling
+            ($\Delta r \approx 5\%$, with Multi-GNSS pos_jitter yielding $r = -0.610$ at $4.0\sigma$ and clock_bias
+            yielding $r = -0.581$) is the expected structural consequence of the universal conformal factor
+            in the matter metric $\tilde{g}_{\mu\nu} = A^2(\phi)g_{\mu\nu}$, under which spatial rulers and proper
+            clocks scale in unison ($d\tilde{s}^2 = A^2(\phi)ds^2$). While this symmetry excludes downstream
+            clock-internal artifacts (such as oscillator thermal sensitivity, which cannot perturb pseudorange geometry),
+            any upstream pseudorange perturbation projects into both channels. Near-equal coupling thus serves as
+            an indispensable consistency verification of metric scalar transport, with discrimination against
+            classical upstream propagation systematics provided by multi-constellation agreement and the in-phase
+            hemispheric phase test.
         </p>
     </div>
 
@@ -468,9 +477,10 @@
     <p>
         Following the CODE longspan methodology (Paper 2), coherence modulation
         was analyzed around 37 planetary conjunction/opposition events for
-        2022–2024. Using a year-specific methodology and a rigorous permutation
+        2022–2024. Using a year-specific methodology and a permutation
         null control (shuffling coherence values across dates), the analysis
-        finds:
+        finds an apparent excess — which the season-preserving controls of
+        Step 2.6b then adjudicate:
     </p>
 
     <div class="synthesis-table">
@@ -479,65 +489,63 @@
                 <th>Metric</th>
                 <th>Real Events</th>
                 <th>Permuted Null</th>
-                <th>Ratio</th>
-                <th>p-value</th>
+                <th>Season-Preserving Null</th>
+                <th>Season-Controlled p</th>
             </tr>
             <tr>
                 <td>Clock Bias (MSC)</td>
                 <td>59.5%</td>
-                <td>22%</td>
-                <td>2.7×</td>
-                <td>&lt; 0.001</td>
+                <td>22% (2.7×)</td>
+                <td>65.5% uniform-date; 59.5% twins</td>
+                <td>0.805 / 0.735 (deseas.)</td>
             </tr>
             <tr>
                 <td>Clock Bias (Phase)</td>
-                <td>67.6%</td>
-                <td>21%</td>
-                <td>3.2×</td>
-                <td>&lt; 0.001</td>
-            </tr>
-            <tr>
-                <td>Position (Phase)</td>
-                <td>59.5%</td>
-                <td>26%</td>
-                <td>2.3×</td>
-                <td>&lt; 0.001</td>
+                <td>67.6% (Step 2.6); 59.5% on rebuilt series</td>
+                <td>21% (3.2×)</td>
+                <td>53.4% uniform-date; 55.4% twins</td>
+                <td>0.260 / 0.420 (deseas.)</td>
             </tr>
         </table>
     </div>
+    <p style="font-size: 13px; color: #666;">Season-preserving rates are scored on the Step 2.6b rebuild of the baseline clock-bias daily series (2,419,544 pair-days); the permuted-null column shows the Step 2.6 multi-metric runs.</p>
 
     <div>
-        <h3>Independent Replication of CODE Findings</h3>
+        <h3>Season-Preserving Controls Reassign the Excess</h3>
         <p>
-            The RINEX analysis provides an <em>independent replication</em> of
-            CODE's 25-year planetary event findings using a completely different
-            data source (raw RINEX vs. processed products), time period
-            (2022–2024 vs. 2000–2025), and processing methodology (SPP vs. PPP).
-            Key consistencies:
+            The date-shuffled permutation null destroys the seasonal
+            autocorrelation of the daily coherence series while the real events
+            retain their calendar positions on the seasonal curve. Three
+            complementary season-preserving controls (Step 2.6b) show that the
+            elevated detection rate is a property of the autocorrelated series
+            rather than of the planetary configuration: uniformly random fake
+            events score at or above the real rate (65.5% vs 59.5%, p = 0.805),
+            same-DOY dates in other years reproduce the real rate exactly
+            (59.5%), and harmonic deseasonalization leaves no residual excess
+            (56.8% vs 61.6%, p = 0.735). The event-locked interpretation is
+            therefore not supported in this channel: the event windows re-sample
+            the perihelion-locked seasonal modulation documented in §3.6–§3.8.
         </p>
         <ul>
             <li>
-                Detection rate: 59–68% (RINEX) vs. 35.9% (CODE) — both well
-                above ~20% null
+                Scaling: no consistent GM/r² dependence is observed across six
+                channels (clock-amplitude p = 0.647; σ-level p = 0.317–0.989;
+                one |coherence modulation| anticorrelation in clock_bias/phase,
+                p = 0.0099, not reproduced elsewhere), and the leading classical
+                tidal channel GM/r³ is likewise null (σ-level r = +0.011,
+                p = 0.948; |modulation| r = −0.044, p = 0.797)
             </li>
             <li>
-                No consistent positive acceleration-proxy scaling: no consistent
-                GM/r² dependence is observed. Clock-amplitude vs GM/r² is
-                non-significant (p = 0.647), σ-level vs GM/r² is non-significant
-                across channels (p = 0.317–0.989), and one |coherence modulation| anticorrelation
-                appears in clock_bias/phase (p = 0.0099), opposite the tidal
-                expectation and not reproduced across other metrics
-            </li>
-            <li>
-                Mean σ level: 2.5–4.3 (RINEX) vs. ~2.5 (CODE) — the
-                year-specific method yields higher mean σ in raw SPP data
+                CODE comparison: the RINEX channel does not independently
+                confirm the CODE 25-year planetary-event excess pending an
+                equivalent season-preserving control on the CODE series
             </li>
         </ul>
         <p>
-            The absence of GM/r² scaling is consistent with TEP predictions:
-            planetary alignments modulate phase correlation structure (geometric
-            effect) rather than producing classical gravitational amplitude
-            perturbations (which are removed in processing).
+            The channel consequently carries no alignment-coupling claim: a
+            mass-independent geometric mechanism is not established by these
+            data, and none is asserted without a derivation from the scalar
+            sector.
         </p>
     </div>
 
@@ -711,31 +719,32 @@
         </h4>
         <p>
             Key insight: the observed seasonality is interpreted within the TEP
-            v0.12 continuous geometric screening framework. Rather than a binary
+            v0.14 continuous geometric screening framework. Rather than a binary
             screened/unscreened transition, the scalar time field exhibits a
             continuous spatial profile (Temporal Topology) whose local gradient
             (Temporal Shear) drives the observable response:
         </p>
         <ul style="margin-bottom: 0">
             <li>
-                Intrinsic correlation scale (~6000 km): Observed when Temporal
-                Topology is most relaxed (OPTIMAL_100/Ionofree/Summer), with low
-                ambient density permitting active Temporal Shear over long
-                baselines
+                Observational sensitivity envelope (~6000 km): Observed in the
+                OPTIMAL_100/Ionofree/Summer configuration, bounding the
+                observational sensitivity envelope of the long-distance
+                spatial profile and matching the CODE 25-year PPP upper bound
             </li>
             <li>
-                Density-driven gradient suppression: Higher atmospheric density
-                flattens the Temporal Topology, suppressing Temporal Shear and
-                reducing effective λ by ~60–70% (from ~6000 km to ~1800 km).
-                This operates continuously with ambient density rather than at a
-                discrete boundary
+                Terrestrial screening baseline: Sourced by the gravitational mass
+                of the solid Earth ($\rho_\oplus \approx 5.5\ {\rm g\,cm^{-3}}$), the
+                fundamental screening operator $S_\Sigma(\mathcal{E})$ sets a
+                season-invariant spatial correlation scale $\lambda \approx 1700\text{--}1900\ {\rm km}$.
+                Atmospheric gas and ionospheric plasma contribute negligibly to
+                scalar stress-energy and do not alter gravitational screening
             </li>
             <li>
                 Observable result: A baseline scale of ~1800 km is consistently
-                observed under partial flattening, while the larger extent
-                (~6060 km) emerges when density-driven suppression is minimized,
-                consistent with continuous topology relaxation rather than
-                step-function screening
+                observed across the terrestrial network in high-reliability multi-GNSS
+                processing with minimal (~7–13%) seasonal variation, demonstrating that
+                the underlying spatial coherence is robust against seasonal propagation
+                fluctuations
             </li>
         </ul>
     </div>

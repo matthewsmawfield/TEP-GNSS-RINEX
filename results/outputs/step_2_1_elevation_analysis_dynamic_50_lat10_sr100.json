@@ -54,7 +54,7 @@
             "n_samples": 207022,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 0.13785642692924727,
@@ -238,7 +238,7 @@
             "n_samples": 207022,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 1.1073084371159,
@@ -424,7 +424,7 @@
             "n_samples": 207022,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 0.10302751342026954,
@@ -608,7 +608,7 @@
             "n_samples": 207022,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 0.9105784288426138,
@@ -794,7 +794,7 @@
             "n_samples": 207022,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 0.13861898575621587,
@@ -978,7 +978,7 @@
             "n_samples": 207022,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 1.0492296598870343,
@@ -2278,7 +2278,7 @@
             "n_samples": 208198,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 0.1441357720006408,
@@ -2462,7 +2462,7 @@
             "n_samples": 208198,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 1.2038730882624185,
@@ -2648,7 +2648,7 @@
             "n_samples": 208198,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 0.12165798728758688,
@@ -2832,7 +2832,7 @@
             "n_samples": 208198,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 1.0033345630013555,
@@ -3018,7 +3018,7 @@
             "n_samples": 208198,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 0.14632214130932755,
@@ -3202,7 +3202,7 @@
             "n_samples": 208198,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 1.0374588250611845,
@@ -3390,7 +3390,7 @@
             "n_samples": 199724,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 0.23360783486571346,
@@ -3574,7 +3574,7 @@
             "n_samples": 199724,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 1.1436404677594947,
@@ -3760,7 +3760,7 @@
             "n_samples": 199724,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 0.22239722094656703,
@@ -3944,7 +3944,7 @@
             "n_samples": 199724,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 1.3913234299038972,
@@ -4130,7 +4130,7 @@
             "n_samples": 198970,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 0.23239639645522597,
@@ -4314,7 +4314,7 @@
             "n_samples": 198970,
             "short_range_max_km": 100.0,
             "short_range_n": 0,
-            "short_range_mean": NaN
+            "short_range_mean": null
           },
           "Q4": {
             "amplitude": 1.2744868299748693,

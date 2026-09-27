@@ -1,0 +1,559 @@
+{
+  "step": "2.11",
+  "name": "Directional anisotropy stratification (issue 3-6)",
+  "n_pair_days": 1160688,
+  "n_stations": 539,
+  "n_days": 1096,
+  "distance_window_km": [
+    50.0,
+    500.0
+  ],
+  "estimator": "identical to step_2_0 _compute_coherence_phase; clock_bias_ns (baseline) and ionofree_clock_bias_ns",
+  "modes": [
+    "baseline",
+    "ionofree"
+  ],
+  "metrics": [
+    "msc",
+    "phase_alignment"
+  ],
+  "ionospheric_fraction": {
+    "msc": {
+      "baseline": {
+        "n_ew": 337635,
+        "n_ns": 233023,
+        "ew_mean": 0.6770837381681941,
+        "ns_mean": 0.6547312440846218,
+        "ratio": 1.0341399532793387,
+        "t_stat": 74.7024415919536,
+        "cohens_d": 0.20203286111252072
+      },
+      "ionofree": {
+        "n_ew": 337616,
+        "n_ns": 233014,
+        "ew_mean": 0.6349662709023663,
+        "ns_mean": 0.6233096951711278,
+        "ratio": 1.0187010980601519,
+        "t_stat": 49.628434367936194,
+        "cohens_d": 0.13436841564916535
+      },
+      "f_iono": 0.4522143446778431,
+      "f_iono_std": 0.010249545753990123,
+      "f_iono_ci95": [
+        0.43168628372592943,
+        0.471228822797421
+      ],
+      "non_ionospheric_residual": 0.547785655322157
+    },
+    "phase_alignment": {
+      "baseline": {
+        "n_ew": 337635,
+        "n_ns": 233023,
+        "ew_mean": 0.7750179850013968,
+        "ns_mean": 0.6354617167520269,
+        "ratio": 1.2196139666173287,
+        "t_stat": 90.52442570003426,
+        "cohens_d": 0.24793716273300084
+      },
+      "ionofree": {
+        "n_ew": 337616,
+        "n_ns": 233014,
+        "ew_mean": 0.7828315253668741,
+        "ns_mean": 0.6690511946589381,
+        "ratio": 1.1700622188798835,
+        "t_stat": 76.60285801270928,
+        "cohens_d": 0.20987331699134198
+      },
+      "f_iono": 0.22579460592322814,
+      "f_iono_std": 0.010155702574495792,
+      "f_iono_ci95": [
+        0.20658126843952912,
+        0.2446072303435129
+      ],
+      "non_ionospheric_residual": 0.7742053940767719
+    }
+  },
+  "dlat_restricted": {
+    "dlat_lt_1.0deg": {
+      "baseline_msc": {
+        "raw": {
+          "n_ew": 292722,
+          "n_ns": 27008,
+          "ew_mean": 0.6860170328262045,
+          "ns_mean": 0.7109327715307351,
+          "ratio": 0.9649534531220391,
+          "t_stat": -31.49471830503386,
+          "cohens_d": -0.213495819591848
+        },
+        "dist_matched": {
+          "n_ew": 27008,
+          "n_ns": 27008,
+          "ew_mean": 0.7410093556242108,
+          "ns_mean": 0.7109327715307351,
+          "ratio": 1.0423058062560777,
+          "t_stat": 30.386242121106555,
+          "cohens_d": 0.26148923808557967,
+          "distance_matched": true,
+          "n_ew_matched": 27008,
+          "n_ns_matched": 27008
+        }
+      },
+      "baseline_phase_alignment": {
+        "raw": {
+          "n_ew": 292722,
+          "n_ns": 27008,
+          "ew_mean": 0.8130359299728737,
+          "ns_mean": 0.8140775396766684,
+          "ratio": 0.9987205030810598,
+          "t_stat": -0.3446960884147547,
+          "cohens_d": -0.002213452503558732
+        },
+        "dist_matched": {
+          "n_ew": 27008,
+          "n_ns": 27008,
+          "ew_mean": 0.947318744048236,
+          "ns_mean": 0.8140775396766684,
+          "ratio": 1.16367139231539,
+          "t_stat": 41.37641474682811,
+          "cohens_d": 0.3560653246867178,
+          "distance_matched": true,
+          "n_ew_matched": 27008,
+          "n_ns_matched": 27008
+        }
+      },
+      "ionofree_msc": {
+        "raw": {
+          "n_ew": 292703,
+          "n_ns": 27007,
+          "ew_mean": 0.639675606210693,
+          "ns_mean": 0.6497631756133001,
+          "ratio": 0.9844750060003237,
+          "t_stat": -18.08146439436995,
+          "cohens_d": -0.1177839826647546
+        },
+        "dist_matched": {
+          "n_ew": 27007,
+          "n_ns": 27007,
+          "ew_mean": 0.6737977191896879,
+          "ns_mean": 0.6497631756133001,
+          "ratio": 1.0369896979060131,
+          "t_stat": 33.80724707661411,
+          "cohens_d": 0.2909341311341105,
+          "distance_matched": true,
+          "n_ew_matched": 27007,
+          "n_ns_matched": 27007
+        }
+      },
+      "ionofree_phase_alignment": {
+        "raw": {
+          "n_ew": 292703,
+          "n_ns": 27007,
+          "ew_mean": 0.8181145588613105,
+          "ns_mean": 0.8095589568211011,
+          "ratio": 1.0105682260298925,
+          "t_stat": 2.8512246615956887,
+          "cohens_d": 0.018593478161558024
+        },
+        "dist_matched": {
+          "n_ew": 27007,
+          "n_ns": 27007,
+          "ew_mean": 0.9544409216346647,
+          "ns_mean": 0.8095589568211011,
+          "ratio": 1.1789640687597012,
+          "t_stat": 46.57083441736411,
+          "cohens_d": 0.40077339680162244,
+          "distance_matched": true,
+          "n_ew_matched": 27007,
+          "n_ns_matched": 27007
+        }
+      }
+    },
+    "dlat_lt_2.0deg": {
+      "baseline_msc": {
+        "raw": {
+          "n_ew": 337635,
+          "n_ns": 73493,
+          "ew_mean": 0.6770837381681941,
+          "ns_mean": 0.6854127690658017,
+          "ratio": 0.9878481532975234,
+          "t_stat": -16.629892585330037,
+          "cohens_d": -0.07093795936502703
+        },
+        "dist_matched": {
+          "n_ew": 67322,
+          "n_ns": 67322,
+          "ew_mean": 0.7184763190589049,
+          "ns_mean": 0.6869206465845478,
+          "ratio": 1.0459378716177126,
+          "t_stat": 49.670594671989406,
+          "cohens_d": 0.2707316799355607,
+          "distance_matched": true,
+          "n_ew_matched": 67322,
+          "n_ns_matched": 67322
+        }
+      },
+      "baseline_phase_alignment": {
+        "raw": {
+          "n_ew": 337635,
+          "n_ns": 73493,
+          "ew_mean": 0.7750179850013968,
+          "ns_mean": 0.7005867317921194,
+          "ratio": 1.1062413115059722,
+          "t_stat": 32.299192165736336,
+          "cohens_d": 0.13682583022100514
+        },
+        "dist_matched": {
+          "n_ew": 67322,
+          "n_ns": 67322,
+          "ew_mean": 0.9005680487280383,
+          "ns_mean": 0.7094189498862389,
+          "ratio": 1.269444591059277,
+          "t_stat": 74.82364159391322,
+          "cohens_d": 0.40782942747894996,
+          "distance_matched": true,
+          "n_ew_matched": 67322,
+          "n_ns_matched": 67322
+        }
+      },
+      "ionofree_msc": {
+        "raw": {
+          "n_ew": 337616,
+          "n_ns": 73491,
+          "ew_mean": 0.6349662709023663,
+          "ns_mean": 0.633986258870205,
+          "ratio": 1.0015457938061745,
+          "t_stat": 2.679518845627743,
+          "cohens_d": 0.011176461293486767
+        },
+        "dist_matched": {
+          "n_ew": 67322,
+          "n_ns": 67322,
+          "ew_mean": 0.6620698177128501,
+          "ns_mean": 0.6347922716839903,
+          "ratio": 1.0429708224967789,
+          "t_stat": 57.89484527922622,
+          "cohens_d": 0.31555830618821357,
+          "distance_matched": true,
+          "n_ew_matched": 67322,
+          "n_ns_matched": 67322
+        }
+      },
+      "ionofree_phase_alignment": {
+        "raw": {
+          "n_ew": 337616,
+          "n_ns": 73491,
+          "ew_mean": 0.7828315253668741,
+          "ns_mean": 0.7070608146583967,
+          "ratio": 1.1071629330004444,
+          "t_stat": 33.517467209174384,
+          "cohens_d": 0.14296331105712148
+        },
+        "dist_matched": {
+          "n_ew": 67322,
+          "n_ns": 67322,
+          "ew_mean": 0.9007891317117878,
+          "ns_mean": 0.7160849704453788,
+          "ratio": 1.2579360954210919,
+          "t_stat": 73.78901435807701,
+          "cohens_d": 0.40219014791093255,
+          "distance_matched": true,
+          "n_ew_matched": 67322,
+          "n_ns_matched": 67322
+        }
+      }
+    }
+  },
+  "ns_pa_vs_dlat": {
+    "0.0-0.5deg": {
+      "baseline_msc_mean": 0.7938535017425683,
+      "baseline_phase_alignment_mean": 0.9957185467318682,
+      "ionofree_msc_mean": 0.7027207244052062,
+      "ionofree_phase_alignment_mean": 0.9938948224193345,
+      "n_pairs": 1017,
+      "dist_median_km": 52.86197703405723
+    },
+    "0.5-1.0deg": {
+      "baseline_msc_mean": 0.7076881721453542,
+      "baseline_phase_alignment_mean": 0.8069701215636624,
+      "ionofree_msc_mean": 0.6476909237040516,
+      "ionofree_phase_alignment_mean": 0.8023458142542138,
+      "n_pairs": 25991,
+      "dist_median_km": 86.80698247727629
+    },
+    "1.0-2.0deg": {
+      "baseline_msc_mean": 0.6705855295998897,
+      "baseline_phase_alignment_mean": 0.6346480474994249,
+      "ionofree_msc_mean": 0.6248199394811513,
+      "ionofree_phase_alignment_mean": 0.6475098438859124,
+      "n_pairs": 47747,
+      "dist_median_km": 151.34289307538353
+    },
+    "2.0-5.0deg": {
+      "baseline_msc_mean": 0.6405967407595929,
+      "baseline_phase_alignment_mean": 0.6054596310606741,
+      "ionofree_msc_mean": 0.618391085674009,
+      "ionofree_phase_alignment_mean": 0.6515404596340189,
+      "n_pairs": 159978,
+      "dist_median_km": 358.8282119815111
+    }
+  },
+  "dlst_stratified": {
+    "0.0-1.0deg_LST_0-4min": {
+      "baseline_msc": {
+        "raw": {
+          "n_ew": 11297,
+          "n_ns": 148353,
+          "ew_mean": 0.7725641097000576,
+          "ns_mean": 0.6599440236393715,
+          "ratio": 1.170650967395119,
+          "t_stat": 116.78220932147883,
+          "cohens_d": 1.037499907138563
+        },
+        "dist_matched": {
+          "n_ew": 11297,
+          "n_ns": 11297,
+          "ew_mean": 0.7725641097000576,
+          "ns_mean": 0.7343820116974099,
+          "ratio": 1.0519921476758338,
+          "t_stat": 26.889313741900203,
+          "cohens_d": 0.3577934406326691,
+          "distance_matched": true,
+          "n_ew_matched": 11297,
+          "n_ns_matched": 11297
+        }
+      },
+      "baseline_phase_alignment": {
+        "raw": {
+          "n_ew": 11297,
+          "n_ns": 148353,
+          "ew_mean": 0.9550182210123042,
+          "ns_mean": 0.6250940540629744,
+          "ratio": 1.527799240458128,
+          "t_stat": 130.90408575494268,
+          "cohens_d": 0.7104256186669383
+        },
+        "dist_matched": {
+          "n_ew": 11297,
+          "n_ns": 11297,
+          "ew_mean": 0.9550182210123042,
+          "ns_mean": 0.9212478401609008,
+          "ratio": 1.0366572157667204,
+          "t_stat": 9.816889169823844,
+          "cohens_d": 0.13062507232780887,
+          "distance_matched": true,
+          "n_ew_matched": 11297,
+          "n_ns_matched": 11297
+        }
+      },
+      "ionofree_msc": {
+        "raw": {
+          "n_ew": 11279,
+          "n_ns": 148344,
+          "ew_mean": 0.6780251215214277,
+          "ns_mean": 0.6241254750205758,
+          "ratio": 1.0863602731471182,
+          "t_stat": 72.40131839895031,
+          "cohens_d": 0.6462602793201111
+        },
+        "dist_matched": {
+          "n_ew": 11279,
+          "n_ns": 11279,
+          "ew_mean": 0.6780251215214277,
+          "ns_mean": 0.6628415415695832,
+          "ratio": 1.022906802002618,
+          "t_stat": 14.709400771587795,
+          "cohens_d": 0.19588173117591767,
+          "distance_matched": true,
+          "n_ew_matched": 11279,
+          "n_ns_matched": 11279
+        }
+      },
+      "ionofree_phase_alignment": {
+        "raw": {
+          "n_ew": 11279,
+          "n_ns": 148344,
+          "ew_mean": 0.9647095262950962,
+          "ns_mean": 0.6480676953744379,
+          "ratio": 1.4885937583074718,
+          "t_stat": 150.27765393341716,
+          "cohens_d": 0.7150112285960474
+        },
+        "dist_matched": {
+          "n_ew": 11279,
+          "n_ns": 11279,
+          "ew_mean": 0.9647095262950962,
+          "ns_mean": 0.9175355582749155,
+          "ratio": 1.0514137763869051,
+          "t_stat": 15.045297572869057,
+          "cohens_d": 0.20035479217637095,
+          "distance_matched": true,
+          "n_ew_matched": 11279,
+          "n_ns_matched": 11279
+        }
+      }
+    },
+    "1.0-2.0deg_LST_4-8min": {
+      "baseline_msc": {
+        "raw": {
+          "n_ew": 40362,
+          "n_ns": 74475,
+          "ew_mean": 0.7193663826496653,
+          "ns_mean": 0.6429211941574515,
+          "ratio": 1.118902890722704,
+          "t_stat": 123.46995122691217,
+          "cohens_d": 0.7575402293208389
+        },
+        "dist_matched": null
+      },
+      "baseline_phase_alignment": {
+        "raw": {
+          "n_ew": 40362,
+          "n_ns": 74475,
+          "ew_mean": 0.9538243278511223,
+          "ns_mean": 0.6217968047707558,
+          "ratio": 1.5339807482651482,
+          "t_stat": 133.61128606972446,
+          "cohens_d": 0.7214057189273255
+        },
+        "dist_matched": null
+      },
+      "ionofree_msc": {
+        "raw": {
+          "n_ew": 40362,
+          "n_ns": 74475,
+          "ew_mean": 0.6634814631088473,
+          "ns_mean": 0.6186925315712875,
+          "ratio": 1.072392875704851,
+          "t_stat": 88.17581823041719,
+          "cohens_d": 0.5366524970575471
+        },
+        "dist_matched": null
+      },
+      "ionofree_phase_alignment": {
+        "raw": {
+          "n_ew": 40362,
+          "n_ns": 74475,
+          "ew_mean": 0.950100930728808,
+          "ns_mean": 0.6719067343762245,
+          "ratio": 1.4140369222684597,
+          "t_stat": 119.74410598435799,
+          "cohens_d": 0.6432567982940823
+        },
+        "dist_matched": null
+      }
+    },
+    "2.0-4.0deg_LST_8-16min": {
+      "baseline_msc": {
+        "raw": {
+          "n_ew": 97978,
+          "n_ns": 10195,
+          "ew_mean": 0.6933421525526205,
+          "ns_mean": 0.6651502713568366,
+          "ratio": 1.0423842286620066,
+          "t_stat": 31.071787095351493,
+          "cohens_d": 0.30128901239690575
+        },
+        "dist_matched": {
+          "n_ew": 2281,
+          "n_ns": 2281,
+          "ew_mean": 0.6490851598499847,
+          "ns_mean": 0.6668243442434639,
+          "ratio": 0.9733975153327599,
+          "t_stat": -6.428828934874402,
+          "cohens_d": -0.19040548024390166,
+          "distance_matched": true,
+          "n_ew_matched": 2281,
+          "n_ns_matched": 2281
+        }
+      },
+      "baseline_phase_alignment": {
+        "raw": {
+          "n_ew": 97978,
+          "n_ns": 10195,
+          "ew_mean": 0.8565957883726834,
+          "ns_mean": 0.8861501113291923,
+          "ratio": 0.9666486269327681,
+          "t_stat": -9.458045906700617,
+          "cohens_d": -0.08456080540767329
+        },
+        "dist_matched": {
+          "n_ew": 2281,
+          "n_ns": 2281,
+          "ew_mean": 0.5969211115506516,
+          "ns_mean": 0.8950714611988625,
+          "ratio": 0.6668977142351662,
+          "t_stat": -21.42358680508898,
+          "cohens_d": -0.6345118800784477,
+          "distance_matched": true,
+          "n_ew_matched": 2281,
+          "n_ns_matched": 2281
+        }
+      },
+      "ionofree_msc": {
+        "raw": {
+          "n_ew": 97978,
+          "n_ns": 10195,
+          "ew_mean": 0.6451646798215999,
+          "ns_mean": 0.645168176104094,
+          "ratio": 0.9999945808199727,
+          "t_stat": -0.004884437058206335,
+          "cohens_d": -4.741018274972493e-05
+        },
+        "dist_matched": {
+          "n_ew": 2281,
+          "n_ns": 2281,
+          "ew_mean": 0.6297953775424489,
+          "ns_mean": 0.6445117264737794,
+          "ratio": 0.9771666700125909,
+          "t_stat": -5.881907742159061,
+          "cohens_d": -0.17420707250752185,
+          "distance_matched": true,
+          "n_ew_matched": 2281,
+          "n_ns_matched": 2281
+        }
+      },
+      "ionofree_phase_alignment": {
+        "raw": {
+          "n_ew": 97978,
+          "n_ns": 10195,
+          "ew_mean": 0.8663615722058355,
+          "ns_mean": 0.9535151375147508,
+          "ratio": 0.9085976070227129,
+          "t_stat": -42.81712445256843,
+          "cohens_d": -0.2970391585724997
+        },
+        "dist_matched": {
+          "n_ew": 2281,
+          "n_ns": 2281,
+          "ew_mean": 0.6573037586301426,
+          "ns_mean": 0.9576961051661265,
+          "ratio": 0.6863385525788721,
+          "t_stat": -24.122355640015893,
+          "cohens_d": -0.7144425146134563,
+          "distance_matched": true,
+          "n_ew_matched": 2281,
+          "n_ns_matched": 2281
+        }
+      }
+    },
+    "4.0-8.0deg_LST_16-32min": {
+      "baseline_msc": {
+        "raw": null,
+        "dist_matched": null
+      },
+      "baseline_phase_alignment": {
+        "raw": null,
+        "dist_matched": null
+      },
+      "ionofree_msc": {
+        "raw": null,
+        "dist_matched": null
+      },
+      "ionofree_phase_alignment": {
+        "raw": null,
+        "dist_matched": null
+      }
+    }
+  },
+  "interpretation": "f_iono quantifies the first-order ionospheric share of the short-distance excess; the residual is strictly non-ionospheric. dlat_restricted tests bound latitude-structured (tropospheric) systematics: if the anisotropy were driven by Delta_lat gradients it collapses when both sectors are restricted to |Delta_lat|<cap at matched distance; instead the distance-matched restricted ratios strengthen (PA 1.16-1.27), excluding the channel.  dlst_stratified tests the diurnal-TEC local-time channel at fixed distance: the local-time signature is detected only at large Delta_LST (8-16 min), where the distance-matched E-W/N-S PA ratio falls to ~0.67 -- the diurnal phase lag suppresses E-W alignment, the opposite sign from the measured excess.  The local-time channel therefore masks rather than produces the short-distance anisotropy."
+}

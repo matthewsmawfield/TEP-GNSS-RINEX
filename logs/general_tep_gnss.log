@@ -1,0 +1,251 @@
+[18:10:31] [INFO] Loading station coordinates and selecting stratified sample
+[18:10:31] [INFO] nav-covered sample days: 12
+[18:10:32] [INFO] selected 70 stations across 6 latitude bands
+[18:10:32] [INFO] Calibrating elevation mask against recorded nsat
+[18:10:32] [INFO]   mask 5 deg: mean predicted nsat - recorded = +2.09
+[18:10:32] [INFO]   mask 10 deg: mean predicted nsat - recorded = +0.91
+[18:10:32] [INFO]   mask 15 deg: mean predicted nsat - recorded = -0.16
+[18:10:32] [INFO]   mask 20 deg: mean predicted nsat - recorded = -1.17
+[18:10:32] [INFO] adopted elevation mask: 15 deg
+[18:10:50] [INFO] Loading station coordinates and selecting stratified sample
+[18:10:50] [INFO] nav-covered sample days: 12
+[18:10:50] [INFO] selected 70 stations across 6 latitude bands
+[18:10:50] [INFO] Calibrating elevation mask against recorded nsat
+[18:10:50] [INFO]   mask 5 deg: mean predicted nsat - recorded = +2.09
+[18:10:50] [INFO]   mask 10 deg: mean predicted nsat - recorded = +0.91
+[18:10:50] [INFO]   mask 15 deg: mean predicted nsat - recorded = -0.16
+[18:10:50] [INFO]   mask 20 deg: mean predicted nsat - recorded = -1.17
+[18:10:50] [INFO] adopted elevation mask: 15 deg
+[18:10:51] [INFO]   2023-010: 70 stations, 2415 pairs
+[18:10:52] [INFO]   2023-030: 70 stations, 2347 pairs
+[18:10:52] [INFO]   2023-050: 70 stations, 2415 pairs
+[18:10:53] [INFO]   2023-070: 70 stations, 2280 pairs
+[18:10:54] [INFO]   2023-090: 69 stations, 2212 pairs
+[18:10:55] [INFO]   2023-110: 67 stations, 2017 pairs
+[18:10:56] [INFO]   2023-130: 68 stations, 2146 pairs
+[18:10:56] [INFO]   2023-150: 68 stations, 2145 pairs
+[18:10:57] [INFO]   2023-170: 70 stations, 2276 pairs
+[18:10:58] [INFO]   2023-190: 70 stations, 2278 pairs
+[18:10:59] [INFO]   2023-210: 69 stations, 2212 pairs
+[18:11:00] [INFO]   2023-230: 69 stations, 2211 pairs
+[18:11:00] [INFO] total pair-days: 26954
+[18:11:00] [INFO] f_cv(r) decay scale: lambda = 90403 km (measured coherence lambda ~ 766-1900 km)
+[18:11:00] [INFO] within-bin corr(C,f_cv): 0/20 bins significant positive
+[18:11:00] [INFO] joint fit: a_fcv=0.015, residual lambda=584 km, residual amplitude=0.247
+[18:11:00] [INFO] E-W/N-S: f_cv ratio 1.052 vs coherence ratio 1.019
+[18:11:01] [INFO] outputs: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/results/outputs/step_2_10_common_view_null.json
+[18:11:01] [INFO] STEP 2.10 COMPLETE
+[18:13:08] [INFO] Loading station coordinates and selecting stratified sample
+[18:13:08] [INFO] nav-covered sample days: 12
+[18:13:09] [INFO] selected 70 stations across 6 latitude bands
+[18:13:09] [INFO] Calibrating elevation mask against recorded nsat
+[18:13:09] [INFO]   mask 5 deg: mean predicted nsat - recorded = +2.09
+[18:13:09] [INFO]   mask 10 deg: mean predicted nsat - recorded = +0.91
+[18:13:09] [INFO]   mask 15 deg: mean predicted nsat - recorded = -0.16
+[18:13:09] [INFO]   mask 20 deg: mean predicted nsat - recorded = -1.17
+[18:13:09] [INFO] adopted elevation mask: 15 deg
+[18:13:10] [INFO]   2023-010: 70 stations, 2415 pairs
+[18:13:11] [INFO]   2023-030: 70 stations, 2347 pairs
+[18:13:12] [INFO]   2023-050: 70 stations, 2415 pairs
+[18:13:12] [INFO]   2023-070: 70 stations, 2280 pairs
+[18:13:13] [INFO]   2023-090: 69 stations, 2212 pairs
+[18:13:14] [INFO]   2023-110: 67 stations, 2017 pairs
+[18:13:15] [INFO]   2023-130: 68 stations, 2146 pairs
+[18:13:16] [INFO]   2023-150: 68 stations, 2145 pairs
+[18:13:16] [INFO]   2023-170: 70 stations, 2276 pairs
+[18:13:18] [INFO]   2023-190: 70 stations, 2278 pairs
+[18:13:18] [INFO]   2023-210: 69 stations, 2212 pairs
+[18:13:19] [INFO]   2023-230: 69 stations, 2211 pairs
+[18:13:19] [INFO] total pair-days: 26954
+[18:13:19] [INFO] f_cv(r) decay scale: lambda = 90403 km (measured coherence lambda ~ 766-1900 km)
+[18:13:19] [INFO] within-bin corr(C,f_cv): 0/20 bins significant positive
+[18:13:19] [INFO] joint fit: a_fcv=0.015, residual lambda=584 km, residual amplitude=0.247
+[18:13:19] [INFO] MSC estimator floor: 0.542 (white) / 0.544 (random walk)
+[18:13:19] [INFO] E-W/N-S: f_cv ratio 1.052 vs coherence ratio 1.019
+[18:13:20] [INFO] outputs: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/results/outputs/step_2_10_common_view_null.json
+[18:13:20] [INFO] STEP 2.10 COMPLETE
+[04:32:59] [INFO] 539 stations, 1930 pairs in 50-500 km
+[04:33:00] [INFO] 1096 days with data
+[04:33:07] [INFO]   100/1096 days, 72,300 pair-days
+[04:33:13] [INFO]   200/1096 days, 168,742 pair-days
+[04:33:20] [INFO]   300/1096 days, 267,603 pair-days
+[04:33:26] [INFO]   400/1096 days, 369,258 pair-days
+[04:33:34] [INFO]   500/1096 days, 481,754 pair-days
+[04:33:42] [INFO]   600/1096 days, 594,698 pair-days
+[04:33:49] [INFO]   700/1096 days, 706,182 pair-days
+[04:33:57] [INFO]   800/1096 days, 822,525 pair-days
+[04:34:06] [INFO]   900/1096 days, 937,338 pair-days
+[04:34:14] [INFO]   1000/1096 days, 1,052,719 pair-days
+[04:34:22] [INFO] total short-distance pair-days: 1,160,688
+[04:34:32] [INFO] saved: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/results/outputs/step_2_11_anisotropy_stratification.json
+[04:36:26] [INFO] 539 stations, 1930 pairs in 50-500 km
+[04:36:27] [INFO] 1096 days with data
+[04:36:34] [INFO]   100/1096 days, 72,322 pair-days
+[04:36:40] [INFO]   200/1096 days, 168,734 pair-days
+[04:36:47] [INFO]   300/1096 days, 267,603 pair-days
+[04:36:54] [INFO]   400/1096 days, 369,293 pair-days
+[04:37:03] [INFO]   500/1096 days, 481,723 pair-days
+[04:37:11] [INFO]   600/1096 days, 594,694 pair-days
+[04:37:19] [INFO]   700/1096 days, 706,182 pair-days
+[04:37:28] [INFO]   800/1096 days, 822,525 pair-days
+[04:37:37] [INFO]   900/1096 days, 937,395 pair-days
+[04:37:46] [INFO]   1000/1096 days, 1,052,719 pair-days
+[04:37:54] [INFO] total short-distance pair-days: 1,160,688
+[04:38:04] [INFO] saved: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/results/outputs/step_2_11_anisotropy_stratification.json
+[04:50:04] [INFO] 539 stations, 1930 pairs in 50-500 km
+[04:50:05] [INFO] 1096 days with data
+[04:50:12] [INFO]   100/1096 days, 72,307 pair-days
+[04:50:18] [INFO]   200/1096 days, 168,742 pair-days
+[04:50:25] [INFO]   300/1096 days, 267,601 pair-days
+[04:50:32] [INFO]   400/1096 days, 369,293 pair-days
+[04:50:39] [INFO]   500/1096 days, 481,754 pair-days
+[04:50:47] [INFO]   600/1096 days, 594,694 pair-days
+[04:50:54] [INFO]   700/1096 days, 706,168 pair-days
+[04:51:03] [INFO]   800/1096 days, 822,525 pair-days
+[04:51:11] [INFO]   900/1096 days, 937,417 pair-days
+[04:51:20] [INFO]   1000/1096 days, 1,052,719 pair-days
+[04:51:28] [INFO] total short-distance pair-days: 1,160,688
+[04:51:38] [INFO] saved: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/results/outputs/step_2_11_anisotropy_stratification.json
+[00:49:49] [INFO] Loading station coordinates and selecting stratified sample
+[00:49:49] [INFO] selected 70 stations across 6 latitude bands
+[00:49:51] [INFO]   2023-010: 65 stations, 2080 pair-days
+[00:50:01] [INFO] Loading station coordinates and selecting stratified sample
+[00:50:01] [INFO] selected 70 stations across 6 latitude bands
+[00:50:02] [INFO]   2023-010: 65 stations, 2080 pair-days
+[00:50:04] [INFO]   2023-030: 64 stations, 1954 pair-days
+[00:50:05] [INFO]   2023-050: 64 stations, 2016 pair-days
+[00:50:06] [INFO]   2023-070: 63 stations, 1830 pair-days
+[00:50:07] [INFO]   2023-090: 63 stations, 1831 pair-days
+[00:50:08] [INFO]   2023-110: 63 stations, 1830 pair-days
+[00:50:09] [INFO]   2023-130: 63 stations, 1831 pair-days
+[00:50:10] [INFO]   2023-150: 61 stations, 1711 pair-days
+[00:50:11] [INFO]   2023-170: 65 stations, 1951 pair-days
+[00:50:12] [INFO]   2023-190: 64 stations, 1891 pair-days
+[00:50:13] [INFO]   2023-210: 64 stations, 1891 pair-days
+[00:50:15] [INFO]   2023-230: 64 stations, 1891 pair-days
+[00:50:15] [INFO] total pair-days: 22707
+[00:50:15] [INFO] broadcast:  A=0.212  lambda=843 km
+[00:50:15] [INFO] precise:    A=0.105  lambda=1922 km
+[00:50:15] [INFO] difference: A=0.144  lambda=1452 km (share 67.8%)
+[00:50:15] [INFO] Var(D)/Var(b) = 2.458;  MSC floor = 0.538
+[00:50:15] [INFO] outputs: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/results/outputs/step_2_12_channel_mode_null.json
+[00:50:15] [INFO] STEP 2.12 COMPLETE
+[00:53:01] [INFO] Loading station coordinates and selecting stratified sample
+[00:53:02] [INFO] selected 70 stations across 6 latitude bands
+[00:53:04] [INFO]   2023-010: 65 stations, 2080 pair-days
+[00:53:05] [INFO]   2023-030: 64 stations, 1954 pair-days
+[00:53:07] [INFO]   2023-050: 64 stations, 2016 pair-days
+[00:53:09] [INFO]   2023-070: 63 stations, 1830 pair-days
+[00:53:11] [INFO]   2023-090: 63 stations, 1831 pair-days
+[00:53:12] [INFO]   2023-110: 63 stations, 1830 pair-days
+[00:53:14] [INFO]   2023-130: 63 stations, 1831 pair-days
+[00:53:16] [INFO]   2023-150: 61 stations, 1711 pair-days
+[00:53:17] [INFO]   2023-170: 65 stations, 1951 pair-days
+[00:53:19] [INFO]   2023-190: 64 stations, 1891 pair-days
+[00:53:21] [INFO]   2023-210: 64 stations, 1891 pair-days
+[00:53:23] [INFO]   2023-230: 64 stations, 1891 pair-days
+[00:53:23] [INFO] total pair-days: 22707
+[00:53:23] [INFO] broadcast:  A=0.212  lambda=843 km
+[00:53:23] [INFO] precise:    A=0.105  lambda=1922 km
+[00:53:23] [INFO] difference: A=0.144  lambda=1452 km (share 67.8%)
+[00:53:23] [INFO] shared power (ns^2): b=163.5 p=372.5 d=469.5;  Var(D)/Var(b) = 2.458
+[00:53:23] [INFO] outputs: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/results/outputs/step_2_12_channel_mode_null.json
+[00:53:23] [INFO] STEP 2.12 COMPLETE
+[00:55:46] [INFO] Loading station coordinates and selecting stratified sample
+[00:55:46] [INFO] selected 70 stations across 6 latitude bands
+[00:55:48] [INFO]   2023-010: 65 stations, 2080 pair-days
+[00:55:50] [INFO]   2023-030: 64 stations, 1954 pair-days
+[00:55:52] [INFO]   2023-050: 64 stations, 2016 pair-days
+[00:55:53] [INFO]   2023-070: 63 stations, 1830 pair-days
+[00:55:55] [INFO]   2023-090: 63 stations, 1831 pair-days
+[00:55:57] [INFO]   2023-110: 63 stations, 1830 pair-days
+[00:55:58] [INFO]   2023-130: 63 stations, 1831 pair-days
+[00:56:00] [INFO]   2023-150: 61 stations, 1711 pair-days
+[00:56:02] [INFO]   2023-170: 65 stations, 1951 pair-days
+[00:56:04] [INFO]   2023-190: 64 stations, 1891 pair-days
+[00:56:05] [INFO]   2023-210: 64 stations, 1891 pair-days
+[00:56:07] [INFO]   2023-230: 64 stations, 1891 pair-days
+[00:56:07] [INFO] total pair-days: 22707
+[00:56:07] [INFO] common-mode template projection: a=128.8 ns^2, residual A=110.6 ns^2 at lambda=660 km, R2=0.94, share=0.54
+[00:56:07] [INFO] broadcast:  A=0.212  lambda=843 km
+[00:56:07] [INFO] precise:    A=0.105  lambda=1922 km
+[00:56:07] [INFO] difference: A=0.144  lambda=1452 km (share 67.8%)
+[00:56:07] [INFO] shared power (ns^2): b=163.5 p=372.5 d=469.5;  Var(D)/Var(b) = 2.458
+[00:56:07] [INFO] outputs: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/results/outputs/step_2_12_channel_mode_null.json
+[00:56:07] [INFO] STEP 2.12 COMPLETE
+[00:59:18] [INFO] Loading station coordinates and selecting stratified sample
+[00:59:19] [INFO] selected 70 stations across 6 latitude bands
+[00:59:20] [INFO]   2023-010: 65 stations, 2080 pair-days
+[00:59:22] [INFO]   2023-030: 64 stations, 1954 pair-days
+[00:59:24] [INFO]   2023-050: 64 stations, 2016 pair-days
+[00:59:26] [INFO]   2023-070: 63 stations, 1830 pair-days
+[00:59:28] [INFO]   2023-090: 63 stations, 1831 pair-days
+[00:59:29] [INFO]   2023-110: 63 stations, 1830 pair-days
+[00:59:31] [INFO]   2023-130: 63 stations, 1831 pair-days
+[00:59:33] [INFO]   2023-150: 61 stations, 1711 pair-days
+[00:59:35] [INFO]   2023-170: 65 stations, 1951 pair-days
+[00:59:36] [INFO]   2023-190: 64 stations, 1891 pair-days
+[00:59:38] [INFO]   2023-210: 64 stations, 1891 pair-days
+[00:59:40] [INFO]   2023-230: 64 stations, 1891 pair-days
+[00:59:40] [INFO] total pair-days: 22707
+[00:59:40] [INFO] common-mode template projection: a=128.8 ns^2, residual A=110.6 ns^2 at lambda=660 km, R2=0.94, share=0.54
+[00:59:40] [INFO] broadcast:  A=0.212  lambda=843 km
+[00:59:40] [INFO] precise:    A=0.105  lambda=1922 km
+[00:59:40] [INFO] difference: A=0.144  lambda=1452 km (share 67.8%)
+[00:59:40] [INFO] shared power (ns^2): b=163.5 p=372.5 d=469.5;  Var(D)/Var(b) = 2.458
+[00:59:40] [INFO] outputs: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/results/outputs/step_2_12_channel_mode_null.json
+[00:59:40] [INFO] STEP 2.12 COMPLETE
+[01:00:43] [INFO] Loading station coordinates and selecting stratified sample
+[01:00:43] [INFO] selected 70 stations across 6 latitude bands
+[01:00:45] [INFO]   2023-010: 65 stations, 2080 pair-days
+[01:00:47] [INFO]   2023-030: 64 stations, 1954 pair-days
+[01:00:49] [INFO]   2023-050: 64 stations, 2016 pair-days
+[01:00:51] [INFO]   2023-070: 63 stations, 1830 pair-days
+[01:00:52] [INFO]   2023-090: 63 stations, 1831 pair-days
+[01:00:54] [INFO]   2023-110: 63 stations, 1830 pair-days
+[01:00:56] [INFO]   2023-130: 63 stations, 1831 pair-days
+[01:00:57] [INFO]   2023-150: 61 stations, 1711 pair-days
+[01:00:59] [INFO]   2023-170: 65 stations, 1951 pair-days
+[01:01:01] [INFO]   2023-190: 64 stations, 1891 pair-days
+[01:01:03] [INFO]   2023-210: 64 stations, 1891 pair-days
+[01:01:05] [INFO]   2023-230: 64 stations, 1891 pair-days
+[01:01:05] [INFO] total pair-days: 22707
+[01:01:05] [INFO] common-mode template projection: a=128.8 ns^2, residual A=110.6 ns^2 at lambda=660 km, R2=0.94, share=0.54
+[01:01:05] [INFO] broadcast:  A=0.212  lambda=843 km
+[01:01:05] [INFO] precise:    A=0.105  lambda=1922 km
+[01:01:05] [INFO] difference: A=0.144  lambda=1452 km (share 67.8%)
+[01:01:05] [INFO] shared power (ns^2): b=163.5 p=372.5 d=469.5;  Var(D)/Var(b) = 2.458
+[01:01:05] [INFO] outputs: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/results/outputs/step_2_12_channel_mode_null.json
+[01:01:05] [INFO] STEP 2.12 COMPLETE
+[04:30:47] [INFO] Loading station coordinates and selecting stratified sample
+[04:30:47] [INFO] nav-covered sample days: 12
+[04:30:48] [INFO] selected 70 stations across 6 latitude bands
+[04:30:48] [INFO] Calibrating elevation mask against recorded nsat
+[04:30:48] [INFO]   mask 5 deg: mean predicted nsat - recorded = +2.09
+[04:30:48] [INFO]   mask 10 deg: mean predicted nsat - recorded = +0.91
+[04:30:48] [INFO]   mask 15 deg: mean predicted nsat - recorded = -0.16
+[04:30:48] [INFO]   mask 20 deg: mean predicted nsat - recorded = -1.17
+[04:30:48] [INFO] adopted elevation mask: 15 deg
+[04:30:49] [INFO]   2023-010: 70 stations, 2415 pairs
+[04:30:50] [INFO]   2023-030: 70 stations, 2347 pairs
+[04:30:51] [INFO]   2023-050: 70 stations, 2415 pairs
+[04:30:52] [INFO]   2023-070: 70 stations, 2280 pairs
+[04:30:53] [INFO]   2023-090: 69 stations, 2212 pairs
+[04:30:54] [INFO]   2023-110: 67 stations, 2017 pairs
+[04:30:55] [INFO]   2023-130: 68 stations, 2146 pairs
+[04:30:56] [INFO]   2023-150: 68 stations, 2145 pairs
+[04:30:57] [INFO]   2023-170: 70 stations, 2276 pairs
+[04:30:58] [INFO]   2023-190: 70 stations, 2278 pairs
+[04:30:59] [INFO]   2023-210: 69 stations, 2212 pairs
+[04:31:00] [INFO]   2023-230: 69 stations, 2211 pairs
+[04:31:00] [INFO] total pair-days: 26954
+[04:31:00] [INFO] f_cv(r) decay scale: lambda = 90403 km (measured coherence lambda ~ 766-1900 km)
+[04:31:00] [INFO] k_w(r) decay scale: lambda = 24236 km
+[04:31:00] [INFO] within-bin corr(C,f_cv): 0/20 bins significant positive
+[04:31:00] [INFO] within-bin corr(C,k_w): 3/20 bins significant positive
+[04:31:00] [INFO] joint fit: a_fcv=0.015, residual lambda=584 km, residual amplitude=0.247
+[04:31:00] [INFO] joint fit (k_w): a_kw=0.015, residual lambda=580 km, residual amplitude=0.247
+[04:31:00] [INFO] MSC estimator floor: 0.542 (white) / 0.544 (random walk)
+[04:31:00] [INFO] E-W/N-S: f_cv ratio 1.052 vs coherence ratio 1.019
+[04:31:00] [INFO] outputs: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/results/outputs/step_2_10_common_view_null.json
+[04:31:00] [INFO] STEP 2.10 COMPLETE

@@ -1,0 +1,121 @@
+{
+  "step": "2.6b",
+  "name": "season_preserving_planetary_event_null",
+  "timestamp": "2026-09-24T00:59:27.439953",
+  "methodology": "Rebuilds the Step 2.6 daily coherence series from raw NPZ, then applies season-preserving controls: uniform-date null on the real series, same-DOY other-year calendar twins, and harmonic-deseasonalized rescoring; plus GM/r^3 tidal-gradient scaling.",
+  "daily_series": {
+    "n_days": 1096,
+    "date_min": "2022-01-01",
+    "date_max": "2024-12-31",
+    "mean_coherence": 0.5739007892983251,
+    "std_coherence": 0.013195593147307297,
+    "event_date_z": 0.09218068224578017,
+    "cache": "step_2_6b_daily_coherence_baseline_clock_bias.csv"
+  },
+  "event_window_days": 120,
+  "n_null_sets": 200,
+  "tests": {
+    "mean_coherence": {
+      "metric": "mean_coherence",
+      "real": {
+        "n": 37,
+        "n_sig": "22",
+        "rate": 0.5945945945945946,
+        "mean_sigma": 3.769586172189766
+      },
+      "uniform_date_null": {
+        "n_sets": 200,
+        "mean_rate": 0.655,
+        "std_rate": 0.08853063585163673,
+        "p_rate": 0.805,
+        "mannwhitney_p": 0.34672673125823555,
+        "mean_sigma": 3.642621335630562
+      },
+      "calendar_twins": {
+        "n": 74,
+        "n_sig": "44",
+        "rate": 0.5945945945945946,
+        "mean_sigma": 3.71565561317748
+      },
+      "deseasonalized": {
+        "harmonic_coeffs": [
+          0.5739009255928931,
+          -0.0006642290805742699,
+          -0.0006900740611801686,
+          0.003383228500915879,
+          0.0001319228790308995
+        ],
+        "real": {
+          "n": 37,
+          "n_sig": "21",
+          "rate": 0.5675675675675675,
+          "mean_sigma": 2.329728426412477
+        },
+        "null": {
+          "mean_rate": 0.6158108108108108,
+          "std_rate": 0.07939128809431123,
+          "p_rate": 0.735,
+          "mannwhitney_p": 0.7186330002780745
+        }
+      }
+    },
+    "phase_alignment": {
+      "metric": "phase_alignment",
+      "real": {
+        "n": 37,
+        "n_sig": "22",
+        "rate": 0.5945945945945946,
+        "mean_sigma": 2.5292458153393267
+      },
+      "uniform_date_null": {
+        "n_sets": 200,
+        "mean_rate": 0.5335135135135135,
+        "std_rate": 0.0798208366315159,
+        "p_rate": 0.26,
+        "mannwhitney_p": 0.140386910455312,
+        "mean_sigma": 2.307793738578374
+      },
+      "calendar_twins": {
+        "n": 74,
+        "n_sig": "41",
+        "rate": 0.5540540540540541,
+        "mean_sigma": 2.534384630849446
+      },
+      "deseasonalized": {
+        "harmonic_coeffs": [
+          0.21617270392900884,
+          -0.0011525149548001225,
+          -0.0010159411379853146,
+          -0.005151737351938011,
+          0.004433307570075079
+        ],
+        "real": {
+          "n": 37,
+          "n_sig": "23",
+          "rate": 0.6216216216216216,
+          "mean_sigma": 2.3503228745367792
+        },
+        "null": {
+          "mean_rate": 0.5945945945945945,
+          "std_rate": 0.08233268222555576,
+          "p_rate": 0.42,
+          "mannwhitney_p": 0.38780075879318104
+        }
+      }
+    }
+  },
+  "gm_r3_scaling": {
+    "sigma_vs_gm_r3": {
+      "valid": true,
+      "n": 37,
+      "pearson_r": 0.01116414412048899,
+      "p_value": 0.9477122211632443
+    },
+    "mod_vs_gm_r3": {
+      "valid": true,
+      "n": 37,
+      "pearson_r": -0.04369481500440074,
+      "p_value": 0.7973444976720572
+    }
+  }
+}

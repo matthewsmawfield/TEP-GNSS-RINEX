@@ -1,0 +1,158 @@
+{
+  "step": "2.7-controls",
+  "name": "cmb_frame_competitive_controls",
+  "data_source": "step_2_5_orbital_coupling_all_stations_multi_gnss.json",
+  "n_months": 36,
+  "best_fit_direction": {
+    "ra": 188.0,
+    "dec": -5.0,
+    "ecliptic_lat_deg": -1.4218036698334253
+  },
+  "control_directions": {
+    "cmb_dipole": {
+      "label": "CMB dipole (Planck 2018)",
+      "ra": 167.94,
+      "dec": -6.94,
+      "ecliptic_lat_deg": -11.149052548391419,
+      "r": 0.4134073605827643,
+      "p": 0.01220547030150129,
+      "r2": 0.1709056457840077,
+      "sep_from_best_deg": 20.043210090095354
+    },
+    "solar_apex": {
+      "label": "Solar apex",
+      "ra": 271.0,
+      "dec": 30.0,
+      "ecliptic_lat_deg": 53.43495348137797,
+      "r": -0.012024246029113526,
+      "p": 0.9445106428662716,
+      "r2": 0.0001445824925686524,
+      "sep_from_best_deg": 86.47049920927512
+    },
+    "solar_antapex": {
+      "label": "Solar antapex",
+      "ra": 91.0,
+      "dec": -30.0,
+      "ecliptic_lat_deg": -53.43495348137797,
+      "r": -0.1210630753787661,
+      "p": 0.4818458708820306,
+      "r2": 0.014656268220164801,
+      "sep_from_best_deg": 93.52950079072487
+    },
+    "ecliptic_np": {
+      "label": "Ecliptic north pole",
+      "ra": 270.0,
+      "dec": 66.56,
+      "ecliptic_lat_deg": 90.0,
+      "r": 0.006906365873399226,
+      "p": 0.9681121124318474,
+      "r2": 4.769788957725345e-05,
+      "sep_from_best_deg": 91.42180366983342
+    },
+    "ecliptic_sp": {
+      "label": "Ecliptic south pole",
+      "ra": 90.0,
+      "dec": -66.56,
+      "ecliptic_lat_deg": -90.0,
+      "r": -0.09619339774740344,
+      "p": 0.5767841083585001,
+      "r2": 0.009253169770190162,
+      "sep_from_best_deg": 88.57819633016658
+    },
+    "galactic_center": {
+      "label": "Galactic center",
+      "ra": 266.4,
+      "dec": -29.0,
+      "ecliptic_lat_deg": -5.599522431191297,
+      "r": -0.032080805107472916,
+      "p": 0.852649174529108,
+      "r2": 0.0010291780563436604,
+      "sep_from_best_deg": 77.44061287712258
+    },
+    "perihelion_vel": {
+      "label": "Earth velocity tangent at perihelion",
+      "ra": 191.86693013967522,
+      "dec": -5.09493988131057,
+      "ecliptic_lat_deg": -8.74652537402467e-15,
+      "r": 0.4938809626424185,
+      "p": 0.0022043372731126373,
+      "r2": 0.24391840526060196,
+      "sep_from_best_deg": 3.8530984720033463
+    },
+    "aphelion_vel": {
+      "label": "Earth velocity tangent at aphelion",
+      "ra": 11.866930139675246,
+      "dec": 5.094939881310571,
+      "ecliptic_lat_deg": 0.0,
+      "r": -0.6810320340444648,
+      "p": 4.845181222742954e-06,
+      "r2": 0.46380463139474104,
+      "sep_from_best_deg": 176.14690152799665
+    }
+  },
+  "speed_scan": [
+    {
+      "speed_kms": 5.0,
+      "best_ra": 190.0,
+      "best_dec": 26.0,
+      "best_r": 0.02546356895726186,
+      "ecliptic_lat_deg": 27.663630251721525,
+      "cmb_sep_deg": 39.29252896870682,
+      "perihelion_tangent_sep_deg": 31.14761922159852
+    },
+    {
+      "speed_kms": 10.0,
+      "best_ra": 180.0,
+      "best_dec": 0.0,
+      "best_r": 0.17183347615606015,
+      "ecliptic_lat_deg": -2.7911663187095035e-15,
+      "cmb_sep_deg": 13.88859636279827,
+      "perihelion_tangent_sep_deg": 12.899999999999975
+    },
+    {
+      "speed_kms": 20.0,
+      "best_ra": 190.0,
+      "best_dec": -6.0,
+      "best_r": 0.49976926375859804,
+      "ecliptic_lat_deg": -1.5589599916452612,
+      "cmb_sep_deg": 21.937647233669075,
+      "perihelion_tangent_sep_deg": 2.0668607513457773
+    },
+    {
+      "speed_kms": 50.0,
+      "best_ra": 156.0,
+      "best_dec": 72.0,
+      "best_r": 0.8075414422845626,
+      "ecliptic_lat_deg": 55.343414044796695,
+      "cmb_sep_deg": 79.32719619068659,
+      "perihelion_tangent_sep_deg": 80.50439790376164
+    },
+    {
+      "speed_kms": 100.0,
+      "best_ra": 132.0,
+      "best_dec": 28.0,
+      "best_r": 0.8082384111709136,
+      "ecliptic_lat_deg": 9.771385105337883,
+      "cmb_sep_deg": 49.239477956469564,
+      "perihelion_tangent_sep_deg": 66.43400131301989
+    },
+    {
+      "speed_kms": 200.0,
+      "best_ra": 140.0,
+      "best_dec": 32.0,
+      "best_r": 0.8013169447034395,
+      "ecliptic_lat_deg": 15.625496851250945,
+      "cmb_sep_deg": 47.181416422097215,
+      "perihelion_tangent_sep_deg": 61.67111832225529
+    },
+    {
+      "speed_kms": 369.82,
+      "best_ra": 144.0,
+      "best_dec": 34.0,
+      "best_r": 0.7941765524607605,
+      "ecliptic_lat_deg": 18.614909956132003,
+      "cmb_sep_deg": 46.79604835300203,
+      "perihelion_tangent_sep_deg": 59.71467425557209
+    }
+  ]
+}

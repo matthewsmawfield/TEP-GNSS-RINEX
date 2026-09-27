@@ -1,0 +1,91 @@
+{
+ "step": "2.12",
+ "name": "Channel-mode (broadcast vs precise) common-mode null",
+ "n_pair_days": 22707,
+ "n_stations": 70,
+ "sample_days": [
+  "2023-010",
+  "2023-030",
+  "2023-050",
+  "2023-070",
+  "2023-090",
+  "2023-110",
+  "2023-130",
+  "2023-150",
+  "2023-170",
+  "2023-190",
+  "2023-210",
+  "2023-230"
+ ],
+ "estimator": "identical to step_2_0: timestamp intersection, linear detrend, Welch MSC 10-500 uHz",
+ "channels": {
+  "broadcast_clock_bias": {
+   "amplitude": 0.212423652548752,
+   "lambda_km": 843.1669881979602,
+   "c0": 0.5497371788106951,
+   "r_squared": 0.9365963634920507
+  },
+  "precise_clock_bias": {
+   "amplitude": 0.10529984685794404,
+   "lambda_km": 1921.7815072270444,
+   "c0": 0.5447107025672561,
+   "r_squared": 0.8825090151917769
+  },
+  "difference_b_minus_p": {
+   "amplitude": 0.14395123130543142,
+   "lambda_km": 1451.5227635226354,
+   "c0": 0.5462500284835735,
+   "r_squared": 0.8194316898367471
+  }
+ },
+ "shared_power_ns2": {
+  "broadcast": {
+   "amplitude_ns2": 163.54174077573634,
+   "lambda_km": 2229.9266541162806,
+   "c0_ns2": -13.257639527194977,
+   "r_squared": 0.8207698167332218
+  },
+  "precise": {
+   "amplitude_ns2": 372.5110346996548,
+   "lambda_km": 4474.7755725006555,
+   "c0_ns2": -72.36763012115908,
+   "r_squared": 0.6637358000500397
+  },
+  "difference": {
+   "amplitude_ns2": 469.54017055722977,
+   "lambda_km": 5206.587345005796,
+   "c0_ns2": -107.35133752541327,
+   "r_squared": 0.6664075975350494
+  },
+  "floor_white_mean_ns2": 0.0017183005877511419,
+  "floor_white_std_ns2": 0.03819815015343167,
+  "note": "band-integrated Re(cross-spectrum): unbiased shared variance (ns^2); independent noise contributes zero in expectation, so channel amplitudes are directly comparable despite the precise channel's higher per-series noise"
+ },
+ "variance_share_diff_over_broadcast": 2.4579183966032274,
+ "msc_estimator_floor_white": 0.5380427380288169,
+ "amplitude_share_diff_over_broadcast": 0.677661030578476,
+ "shared_power_share_diff_over_broadcast": 2.871072353333373,
+ "commonmode_template_projection": {
+  "a_cm_ns2": 128.76880488975664,
+  "residual_amplitude_ns2": 110.5705215142662,
+  "residual_lambda_km": 659.5449532930381,
+  "c0_ns2": -30.691948375382346,
+  "r_squared": 0.9402088504270233,
+  "commonmode_share_of_excess": 0.5380177458692483,
+  "note": "projection of the measured common-mode template onto the broadcast channel's shared-power profile: a_cm is the common-mode-shaped contribution admitted by the data"
+ },
+ "carrier_validation_vs_fcv": {
+  "spearman_Sh_d_vs_fcv": {
+   "rho": 0.7361660079051384,
+   "p": 6.216777655315647e-05
+  },
+  "spearman_Sh_b_vs_fcv": {
+   "rho": 0.8636363636363636,
+   "p": 1.1123161784623159e-07
+  },
+  "n_bins": 23,
+  "note": "D-channel shared power should track the measured common-view fraction if D carries the satellite carrier; the broadcast signal is shown for contrast"
+ },
+ "interpretation": "The difference series D = broadcast \u2212 precise contains every element of the broadcast SPP solve absent from the precise-product solve \u2014 the satellite clock/orbit common mode plus inter-solve modelling differences \u2014 so its distance-structured coherence is a strict upper envelope on what the broadcast common-mode carrier can supply.  The precise channel retains the broadcast-free signal.",
+ "verdict": "Channel-mode decomposition on 22707 real pair-days measures the broadcast satellite-product common mode directly and excludes it as the driver on three legs.  (1) The carrier is real and at the expected scale: the broadcast-minus-precise difference channel carries 470 ns^2 of distance-structured shared power at lambda = 5207 km \u2014 the constellation-footprint scale (and its binned profile tracks the Step 2.10 common-view fraction, Spearman rho = 0.74) \u2014 versus the measured signal's lambda = 843 km (MSC) / 2230 km (shared power).  (2) The broadcast-free channel retains the signal: the precise-products solve, into which broadcast satellite clock (~1-5 ns) and orbit (~1-5 m) errors cannot enter at all, keeps a distance-structured excess of 373 ns^2 shared power (MSC amplitude 0.105 at lambda = 1922 km) \u2014 comparable to or exceeding the broadcast channel's entire 164 ns^2 excess.  (3) Projecting the measured common-mode template onto the broadcast shared-power profile admits at most ~54% common-mode-shaped content (an upper bound \u2014 the difference channel is a superset of the carrier and the two decay profiles are partially degenerate), leaving 111 ns^2 of residual structure at lambda = 660 km the carrier cannot supply."
+}

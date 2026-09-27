@@ -1,0 +1,322 @@
+{
+ "step": "2.10",
+ "name": "Common-view common-mode null test",
+ "n_pair_days": 26954,
+ "n_stations": 70,
+ "sample_days": [
+  "2023-010",
+  "2023-030",
+  "2023-050",
+  "2023-070",
+  "2023-090",
+  "2023-110",
+  "2023-130",
+  "2023-150",
+  "2023-170",
+  "2023-190",
+  "2023-210",
+  "2023-230"
+ ],
+ "elevation_mask_deg": 15,
+ "mask_calibration": {
+  "5": 2.0885416666666665,
+  "10": 0.9062499999999997,
+  "15": -0.15972222222222218,
+  "20": -1.1736111111111114
+ },
+ "estimator": "identical to step_2_0: raw clock_bias_ns, timestamp intersection, Welch MSC 10-500 uHz",
+ "commonview_null_curve": {
+  "lambda_km": 90403.45750999315,
+  "r_squared": 0.995857195294988,
+  "note": "f_cv(r) is the mundane channel's predicted decay scale: if coherence were a pure common-view artefact, C(r) should track this curve up to a scale factor"
+ },
+ "correlations": {
+  "spearman_coh_fcv": {
+   "rho": 0.1234593729921942,
+   "p": 5.027740384656554e-92
+  },
+  "spearman_coh_dist": {
+   "rho": -0.12501760870362405,
+   "p": 2.4797084644801936e-94
+  },
+  "spearman_fcv_dist": {
+   "rho": -0.9893607104379227,
+   "p": 0.0
+  },
+  "partial_spearman_coh_fcv_given_dist": {
+   "rho": 0.01027023385682822,
+   "p": 0.09177659416380081
+  },
+  "spearman_coh_kw": {
+   "rho": 0.12367630552091056,
+   "p": 2.40981223832142e-92
+  },
+  "spearman_kw_dist": {
+   "rho": -0.9891839614003977,
+   "p": 0.0
+  },
+  "partial_spearman_coh_kw_given_dist": {
+   "rho": 0.013531079474479082,
+   "p": 0.026317987442292273
+  },
+  "note": "partial correlations: does coherence track the common-view fraction f_cv or the canonical weighted-overlap kernel k_w at fixed distance?"
+ },
+ "weighted_kernel_null_curve": {
+  "lambda_km": 24235.696065912103,
+  "r_squared": 0.9936985629835847,
+  "note": "k_w(r) is the canonical mundane kernel (elevation-weighted overlap amplitude) computed on the real broadcast-ephemeris visibility of the raw-data pair-days; compare Paper 1 step_5_2 and Paper 14 step_3_2"
+ },
+ "within_bin_corr": {
+  "314km": {
+   "rho": -0.4783975897007501,
+   "p": 3.2154006753187816e-05,
+   "n": 69
+  },
+  "540km": {
+   "rho": 0.026823003948938686,
+   "p": 0.8144802161577843,
+   "n": 79
+  },
+  "646km": {
+   "rho": 0.02427020209788059,
+   "p": 0.856493733154936,
+   "n": 58
+  },
+  "774km": {
+   "rho": -0.00249694667675289,
+   "p": 0.986561577882002,
+   "n": 48
+  },
+  "926km": {
+   "rho": 0.006103746946639214,
+   "p": 0.9597090967971413,
+   "n": 71
+  },
+  "1109km": {
+   "rho": 0.12459989301414574,
+   "p": 0.07800758352662761,
+   "n": 201
+  },
+  "1327km": {
+   "rho": -0.15661653340847456,
+   "p": 0.1450624378143412,
+   "n": 88
+  },
+  "1589km": {
+   "rho": -0.05155675561653476,
+   "p": 0.30064963506034564,
+   "n": 405
+  },
+  "1902km": {
+   "rho": 0.060405952429435875,
+   "p": 0.3534911189932337,
+   "n": 238
+  },
+  "2277km": {
+   "rho": -0.0034599558033226196,
+   "p": 0.934889419444724,
+   "n": 560
+  },
+  "2726km": {
+   "rho": 0.049833485414683215,
+   "p": 0.32693008125071343,
+   "n": 389
+  },
+  "3264km": {
+   "rho": -0.049852253521012614,
+   "p": 0.2630030612045881,
+   "n": 506
+  },
+  "3907km": {
+   "rho": 0.03899071318850634,
+   "p": 0.22551247876536307,
+   "n": 968
+  },
+  "4677km": {
+   "rho": -0.059725831432544785,
+   "p": 0.0558162575794844,
+   "n": 1026
+  },
+  "5599km": {
+   "rho": 0.0611292849949807,
+   "p": 0.05085477213875545,
+   "n": 1021
+  },
+  "6703km": {
+   "rho": -0.06883359589486297,
+   "p": 0.00644734165291495,
+   "n": 1565
+  },
+  "8024km": {
+   "rho": 0.004891022473214708,
+   "p": 0.8069733981484029,
+   "n": 2498
+  },
+  "9605km": {
+   "rho": -0.025620399254886475,
+   "p": 0.10879394200736602,
+   "n": 3919
+  },
+  "11498km": {
+   "rho": -0.016165635292550853,
+   "p": 0.25605684304620235,
+   "n": 4938
+  },
+  "13765km": {
+   "rho": 0.010583024648304023,
+   "p": 0.5053350614100058,
+   "n": 3964
+  }
+ },
+ "within_bin_corr_kw": {
+  "314km": {
+   "rho": -0.5242966751918159,
+   "p": 3.7670940203283072e-06,
+   "n": 69
+  },
+  "540km": {
+   "rho": 0.4015336398414388,
+   "p": 0.0002447918973704314,
+   "n": 79
+  },
+  "646km": {
+   "rho": 0.24230213171737064,
+   "p": 0.06686787441801778,
+   "n": 58
+  },
+  "774km": {
+   "rho": -0.05568823273990447,
+   "p": 0.706960560284744,
+   "n": 48
+  },
+  "926km": {
+   "rho": 0.047518443997317236,
+   "p": 0.693940700753928,
+   "n": 71
+  },
+  "1109km": {
+   "rho": 0.125191369883257,
+   "p": 0.07659435790990377,
+   "n": 201
+  },
+  "1327km": {
+   "rho": -0.0034870205346764823,
+   "p": 0.9742778414339242,
+   "n": 88
+  },
+  "1589km": {
+   "rho": -0.16269597403090066,
+   "p": 0.0010162343465939569,
+   "n": 405
+  },
+  "1902km": {
+   "rho": 0.1200499902307197,
+   "p": 0.06446029499849752,
+   "n": 238
+  },
+  "2277km": {
+   "rho": 0.014071632881482407,
+   "p": 0.7396868975315063,
+   "n": 560
+  },
+  "2726km": {
+   "rho": 0.08982098917699056,
+   "p": 0.07682317693927794,
+   "n": 389
+  },
+  "3264km": {
+   "rho": 0.03747343090367695,
+   "p": 0.400261268547918,
+   "n": 506
+  },
+  "3907km": {
+   "rho": 0.09760868591958946,
+   "p": 0.0023641488626392503,
+   "n": 968
+  },
+  "4677km": {
+   "rho": -0.030432660751430484,
+   "p": 0.33013947724025283,
+   "n": 1026
+  },
+  "5599km": {
+   "rho": 0.0769501222954034,
+   "p": 0.013915797508475358,
+   "n": 1021
+  },
+  "6703km": {
+   "rho": -0.0445353849391305,
+   "p": 0.07818940039637617,
+   "n": 1565
+  },
+  "8024km": {
+   "rho": -0.0002646065661290627,
+   "p": 0.9894535370711841,
+   "n": 2498
+  },
+  "9605km": {
+   "rho": -0.02459922645962715,
+   "p": 0.12363338764236687,
+   "n": 3919
+  },
+  "11498km": {
+   "rho": -0.024601170265415202,
+   "p": 0.08388600932694508,
+   "n": 4938
+  },
+  "13765km": {
+   "rho": 0.009024044153958034,
+   "p": 0.5700424722869688,
+   "n": 3964
+  }
+ },
+ "joint_model": {
+  "a_fcv": 0.014501536529685914,
+  "A": 0.24733690733962807,
+  "lambda_km": 584.1429550347351,
+  "c0": 0.5430144327333238,
+  "r_squared": 0.10158348837372866,
+  "residual_lambda_km": 584.1623950160082,
+  "residual_r2": 0.9231089378146112,
+  "residual_amplitude": 0.24733483007897022,
+  "note": "C ~ a*f_cv + A*exp(-r/lam)+c0: the residual exponential is the coherence structure f_cv cannot supply"
+ },
+ "joint_model_kw": {
+  "a_kw": 0.014586332298807667,
+  "A": 0.24677160776131002,
+  "lambda_km": 580.0395504743908,
+  "c0": 0.54361993514556,
+  "r_squared": 0.10141759693040564,
+  "residual_lambda_km": 580.0628674794292,
+  "residual_r2": 0.9222713093814966,
+  "residual_amplitude": 0.24676910925137005,
+  "note": "C ~ a*k_w + A*exp(-r/lam)+c0: residual exponential after the canonical kernel is removed"
+ },
+ "anisotropy": {
+  "n_ew": 1554,
+  "n_ns": 2834,
+  "fcv_ew": 0.6704173508570119,
+  "fcv_ns": 0.6375363444187241,
+  "coh_ew": 0.5624979890144624,
+  "coh_ns": 0.5518092572512914,
+  "fcv_ew_over_ns": 1.0515751089740102,
+  "coh_ew_over_ns": 1.0193703378888828,
+  "note": "the discriminating legs are the scale mismatch and the null partial correlation; the directional comparison is registered but not load-bearing on this subsample"
+ },
+ "estimator_floor": {
+  "white_noise_msc": 0.5420092310637354,
+  "random_walk_msc": 0.5441146796628488,
+  "std": 0.05001879974988693,
+  "n_realizations": 300,
+  "note": "mean MSC of independent series on a 288-epoch day: the distant-pair plateau (~0.55) is the estimator floor, so the physical coherence content is the excess above ~0.54"
+ },
+ "verdict": "The common-view common-mode channel is quantified with real ephemeris geometry and fails as the carrier on three independent legs.  (1) Scale: f_cv stays above 0.9 out to ~2000 km and falls only on the ~5000-9000 km constellation-footprint scale (effective lambda_cv = 90403 km), while the measured coherence excess decays at ~600-800 km \u2014 a ~100x shorter scale than the mundane carrier supplies.  (2) Fixed-distance dependence: partial Spearman rho(C, f_cv | r) = 0.010 (p = 0.092), and 0 of 20 distance bins show significant positive within-bin correlation; the same test on the canonical weighted-overlap kernel gives rho(C, k_w | r) = 0.014 (p = 0.026) with 3 of 20 bins significant positive.  (3) Floor: the distant-pair plateau (~0.55) equals the MSC estimator floor for independent 288-epoch series (0.542), so where common-view overlap collapses to f_cv ~ 0.25 the coherence carries no residual common-mode signature at all.  The joint fit confirms: f_cv enters with coefficient 0.015 and the residual exponential (lambda = 584 km, amplitude 0.247) is the structure common-mode geometry cannot supply; conditioning on k_w instead leaves residual lambda = 580 km.  The common-view channel is thereby bounded to a sub-percent share of the coherent variance rather than asserted or dismissed.",
+ "pair_days_csv_columns": [
+  "dist_km",
+  "az_deg",
+  "f_cv",
+  "jaccard",
+  "k_w",
+  "coherence"
+ ]
+}

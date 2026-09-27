@@ -293,6 +293,24 @@ class HTMLToMarkdownConverter {
             const outputFilename = `3-TEP-GNSS-RINEX-v${cleanVersion}-${codename}.md`;
             const outputPath = path.join(__dirname, '..', outputFilename);
             fs.writeFileSync(outputPath, markdown, 'utf8');
+
+            // Keep the shared collection archive (../manuscripts/) in sync
+            try {
+                const sharedArchiveDir = path.join(__dirname, '..', '..', 'manuscripts');
+                if (fs.existsSync(sharedArchiveDir)) {
+                    const archiveName = path.basename(outputPath);
+                    const paperPrefix = archiveName.split('-')[0];
+                    for (const staleFile of fs.readdirSync(sharedArchiveDir)) {
+                        if (staleFile !== archiveName && staleFile.endsWith('.md') && staleFile.startsWith(`${paperPrefix}-TEP`)) {
+                            fs.rmSync(path.join(sharedArchiveDir, staleFile));
+                        }
+                    }
+                    fs.copyFileSync(outputPath, path.join(sharedArchiveDir, archiveName));
+                    console.log(`📄 Copied to shared archive: manuscripts/${archiveName}`);
+                }
+            } catch (archiveError) {
+                console.warn(`⚠️  Could not update shared manuscripts archive: ${archiveError.message}`);
+            }
             
             console.log('✅ Markdown conversion complete!');
             console.log(`📄 Output: ${outputPath}`);
