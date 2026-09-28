@@ -1,7 +1,7 @@
 # Global Time Echoes: Raw RINEX Consistency Test
 **Matthew Lukin Smawfield**
-Version: v0.7 (Kathmandu)
-First published: 9 December 2025 · Last updated: 16 September 2026
+Version: v0.8 (Kathmandu)
+First published: 9 December 2025 · Last updated: 28 September 2026
 DOI: 10.5281/zenodo.17860166
 
 ---
@@ -4320,11 +4320,11 @@ Smawfield, M. L. (2025). *Global Time Echoes: Distance-Structured Correlations i
 
 Smawfield, M. L. (2025). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.20 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.7 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3 — this work)
+Smawfield, M. L. (2025). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.8 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3 — this work)
 
 Smawfield, M. L. (2025). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.8 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Empirical Synthesis*. Preprint v0.6 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
+Smawfield, M. L. (2025). *Global Time Echoes: Empirical Synthesis*. Preprint v0.7 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
 
 Smawfield, M. L. (2025). *Temporal Topology Saturation Scale: Cross-Scale Consistency of ρ_T*. Preprint v0.8 (New Delhi). Zenodo. DOI: [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365) (Paper 6)
 
@@ -4414,7 +4414,7 @@ GitHub: [github.com/matthewsmawfield](https://github.com/matthewsmawfield)
 
 License: This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
-Version: v0.7 (Kathmandu) · Last updated: 16 September 2026 · Originally published: 9 December 2025
+Version: v0.8 (Kathmandu) · Last updated: 28 September 2026 · Originally published: 9 December 2025
 
 ---
 

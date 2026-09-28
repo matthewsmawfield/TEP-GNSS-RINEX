@@ -199,12 +199,16 @@ def calculate_3d_velocity_vectors(day_of_year, orbital_speed_kms,
     
     # 2. Earth Orbital Motion (Dynamic)
     # Velocity rotates in ecliptic plane through the year
-    # At Vernal Equinox (Day 80), velocity points to ecliptic longitude 270°
+    # At Vernal Equinox (Day 80), Earth is at heliocentric longitude 180 deg and
+    # its prograde velocity points to ecliptic longitude 270 deg, i.e. v_ecl =
+    # (0, -1, 0) * speed. The sign convention below is checked against
+    # earth_perihelion_aphelion_tangents(): at perihelion (Day ~3) this must
+    # return lambda_v ~ 192.9 deg (equatorial RA ~ 191.9 deg, Dec ~ -5.1 deg).
     orbit_progress = (day_of_year - 80) / 365.25 * 2 * np.pi
-    
+
     # Velocity direction in Ecliptic coordinates
-    v_ecl_x = -orbital_speed_kms * np.sin(orbit_progress)
-    v_ecl_y = orbital_speed_kms * np.cos(orbit_progress)
+    v_ecl_x = orbital_speed_kms * np.sin(orbit_progress)
+    v_ecl_y = -orbital_speed_kms * np.cos(orbit_progress)
     v_ecl_z = 0.0
     
     # Rotate Ecliptic -> Equatorial (rotate around X-axis by obliquity)
@@ -635,8 +639,8 @@ def background_speed_scan(monthly_data, speeds=SPEED_SCAN_KMS,
         epsilon = np.radians(ECLIPTIC_TILT_DEG)
         for i, m in enumerate(monthly_data):
             orbit_progress = (m['doy'] - 80) / 365.25 * 2 * np.pi
-            v_ecl_x = -m['orbital_speed'] * np.sin(orbit_progress)
-            v_ecl_y = m['orbital_speed'] * np.cos(orbit_progress)
+            v_ecl_x = m['orbital_speed'] * np.sin(orbit_progress)
+            v_ecl_y = -m['orbital_speed'] * np.cos(orbit_progress)
             v_orb_x = v_ecl_x
             v_orb_y = v_ecl_y * np.cos(epsilon)
             v_orb_z = v_ecl_y * np.sin(epsilon)
@@ -721,9 +725,11 @@ def estimate_global_p_value_monte_carlo(monthly_data, observed_best_r, n_iterati
         v_bg_z = GRID_SEARCH_SPEED_KMS * np.sin(apex_dec_rad)
         
         # 2. Earth Orbital Motion (Dynamic)
+        # Same sign convention as calculate_3d_velocity_vectors: at vernal
+        # equinox the prograde velocity points to ecliptic longitude 270 deg.
         orbit_progress = (m['doy'] - 80) / 365.25 * 2 * np.pi
-        v_ecl_x = -m['orbital_speed'] * np.sin(orbit_progress)
-        v_ecl_y = m['orbital_speed'] * np.cos(orbit_progress)
+        v_ecl_x = m['orbital_speed'] * np.sin(orbit_progress)
+        v_ecl_y = -m['orbital_speed'] * np.cos(orbit_progress)
         # v_ecl_z = 0.0
         
         epsilon = np.radians(ECLIPTIC_TILT_DEG)

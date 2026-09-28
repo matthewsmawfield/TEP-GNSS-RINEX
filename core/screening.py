@@ -40,7 +40,7 @@ def universal_screening_function(rho, rho_scale, n=2.0, invert=False):
         Used for source and cosmology screening (suppressed at high density).
 
         If True: factor = 1 / [1 + (rho_scale/rho)^n].
-        Used for chameleon coupling screening (suppressed at low density).
+        Used for continuous macroscopic topological screening (suppressed at low density proxy).
     """
     rho = np.asarray(rho, dtype=float)
     if np.any(rho <= 0):
@@ -79,8 +79,8 @@ def coupling_screening_factor(rho_local_g_cm3, rho_transition=1.0, n=4.0):
 
     f(rho) = 1 / [1 + (rho_transition / rho)^n]
 
-    This is the inverted power-law form, used for chameleon-like
-    coupling screening (suppressed at low density).
+    This is the inverted power-law form, used for continuous macroscopic
+    topological screening (suppressed at low density proxy).
     """
     return universal_screening_function(rho_local_g_cm3, rho_transition, n=n, invert=True)
 

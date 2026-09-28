@@ -215,7 +215,7 @@ def screening_diagnostics(beta_A=BETA_A, ppn_beta_bound=BETA_CASSINI_MAX,
 
     return {
         "model": "f(rho)=1/[1+(rho_transition/rho)^n]",
-        "interpretation": "log-density logistic threshold for beta_eff=beta_A*f(rho)",
+        "interpretation": "log-density logistic transition for beta_eff=beta_A*f(rho)",
         "beta_A": float(beta_A),
         "rho_transition_g_cm3": float(rho_transition),
         "screening_steepness_n": float(n),

@@ -1,34 +1,266 @@
 #!/usr/bin/env python3
 """
-TEP Scalar Field Solver
-=======================
+TEP Scalar Field
+================
 
-Version: TEP v0.14 (Jakarta)
+Version: TEP v0.15 (Jakarta)
 
-Computes the dimensionless scalar field profile phi from local
-mass distributions using the TEP lab-scale logarithmic model.
+Canonical scalar-sector implementation (Paper 0, master-action closure;
+verified by scripts/steps/step_27, step_30, step_50 and tep_model.py).
 
-Phenomenological model (TEP Lab-Scale Logarithmic Form):
-    phi = alpha_log * ln(rho_local / rho_T) + beta_geom * ln(M / M_ref)
+All field values are dimensionless u = phi/M_Pl (reduced Planck
+convention).  The scalar sector is:
 
-where alpha_log is the lab-scale density coupling and
-beta_geom is the geometric coupling. Both are dimensionless.
+  * Potential: the master family
+        V(u) = V_matter(u) e^{-(u/u_s)^4} + V_0 e^{-(u_s/u)^4}
+    which on the matter-hosting weak-field branch (u << u_s ~ 10) is the
+    quartic V = lambda u^4 / 4 with matter-sourced equilibrium
+        lambda u^3 e^u = rho / M_Pl^4
+    (quartic approximation u_min ~ (rho/(lambda M_Pl^4))^{1/3}).
+  * Kinetic: P(X, phi) = X - V + X|X|/Lambda^4, Lambda^4 = M_Pl^2 H0^2,
+    giving the screening operators
+        S_Sigma(g) = [1 + (g/g_t)^2]^-1 ,  g_t = c H0 / (2 beta_A^2)
+        S_eff(s)   = [1 + (R_s/s)^4]^-1 ,  R_s = sqrt(G M / g_t)
+    and the flux-conserving profile y(1 + y^2 (g/g_t)^2) = 1.
+  * Amplitude sector: S_A = min[1, (rho_bar/rho_T)^{1/3}].
+  * Disformal: B(u) = B0 u^2/(1+u^2) exp(-u^4/2), admissible branch
+    B0 >= 0; canonical benchmark B0 = +1 (GW170817 bounds B0 <~ 78 on
+    the galactic profile).
 
-This formulation ensures phi remains O(10^-3) for laboratory
-conditions, keeping A(phi) = exp(beta_A*phi) numerically stable
-while reproducing the observed metrology shifts.
-
-All TEP papers should import from this module to ensure consistent
-scalar-field calculations across the corpus.
+-----------------------------------------------------------------------------
+LEGACY: the functions solve_scalar_field_* and scalar_field_logarithmic
+below implement the retired Naivasha lab-scale logarithmic
+ansatz
+    phi = alpha_log * ln(rho/rho_T) + beta_geom * ln(M/M_ref).
+Its parameters alpha_log/beta_geom are class 'exploratory' in
+parameter_registry.yaml.  This ansatz is NOT the canonical field solution:
+it is a saturation-law fit to laboratory metrology shifts whose density
+scaling (phi ~ ln rho) differs from the canonical equilibrium
+(u_min ~ rho^{1/3}) and whose sign convention measures the screened
+excursion rather than the field value.  It is retained for backward
+compatibility of historical pipelines only; new work must use the
+canonical functions above.  Known consumer: TEP-C0 step_04_08 (flagged
+for re-derivation, see issues.md `core-scalar-field-legacy-ansatz`).
+-----------------------------------------------------------------------------
 """
 
 import numpy as np
+from scipy.optimize import brentq
 from . import constants as tep_const
 from .screening import screening_factor
 
 RHO_T = tep_const.RHO_T
 
-# Lab-scale coupling constants (from TEP-NIST Paper 21)
+
+# ============================================================================
+# CANONICAL SECTOR — derived operators and profile solvers
+# ============================================================================
+
+def screening_y(g, g_t=None):
+    """Flux-conserving screening factor: real root of y(1+y^2(g/g_t)^2)=1.
+
+    Cardano solution of the depressed cubic y^3 + y/q^2 - 1/q^2 = 0 with
+    q = g/g_t.  At g >> g_t, y ~ q^{-2/3} (strong suppression); at
+    g << g_t, y -> 1 (unscreened).  This is the exact profile-level
+    operator; S_sigma below is its algebraic weak-gradient projection.
+    """
+    if g_t is None:
+        g_t = tep_const.G_T_TRANSITION
+    g = np.asarray(g, dtype=float)
+    qq = (g / g_t) ** 2
+    y = np.empty_like(g)
+    small = qq < 1e-8
+    y[small] = 1.0 - qq[small]
+    q = qq[~small]
+    disc = (0.5 / q) ** 2 + (1.0 / (3.0 * q)) ** 3
+    s = np.sqrt(np.maximum(disc, 0.0))
+    y[~small] = np.cbrt(0.5 / q + s) + np.cbrt(0.5 / q - s)
+    return y
+
+
+def S_sigma(g, g_t=None):
+    """Algebraic screening operator S_Sigma(g) = [1+(g/g_t)^2]^-1.
+
+    Derived from P_,X of the kinetic completion (step_27); controls the
+    observable Temporal Shear (gradient projection).
+    """
+    if g_t is None:
+        g_t = tep_const.G_T_TRANSITION
+    g = np.asarray(g, dtype=float)
+    return 1.0 / (1.0 + (g / g_t) ** 2)
+
+
+def S_eff_pairwise(separation_m, mass_kg, g_t=None):
+    """Pairwise screening S_eff(s) = [1+(R_s/s)^4]^-1, R_s = sqrt(GM/g_t)."""
+    if g_t is None:
+        g_t = tep_const.G_T_TRANSITION
+    s = np.asarray(separation_m, dtype=float)
+    R_s = np.sqrt(tep_const.G_NEWTON * mass_kg / g_t)
+    return 1.0 / (1.0 + (R_s / s) ** 4)
+
+
+def R_s_transition(mass_kg, g_t=None):
+    """Shear transition radius R_s = sqrt(GM/g_t)."""
+    if g_t is None:
+        g_t = tep_const.G_T_TRANSITION
+    return float(np.sqrt(tep_const.G_NEWTON * mass_kg / g_t))
+
+
+def S_A_density(rho_bar_g_cm3, rho_T=None):
+    """Clock-amplitude sector S_A = min[1, (rho_bar/rho_T)^{1/3}].
+
+    Quartic-branch result: the matter-sourced equilibrium field and the
+    response amplitude scale as rho^{1/3} below the saturation density.
+    """
+    if rho_T is None:
+        rho_T = RHO_T
+    rho = np.asarray(rho_bar_g_cm3, dtype=float)
+    return np.minimum(1.0, (rho / rho_T) ** (1.0 / 3.0))
+
+
+def equilibrium_u(rho_g_cm3, lam=None):
+    """Equilibrium dimensionless field u_min on the quartic branch.
+
+    Solves  lam u^3 e^u = rho/M_Pl^4  (exact conformal-source
+    equilibrium; for u << 1 the e^u factor is ~1 and this reduces to
+    u_min = (rho/(lam M_Pl^4))^{1/3}).
+    """
+    if lam is None:
+        lam = tep_const.LAMBDA_QUARTIC_CASSINI
+    rho = np.asarray(rho_g_cm3, dtype=float)
+    rho_gev4 = rho * tep_const.G_CM3_TO_GEV4
+    rhs = rho_gev4 / (lam * tep_const.M_PL_REDUCED_GEV**4)
+    out = np.zeros_like(rho)
+    pos = rhs > 0
+    for i in np.ndindex(*rhs.shape):
+        if not pos[i]:
+            continue
+        log_rhs = np.log(rhs[i])
+        # solve 3 log u + u = log_rhs for u (monotonic for u > 0)
+        x = brentq(lambda t: 3.0 * t + np.exp(t) - log_rhs, -1000.0, 100.0)
+        out[i] = np.exp(x)
+    return out
+
+
+def m_eff2_quartic(u, rho_g_cm3, lam=None):
+    """Effective scalar mass squared (GeV^2) on the quartic branch.
+
+    m_eff^2 = V''(u) + matter term  =  3 lam M_Pl^2 u^2 + rho e^{-u}/M_Pl^2
+    with rho converted to GeV^4.
+    """
+    if lam is None:
+        lam = tep_const.LAMBDA_QUARTIC_CASSINI
+    u = np.asarray(u, dtype=float)
+    rho_gev4 = np.asarray(rho_g_cm3, dtype=float) * tep_const.G_CM3_TO_GEV4
+    Mpl = tep_const.M_PL_REDUCED_GEV
+    return 3.0 * lam * (Mpl * u) ** 2 + rho_gev4 / Mpl**2 * np.exp(-u)
+
+
+def compton_wavelength_m(u, rho_g_cm3, lam=None):
+    """Compton wavelength lambda_c = hbar c / m_eff in metres."""
+    m2 = m_eff2_quartic(u, rho_g_cm3, lam)
+    m2 = np.asarray(m2, dtype=float)
+    out = np.full_like(m2, np.nan)
+    pos = m2 > 0
+    out[pos] = tep_const.HBAR_C_GEV_M / np.sqrt(m2[pos])
+    return out
+
+
+def R_T_geometric(mass_kg, rho_T=None):
+    """Geometric saturation radius R_T = (3M/4 pi rho_T)^{1/3}."""
+    if rho_T is None:
+        rho_T = RHO_T
+    return float((3.0 * mass_kg / (4.0 * np.pi * 1000.0 * rho_T)) ** (1.0 / 3.0))
+
+
+def master_potential(u, lam=None, u_s=None, V0=None):
+    """Master potential V(u) in M_Pl^4 units (dimensionless u = phi/M_Pl).
+
+        V(u) = (lam/4) u^4 exp(-(u/u_s)^4) + V0 exp(-(u_s/u)^4)
+
+    The quartic factor is the matter-hosting branch; the essential-
+    singularity floor V0 e^{-(u_s/u)^4} activates only at u ~ u_s
+    (temporal-horizon pileup) and underflows identically to zero at all
+    screening densities.
+    """
+    if lam is None:
+        lam = tep_const.LAMBDA_QUARTIC_CASSINI
+    if u_s is None:
+        u_s = tep_const.U_S_TRANSITION
+    if V0 is None:
+        V0 = tep_const.V0_PLATEAU
+    u = np.asarray(u, dtype=float)
+    quartic = (lam / 4.0) * u**4 * np.exp(-(u / u_s) ** 4)
+    floor = np.zeros_like(u)
+    mask = np.abs(u) > 1e-10
+    floor[mask] = V0 * np.exp(-(u_s / u[mask]) ** 4)
+    return quartic + floor
+
+
+def B_disformal(u, B0=None):
+    """Disformal envelope family B(u) = B0 u^2/(1+u^2) exp(-u^4/2).
+
+    Admissible branch B0 >= 0 (B < 0 produces elliptic counterexamples in
+    the perfect-fluid principal symbol; Paper 0 SS4).  Canonical benchmark
+    B0 = +1; GW170817 path bound B0 <~ 78 on the galactic profile
+    (step_50).
+    """
+    if B0 is None:
+        B0 = tep_const.B0_DISFORMAL_CANONICAL
+    u = np.asarray(u, dtype=float)
+    return B0 * u**2 / (1.0 + u**2) * np.exp(-0.5 * u**4)
+
+
+def phi_profile_spherical(r_m, mass_kg, radius_m, g_t=None):
+    """Screened scalar profile u(r) for a uniform sphere, integrated inward
+    from a flat infinity (u -> 0 as r -> infinity).
+
+    du/dr = -y(g) g/c^2 with y the flux-conserving screening factor.
+    Returns (u, u_unscreened, y) interpolated onto the input radii —
+    the same machinery as step_50 Gate A.
+    """
+    if g_t is None:
+        g_t = tep_const.G_T_TRANSITION
+    r = np.asarray(r_m, dtype=float)
+    order = np.argsort(r)
+    rr = r[order]
+
+    def g_newton(x):
+        x = np.asarray(x, dtype=float)
+        g = np.empty_like(x)
+        inn = x < radius_m
+        g[inn] = tep_const.G_NEWTON * mass_kg * x[inn] / radius_m**3
+        g[~inn] = tep_const.G_NEWTON * mass_kg / x[~inn] ** 2
+        return g
+
+    r_out = max(rr[-1] * 20.0, radius_m * 50.0)
+    grid = np.geomspace(max(rr[0], radius_m * 1e-4), r_out, 20000)
+    g = g_newton(grid)
+    y = screening_y(g, g_t)
+    integ = y * g / tep_const.C_LIGHT**2
+    integ_u = g / tep_const.C_LIGHT**2
+    dr = np.diff(grid)
+    u_grid = np.zeros_like(grid)
+    uu_grid = np.zeros_like(grid)
+    u_grid[:-1] = np.cumsum((0.5 * (integ[1:] + integ[:-1]) * dr)[::-1])[::-1]
+    uu_grid[:-1] = np.cumsum((0.5 * (integ_u[1:] + integ_u[:-1]) * dr)[::-1])[::-1]
+    u_r = np.interp(rr, grid, u_grid)
+    uu_r = np.interp(rr, grid, uu_grid)
+    y_r = screening_y(g_newton(rr), g_t)
+    u_out = np.empty_like(r)
+    uu_out = np.empty_like(r)
+    y_out = np.empty_like(r)
+    u_out[order] = u_r
+    uu_out[order] = uu_r
+    y_out[order] = y_r
+    return u_out, uu_out, y_out
+
+
+# ============================================================================
+# LEGACY SECTOR — retired Naivasha lab-scale logarithmic ansatz.
+# Do not use for new predictions; see module docstring.
+# ============================================================================
+
 ALPHA_LOG = tep_const.ALPHA_LOG
 BETA_GEOM = tep_const.BETA_GEOM
 

@@ -1,6 +1,6 @@
 """TEP Core — canonical Python package for the Temporal Equivalence Principle.
 
-Version: TEP v0.14 (Jakarta)
+Version: TEP v0.15 (Jakarta)
 
 This package provides the shared physics layer used by all TEP papers:
   - constants: physical and phenomenological parameters
@@ -40,6 +40,7 @@ from .constants import (
     BETA_A,
     RHO_T,
     RHO_C,
+    BETA_SPIN_PHEN,
     ILLUSTRATIVE_BETA_A,
     KG_M3_TO_G_CM3,
     G_CM3_TO_KG_M3,
@@ -54,6 +55,19 @@ from .constants import (
     GNSS_LAMBDA_T_LONGSPAN_CODE_KM,
     GNSS_LAMBDA_T_LONGSPAN_CODE_ERR_KM,
     GNSS_LAMBDA_T_EXPONENTIAL_BY_CENTER,
+    M_PL_REDUCED_GEV,
+    HBAR_C_GEV_M,
+    KG_TO_GEV,
+    G_CM3_TO_GEV4,
+    H0_DRIFT_KM_S_MPC,
+    G_T_TRANSITION,
+    LAMBDA_KINETIC_MEV,
+    LAMBDA_QUARTIC_REF,
+    LAMBDA_QUARTIC_CASSINI,
+    U_S_TRANSITION,
+    V0_PLATEAU,
+    B0_DISFORMAL_CANONICAL,
+    B0_DISFORMAL_GW170817_MAX,
 )
 from .screening import (
     screening_factor,
@@ -74,6 +88,18 @@ from .conformal_scaling import (
     screening_diagnostics,
 )
 from .scalar_field import (
+    screening_y,
+    S_sigma,
+    S_eff_pairwise,
+    R_s_transition,
+    S_A_density,
+    equilibrium_u,
+    m_eff2_quartic,
+    compton_wavelength_m,
+    R_T_geometric,
+    master_potential,
+    B_disformal,
+    phi_profile_spherical,
     solve_scalar_field_cylinder,
     solve_scalar_field_uniform_density,
     solve_scalar_field_layered,

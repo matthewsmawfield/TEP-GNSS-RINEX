@@ -8,12 +8,12 @@ Principle (TEP) framework.  All TEP papers should import from this module to ens
 consistency across the corpus.  Human-readable registry: parameter_registry.yaml
 in this directory.  Do not duplicate these values in project scripts.
 
-Version: TEP v0.14 (Jakarta)
+Version: TEP v0.15 (Jakarta)
 """
 
 import numpy as np
 
-VERSION = "0.14"
+VERSION = "0.15"
 VERSION_CODENAME = "Jakarta"
 VERSION_STRING = f"TEP v{VERSION} ({VERSION_CODENAME})"
 
@@ -49,7 +49,8 @@ BETA_SPIN = 0.01                 # Dimensionless; Paper 24
 # would cause overflow in FFT-based solvers. This is a numerical convenience
 # parameter (not a physical coupling). The lattice solver rescales results back
 # to physical values using the mean-field ratio.
-ILLUSTRATIVE_BETA_A = 0.01       # Dimensionless; used in step_09 and legacy scripts
+BETA_SPIN_PHEN = 0.01          # Phenomenological screening coefficient beta_spin (tanh ansatz), Paper 29 lattice demos only -- NOT the conformal coupling; opposite-sign to locked BETA_A = -1.0
+ILLUSTRATIVE_BETA_A = BETA_SPIN_PHEN  # deprecated alias, kept for backcompat
 
 # Solar-system PPN bound from the Cassini time-delay test (Bertotti et al.
 # 2003, |gamma-1| < 2.3e-5). Under the canonical linear source-charge map
@@ -76,14 +77,17 @@ M_REF = 1.0e18                   # kg (threshold mass where phi_mass ~ beta_geom
 
 # Temporal Topology coherence length — canonical value for all forward analysis
 # (25-year multi-center GNSS baseline, Papers 1–2/6). Do not substitute short-run
-# verification estimates (e.g. Paper 14 MGEX ~1396 km on ~1 yr span).
+# verification estimates (e.g. Paper 14 MGEX ~1862 km on a ~15-month span).
 SCREENING_LENGTH_KM = 4200.0
 
-# MGEX held-out verification only (Paper 14; TEP-GNSS-MGEX step_2_1). Not used in
-# NIST/UCD forward models or FEM dimensional normalization.
-LAMBDA_T_MGEX_KM = 1396.19
-LAMBDA_T_MGEX_ERR_KM = 90.19
-LAMBDA_T_MGEX_R2 = 0.486
+# MGEX held-out verification only (Paper 14; TEP-GNSS-MGEX step_2_1, corrected
+# pooled 462-day estimate; the pre-correction ~1396 km figure for the original
+# ~1 yr span is superseded). Short-baseline corroboration of the canonical
+# anchor only — not used in NIST/UCD forward models or FEM dimensional
+# normalization.
+LAMBDA_T_MGEX_KM = 1861.63
+LAMBDA_T_MGEX_ERR_KM = 111.75
+LAMBDA_T_MGEX_R2 = 0.699
 
 # Unit conversion: kg/m^3 <-> g/cm^3
 # 1 kg/m^3 = 1000 g / 1,000,000 cm^3 = 10^-3 g/cm^3
@@ -100,28 +104,53 @@ GNSS_LAMBDA_T_EXPONENTIAL_BY_CENTER = {
     "ESA": {"lambda_km": 3330, "ci_low_km": 2532, "ci_high_km": 3984},
 }
 
-# Lab-scale coupling constants (TEP-NIST Paper 21)
-# alpha_log sign is fixed by the TEP field equation in the (+,-,-,-) metric
-# signature: nabla_mu[K(phi) nabla^mu phi] = -alpha(phi) T with alpha = beta_A/M_Pl < 0.
-# For non-relativistic dust T = +rho, the static limit gives nabla^2 phi ~ +|alpha| rho,
-# so phi decreases with increasing density: dphi/drho < 0.  Since the
-# phenomenological ansatz is phi_rho = alpha_log * ln(rho/rho_T), this requires
-# alpha_log < 0.  The magnitude |7.66e-3| was determined from the requirement
-# that the TEP model reproduce the correct order of magnitude for laboratory
-# metrology shifts.
-ALPHA_LOG = -7.66e-3             # Density-sector coupling (negative by field-equation sign)
-BETA_GEOM = 1.50e-4              # Mass-sector geometric coupling
+# Lab-scale coupling constants (retired lab-scale phenomenological ansatz; see
+# the legacy notice in core/scalar_field.py). In the canonical (-,+,+,+)
+# signature the dust trace is T = -rho and the static field equation is
+# nabla^2 phi = -|alpha| rho: positive-density sources support a local field
+# maximum (phi > 0 in wells, Rule 4). The ansatz's alpha_log < 0 instead
+# encodes the screening direction: the observable excursion
+# phi_rho = alpha_log * ln(rho/rho_T) is driven to zero as rho -> rho_T from
+# below, so dense environments show a suppressed response. The magnitude
+# |7.66e-3| was calibrated against laboratory metrology shift scales.
+ALPHA_LOG = -7.66e-3             # Density-sector coupling (screening-direction sign; legacy ansatz)
+BETA_GEOM = 1.50e-4              # Mass-sector geometric coupling (legacy ansatz)
 
 # =============================================================================
 # GALAXY-SCALE OBSERVABLE PARAMETERS
 # =============================================================================
 
 # Canonical galaxy-scale observable response coefficient (Paper 11).
+# Declared channel-response benchmark (kappa_canonical in
+# core/parameter_registry.yaml), applied corpus-wide without domain-specific
+# refitting. It is NOT the raw clock ratio: the nested
+# spectroscopic-to-Cepheid computation (TEP-H0 step_61) shows the clock
+# channel contributes |kappa| of order unity at most (KAPPA_NESTED below),
+# so the measured response is carried by the transfer/screening sector.
 KAPPA_GAL = 9.6e5                # mag
 KAPPA_GAL_UNCERTAINTY = 4.0e5    # mag
 
+# Null-channel bound on the raw conformal clock ratio (TEP-H0 step_61). The
+# spectroscopic and Cepheid clocks share each galactic potential, so the
+# common rate cancels; the residual core-to-disk contrast difference gives
+# kappa_nested = -7.5e-4 mag (delta_mu ~ 3e-10 mag). Alternative
+# reference-clock conventions move the sign but leave |kappa| of order
+# unity at most -- the raw clock channel cannot supply the measured
+# kappa_Cep and the observed response is not a clock-ratio artifact.
+KAPPA_NESTED = -7.5e-4           # mag
+
 # Stellar evolution index (M/L ~ t^n from stellar isochrones)
 ALPHA_NUCLEAR = 0.7
+
+# Fixed response-transfer exponent (Paper 12). The magnitude-to-kernel
+# transfer K_gal = kappa * ln(10) / (2.5 * n_ref) uses this fixed
+# convention at every redshift; it is NOT the stellar-population
+# exponent and must not be renormalised by population-dependent n_SPS.
+RESPONSE_KERNEL_N_REF = 0.7
+
+# Default stellar-population-synthesis M/L evolution index, applied only
+# when the response is propagated into a stellar-mass correction.
+SPS_ML_EXPONENT_DEFAULT = ALPHA_NUCLEAR
 
 # Reference halo mass for potential calculations
 LOG_MH_REF = 12.0
@@ -131,3 +160,50 @@ PHI_REF_0 = 1.6e-7
 
 # Reference redshift for chronological enhancement
 Z_REF = 5.5
+
+# =============================================================================
+# CANONICAL SCALAR SECTOR (master-action closure, Paper 0 steps 03/27/50)
+# =============================================================================
+# All field values below are dimensionless u = phi / M_Pl (reduced Planck
+# convention); convert to GeV via M_PL_REDUCED_GEV.
+
+M_PL_REDUCED_GEV = 2.435e18      # reduced Planck mass in GeV
+HBAR_C_GEV_M = 0.1973269804e-15  # hbar*c in GeV*m
+KG_TO_GEV = 5.60958885e26        # 1 kg in GeV (natural units)
+# 1 g/cm^3 = 1000 kg/m^3 -> GeV^4 :  kg -> GeV, 1/m^3 -> (hbar c)^3 GeV^3
+G_CM3_TO_GEV4 = 1000.0 * KG_TO_GEV * HBAR_C_GEV_M**3
+
+# Observed cosmic drift rate used to set the kinetic screening scale. This is
+# the *measured* Hubble drift (the shear floor of the landscape), distinct from
+# the TEP-corrected ladder output H0 = 66.65 reported in parameter_registry.
+H0_DRIFT_KM_S_MPC = 70.0
+# Transition shear/acceleration scale of the screening operator, derived from
+# the kinetic completion P(X) = X - V + X|X|/Lambda^4 with Lambda^4 = M_Pl^2 H0^2
+# (zero free parameters; Paper 0 Appendix E, step_27):
+#     g_t = c H0 / (2 beta_A^2)
+G_T_TRANSITION = C_LIGHT * (H0_DRIFT_KM_S_MPC * 1e3 / MPC_TO_M) / (2.0 * BETA_A**2)
+# Kinetic scale Lambda = sqrt(M_Pl H0) ~ 1.9 meV (the dark-energy scale).
+# Conversion: H0 [s^-1] -> GeV via hbar = 6.582e-25 GeV s.
+HBAR_GEV_S = 6.582119569e-25
+LAMBDA_KINETIC_MEV = 1e12 * np.sqrt(
+    M_PL_REDUCED_GEV * (H0_DRIFT_KM_S_MPC * 1e3 / MPC_TO_M) * HBAR_GEV_S
+)
+
+# Quartic self-coupling on the matter-hosting weak-field branch of the master
+# potential V(u) = V_matter(u) e^{-(u/u_s)^4} + V_0 e^{-(u_s/u)^4}.
+# Reference normalization (step_03, fixes lambda_c/R_T ~= 4.07 for Earth);
+# the Cassini-compatible branch sits 1e5 higher (step_01 solar scan).
+LAMBDA_QUARTIC_REF = 7.526e-71
+LAMBDA_QUARTIC_CASSINI = 7.526e-66
+
+# Master-potential family parameters (dimensionless-field convention).
+# u_s is the plateau knee (manuscript nominal ~10; closure probes scanned
+# 10--50); V_0 is the deep-well floor in M_Pl^4 units (fiducial).
+U_S_TRANSITION = 10.0
+V0_PLATEAU = 0.3
+
+# Disformal envelope family B(u) = B0 * u^2/(1+u^2) * exp(-u^4/2), admissible
+# branch B0 >= 0. Canonical benchmark B0 = +1 (Paper 28 normalization);
+# GW170817 path bound on the galactic profile gives B0 <~ 77.7 (step_50).
+B0_DISFORMAL_CANONICAL = 1.0
+B0_DISFORMAL_GW170817_MAX = 77.7

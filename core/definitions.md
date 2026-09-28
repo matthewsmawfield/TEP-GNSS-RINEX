@@ -42,7 +42,7 @@ where $\mathcal E = \{\rho, \Phi/c^2, \text{source structure}, \text{ambient env
 
 Quantities such as $\rho_T$, $R_T(M)$, $S_\oplus(r)$, compactness $\Phi/c^2$, local stellar density, geometric coherence length, and channel-specific response coefficients are domain-specific projections of $\mathcal E$, not independent screening mechanisms and not interchangeable universal thresholds. Each is an observational transfer model that parameterizes the same underlying operator in a regime-appropriate form.
 
-The saturation scale $\rho_T \approx 20$ g/cm$^3$ is the characteristic scale at which Temporal Topology effects saturate. It is **not** a local on/off condition of the form $\rho > \rho_T \Rightarrow$ GR and $\rho < \rho_T \Rightarrow$ active TEP. Rather, it is the scale at which the non-linear Temporal Topology response saturates. The subatomic core density ($\rho_{\text{core}} \sim 10^4$ g/cm$^3$, Paper 24), the macroscopic many-body suppression scale ($\rho_c \approx 20$ g/cm$^3$, Paper 21), and the galactic transition density ($\rho_{\text{half}} \approx 0.5 \, M_\odot/\text{pc}^3$, Paper 26) are different effective projections of the same non-linear Temporal Topology response. The first-principles transfer relation between them remains an open derivation.
+The saturation scale $\rho_T \approx 20$ g/cm$^3$ is the characteristic scale at which Temporal Topology effects saturate. It is **not** a local on/off condition of the form $\rho > \rho_T \Rightarrow$ GR and $\rho < \rho_T \Rightarrow$ active TEP. Rather, it is the scale at which the non-linear Temporal Topology response saturates. The subatomic core density ($\rho_{\text{core}} \sim 10^4$ g/cm$^3$, Paper 24), the macroscopic many-body suppression scale ($\rho_c \approx 20$ g/cm$^3$), and the galactic transition density ($\rho_{\text{half}} \approx 0.5 \, M_\odot/\text{pc}^3$, Paper 26) are different effective projections of the same non-linear Temporal Topology response. The first-principles transfer relation between them remains an open derivation.
 
 Recovery of GR in local tests is controlled by suppression of the observable shear/source-charge sector. Source structure, environmental state, and boundary conditions suppress the locally active shear sector in screened regimes.
 
@@ -69,9 +69,9 @@ The following table lists the canonical screening-related symbols used across th
 
 | Symbol | Meaning | Defined in | Typical value / formula | Used in |
 |---|---|---|---|---|
-| $\rho_T$ | Temporal Topology saturation scale | Paper 6 | $\approx 20$ g/cm$^3$ | Papers 6, 10, 11, 13, 17, 21 |
+| $\rho_T$ | Temporal Topology saturation scale | Paper 6 | $\approx 20$ g/cm$^3$ | Papers 6, 10, 11, 13, 17 |
 | $\rho_{\rm half}$ | Galactic stellar half-suppression density | Paper 11 | $\approx 0.5\,M_\odot/\text{pc}^3 \approx 3\times10^{-23}$ g/cm$^3$ | Paper 11 ($S(\rho_*)$ for Cepheids) |
-| $\rho_c$ | Macroscopic many-body suppression scale | Paper 21 | $\approx 20$ g/cm$^3$ (equivalent to $\rho_T$) | Paper 21 |
+| $\rho_c$ | Macroscopic many-body suppression scale | retired lab-sector estimate | $\approx 20$ g/cm$^3$ (equivalent to $\rho_T$) | none (superseded by $\rho_T$) |
 | $R_T$ | Geometric saturation radius | Paper 6 | $\left(3M / 4\pi\rho_T\right)^{1/3}$ | Papers 6, 13 |
 | $R_s$ | Effective screening radius (wide binaries) | Paper 13 | $\left(3M / 4\pi\epsilon_{\rm env}\rho_T\right)^{1/3}$ | Paper 13 |
 | $R_{\rm sol}$ | Companion saturation radius (pulsars) | Paper 10 | $\sim$ companion orbital scale | Paper 10 |

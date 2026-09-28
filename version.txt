@@ -1,10 +1,9 @@
-v0.7 (Kathmandu) — 16 September 2026 — Statistical rigor and editorial cleanup
+v0.8 (Kathmandu) — 28 September 2026 — Headline correction: annual-phase preferred direction; planetary-event channel falsified
 
-- Section 3 restructured: seasonal analyses grouped (3.6–3.7), Kp moved to 3.8; table numbering corrected throughout
-- Statistical language tightened: nominal pair-level p-values, "analysis configurations" instead of independent tests, preregistration claim corrected
-- Phase Alignment relabelled "mean phase-offset alignment" with resultant-magnitude caveat
-- Geometry correction split into CODE-referenced empirical vs independent simulation diagnostics
-- Planetary section: GM/r² framed as acceleration proxy; GM/r³ tidal scaling noted as untested
-- CMB combined-significance claim replaced with robustness interpretation; Figure 3.12 caption corrected
-- Added missing §2.8 methods subsection for Step 2.9 GPS-geometry simulation; §6 subsections renumbered (6.1b→6.2, 6.2.2a→6.3.3); figures resequenced 3.1–3.7
-- Count corrections: station pairs 144,991; CMB grid 72 configurations with 54 non-ionofree convergence subset; null-test matrix corrected to 4 modes/72 configurations
+- Headline correction: "CMB frame alignment" reframed as an in-ecliptic preferred direction — the stable annual phase (RA = 188°, Dec = −5°, β = −1.4°) lies 3.9° from Earth's perihelion velocity tangent and 20.0° from the near-ecliptic CMB dipole; competitive controls (§3.13.3a) show the perihelion tangent out-correlates the dipole under the template and the inferred direction migrates ~47° at the physical 370 km/s background speed, so the result is reported as an annual-phase measurement consistent with, but not discriminating, a cosmological rest frame
+- Planetary-event channel falsified: season-preserving controls (Step 2.6b — uniform-date ensembles, same-DOY calendar twins, deseasonalized rescoring) reassign the 2.8× event-window excess to calendar-position sampling of the autocorrelated seasonal series; no GM/r² acceleration-proxy or GM/r³ tidal-gradient scaling detected
+- Orbital coupling resolved harmonically: Multi-GNSS phase alignment dominated by a pure annual harmonic (A1/A2 ≈ 3.98, R² = 0.61) phase-locked to perihelion (offset ~22–25 days), verified in-phase across hemispheres (Step 2.8, Δφ = +9°); equinoctial semiannual artifacts suppressed >5.5×
+- Position-jitter/clock-bias coupling reframed as conformal metric scaling (dŝ² = A²ds²) across spatial and temporal coordinates
+- New null/stratification tests: common-view common-mode null (Step 2.10), ionospheric fraction & Δlat/ΔLST stratification (Step 2.11), broadcast-vs-precise channel-mode common-mode null (Step 2.12)
+- Statistical framing tightened: nominal pair-level p < 10^-15 annotated with the standard white-noise null and sample size (≈1.7×10^8 pair-epochs, 144,991 unique station pairs); monthly unanimity bounds statistical fluctuation rather than origin
+- Screened Signal Model sharpened: stable baseline signal governed by terrestrial gravitational screening, with observable response modulated by Earth's orbital velocity and geometric tracking conditions

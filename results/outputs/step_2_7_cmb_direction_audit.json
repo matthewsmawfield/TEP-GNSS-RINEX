@@ -1,0 +1,957 @@
+{
+  "step": "2.7-audit",
+  "name": "cmb_direction_template_audit",
+  "bug": "Orbital velocity vector in calculate_3d_velocity_vectors was antiparallel to the true Earth velocity (180-deg sign error: coded v_ecl=(0,+1,0) at vernal equinox vs correct (0,-1,0)). Fixed in step_2_7; this audit recomputes all directional claims.",
+  "mirror_identity": "Predictor cos(dec(v_net)) is invariant under v_net -> -v_net, so r_buggy(B) = r_correct(antipode(B)) exactly.",
+  "data": {
+    "n_months": 36,
+    "span_years": 3,
+    "combo": "all_stations/multi_gnss/pos_jitter/phase_alignment"
+  },
+  "mirror_check_max_abs_diff": 2.4424906541753444e-15,
+  "corrected_best_fit_20kms": {
+    "ra": 8.0,
+    "dec": 5.0,
+    "r": 0.5013561271553019,
+    "ecliptic_lat_deg": 1.4218036698334273,
+    "sep_cmb_deg": 159.95678990990467,
+    "sep_aphelion_tangent_deg": 3.8560517485943095,
+    "sep_perihelion_tangent_deg": 176.1439482514056
+  },
+  "control_directions_20kms": {
+    "cmb_dipole": {
+      "ra": 167.94,
+      "dec": -6.94,
+      "r_corrected": -0.38715335155250935,
+      "r_buggy": 0.41366624990033485
+    },
+    "cmb_antipode": {
+      "ra": 347.94,
+      "dec": 6.94,
+      "r_corrected": 0.41366624990033457,
+      "r_buggy": -0.387153351552509
+    },
+    "solar_apex": {
+      "ra": 271.0,
+      "dec": 30.0,
+      "r_corrected": -0.12093919561851504,
+      "r_buggy": -0.011972240156331741
+    },
+    "solar_antapex": {
+      "ra": 91.0,
+      "dec": -30.0,
+      "r_corrected": -0.011972240156331946,
+      "r_buggy": -0.1209391956185148
+    },
+    "ecliptic_np": {
+      "ra": 270.0,
+      "dec": 66.56,
+      "r_corrected": -0.0959383300879349,
+      "r_buggy": 0.007052733367593902
+    },
+    "ecliptic_sp": {
+      "ra": 90.0,
+      "dec": -66.56,
+      "r_corrected": 0.00705273336759378,
+      "r_buggy": -0.0959383300879349
+    },
+    "galactic_center": {
+      "ra": 266.4,
+      "dec": -29.0,
+      "r_corrected": -0.027839710143294255,
+      "r_buggy": -0.03195081333976281
+    },
+    "perihelion_vel": {
+      "ra": 191.87,
+      "dec": -5.09,
+      "r_corrected": -0.6811093753011328,
+      "r_buggy": 0.4941147767023289
+    },
+    "aphelion_vel": {
+      "ra": 11.87,
+      "dec": 5.09,
+      "r_corrected": 0.4941147767023289,
+      "r_buggy": -0.6811093753011328
+    }
+  },
+  "corrected_speed_scan": [
+    {
+      "ra": 9.0,
+      "dec": -26.0,
+      "r": 0.02547819558388666,
+      "speed_kms": 5.0,
+      "cmb_sep_deg": 141.22808697933837,
+      "aphelion_tangent_sep_deg": 31.21436874272139
+    },
+    {
+      "ra": 0.0,
+      "dec": 0.0,
+      "r": 0.17197544172188142,
+      "speed_kms": 10.0,
+      "cmb_sep_deg": 166.11140363720173,
+      "aphelion_tangent_sep_deg": 12.900894775567718
+    },
+    {
+      "ra": 8.0,
+      "dec": 5.0,
+      "r": 0.5013561271553019,
+      "speed_kms": 20.0,
+      "cmb_sep_deg": 159.95678990990467,
+      "aphelion_tangent_sep_deg": 3.8560517485943095
+    },
+    {
+      "ra": 336.0,
+      "dec": -72.0,
+      "r": 0.8075430151313269,
+      "speed_kms": 50.0,
+      "cmb_sep_deg": 100.67280380931341,
+      "aphelion_tangent_sep_deg": 80.50010330809032
+    },
+    {
+      "ra": 312.0,
+      "dec": -28.0,
+      "r": 0.8082252603689879,
+      "speed_kms": 100.0,
+      "cmb_sep_deg": 130.76052204353044,
+      "aphelion_tangent_sep_deg": 66.4338165941545
+    },
+    {
+      "ra": 320.0,
+      "dec": -32.0,
+      "r": 0.8012646488858125,
+      "speed_kms": 200.0,
+      "cmb_sep_deg": 132.8185835779028,
+      "aphelion_tangent_sep_deg": 61.67021256092073
+    },
+    {
+      "ra": 324.0,
+      "dec": -34.0,
+      "r": 0.7941102047223554,
+      "speed_kms": 369.82,
+      "cmb_sep_deg": 133.20395164699798,
+      "aphelion_tangent_sep_deg": 59.71338263178666
+    }
+  ],
+  "hemisphere_degeneracy": {
+    "max_abs_r_diff_ns_mirror": 0.3198754456026313,
+    "median_abs_r_diff_ns_mirror": 0.09024354108706346,
+    "frac_same_sign": 0.9270833333333334
+  },
+  "all_combinations": {
+    "all_stations/baseline/clock_bias/msc": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -35.0,
+        "r": 0.5144423883283553,
+        "cmb_sep_deg": 138.01496908854747
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 35.0,
+        "r": 0.5144423883283553,
+        "cmb_sep_deg": 41.985030911452526
+      },
+      "n_months": 36
+    },
+    "all_stations/baseline/clock_bias/phase_alignment": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -30.0,
+        "r": 0.5175335113821318,
+        "cmb_sep_deg": 143.0070645680282
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 30.0,
+        "r": 0.5175335113821319,
+        "cmb_sep_deg": 36.99293543197182
+      },
+      "n_months": 36
+    },
+    "all_stations/baseline/pos_jitter/msc": {
+      "corrected": {
+        "ra": 355.0,
+        "dec": -30.0,
+        "r": 0.5718627412594476,
+        "cmb_sep_deg": 142.44298635414788
+      },
+      "buggy": {
+        "ra": 175.0,
+        "dec": 30.0,
+        "r": 0.5718627412594476,
+        "cmb_sep_deg": 37.557013645852116
+      },
+      "n_months": 36
+    },
+    "all_stations/baseline/pos_jitter/phase_alignment": {
+      "corrected": {
+        "ra": 330.0,
+        "dec": -45.0,
+        "r": 0.46791584258948044,
+        "cmb_sep_deg": 125.61659264052845
+      },
+      "buggy": {
+        "ra": 150.0,
+        "dec": 45.0,
+        "r": 0.4679158425894804,
+        "cmb_sep_deg": 54.38340735947155
+      },
+      "n_months": 36
+    },
+    "all_stations/baseline/clock_drift/msc": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -35.0,
+        "r": 0.4909324107417631,
+        "cmb_sep_deg": 138.01496908854747
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 35.0,
+        "r": 0.4909324107417631,
+        "cmb_sep_deg": 41.985030911452526
+      },
+      "n_months": 36
+    },
+    "all_stations/baseline/clock_drift/phase_alignment": {
+      "corrected": {
+        "ra": 5.0,
+        "dec": -30.0,
+        "r": 0.2977292553699457,
+        "cmb_sep_deg": 139.59110625088263
+      },
+      "buggy": {
+        "ra": 185.0,
+        "dec": 30.0,
+        "r": 0.29772925536994566,
+        "cmb_sep_deg": 40.408893749117375
+      },
+      "n_months": 36
+    },
+    "all_stations/multi_gnss/clock_bias/msc": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -35.0,
+        "r": 0.4328804548208121,
+        "cmb_sep_deg": 138.01496908854747
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 35.0,
+        "r": 0.4328804548208121,
+        "cmb_sep_deg": 41.985030911452526
+      },
+      "n_months": 36
+    },
+    "all_stations/multi_gnss/clock_bias/phase_alignment": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -30.0,
+        "r": 0.40042779117075983,
+        "cmb_sep_deg": 143.0070645680282
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 30.0,
+        "r": 0.4004277911707598,
+        "cmb_sep_deg": 36.99293543197182
+      },
+      "n_months": 36
+    },
+    "all_stations/multi_gnss/pos_jitter/msc": {
+      "corrected": {
+        "ra": 355.0,
+        "dec": -30.0,
+        "r": 0.5265911179912627,
+        "cmb_sep_deg": 142.44298635414788
+      },
+      "buggy": {
+        "ra": 175.0,
+        "dec": 30.0,
+        "r": 0.5265911179912627,
+        "cmb_sep_deg": 37.557013645852116
+      },
+      "n_months": 36
+    },
+    "all_stations/multi_gnss/pos_jitter/phase_alignment": {
+      "corrected": {
+        "ra": 10.0,
+        "dec": 5.0,
+        "r": 0.4991917642007449,
+        "cmb_sep_deg": 157.97660393573352
+      },
+      "buggy": {
+        "ra": 190.0,
+        "dec": -5.0,
+        "r": 0.4991917642007449,
+        "cmb_sep_deg": 22.023396064266464
+      },
+      "n_months": 36
+    },
+    "all_stations/multi_gnss/clock_drift/msc": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -30.0,
+        "r": 0.4458899355535252,
+        "cmb_sep_deg": 143.0070645680282
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 30.0,
+        "r": 0.44588993555352524,
+        "cmb_sep_deg": 36.99293543197182
+      },
+      "n_months": 36
+    },
+    "all_stations/multi_gnss/clock_drift/phase_alignment": {
+      "corrected": {
+        "ra": 5.0,
+        "dec": -25.0,
+        "r": 0.24793627482874941,
+        "cmb_sep_deg": 143.99984921759759
+      },
+      "buggy": {
+        "ra": 185.0,
+        "dec": 25.0,
+        "r": 0.24793627482874936,
+        "cmb_sep_deg": 36.00015078240243
+      },
+      "n_months": 36
+    },
+    "all_stations/ionofree/clock_bias/msc": {
+      "corrected": {
+        "ra": 30.0,
+        "dec": 45.0,
+        "r": 0.27723078544336366,
+        "cmb_sep_deg": 127.34263425462366
+      },
+      "buggy": {
+        "ra": 210.0,
+        "dec": -45.0,
+        "r": 0.2772307854433636,
+        "cmb_sep_deg": 52.657365745376346
+      },
+      "n_months": 36
+    },
+    "all_stations/ionofree/clock_bias/phase_alignment": {
+      "corrected": {
+        "ra": 130.0,
+        "dec": 10.0,
+        "r": 0.1357782934591164,
+        "cmb_sep_deg": 41.409518224745426
+      },
+      "buggy": {
+        "ra": 310.0,
+        "dec": -10.0,
+        "r": 0.13577829345911654,
+        "cmb_sep_deg": 138.59048177525457
+      },
+      "n_months": 36
+    },
+    "all_stations/ionofree/pos_jitter/msc": {
+      "corrected": {
+        "ra": 35.0,
+        "dec": 45.0,
+        "r": 0.46973815723029605,
+        "cmb_sep_deg": 124.30611028953041
+      },
+      "buggy": {
+        "ra": 215.0,
+        "dec": -45.0,
+        "r": 0.46973815723029605,
+        "cmb_sep_deg": 55.69388971046959
+      },
+      "n_months": 36
+    },
+    "all_stations/ionofree/pos_jitter/phase_alignment": {
+      "corrected": {
+        "ra": 195.0,
+        "dec": -35.0,
+        "r": 0.20655502077839297,
+        "cmb_sep_deg": 37.4918036009822
+      },
+      "buggy": {
+        "ra": 15.0,
+        "dec": 35.0,
+        "r": 0.20655502077839297,
+        "cmb_sep_deg": 142.5081963990178
+      },
+      "n_months": 36
+    },
+    "all_stations/ionofree/clock_drift/msc": {
+      "corrected": {
+        "ra": 355.0,
+        "dec": -30.0,
+        "r": 0.24056668578778553,
+        "cmb_sep_deg": 142.44298635414788
+      },
+      "buggy": {
+        "ra": 175.0,
+        "dec": 30.0,
+        "r": 0.24056668578778553,
+        "cmb_sep_deg": 37.557013645852116
+      },
+      "n_months": 36
+    },
+    "all_stations/ionofree/clock_drift/phase_alignment": {
+      "corrected": {
+        "ra": 275.0,
+        "dec": -35.0,
+        "r": 0.4154501501144416,
+        "cmb_sep_deg": 99.74428259032867
+      },
+      "buggy": {
+        "ra": 95.0,
+        "dec": 35.0,
+        "r": 0.4154501501144416,
+        "cmb_sep_deg": 80.25571740967133
+      },
+      "n_months": 36
+    },
+    "optimal_100/baseline/clock_bias/msc": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -35.0,
+        "r": 0.3708343837486325,
+        "cmb_sep_deg": 138.01496908854747
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 35.0,
+        "r": 0.3708343837486325,
+        "cmb_sep_deg": 41.985030911452526
+      },
+      "n_months": 36
+    },
+    "optimal_100/baseline/clock_bias/phase_alignment": {
+      "corrected": {
+        "ra": 345.0,
+        "dec": -35.0,
+        "r": 0.3438118075248967,
+        "cmb_sep_deg": 137.9683302608368
+      },
+      "buggy": {
+        "ra": 165.0,
+        "dec": 35.0,
+        "r": 0.3438118075248967,
+        "cmb_sep_deg": 42.031669739163185
+      },
+      "n_months": 36
+    },
+    "optimal_100/baseline/pos_jitter/msc": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -35.0,
+        "r": 0.45533841817450765,
+        "cmb_sep_deg": 138.01496908854747
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 35.0,
+        "r": 0.45533841817450765,
+        "cmb_sep_deg": 41.985030911452526
+      },
+      "n_months": 36
+    },
+    "optimal_100/baseline/pos_jitter/phase_alignment": {
+      "corrected": {
+        "ra": 345.0,
+        "dec": -35.0,
+        "r": 0.4782617692811708,
+        "cmb_sep_deg": 137.9683302608368
+      },
+      "buggy": {
+        "ra": 165.0,
+        "dec": 35.0,
+        "r": 0.4782617692811708,
+        "cmb_sep_deg": 42.031669739163185
+      },
+      "n_months": 36
+    },
+    "optimal_100/baseline/clock_drift/msc": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -35.0,
+        "r": 0.3625710482827306,
+        "cmb_sep_deg": 138.01496908854747
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 35.0,
+        "r": 0.3625710482827306,
+        "cmb_sep_deg": 41.985030911452526
+      },
+      "n_months": 36
+    },
+    "optimal_100/baseline/clock_drift/phase_alignment": {
+      "corrected": {
+        "ra": 280.0,
+        "dec": -45.0,
+        "r": 0.44367479550644523,
+        "cmb_sep_deg": 100.2642251289541
+      },
+      "buggy": {
+        "ra": 100.0,
+        "dec": 45.0,
+        "r": 0.44367479550644523,
+        "cmb_sep_deg": 79.7357748710459
+      },
+      "n_months": 36
+    },
+    "optimal_100/multi_gnss/clock_bias/msc": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -30.0,
+        "r": 0.31851474378165484,
+        "cmb_sep_deg": 143.0070645680282
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 30.0,
+        "r": 0.31851474378165484,
+        "cmb_sep_deg": 36.99293543197182
+      },
+      "n_months": 36
+    },
+    "optimal_100/multi_gnss/clock_bias/phase_alignment": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -35.0,
+        "r": 0.2772677217948,
+        "cmb_sep_deg": 138.01496908854747
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 35.0,
+        "r": 0.2772677217948001,
+        "cmb_sep_deg": 41.985030911452526
+      },
+      "n_months": 36
+    },
+    "optimal_100/multi_gnss/pos_jitter/msc": {
+      "corrected": {
+        "ra": 30.0,
+        "dec": 45.0,
+        "r": 0.3577119721530096,
+        "cmb_sep_deg": 127.34263425462366
+      },
+      "buggy": {
+        "ra": 210.0,
+        "dec": -45.0,
+        "r": 0.3577119721530096,
+        "cmb_sep_deg": 52.657365745376346
+      },
+      "n_months": 36
+    },
+    "optimal_100/multi_gnss/pos_jitter/phase_alignment": {
+      "corrected": {
+        "ra": 340.0,
+        "dec": -40.0,
+        "r": 0.23641262164885654,
+        "cmb_sep_deg": 132.49095441850798
+      },
+      "buggy": {
+        "ra": 160.0,
+        "dec": 40.0,
+        "r": 0.23641262164885643,
+        "cmb_sep_deg": 47.50904558149201
+      },
+      "n_months": 36
+    },
+    "optimal_100/multi_gnss/clock_drift/msc": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -30.0,
+        "r": 0.35414533709148915,
+        "cmb_sep_deg": 143.0070645680282
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 30.0,
+        "r": 0.3541453370914892,
+        "cmb_sep_deg": 36.99293543197182
+      },
+      "n_months": 36
+    },
+    "optimal_100/multi_gnss/clock_drift/phase_alignment": {
+      "corrected": {
+        "ra": 0.0,
+        "dec": -30.0,
+        "r": 0.22793910523151673,
+        "cmb_sep_deg": 141.28728003640583
+      },
+      "buggy": {
+        "ra": 180.0,
+        "dec": 30.0,
+        "r": 0.22793910523151678,
+        "cmb_sep_deg": 38.71271996359419
+      },
+      "n_months": 36
+    },
+    "optimal_100/ionofree/clock_bias/msc": {
+      "corrected": {
+        "ra": 20.0,
+        "dec": 0.0,
+        "r": 0.42877353736615254,
+        "cmb_sep_deg": 147.27588374247696
+      },
+      "buggy": {
+        "ra": 200.0,
+        "dec": 0.0,
+        "r": 0.4287735373661527,
+        "cmb_sep_deg": 32.72411625752306
+      },
+      "n_months": 36
+    },
+    "optimal_100/ionofree/clock_bias/phase_alignment": {
+      "corrected": {
+        "ra": 240.0,
+        "dec": -15.0,
+        "r": 0.30416566683626856,
+        "cmb_sep_deg": 70.93633984153001
+      },
+      "buggy": {
+        "ra": 60.0,
+        "dec": 15.0,
+        "r": 0.30416566683626867,
+        "cmb_sep_deg": 109.06366015847
+      },
+      "n_months": 36
+    },
+    "optimal_100/ionofree/pos_jitter/msc": {
+      "corrected": {
+        "ra": 295.0,
+        "dec": -20.0,
+        "r": 0.31693339115869984,
+        "cmb_sep_deg": 121.38802757978445
+      },
+      "buggy": {
+        "ra": 115.0,
+        "dec": 20.0,
+        "r": 0.3169333911586998,
+        "cmb_sep_deg": 58.61197242021555
+      },
+      "n_months": 36
+    },
+    "optimal_100/ionofree/pos_jitter/phase_alignment": {
+      "corrected": {
+        "ra": 355.0,
+        "dec": -30.0,
+        "r": 0.16366528156566976,
+        "cmb_sep_deg": 142.44298635414788
+      },
+      "buggy": {
+        "ra": 175.0,
+        "dec": 30.0,
+        "r": 0.16366528156566976,
+        "cmb_sep_deg": 37.557013645852116
+      },
+      "n_months": 36
+    },
+    "optimal_100/ionofree/clock_drift/msc": {
+      "corrected": {
+        "ra": 15.0,
+        "dec": 0.0,
+        "r": 0.519144493839381,
+        "cmb_sep_deg": 152.12943465240525
+      },
+      "buggy": {
+        "ra": 195.0,
+        "dec": 0.0,
+        "r": 0.519144493839381,
+        "cmb_sep_deg": 27.87056534759475
+      },
+      "n_months": 36
+    },
+    "optimal_100/ionofree/clock_drift/phase_alignment": {
+      "corrected": {
+        "ra": 305.0,
+        "dec": -20.0,
+        "r": 0.20083948159861784,
+        "cmb_sep_deg": 129.9076413711499
+      },
+      "buggy": {
+        "ra": 125.0,
+        "dec": 20.0,
+        "r": 0.20083948159861773,
+        "cmb_sep_deg": 50.09235862885008
+      },
+      "n_months": 36
+    },
+    "dynamic_50/baseline/clock_bias/msc": {
+      "corrected": {
+        "ra": 355.0,
+        "dec": -30.0,
+        "r": 0.5014386369169423,
+        "cmb_sep_deg": 142.44298635414788
+      },
+      "buggy": {
+        "ra": 175.0,
+        "dec": 30.0,
+        "r": 0.5014386369169423,
+        "cmb_sep_deg": 37.557013645852116
+      },
+      "n_months": 36
+    },
+    "dynamic_50/baseline/clock_bias/phase_alignment": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -30.0,
+        "r": 0.6030641368988741,
+        "cmb_sep_deg": 143.0070645680282
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 30.0,
+        "r": 0.6030641368988742,
+        "cmb_sep_deg": 36.99293543197182
+      },
+      "n_months": 36
+    },
+    "dynamic_50/baseline/pos_jitter/msc": {
+      "corrected": {
+        "ra": 355.0,
+        "dec": -30.0,
+        "r": 0.5818859632111777,
+        "cmb_sep_deg": 142.44298635414788
+      },
+      "buggy": {
+        "ra": 175.0,
+        "dec": 30.0,
+        "r": 0.5818859632111777,
+        "cmb_sep_deg": 37.557013645852116
+      },
+      "n_months": 36
+    },
+    "dynamic_50/baseline/pos_jitter/phase_alignment": {
+      "corrected": {
+        "ra": 325.0,
+        "dec": -50.0,
+        "r": 0.4557846228351495,
+        "cmb_sep_deg": 119.67328772900468
+      },
+      "buggy": {
+        "ra": 145.0,
+        "dec": 50.0,
+        "r": 0.4557846228351496,
+        "cmb_sep_deg": 60.32671227099531
+      },
+      "n_months": 36
+    },
+    "dynamic_50/baseline/clock_drift/msc": {
+      "corrected": {
+        "ra": 355.0,
+        "dec": -30.0,
+        "r": 0.49347972724036354,
+        "cmb_sep_deg": 142.44298635414788
+      },
+      "buggy": {
+        "ra": 175.0,
+        "dec": 30.0,
+        "r": 0.49347972724036354,
+        "cmb_sep_deg": 37.557013645852116
+      },
+      "n_months": 36
+    },
+    "dynamic_50/baseline/clock_drift/phase_alignment": {
+      "corrected": {
+        "ra": 355.0,
+        "dec": -35.0,
+        "r": 0.32082516730618893,
+        "cmb_sep_deg": 137.5341444947461
+      },
+      "buggy": {
+        "ra": 175.0,
+        "dec": 35.0,
+        "r": 0.3208251673061889,
+        "cmb_sep_deg": 42.46585550525389
+      },
+      "n_months": 36
+    },
+    "dynamic_50/multi_gnss/clock_bias/msc": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -30.0,
+        "r": 0.4102992784243259,
+        "cmb_sep_deg": 143.0070645680282
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 30.0,
+        "r": 0.4102992784243259,
+        "cmb_sep_deg": 36.99293543197182
+      },
+      "n_months": 36
+    },
+    "dynamic_50/multi_gnss/clock_bias/phase_alignment": {
+      "corrected": {
+        "ra": 335.0,
+        "dec": -30.0,
+        "r": 0.658094103101127,
+        "cmb_sep_deg": 141.02621303330423
+      },
+      "buggy": {
+        "ra": 155.0,
+        "dec": 30.0,
+        "r": 0.658094103101127,
+        "cmb_sep_deg": 38.97378696669579
+      },
+      "n_months": 36
+    },
+    "dynamic_50/multi_gnss/pos_jitter/msc": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -30.0,
+        "r": 0.6211762234923747,
+        "cmb_sep_deg": 143.0070645680282
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 30.0,
+        "r": 0.6211762234923746,
+        "cmb_sep_deg": 36.99293543197182
+      },
+      "n_months": 36
+    },
+    "dynamic_50/multi_gnss/pos_jitter/phase_alignment": {
+      "corrected": {
+        "ra": 10.0,
+        "dec": 5.0,
+        "r": 0.468950625212942,
+        "cmb_sep_deg": 157.97660393573352
+      },
+      "buggy": {
+        "ra": 190.0,
+        "dec": -5.0,
+        "r": 0.46895062521294206,
+        "cmb_sep_deg": 22.023396064266464
+      },
+      "n_months": 36
+    },
+    "dynamic_50/multi_gnss/clock_drift/msc": {
+      "corrected": {
+        "ra": 350.0,
+        "dec": -30.0,
+        "r": 0.38285424422694975,
+        "cmb_sep_deg": 143.0070645680282
+      },
+      "buggy": {
+        "ra": 170.0,
+        "dec": 30.0,
+        "r": 0.38285424422694975,
+        "cmb_sep_deg": 36.99293543197182
+      },
+      "n_months": 36
+    },
+    "dynamic_50/multi_gnss/clock_drift/phase_alignment": {
+      "corrected": {
+        "ra": 5.0,
+        "dec": -25.0,
+        "r": 0.24093845080175064,
+        "cmb_sep_deg": 143.99984921759759
+      },
+      "buggy": {
+        "ra": 185.0,
+        "dec": 25.0,
+        "r": 0.24093845080175064,
+        "cmb_sep_deg": 36.00015078240243
+      },
+      "n_months": 36
+    },
+    "dynamic_50/ionofree/clock_bias/msc": {
+      "corrected": {
+        "ra": 35.0,
+        "dec": 45.0,
+        "r": 0.31101591776670173,
+        "cmb_sep_deg": 124.30611028953041
+      },
+      "buggy": {
+        "ra": 215.0,
+        "dec": -45.0,
+        "r": 0.31101591776670173,
+        "cmb_sep_deg": 55.69388971046959
+      },
+      "n_months": 36
+    },
+    "dynamic_50/ionofree/clock_bias/phase_alignment": {
+      "corrected": {
+        "ra": 135.0,
+        "dec": 10.0,
+        "r": 0.13137443535566876,
+        "cmb_sep_deg": 36.92209028021882
+      },
+      "buggy": {
+        "ra": 315.0,
+        "dec": -10.0,
+        "r": 0.1313744353556689,
+        "cmb_sep_deg": 143.07790971978122
+      },
+      "n_months": 36
+    },
+    "dynamic_50/ionofree/pos_jitter/msc": {
+      "corrected": {
+        "ra": 40.0,
+        "dec": 50.0,
+        "r": 0.4197423573986427,
+        "cmb_sep_deg": 119.00424229138828
+      },
+      "buggy": {
+        "ra": 220.0,
+        "dec": -50.0,
+        "r": 0.4197423573986427,
+        "cmb_sep_deg": 60.99575770861172
+      },
+      "n_months": 36
+    },
+    "dynamic_50/ionofree/pos_jitter/phase_alignment": {
+      "corrected": {
+        "ra": 200.0,
+        "dec": -40.0,
+        "r": 0.2495904080413086,
+        "cmb_sep_deg": 43.76951732119845
+      },
+      "buggy": {
+        "ra": 20.0,
+        "dec": 40.0,
+        "r": 0.2495904080413086,
+        "cmb_sep_deg": 136.23048267880156
+      },
+      "n_months": 36
+    },
+    "dynamic_50/ionofree/clock_drift/msc": {
+      "corrected": {
+        "ra": 35.0,
+        "dec": 45.0,
+        "r": 0.26474131930408645,
+        "cmb_sep_deg": 124.30611028953041
+      },
+      "buggy": {
+        "ra": 215.0,
+        "dec": -45.0,
+        "r": 0.26474131930408645,
+        "cmb_sep_deg": 55.69388971046959
+      },
+      "n_months": 36
+    },
+    "dynamic_50/ionofree/clock_drift/phase_alignment": {
+      "corrected": {
+        "ra": 270.0,
+        "dec": -40.0,
+        "r": 0.3324706530127686,
+        "cmb_sep_deg": 94.65832371635429
+      },
+      "buggy": {
+        "ra": 90.0,
+        "dec": 40.0,
+        "r": 0.3324706530127687,
+        "cmb_sep_deg": 85.34167628364571
+      },
+      "n_months": 36
+    }
+  },
+  "combination_summary": {
+    "n_combinations": 54,
+    "n_corrected_within_45deg_of_cmb": 4,
+    "n_corrected_within_15deg_of_aphelion_tangent": 4
+  }
+}

@@ -7,9 +7,9 @@ Generated from parameter_registry.yaml. Classification records provenance; a ben
 | $\beta_A$ | Conformal coupling strength in A(phi) = exp(beta_A * phi / M_Pl) | -1.0 | dimensionless | fundamental | Paper 0 | 0, 1, 2, 3, 4, 6, 10, 11, 12, 14, 15, 17, 18, 19, 22, 23, 24, 25, 26, 28, 29, 31, 32 |
 | $\rho_T$ | Temporal Topology saturation scale (observationally proxied by density) | 20.0 | g cm^{-3} | calibrated | Paper 6 | 6, 14, 17, 18, 23, 24 |
 | $\lambda_T$ | Clock-correlation length (Temporal Topology coherence length) | 4200.0 | km | calibrated | Paper 1 | 1, 2, 3, 6, 14, 17 |
-| $\alpha_{\log}$ | Lab-scale density-sector coupling | -0.00766 | dimensionless | exploratory | Paper 21 | 21 |
-| $\beta_{\text{geom}}$ | Mass-sector geometric coupling | 0.00015 | dimensionless | exploratory | Paper 21 | 21 |
-| $M_{\text{ref}}$ | Reference mass scale for geometric coupling | 1.0e18 | kg | exploratory | Paper 21 | 21 |
+| $\alpha_{\log}$ | Lab-scale density-sector coupling | -0.00766 | dimensionless | exploratory | retired (withdrawn programme) | none |
+| $\beta_{\text{geom}}$ | Mass-sector geometric coupling | 0.00015 | dimensionless | exploratory | retired (withdrawn programme) | none |
+| $M_{\text{ref}}$ | Reference mass scale for geometric coupling | 1.0e18 | kg | exploratory | retired (withdrawn programme) | none |
 | $\kappa_{\text{canonical}}$ | Canonical galaxy-scale observable response coefficient | 9.6e5 | mag | benchmark | Paper 11 | 11, 12 |
 | $\kappa_{\text{Cep}}$ | Cepheid observable response coefficient | Not specified | dimensionless | observable_response | Paper 11 | 11, 12 |
 | $\kappa_{\text{MSP}}$ | Pulsar in-equation acceleration coupling (screened) | 0.05 | dimensionless | observable_response | Paper 10 | 10, 17 |
@@ -46,27 +46,31 @@ Locked lab-scale convention. Universal conformal coupling governing clock-rate r
 
 #### rho_T
 
-Phenomenological proximity scale at which collective many-body screening suppresses observable temporal shear, observationally proxied by the density rho_T ~ 20 g/cm^3. Determined from terrestrial clock correlation data. The geometric identification lambda_T = R_T inverts the measured 4,200 km to rho_T = 19.24 g/cm^3 — a 3.8% self-consistency residual that is a calibration identity, not an independent derivation (step_03). Density is an observable proxy, not the causal parameter; the fundamental scale is geometric overlap governed by the packing fraction eta = (r_c/lambda_F)^3. Note: rho_c is reserved for per-cluster central density (Paper 10).
+Phenomenological proximity scale at which collective many-body screening suppresses observable temporal shear, observationally proxied by the density rho_T ~ 20 g/cm^3. Corpus convention (decided 2026-09-28): rho_T = 20 g/cm^3 is the formal normalization adopted on the IGS precise-product branch (lambda_T ~ 4,200 km), not an independently measured constant. The fitted correlation-length family is estimator-dependent — precise-product bracket ~1.9-4.5x10^3 km (rho_T ~ 8-70 g/cm^3 effective band, epoch/window scatter dominant), raw channels bound below at ~0.7-1.1x10^3 km, MGEX held-out corroboration 1,862 +/- 112 km — so the numerical rho_T inherits the band of the adopted branch. The geometric identification lambda_T = R_T inverts the adopted 4,200 km to rho_T = 19.24 g/cm^3 — a 3.8% self-consistency residual that is a calibration identity, not an independent derivation (step_03). The atomic-scale (R_T(m_p) ~ a_0) and magnetar (P_crit ~ 6.8 s) anchors are estimator-independent cross-checks on the adopted normalization. Density is an observable proxy, not the causal parameter; the fundamental scale is geometric overlap governed by the packing fraction eta = (r_c/lambda_F)^3. Note: rho_c is reserved for per-cluster central density (Paper 10).
 
 #### lambda_T
 
-Canonical terrestrial correlation length for all forward analysis (terrestrial clock FEM, rho_T chain, etc.). From 25-year multi-center GNSS (Papers 1-2/6). Cross-scale closure (steps 03-04): lambda_T is identified with the geometric saturation radius R_T = (3M/(4pi*rho_T))^{1/3}, not the Compton wavelength; the conditional Green-function covariance has its 1/e crossing near R_T (~4,003-4,012 km) without inserting the measured scale. Paper 14 MGEX held-out verification (~1 yr combined-clock product, lambda = 1,862 +/- 112 km, axis 21.4 deg from CMB dipole) confirms a distance-structured signal on a different product but is not adopted for dimensional normalization. Lab-scale crustal value is LAB_COHERENCE_LENGTH_M = 50 km.
+Canonical terrestrial correlation length for all forward analysis (terrestrial clock FEM, rho_T chain, etc.), adopted at 4,200 km on the IGS precise-product branch of the estimator family (25-year multi-center GNSS, Papers 1-2/6; long-span code 4,201 +/- 1,967 km). The fitted scale is product-dependent: precise-product bracket ~1.9-4.5x10^3 km with epoch/window scatter dominant; raw SPP channels ~0.7-1.1x10^3 km; raw ionofree 4,767 +/- 835 km. Paper 14 MGEX held-out verification (~1 yr combined-clock product, lambda = 1,862 +/- 112 km, axis 21.4 deg from CMB dipole) corroborates a distance-structured signal on a different product but is not adopted for dimensional normalization. Cross-scale closure (steps 03-04): lambda_T is identified with the geometric saturation radius R_T = (3M/(4pi*rho_T))^{1/3}, not the Compton wavelength; the conditional Green-function covariance has its 1/e crossing near R_T (~4,003-4,012 km) without inserting the measured scale. Lab-scale crustal value is LAB_COHERENCE_LENGTH_M = 50 km.
 
 #### alpha_log
 
-Historical exploratory value from retired Paper 21. Negative by field-equation sign. Magnitude determined from requirement that TEP reproduce correct order of magnitude for laboratory metrology shifts.
+Retired exploratory value from the withdrawn Naivasha lab-sector programme (no live paper). Negative by field-equation sign. Magnitude determined from requirement that TEP reproduce correct order of magnitude for laboratory metrology shifts. Former production use in Papers 25 (KIN 2DEG predictors) and 34 (PSR compact-object field) is resolved: both pipelines use the canonical local-equilibrium density response (equilibrium_u; Paper 34 uses the screened exterior charge u_scr/u_unscr). Legacy keyword arguments remain accepted for API compatibility but are ignored.
 
 #### beta_geom
 
-Historical exploratory parameter from retired Paper 21. Geometric coupling for mass-dependent scalar field contributions.
+Retired exploratory parameter from the withdrawn Naivasha lab-sector programme (no live paper). Geometric coupling for mass-dependent scalar field contributions. Former production use in Paper 34 (PSR) is resolved: the exterior channel uses the canonical screened profile phi_profile_spherical with charge u_scr(R)/u_unscr(R).
 
 #### M_ref
 
-Historical parameter from retired Paper 21. Threshold mass where phi_mass ~ beta_geom.
+Retired exploratory parameter from the withdrawn Naivasha lab-sector programme (no live paper). Threshold mass where phi_mass ~ beta_geom.
 
 #### kappa_canonical
 
 Expected bare-scale coupling for Cepheid P-L shifts before environmental screening. Declared theory benchmark used as prior in multi-anchor regression; the magnitude unit records the observational channel, not a physical dimension of the coupling. Step_05 derives the transfer structure (Gamma_gal inherited from the Cepheid projector with redshift transfer factor), but the numerical benchmark retains its declared provenance. Paper 12 uses the alias kappa_gal = kappa_canonical.
+
+#### kappa_nested
+
+Raw clock-ratio coefficient from the nested spectroscopic-to-Cepheid rate ratio on the uniform-profile benchmark (Paper 11, step_61): κ_nested = −7.5×10⁻⁴ mag, δμ ~ 3×10⁻¹⁰ mag at X = V_rot²/c² for 200 km/s. The common galactic rate cancels in the ratio; alternative reference-clock conventions (volume-mean light depth, direct Cepheid-to-Cepheid baseline comparison) leave |κ| of order unity at most. Establishes that the measured κ_Cep is a response-sector coefficient, not a conformal clock-ratio artifact.
 
 #### kappa_Cep
 
@@ -124,7 +128,7 @@ Cassini PPN bound (Bertotti et al. 2003), |γ_PPN − 1| < 2.3×10⁻⁵, expres
 
 #### B
 
-Disformal coupling function B(phi). GW170817 constrains the path-integral combination B(phi)(dphi)^2 along observed late-time astrophysical paths: |c_gamma - c_g|/c < few x 1e-15. This does NOT require B to vanish identically in all regimes. B(phi) = 0 in the conformal limit (holonomy vanishes). The nonzero form B(phi) = B0 * |phi|^2 / (1 + |phi|^2) * exp(-phi^4 / (2*sigma_B^4)) (quartic-Gaussian ultra-damped shear bump) is implemented in Paper 28 bh_common.py, with B0, n_B, sigma_B as shape parameters. B activates the disformal shear near strong-field regions while decaying super-polynomially in the deep core, ensuring global Lorentzian signature. The path-dependent GW constraint is satisfied because B(phi)(dphi)^2 is negligible along weak-field late-time astrophysical paths.
+Disformal coupling function B(phi). GW170817 constrains the path-integral combination B(phi)(dphi)^2 along observed late-time astrophysical paths: |c_gamma - c_g|/c < few x 1e-15. This does NOT require B to vanish identically in all regimes. B(phi) = 0 in the conformal limit (holonomy vanishes). The nonzero form B(phi) = B0 * |phi|^2 / (1 + |phi|^2) * exp(-phi^4 / (2*sigma_B^4)) (quartic-Gaussian ultra-damped shear bump) is implemented in Paper 28 bh_common.py, with B0, n_B, sigma_B as shape parameters. B activates the disformal shear near strong-field regions while decaying super-polynomially in the deep core. On spacelike-gradient configurations the signature margin is wide (Paper 0 step 52); in the timelike-gradient drift sector the bare envelope is ambient-lapse-supercritical at absorber epochs for phenomenological normalizations (realized cap B0 <~ 0.03 at z ~ 2.5-3.6, phibar ~ ln(1+z), du/dt ~ H_T(z); Paper 29 gate10c), so ambient closure through the environmental gate is lapse-mandated, not merely phenomenological. The path-dependent GW constraint is satisfied because B(phi)(dphi)^2 is negligible along weak-field late-time astrophysical paths. Eligibility vetoes (corpus registry, issue 29-4): candidates must satisfy (i) Cassini/GW170817 path bounds, (ii) ambient-lapse sub-criticality under 1+z = N(0)/N(phi_bar), N = A*sqrt(1-u) — excluding the descent-tracking form (Paper 29 gate10: ambient u = 1 - 8e-5, required phi_bar < 0), and (iii) three-sightline transfer without per-sightline retuning. Candidate status: envelope form = live candidate; power-law = fails transfer; descent-tracking = excluded by veto (ii); environment-modulated B_eff = B(phi)G(X_local) (gate slope dG/d ln(dphi) ~ (4-7)e-4 per e-fold, factor-1.6 consistency; gate10b) = the only admissible absorber-channel form. Admissibility: the null-cone condition selects B >= 0 as the unconditional branch — the signature condition B(dphi)^2 > -A^2 then holds wherever the matter metric is non-degenerate, the disformal perfect-fluid principal coefficients obey Z_t, Z_s >= 1, and the matter cone lies inside or on the gravitational cone. B < 0 is not excluded a priori but carries a pointwise ledger on each realized configuration — |B|(dphi)^2 < A^2 (signature), Z_t, Z_s > 0 (hyperbolicity), no matter-cone excursions beyond the gravitational cone (causality) — and sign-indefinite B(phi) inherits the same condition along the realized profile. Configurations computed to date fail it on the negative branch (the step_13 volume-balance reconstruction drives Q = 1+(B/A^2)(dphi)^2 -> -1, a matter-metric degeneracy with superluminal longitudinal photons; Paper 0 App. E R5).
 
 #### H0
 
@@ -134,3 +138,6 @@ TEP-corrected local Hubble constant from per-host cz/d after removing ~1 km/s/Mp
 
 S_8 = σ_8 √(Ω_m/0.3) from TEP cosmological fit. Under investigation in Paper 26.
 
+#### V_scalar
+
+Canonical scalar potential branch: the master family V(u) = V_matter(u) e^{-(u/u_s)^4} + V_0 e^{-(u_s/u)^4}; the matter-hosting weak-field branch is the quartic truncated form solved in core/scalar_field.py (equilibrium_u, phi_profile_spherical). Rule 12/18 anchor: one universal scalar sector, fixed once. Non-canonical V(phi) realizations present in live pipelines are named benchmarks bounding methodology only, not the canonical potential: the V_rec(u) = V_0 - (rho_bar/2) e^{-u} descent branch (Paper 0 sec.8 reconstruction, BBN Gate 10), and the BBN step_04g massive-KG 1/2 m^2 phi^2 plus V=0 benchmarks. (issues.md v-phi-benchmark-proliferation, 29-4 one-action registry)
