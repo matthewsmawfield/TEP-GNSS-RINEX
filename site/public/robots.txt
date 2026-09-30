@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://matthewsmawfield.github.io/TEP-GNSS-RINEX/sitemap.xml
+Sitemap: https://mlsmawfield.com/tep/gnss-iii/sitemap.xml
 
 # Disallow access to hidden directories and files
 Disallow: /.*

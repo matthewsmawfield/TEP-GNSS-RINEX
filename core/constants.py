@@ -61,9 +61,12 @@ ILLUSTRATIVE_BETA_A = BETA_SPIN_PHEN  # deprecated alias, kept for backcompat
 BETA_CASSINI_MAX = 5.75e-6       # bound on |beta_eff| = |beta_A * S_Sigma|
 
 # Phenomenological saturation scale for Temporal Topology screening.
-# When local proximity approaches rho_T (observationally proxied by density),
-# the scalar field saturates and A(phi) -> 1, suppressing TEP effects.
-# This is a candidate saturation scale, NOT a binary density threshold.
+# rho_T is the geometric reference density of the R_T(M) law — the density
+# argument of the amplitude response S_A = min[1, (rho/rho_T)^(1/3)]. At
+# rho ~ rho_T the clock-amplitude response reaches its ceiling; the interior
+# field stays at its local equilibrium u_min(rho) > 0 (A < 1, clocks slowed)
+# while the shear gradient is pinned — saturation suppresses the response,
+# it does not relax the field to vacuum. NOT a binary density threshold.
 RHO_T = 20.0                     # g cm^-3
 
 # Backward-compatible alias (deprecated; use RHO_T in new code)
@@ -180,8 +183,8 @@ H0_DRIFT_KM_S_MPC = 70.0
 # Transition shear/acceleration scale of the screening operator, derived from
 # the kinetic completion P(X) = X - V + X|X|/Lambda^4 with Lambda^4 = M_Pl^2 H0^2
 # (zero free parameters; Paper 0 Appendix E, step_27):
-#     g_t = c H0 / (2 beta_A^2)
-G_T_TRANSITION = C_LIGHT * (H0_DRIFT_KM_S_MPC * 1e3 / MPC_TO_M) / (2.0 * BETA_A**2)
+#     g_t = c H0 / (2 |beta_A|)
+G_T_TRANSITION = C_LIGHT * (H0_DRIFT_KM_S_MPC * 1e3 / MPC_TO_M) / (2.0 * abs(BETA_A))
 # Kinetic scale Lambda = sqrt(M_Pl H0) ~ 1.9 meV (the dark-energy scale).
 # Conversion: H0 [s^-1] -> GeV via hbar = 6.582e-25 GeV s.
 HBAR_GEV_S = 6.582119569e-25
@@ -201,6 +204,32 @@ LAMBDA_QUARTIC_CASSINI = 7.526e-66
 # 10--50); V_0 is the deep-well floor in M_Pl^4 units (fiducial).
 U_S_TRANSITION = 10.0
 V0_PLATEAU = 0.3
+
+# Equivalent potential-normalization scale of the quartic branch,
+# Lambda_V = lambda_quartic^(1/4) * M_Pl. Derived, not an independent
+# parameter (Paper 6 App. C; TEP-UCD step_14 scale audit).
+LAMBDA_V_GEV = LAMBDA_QUARTIC_CASSINI**0.25 * M_PL_REDUCED_GEV      # ~127.5 GeV
+LAMBDA_V_REF_GEV = LAMBDA_QUARTIC_REF**0.25 * M_PL_REDUCED_GEV      # ~7.2 GeV
+
+# Self-quenching density marker: the order-of-magnitude density at which the
+# quartic equilibrium crosses u_min ~ 1, rho_sat ~ lambda * M_Pl^4
+# (step_14: 6.1e25 g/cm^3; with the e^{-u} source factor the strict u_min = 1
+# crossing sits at e * lambda * M_Pl^4 ~ 1.7e26). Temporal-well regime
+# (Paper 28), NOT a terrestrial scale — terrestrial saturation is the
+# Compton-resolution crossover lambda_c(rho) ~ R_T(M).
+RHO_SAT_G_CM3 = (
+    LAMBDA_QUARTIC_CASSINI * M_PL_REDUCED_GEV**4 / G_CM3_TO_GEV4
+)
+
+# Compact-object lower bound on the quartic normalization: neutron-star
+# interiors (rho_NS ~ 2e14 g/cm^3) must remain below the master-potential
+# knee, u_min(rho_NS) < u_s, i.e. lambda > rho_NS e^{-u_s} / (u_s^3 M_Pl^4).
+# Step_14: 1.11e-84; the Cassini branch exceeds it by ~6.8e18 while the
+# excluded rho_T-normalized branch (lambda ~ 2.45e-90) fails by ~5e5.
+LAMBDA_QUARTIC_NS_BOUND = (
+    (2e14 * G_CM3_TO_GEV4) * np.exp(-U_S_TRANSITION)
+    / (U_S_TRANSITION**3 * M_PL_REDUCED_GEV**4)
+)
 
 # Disformal envelope family B(u) = B0 * u^2/(1+u^2) * exp(-u^4/2), admissible
 # branch B0 >= 0. Canonical benchmark B0 = +1 (Paper 28 normalization);

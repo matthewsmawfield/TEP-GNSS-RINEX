@@ -211,9 +211,450 @@
       "offset_autumnal_equinox_days": 2.593120839458095
     }
   },
+  "locked_orbital_replay": {
+    "primary_all_multi_clock_phase": {
+      "status": "retrospective internal replay, not blind or independent replication",
+      "training_pair_count_ratio_ew_to_ns": 0.9173599044060737,
+      "training_year": 2022,
+      "validation_year": 2023,
+      "test_year": 2024,
+      "model": "log(EW_lambda/NS_lambda) = intercept + slope * (orbital_speed - 2022 mean speed)",
+      "fitted_intercept": -0.11493707253793416,
+      "fitted_slope_per_km_s": -0.1532637619006072,
+      "required_negative_slope": true,
+      "years": {
+        "2023": {
+          "observed_mean_ratio": 0.9149538404098907,
+          "mean_ew_to_ns_pair_count_ratio": 0.9564017644675257,
+          "correlation_to_pair_coverage": 0.33650198871497355,
+          "descriptive_same_year_slope_per_km_s": -0.13023329234869918,
+          "rmse_velocity": 0.10629716677446473,
+          "rmse_constant": 0.11189488275481047,
+          "rmse_calendar_twin": 0.10229350975659687,
+          "correlation": 0.3294837603185731,
+          "observed_ew_gt_ns_months": 2,
+          "predicted_ew_gt_ns_months": 0,
+          "n_months": 12
+        },
+        "2024": {
+          "observed_mean_ratio": 1.0707116324480996,
+          "mean_ew_to_ns_pair_count_ratio": 0.9488908765620702,
+          "correlation_to_pair_coverage": 0.5340904689252886,
+          "descriptive_same_year_slope_per_km_s": 0.08309051601699734,
+          "rmse_velocity": 0.2597256606575581,
+          "rmse_constant": 0.24958079970481142,
+          "rmse_calendar_twin": 0.24690226340241794,
+          "correlation": -0.20662456377618285,
+          "observed_ew_gt_ns_months": 6,
+          "predicted_ew_gt_ns_months": 0,
+          "n_months": 12
+        }
+      },
+      "2024_velocity_phase_shift_rmse": [
+        0.2597256606575581,
+        0.2647366366717758,
+        0.2570245693762474,
+        0.24397346517267013,
+        0.2389240729114768,
+        0.24745803829816587,
+        0.2601178714658508,
+        0.2645143173031743,
+        0.25694208236330224,
+        0.24426892592298485,
+        0.23894553135266447,
+        0.24689893193255721
+      ],
+      "unshifted_phase_rank": 9,
+      "caveat": "Calendar-twin, insolation and orbital speed share the annual phase; a stable speed regression alone cannot identify a scalar source."
+    },
+    "all_multi_position_phase": {
+      "status": "retrospective internal replay, not blind or independent replication",
+      "training_pair_count_ratio_ew_to_ns": 0.9173599044060737,
+      "training_year": 2022,
+      "validation_year": 2023,
+      "test_year": 2024,
+      "model": "log(EW_lambda/NS_lambda) = intercept + slope * (orbital_speed - 2022 mean speed)",
+      "fitted_intercept": -0.005990275825781554,
+      "fitted_slope_per_km_s": -0.5183212007888806,
+      "required_negative_slope": true,
+      "years": {
+        "2023": {
+          "observed_mean_ratio": 0.9768096883173417,
+          "mean_ew_to_ns_pair_count_ratio": 0.9564017644675257,
+          "correlation_to_pair_coverage": 0.06085433825674863,
+          "descriptive_same_year_slope_per_km_s": -0.26547679883099434,
+          "rmse_velocity": 0.13762370852549974,
+          "rmse_constant": 0.13140964903602795,
+          "rmse_calendar_twin": 0.15639802904763683,
+          "correlation": 0.6783695407653122,
+          "observed_ew_gt_ns_months": 7,
+          "predicted_ew_gt_ns_months": 6,
+          "n_months": 12
+        },
+        "2024": {
+          "observed_mean_ratio": 0.9500389338728245,
+          "mean_ew_to_ns_pair_count_ratio": 0.9488908765620702,
+          "correlation_to_pair_coverage": -0.5409583317486892,
+          "descriptive_same_year_slope_per_km_s": -0.19382731117312013,
+          "rmse_velocity": 0.1496270566026175,
+          "rmse_constant": 0.10140930934316897,
+          "rmse_calendar_twin": 0.15106223860372647,
+          "correlation": 0.6798316036226897,
+          "observed_ew_gt_ns_months": 4,
+          "predicted_ew_gt_ns_months": 6,
+          "n_months": 12
+        }
+      },
+      "2024_velocity_phase_shift_rmse": [
+        0.1496270566026175,
+        0.11930119782074616,
+        0.09006988978417307,
+        0.10391250223324891,
+        0.13582474143053072,
+        0.1543585706188356,
+        0.1498112947577043,
+        0.12015678762421982,
+        0.09037427696216911,
+        0.1037695561805372,
+        0.13667617671135945,
+        0.15542287811809125
+      ],
+      "unshifted_phase_rank": 9,
+      "caveat": "Calendar-twin, insolation and orbital speed share the annual phase; a stable speed regression alone cannot identify a scalar source."
+    },
+    "dynamic_multi_clock_msc": {
+      "status": "retrospective internal replay, not blind or independent replication",
+      "training_pair_count_ratio_ew_to_ns": 0.9616414925771272,
+      "training_year": 2022,
+      "validation_year": 2023,
+      "test_year": 2024,
+      "model": "log(EW_lambda/NS_lambda) = intercept + slope * (orbital_speed - 2022 mean speed)",
+      "fitted_intercept": 0.013351014459822149,
+      "fitted_slope_per_km_s": -0.18680055003872534,
+      "required_negative_slope": true,
+      "years": {
+        "2023": {
+          "observed_mean_ratio": 1.0944257555202117,
+          "mean_ew_to_ns_pair_count_ratio": 0.9537812983864201,
+          "correlation_to_pair_coverage": -0.26519492502672404,
+          "descriptive_same_year_slope_per_km_s": -0.753420332694359,
+          "rmse_velocity": 0.2854139751796337,
+          "rmse_constant": 0.327066415091132,
+          "rmse_calendar_twin": 0.2430155873762391,
+          "correlation": 0.7048154204471185,
+          "observed_ew_gt_ns_months": 9,
+          "predicted_ew_gt_ns_months": 6,
+          "n_months": 12
+        },
+        "2024": {
+          "observed_mean_ratio": 1.0700960806948243,
+          "mean_ew_to_ns_pair_count_ratio": 0.9246026399076438,
+          "correlation_to_pair_coverage": -0.24714838023269237,
+          "descriptive_same_year_slope_per_km_s": -0.4678612772122954,
+          "rmse_velocity": 0.44919706693879186,
+          "rmse_constant": 0.4602475978164183,
+          "rmse_calendar_twin": 0.36664383001362255,
+          "correlation": 0.23444864243170524,
+          "observed_ew_gt_ns_months": 9,
+          "predicted_ew_gt_ns_months": 7,
+          "n_months": 12
+        }
+      },
+      "2024_velocity_phase_shift_rmse": [
+        0.44919706693879186,
+        0.445763243971325,
+        0.45004756234198684,
+        0.45749322853716773,
+        0.4602114489795759,
+        0.45678892629062406,
+        0.45034930199427387,
+        0.44605659576185774,
+        0.44904537083459634,
+        0.456876982083592,
+        0.460208716689939,
+        0.45614131364628585
+      ],
+      "unshifted_phase_rank": 4,
+      "caveat": "Calendar-twin, insolation and orbital speed share the annual phase; a stable speed regression alone cannot identify a scalar source."
+    },
+    "dynamic_baseline_clock_msc": {
+      "status": "retrospective internal replay, not blind or independent replication",
+      "training_pair_count_ratio_ew_to_ns": 0.958323255073991,
+      "training_year": 2022,
+      "validation_year": 2023,
+      "test_year": 2024,
+      "model": "log(EW_lambda/NS_lambda) = intercept + slope * (orbital_speed - 2022 mean speed)",
+      "fitted_intercept": 0.1239376497843902,
+      "fitted_slope_per_km_s": -0.1125663529440796,
+      "required_negative_slope": true,
+      "years": {
+        "2023": {
+          "observed_mean_ratio": 1.1641753176026912,
+          "mean_ew_to_ns_pair_count_ratio": 0.9555924917941593,
+          "correlation_to_pair_coverage": -0.45485562131207025,
+          "descriptive_same_year_slope_per_km_s": -0.32200941252390847,
+          "rmse_velocity": 0.1548267221966532,
+          "rmse_constant": 0.17961809060023037,
+          "rmse_calendar_twin": 0.13512730341974677,
+          "correlation": 0.6497430415319797,
+          "observed_ew_gt_ns_months": 10,
+          "predicted_ew_gt_ns_months": 12,
+          "n_months": 12
+        },
+        "2024": {
+          "observed_mean_ratio": 1.156425312468287,
+          "mean_ew_to_ns_pair_count_ratio": 0.9316996489334705,
+          "correlation_to_pair_coverage": -0.5558485636991022,
+          "descriptive_same_year_slope_per_km_s": -0.3860973191421742,
+          "rmse_velocity": 0.2943953849918735,
+          "rmse_constant": 0.3064448838919119,
+          "rmse_calendar_twin": 0.21099946545449497,
+          "correlation": 0.33763563678233083,
+          "observed_ew_gt_ns_months": 9,
+          "predicted_ew_gt_ns_months": 12,
+          "n_months": 12
+        }
+      },
+      "2024_velocity_phase_shift_rmse": [
+        0.2943953849918735,
+        0.2996450319403251,
+        0.3079406609183522,
+        0.31021552412157877,
+        0.30492928711117595,
+        0.2979460109987574,
+        0.29558893933189756,
+        0.3002932191086324,
+        0.30784768948266894,
+        0.31043267582114753,
+        0.3052948486266401,
+        0.2974250437473406
+      ],
+      "unshifted_phase_rank": 1,
+      "caveat": "Calendar-twin, insolation and orbital speed share the annual phase; a stable speed regression alone cannot identify a scalar source."
+    },
+    "dynamic_ionofree_clock_msc": {
+      "status": "retrospective internal replay, not blind or independent replication",
+      "training_pair_count_ratio_ew_to_ns": 0.9511066855150475,
+      "training_year": 2022,
+      "validation_year": 2023,
+      "test_year": 2024,
+      "model": "log(EW_lambda/NS_lambda) = intercept + slope * (orbital_speed - 2022 mean speed)",
+      "fitted_intercept": 0.28069068428673505,
+      "fitted_slope_per_km_s": -0.008560257448459573,
+      "required_negative_slope": true,
+      "years": {
+        "2023": {
+          "observed_mean_ratio": 1.141676280854986,
+          "mean_ew_to_ns_pair_count_ratio": 0.9435924718796304,
+          "correlation_to_pair_coverage": 0.05936229778442914,
+          "descriptive_same_year_slope_per_km_s": -0.39786847002358516,
+          "rmse_velocity": 0.2593732175964038,
+          "rmse_constant": 0.26171314779555344,
+          "rmse_calendar_twin": 0.3139040415193118,
+          "correlation": 0.8328869990720092,
+          "observed_ew_gt_ns_months": 9,
+          "predicted_ew_gt_ns_months": 12,
+          "n_months": 12
+        },
+        "2024": {
+          "observed_mean_ratio": 1.095599460416852,
+          "mean_ew_to_ns_pair_count_ratio": 0.9239104560007445,
+          "correlation_to_pair_coverage": -0.4583919554211603,
+          "descriptive_same_year_slope_per_km_s": -0.29078447405945307,
+          "rmse_velocity": 0.4627178337825927,
+          "rmse_constant": 0.4634808527606095,
+          "rmse_calendar_twin": 0.421951502765726,
+          "correlation": 0.22978762613587514,
+          "observed_ew_gt_ns_months": 6,
+          "predicted_ew_gt_ns_months": 12,
+          "n_months": 12
+        }
+      },
+      "2024_velocity_phase_shift_rmse": [
+        0.4627178337825927,
+        0.453838206708119,
+        0.4467538463077692,
+        0.4486793154583069,
+        0.4579661439078214,
+        0.46492163790299934,
+        0.46319367625111607,
+        0.45424342745223084,
+        0.44577798553171843,
+        0.4472005871403582,
+        0.45758505736778843,
+        0.46505586330335236
+      ],
+      "unshifted_phase_rank": 9,
+      "caveat": "Calendar-twin, insolation and orbital speed share the annual phase; a stable speed regression alone cannot identify a scalar source."
+    }
+  },
   "summary": {
     "n_channels": 4,
     "n_in_phase": 4,
-    "verdict": "4/4 channels show in-phase (|dphi| < 90 deg) annual modulation between hemispheres; consistent with a heliocentric (orbital-velocity) driver and inconsistent with a purely local-seasonal driver, which would require anti-phase (~180 deg). Harmonic decomposition proves that Multi-GNSS phase alignment is overwhelmingly annual (A1/A2 = 3.98), with the annual trough phase-locked to perihelion (offset ~22-25 days), while semiannual equinoctial power is confined to single-frequency baseline GPS (equinox offset 1.3-3.6 days), identifying it as a Russell-McPherron / eclipse-season systematic that collapses under multi-constellation phase tracking."
+    "locked_primary_2024_outcome": "fails fixed-template prediction",
+    "verdict": "4/4 channels have full-sample annual phase differences below 90 degrees; the Multi-GNSS position-phase series has a strong annual component, while clock MSC retains semiannual power. These are descriptive full-sample results, not a source identification: shared seasonal and processing effects can remain in phase across hemispheres. The separately reported fixed 2022 orbital-speed regression must pass the 2023 and 2024 constant, calendar-twin and phase-shift controls before predictive orbital support is claimed."
+  },
+  "pair_level_kernel_replay": {
+    "status": "retrospective sparse-day same-network estimator-shape pilot, not a source-spectrum inversion or blind test",
+    "station_selection": "40 deterministic farthest-point ECEF stations from sorted IDs with finite terrestrial radii, independent of clock data",
+    "excluded_invalid_coordinates": 0,
+    "station_ids": [
+      "ABMF",
+      "KARR",
+      "KOKR",
+      "ARUC",
+      "PALM",
+      "HRAO",
+      "RESO",
+      "OWMG",
+      "OSN3",
+      "SGOC",
+      "YKRO",
+      "DAV1",
+      "APO1",
+      "CHPI",
+      "POHN",
+      "GAMB",
+      "ENAO",
+      "GLPS",
+      "ADIS",
+      "URUM",
+      "KIRU",
+      "SAMO",
+      "PARK",
+      "LPOC",
+      "PPPC",
+      "VACS",
+      "ANTC",
+      "UCAG",
+      "CSTJ",
+      "SCTB",
+      "POVE",
+      "STHL",
+      "COCO",
+      "CMUM",
+      "YIBL",
+      "SALU",
+      "CPVG",
+      "URAL",
+      "YATE",
+      "KERG"
+    ],
+    "days": "15th of every month in 2022\u20132024",
+    "processing": "baseline SPP clock_bias_ns, unchanged step_2_0 phase-alignment estimator",
+    "field_kernel_source": "../TEP/results/step_04_gamma_derivation.json",
+    "field_kernel_sha256": "392da8aec4b7217559b18555a694b365c8b9c144fa892cb47b8bebbf69275ee6",
+    "training_2022": {
+      "n_bins": 7,
+      "n_pair_days": 3364,
+      "n_sample_days": 12,
+      "bin_mean_distance_km": [
+        2295.6267982873505,
+        2832.283829665688,
+        3765.5985792447254,
+        4877.633569875883,
+        6557.13795823252,
+        8700.78179047902,
+        11405.09170078739
+      ],
+      "offset": 0.009297180583587842,
+      "amplitude": 0.14140056165134085,
+      "generic_exponential_fitted_length_km": 917.452271239758
+    },
+    "source_family_training_2022": {
+      "volume_white": {
+        "offset": 0.009297180583587842,
+        "amplitude": 0.14140056165134085,
+        "training_rmse": 0.05567439972036699
+      },
+      "core_only": {
+        "offset": 0.010344175382061529,
+        "amplitude": 0.09902283447447696,
+        "training_rmse": 0.05908469957382023
+      },
+      "mantle_only": {
+        "offset": 0.009322824952503899,
+        "amplitude": 0.14583365648616678,
+        "training_rmse": 0.0553207266663673
+      },
+      "surface_concentrated": {
+        "offset": 0.009290091088199413,
+        "amplitude": 0.1712832945198106,
+        "training_rmse": 0.05441204395043097
+      }
+    },
+    "angular_source_identifiability": {
+      "n_independent_training_bins": 7,
+      "n_angular_modes": 48,
+      "matrix_rank_upper_bound": 7,
+      "unconstrained_null_directions_at_least": 41,
+      "scope": "Unregularized Legendre basis before nonnegative-power constraints and offset/transfer degeneracies; source spectrum not uniquely invertible from this pilot."
+    },
+    "validation": {
+      "2023": {
+        "n_bins": 7,
+        "month_delete_improvement_linear_minus_kinetic": [
+          0.003451420003189848,
+          0.0038199298110604962,
+          0.0034524295328977744,
+          0.003678749149304106,
+          0.0037231433791398427,
+          0.0033017942300833936,
+          0.0033362814958584758,
+          0.00364411276702567,
+          0.003538159881887104,
+          0.0040434576266860645,
+          0.003708048761930677,
+          0.0036279501432753825
+        ],
+        "n_pair_days": 3145,
+        "n_sample_days": 12,
+        "rmse_kinetic_shape": 0.10191547215628607,
+        "source_family_rmse": {
+          "volume_white": 0.10191547215628607,
+          "core_only": 0.10634934254786796,
+          "mantle_only": 0.10145031377227723,
+          "surface_concentrated": 0.10022585906051881
+        },
+        "rmse_constant": 0.11886838920274843,
+        "rmse_linear_distance": 0.10553573502801779,
+        "rmse_fixed_4200km_exponential": 0.09412217793310342,
+        "rmse_train_fitted_exponential": 0.07556505009008077,
+        "fitted_on_2022_amplitude": 0.14140056165134085
+      },
+      "2024": {
+        "n_bins": 7,
+        "month_delete_improvement_linear_minus_kinetic": [
+          0.0032788640182316448,
+          0.0031979178942692366,
+          0.004010585590058999,
+          0.0031946291388350867,
+          0.0031981367764891133,
+          0.0030472853913074416,
+          0.003135836970615688,
+          0.003131275603537917,
+          0.004058530540184624,
+          0.003415680635125068,
+          0.0030616049540733437,
+          0.003076989140661998
+        ],
+        "n_pair_days": 3524,
+        "n_sample_days": 12,
+        "rmse_kinetic_shape": 0.092949571572636,
+        "source_family_rmse": {
+          "volume_white": 0.092949571572636,
+          "core_only": 0.09703762395045828,
+          "mantle_only": 0.09254207648328995,
+          "surface_concentrated": 0.09147408776966637
+        },
+        "rmse_constant": 0.11445081856750669,
+        "rmse_linear_distance": 0.09628567190189609,
+        "rmse_fixed_4200km_exponential": 0.0866232708043358,
+        "rmse_train_fitted_exponential": 0.07535250931708487,
+        "fitted_on_2022_amplitude": 0.14140056165134085
+      }
+    },
+    "exploratory_controls": "The four radial source families were declared in TEP step_04; each offset and amplitude is trained only on 2022. Generic exponential length is trained only on 2022; fixed 4200 km is an existing GNSS calibration, not independent physical input.",
+    "caveat": "One day per month, shared stations, fitted offset/amplitude and no processing-chain injection; cannot identify the physical source or claim an absolute covariance amplitude."
   }
 }

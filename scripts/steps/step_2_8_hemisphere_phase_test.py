@@ -21,13 +21,21 @@ Inputs (existing Step 2.5 outputs, no refitting):
 
 Output: results/outputs/step_2_8_hemisphere_phase_test.json
 """
+import hashlib
 import json
 import math
 import os
+import sys
+from datetime import date
+from pathlib import Path
 
 import numpy as np
+from scipy.optimize import curve_fit
+from scipy.special import eval_legendre
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0,ROOT)
+from scripts.steps.step_2_0_raw_spp_analysis import _compute_coherence_phase,FS_HZ,F1_HZ,F2_HZ
 OUT = os.path.join(ROOT, "results", "outputs")
 NORTH = os.path.join(OUT, "step_2_5_orbital_coupling_dynamic_50_north_multi_gnss.json")
 SOUTH = os.path.join(OUT, "step_2_5_orbital_coupling_dynamic_50_south_multi_gnss.json")
@@ -164,6 +172,252 @@ def wrap_pi(dphi):
     return (dphi + math.pi) % (2 * math.pi) - math.pi
 
 
+def locked_orbital_replay(path, metric, sub):
+    entries = json.load(open(path))["results"][metric][sub]["monthly_anisotropy"]
+    rows = {}
+    for record in entries.values():
+        if not isinstance(record, dict):
+            continue
+        ratio, velocity = record.get("ratio"), record.get("velocity")
+        if ratio and velocity and ratio > 0 and math.isfinite(ratio) and math.isfinite(velocity):
+            rows[(int(record["year"]), int(record["month"]))] = (
+                float(ratio), float(velocity),
+                int(record.get("n_ew_pairs",0)), int(record.get("n_ns_pairs",0)))
+    if any((year, month) not in rows for year in (2022, 2023, 2024) for month in range(1, 13)):
+        return {"status": "incomplete", "months_available": len(rows)}
+
+    def year_data(year, shift=0):
+        y = np.array([rows[(year, month)][0] for month in range(1, 13)])
+        v = np.array([rows[(year, (month+shift-1) % 12+1)][1]
+                      for month in range(1, 13)])
+        return y, v
+
+    def evaluate(shift):
+        y_train, v_train = year_data(2022, shift)
+        center = float(v_train.mean())
+        fit = np.linalg.lstsq(np.column_stack((np.ones(12), v_train-center)),
+                              np.log(y_train), rcond=None)[0]
+        annual = np.array([rows[(2022, month)][0] for month in range(1, 13)])
+        evaluations = {}
+        for year in (2023, 2024):
+            observed, v = year_data(year, shift)
+            predicted = np.exp(fit[0]+fit[1]*(v-center))
+            flat = np.full(12, np.exp(fit[0]))
+            same_year_slope = np.linalg.lstsq(
+                np.column_stack((np.ones(12),v-v.mean())),
+                np.log(observed),rcond=None)[0][1]
+            coverage = np.array([rows[(year,month)][2]/max(rows[(year,month)][3],1)
+                                 for month in range(1,13)])
+            evaluations[str(year)] = {
+                "observed_mean_ratio":float(np.mean(observed)),
+                "mean_ew_to_ns_pair_count_ratio":float(np.mean(coverage)),
+                "correlation_to_pair_coverage":float(np.corrcoef(observed,coverage)[0,1]) if np.std(coverage)>1e-12 else None,
+                "descriptive_same_year_slope_per_km_s":float(same_year_slope),
+                "rmse_velocity": float(np.sqrt(np.mean((observed-predicted)**2))),
+                "rmse_constant": float(np.sqrt(np.mean((observed-flat)**2))),
+                "rmse_calendar_twin": float(np.sqrt(np.mean((observed-annual)**2))),
+                "correlation": float(np.corrcoef(observed,predicted)[0,1]) if (
+                    np.std(predicted)>1e-12 and np.std(observed)>1e-12) else None,
+                "observed_ew_gt_ns_months": int(np.sum(observed>1)),
+                "predicted_ew_gt_ns_months": int(np.sum(predicted>1)),
+                "n_months": 12,
+            }
+        return fit, evaluations
+
+    fit, evaluations = evaluate(0)
+    train_coverage = np.mean([rows[(2022,month)][2]/max(rows[(2022,month)][3],1)
+                              for month in range(1,13)])
+    shifts = [evaluate(shift)[1]["2024"]["rmse_velocity"] for shift in range(12)]
+    return {"status":"retrospective internal replay, not blind or independent replication",
+            "training_pair_count_ratio_ew_to_ns":float(train_coverage),
+            "training_year":2022, "validation_year":2023, "test_year":2024,
+            "model":"log(EW_lambda/NS_lambda) = intercept + slope * (orbital_speed - 2022 mean speed)",
+            "fitted_intercept":float(fit[0]), "fitted_slope_per_km_s":float(fit[1]),
+            "required_negative_slope":bool(fit[1]<0),
+            "years":evaluations,
+            "2024_velocity_phase_shift_rmse":shifts,
+            "unshifted_phase_rank":int(1+sum(score<shifts[0] for score in shifts[1:])),
+            "caveat":"Calendar-twin, insolation and orbital speed share the annual phase; a stable speed regression alone cannot identify a scalar source."}
+
+
+def pair_level_kernel_replay():
+    directory = Path(ROOT)/"data"/"processed"
+    field_path = Path(ROOT).parent/"TEP"/"results"/"step_04_gamma_derivation.json"
+    coords = json.load(open(directory/"station_coordinates.json"))
+    field = json.load(open(field_path))["kinetic_forward_test"]
+    stations = sorted(coords)
+    xyz = np.asarray([coords[s] for s in stations],float)
+    radii = np.linalg.norm(xyz,axis=1)
+    valid = np.all(np.isfinite(xyz),axis=1)&(radii>6e6)&(radii<7e6)
+    excluded_coordinates = int(np.sum(~valid))
+    stations = [station for station,keep in zip(stations,valid) if keep]
+    xyz = xyz[valid]/radii[valid,None]
+    if not np.all(np.isfinite(xyz)) or np.max(np.abs(xyz))>1.01:
+        raise ValueError("Station ECEF normalization failed")
+    if len(stations)<40:
+        return {"status":"fewer than 40 valid terrestrial ECEF stations",
+                "valid_stations":len(stations)}
+    selected = [0]
+    spread = np.full(len(stations),np.inf)
+    for _ in range(39):
+        spread = np.minimum(spread,1-np.einsum("ij,j->i",xyz,xyz[selected[-1]]))
+        spread[selected] = -1
+        selected.append(int(np.argmax(spread)))
+    stations = [stations[i] for i in selected]
+    xyz = xyz[selected]
+    angles = np.arccos(np.clip(np.einsum("ik,jk->ij",xyz,xyz),-1,1))
+    source_cases = field["radial_source_scan"]
+    if not all("angular_powers" in source_cases[name]
+               for name in ("volume_white","core_only","mantle_only","surface_concentrated")):
+        raise ValueError("Rebuild TEP step_04 before the source-family replay")
+    powers = {name:np.asarray(case["angular_powers"],float)
+              for name,case in source_cases.items()}
+    ell = np.arange(1,len(powers["volume_white"]))
+    weights = {name:(2*ell+1)*value[1:] for name,value in powers.items()}
+    def kernel(theta,name="volume_white"):
+        angular = [eval_legendre(int(l),math.cos(theta)) for l in ell]
+        return float(np.dot(weights[name],angular)/weights[name].sum())
+    bins = np.geomspace(50,13000,21)
+    rows = {}
+    for year in (2022,2023,2024):
+        distances, values, months = [], [], []
+        days_loaded = 0
+        for month in range(1,13):
+            doy = date(year,month,15).timetuple().tm_yday
+            records = {}
+            for station in stations:
+                path = directory/f"{station}_{year}{doy:03d}.npz"
+                if not path.exists():
+                    continue
+                with np.load(path) as product:
+                    t = product.get("timestamps")
+                    v = product.get("clock_bias_ns")
+                    if t is None or v is None or len(t)!=len(v):
+                        continue
+                    valid = (t>=0)&(t<86400)&np.isfinite(v)
+                    if np.sum(valid)>=200:
+                        records[station]=(t[valid],v[valid])
+            if len(records)<2:
+                continue
+            days_loaded += 1
+            for i,sta1 in enumerate(stations):
+                if sta1 not in records:
+                    continue
+                for j in range(i+1,len(stations)):
+                    sta2 = stations[j]
+                    distance = 6371*angles[i,j]
+                    if sta2 not in records or not 50<=distance<=13000:
+                        continue
+                    t1,v1 = records[sta1]
+                    t2,v2 = records[sta2]
+                    _,a,b = np.intersect1d(t1,t2,return_indices=True)
+                    if len(a)<200:
+                        continue
+                    _,_,phase = _compute_coherence_phase(v1[a],v2[b],FS_HZ,F1_HZ,F2_HZ)
+                    if math.isfinite(phase):
+                        distances.append(distance)
+                        values.append(phase)
+                        months.append(month)
+        distance = np.asarray(distances)
+        value = np.asarray(values)
+        months = np.asarray(months)
+        indices = np.searchsorted(bins,distance,side="right")-1
+        summary = {}
+        for index in range(len(bins)-1):
+            mask = indices==index
+            if np.sum(mask)>=6:
+                summary[index]=(float(distance[mask].mean()),float(value[mask].mean()),int(np.sum(mask)))
+        rows[year]={"bins":summary,"n_pair_days":len(value),"n_sample_days":days_loaded,
+                    "distance":distance,"value":value,"month":months,"bin_index":indices}
+    train = rows[2022]["bins"]
+    if len(train)<5:
+        return {"status":"insufficient long-baseline bins", "counts":{
+            str(year):{key:rows[year][key] for key in ("n_pair_days","n_sample_days")}
+            for year in rows}}
+    r = np.array([train[i][0] for i in sorted(train)])
+    y = np.array([train[i][1] for i in sorted(train)])
+    angular_design = np.array([[eval_legendre(int(l),math.cos(d/6371))
+                                for l in ell] for d in r])
+    angular_rank = int(np.linalg.matrix_rank(angular_design))
+    source_fits = {}
+    source_training = {}
+    for name in ("volume_white","core_only","mantle_only","surface_concentrated"):
+        template = np.array([kernel(d/6371,name) for d in r])
+        estimate = np.linalg.lstsq(np.column_stack((np.ones(len(r)),template)),y,rcond=None)[0]
+        source_fits[name] = estimate
+        source_training[name] = {"offset":float(estimate[0]),
+            "amplitude":float(estimate[1]),
+            "training_rmse":float(np.sqrt(np.mean((y-estimate[0]-estimate[1]*template)**2)))}
+    fit = source_fits["volume_white"]
+    linear = np.linalg.lstsq(np.column_stack((np.ones(len(r)),r)),y,rcond=None)[0]
+    fixed_exp = np.linalg.lstsq(np.column_stack((np.ones(len(r)),
+                                  np.exp(-r/4200))),y,rcond=None)[0]
+    exponential = lambda distance,offset,amplitude,length: offset+amplitude*np.exp(-distance/length)
+    free_exp,_ = curve_fit(exponential,r,y,p0=(y.mean(),.1,4200),
+                           bounds=([-2,-2,100],[2,2,50000]),maxfev=10000)
+    scores = {}
+    for year in (2023,2024):
+        shared = sorted(set(train)&set(rows[year]["bins"]))
+        distance = np.array([rows[year]["bins"][i][0] for i in shared])
+        observed = np.array([rows[year]["bins"][i][1] for i in shared])
+        predicted = fit[0]+fit[1]*np.array([kernel(d/6371) for d in distance])
+        source_scores = {}
+        for name, estimate in source_fits.items():
+            candidate = estimate[0]+estimate[1]*np.array([kernel(d/6371,name) for d in distance])
+            source_scores[name] = float(np.sqrt(np.mean((observed-candidate)**2)))
+        month_delete_improvement = []
+        for excluded_month in range(1,13):
+            keep = rows[year]["month"] != excluded_month
+            selected_bins = rows[year]["bin_index"][keep]
+            selected_r = rows[year]["distance"][keep]
+            selected_y = rows[year]["value"][keep]
+            means = [(float(selected_r[selected_bins==i].mean()),
+                      float(selected_y[selected_bins==i].mean()))
+                     for i in shared if np.sum(selected_bins==i)>=6]
+            if len(means)<3:
+                continue
+            rr, yy = np.asarray(means).T
+            kernel_pred = fit[0]+fit[1]*np.array([kernel(d/6371) for d in rr])
+            linear_pred = linear[0]+linear[1]*rr
+            month_delete_improvement.append(float(
+                np.sqrt(np.mean((yy-linear_pred)**2))-
+                np.sqrt(np.mean((yy-kernel_pred)**2))))
+        scores[str(year)]={"n_bins":len(shared),
+            "month_delete_improvement_linear_minus_kinetic":month_delete_improvement,
+            "n_pair_days":rows[year]["n_pair_days"],
+            "n_sample_days":rows[year]["n_sample_days"],
+            "rmse_kinetic_shape":float(np.sqrt(np.mean((observed-predicted)**2))),
+            "source_family_rmse":source_scores,
+            "rmse_constant":float(np.sqrt(np.mean((observed-y.mean())**2))),
+            "rmse_linear_distance":float(np.sqrt(np.mean((observed-linear[0]-linear[1]*distance)**2))),
+            "rmse_fixed_4200km_exponential":float(np.sqrt(np.mean((observed-fixed_exp[0]-fixed_exp[1]*np.exp(-distance/4200))**2))),
+            "rmse_train_fitted_exponential":float(np.sqrt(np.mean((observed-exponential(distance,*free_exp))**2))),
+            "fitted_on_2022_amplitude":float(fit[1])}
+    return {"status":"retrospective sparse-day same-network estimator-shape pilot, not a source-spectrum inversion or blind test",
+        "station_selection":"40 deterministic farthest-point ECEF stations from sorted IDs with finite terrestrial radii, independent of clock data",
+        "excluded_invalid_coordinates":excluded_coordinates,
+        "station_ids":stations,
+        "days":"15th of every month in 2022–2024",
+        "processing":"baseline SPP clock_bias_ns, unchanged step_2_0 phase-alignment estimator",
+        "field_kernel_source":"../TEP/results/step_04_gamma_derivation.json",
+        "field_kernel_sha256":hashlib.sha256(field_path.read_bytes()).hexdigest(),
+        "training_2022":{"n_bins":len(train),"n_pair_days":rows[2022]["n_pair_days"],
+                         "n_sample_days":rows[2022]["n_sample_days"],
+                         "bin_mean_distance_km":[train[i][0] for i in sorted(train)],
+                         "offset":float(fit[0]),"amplitude":float(fit[1]),
+                         "generic_exponential_fitted_length_km":float(free_exp[2])},
+        "source_family_training_2022":source_training,
+        "angular_source_identifiability":{
+            "n_independent_training_bins":len(r),
+            "n_angular_modes":len(ell),
+            "matrix_rank_upper_bound":angular_rank,
+            "unconstrained_null_directions_at_least":len(ell)-angular_rank,
+            "scope":"Unregularized Legendre basis before nonnegative-power constraints and offset/transfer degeneracies; source spectrum not uniquely invertible from this pilot."},
+        "validation":scores,
+        "exploratory_controls":"The four radial source families were declared in TEP step_04; each offset and amplitude is trained only on 2022. Generic exponential length is trained only on 2022; fixed 4200 km is an existing GNSS calibration, not independent physical input.",
+        "caveat":"One day per month, shared stations, fitted offset/amplitude and no processing-chain injection; cannot identify the physical source or claim an absolute covariance amplitude."}
+
+
 def main():
     # 1. Hemisphere phase test
     north = json.load(open(NORTH))
@@ -209,6 +463,19 @@ def main():
             y = [s[k] for k in months]
             harmonic_results[name] = fit_harmonics(months, y)
 
+    replay_targets = [
+        ("primary_all_multi_clock_phase", "all_stations_multi_gnss", "clock_bias", "phase_alignment"),
+        ("all_multi_position_phase", "all_stations_multi_gnss", "pos_jitter", "phase_alignment"),
+        ("dynamic_multi_clock_msc", "dynamic_50_multi_gnss", "clock_bias", "msc"),
+        ("dynamic_baseline_clock_msc", "dynamic_50_baseline", "clock_bias", "msc"),
+        ("dynamic_ionofree_clock_msc", "dynamic_50_ionofree", "clock_bias", "msc"),
+    ]
+    locked_replay = {
+        name:locked_orbital_replay(
+            os.path.join(OUT, f"step_2_5_orbital_coupling_{product}.json"),metric,sub)
+        for name, product, metric, sub in replay_targets
+    }
+
     result = {
         "step": "2_8_hemisphere_phase_test",
         "purpose": "Distinguish heliocentric (in-phase) vs local-seasonal (anti-phase) driver, and decompose annual vs semiannual power",
@@ -220,20 +487,27 @@ def main():
         },
         "channels": channels,
         "harmonic_decomposition": harmonic_results,
+        "locked_orbital_replay":locked_replay,
         "summary": {
             "n_channels": len(channels),
             "n_in_phase": n_in,
+            "locked_primary_2024_outcome": "fails fixed-template prediction" if (
+                locked_replay["primary_all_multi_clock_phase"]["years"]["2024"]["rmse_velocity"] >=
+                min(locked_replay["primary_all_multi_clock_phase"]["years"]["2024"]["rmse_constant"],
+                    locked_replay["primary_all_multi_clock_phase"]["years"]["2024"]["rmse_calendar_twin"])
+                or (locked_replay["primary_all_multi_clock_phase"]["years"]["2024"]["correlation"] or 0) <= 0
+            ) else "passes these internal comparators",
             "verdict": (
-                f"{n_in}/{len(channels)} channels show in-phase (|dphi| < 90 deg) annual modulation between hemispheres; "
-                "consistent with a heliocentric (orbital-velocity) driver and inconsistent with a purely local-seasonal driver, "
-                "which would require anti-phase (~180 deg). "
-                "Harmonic decomposition proves that Multi-GNSS phase alignment is overwhelmingly annual (A1/A2 = 3.98), "
-                "with the annual trough phase-locked to perihelion (offset ~22-25 days), while semiannual equinoctial power "
-                "is confined to single-frequency baseline GPS (equinox offset 1.3-3.6 days), identifying it as a Russell-McPherron / "
-                "eclipse-season systematic that collapses under multi-constellation phase tracking."
+                f"{n_in}/{len(channels)} channels have full-sample annual phase differences below 90 degrees; "
+                "the Multi-GNSS position-phase series has a strong annual component, while clock MSC retains semiannual power. "
+                "These are descriptive full-sample results, not a source identification: shared seasonal and processing effects "
+                "can remain in phase across hemispheres. The separately reported fixed 2022 orbital-speed regression must pass "
+                "the 2023 and 2024 constant, calendar-twin and phase-shift controls before predictive orbital support is claimed."
             ),
         },
     }
+    if "--kernel-pilot" in sys.argv:
+        result["pair_level_kernel_replay"] = pair_level_kernel_replay()
     out_path = os.path.join(OUT, "step_2_8_hemisphere_phase_test.json")
     with open(out_path, "w") as fh:
         json.dump(result, fh, indent=2)

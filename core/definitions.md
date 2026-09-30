@@ -26,7 +26,7 @@ The Temporal Shear is the gradient of the conformal factor:
 
 $$\Sigma_\mu = \nabla_\mu \ln A(\phi) = (\beta_A/M_{\text{Pl}}) \nabla_\mu\phi$$
 
-It measures the local rate of change of the conformal clock-rate rescaling and is the source charge for fifth-force-like effects.
+It measures the local rate of change of the conformal clock-rate rescaling. It is not a separate interaction: matter follows geodesics of the matter metric, and in Einstein-frame variables the shear appears as the anomalous acceleration that fifth-force searches and PPN tests conventionally parameterize.
 
 ### A.4 Temporal Topology
 
@@ -78,8 +78,18 @@ The following table lists the canonical screening-related symbols used across th
 | $\lambda_T$ | GNSS correlation length / relaxation scale | Papers 1–3 | $\sim 4{,}200$ km | Papers 1–3, 4, 14 |
 | $\rho_{\rm amb}$ | Ambient halo density | Context-dependent | $\sim 10^{-18}$ g/cm$^3$ (GC halo) | Papers 10, 11, 13 |
 | $\rho_*$ | Local stellar mass density | Context-dependent | $\sim 0.5\,M_\odot/\text{pc}^3$ (galactic disk) | Paper 11 |
+| $\Lambda_X$ | Kinetic-completion gradient/shear scale, $P_{,X} = 1 + 2\vert X\vert/\Lambda_X^4$ | Paper 0 | $\sqrt{M_{\rm Pl}H_0} \approx 1.9$ meV | Papers 0, 4, 6, 7, 12, 13, 17, 26, 28 |
+| $\lambda_{\rm quartic}$ | Quartic amplitude-sector coupling, $V = \lambda_{\rm quartic}M_{\rm Pl}^4 u^4/4$ | Paper 0 | $7.526\times10^{-66}$ (Cassini branch; reference $7.526\times10^{-71}$) | Papers 0, 6, 7, 10, 22, 28 |
+| $\Lambda_V$ | Equivalent potential normalization $\lambda_{\rm quartic}^{1/4}M_{\rm Pl}$ (derived, not independent) | Paper 6 | $\approx 127.5$ GeV | Papers 0, 6 |
+| $\rho_{\rm sat}$ | Self-quenching density ($u_{\min}\sim 1$ crossing; temporal-well regime) | Paper 6 | $\sim 6\times10^{25}$ g/cm$^3$ (order-of-magnitude) | Papers 6, 28 |
+| $u_{\min}$ | Density-set scalar equilibrium, $\lambda_{\rm quartic}M_{\rm Pl}^4 u_{\min}^3 = \rho\,e^{-u_{\min}}$ | Paper 0 | $\left(\rho/\lambda_{\rm quartic}M_{\rm Pl}^4\right)^{1/3}$ | Papers 0, 6, 7, 28 |
+| $u_s$ | Master-potential plateau knee | Paper 0 | $\sim 10$ (nominal; closure scans 10–50) | Papers 0, 6, 28 |
 
 Key distinction: $\rho_{\rm half}$ is a **local stellar density** parameter for the continuous suppression factor $S(\rho_*)$ in galactic disks (Paper 11), not an ambient halo density. Globular clusters are active not because $\rho_{\rm amb} \ll \rho_{\rm half}$ but because their internal potential structure permits gradient coherence on scales larger than the cluster size. Conversely, $\rho_T \approx 20$ g/cm$^3$ is the asymptotic saturation scale of the conformal-factor sector; systems with $\rho \gg \rho_T$ (e.g., Solar System interiors) are in the saturated/GR-recovered regime.
+
+Scale-sector distinction: the scalar sector carries three anchored scales that must not be conflated — $\Lambda_X$ (the kinetic gradient/shear scale, anchored to the measured drift $H_0$), $\lambda_{\rm quartic}\leftrightarrow\Lambda_V$ (the amplitude-sector potential normalization, anchored to the Cassini screening bound), and $\rho_T$ (the geometric calibration of $R_T(M)$, anchored to the GNSS correlation length). The energy-density reading $\rho_T^{1/4}\approx 96$ keV is not a field scale; the identification $\rho_T\equiv\Lambda_V^4$ is excluded by compact-object equilibria, Compton-resolution behaviour and Solar-System screening (Paper 6, Appendix C).
+
+Symbol-overloading note: $\lambda$ carries several unrelated local meanings across the corpus — the quartic coupling $\lambda_{\rm quartic}$ above, the GNSS covariance length $\lambda_T$ (Papers 1–3, 6, 14), the $B(\phi)$ descent exponent in Paper 29 benchmark forms, and the affine parameter on geodesics (Paper 28). Manuscript-local definitions govern; where a single paper uses more than one meaning it disambiguates explicitly (Paper 6 writes the covariance length $\lambda_T$ alongside the quartic coupling).
 
 ### A.6 Observable Response Coefficient
 

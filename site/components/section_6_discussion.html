@@ -32,7 +32,7 @@
         The processing artifact hypothesis is further challenged by the
         observation of directional anisotropy. The short-distance E-W/N-S ratios
         of 1.033 (MSC) and 1.224 (Phase Alignment) are highly significant
-        (nominal p &lt; 10<sup>−15</sup> under the standard null) and consistent
+        (nominal p $\lt$ 10<sup>−15</sup> under the standard null) and consistent
         with CODE's directional signature. A critical audit reveals this signal
         is not a distance artifact: E-W pairs are actually 13 km longer than N-S
         pairs (a bias <em>against</em> the signal), and robust distance-matching
@@ -49,7 +49,7 @@
         <ol>
             <li>
                 Orbital Coupling: Weather does not modulate with Earth's orbital
-                velocity (r = −0.509 to −0.763, 3.2–5.4σ).
+                velocity (r = −0.509 to −0.763 across processing modes, nominal 3.2–5.4σ; ≤ 3.3σ autocorrelation-corrected).
             </li>
             <li>
                 Ionofree Persistence: The inferred Temporal Topology correlation length increases
@@ -58,12 +58,14 @@
                 the ionofree combination.
             </li>
             <li>
-                CMB Alignment: Weather patterns do not align with the Cosmic
-                Microwave Background dipole (20.0° separation, 78% RA clustering) (Burde, 2016; Consoli & Pluchino, 2021).
+                Stable celestial direction: Weather patterns cannot imprint a
+                direction locked to Earth's orbital-velocity tangent
+                (52% RA clustering across clean configurations, in-ecliptic)
+                (Burde, 2016; Consoli & Pluchino, 2021).
             </li>
             <li>
                 Ionospheric Gradient Scale: Lee & Lee (2019) show ionospheric
-                spatial gradients are &lt;0.01 TECU/km under quiet
+                spatial gradients are $\lt$ 0.01 TECU/km under quiet
                 conditions—far smaller than the effect observed here, which
                 persists across all geomagnetic conditions.
             </li>
@@ -96,7 +98,7 @@
     <strong>Cross-paper synthesis (Step 5.0).</strong> A direct comparison of
     PPP-derived λ (Paper 1: CODE 4,549 km, IGS Combined 3,764 km, ESA Final
     3,330 km) with raw-SPP phase-alignment λ (this paper: precise-mode range
-    1,166&ndash;3,581 km) reveals a systematic and directional shift: in 99 of
+    1,166–3,581 km) reveals a systematic and directional shift: in 99 of
     108 matched comparisons, raw-SPP λ is <em>shorter</em> than PPP λ (sign-test
     p = 2.6 &times; 10<sup>&minus;20</sup>; the 108 comparisons share the same
     underlying station data, so this p-value bounds the direction of the shift,
@@ -104,7 +106,7 @@
     predicted by a noise-dilution model: higher uncorrelated noise in raw SPP
     should shorten the apparent correlation length because the exponential
     signal is buried in a larger incoherent background.  The mean ratio
-    λ<sub>raw</sub>/λ<sub>PPP</sub> = 0.52 &pm; 0.26, with a median of 0.47.
+    λ<sub>raw</sub>/λ<sub>PPP</sub> = 0.52 ± 0.26, with a median of 0.47.
     The fact that the shift is directional and predictable constrains the
     forward-model space: a software artifact would not necessarily produce this
     systematic shortening, whereas a physical signal attenuated by noise would.
@@ -112,7 +114,7 @@
 
 <p>
     <strong>Multiplicity is bounded by the physical prediction.</strong> The
-    TEP theoretical framework specifies a single search range (1,000&ndash;10,000
+    TEP theoretical framework specifies a single search range (1,000–10,000
     km) and a single functional form (exponential decay).  The 72 combinations
     do not scan 72 independent hypotheses; they are 72 realizations of the
     <em>same</em> hypothesis under different noise conditions.  Treating them
@@ -134,18 +136,18 @@
 
 <p>
     Additional evidence from orbital coupling analysis: Position jitter and
-    clock bias show similar orbital velocity coupling (baseline: r = −0.509 vs
-    −0.486, difference of 5%; multi_gnss: r = −0.610 vs −0.581, difference of
-    5%). This approximate spacetime symmetry reflects the conformal structure
-    of the matter metric $\tilde{g}_{\mu\nu} = A^2(\phi)g_{\mu\nu}$, where
-    scalar field variations rescale spatial separations and proper clock rates
-    identically ($d\tilde{s}^2 = A^2(\phi)ds^2$). In joint SPP estimation, this
-    near-unity coupling demonstrates that the annual modulation enters spatial and
+    clock bias show similar orbital velocity coupling on the MSC metric in two
+    of three filters (baseline: r = −0.509 vs −0.486; multi_gnss: r = −0.610 vs
+    −0.581), though not for phase alignment or DYNAMIC_50. Because position and
+    clock are estimated jointly in the navigation solve, correlated projection is
+    expected, so this comparison is reported as a hardware-artifact discrimination
+    check rather than a conformal-scaling test. In joint SPP estimation, the
+    matched MSC coupling indicates that the annual modulation enters spatial and
     temporal observables symmetrically, ruling out downstream clock-specific
     hardware artifacts while satisfying the essential consistency condition of
     shared metric propagation. Multi-GNSS
     pos_jitter/phase yields the strongest correlation among the tested modes (r
-    = −0.763, 5.4σ).
+    = −0.763, nominal 5.4σ, ≈ 3.0σ corrected).
 </p>
 
 <h4>6.3.2 Directional Anisotropy as Physical Signature</h4>
@@ -247,7 +249,7 @@
             <th>Status</th>
         </tr>
         <tr style="background-color: #f5f7fa">
-            <td>&lt;500 km</td>
+            <td>$\lt$ 500 km</td>
             <td>Geometry weak, ionosphere minimal</td>
             <td>1.20–1.23</td>
             <td>Primary Evidence</td>
@@ -261,7 +263,7 @@
         <tr>
             <td>&gt;1000 km</td>
             <td>Ionosphere dominates</td>
-            <td>&lt;1.0 (inverted)</td>
+            <td>$\lt$ 1.0 (inverted)</td>
             <td>Sign reversal</td>
         </tr>
     </table>
@@ -287,47 +289,52 @@
     </p>
 </div>
 
-<h4>6.3.4 In-Ecliptic Preferred Direction: Annual Phase and the CMB Coincidence</h4>
+<h4>6.3.4 In-Ecliptic Preferred Direction: Annual Orbital Phase</h4>
 
 <p>
     The comprehensive 72-combination directional analysis shows that the annual
     modulation of EW/NS anisotropy carries a well-defined annual phase,
-    expressible as a preferred direction at RA = 188°, Dec = −5° — in the
-    ecliptic plane (β = −1.4°) and 20.0° from the CMB dipole. The competitive
+    expressible as a preferred direction at RA = 8°, Dec = +5° under the
+    corrected orbital-velocity convention — in the
+    ecliptic plane (β = +1.4°) and 3.9° from Earth's aphelion velocity tangent.
+    The competitive
     controls of §3.13.3a identify what the template measures: Earth's
-    perihelion velocity tangent lies 3.9° from the best fit and out-correlates
-    the CMB dipole (r = +0.494 vs +0.413), while all off-ecliptic controls fail.
+    aphelion velocity tangent lies 3.9° from the best fit and attains
+    r = +0.494, while the CMB dipole anti-correlates (r = −0.387) and all
+    off-ecliptic controls fail.
     The directional grid search is therefore an annual-phase readout: the
     recovered direction is the point on the sky toward which Earth's velocity
-    points at the phase-locked extremum of the modulation. That the CMB dipole
-    lies nearby reflects its near-ecliptic position (β = −11°); the template
-    cannot distinguish the dipole from the ecliptic plane itself, and at the
-    physical 370 km/s background speed the inferred direction migrates ~47°
+    points at the phase-locked extremum of the modulation — aphelion, since the
+    EW/NS ratio troughs at perihelion (§3.11). The proximity to the CMB
+    <em>antipode</em> (20°) rather than the dipole reflects the dipole's
+    near-ecliptic position (β = −11°); the template
+    cannot distinguish the antipode from the ecliptic plane itself, and at the
+    physical 370 km/s background speed the inferred direction sits ~133°
     from the dipole.
 </p>
 
 <div>
-    <h5>Physical Implications of CMB Alignment</h5>
+    <h5>Physical Implications of the In-Ecliptic Direction</h5>
     <ul>
         <li>
-            Best-fit RA = 188°, Dec = −5°, in the ecliptic plane (β = −1.4°),
-            20.0° from the CMB dipole (168°, −7°) and 3.9° from Earth's
-            perihelion velocity tangent — matching CODE's 25-year benchmark of
-            18.2° under the shared template
+            Best-fit RA = 8°, Dec = +5°, in the ecliptic plane (β = +1.4°),
+            3.9° from Earth's aphelion velocity tangent (11.9°, +5.1°) and
+            160.0° from the CMB dipole — within ~2.2° of the corrected CODE
+            25-year vector (RA = 6°, Dec = +4°) under the shared template
         </li>
         <li>
-            78% RA clustering: Of 54 clean (non-Ionofree) combinations, 42 find
-            RA within 10° of CMB, demonstrating robustness to
+            52% RA clustering: Of 54 clean (non-Ionofree) combinations, 28 find
+            RA within 10° of the cluster (RA ≈ 350°), demonstrating robustness to
             processing choices (not an independent combined significance)
         </li>
         <li>
             Signal Booster: Aggressive quality filtering (Dynamic-50: daily
-            files with clock std &lt; 50 ns) boosts correlation to r = 0.660
+            files with clock std $\lt$ 50 ns) boosts correlation to r = 0.660
             (vs. typical r ≈ 0.51), confirming the signal is physical and
             high-fidelity.
         </li>
         <li>
-            Solar Apex disfavored at 86.5° separation — a geometrically
+            Solar Apex disfavored at 93.5° separation — a geometrically
             predetermined outcome for any in-ecliptic annual signal, since the
             Apex sits 53° off the ecliptic (see §3.13.3a for the discriminating
             controls)
@@ -338,15 +345,11 @@
         </li>
     </ul>
     <p>
-        The CMB provides a well-defined cosmological reference frame in which
-        the cosmic microwave background is (to high precision) isotropic. Under
-        standard interpretation, the observed CMB dipole arises from Earth's
-        motion relative to this frame (Burde, 2016; Consoli &amp; Pluchino,
-        2021). If the anisotropy modulation depends on a preferred velocity
-        direction, the CMB dipole is therefore a physically motivated direction
-        to test. The large separation from the Solar Apex direction suggests
-        that any preferred direction inferred from the data is not aligned with
-        the Sun's local galactic motion.
+        The CMB dipole and Solar Apex are physically motivated fixed-frame
+        controls. Neither reproduces the measured phase under the corrected
+        convention: the CMB-apex template anti-correlates and the Solar-Apex
+        template is off-ecliptic and weak. The aphelion-velocity tangent is the
+        competitive control selected by the data.
     </p>
 </div>
 
@@ -359,16 +362,12 @@
         postulates that while matter couples to a causal metric
         $\tilde{g}_{\mu\nu}$ (preserving exact local Lorentz invariance and a
         locally invariant $c$ in freely falling frames), the global time field
-        $\phi$ induces path-dependent synchronization non-integrability. The
-        "preferred" CMB frame is not an ether, but the natural cosmological rest
-        frame of the scalar time field $\phi$, consistent with the background
-        evolution of the universe. Thus, the signal represents a breakdown of
-        global simultaneity, not local covariance. This reading remains a
-        viable TEP-internal interpretation of the annual-phase measurement —
-        the CMB frame is a candidate rest frame of the ambient field — but it
-        is presented as an interpretation of the measured in-ecliptic
-        direction, not as a directional detection: discriminating the CMB
-        frame from the perihelion-velocity direction requires a template that
+        $\phi$ induces path-dependent synchronization non-integrability. A
+        cosmological rest frame may exist in the broader theory, but this
+        directional analysis does not detect it. The measured phase is tied to
+        heliocentric orbital motion, and the CMB-apex template is rejected under
+        the corrected convention. Any future claim of ambient-field rest-frame
+        coupling requires a template that
         responds to the field gradient rather than the velocity declination,
         or a baseline long enough to separate the annual phase from fixed
         in-ecliptic directions.
@@ -378,12 +377,13 @@
 <p>
     These results establish that the anisotropy modulation carries a stable
     annual phase, expressible as an in-ecliptic preferred direction that the
-    template places 20.0° from the CMB dipole and 3.9° from Earth's perihelion
-    velocity tangent. The close agreement between the RINEX 3-year raw SPP
+    corrected template places 3.9° from Earth's aphelion
+    velocity tangent and 160.0° from the CMB dipole (20.0° from its antipode).
+    The close agreement between the RINEX 3-year raw SPP
     analysis and the CODE 25-year PPP analysis confirms that both datasets
     recover the same annual phase under the shared template; it is a
     consistency check on the phase measurement, not an independent
-    confirmation of the CMB frame, since the two analyses share the same
+    confirmation of any particular frame, since the two analyses share the same
     orbital geometry.
 </p>
 
@@ -396,18 +396,18 @@
 </p>
 <ol>
     <li>
-        Not random noise: nominal p &lt; 10<sup>−15</sup> across ≈1.7&times;10<sup>8</sup>
+        Not random noise: nominal p $\lt$ 10<sup>−15</sup> across ≈1.7&times;10<sup>8</sup>
         pair-epochs (pair-day samples drawn from 144,991 unique station pairs)
-        under the standard null; orbital coupling at 5.4σ; shuffle test
+        under the standard null; orbital coupling at nominal 5.4σ (≈ 3.0σ autocorrelation-corrected); shuffle test
         shows strong evidence ratio (mean ~30×, min 1.9×) with 90% passing
-        strict R² &lt; 0.3 threshold
+        strict R² $\lt$ 0.3 threshold
     </li>
     <li>
         In-ecliptic preferred direction: the annual modulation carries a stable
-        phase, expressible as a direction (RA = 188°, Dec = −5°, β = −1.4°)
-        that coincides with Earth's perihelion velocity tangent (3.9°) and lies
-        20° from the near-ecliptic CMB dipole — a phase measurement consistent
-        with, but not discriminating, a cosmological rest frame.
+        phase, expressible as a direction (RA = 8°, Dec = +5°, β = +1.4°)
+        that coincides with Earth's aphelion velocity tangent (3.9°) and sits
+        160° from the CMB dipole — a phase measurement identifying the
+        heliocentric-orbital frame rather than a cosmological rest frame.
     </li>
     <li>
         Velocity Dependence: The modulation with Earth's orbital velocity (r =
@@ -416,8 +416,8 @@
     </li>
 </ol>
 <p>
-    This triplet—Spacetime Symmetry, CMB Alignment, and Velocity
-    Dependence—summarizes the central empirical signature reported here,
+    These properties—an in-ecliptic orbital direction and velocity
+    dependence—summarize the central empirical signature reported here,
     consistent with the Temporal Equivalence Principle.
 </p>
 
@@ -449,7 +449,7 @@
     This analysis extends this paradigm by showing that the existing global GNSS
     network—with 539 stations operating continuously for decades—can be treated
     as a large-scale distributed clock network. The detected distance-structured
-    correlations with characteristic lengths of 1,000–4,000 km motivate further
+    correlations with characteristic lengths of ~0.7–4.8×10³ km (within the 1,000–10,000 km pre-specified search range at the product-family level) motivate further
     investigation within the frameworks of screened scalar field theory (Burrage
     &amp; Sakstein, 2018) and beyond-Standard-Model physics.
 </p>
@@ -603,8 +603,7 @@
     </li>
     <li>
         Kp as coarse diagnostic: While the Kp stratification test (Section 3.8)
-        demonstrates geomagnetic independence at the primary threshold (Kp &lt;
-        3 vs. Kp ≥ 3; median Δλ ≈ −1%, with 60/72 tests within ±5%), Kp
+        demonstrates geomagnetic independence at the primary threshold (Kp $\lt$ 3 vs. Kp ≥ 3; median Δλ ≈ −1%, with 60/72 tests within ±5%), Kp
         summarizes global conditions and does not capture all aspects of local
         ionospheric structure. Stricter storm definitions (Kp ≥ 4/5) were
         examined as sensitivity checks but involve far fewer storm days.
@@ -622,7 +621,7 @@
     </p>
     <ul>
         <li>
-            Best result: r = −0.763, 5.4σ (Multi-GNSS pos_jitter/phase); MSC
+            Best result: r = −0.763, nominal 5.4σ, ≈ 3.0σ corrected (Multi-GNSS pos_jitter/phase); MSC
             yields r = −0.610, 4.0σ
         </li>
         <li>Baseline GPS: r = −0.509, 3.2σ</li>
@@ -706,18 +705,19 @@
             <td>Orbital velocity coupling</td>
             <td>E-W/N-S ~ orbital velocity</td>
             <td>
-                r = −0.763, 5.4σ (multi_gnss best); r = −0.509, 3.2σ (baseline)
+                r = −0.763, ≈ 3.0σ corrected (nominal 5.4σ); r = −0.509, nominal 3.2σ (baseline)
             </td>
             <td>Supported</td>
         </tr>
         <tr>
-            <td>Spacetime symmetry</td>
-            <td>Position Jitter ≈ Clock Bias</td>
+            <td>Hardware discrimination</td>
+            <td>Position Jitter ~ Clock Bias (MSC)</td>
             <td>
-                r = −0.509 vs −0.486 (Δ = 5%, baseline); r = −0.610 vs −0.581 (Δ
-                = 5%, multi_gnss)
+                r = −0.509 vs −0.486 (baseline); r = −0.610 vs −0.581
+                (multi_gnss); matched in 2 of 3 filters — expected under joint
+                navigation-solve estimation, not a conformal-scaling test
             </td>
-            <td>Supported</td>
+            <td>Consistent</td>
         </tr>
         <tr>
             <td>Filter independence</td>
@@ -726,24 +726,24 @@
             <td>Supported</td>
         </tr>
         <tr>
-            <td>CMB frame alignment</td>
-            <td>RA near CMB dipole</td>
+            <td>Directional stability (annual phase)</td>
+            <td>Stable in-ecliptic direction</td>
             <td>
-                RA = 188° (20.0° from CMB), 78% within 10°
-                (robustness check, not independent significance)
+                RA = 8° (160° from CMB dipole; 3.9° from aphelion tangent),
+                52% of clean combinations within 10°
             </td>
-            <td>Supported</td>
+            <td>Supported (orbital, not CMB, frame)</td>
         </tr>
         <tr>
             <td>Solar Apex rejection</td>
             <td>Not local galactic</td>
-            <td>86.5° from Apex (4.3× farther, 32× worse fit)</td>
+            <td>93.5° from Apex (r = −0.12); aphelion tangent preferred</td>
             <td>Supported</td>
         </tr>
         <tr>
             <td>Planetary modulation</td>
             <td>Events &gt; null rate</td>
-            <td>2.8× vs flat null (p &lt; 0.001); ≈1.0× vs season-preserving null (p = 0.805)</td>
+            <td>2.8× vs flat null (p $\lt$ 0.001); ≈1.0× vs season-preserving null (p = 0.805)</td>
             <td>Not confirmed — calendar-position sampling</td>
         </tr>
         <tr>
@@ -766,7 +766,7 @@
             <td>Supported</td>
         </tr>
         <tr>
-            <td>Temporal Shear anisotropy</td>
+            <td>Clock-sector spatial anisotropy</td>
             <td>E-W &gt; N-S at short baselines</td>
             <td>
                 Short-distance ratios 1.20–1.23 with CV ~1%, stable across 36
@@ -779,18 +779,14 @@
 
 <p>
     Across the sixteen comparisons summarized above, the observations are
-    broadly consistent with the expectations of TEP v0.14 (Jakarta), which posits
+    broadly consistent with the expectations of TEP v0.15 (Jakarta), which posits
     continuous geometric screening (manifesting as Temporal Topology governed by shear suppression) rather than discrete
     thin-shell boundaries. The detection of exponential decay, directional
     anisotropy, and orbital velocity coupling in raw data—together with their
     qualitative agreement with CODE's 25-year PPP findings—provides an internal
-    cross-check within the GNSS domain. The observed screening consistency
-    confirms that the underlying terrestrial correlation length $\lambda \approx 1700\text{--}1900\ {\rm km}$
-    is governed by Earth's gravitational screening environment rather than atmospheric weather,
-    with geomagnetic ($Kp$) independence and altitude invariance confirming resilience against
-    ionospheric and tropospheric disturbances. The agreement on Southern Hemisphere
+    cross-check within the GNSS domain. The observed $1700\text{--}1900\ {\rm km}$ covariance family remains stable across the tested terrestrial environmental and processing conditions, consistent with an environment-dependent TEP interpretation. Its microscopic transfer from the solved scalar configuration into measured $C_A$ has not yet been derived. The primary geomagnetic ($Kp$) and altitude stratifications constrain, but do not independently exclude, atmospheric and processing alternatives. The agreement on Southern Hemisphere
     enhancement across Papers 2 and 3 (different datasets, different
-    methodologies) and the observed spacetime metric consistency (pos_jitter ≈ clock_bias)
+    methodologies) and the matched MSC orbital coupling between jointly estimated position and clock coordinates
     further support the interpretation of a reproducible, non-random correlation
     structure governed by a spatially varying field gradient.
 </p>

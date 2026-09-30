@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-TEP-GNSS-RINEX Analysis - STEP 2.7: CMB Frame Alignment Analysis
-==================================================================
+TEP-GNSS-RINEX Analysis - STEP 2.7: Annual-Phase Directional Analysis
+=====================================================================
 
 CORRECT METHODOLOGY (matches CODE Longspan step_2_5):
     Uses monthly EW/NS lambda ratios from step_2_5 and correlates with
-    velocity vector predictor cos(declination) for different background
-    motion hypotheses.
+    velocity-vector predictor cos(declination) for different annual-phase
+    directions and fixed-frame controls.
 
 Theory:
     Earth moves through space with combined velocity:
@@ -19,10 +19,10 @@ Theory:
     Grid search finds which background RA/Dec best explains the observed
     EW/NS ratio modulation through the year.
 
-CODE Longspan Finding:
-    - Best-fit direction: RA=186°, Dec=-4° (r=0.747)
-    - Only 18.2° from CMB dipole (RA=168°, Dec=-7°)
-    - Solar Apex rejected: 5,570× variance ratio
+CODE Longspan Finding (corrected directed convention):
+    - Best-fit direction: RA=6°, Dec=+4° (r=0.746)
+    - Approximately 6° from Earth's aphelion velocity tangent
+    - CMB-apex template is anti-phase; Solar Apex is null
 
 Requirements: Step 2.5 complete (orbital coupling with monthly ratios)
 
@@ -658,7 +658,10 @@ def background_speed_scan(monthly_data, speeds=SPEED_SCAN_KMS,
             pn = (predictors[:, valid]
                   - predictors[:, valid].mean(axis=0)) / pred_std[valid]
             rn = (ratios - ratios.mean()) / ratios.std()
-            r_vec[valid] = (pn.T @ rn) / len(ratios)
+            # Accelerate BLAS (Apple Silicon) sets spurious FP flags in
+            # dgemv; results are bitwise-identical to einsum.
+            with np.errstate(divide='ignore', over='ignore', invalid='ignore'):
+                r_vec[valid] = (pn.T @ rn) / len(ratios)
 
         ibest = int(np.argmax(r_vec))
         scan.append({
@@ -671,10 +674,10 @@ def background_speed_scan(monthly_data, speeds=SPEED_SCAN_KMS,
             'cmb_sep_deg': float(angular_separation(
                 ra_flat[ibest], dec_flat[ibest],
                 CMB_DIPOLE['ra'], CMB_DIPOLE['dec'])),
-            'perihelion_tangent_sep_deg': float(angular_separation(
+            'aphelion_tangent_sep_deg': float(angular_separation(
                 ra_flat[ibest], dec_flat[ibest],
-                CONTROL_DIRECTIONS['perihelion_vel']['ra'],
-                CONTROL_DIRECTIONS['perihelion_vel']['dec'])),
+                CONTROL_DIRECTIONS['aphelion_vel']['ra'],
+                CONTROL_DIRECTIONS['aphelion_vel']['dec'])),
         })
     return scan
 
@@ -783,7 +786,10 @@ def estimate_global_p_value_monte_carlo(monthly_data, observed_best_r, n_iterati
         
         # Compute correlations: (predictors.T @ ratios) / n
         # This gives vector of correlations for all grid points
-        correlations = (predictors_norm.T @ ratios_norm) / n_months
+        # Accelerate BLAS (Apple Silicon) sets spurious FP flags in dgemv;
+        # results are bitwise-identical to einsum.
+        with np.errstate(divide='ignore', over='ignore', invalid='ignore'):
+            correlations = (predictors_norm.T @ ratios_norm) / n_months
         
         # Max correlation on the sky for this random trial
         max_r_trial = np.max(correlations)
@@ -829,7 +835,7 @@ def create_sky_map(grid_results, best_ra, best_dec, output_path):
         interpolation='bilinear'
     )
     
-    # Reference markers (matching code-longspan)
+    # Reference and physical-control markers.
     ax.plot(best_ra, best_dec, 'o',
             markersize=9, markerfacecolor='white',
             markeredgecolor='black', markeredgewidth=1.5,
@@ -844,8 +850,14 @@ def create_sky_map(grid_results, best_ra, best_dec, output_path):
             markersize=8, markerfacecolor='#F39C12',
             markeredgecolor='black', markeredgewidth=1.5,
             clip_on=False, zorder=10)
+
+    aphelion = CONTROL_DIRECTIONS['aphelion_vel']
+    ax.plot(aphelion['ra'], aphelion['dec'], 'D',
+            markersize=8, markerfacecolor='#2ECC71',
+            markeredgecolor='black', markeredgewidth=1.5,
+            clip_on=False, zorder=10)
     
-    # Label markers a/b/c as in code-longspan figure
+    # Label markers: best fit, CMB apex, Solar Apex, aphelion tangent.
     ax.text(best_ra + 3, best_dec + 3, 'a',
             fontsize=10, color='white', fontweight='bold',
             ha='left', va='bottom')
@@ -855,6 +867,9 @@ def create_sky_map(grid_results, best_ra, best_dec, output_path):
     ax.text(SOLAR_APEX['ra'] + 3, SOLAR_APEX['dec'] + 3, 'c',
             fontsize=10, color='white', fontweight='bold',
             ha='left', va='bottom')
+    ax.text(aphelion['ra'] + 3, aphelion['dec'] - 6, 'd',
+            fontsize=10, color='white', fontweight='bold',
+            ha='left', va='top')
     
     # Axes styling
     ax.set_xlabel('Right ascension (°)', fontsize=11)
@@ -872,7 +887,7 @@ def create_sky_map(grid_results, best_ra, best_dec, output_path):
     for spine in ['top', 'right']:
         ax.spines[spine].set_visible(False)
     
-    ax.set_title('CMB Frame Analysis: Background Vector Grid Search', fontsize=12)
+    ax.set_title('Annual-Phase Directional Grid Search', fontsize=12)
     
     plt.tight_layout(pad=0.5)
     plt.savefig(output_path, dpi=600, bbox_inches='tight', facecolor='white', edgecolor='none')
@@ -882,11 +897,11 @@ def create_sky_map(grid_results, best_ra, best_dec, output_path):
 
 
 def run_analysis():
-    """Run the CMB frame alignment analysis."""
+    """Run the annual-phase directional analysis."""
     
     print_status("", "INFO")
     print_status("=" * 80, "INFO")
-    print_status("TEP-GNSS-RINEX Analysis - STEP 2.7: CMB Frame Alignment", "INFO")
+    print_status("TEP-GNSS-RINEX Analysis - STEP 2.7: Annual-Phase Direction", "INFO")
     print_status("=" * 80, "INFO")
     print_status("", "INFO")
     print_status("Methodology: Grid search over background RA/Dec using", "INFO")
@@ -976,13 +991,8 @@ def run_analysis():
     
     print_status(f"  Variance ratio (best/apex): {variance_ratio:.1f}×", "INFO")
     
-    # Which frame is closer?
-    if cmb_sep < apex_sep:
-        print_status("", "INFO")
-        print_status("CMB FRAME CLOSER TO BEST FIT", "SUCCESS" if cmb_sep < 30 else "INFO")
-    else:
-        print_status("", "INFO")
-        print_status("SOLAR APEX CLOSER TO BEST FIT", "WARNING")
+    print_status("", "INFO")
+    print_status("Fixed-frame directions are controls; proximity alone is not evidence", "INFO")
 
     # ==========================================================================
     # 4b. Competitive Control Directions (3-3 audit)
@@ -999,12 +1009,12 @@ def run_analysis():
             f"β={c['ecliptic_lat_deg']:+.1f}°, r={c['r']:.4f}, "
             f"sep={sep:.1f}°", "INFO")
 
-    peri_control = controls['perihelion_vel']
-    peri_sep = peri_control['sep_from_best_deg']
+    aphelion_control = controls['aphelion_vel']
+    aphelion_sep = aphelion_control['sep_from_best_deg']
     best_ecl_lat = equatorial_to_ecliptic_latitude(best_ra, best_dec)
     print_status(f"  Best-fit ecliptic latitude: β = {best_ecl_lat:+.1f}°", "INFO")
     print_status(
-        f"  Perihelion velocity tangent is {peri_sep:.1f}° from best fit "
+        f"  Aphelion velocity tangent is {aphelion_sep:.1f}° from best fit "
         f"(CMB: {cmb_sep:.1f}°)", "INFO")
 
     # ==========================================================================
@@ -1020,7 +1030,7 @@ def run_analysis():
             f"RA={row['best_ra']:.0f}°, Dec={row['best_dec']:.0f}°, "
             f"r={row['best_r']:.3f}, β={row['ecliptic_lat_deg']:+.1f}°, "
             f"CMB sep={row['cmb_sep_deg']:.1f}°, "
-            f"perihelion-tangent sep={row['perihelion_tangent_sep_deg']:.1f}°",
+            f"aphelion-tangent sep={row['aphelion_tangent_sep_deg']:.1f}°",
             "INFO")
     
     # ==========================================================================
@@ -1034,7 +1044,7 @@ def run_analysis():
     # ==========================================================================
     print_status("", "INFO")
     print_status("=" * 60, "INFO")
-    print_status("CMB FRAME ANALYSIS SUMMARY", "INFO")
+    print_status("ANNUAL-PHASE DIRECTIONAL ANALYSIS SUMMARY", "INFO")
     print_status("=" * 60, "INFO")
     print_status(f"  Data source: {source_file}", "INFO")
     print_status(f"  Months analyzed: {len(monthly_data)}", "INFO")
@@ -1047,18 +1057,17 @@ def run_analysis():
     print_status(f"  Variance ratio (best/apex): {variance_ratio:.1f}×", "INFO")
     print_status("", "INFO")
     print_status("Comparison to CODE Longspan:", "INFO")
-    print_status(f"  CODE: RA=186°, Dec=-4°, 18.2° from CMB, 5,570× ratio", "INFO")
+    print_status("  CODE: RA=6°, Dec=+4°, near aphelion tangent; CMB apex anti-phase", "INFO")
     print_status(f"  RINEX: RA={best_ra}°, Dec={best_dec}°, {cmb_sep:.1f}° from CMB, {variance_ratio:.1f}× ratio", "INFO")
     print_status("", "INFO")
     
-    # Interpretation
-    if best_p < 0.05 and cmb_sep < 30:
-        print_status("STRONG CMB FRAME ALIGNMENT DETECTED", "SUCCESS")
-    elif best_p < 0.05:
-        print_status("Significant anisotropy modulation but not aligned with CMB", "INFO")
+    # Interpretation: direction and phase are evaluated explicitly. The CMB
+    # apex is a control and is not supported by an antipodal best-fit phase.
+    if best_p < 0.05:
+        print_status("SIGNIFICANT ANNUAL-PHASE DIRECTIONAL MODULATION", "SUCCESS")
+        print_status("  The recovered phase does not detect the directed CMB-apex template", "INFO")
     else:
-        print_status("NO SIGNIFICANT CMB FRAME ALIGNMENT (null result)", "WARNING")
-        print_status("  This may be due to shorter temporal baseline (3 years vs 25 years)", "INFO")
+        print_status("NO SIGNIFICANT ANNUAL-PHASE DIRECTIONAL MODULATION", "WARNING")
     
     # ==========================================================================
     # Save Results
@@ -1103,17 +1112,18 @@ def run_analysis():
         },
         'variance_ratio': float(variance_ratio),
         'comparison_to_code': {
-            'code_ra': 186,
-            'code_dec': -4,
-            'code_cmb_sep': 18.2,
-            'code_variance_ratio': 5570,
+            'code_ra': 6,
+            'code_dec': 4,
+            'code_cmb_sep': 162.3,
+            'code_correlation': 0.7465,
+            'code_variance_ratio': 16000,
             'rinex_cmb_sep': float(cmb_sep),
             'rinex_variance_ratio': float(variance_ratio)
         },
         'interpretation': {
             'significant': bool(best_p < 0.05),
             'cmb_aligned': bool(cmb_sep < 30),
-            'conclusion': 'CMB alignment detected' if (best_p < 0.05 and cmb_sep < 30) else 'Null result'
+            'conclusion': 'Annual-phase direction detected; directed CMB-apex template not supported' if best_p < 0.05 else 'No significant annual-phase direction detected'
         }
     }
     
@@ -1185,7 +1195,7 @@ def main():
     """Main entry point - analyze all 18 combinations."""
     print_status("", "INFO")
     print_status("=" * 80, "INFO")
-    print_status("STARTING CMB FRAME ANALYSIS - ALL 18 COMBINATIONS", "TITLE")
+    print_status("STARTING ANNUAL-PHASE DIRECTIONAL ANALYSIS - ALL COMBINATIONS", "TITLE")
     print_status("=" * 80, "INFO")
     
     # Get all available combinations
@@ -1217,11 +1227,12 @@ def main():
     # COMPARISON SUMMARY
     # ==========================================================================
     print_status("\n" + "=" * 80, "INFO")
-    print_status("CMB FRAME ANALYSIS COMPARISON", "INFO")
+    print_status("ANNUAL-PHASE DIRECTIONAL ANALYSIS COMPARISON", "INFO")
     print_status("=" * 80, "INFO")
     
-    # Sort by CMB separation (closest first)
-    all_results.sort(key=lambda x: x['cmb_sep'])
+    # Stable configuration order. Never rank configurations by CMB proximity.
+    all_results.sort(key=lambda x: (
+        x['filter'], x.get('mode', 'baseline'), x['metric'], x['coherence_type']))
     
     print_status("", "INFO")
     print_status(f"{'Filter':<15} {'Mode':<10} {'Metric':<12} {'Coh':<8} {'RA':>6} {'Dec':>6} {'r':>7} {'CMB':>6} {'GlobP':>8}", "INFO")
@@ -1234,25 +1245,37 @@ def main():
             "INFO"
         )
     
-    # Find best result (closest to CMB with significant correlation)
-    significant = [r for r in all_results if r['global_p'] < 0.05]
-    if significant:
-        best = min(significant, key=lambda x: x['cmb_sep'])
+    # Find best result: the pre-registered reference combination
+    # (ALL_STATIONS / multi-GNSS / pos_jitter / phase_alignment), matching
+    # the primary longspan configuration. Selecting on min(cmb_sep) would
+    # bias toward CMB proximity by construction, so the reference
+    # combination is fixed a priori.
+    reference = [r for r in all_results
+                 if r['filter'] == 'all_stations'
+                 and r.get('mode', 'baseline') == 'multi_gnss'
+                 and r['metric'] == 'pos_jitter'
+                 and r['coherence_type'] == 'phase_alignment']
+    if reference:
+        best = reference[0]
     else:
-        best = all_results[0]
+        significant = [r for r in all_results if r['global_p'] < 0.05]
+        best = max(significant, key=lambda x: x['best_r']) if significant else max(
+            all_results, key=lambda x: x['best_r'])
     
-    # Calculate Robustness (Consistency) instead of blind correction
-    # How many significant results cluster near the CMB?
+    # Calculate Robustness (Consistency): fraction of globally significant
+    # combinations whose best-fit direction falls within 45 deg of the
+    # reference best fit. (Counting "top 10 by CMB separation" would be
+    # tautological because the list is already sorted on that key.)
     significant_results = [r for r in all_results if r['global_p'] < 0.05]
     n_significant = len(significant_results)
-    
-    # Check consistency: how many of the top 10 results are within 45 degrees of CMB?
-    top_10 = all_results[:10]
-    n_consistent = sum(1 for r in top_10 if r['cmb_sep'] < 45.0)
-    consistency_score = n_consistent / len(top_10) if top_10 else 0.0
+    n_consistent = sum(
+        1 for r in significant_results
+        if angular_separation(r['best_ra'], r['best_dec'],
+                              best['best_ra'], best['best_dec']) < 45.0)
+    consistency_score = n_consistent / n_significant if n_significant else 0.0
     
     print_status("-" * 100, "INFO")
-    print_status(f"CODE Longspan reference: RA=186°, Dec=-4°, CMB sep=18.2°", "INFO")
+    print_status(f"CODE Longspan reference: RA=6°, Dec=+4°, CMB sep=162.3°", "INFO")
     print_status("", "INFO")
     print_status(f"BEST RESULT: {best['filter']}/{best.get('mode','baseline')}/{best['metric']}/{best['coherence_type']}", "SUCCESS")
     print_status(f"  RA={best['best_ra']}° (68% CI: {best['ra_ci_68'][0]:.0f}°-{best['ra_ci_68'][1]:.0f}°)", "SUCCESS")
@@ -1264,7 +1287,7 @@ def main():
     print_status("", "INFO")
     print_status(f"ROBUSTNESS ANALYSIS:", "INFO")
     print_status(f"  Significant combinations (p<0.05): {n_significant}/{len(all_results)}", "INFO")
-    print_status(f"  Consistency: {n_consistent}/10 top results align with CMB (<45°)", "INFO")
+    print_status(f"  Consistency: {n_consistent}/{n_significant} significant results within 45° of best fit", "INFO")
 
     # ==========================================================================
     # COMPETITIVE CONTROLS + SPEED SCAN on the best combination (3-3 audit)
@@ -1302,7 +1325,7 @@ def main():
                 f"RA={row['best_ra']:.0f}°, Dec={row['best_dec']:.0f}°, "
                 f"r={row['best_r']:.3f}, "
                 f"CMB sep={row['cmb_sep_deg']:.1f}°, "
-                f"perihelion-tangent sep={row['perihelion_tangent_sep_deg']:.1f}°",
+                f"aphelion-tangent sep={row['aphelion_tangent_sep_deg']:.1f}°",
                 "INFO")
 
     # Create visualization for best result
@@ -1333,10 +1356,10 @@ def main():
             'cmb_separation': float(best['cmb_sep']),
             'apex_separation': float(best['apex_sep']),
             'ecliptic_lat_deg': best_ecl_lat,
-            'perihelion_tangent_separation': float(angular_separation(
+            'aphelion_tangent_separation': float(angular_separation(
                 best['best_ra'], best['best_dec'],
-                CONTROL_DIRECTIONS['perihelion_vel']['ra'],
-                CONTROL_DIRECTIONS['perihelion_vel']['dec']))
+                CONTROL_DIRECTIONS['aphelion_vel']['ra'],
+                CONTROL_DIRECTIONS['aphelion_vel']['dec']))
         },
         'control_directions': controls,
         'speed_scan': speed_scan,
@@ -1364,6 +1387,7 @@ def main():
                 'dec_ci_68': [float(r['dec_ci_68'][0]), float(r['dec_ci_68'][1])],
                 'correlation': float(r['best_r']),
                 'p_value': float(r['best_p']),
+                'global_p_value': float(r['global_p']),
                 'cmb_separation': float(r['cmb_sep']),
                 'apex_separation': float(r['apex_sep'])
             }
@@ -1372,11 +1396,14 @@ def main():
         'cmb_dipole': CMB_DIPOLE,
         'solar_apex': SOLAR_APEX,
         'comparison_to_code': {
-            'code_ra': 186,
-            'code_dec': -4,
-            'code_cmb_sep': 18.2,
-            'code_variance_ratio': 5570,
-            'best_rinex_cmb_sep': float(best['cmb_sep'])
+            'code_ra': 6,
+            'code_dec': 4,
+            'code_cmb_sep': 162.3,
+            'code_correlation': 0.7465,
+            'code_variance_ratio': 16000,
+            'best_rinex_cmb_sep': float(best['cmb_sep']),
+            'rinex_code_separation': float(angular_separation(
+                best['best_ra'], best['best_dec'], 6, 4))
         }
     }
     

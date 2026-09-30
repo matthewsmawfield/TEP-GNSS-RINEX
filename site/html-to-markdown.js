@@ -38,13 +38,13 @@ class HTMLToMarkdownConverter {
         html = html.replace(/<div[^>]*class=["'][^"']*manuscript-section[^"']*["'][^>]*data-section=["']([^"']*)["'][^>]*>/gi, '\n\n## $1\n\n');
         
         // Convert headers
-        html = html.replace(/<h1[^>]*>(.*?)<\/h1>/gi, '\n# $1\n\n');
-        html = html.replace(/<h2[^>]*>(.*?)<\/h2>/gi, '\n## $1\n\n');
-        html = html.replace(/<h3[^>]*>(.*?)<\/h3>/gi, '\n### $1\n\n');
-        html = html.replace(/<h4[^>]*>(.*?)<\/h4>/gi, '\n#### $1\n\n');
+        html = html.replace(/<h([1-6])[^>]*>([\s\S]*?)<\/h\1>/gi, (match, level, content) => {
+            const heading = content.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+            return `\n${'#'.repeat(Number(level))} ${heading}\n\n`;
+        });
         
         // Convert paragraphs
-        html = html.replace(/<p[^>]*>(.*?)<\/p>/gi, '$1\n\n');
+        html = html.replace(/<p\b[^>]*>(.*?)<\/p>/gi, '$1\n\n');
         
         // Convert strong/bold
         html = html.replace(/<(strong|b)[^>]*>(.*?)<\/(strong|b)>/gi, '**$2**');
@@ -66,7 +66,8 @@ class HTMLToMarkdownConverter {
         html = html.replace(/<blockquote[^>]*>(.*?)<\/blockquote>/gi, '\n> $1\n\n');
         
         // Convert code blocks
-        html = html.replace(/<pre[^>]*><code[^>]*>(.*?)<\/code><\/pre>/gi, '\n```\n$1\n```\n\n');
+        html = html.replace(/<pre[^>]*>\s*<code[^>]*>([\s\S]*?)<\/code>\s*<\/pre>/gi, '\n```\n$1\n```\n\n');
+        html = html.replace(/<pre[^>]*>([\s\S]*?)<\/pre>/gi, '\n```\n$1\n```\n\n');
         html = html.replace(/<code[^>]*>(.*?)<\/code>/gi, '`$1`');
         
         // Convert line breaks
@@ -99,7 +100,7 @@ class HTMLToMarkdownConverter {
         
         // Restore MathJax expressions
         mathExpressions.forEach((expr, index) => {
-            html = html.replace(`__MATH_EXPRESSION_${index}__`, expr);
+            html = html.replace(`__MATH_EXPRESSION_${index}__`, () => expr);
         });
         
         // Decode HTML entities
@@ -203,7 +204,7 @@ class HTMLToMarkdownConverter {
         const version = versionMatch ? versionMatch[1]
             .replace(/<[^>]+>/g, '')
             .replace(/^Version:\s*/i, '')
-            .trim() : 'v0.1 (Istanbul)';
+            .trim() : 'v0.8 (Kathmandu)';
         
         const dateMatch = html.match(/<div[^>]*class=["'][^"']*date[^"']*["'][^>]*>(.*?)<\/div>/i);
         const date = dateMatch ? dateMatch[1].replace(/<[^>]+>/g, '').trim() : 'First published: 29 November 2025';
@@ -269,7 +270,7 @@ class HTMLToMarkdownConverter {
             
             // Read manifest for version info
             const manifestPath = path.join(__dirname, 'manifest.json');
-            let versionStr = 'v0.4';
+            let versionStr = 'v0.8';
             let codename = 'Kathmandu';
             if (fs.existsSync(manifestPath)) {
                 const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
@@ -345,12 +346,12 @@ ${content}
 
 ---
 
-*This document was automatically generated from the TEP-GNSS-RINEX research site. For the interactive version with figures and enhanced formatting, visit: https://matthewsmawfield.github.io/TEP-GNSS-RINEX/*
+*This document was automatically generated from the TEP-GNSS-RINEX research site. For the interactive version with figures and enhanced formatting, visit: https://mlsmawfield.com/tep/gnss-iii/*
 
 *Related Papers:*
-- *Paper 0 (Theory — Temporal Equivalence Principle): https://matthewsmawfield.github.io/TEP/*
-- *Paper 1 (Multi-Center Validation): https://matthewsmawfield.github.io/TEP-GNSS/*
-- *Paper 2 (25-Year CODE Analysis): https://matthewsmawfield.github.io/TEP-GNSS-II/*
+- *Paper 0 (Theory — Temporal Equivalence Principle): https://mlsmawfield.com/tep/theory/*
+- *Paper 1 (Multi-Center Validation): https://mlsmawfield.com/tep/gnss-i/*
+- *Paper 2 (25-Year CODE Analysis): https://mlsmawfield.com/tep/gnss-ii/*
 
 *Source code and data available at: https://github.com/matthewsmawfield/TEP-GNSS-RINEX*
 `;

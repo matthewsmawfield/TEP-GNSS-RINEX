@@ -4,7 +4,7 @@
   "author": "Matthew Lukin Smawfield",
   "version": "v0.8 (Kathmandu)",
   "first_published": "9 December 2025",
-  "last_updated": "28 September 2026",
+  "last_updated": "30 September 2026",
   "description": "Consistency test of TEP signatures in raw GNSS observations",
   "doi": "10.5281/zenodo.17860166",
   "code_repo": "github.com/matthewsmawfield/TEP-GNSS-RINEX",

@@ -1,7 +1,9 @@
 {
   "version": "0.8",
   "codename": "Kathmandu",
-  "date": "2026-09-28",
+  "date": "2026-09-30",
   "description": "Paper 3: Global Time Echoes: Raw RINEX Consistency Test",
+  "doi": "10.5281/zenodo.17860166",
+  "paper": "3",
   "previous_version": "0.7"
 }

@@ -5,7 +5,7 @@
 # corpus-notes/tools/render_parameter_registry.py --write / --check.
 
 schema_version: 1
-last_updated: "2026-09-26"
+last_updated: "2026-09-28"
 
 parameter_classes:
   fundamental: "Axiomatic or theoretically fixed parameter; changes would alter the framework itself."
@@ -45,7 +45,7 @@ parameters:
     class: "calibrated"
     first_paper: 1
     used_in: [1, 2, 3, 6, 14, 17]
-    description: "Canonical terrestrial correlation length for all forward analysis (terrestrial clock FEM, rho_T chain, etc.), adopted at 4,200 km on the IGS precise-product branch of the estimator family (25-year multi-center GNSS, Papers 1-2/6; long-span code 4,201 +/- 1,967 km). The fitted scale is product-dependent: precise-product bracket ~1.9-4.5x10^3 km with epoch/window scatter dominant; raw SPP channels ~0.7-1.1x10^3 km; raw ionofree 4,767 +/- 835 km. Paper 14 MGEX held-out verification (~1 yr combined-clock product, lambda = 1,862 +/- 112 km, axis 21.4 deg from CMB dipole) corroborates a distance-structured signal on a different product but is not adopted for dimensional normalization. Cross-scale closure (steps 03-04): lambda_T is identified with the geometric saturation radius R_T = (3M/(4pi*rho_T))^{1/3}, not the Compton wavelength; the conditional Green-function covariance has its 1/e crossing near R_T (~4,003-4,012 km) without inserting the measured scale. Lab-scale crustal value is LAB_COHERENCE_LENGTH_M = 50 km."
+    description: "Canonical terrestrial correlation length for all forward analysis (terrestrial clock FEM, rho_T chain, etc.), adopted at 4,200 km on the IGS precise-product branch of the estimator family (25-year multi-center GNSS, Papers 1-2/6; long-span code 4,201 +/- 1,967 km). The fitted scale is product-dependent: precise-product bracket ~1.9-4.5x10^3 km with epoch/window scatter dominant; raw SPP channels ~0.7-1.1x10^3 km; raw ionofree 4,767 +/- 835 km. Paper 14 MGEX held-out verification (~1 yr combined-clock product, lambda = 1,862 +/- 112 km; annual-direction scan projection-degenerate and does not localize a CMB frame) corroborates a distance-structured signal on a different product but is not adopted for dimensional normalization. Cross-scale closure (steps 03-04): lambda_T is identified with the geometric saturation radius R_T = (3M/(4pi*rho_T))^{1/3}, not the Compton wavelength; the conditional Green-function covariance has its 1/e crossing near R_T (~4,003-4,012 km) without inserting the measured scale. Lab-scale crustal value is LAB_COHERENCE_LENGTH_M = 50 km."
 
   - symbol: "alpha_log"
     latex: "\\alpha_{\\log}"
@@ -138,7 +138,7 @@ parameters:
     derivation_status: "partial; transition-scale structure only, amplitude not derived"
     first_paper: 0
     used_in: [0, 16]
-    description: "Wide-binary channel. Only the transition radius is derived (step_05): R_s ~ 2609 AU from the cross-scale acceleration condition (M_binary, M_gal, r_gal, beta_A only, no wide-binary input), matching observed 2646 +/- 182 AU within 1.4%. kappa_WB itself is NOT derived: an earlier version asserted a screening fraction S(R_s)=0.5 without derivation to produce a velocity excess alpha=sqrt(2)-1~0.414 (~13% from observed 0.366), but the radial ODE's own computed screening at R_s is S_sigma~0.994 (essentially unscreened), which the same formula would instead put at alpha~0.73 -- the assumed 0.5 was doing the work, not the theory. Paper 13 (TEP-WB) does not independently derive alpha_sat=0.366 either: it reports a mass-dependent self-screening fit alpha_sat(M)=alpha_0*exp(-M/M_screen) (alpha_0=1.74+/-0.26, M_screen=0.46+/-0.04 Msun) fit to the same wide-binary sample used to validate it. No validated Gamma_WB exists; kappa_WB is left open pending a real derivation."
+    description: "Wide-binary observable response; the radius law r_star=sqrt(GM/g_t) follows from the declared kinetic sector, while the observed single-scale estimator must be applied to the predicted profile. Paper 13 step_017 gives an isolated same-estimator scale about 5.1 kAU; the embedded X_gal=0.52 benchmark gives 3324.5 AU and amplitude 0.235; the consistently evaluated direct solar-circle ambient u_sun=0.570 gives 3748.8 AU and amplitude 0.354, compared with 2646 +/- 609 AU total and alpha_sat=0.366. These are explicitly distinct ambient benchmarks. The historical 2609-AU/1.4-percent agreement is superseded by the same-estimator comparison. Joint scale, amplitude and environmental response require one adopted ambient projection from the common field solution; no universally validated Gamma_WB is claimed."
 
   - symbol: "kappa_LLR"
     latex: "\\kappa_{\\text{LLR}}"
@@ -148,7 +148,7 @@ parameters:
     class: "derived"
     first_paper: 0
     used_in: [0, 8, 15, 17]
-    description: "LLR/flyby channel response coefficient. Derived (step_05): kappa_LLR = |beta_A| S_LLR Gamma_LLR, with Gamma_LLR = 1 (orbital range projector; the fitted Keplerian monopole is absorbed) and S_LLR = S_Sigma(g_lunar) = 1.59e-14 from the corpus screening operator S_Sigma(g) = [1+(g/g_t)^2]^-1, g_t = cH_0/(2 beta_A^2) (master-action closure, R11/step_27; equivalently the pairwise form [1+(R_s/s)^4]^-1). Small but nonzero at lunar distance; far below the current LLR residual floor. Earlier versions used a Yukawa propagator exp(-r/R_T)(1+r/R_T) treating the density-transition radius R_T ~ 4146 km as a Compton range — an inconsistent massive-scalar ansatz superseded by the derived P(X) screening operator. Flyby: conformal channel screened to delta_v/v ~ 1.7e-30 at the surface field; any real flyby residual requires the disformal sector (step_08). Corrected 2026-09-25."
+    description: "LLR/flyby channel response coefficient. Derived (step_05): kappa_LLR = |beta_A| S_LLR Gamma_LLR, with Gamma_LLR = 1 (orbital range projector; the fitted Keplerian monopole is absorbed) and S_LLR = S_Sigma(g_lunar) = 1.59e-14 from the corpus screening operator S_Sigma(g) = [1+(g/g_t)^2]^-1, g_t = cH_0/(2|beta_A|) (master-action closure, R11/step_27; equivalently the pairwise form [1+(R_s/s)^4]^-1). Small but nonzero at lunar distance; far below the current LLR residual floor. Earlier versions used a Yukawa propagator exp(-r/R_T)(1+r/R_T) treating the density-transition radius R_T ~ 4146 km as a Compton range — an inconsistent massive-scalar ansatz superseded by the derived P(X) screening operator. Flyby: conformal channel screened to delta_v/v ~ 1.7e-30 at the surface field; any real flyby residual requires the disformal sector (step_08). Corrected 2026-09-25."
 
   - symbol: "Gamma_X"
     latex: "\\Gamma_X"
@@ -264,9 +264,70 @@ parameters:
   - symbol: "V_scalar"
     latex: "V(\\phi)"
     meaning: "Canonical scalar potential branch"
-    value: "master family V(u) = V_matter(u) e^{-(u/u_s)^4} + V_0 e^{-(u_s/u)^4}; matter-hosting weak-field branch is the quartic truncated form solved in core/scalar_field.py (equilibrium_u, phi_profile_spherical)"
+    value: "V(u) = V_matter(u) e^{-(u/u_s)^4} + V_0 e^{-(u_s/u)^4}"
     units: "M_Pl^4 (dimensionless-u form)"
     class: "fundamental"
     first_paper: 0
     used_in: [0]
     description: "Rule 12/18 anchor: one universal scalar sector, fixed once. Non-canonical V(phi) realizations present in live pipelines are named benchmarks bounding methodology only, not the canonical potential: the V_rec(u) = V_0 - (rho_bar/2) e^{-u} descent branch (Paper 0 sec.8 reconstruction, BBN Gate 10), and the BBN step_04g massive-KG 1/2 m^2 phi^2 plus V=0 benchmarks. (issues.md v-phi-benchmark-proliferation, 29-4 one-action registry)"
+
+  - symbol: "Lambda_X"
+    latex: "\\Lambda_X"
+    meaning: "Kinetic-completion scale (gradient/shear screening threshold)"
+    value: 1.9068
+    units: "meV"
+    class: "derived"
+    first_paper: 0
+    used_in: [0, 4, 6, 7, 12, 13, 17, 26, 28]
+    description: "Scale entering the non-perturbative kinetic completion P(X,phi) = X - V + X|X|/Lambda_X^4, i.e. P_{,X} = 1 + 2|X|/Lambda_X^4 on the spacelike branch. Fixed by Lambda_X^4 = M_Pl^2 H_0^2, Lambda_X = sqrt(M_Pl H_0) = 1.9068 meV with H_0 = 70 km/s/Mpc the measured drift (constants.py: LAMBDA_KINETIC_MEV). Anchored to H_0, not fitted. Sets the shear threshold g_t = cH_0/(2|beta_A|) = 3.4e-10 m/s^2 and the single-body screening operator S_Sigma(g) = [1+(g/g_t)^2]^-1. Distinct from the potential-sector scale: Lambda_X governs the gradient/shear sector, not the amplitude sector. (TEP-UCD step_14 scale audit.)"
+
+  - symbol: "lambda_quartic"
+    latex: "\\lambda_{\\rm quartic}"
+    aliases: ["lambda_4"]
+    meaning: "Quartic self-coupling of the amplitude-sector potential"
+    value: 7.526e-66
+    units: "dimensionless"
+    class: "calibrated"
+    first_paper: 0
+    used_in: [0, 6, 7, 10, 22, 28]
+    description: "Dimensionless coupling in the matter-hosting weak-field branch V(u) = (lambda/4) M_Pl^4 u^4 of the master potential. The operative branch lambda_Cassini = 7.526e-66 = 10^5 lambda_ref is selected by the Cassini screening bound (the lambda_ref = 7.526e-71 point fails the corrected Cassini evaluation; Paper 6 App. C, Paper 7). The quartic exponent is itself selected, not free: the corpus amplitude law S_A ∝ rho^{1/3} = rho^{1/(m-1)} forces m = 4 (TEP-UCD step_14 amplitude_law_check). Compact-object bound: pulsar interiors remaining below u_s require lambda >~ 1.11e-84 (LAMBDA_QUARTIC_NS_BOUND); the Cassini branch passes by ~6.8e18, while the retired rho_T-normalized reading lambda = rho_T/M_Pl^4 = 2.45e-90 is excluded by compact objects, Compton resolution and Solar-System screening. Symbol collision note: several papers write it bare 'lambda'; where the same file also uses the GNSS covariance length the coupling is disambiguated (Paper 6 writes lambda_T for the length)."
+
+  - symbol: "Lambda_V"
+    latex: "\\Lambda_V"
+    meaning: "Equivalent potential-normalization scale of the quartic branch"
+    value: 127.5
+    units: "GeV"
+    class: "derived"
+    first_paper: 6
+    used_in: [0, 6]
+    description: "Lambda_V = lambda_quartic^{1/4} M_Pl — the energy scale of the potential normalization expressed in units of mass: 127.5 GeV on the Cassini branch, 7.2 GeV on the reference branch (constants.py: LAMBDA_V_GEV / LAMBDA_V_REF_GEV). NOT an independent scale — derived from lambda_quartic. Its role is to prevent the two-scale conflation: the identification rho_T = Lambda_V^4 (equivalently Lambda ~ 96 keV) presupposes u_min(rho_T) ~ 1 and is excluded (step_14 excluded_normalization: 3e24 below the Cassini coupling, u_min(NS) ~ 21 > u_s, lambda_c(rho_T) ~ 3.4e7 km ≫ any terrestrial body)."
+
+  - symbol: "rho_sat"
+    latex: "\\rho_{\\rm sat}"
+    meaning: "Self-quenching density (u_min ~ 1 crossing; temporal-well regime)"
+    value: 6.1e25
+    units: "g cm^{-3}"
+    class: "derived"
+    first_paper: 6
+    used_in: [6, 28]
+    description: "Order-of-magnitude density at which the quartic equilibrium reaches u_min ~ 1: rho_sat ~ lambda_quartic M_Pl^4 (step_14: 6.14e25 g/cm^3; with the e^{-u} source factor the strict u_min = 1 crossing sits at e lambda M_Pl^4 ~ 1.7e26). This is the temporal-well interior scale (Paper 28), where exponential source suppression and the master-potential knee take over — NOT terrestrial saturation. Terrestrial screening saturation is the geometric/Compton-resolution crossover lambda_c(rho) ~ R_T(M), with lambda_c(rho_T) ~ 2.5e3 km ~ 0.6 R_T(Earth). The two scales form one density ladder on a single branch: Compton crossover at ~4 g/cm^3, perturbative quartic equilibria through pulsar densities (u_min ~ 1.5e-4), self-quenching only at rho ~ 1e26."
+
+  - symbol: "u_min"
+    latex: "u_{\\rm min}"
+    meaning: "Density-set scalar-field equilibrium amplitude"
+    value: null
+    units: "dimensionless"
+    class: "derived"
+    first_paper: 0
+    used_in: [0, 6, 7, 28]
+    description: "Interior minimum of the coupled field equation for the quartic branch: lambda M_Pl^4 u_min^3 = rho e^{-u_min}, i.e. u_min = (rho/(lambda M_Pl^4))^{1/3} for u_min << 1 (core/scalar_field.py: equilibrium_u). Values on the Cassini branch (step_14): 4.48e-9 at Earth's mean density, 6.88e-9 at rho_T, 1.48e-4 at neutron-star-core density. The amplitude response is exact quartic bookkeeping: S_A(rho) = min[1, u_min(rho)/u_min(rho_T)] = min[1, (rho/rho_T)^{1/3}]. Complementary to the kinetic sector: P_{,X} suppresses the gradient excursion while the potential fixes the interior amplitude (Earth interior u(0) ~ 2e-15 on the suppressed profile vs u_min ~ 4.5e-9)."
+
+  - symbol: "u_s"
+    latex: "u_s"
+    meaning: "Master-potential plateau knee (self-quenching scale of the field amplitude)"
+    value: 10.0
+    units: "dimensionless"
+    class: "benchmark"
+    first_paper: 0
+    used_in: [0, 6, 28]
+    description: "Nominal knee of the master family V(u) = V_matter(u) e^{-(u/u_s)^4} + V_0 e^{-(u_s/u)^4}: the dimensionless field amplitude at which the matter-branch damping engages. Declared nominal value u_s = 10 (master-potential ansatz; closure probes scanned 10--50). Bounds: pulsar interiors must satisfy u_min(rho_NS) < u_s, which yields the quartic-normalization lower bound LAMBDA_QUARTIC_NS_BOUND = 1.11e-84."

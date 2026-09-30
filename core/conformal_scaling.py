@@ -101,35 +101,42 @@ def temporal_shear_from_scalar_field(phi, grad_phi, beta_A=BETA_A):
 
 def effective_g(newton_g, phi, beta_A=BETA_A):
     r"""
-    Effective gravitational constant under TEP (Jordan frame).
+    Locally measured gravitational constant under TEP (Jordan frame).
 
-    For the matter metric \tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu},
-    the Jordan-frame effective gravitational constant is:
+    For the matter metric \tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu}, a
+    Jordan-frame (locally measured) Cavendish experiment sees:
 
-        G_eff = G_N / A^2(\phi)
+        G_loc = G_N * A^2(\phi)
 
     This convention means that larger phi (stronger scalar field)
-    -> larger A(phi) -> smaller G_eff.
+    -> larger A(phi) -> larger G_loc. It is the convention used and
+    symbolically verified in scripts/steps/step_70_siren_invariant.py
+    (results/step_70_siren_invariant.json), and stated identically in
+    Paper 0 Sec. 9 / Appendix E. (Corrected 2026-09-29: an earlier
+    version of this function returned G_N / A^2, the opposite power;
+    it was never called by any pipeline step, so no published result
+    was affected, but it contradicted the corpus's own verified
+    derivation and has been brought into line with it.)
     """
     if not np.isfinite(newton_g) or newton_g <= 0:
         raise ValueError("newton_g must be finite and strictly positive")
     a = conformal_factor(phi, beta_A)
-    return newton_g / (a ** 2)
+    return newton_g * (a ** 2)
 
 
 def g_eff_variance(phi_1, phi_2, beta_A=BETA_A, beta_2=None):
     r"""
-    Predicted relative variance in G_eff between two sites.
+    Predicted relative variance in the locally measured G between two sites.
 
-    For the matter metric \tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu},
-    the Jordan-frame effective gravitational constant is G_eff = G_N / A^2.
-    Therefore:
+    For the matter metric \tilde{g}_{\mu\nu} = A^2(\phi) g_{\mu\nu}, the
+    Jordan-frame (locally measured) gravitational constant is
+    G_loc = G_N * A^2. Therefore:
 
-    Delta_G / G = [G_eff(site_2) - G_eff(site_1)] / G_eff(site_1)
-                = [A(phi_1)/A(phi_2)]^2 - 1
+    Delta_G / G = [G_loc(site_2) - G_loc(site_1)] / G_loc(site_1)
+                = [A(phi_2)/A(phi_1)]^2 - 1
 
     For small phi differences with equal beta_A:
-    Delta_G / G ~ -2*beta_A*(phi_2 - phi_1)
+    Delta_G / G ~ 2*beta_A*(phi_2 - phi_1)
 
     Parameters
     ----------
@@ -147,7 +154,7 @@ def g_eff_variance(phi_1, phi_2, beta_A=BETA_A, beta_2=None):
         raise ValueError("beta_A and beta_2 must be finite")
     a1 = conformal_factor(phi_1, beta_A)
     a2 = conformal_factor(phi_2, b2)
-    return (a1 / a2) ** 2 - 1.0
+    return (a2 / a1) ** 2 - 1.0
 
 
 def minimum_steepness_for_retention(rho_g_cm3, retention_fraction,

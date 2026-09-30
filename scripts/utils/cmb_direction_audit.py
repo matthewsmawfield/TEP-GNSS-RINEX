@@ -192,8 +192,64 @@ def main():
 
     audit['mirror_check_max_abs_diff'] = mirror_check(doy, spd, ratio)
 
-    # corrected landscape: fine grid at 20 km/s
+    # corrected landscape: fine grid at 20 km/s, with significance statistics
+    # identical in form to the step's own tests (r and global p are invariant
+    # under the antipodal relabeling induced by the sign fix; only the
+    # direction coordinates change).
     best = best_direction(doy, spd, ratio, GRID_SPEED)
+    n = len(doy)
+    t_stat = best['r'] * np.sqrt((n - 2) / max(1e-12, 1 - best['r'] ** 2))
+    best['local_p_t'] = float(2 * stats.t.sf(abs(t_stat), n - 2))
+
+    # bootstrap 68% CI on the recovered direction (month resampling)
+    rng = np.random.default_rng(0)
+    ras, des = [], []
+    for _ in range(500):
+        idx = rng.integers(0, n, n)
+        b = best_direction(doy[idx], spd[idx], ratio[idx], GRID_SPEED,
+                           ra_step=5.0, dec_step=5.0)
+        ras.append(b['ra'])
+        des.append(b['dec'])
+    ras, des = np.array(ras), np.array(des)
+    s = np.sort(ras % 360)
+    gaps = np.diff(np.r_[s, s[0] + 360])
+    k = int(np.argmax(gaps))
+    xu = (ras - s[(k + 1) % len(s)]) % 360
+    a, bb = np.percentile(xu, [16, 84])
+    best['ra_ci_68'] = [float((s[(k + 1) % len(s)] + a) % 360),
+                        float((s[(k + 1) % len(s)] + bb) % 360)]
+    best['dec_ci_68'] = [float(np.percentile(des, 16)),
+                         float(np.percentile(des, 84))]
+
+    # global p under the step's own iid-shuffle null (coarse 5-deg sky grid)
+    ra_g = np.arange(0, 360, 5.0)
+    dec_g = np.arange(-90, 91, 5.0)
+    RA_, DE_ = np.meshgrid(ra_g, dec_g)
+    br_, bd_ = np.radians(RA_), np.radians(DE_)
+    B_ = np.stack([GRID_SPEED * np.cos(bd_) * np.cos(br_),
+                   GRID_SPEED * np.cos(bd_) * np.sin(br_),
+                   GRID_SPEED * np.sin(bd_)], axis=-1)
+    vo_ = ecl_to_eq(v_orb_ecl(doy, np.asarray(spd, float)))
+    V_ = vo_[:, None, None, :] + B_[None, :, :, :]
+    Pm_ = np.cos(np.arcsin(V_[..., 2] / np.linalg.norm(V_, axis=-1)))
+    Pm_ = Pm_.reshape(n, -1)
+    Pm_ = Pm_ - Pm_.mean(axis=0)
+    den_ = np.sqrt((Pm_ ** 2).sum(axis=0))
+    den_[den_ < 1e-12] = np.nan
+    r_coarse = np.nanmax((Pm_ * (ratio - ratio.mean())[:, None]).sum(axis=0)
+                         / (den_ * np.sqrt(((ratio - ratio.mean()) ** 2).sum())))
+    cnt = 0
+    N_MC = 1000
+    for _ in range(N_MC):
+        ys = rng.permutation(ratio)
+        yn = ys - ys.mean()
+        mr = np.nanmax((Pm_ * yn[:, None]).sum(axis=0)
+                       / (den_ * np.sqrt((yn ** 2).sum())))
+        if mr >= best['r']:
+            cnt += 1
+    best['global_p_iid_shuffle'] = float((cnt + 1) / (N_MC + 1))
+    best['r_coarse_grid'] = float(r_coarse)
+
     best['ecliptic_lat_deg'] = None
     # ecliptic latitude of corrected best
     ra_, de_ = np.radians(best['ra']), np.radians(best['dec'])

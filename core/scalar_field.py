@@ -19,7 +19,7 @@ convention).  The scalar sector is:
     (quartic approximation u_min ~ (rho/(lambda M_Pl^4))^{1/3}).
   * Kinetic: P(X, phi) = X - V + X|X|/Lambda^4, Lambda^4 = M_Pl^2 H0^2,
     giving the screening operators
-        S_Sigma(g) = [1 + (g/g_t)^2]^-1 ,  g_t = c H0 / (2 beta_A^2)
+        S_Sigma(g) = [1 + (g/g_t)^2]^-1 ,  g_t = c H0 / (2 |beta_A|)
         S_eff(s)   = [1 + (R_s/s)^4]^-1 ,  R_s = sqrt(G M / g_t)
     and the flux-conserving profile y(1 + y^2 (g/g_t)^2) = 1.
   * Amplitude sector: S_A = min[1, (rho_bar/rho_T)^{1/3}].

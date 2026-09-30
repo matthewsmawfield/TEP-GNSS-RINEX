@@ -45,8 +45,8 @@
         <tr>
             <td>Paper 3</td>
             <td>Raw Data<br />(SPP / RINEX)</td>
-            <td><em>Is the signal a processing artifact?</em></td>
-            <td>Not supported.<br />Signal exists in raw observations.</td>
+            <td><em>Is the signal solely a precise-product artifact?</em></td>
+            <td>Strongly disfavoured.<br />Recovered in raw SPP observables.</td>
         </tr>
     </table>
 </div>
@@ -81,7 +81,7 @@
         <tr>
             <td>Paper 3 (Short-dist)</td>
             <td>1.18–1.31</td>
-            <td>Phase alignment &lt;500 km</td>
+            <td>Phase alignment $\lt$ 500 km</td>
             <td>Same directional polarity</td>
         </tr>
     </table>
@@ -90,7 +90,7 @@
 <p>
     The convergence of directional structure across independent methodologies is
     noteworthy. The raw SPP analysis indicates E-W > N-S with t-statistics up to
-    112 and nominal p-values &lt; 10<sup>−15</sup> under the standard null. A
+    112 and nominal p-values $\lt$ 10<sup>−15</sup> under the standard null. A
     critical distance audit indicates this is not an artifact: E-W pairs are 13
     km longer than N-S pairs (suppressing the signal), and robust
     distance-matching strengthens the coherence ratio from 1.033 to 1.041.
@@ -125,7 +125,7 @@
             full-distance λ ratios incorporate orbital velocity coupling
             ($u\cdot\nabla\phi$) that varies annually with Earth's orbital position. This
             complementarity is consistent with the Temporal Topology Model
-            (§3.7.5): the underlying Temporal Shear structure is spatially
+            (§3.7.5): the underlying clock-sector covariance structure is spatially
             stable, while its observable directional magnitude is modulated by
             Earth's orbital velocity through the cosmological field gradient.
         </p>
@@ -160,7 +160,7 @@
                 <td>59.1</td>
                 <td>1.019</td>
                 <td>1.180</td>
-                <td>Ionosphere: removes 45.2% MSC / 22.6% PA; non-ionospheric residuals (54.8% MSC, 77.4% PA) persist ($p &lt; 10^{-15}$)</td>
+                <td>Ionosphere: removes 45.2% MSC / 22.6% PA; non-ionospheric residuals (54.8% MSC, 77.4% PA) persist ($p \lt 10^{-15}$)</td>
             </tr>
             <tr>
                 <td>Precise (IGS SP3)</td>
@@ -178,7 +178,7 @@
             </tr>
         </table>
         <p style="margin-top: 15px">
-            Interpretation: The attenuation between Baseline and Ionofree provides an explicit diagnostic of the ionospheric fraction: first-order ionospheric elimination accounts for 45.2% of the short-distance MSC excess and 22.6% of the Phase Alignment excess (Step 2.11, day-block bootstrap uncertainties ±1.0%). The remaining 54.8% of the MSC asymmetry (+1.87%, $t = 49.6$) and 77.4% of the Phase Alignment asymmetry (+17.01%, $t = 76.6$) persist unconditionally at $p &lt; 10^{-15}$. When constellation geometry is diversified in Multi-GNSS across GPS, GLONASS, Galileo, and BeiDou, the directional asymmetry reinforces to 1.050 (MSC) and 1.310 (PA), confirming that the non-ionospheric residual reflects a physical terrestrial directional property rather than a single-constellation orbital or atmospheric artifact.
+            Interpretation: The attenuation between Baseline and Ionofree provides an explicit diagnostic of the ionospheric fraction: first-order ionospheric elimination accounts for 45.2% of the short-distance MSC excess and 22.6% of the Phase Alignment excess (Step 2.11, day-block bootstrap uncertainties ±1.0%). The remaining 54.8% of the MSC asymmetry (+1.87%, $t = 49.6$) and 77.4% of the Phase Alignment asymmetry (+17.01%, $t = 76.6$) persist unconditionally at $p \lt 10^{-15}$. When constellation geometry is diversified in Multi-GNSS across GPS, GLONASS, Galileo, and BeiDou, the directional asymmetry reinforces to 1.050 (MSC) and 1.310 (PA), confirming that the non-ionospheric residual reflects a physical terrestrial directional property rather than a single-constellation orbital or atmospheric artifact.
         </p>
     </div>
 
@@ -308,7 +308,7 @@
             <li>
                 Multiple lines of analysis are consistent with enhanced
                 sensitivity in the Southern Hemisphere (e.g., CODE orbital
-                coupling, CMB frame analysis, and RINEX phase alignment)
+                coupling, the directional analysis, and RINEX phase alignment)
             </li>
         </ul>
         <p>
@@ -326,14 +326,14 @@
             The Europe-only subset serves as a useful <em>negative control</em>.
             If the TEP-related structure is long-range (λ ≈ 1,000+ km), it may
             be difficult to resolve in a network dominated by short baselines
-            (&lt;200 km) where tropospheric turbulence contributes strong local
+            ($\lt$ 200 km) where tropospheric turbulence contributes strong local
             correlations. Furthermore, Europe's specific geometry can reduce
             sensitivity to an east–west dominated anisotropy:
         </p>
         <ul>
             <li>
                 Density masking: Europe's dense network produces many short
-                baselines (&lt;200 km) for every long baseline, which can
+                baselines ($\lt$ 200 km) for every long baseline, which can
                 overweight the fit toward local tropospheric correlations.
             </li>
             <li>
@@ -380,7 +380,7 @@
             <tr>
                 <td>CODE (25-year PPP)</td>
                 <td>−0.888</td>
-                <td>5.1σ</td>
+                <td>3.65σ (autocorr.-corrected, N<sub>eff</sub> ≈ 11)</td>
                 <td>Reference</td>
             </tr>
             <tr>
@@ -390,7 +390,7 @@
                     (baseline)
                 </td>
                 <td>
-                    6.8σ (balanced)<br />5.4σ (best raw)<br />3.2σ (baseline)
+                    6.8σ nominal / ≈3.3σ corr.<br />5.4σ nominal / ≈3.0σ corr.<br />3.2σ nominal
                 </td>
                 <td>All significant results negative</td>
             </tr>
@@ -399,8 +399,9 @@
         <ul>
             <li>
                 Observed coupling: Multi-GNSS pos_jitter/phase yields r =
-                −0.763, 5.4σ; MSC yields r = −0.610, 4.0σ; baseline GPS yields r
-                = −0.509, 3.2σ
+                −0.763 (nominal 5.4σ, ≈ 3.0σ autocorrelation-corrected); MSC
+                yields r = −0.610 (nominal 4.0σ, ≈ 2.5σ corrected); baseline
+                GPS yields r = −0.509 (nominal 3.2σ)
             </li>
             <li>
                 Direction consistency: All significant results show negative
@@ -425,11 +426,11 @@
     </div>
 
     <div>
-        <h4>The Spacetime Finding</h4>
+        <h4>Position Jitter and Clock Bias (Hardware Check)</h4>
         <p>
-            The near-equality of position jitter and clock bias orbital coupling
-            is an additional observation from Paper 3 that is not available from
-            precise products:
+            Position jitter and clock bias orbital coupling can be compared only
+            in the raw-SPP solution — an additional observation from Paper 3
+            that is not available from precise products:
         </p>
         <table>
             <tr>
@@ -457,17 +458,14 @@
             </tr>
         </table>
         <p style="margin-top: 10px">
-            TEP predicts coupling across <em>spacetime</em>, not merely isolated temporal
-            effects. In Single Point Positioning, the receiver state vector $[X, Y, Z, c\cdot\delta t]^T$
-            solves spatial coordinates and clock bias jointly from pseudoranges. The observed near-unity coupling
-            ($\Delta r \approx 5\%$, with Multi-GNSS pos_jitter yielding $r = -0.610$ at $4.0\sigma$ and clock_bias
-            yielding $r = -0.581$) is the expected structural consequence of the universal conformal factor
-            in the matter metric $\tilde{g}_{\mu\nu} = A^2(\phi)g_{\mu\nu}$, under which spatial rulers and proper
-            clocks scale in unison ($d\tilde{s}^2 = A^2(\phi)ds^2$). While this symmetry excludes downstream
-            clock-internal artifacts (such as oscillator thermal sensitivity, which cannot perturb pseudorange geometry),
-            any upstream pseudorange perturbation projects into both channels. Near-equal coupling thus serves as
-            an indispensable consistency verification of metric scalar transport, with discrimination against
-            classical upstream propagation systematics provided by multi-constellation agreement and the in-phase
+            In Single Point Positioning, the receiver state vector $[X, Y, Z, c\cdot\delta t]^T$
+            solves spatial coordinates and clock bias jointly from pseudoranges. The observed matched MSC coupling
+            ($\Delta r \approx 1$–$9\%$ in baseline GPS and $\approx 5\%$ in the Multi-GNSS ALL_STATIONS filter, with Multi-GNSS pos_jitter yielding $r = -0.610$ at nominal $4.0\sigma$ and clock_bias
+            yielding $r = -0.581$; the match does not hold for phase alignment or DYNAMIC_50) excludes downstream
+            clock-internal artifacts (such as oscillator thermal sensitivity, which cannot perturb pseudorange geometry).
+            Because the solve is joint, correlated projection of upstream pseudorange perturbations into both channels is
+            expected, so the comparison is reported as a hardware-discrimination check rather than a conformal-scaling test. Discrimination against
+            classical upstream propagation systematics is provided by multi-constellation agreement and the in-phase
             hemispheric phase test.
         </p>
     </div>
@@ -560,7 +558,7 @@
     <h3>5.7.1 Geomagnetic Independence (Kp Stratification)</h3>
 
     <p>
-        Using real Kp index data from GFZ Potsdam (936 quiet days with Kp &lt; 3
+        Using real Kp index data from GFZ Potsdam (936 quiet days with Kp $\lt$ 3
         and 160 storm days with Kp ≥ 3; 1,096 total), the dataset was stratified
         by geomagnetic activity and analyzed correlation lengths independently
         for quiet and storm conditions across 24 correlated analysis configurations per filter (4
@@ -639,7 +637,7 @@
             Ionofree Enhancement During Storms
         </h4>
         <p>
-            At the primary Kp threshold (Kp &lt; 3 vs. Kp ≥ 3), phase alignment
+            At the primary Kp threshold (Kp $\lt$ 3 vs. Kp ≥ 3), phase alignment
             typically changes at only the percent level across modes. In
             ionofree processing, several metrics show slight positive Δλ during
             storms, contrasting with what would be expected if the signal were
@@ -686,7 +684,7 @@
                 <td>OPTIMAL_100/Ionofree</td>
                 <td>2,440 → 6,060</td>
                 <td>+148%</td>
-                <td>True spatial extent when screening removed</td>
+                <td>Longer recovered covariance scale in this processing/environmental regime</td>
             </tr>
             <tr style="background: #f5f7fa">
                 <td>Low-variation core</td>
@@ -715,37 +713,20 @@
         "
     >
         <h4 style="margin-top: 0; color: #3d5a5a">
-            The Temporal Topology Model
+            Temporal Topology Interpretation
         </h4>
         <p>
-            Key insight: the observed seasonality is interpreted within the TEP
-            v0.14 continuous geometric screening framework. Rather than a binary
-            screened/unscreened transition, the scalar time field exhibits a
-            continuous spatial profile (Temporal Topology) whose local gradient
-            (Temporal Shear) drives the observable response:
+            The observed seasonal structure is treated as variation in the measured
+            clock-sector covariance $C_A$ and in its processing/environmental
+            projection. The terrestrial amplitude factor $S_A^{(\oplus)}$
+            characterizes the static conformal-depth response and is not the
+            attenuation factor of the measured time-dependent covariance.
+            Likewise, the shear-screening operator $S_\Sigma(\mathcal E)$ does
+            not numerically set the observed 1700–1900 km correlation scale.
+            That scale is an empirical covariance length of this processing
+            channel. The 1700–1900 km baseline and the ~6000 km seasonal
+            sensitivity envelope therefore characterize the observed $C_A$
+            projection, not distinct microscopic screening radii.
         </p>
-        <ul style="margin-bottom: 0">
-            <li>
-                Observational sensitivity envelope (~6000 km): Observed in the
-                OPTIMAL_100/Ionofree/Summer configuration, bounding the
-                observational sensitivity envelope of the long-distance
-                spatial profile and matching the CODE 25-year PPP upper bound
-            </li>
-            <li>
-                Terrestrial screening baseline: Sourced by the gravitational mass
-                of the solid Earth ($\rho_\oplus \approx 5.5\ {\rm g\,cm^{-3}}$), the
-                fundamental screening operator $S_\Sigma(\mathcal{E})$ sets a
-                season-invariant spatial correlation scale $\lambda \approx 1700\text{--}1900\ {\rm km}$.
-                Atmospheric gas and ionospheric plasma contribute negligibly to
-                scalar stress-energy and do not alter gravitational screening
-            </li>
-            <li>
-                Observable result: A baseline scale of ~1800 km is consistently
-                observed across the terrestrial network in high-reliability multi-GNSS
-                processing with minimal (~7–13%) seasonal variation, demonstrating that
-                the underlying spatial coherence is robust against seasonal propagation
-                fluctuations
-            </li>
-        </ul>
     </div>
 </div>

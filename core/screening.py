@@ -62,7 +62,9 @@ def screening_factor(rho_local_g_cm3, rho_c=RHO_C):
 
     When rho_local << rho_c: suppression -> 1 (full TEP effect)
     When rho_local -> rho_c: suppression -> 0.5 (transition)
-    When rho_local >> rho_c: suppression -> 0 (saturated, A -> 1)
+    When rho_local >> rho_c: suppression -> 0 (response saturated:
+    interior field rests at its density-dependent equilibrium u_min(rho) > 0
+    and the shear gradient is pinned — the field is not relaxed to A -> 1)
 
     WARNING: rho_c = 20.0 g/cm^3 is calibrated for lab/stellar-body densities.
     For galactic-scale densities (~1e-17 g/cm^3), rho/rho_c ~ 5e-19 and this

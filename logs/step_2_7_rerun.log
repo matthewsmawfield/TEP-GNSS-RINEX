@@ -53,3 +53,521 @@
 [7/72] Analyzing all_stations/precise/clock_bias/msc...[0m
 [0;34m[00:42:55] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
 [0;34m[00:43:32] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[00:44:53] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[00:44:53] [INFO]   Best: RA=20°, Dec=5°, r=0.325, CMB sep=148.1°[0m
+[0;34m[00:44:53] [PROCESS] 
+[8/72] Analyzing all_stations/precise/clock_bias/phase_alignment...[0m
+[0;34m[00:44:53] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[00:45:23] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[00:46:48] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[00:46:48] [INFO]   Best: RA=131°, Dec=13°, r=0.188, CMB sep=41.8°[0m
+[0;34m[00:46:48] [PROCESS] 
+[9/72] Analyzing all_stations/precise/pos_jitter/msc...[0m
+[0;34m[00:46:48] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[00:47:23] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[00:48:53] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[00:48:53] [INFO]   Best: RA=350°, Dec=-38°, r=0.502, CMB sep=135.0°[0m
+[0;34m[00:48:53] [PROCESS] 
+[10/72] Analyzing all_stations/precise/pos_jitter/phase_alignment...[0m
+[0;34m[00:48:53] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[00:49:29] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[00:50:51] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[00:50:51] [INFO]   Best: RA=353°, Dec=-36°, r=0.400, CMB sep=136.8°[0m
+[0;34m[00:50:51] [PROCESS] 
+[11/72] Analyzing all_stations/precise/clock_drift/msc...[0m
+[0;34m[00:50:51] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[00:51:23] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[00:52:35] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[00:52:35] [INFO]   Best: RA=314°, Dec=-14°, r=0.325, CMB sep=140.3°[0m
+[0;34m[00:52:35] [PROCESS] 
+[12/72] Analyzing all_stations/precise/clock_drift/phase_alignment...[0m
+[0;34m[00:52:35] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[00:53:06] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[00:54:22] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[00:54:22] [INFO]   Best: RA=177°, Dec=-26°, r=0.462, CMB sep=20.9°[0m
+[0;34m[00:54:22] [PROCESS] 
+[13/72] Analyzing all_stations/ionofree/clock_bias/msc...[0m
+[0;34m[00:54:22] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[00:54:53] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[00:56:05] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[00:56:05] [INFO]   Best: RA=32°, Dec=46°, r=0.278, CMB sep=125.6°[0m
+[0;34m[00:56:05] [PROCESS] 
+[14/72] Analyzing all_stations/ionofree/clock_bias/phase_alignment...[0m
+[0;34m[00:56:05] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[00:56:35] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[00:57:47] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[00:57:47] [INFO]   Best: RA=133°, Dec=8°, r=0.138, CMB sep=37.9°[0m
+[0;34m[00:57:47] [PROCESS] 
+[15/72] Analyzing all_stations/ionofree/pos_jitter/msc...[0m
+[0;34m[00:57:47] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[00:58:17] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[00:59:31] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[00:59:31] [INFO]   Best: RA=37°, Dec=47°, r=0.471, CMB sep=122.1°[0m
+[0;34m[00:59:31] [PROCESS] 
+[16/72] Analyzing all_stations/ionofree/pos_jitter/phase_alignment...[0m
+[0;34m[00:59:31] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:00:01] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:01:12] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:01:12] [INFO]   Best: RA=192°, Dec=-34°, r=0.207, CMB sep=35.0°[0m
+[0;34m[01:01:12] [PROCESS] 
+[17/72] Analyzing all_stations/ionofree/clock_drift/msc...[0m
+[0;34m[01:01:12] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:01:40] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:02:51] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:02:51] [INFO]   Best: RA=357°, Dec=-28°, r=0.241, CMB sep=144.0°[0m
+[0;34m[01:02:51] [PROCESS] 
+[18/72] Analyzing all_stations/ionofree/clock_drift/phase_alignment...[0m
+[0;34m[01:02:51] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:03:19] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:04:30] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:04:30] [INFO]   Best: RA=275°, Dec=-32°, r=0.416, CMB sep=100.5°[0m
+[0;34m[01:04:30] [PROCESS] 
+[19/72] Analyzing all_stations/multi_gnss/clock_bias/msc...[0m
+[0;34m[01:04:30] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:04:58] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:06:10] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:06:10] [INFO]   Best: RA=351°, Dec=-33°, r=0.433, CMB sep=140.0°[0m
+[0;34m[01:06:10] [PROCESS] 
+[20/72] Analyzing all_stations/multi_gnss/clock_bias/phase_alignment...[0m
+[0;34m[01:06:10] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:06:38] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:07:50] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:07:50] [INFO]   Best: RA=348°, Dec=-30°, r=0.401, CMB sep=143.1°[0m
+[0;34m[01:07:50] [PROCESS] 
+[21/72] Analyzing all_stations/multi_gnss/pos_jitter/msc...[0m
+[0;34m[01:07:50] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:08:20] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:09:35] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:09:35] [INFO]   Best: RA=353°, Dec=-31°, r=0.527, CMB sep=141.8°[0m
+[0;34m[01:09:35] [PROCESS] 
+[22/72] Analyzing all_stations/multi_gnss/pos_jitter/phase_alignment...[0m
+[0;34m[01:09:35] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:10:03] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:11:15] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:11:15] [INFO]   Best: RA=8°, Dec=5°, r=0.501, CMB sep=160.0°[0m
+[0;34m[01:11:15] [PROCESS] 
+[23/72] Analyzing all_stations/multi_gnss/clock_drift/msc...[0m
+[0;34m[01:11:15] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:11:43] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:12:55] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:12:55] [INFO]   Best: RA=351°, Dec=-32°, r=0.446, CMB sep=141.0°[0m
+[0;34m[01:12:55] [PROCESS] 
+[24/72] Analyzing all_stations/multi_gnss/clock_drift/phase_alignment...[0m
+[0;34m[01:12:55] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:13:26] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:14:37] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:14:37] [INFO]   Best: RA=4°, Dec=-27°, r=0.248, CMB sep=142.7°[0m
+[0;34m[01:14:37] [PROCESS] 
+[25/72] Analyzing optimal_100/baseline/clock_bias/msc...[0m
+[0;34m[01:14:37] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:15:06] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:16:17] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:16:17] [INFO]   Best: RA=353°, Dec=-33°, r=0.372, CMB sep=139.8°[0m
+[0;34m[01:16:17] [PROCESS] 
+[26/72] Analyzing optimal_100/baseline/clock_bias/phase_alignment...[0m
+[0;34m[01:16:17] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:16:47] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:17:59] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:17:59] [INFO]   Best: RA=345°, Dec=-36°, r=0.344, CMB sep=137.0°[0m
+[0;34m[01:17:59] [PROCESS] 
+[27/72] Analyzing optimal_100/baseline/pos_jitter/msc...[0m
+[0;34m[01:17:59] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:18:28] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:19:42] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:19:42] [INFO]   Best: RA=350°, Dec=-37°, r=0.455, CMB sep=136.0°[0m
+[0;34m[01:19:42] [PROCESS] 
+[28/72] Analyzing optimal_100/baseline/pos_jitter/phase_alignment...[0m
+[0;34m[01:19:42] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:20:11] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:21:22] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:21:22] [INFO]   Best: RA=343°, Dec=-35°, r=0.478, CMB sep=137.8°[0m
+[0;34m[01:21:22] [PROCESS] 
+[29/72] Analyzing optimal_100/baseline/clock_drift/msc...[0m
+[0;34m[01:21:22] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:21:50] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:23:01] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:23:01] [INFO]   Best: RA=352°, Dec=-34°, r=0.363, CMB sep=138.9°[0m
+[0;34m[01:23:01] [PROCESS] 
+[30/72] Analyzing optimal_100/baseline/clock_drift/phase_alignment...[0m
+[0;34m[01:23:01] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:23:29] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:24:48] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:24:48] [INFO]   Best: RA=280°, Dec=-43°, r=0.444, CMB sep=101.0°[0m
+[0;34m[01:24:48] [PROCESS] 
+[31/72] Analyzing optimal_100/precise/clock_bias/msc...[0m
+[0;34m[01:24:48] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:25:17] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:26:33] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:26:33] [INFO]   Best: RA=339°, Dec=-11°, r=0.393, CMB sep=160.0°[0m
+[0;34m[01:26:33] [PROCESS] 
+[32/72] Analyzing optimal_100/precise/clock_bias/phase_alignment...[0m
+[0;34m[01:26:33] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:27:02] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:28:23] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:28:23] [INFO]   Best: RA=179°, Dec=-7°, r=0.349, CMB sep=11.0°[0m
+[0;34m[01:28:23] [PROCESS] 
+[33/72] Analyzing optimal_100/precise/pos_jitter/msc...[0m
+[0;34m[01:28:23] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:28:53] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:30:06] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:30:06] [INFO]   Best: RA=335°, Dec=-13°, r=0.299, CMB sep=156.3°[0m
+[0;34m[01:30:06] [PROCESS] 
+[34/72] Analyzing optimal_100/precise/pos_jitter/phase_alignment...[0m
+[0;34m[01:30:06] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:30:36] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:31:47] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:31:47] [INFO]   Best: RA=330°, Dec=-44°, r=0.382, CMB sep=126.5°[0m
+[0;34m[01:31:47] [PROCESS] 
+[35/72] Analyzing optimal_100/precise/clock_drift/msc...[0m
+[0;34m[01:31:47] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:32:23] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:33:37] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:33:37] [INFO]   Best: RA=335°, Dec=-12°, r=0.394, CMB sep=157.1°[0m
+[0;34m[01:33:37] [PROCESS] 
+[36/72] Analyzing optimal_100/precise/clock_drift/phase_alignment...[0m
+[0;34m[01:33:37] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:34:07] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:35:20] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:35:20] [INFO]   Best: RA=165°, Dec=-35°, r=0.519, CMB sep=28.2°[0m
+[0;34m[01:35:20] [PROCESS] 
+[37/72] Analyzing optimal_100/ionofree/clock_bias/msc...[0m
+[0;34m[01:35:20] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:35:52] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:37:07] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:37:07] [INFO]   Best: RA=19°, Dec=1°, r=0.431, CMB sep=148.5°[0m
+[0;34m[01:37:07] [PROCESS] 
+[38/72] Analyzing optimal_100/ionofree/clock_bias/phase_alignment...[0m
+[0;34m[01:37:07] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:37:37] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:38:53] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:38:53] [INFO]   Best: RA=241°, Dec=-16°, r=0.308, CMB sep=71.9°[0m
+[0;34m[01:38:53] [PROCESS] 
+[39/72] Analyzing optimal_100/ionofree/pos_jitter/msc...[0m
+[0;34m[01:38:53] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:39:24] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:40:42] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:40:42] [INFO]   Best: RA=291°, Dec=-21°, r=0.319, CMB sep=117.5°[0m
+[0;34m[01:40:42] [PROCESS] 
+[40/72] Analyzing optimal_100/ionofree/pos_jitter/phase_alignment...[0m
+[0;34m[01:40:42] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:41:13] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:42:32] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:42:32] [INFO]   Best: RA=354°, Dec=-29°, r=0.164, CMB sep=143.6°[0m
+[0;34m[01:42:32] [PROCESS] 
+[41/72] Analyzing optimal_100/ionofree/clock_drift/msc...[0m
+[0;34m[01:42:32] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:43:02] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:44:19] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:44:19] [INFO]   Best: RA=19°, Dec=2°, r=0.524, CMB sep=148.7°[0m
+[0;34m[01:44:19] [PROCESS] 
+[42/72] Analyzing optimal_100/ionofree/clock_drift/phase_alignment...[0m
+[0;34m[01:44:19] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:44:52] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:46:08] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:46:08] [INFO]   Best: RA=297°, Dec=-22°, r=0.205, CMB sep=122.3°[0m
+[0;34m[01:46:08] [PROCESS] 
+[43/72] Analyzing optimal_100/multi_gnss/clock_bias/msc...[0m
+[0;34m[01:46:08] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:46:39] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:47:57] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:47:57] [INFO]   Best: RA=352°, Dec=-31°, r=0.319, CMB sep=141.9°[0m
+[0;34m[01:47:57] [PROCESS] 
+[44/72] Analyzing optimal_100/multi_gnss/clock_bias/phase_alignment...[0m
+[0;34m[01:47:57] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:48:29] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:49:40] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:49:41] [INFO]   Best: RA=349°, Dec=-34°, r=0.277, CMB sep=139.0°[0m
+[0;34m[01:49:41] [PROCESS] 
+[45/72] Analyzing optimal_100/multi_gnss/pos_jitter/msc...[0m
+[0;34m[01:49:41] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:50:09] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:51:20] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:51:20] [INFO]   Best: RA=29°, Dec=44°, r=0.358, CMB sep=128.5°[0m
+[0;34m[01:51:20] [PROCESS] 
+[46/72] Analyzing optimal_100/multi_gnss/pos_jitter/phase_alignment...[0m
+[0;34m[01:51:20] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:51:48] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:52:59] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:52:59] [INFO]   Best: RA=339°, Dec=-38°, r=0.237, CMB sep=134.3°[0m
+[0;34m[01:52:59] [PROCESS] 
+[47/72] Analyzing optimal_100/multi_gnss/clock_drift/msc...[0m
+[0;34m[01:52:59] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:53:27] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:54:38] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:54:38] [INFO]   Best: RA=350°, Dec=-31°, r=0.354, CMB sep=142.0°[0m
+[0;34m[01:54:38] [PROCESS] 
+[48/72] Analyzing optimal_100/multi_gnss/clock_drift/phase_alignment...[0m
+[0;34m[01:54:38] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:55:06] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:56:17] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:56:17] [INFO]   Best: RA=1°, Dec=-29°, r=0.228, CMB sep=141.9°[0m
+[0;34m[01:56:17] [PROCESS] 
+[49/72] Analyzing dynamic_50/baseline/clock_bias/msc...[0m
+[0;34m[01:56:17] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:56:46] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:57:57] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:57:57] [INFO]   Best: RA=353°, Dec=-31°, r=0.502, CMB sep=141.8°[0m
+[0;34m[01:57:57] [PROCESS] 
+[50/72] Analyzing dynamic_50/baseline/clock_bias/phase_alignment...[0m
+[0;34m[01:57:57] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[01:58:25] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[01:59:36] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[01:59:36] [INFO]   Best: RA=351°, Dec=-28°, r=0.604, CMB sep=144.9°[0m
+[0;34m[01:59:36] [PROCESS] 
+[51/72] Analyzing dynamic_50/baseline/pos_jitter/msc...[0m
+[0;34m[01:59:36] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:00:05] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:01:16] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:01:16] [INFO]   Best: RA=353°, Dec=-31°, r=0.583, CMB sep=141.8°[0m
+[0;34m[02:01:16] [PROCESS] 
+[52/72] Analyzing dynamic_50/baseline/pos_jitter/phase_alignment...[0m
+[0;34m[02:01:16] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:01:44] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:02:56] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:02:56] [INFO]   Best: RA=324°, Dec=-49°, r=0.456, CMB sep=120.3°[0m
+[0;34m[02:02:56] [PROCESS] 
+[53/72] Analyzing dynamic_50/baseline/clock_drift/msc...[0m
+[0;34m[02:02:56] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:03:24] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:04:37] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:04:37] [INFO]   Best: RA=354°, Dec=-31°, r=0.493, CMB sep=141.6°[0m
+[0;34m[02:04:37] [PROCESS] 
+[54/72] Analyzing dynamic_50/baseline/clock_drift/phase_alignment...[0m
+[0;34m[02:04:37] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:05:05] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:06:17] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:06:18] [INFO]   Best: RA=355°, Dec=-35°, r=0.321, CMB sep=137.5°[0m
+[0;34m[02:06:18] [PROCESS] 
+[55/72] Analyzing dynamic_50/precise/clock_bias/msc...[0m
+[0;34m[02:06:18] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:06:46] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:07:57] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:07:57] [INFO]   Best: RA=18°, Dec=2°, r=0.358, CMB sep=149.6°[0m
+[0;34m[02:07:57] [PROCESS] 
+[56/72] Analyzing dynamic_50/precise/clock_bias/phase_alignment...[0m
+[0;34m[02:07:57] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:08:26] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:09:38] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:09:38] [INFO]   Best: RA=144°, Dec=12°, r=0.169, CMB sep=30.4°[0m
+[0;34m[02:09:38] [PROCESS] 
+[57/72] Analyzing dynamic_50/precise/pos_jitter/msc...[0m
+[0;34m[02:09:38] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:10:06] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:11:18] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:11:18] [INFO]   Best: RA=359°, Dec=-27°, r=0.424, CMB sep=144.4°[0m
+[0;34m[02:11:18] [PROCESS] 
+[58/72] Analyzing dynamic_50/precise/pos_jitter/phase_alignment...[0m
+[0;34m[02:11:18] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:11:47] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:12:59] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:12:59] [INFO]   Best: RA=336°, Dec=-43°, r=0.453, CMB sep=128.9°[0m
+[0;34m[02:12:59] [PROCESS] 
+[59/72] Analyzing dynamic_50/precise/clock_drift/msc...[0m
+[0;34m[02:12:59] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:13:27] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:14:39] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:14:39] [INFO]   Best: RA=19°, Dec=1°, r=0.374, CMB sep=148.5°[0m
+[0;34m[02:14:39] [PROCESS] 
+[60/72] Analyzing dynamic_50/precise/clock_drift/phase_alignment...[0m
+[0;34m[02:14:39] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:15:08] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:16:19] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:16:19] [INFO]   Best: RA=182°, Dec=-25°, r=0.380, CMB sep=22.5°[0m
+[0;34m[02:16:19] [PROCESS] 
+[61/72] Analyzing dynamic_50/ionofree/clock_bias/msc...[0m
+[0;34m[02:16:19] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:16:48] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:18:00] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:18:00] [INFO]   Best: RA=37°, Dec=47°, r=0.312, CMB sep=122.1°[0m
+[0;34m[02:18:00] [PROCESS] 
+[62/72] Analyzing dynamic_50/ionofree/clock_bias/phase_alignment...[0m
+[0;34m[02:18:00] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:18:28] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:19:39] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:19:39] [INFO]   Best: RA=133°, Dec=10°, r=0.132, CMB sep=38.7°[0m
+[0;34m[02:19:39] [PROCESS] 
+[63/72] Analyzing dynamic_50/ionofree/pos_jitter/msc...[0m
+[0;34m[02:19:39] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:20:07] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:21:19] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:21:19] [INFO]   Best: RA=41°, Dec=48°, r=0.420, CMB sep=119.3°[0m
+[0;34m[02:21:19] [PROCESS] 
+[64/72] Analyzing dynamic_50/ionofree/pos_jitter/phase_alignment...[0m
+[0;34m[02:21:19] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:21:48] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:23:00] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:23:00] [INFO]   Best: RA=199°, Dec=-38°, r=0.250, CMB sep=41.9°[0m
+[0;34m[02:23:00] [PROCESS] 
+[65/72] Analyzing dynamic_50/ionofree/clock_drift/msc...[0m
+[0;34m[02:23:00] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:23:28] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:24:41] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:24:41] [INFO]   Best: RA=35°, Dec=47°, r=0.266, CMB sep=123.3°[0m
+[0;34m[02:24:41] [PROCESS] 
+[66/72] Analyzing dynamic_50/ionofree/clock_drift/phase_alignment...[0m
+[0;34m[02:24:41] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:25:09] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:26:21] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:26:21] [INFO]   Best: RA=268°, Dec=-40°, r=0.333, CMB sep=93.2°[0m
+[0;34m[02:26:21] [PROCESS] 
+[67/72] Analyzing dynamic_50/multi_gnss/clock_bias/msc...[0m
+[0;34m[02:26:21] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:26:50] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:28:01] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:28:01] [INFO]   Best: RA=352°, Dec=-31°, r=0.411, CMB sep=141.9°[0m
+[0;34m[02:28:01] [PROCESS] 
+[68/72] Analyzing dynamic_50/multi_gnss/clock_bias/phase_alignment...[0m
+[0;34m[02:28:01] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:28:29] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:29:41] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:29:41] [INFO]   Best: RA=336°, Dec=-28°, r=0.660, CMB sep=143.2°[0m
+[0;34m[02:29:41] [PROCESS] 
+[69/72] Analyzing dynamic_50/multi_gnss/pos_jitter/msc...[0m
+[0;34m[02:29:41] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:30:09] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:31:21] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:31:21] [INFO]   Best: RA=352°, Dec=-31°, r=0.622, CMB sep=141.9°[0m
+[0;34m[02:31:21] [PROCESS] 
+[70/72] Analyzing dynamic_50/multi_gnss/pos_jitter/phase_alignment...[0m
+[0;34m[02:31:21] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:31:49] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:33:01] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:33:01] [INFO]   Best: RA=9°, Dec=5°, r=0.469, CMB sep=159.0°[0m
+[0;34m[02:33:01] [PROCESS] 
+[71/72] Analyzing dynamic_50/multi_gnss/clock_drift/msc...[0m
+[0;34m[02:33:01] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:33:29] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:34:42] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:34:42] [INFO]   Best: RA=352°, Dec=-30°, r=0.383, CMB sep=142.9°[0m
+[0;34m[02:34:42] [PROCESS] 
+[72/72] Analyzing dynamic_50/multi_gnss/clock_drift/phase_alignment...[0m
+[0;34m[02:34:42] [PROCESS] Grid searching background directions (1° resolution, 20 km/s fixed - matches CODE)...[0m
+[0;34m[02:35:11] [PROCESS]   Computing bootstrap confidence intervals...[0m
+[0;34m[02:36:22] [PROCESS]   Estimating global p-value (MC, N=1000, step=5°)...[0m
+[0;37m[02:36:22] [INFO]   Best: RA=3°, Dec=-26°, r=0.242, CMB sep=144.0°[0m
+[0;37m[02:36:22] [INFO] 
+================================================================================[0m
+[0;37m[02:36:22] [INFO] CMB FRAME ANALYSIS COMPARISON[0m
+[0;37m[02:36:22] [INFO] ================================================================================[0m
+[0;37m[02:36:22] [INFO] [0m
+[0;37m[02:36:22] [INFO] Filter          Mode       Metric       Coh          RA    Dec       r    CMB    GlobP[0m
+[0;37m[02:36:22] [INFO] ----------------------------------------------------------------------------------------------------[0m
+[0;37m[02:36:22] [INFO] optimal_100     precise    clock_bias   phase_alignment    179     -7   0.349   11.0°   0.3087[0m
+[0;37m[02:36:22] [INFO] all_stations    precise    clock_drift  phase_alignment    177    -26   0.462   20.9°   0.0699[0m
+[0;37m[02:36:22] [INFO] dynamic_50      precise    clock_drift  phase_alignment    182    -25   0.380   22.5°   0.2408[0m
+[0;37m[02:36:22] [INFO] optimal_100     precise    clock_drift  phase_alignment    165    -35   0.519   28.2°   0.0190[0m
+[0;37m[02:36:22] [INFO] dynamic_50      precise    clock_bias   phase_alignment    144     12   0.169   30.4°   0.9101[0m
+[0;37m[02:36:22] [INFO] all_stations    ionofree   pos_jitter   phase_alignment    192    -34   0.207   35.0°   0.7982[0m
+[0;37m[02:36:22] [INFO] all_stations    ionofree   clock_bias   phase_alignment    133      8   0.138   37.9°   0.9660[0m
+[0;37m[02:36:22] [INFO] dynamic_50      ionofree   clock_bias   phase_alignment    133     10   0.132   38.7°   0.9750[0m
+[0;37m[02:36:22] [INFO] all_stations    precise    clock_bias   phase_alignment    131     13   0.188   41.8°   0.8901[0m
+[0;37m[02:36:22] [INFO] dynamic_50      ionofree   pos_jitter   phase_alignment    199    -38   0.250   41.9°   0.6454[0m
+[0;37m[02:36:22] [INFO] optimal_100     ionofree   clock_bias   phase_alignment    241    -16   0.308   71.9°   0.4036[0m
+[0;37m[02:36:22] [INFO] dynamic_50      ionofree   clock_drift  phase_alignment    268    -40   0.333   93.2°   0.3706[0m
+[0;37m[02:36:22] [INFO] all_stations    ionofree   clock_drift  phase_alignment    275    -32   0.416  100.5°   0.1628[0m
+[0;37m[02:36:22] [INFO] optimal_100     baseline   clock_drift  phase_alignment    280    -43   0.444  101.0°   0.0549[0m
+[0;37m[02:36:22] [INFO] optimal_100     ionofree   pos_jitter   msc         291    -21   0.319  117.5°   0.2757[0m
+[0;37m[02:36:22] [INFO] dynamic_50      ionofree   pos_jitter   msc          41     48   0.420  119.3°   0.1029[0m
+[0;37m[02:36:22] [INFO] dynamic_50      baseline   pos_jitter   phase_alignment    324    -49   0.456  120.3°   0.0779[0m
+[0;37m[02:36:22] [INFO] all_stations    ionofree   pos_jitter   msc          37     47   0.471  122.1°   0.0490[0m
+[0;37m[02:36:22] [INFO] dynamic_50      ionofree   clock_bias   msc          37     47   0.312  122.1°   0.4156[0m
+[0;37m[02:36:22] [INFO] optimal_100     ionofree   clock_drift  phase_alignment    297    -22   0.205  122.3°   0.8182[0m
+[0;37m[02:36:22] [INFO] dynamic_50      ionofree   clock_drift  msc          35     47   0.266  123.3°   0.5944[0m
+[0;37m[02:36:22] [INFO] all_stations    baseline   pos_jitter   phase_alignment    330    -46   0.468  124.7°   0.0460[0m
+[0;37m[02:36:22] [INFO] all_stations    ionofree   clock_bias   msc          32     46   0.278  125.6°   0.5465[0m
+[0;37m[02:36:22] [INFO] optimal_100     precise    pos_jitter   phase_alignment    330    -44   0.382  126.5°   0.1788[0m
+[0;37m[02:36:22] [INFO] optimal_100     multi_gnss pos_jitter   msc          29     44   0.358  128.5°   0.2797[0m
+[0;37m[02:36:22] [INFO] dynamic_50      precise    pos_jitter   phase_alignment    336    -43   0.453  128.9°   0.0619[0m
+[0;37m[02:36:22] [INFO] optimal_100     multi_gnss pos_jitter   phase_alignment    339    -38   0.237  134.3°   0.6913[0m
+[0;37m[02:36:22] [INFO] all_stations    precise    pos_jitter   msc         350    -38   0.502  135.0°   0.0320[0m
+[0;37m[02:36:22] [INFO] optimal_100     baseline   pos_jitter   msc         350    -37   0.455  136.0°   0.0589[0m
+[0;37m[02:36:22] [INFO] all_stations    precise    pos_jitter   phase_alignment    353    -36   0.400  136.8°   0.1249[0m
+[0;37m[02:36:22] [INFO] optimal_100     baseline   clock_bias   phase_alignment    345    -36   0.344  137.0°   0.2757[0m
+[0;37m[02:36:22] [INFO] dynamic_50      baseline   clock_drift  phase_alignment    355    -35   0.321  137.5°   0.3706[0m
+[0;37m[02:36:22] [INFO] optimal_100     baseline   pos_jitter   phase_alignment    343    -35   0.478  137.8°   0.0639[0m
+[0;37m[02:36:22] [INFO] all_stations    baseline   clock_bias   msc         348    -35   0.514  138.1°   0.0380[0m
+[0;37m[02:36:22] [INFO] optimal_100     baseline   clock_drift  msc         352    -34   0.363  138.9°   0.2787[0m
+[0;37m[02:36:22] [INFO] all_stations    baseline   clock_drift  msc         350    -34   0.491  139.0°   0.0390[0m
+[0;37m[02:36:22] [INFO] optimal_100     multi_gnss clock_bias   phase_alignment    349    -34   0.277  139.0°   0.5514[0m
+[0;37m[02:36:22] [INFO] optimal_100     baseline   clock_bias   msc         353    -33   0.372  139.8°   0.2607[0m
+[0;37m[02:36:22] [INFO] all_stations    multi_gnss clock_bias   msc         351    -33   0.433  140.0°   0.1019[0m
+[0;37m[02:36:22] [INFO] all_stations    baseline   clock_drift  phase_alignment      3    -30   0.298  140.3°   0.4695[0m
+[0;37m[02:36:22] [INFO] all_stations    precise    clock_drift  msc         314    -14   0.325  140.3°   0.3626[0m
+[0;37m[02:36:22] [INFO] all_stations    multi_gnss clock_drift  msc         351    -32   0.446  141.0°   0.1109[0m
+[0;37m[02:36:22] [INFO] dynamic_50      baseline   clock_drift  msc         354    -31   0.493  141.6°   0.0509[0m
+[0;37m[02:36:22] [INFO] all_stations    baseline   pos_jitter   msc         353    -31   0.572  141.8°   0.0120[0m
+[0;37m[02:36:22] [INFO] all_stations    multi_gnss pos_jitter   msc         353    -31   0.527  141.8°   0.0220[0m
+[0;37m[02:36:22] [INFO] dynamic_50      baseline   clock_bias   msc         353    -31   0.502  141.8°   0.0500[0m
+[0;37m[02:36:22] [INFO] dynamic_50      baseline   pos_jitter   msc         353    -31   0.583  141.8°   0.0090[0m
+[0;37m[02:36:22] [INFO] optimal_100     multi_gnss clock_bias   msc         352    -31   0.319  141.9°   0.3866[0m
+[0;37m[02:36:22] [INFO] dynamic_50      multi_gnss clock_bias   msc         352    -31   0.411  141.9°   0.1758[0m
+[0;37m[02:36:22] [INFO] dynamic_50      multi_gnss pos_jitter   msc         352    -31   0.622  141.9°   0.0020[0m
+[0;37m[02:36:22] [INFO] optimal_100     multi_gnss clock_drift  phase_alignment      1    -29   0.228  141.9°   0.7183[0m
+[0;37m[02:36:22] [INFO] optimal_100     multi_gnss clock_drift  msc         350    -31   0.354  142.0°   0.2737[0m
+[0;37m[02:36:22] [INFO] all_stations    multi_gnss clock_drift  phase_alignment      4    -27   0.248  142.7°   0.6444[0m
+[0;37m[02:36:22] [INFO] dynamic_50      multi_gnss clock_drift  msc         352    -30   0.383  142.9°   0.2527[0m
+[0;37m[02:36:22] [INFO] all_stations    multi_gnss clock_bias   phase_alignment    348    -30   0.401  143.1°   0.1219[0m
+[0;37m[02:36:22] [INFO] dynamic_50      multi_gnss clock_bias   phase_alignment    336    -28   0.660  143.2°   0.0010[0m
+[0;37m[02:36:22] [INFO] optimal_100     ionofree   pos_jitter   phase_alignment    354    -29   0.164  143.6°   0.9211[0m
+[0;37m[02:36:22] [INFO] dynamic_50      multi_gnss clock_drift  phase_alignment      3    -26   0.242  144.0°   0.6973[0m
+[0;37m[02:36:22] [INFO] all_stations    ionofree   clock_drift  msc         357    -28   0.241  144.0°   0.6823[0m
+[0;37m[02:36:22] [INFO] dynamic_50      precise    pos_jitter   msc         359    -27   0.424  144.4°   0.0999[0m
+[0;37m[02:36:22] [INFO] all_stations    baseline   clock_bias   phase_alignment    352    -28   0.519  144.8°   0.0160[0m
+[0;37m[02:36:22] [INFO] dynamic_50      baseline   clock_bias   phase_alignment    351    -28   0.604  144.9°   0.0030[0m
+[0;37m[02:36:22] [INFO] all_stations    precise    clock_bias   msc          20      5   0.325  148.1°   0.3407[0m
+[0;37m[02:36:22] [INFO] optimal_100     ionofree   clock_bias   msc          19      1   0.431  148.5°   0.0839[0m
+[0;37m[02:36:22] [INFO] dynamic_50      precise    clock_drift  msc          19      1   0.374  148.5°   0.2118[0m
+[0;37m[02:36:22] [INFO] optimal_100     ionofree   clock_drift  msc          19      2   0.524  148.7°   0.0100[0m
+[0;37m[02:36:22] [INFO] dynamic_50      precise    clock_bias   msc          18      2   0.358  149.6°   0.2238[0m
+[0;37m[02:36:22] [INFO] optimal_100     precise    pos_jitter   msc         335    -13   0.299  156.3°   0.3706[0m
+[0;37m[02:36:22] [INFO] optimal_100     precise    clock_drift  msc         335    -12   0.394  157.1°   0.1229[0m
+[0;37m[02:36:22] [INFO] dynamic_50      multi_gnss pos_jitter   phase_alignment      9      5   0.469  159.0°   0.0609[0m
+[0;37m[02:36:22] [INFO] all_stations    multi_gnss pos_jitter   phase_alignment      8      5   0.501  160.0°   0.0480[0m
+[0;37m[02:36:22] [INFO] optimal_100     precise    clock_bias   msc         339    -11   0.393  160.0°   0.1309[0m
+[0;37m[02:36:22] [INFO] ----------------------------------------------------------------------------------------------------[0m
+[0;37m[02:36:22] [INFO] CODE Longspan reference: RA=186°, Dec=-4°, CMB sep=18.2°[0m
+[0;37m[02:36:22] [INFO] [0m
+[1;32m[02:36:22] [SUCCESS] BEST RESULT: optimal_100/precise/clock_drift/phase_alignment[0m
+[1;32m[02:36:22] [SUCCESS]   RA=165° (68% CI: 160°-280°)[0m
+[1;32m[02:36:22] [SUCCESS]   Dec=-35° (68% CI: -50°--20°)[0m
+[1;32m[02:36:22] [SUCCESS]   r=0.519[0m
+[0;37m[02:36:22] [INFO]   Local P-value: 0.0012[0m
+[1;32m[02:36:22] [SUCCESS]   Global P-value (Monte Carlo): 0.0190[0m
+[1;32m[02:36:22] [SUCCESS]   CMB separation: 28.2°[0m
+[0;37m[02:36:22] [INFO] [0m
+[0;37m[02:36:22] [INFO] ROBUSTNESS ANALYSIS:[0m
+[0;37m[02:36:22] [INFO]   Significant combinations (p<0.05): 16/72[0m
+[0;37m[02:36:22] [INFO]   Consistency: 10/10 top results align with CMB (<45°)[0m
+[0;37m[02:36:22] [INFO] [0m
+[0;34m[02:36:22] [PROCESS] Evaluating competitive control directions and |V_bg| scan on best combination...[0m
+[0;37m[02:36:22] [INFO]   CMB dipole (Planck 2018): RA=167.9°, Dec=-6.9°, β=-11.1°, r=0.4162, sep=28.2°[0m
+[0;37m[02:36:22] [INFO]   Solar apex: RA=271.0°, Dec=30.0°, β=+53.4°, r=-0.4925, sep=118.8°[0m
+[0;37m[02:36:22] [INFO]   Solar antapex: RA=91.0°, Dec=-30.0°, β=-53.4°, r=0.2747, sep=61.2°[0m
+[0;37m[02:36:22] [INFO]   Ecliptic north pole: RA=270.0°, Dec=66.6°, β=+90.0°, r=-0.5341, sep=127.6°[0m
+[0;37m[02:36:22] [INFO]   Ecliptic south pole: RA=90.0°, Dec=-66.6°, β=-90.0°, r=0.4372, sep=52.4°[0m
+[0;37m[02:36:22] [INFO]   Galactic center: RA=266.4°, Dec=-29.0°, β=-5.6°, r=0.4695, sep=82.2°[0m
+[0;37m[02:36:22] [INFO]   Earth velocity tangent at perihelion: RA=191.9°, Dec=-5.1°, β=-0.0°, r=-0.0010, sep=38.9°[0m
+[0;37m[02:36:22] [INFO]   Earth velocity tangent at aphelion: RA=11.9°, Dec=5.1°, β=+0.0°, r=-0.1867, sep=141.1°[0m
+[0;37m[02:36:22] [INFO]   Best-fit ecliptic latitude: β = -37.6°[0m
+/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/scripts/steps/step_2_7_cmb_frame_analysis.py:661: RuntimeWarning: divide by zero encountered in matmul
+  r_vec[valid] = (pn.T @ rn) / len(ratios)
+/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/scripts/steps/step_2_7_cmb_frame_analysis.py:661: RuntimeWarning: overflow encountered in matmul
+  r_vec[valid] = (pn.T @ rn) / len(ratios)
+/Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/scripts/steps/step_2_7_cmb_frame_analysis.py:661: RuntimeWarning: invalid value encountered in matmul
+  r_vec[valid] = (pn.T @ rn) / len(ratios)
+[0;37m[02:36:22] [INFO]   |V_bg|=    5.0 km/s -> RA=174°, Dec=-84°, r=0.322, CMB sep=77.1°, perihelion-tangent sep=79.2°[0m
+[0;37m[02:36:22] [INFO]   |V_bg|=   10.0 km/s -> RA=214°, Dec=-64°, r=0.459, CMB sep=65.8°, perihelion-tangent sep=61.0°[0m
+[0;37m[02:36:22] [INFO]   |V_bg|=   20.0 km/s -> RA=166°, Dec=-34°, r=0.519, CMB sep=27.1°, perihelion-tangent sep=37.6°[0m
+[0;37m[02:36:22] [INFO]   |V_bg|=   50.0 km/s -> RA=160°, Dec=-14°, r=0.520, CMB sep=10.5°, perihelion-tangent sep=32.6°[0m
+[0;37m[02:36:22] [INFO]   |V_bg|=  100.0 km/s -> RA=210°, Dec=-8°, r=0.516, CMB sep=41.7°, perihelion-tangent sep=18.2°[0m
+[0;37m[02:36:22] [INFO]   |V_bg|=  200.0 km/s -> RA=246°, Dec=-8°, r=0.508, CMB sep=77.3°, perihelion-tangent sep=53.8°[0m
+[0;37m[02:36:22] [INFO]   |V_bg|=  369.8 km/s -> RA=262°, Dec=-10°, r=0.507, CMB sep=92.8°, perihelion-tangent sep=69.6°[0m
+[0;34m[02:36:22] [PROCESS] 
+Creating sky map for best result...[0m
+[0;34m[02:36:22] [PROCESS] Creating sky map visualization...[0m
+[1;32m[02:36:24] [SUCCESS] Figure saved: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/results/figures/step_2_7_cmb_frame_sky_map.png[0m
+[1;32m[02:36:24] [SUCCESS] Results saved: /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/results/outputs/step_2_7_cmb_frame_analysis.json[0m
+[0;37m[02:36:24] [INFO] 
+================================================================================[0m
+[0;37m[02:36:24] [INFO] Step 2.7 Complete - ALL COMBINATIONS ANALYZED[0m
+[0;37m[02:36:24] [INFO] ================================================================================[0m

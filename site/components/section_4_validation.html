@@ -26,7 +26,7 @@
         </tr>
         <tr>
             <td>p-value</td>
-            <td>&lt;10<sup>−15</sup></td>
+            <td>$\lt$ 10<sup>−15</sup></td>
             <td>Highly significant under the standard null model</td>
         </tr>
         <tr>
@@ -54,13 +54,13 @@
         P = (0.5)<sup>36</sup> ≈ 1.5 × 10<sup>−11</sup>
     </p>
     
-    <p>This p &lt; 10<sup>−10</sup> result uses only 36 effective samples—a 4.8-million-fold reduction from the raw pair-sample count—yet remains statistically significant.</p>
+    <p>This p $\lt$ 10<sup>−10</sup> result uses only 36 effective samples—a 4.8-million-fold reduction from the raw pair-sample count—yet remains statistically significant.</p>
 
     <h5>Conservative Test 2: Filter Independence</h5>
     <p>The three station filtering methods (ALL_STATIONS, OPTIMAL_100, DYNAMIC_50) use overlapping but distinct station subsets. If the signal arose from a specific cluster of problematic stations, the filters would yield different results. Instead, all three converge to consistent correlation lengths (§3.4). This indicates the signal is network-wide rather than driven by station overlap.</p>
 
     <h5>Conservative Test 3: Distance Bias Audit</h5>
-    <p>A critical potential confounder is distance distribution bias: if E-W pairs happened to be shorter on average than N-S pairs within the &lt;500 km bin, the higher coherence could be a simple distance effect. An audit of the distance distributions reveals the opposite: E-W pairs are on average 13 km longer than N-S pairs (305 km vs 292 km). Since coherence decays with distance, this bias <em>suppresses</em> the E-W signal. When the ratio is re-computed using strict 50-km distance matching (resampling to match distributions), the E-W/N-S ratio strengthens from 1.033 to 1.041. Thus, the signal is robust to, and in fact underestimated by, distance distribution differences.</p>
+    <p>A critical potential confounder is distance distribution bias: if E-W pairs happened to be shorter on average than N-S pairs within the $\lt$ 500 km bin, the higher coherence could be a simple distance effect. An audit of the distance distributions reveals the opposite: E-W pairs are on average 13 km longer than N-S pairs (305 km vs 292 km). Since coherence decays with distance, this bias <em>suppresses</em> the E-W signal. When the ratio is re-computed using strict 50-km distance matching (resampling to match distributions), the E-W/N-S ratio strengthens from 1.033 to 1.041. Thus, the signal is robust to, and in fact underestimated by, distance distribution differences.</p>
 
     <h5>No "Garden of Forking Paths"</h5>
     <p>The 72 analysis combinations (4 modes × 3 filters × 6 metrics) represent an <em>exhaustive</em> grid of all reasonable processing options—not a selective search for significance. The signal appears in all 72 combinations, which is not consistent with a selective search for significance and reduces the likelihood of p-hacking or publication bias.</p>
@@ -70,7 +70,7 @@
 
 <h4>4.2.1 Kp Stratification</h4>
 
-<p>A major alternative hypothesis for long-range GNSS correlations is ionospheric activity. To test this, the dataset was stratified into "Quiet" (Kp &lt; 3) and "Storm" (Kp ≥ 3) days using real geomagnetic data from GFZ Potsdam (Kp index since 1932). The Kp = 3 threshold is the standard boundary in space physics literature between quiet and active geomagnetic conditions (Menvielle & Berthelier, 1991): Kp &lt; 3 represents magnetically quiet conditions, while Kp ≥ 3 indicates active to storm conditions with enhanced ionospheric disturbances. Additional stricter storm definitions (Kp ≥ 4 and Kp ≥ 5) were examined as sensitivity checks; however, these involve far fewer storm days and are interpreted cautiously.</p>
+<p>A major alternative hypothesis for long-range GNSS correlations is ionospheric activity. To test this, the dataset was stratified into "Quiet" (Kp $\lt$ 3) and "Storm" (Kp ≥ 3) days using real geomagnetic data from GFZ Potsdam (Kp index since 1932). The Kp = 3 threshold is the standard boundary in space physics literature between quiet and active geomagnetic conditions (Menvielle & Berthelier, 1991): Kp $\lt$ 3 represents magnetically quiet conditions, while Kp ≥ 3 indicates active to storm conditions with enhanced ionospheric disturbances. Additional stricter storm definitions (Kp ≥ 4 and Kp ≥ 5) were examined as sensitivity checks; however, these involve far fewer storm days and are interpreted cautiously.</p>
 
 <table>
     <tr>
@@ -81,7 +81,7 @@
         <th>R²</th>
     </tr>
     <tr>
-        <td><strong>Quiet (Kp &lt; 3)</strong></td>
+        <td><strong>Quiet (Kp $\lt$ 3)</strong></td>
         <td>936 (85%)</td>
         <td>50.9M</td>
         <td>731 km</td>
@@ -142,7 +142,7 @@
     <p>Key findings from real Kp data:</p>
     <ul>
         <li><strong>λ<sub>T</sub> changes only slightly:</strong> Storm λ<sub>T</sub> is only 3–4% shorter than quiet λ<sub>T</sub> (MSC metrics)</li>
-        <li><strong>Phase alignment changes little:</strong> Phase-alignment λ<sub>T</sub> is typically stable at the percent level at the primary threshold (Kp &lt; 3 vs. Kp ≥ 3)</li>
+        <li><strong>Phase alignment changes little:</strong> Phase-alignment λ<sub>T</sub> is typically stable at the percent level at the primary threshold (Kp $\lt$ 3 vs. Kp ≥ 3)</li>
         <li><strong>R² remains high:</strong> 0.95+ in both conditions—signal remains detectable</li>
         <li><strong>Physical interpretation:</strong> Storms add short-range ionospheric noise, slightly reducing apparent λ, while the inferred ~700–1,800 km correlation structure remains detectable</li>
     </ul>
@@ -291,20 +291,20 @@
         <tr>
             <td>Ionosphere</td>
             <td>λ ~ 500–1,000 km; E-W &gt; N-S (19.6× diurnal TEC on unconstrained baselines)</td>
-            <td>λ ~ 727–3,485 km; E-W &gt; N-S (1.02–1.31 at &lt;500 km)</td>
-            <td>Scale mismatch; diurnal TEC accounts for 45.2% of short-distance MSC excess and 22.6% of Phase Alignment excess; 54.8% (MSC) and 77.4% (PA) non-ionospheric residuals persist across dual-frequency ionofree removal ($p &lt; 10^{-15}$); the $\Delta$LST-stratified channel is detected with the opposite sign (E-W suppression) at $\Delta$LST = 8–16 min; enhanced in Multi-GNSS</td>
+            <td>λ ~ 727–3,485 km; E-W &gt; N-S (1.02–1.31 at $\lt$ 500 km)</td>
+            <td>Scale mismatch; diurnal TEC accounts for 45.2% of short-distance MSC excess and 22.6% of Phase Alignment excess; 54.8% (MSC) and 77.4% (PA) non-ionospheric residuals persist across dual-frequency ionofree removal ($p \lt 10^{-15}$); the $\Delta$LST-stratified channel is detected with the opposite sign (E-W suppression) at $\Delta$LST = 8–16 min; enhanced in Multi-GNSS</td>
         </tr>
         <tr>
             <td>Troposphere</td>
             <td>λ ~ 100–200 km; potential latitudinal delay gradient on N-S pairs</td>
-            <td>λ ~ 727–3,485 km; E-W &gt; N-S persists in latitude-matched pairs ($\Delta{\rm lat} &lt; 2^\circ$)</td>
+            <td>λ ~ 727–3,485 km; E-W &gt; N-S persists in latitude-matched pairs ($\Delta{\rm lat} \lt 2^\circ$)</td>
             <td>Scale too short; non-dispersive across microwave frequencies; altitude-invariant across 0–2,500 m; cannot explain +31% Multi-GNSS phase anisotropy</td>
         </tr>
         <tr>
             <td>Satellite Geometry</td>
             <td>Finite: 265 km (E-W) / 3,994 km (N-S) in the Step 2.9 PDOP-weighted simulation</td>
-            <td>λ ~ 727–3,485 km; E-W &gt; N-S at &lt;500 km</td>
-            <td>Geometry alone produces finite λ in the observed range; the observed anisotropy sign is opposite to the simulation's (E-W &gt; N-S vs E-W &lt; N-S)</td>
+            <td>λ ~ 727–3,485 km; E-W &gt; N-S at $\lt$ 500 km</td>
+            <td>Geometry alone produces finite λ in the observed range; the observed anisotropy sign is opposite to the simulation's (E-W &gt; N-S vs E-W $\lt$ N-S)</td>
         </tr>
         <tr>
             <td>Multipath</td>
@@ -314,13 +314,13 @@
         </tr>
         <tr>
             <td>TEP Prediction</td>
-            <td>λ ~ 1,000–4,000 km; E-W &gt; N-S from kinematic orbital coupling</td>
-            <td>λ ~ 727–3,485 km; E-W &gt; N-S (1.02–1.31 at &lt;500 km)</td>
-            <td>Consistent across all modes and metrics</td>
+            <td>λ within the 1,000–10,000 km search range (Paper 0); E-W &gt; N-S sign from kinematic orbital coupling</td>
+            <td>λ ~ 727–3,485 km; E-W &gt; N-S (1.02–1.31 at $\lt$ 500 km)</td>
+            <td>Scale within search range; sign of E-W &gt; N-S consistent across modes</td>
         </tr>
     </table>
     
-    <p>The ionosphere, troposphere, and multipath correlation scales do not match the observed range (727–3,485 km). When evaluated as anisotropy-sign alternatives, physical mechanisms are likewise constrained. Satellite visibility geometry — modeled directly by the Step 2.9 PDOP-weighted synthetic-clock simulation — generates finite fitted correlation lengths (265 km E-W, 3,994 km N-S) with an anisotropy sign opposite to observation (geometry-only simulation E-W &lt; N-S by ~15× versus observed E-W &gt; N-S). The common-view common-mode channel (shared satellite clock/orbit errors) is now tested directly rather than assumed: Step 2.10 reconstructs the actual common-view satellite overlap $f_{cv}$ for every station pair and epoch from the archived broadcast ephemerides (elevation mask calibrated to 15° against the recorded per-epoch satellite count, offset $-0.16$ satellites), across 26,954 pair-days spanning 12 days of 2023 and 70 stations. The mundane carrier fails on three independent legs: (i) scale — $f_{cv}$ remains above 0.9 out to $\sim$2,000 km and falls only on the 5,000–9,000 km constellation-footprint scale, whereas the measured coherence excess decays at $\sim$600–800 km, roughly two orders of magnitude shorter than the common-view scale; (ii) fixed-distance dependence — the partial correlation of coherence with $f_{cv}$ given distance is $\rho = 0.010$ ($p = 0.09$), with 0 of 20 distance bins showing significant positive within-bin correlation, and conditioning instead on the canonical weighted-overlap kernel $k_w$ (elevation-weighted overlap amplitude, the quantity entering the clock-error covariance) returns $\rho(C, k_w\,|\,r) = 0.014$ ($p = 0.026$) on an essentially flat kernel ($\lambda_{k_w} = 24{,}236$ km); (iii) floor — the distant-pair plateau ($\sim$0.55) equals the MSC estimator floor for independent 288-epoch series (0.542 white / 0.544 random-walk, Monte Carlo calibrated), so where common-view overlap collapses to $f_{cv} \approx 0.25$ the coherence carries no residual common-mode signature. A joint fit $C \sim a\,f_{cv} + A e^{-r/\lambda} + c_0$ returns $a = 0.015$ with the residual exponential intact ($\lambda = 584$ km, amplitude 0.247, $R^2 = 0.92$): the common-mode channel is bounded to a sub-percent share of the coherent variance, and the distance-decaying excess above the estimator floor remains the residual candidate signal (§6.3.8). Step 2.12 then isolates the carrier's content directly: the broadcast-minus-precise difference series (everything in the broadcast solve absent from the SP3 precise-products solve) carries 470&nbsp;ns² of shared power decaying at $\lambda \approx 5{,}200$ km — the constellation-footprint scale — and tracks the reconstructed $f_{cv}$ (Spearman $\rho = 0.74$), while the broadcast-free precise channel retains $\sim$300&nbsp;ns² of distance-structured shared power, exceeding the broadcast channel's entire 164&nbsp;ns² excess; the broadcast common mode is thereby measured, confirmed at its own scale, and excluded as the driver of the short-scale signal (§6.3.8). Conversely, diurnal-TEC local-time decorrelation (Step 2.9 simulation) generates an apparent E-W &gt; N-S enhancement on transcontinental baselines (19.59×) where stations span different local times ($\Delta{\rm LST} &gt; 1\ {\rm hr}$); however, at short baselines (&lt;500 km), local time differences are restricted to $\Delta{\rm LST} \le 25.5\ {\rm min}$ ($&lt;1.8\%$ of a 24-hr diurnal cycle). The quantitative ionospheric fraction diagnostic (§3.10.1) demonstrates that first-order ionospheric elimination removes 45.2% of the short-distance MSC excess and only 22.6% of the phase-alignment excess, with highly significant non-ionospheric residuals (54.8% MSC, 77.4% PA, $p &lt; 10^{-15}$) persisting unconditionally; the Step 2.11 $\Delta$LST stratification detects the local-time channel only at large $\Delta$LST, where it suppresses E-W Phase Alignment — the opposite sign from the measured excess. Similarly, latitudinal tropospheric delay gradients are non-dispersive and bounded by altitude invariance (§3.4) and latitude-matched pair analysis. The observed scales and directional residuals are consistent with TEP predictions, especially for phase alignment metrics which reach 3,485 km in ionofree mode and 1.31 in Multi-GNSS.</p>
+    <p>The ionosphere, troposphere, and multipath correlation scales do not match the observed range (727–3,485 km). When evaluated as anisotropy-sign alternatives, physical mechanisms are likewise constrained. Satellite visibility geometry — modeled directly by the Step 2.9 PDOP-weighted synthetic-clock simulation — generates finite fitted correlation lengths (265 km E-W, 3,994 km N-S) with an anisotropy sign opposite to observation (geometry-only simulation E-W $\lt$ N-S by ~15× versus observed E-W &gt; N-S). The common-view common-mode channel (shared satellite clock/orbit errors) is now tested directly rather than assumed: Step 2.10 reconstructs the actual common-view satellite overlap $f_{cv}$ for every station pair and epoch from the archived broadcast ephemerides (elevation mask calibrated to 15° against the recorded per-epoch satellite count, offset $-0.16$ satellites), across 26,954 pair-days spanning 12 days of 2023 and 70 stations. The mundane carrier fails on three independent legs: (i) scale — $f_{cv}$ remains above 0.9 out to $\sim$2,000 km and falls only on the 5,000–9,000 km constellation-footprint scale, whereas the measured coherence excess decays at $\sim$600–800 km, roughly two orders of magnitude shorter than the common-view scale; (ii) fixed-distance dependence — the partial correlation of coherence with $f_{cv}$ given distance is $\rho = 0.010$ ($p = 0.09$), with 0 of 20 distance bins showing significant positive within-bin correlation, and conditioning instead on the canonical weighted-overlap kernel $k_w$ (elevation-weighted overlap amplitude, the quantity entering the clock-error covariance) returns $\rho(C, k_w\,|\,r) = 0.014$ ($p = 0.026$) on an essentially flat kernel ($\lambda_{k_w} = 24{,}236$ km); (iii) floor — the distant-pair plateau ($\sim$0.55) equals the MSC estimator floor for independent 288-epoch series (0.542 white / 0.544 random-walk, Monte Carlo calibrated), so where common-view overlap collapses to $f_{cv} \approx 0.25$ the coherence carries no residual common-mode signature. A joint fit $C \sim a\,f_{cv} + A e^{-r/\lambda} + c_0$ returns $a = 0.015$ with the residual exponential intact ($\lambda = 584$ km, amplitude 0.247, $R^2 = 0.92$): the common-mode channel is bounded to a sub-percent share of the coherent variance, and the distance-decaying excess above the estimator floor remains the residual candidate signal (§6.3.8). Step 2.12 then isolates the carrier's content directly: the broadcast-minus-precise difference series (everything in the broadcast solve absent from the SP3 precise-products solve) carries 470&nbsp;ns² of shared power decaying at $\lambda \approx 5{,}200$ km — the constellation-footprint scale — and tracks the reconstructed $f_{cv}$ (Spearman $\rho = 0.74$), while the broadcast-free precise channel retains $\sim$300&nbsp;ns² of distance-structured shared power, exceeding the broadcast channel's entire 164&nbsp;ns² excess; the broadcast common mode is thereby measured, confirmed at its own scale, and excluded as the driver of the short-scale signal (§6.3.8). Conversely, diurnal-TEC local-time decorrelation (Step 2.9 simulation) generates an apparent E-W &gt; N-S enhancement on transcontinental baselines (19.59×) where stations span different local times ($\Delta{\rm LST} &gt; 1\ {\rm hr}$); however, at short baselines ($\lt$ 500 km), local time differences are restricted to $\Delta{\rm LST} \le 25.5\ {\rm min}$ (under 1.8% of a 24-hr diurnal cycle). The quantitative ionospheric fraction diagnostic (§3.10.1) demonstrates that first-order ionospheric elimination removes 45.2% of the short-distance MSC excess and only 22.6% of the phase-alignment excess, with highly significant non-ionospheric residuals (54.8% MSC, 77.4% PA, $p \lt 10^{-15}$) persisting unconditionally; the Step 2.11 $\Delta$LST stratification detects the local-time channel only at large $\Delta$LST, where it suppresses E-W Phase Alignment — the opposite sign from the measured excess. Similarly, latitudinal tropospheric delay gradients are non-dispersive and bounded by altitude invariance (§3.4) and latitude-matched pair analysis. The observed scales and directional residuals are consistent with TEP predictions, especially for phase alignment metrics which reach 3,485 km in ionofree mode and 1.31 in Multi-GNSS.</p>
 </div>
 
 <h3>4.5 Time Alignment Validation</h3>
@@ -451,13 +451,13 @@
     <h5>Why This Is Not Circular Reasoning</h5>
     <p>A common concern with cross-validation is circularity: is this just comparing results to themselves? This is not the case here:</p>
     <ul>
-        <li><strong>Primary evidence requires no correction:</strong> The core finding—E-W > N-S at short distances (&lt;500 km)—uses raw, uncorrected values and matches CODE's prediction directly. The geometric suppression analysis (§3.10.4) is secondary validation only, explaining long-distance λ inversions</li>
+        <li><strong>Primary evidence requires no correction:</strong> The core finding—E-W > N-S at short distances ($\lt$ 500 km)—uses raw, uncorrected values and matches CODE's prediction directly. The geometric suppression analysis (§3.10.4) is secondary validation only, explaining long-distance λ inversions</li>
         <li><strong>Different data:</strong> CODE products are network-adjusted; RINEX/SPP is purely local</li>
         <li><strong>Different processing:</strong> CODE uses IGS analysis centers; RTKLIB is independent</li>
         <li><strong>Different time periods:</strong> 25-year vs 3-year (mostly non-overlapping stations)</li>
         <li><strong>Results are not tuned:</strong> Raw RINEX results are reported as computed; comparison is post-hoc</li>
     </ul>
-    <p>The CODE reference values are used only for interpreting secondary full-distance results, never to adjust or tune the primary short-distance evidence. The short-distance finding (E-W > N-S at &lt;500 km) is fully independent and requires no external calibration.</p>
+    <p>The CODE reference values are used only for interpreting secondary full-distance results, never to adjust or tune the primary short-distance evidence. The short-distance finding (E-W > N-S at $\lt$ 500 km) is fully independent and requires no external calibration.</p>
 </div>
 
 <h3>4.8 Validation Summary</h3>
