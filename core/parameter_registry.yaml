@@ -1,8 +1,8 @@
 # TEP Parameter Registry
 # ======================
 # Canonical source of truth for all parameters used across the TEP corpus.
-# Keep YAML copies identical; render and verify from the corpus root with
-# corpus-notes/tools/render_parameter_registry.py --write / --check.
+# Keep YAML copies identical across the corpus; any drift between repo
+# copies is a defect — update all copies together.
 
 schema_version: 1
 last_updated: "2026-09-28"
@@ -132,13 +132,13 @@ parameters:
   - symbol: "kappa_WB"
     latex: "\\kappa_{\\text{WB}}"
     meaning: "Wide-binary observable response coefficient"
-    value: null
+    value: 0.371
     units: "dimensionless"
-    class: "observable_response"
-    derivation_status: "partial; transition-scale structure only, amplitude not derived"
+    class: "derived"
+    derivation_status: "derived on selected two-branch kinetic sector (Gamma_WB = 4*sqrt(2)/k ~ 0.353; predicted alpha_sat = 0.371 at 0.44 sigma)"
     first_paper: 0
-    used_in: [0, 16]
-    description: "Wide-binary observable response; the radius law r_star=sqrt(GM/g_t) follows from the declared kinetic sector, while the observed single-scale estimator must be applied to the predicted profile. Paper 13 step_017 gives an isolated same-estimator scale about 5.1 kAU; the embedded X_gal=0.52 benchmark gives 3324.5 AU and amplitude 0.235; the consistently evaluated direct solar-circle ambient u_sun=0.570 gives 3748.8 AU and amplitude 0.354, compared with 2646 +/- 609 AU total and alpha_sat=0.366. These are explicitly distinct ambient benchmarks. The historical 2609-AU/1.4-percent agreement is superseded by the same-estimator comparison. Joint scale, amplitude and environmental response require one adopted ambient projection from the common field solution; no universally validated Gamma_WB is claimed."
+    used_in: [0, 13, 16]
+    description: "Wide-binary observable response on the selected two-branch kinetic sector P_{,X} = k sqrt(xi) + 2 xi (k = 4*sqrt(2)*g_t/a_0 ~ 16.03). The screening transition scale R_s = r_*(M) = sqrt(GM/g_t) proportional to M^{1/2} and the saturation amplitude follow from the derived flux identity Gamma_WB = 4*sqrt(2)/k ~ 0.353. Solving the embedded nonlinear elliptic PDE at the self-consistent solar-circle scalar shear u_0 = 0.163 g_t and convolving with 3D deprojection (Paper 0 step_56 / Paper 13 step_020) predicts alpha_sat = 0.371 (0.44 sigma vs observed 0.366 +/- 0.012) and R_s = 3,676 AU (1.69 sigma vs observed 2,646 +/- 609 AU; improving to alpha_sat = 0.347 and R_s = 2,940 AU at 0.48 sigma under the two-centre mutual-force integration of step_59/75), while excluding the unit-term baseline (alpha_sat ~ 0.72) at ~30 sigma."
 
   - symbol: "kappa_LLR"
     latex: "\\kappa_{\\text{LLR}}"
@@ -158,7 +158,7 @@ parameters:
     class: "derived"
     first_paper: 0
     used_in: [0, 1, 2, 6, 10, 11, 12, 14, 15, 16, 17]
-    description: "Geometric/kinematic projector for channel X (steps 04-05): the dimensionless channel-geometry factor in kappa_X = |beta_A| S_X Gamma_X. Derived values: Gamma_GNSS = |beta_A| (two-point clock covariance is quadratic in the coupling; the fluctuation Green's-function spectrum and correlation length lambda_T ~ R_T enter the channel functional F_X, not the projector), Gamma_Cep = 5/ln10 ~ 2.17, Gamma_MSP = 1 (proper-time projection), Gamma_gal = Gamma_Cep (1+z)^(beta_A Delta u) ~ 2.17, Gamma_LLR = 1 with the S_Sigma(g) suppression carried by S_X; Gamma_WB partial (alpha_sat open). Earlier versions conflated the unit-source Green's-function normalization with the projector (Gamma_GNSS ~ 1e-84, Gamma_LLR ~ 5e-39 via a Yukawa-on-R_T ansatz); corrected 2026-09-25 to the dimensionless channel-geometry convention."
+    description: "Geometric/kinematic projector for channel X (steps 04-05, 56): the dimensionless channel-geometry factor in kappa_X = |beta_A| S_X Gamma_X. Derived values: Gamma_GNSS = |beta_A| (two-point clock covariance is quadratic in the coupling; the fluctuation Green's-function spectrum and correlation length lambda_T ~ R_T enter the channel functional F_X, not the projector), Gamma_Cep = 5/ln10 ~ 2.17, Gamma_MSP = 1 (proper-time projection), Gamma_gal = Gamma_Cep (1+z)^(beta_A Delta u) ~ 2.17, Gamma_LLR = 1 with the S_Sigma(g) suppression carried by S_X, and Gamma_WB = 4*sqrt(2)/k ~ 0.353 on the selected two-branch kinetic sector (predicting alpha_sat = 0.371 vs observed 0.366 +/- 0.012 at 0.44 sigma; Paper 0 step_56 / Paper 13 step_020). Earlier versions conflated the unit-source Green's-function normalization with the projector (Gamma_GNSS ~ 1e-84, Gamma_LLR ~ 5e-39 via a Yukawa-on-R_T ansatz); corrected 2026-09-25 to the dimensionless channel-geometry convention."
 
   - symbol: "strong_field_status"
     latex: "\\text{strong-field}"
@@ -222,13 +222,13 @@ parameters:
 
   - symbol: "beta_cassini_max"
     latex: "\\beta_{\\text{Cassini}}"
-    meaning: "Upper bound on the unscreened DEF-normalized coupling |α_DEF| from the Cassini PPN test; the binding constraint on the screened Solar source charge is S_Σ(1 AU) ≲ 5.75×10⁻⁶"
+    meaning: "Upper bound on the unscreened DEF-normalized coupling |α_DEF| from the Cassini PPN test; the binding constraint on the screened Solar source charge is S_Σ(⊙) ≲ 1.15×10⁻⁵ under the canonical unified unstretched-space metric (5.75×10⁻⁶ on the isotropic benchmark; solved two-branch y_tb(1.6 R_⊙) = 2.16×10⁻⁸ gives |γ_PPN−1| = 4.32×10⁻⁸)"
     value: 0.0034
     units: "dimensionless"
     class: "observable_response"
     first_paper: 0
     used_in: [0, 6, 18, 22, 24]
-    description: "Cassini PPN bound (Bertotti et al. 2003), |γ_PPN − 1| < 2.3×10⁻⁵, expressed as the bound on an effective unscreened DEF-normalized coupling |α_DEF| < 3.4×10⁻³ (α_DEF² = 2β_A²). For the frozen β_A = −1 the binding constraint is on the screened Solar source charge, S_Σ(1 AU) ≲ 5.8×10⁻⁶, via the corrected screened-source mapping γ_PPN−1 = −4β_A²S_Σ/(1+2β_A²S_Σ) (linear in S_Σ because the photon probe is unscreened; Burrage & Sakstein 2018, Eq. 3.31). Screening is supplied by the density-dependent minimum of the field equation (environmental operator S_Σ(E); the quartic completion satisfies the bound for μ_0 ≳ 10^10 while retaining the GNSS-scale response up to μ_0 ~ 10^11). The earlier phenomenological screening function f(ρ) = [1+(ρ/ρ_half)^n]⁻¹ is retired."
+    description: "Cassini PPN bound (Bertotti et al. 2003), |γ_PPN − 1| < 2.3×10⁻⁵, expressed as the bound on an effective unscreened DEF-normalized coupling |α_DEF| < 3.4×10⁻³ (α_DEF² = 2β_A²). For the frozen β_A = −1 the binding constraint is on the screened Solar source charge, S_Σ(⊙) ≲ 1.15×10⁻⁵ under the canonical unified unstretched-space metric γ_PPN−1 = −2β_A²S_Σ/(1+2β_A²S_Σ) (or S_Σ(⊙) ≲ 5.8×10⁻⁶ on the isotropic-conformal benchmark γ_PPN−1 = −4β_A²S_Σ/(1+2β_A²S_Σ); on the selected two-branch solar profile at 1.6 R_⊙, y_tb = 2.16×10⁻⁸ gives |γ_PPN−1| = 4.32×10⁻⁸ ≪ 2.3×10⁻⁵; Paper 0 Step 80). Screening is supplied by the density-dependent minimum of the field equation (environmental operator S_Σ(E); the quartic completion satisfies the bound for μ_0 ≳ 10^10 while retaining the GNSS-scale response up to μ_0 ~ 10^11). The earlier phenomenological screening function f(ρ) = [1+(ρ/ρ_half)^n]⁻¹ is retired."
 
   - symbol: "B"
     latex: "B(\\phi)"
@@ -243,13 +243,13 @@ parameters:
   - symbol: "H0"
     latex: "H_0"
     meaning: "Hubble constant (TEP-corrected local value)"
-    value: 66.65
-    value_uncertainty: 1.58
+    value: 67.83
+    value_uncertainty: 1.56
     units: "km s^{-1} Mpc^{-1}"
     class: "calibrated"
     first_paper: 11
     used_in: [11, 26]
-    description: "TEP-corrected local Hubble constant from per-host cz/d after removing ~1 km/s/Mpc host-potential clock distortion. Consistent with the TEP CMB (66.70 ± 0.58, Paper 26) at 0.03σ. The SH0ES ladder value 73.04 is the Hubble-flow temporal shear (cosmic-web path integral), not a correction to be closed."
+    description: "TEP-corrected local Hubble constant from per-host cz/d after removing the environment-dependent host-potential clock distortion. Consistent with the TEP CMB (66.70 ± 0.58, Paper 26) at 0.68σ. The SH0ES ladder value 73.04 is the Hubble-flow temporal shear (cosmic-web path integral), not a correction to be closed."
 
   - symbol: "S8"
     latex: "S_8"
@@ -279,7 +279,7 @@ parameters:
     class: "derived"
     first_paper: 0
     used_in: [0, 4, 6, 7, 12, 13, 17, 26, 28]
-    description: "Scale entering the non-perturbative kinetic completion P(X,phi) = X - V + X|X|/Lambda_X^4, i.e. P_{,X} = 1 + 2|X|/Lambda_X^4 on the spacelike branch. Fixed by Lambda_X^4 = M_Pl^2 H_0^2, Lambda_X = sqrt(M_Pl H_0) = 1.9068 meV with H_0 = 70 km/s/Mpc the measured drift (constants.py: LAMBDA_KINETIC_MEV). Anchored to H_0, not fitted. Sets the shear threshold g_t = cH_0/(2|beta_A|) = 3.4e-10 m/s^2 and the single-body screening operator S_Sigma(g) = [1+(g/g_t)^2]^-1. Distinct from the potential-sector scale: Lambda_X governs the gradient/shear sector, not the amplitude sector. (TEP-UCD step_14 scale audit.)"
+    description: "Scale of the selected two-branch kinetic sector P(X,phi) = -V + (2k/(3 Lambda_X^2)) X|X|^(1/2) + X|X|/Lambda_X^4, with P_{,X} = k sqrt(xi) + 2 xi and xi = |X|/Lambda_X^4. The selected sector has no canonical unit term; P = X - V + X|X|/Lambda_X^4 and its 1 + 2 xi stiffness are retained as a superseded control. Lambda_X^4 = M_Pl^2 H_0^2 fixes Lambda_X = sqrt(M_Pl H_0) = 1.9068 meV at H_0 = 70 km/s/Mpc (constants.py: LAMBDA_KINETIC_MEV). The normalization k = 4 sqrt(2) g_t/a_0 is fixed by the adopted empirical acceleration a_0, not an additional fit. The inverse static stiffness is [k sqrt(xi) + 2 xi]^-1 at the solved local kinetic state; it is not itself a finite-body or pairwise source solution. Lambda_X controls the kinetic response, lambda_quartic the potential normalization, and rho_T the geometric saturation calibration; rho_T^(1/4) about 96 keV is a density marker, not a running value of Lambda_X or Lambda_V. (Paper 0 selected sector; TEP-UCD step_14 scale audit.)"
 
   - symbol: "lambda_quartic"
     latex: "\\lambda_{\\rm quartic}"

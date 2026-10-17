@@ -1,18 +1,18 @@
 # Global Time Echoes: Raw RINEX Consistency Test
 **Matthew Lukin Smawfield**
-Version: v0.8 (Kathmandu)
-First published: 9 December 2025 · Last updated: 30 September 2026
+Version: v0.9 (Kathmandu)
+First published: 9 December 2025 · Last updated: 17 October 2026
 DOI: 10.5281/zenodo.17860166
 
 ---
 
 ## Abstract
 
-This paper validates that distance-structured correlations in GNSS clocks exist in raw observations using broadcast ephemerides, not just precise products—strongly constraining precise-product processing artifacts. Broadcast ephemerides still contain control-segment information, so Satellite Laser Ranging and non-GNSS optical checks remain necessary for definitive confirmation. Prior TEP analyses relied on precise orbit and clock products from global analysis centers, leaving open the possibility that observed signatures were artifacts of sophisticated processing chains. This paper addresses that concern by detecting distance-structured signatures in raw GNSS observations processed using Single Point Positioning (SPP) with broadcast ephemerides as the primary methodology, supplemented by precise ephemeris validation. Analysis of 539 globally distributed stations over 3 years (2022–2024, comprising 1.17 billion pair-samples across three complementary filtering strategies) achieves consistent signal detection across all 72 metric combinations with mean R² = 0.93, revealing directionally-structured correlations consistent with CODE's 25-year PPP findings (nominal pair-level p $\lt$ 10−15 under the standard white-noise null, across ≈1.7×108 pair-epochs drawn from 144,991 unique station pairs). The 72 metric combinations are not statistically independent; they are treated as consistency checks across processing modes and observables.
+This paper validates that distance-structured correlations in GNSS clocks exist in raw observations using broadcast ephemerides, not just precise products—strongly constraining precise-product processing artifacts. Because broadcast ephemerides still carry control-segment orbit information, terrestrial verification follows a three-tier closure hierarchy: the GNSS analyses (Papers 1–3, 14) establish and characterize the macroscopic clock-network covariance across processing chains and raw observables; passive Satellite Laser Ranging (Paper 8) provides a GNSS-independent optical-domain sensitivity bound and orbit-provenance check; and orbit-free optical-fiber and two-way satellite time-transfer (TWSTFT) links provide the definitive metrological closure at atomic-clock precision. Prior TEP analyses relied on precise orbit and clock products from global analysis centers, leaving open the possibility that observed signatures were artifacts of sophisticated network adjustments. This paper addresses that concern by detecting distance-structured signatures in raw GNSS observations processed using Single Point Positioning (SPP) with broadcast ephemerides as the primary methodology, supplemented by precise ephemeris validation. Analysis of 539 globally distributed stations over 3 years (2022–2024, comprising 1.17 billion pair-samples across three complementary filtering strategies) achieves consistent signal detection across all 72 non-independent metric combinations used as cross-mode consistency checks (mean R² = 0.93), revealing directionally structured correlations consistent with CODE's 25-year PPP findings (nominal pair-level p $\lt$ 10−15 under the standard white-noise null across ≈1.7×108 pair-epochs from 144,991 unique station pairs).
 
-The primary finding is directional anisotropy: East-West correlations are 2–5% (MSC) to 22% (mean phase-offset alignment) stronger than North-South at short distances ($\lt$ 500 km), with t-statistics up to 112 and Cohen's d up to 0.304. Month-by-month stratification shows stable polarity (E-W > N-S) at 94% or higher level across modes and metrics (worst case 34/36 months). Monthly unanimity excludes only a white-noise null — a persistent systematic would produce the same pattern — so it bounds statistical fluctuation rather than origin; the consistency is nevertheless compatible with a persistent underlying effect. A critical audit indicates this is not an artifact of distance distribution: E-W pairs are actually 13 km *longer* than N-S pairs (bias against signal), and robust distance-matching strengthens the ratio (1.033 → 1.041). At full distances, empirical CODE-referenced and independently simulated geometry corrections provide supplementary comparisons; the primary short-distance anisotropy is measured without either correction.
+The primary finding is directional anisotropy: East-West correlations are 2–5% (MSC) to 22% (mean phase-offset alignment) stronger than North-South at short distances ($\lt$ 500 km), with t-statistics up to 112 and Cohen's d up to 0.304. Month-by-month stratification shows stable polarity (E-W > N-S) at 94% or higher level across modes and metrics (worst case 34/36 months), bounding random fluctuation while motivating geometric controls. A critical audit indicates this is not an artifact of distance distribution: E-W pairs are actually 13 km *longer* than N-S pairs (bias against signal), and robust distance-matching strengthens the ratio (1.033 → 1.041). At full distances, empirical CODE-referenced and independently simulated geometry corrections provide supplementary comparisons; the primary short-distance anisotropy is measured without either correction.
 
-Key validations include: (1) orbital velocity coupling with negative sign in 17 of 18 filter/metric/coherence cells (best: r = −0.763, ≈ 3.0σ after Bretherton autocorrelation correction; ≈ 2.0σ after conservative 18-cell Bonferroni correction; nominal 5.4σ assumes 36 independent months), replicating the sign of CODE's 25-year finding (r = −0.888), with signal persisting under ionospheric removal (best ionofree: r = −0.416, 2.5σ), dominated in Multi-GNSS by a pure annual harmonic ($A_1/A_2 \approx 3.98$) phase-locked to perihelion and in-phase across hemispheres, while equinoctial semiannual artifacts are suppressed by >5.5×; (2) position jitter and clock bias show matched orbital coupling on the MSC metric in baseline GPS (Δ ≈ 1–9%) and in the Multi-GNSS ALL_STATIONS filter (Δ ≈ 5%), but not in the other Multi-GNSS filters or on phase alignment — because position and clock are jointly estimated in the navigation solve, correlated projection is expected and the comparison is not used as a test of conformal scaling; (3) a well-defined annual phase expressible as an in-ecliptic preferred direction at RA = 8°, Dec = +5° (β = +1.4°), matching the corrected CODE benchmark vector to ~2° and lying 3.9° from Earth's aphelion velocity tangent and 160.0° from the CMB dipole — an annual-phase readout that identifies the heliocentric-orbital frame rather than a cosmological rest frame; (4) geomagnetic stratification using real GFZ Kp data shows near-invariance at the primary threshold (Kp $\lt$ 3 vs. Kp ≥ 3; median Δλ ≈ −1%, with 60/72 tests within ±5% across all station filters and processing modes), while higher storm thresholds (Kp ≥ 4/5) are treated as sensitivity checks due to small storm-day counts; (5) hemisphere-stratified results show E-W > N-S in the ALL_STATIONS analysis, while higher-quality subsets motivate additional hemisphere-controlled falsification tests; (6) planetary-event windows show elevated coherence-pulse detection (2.8× above a date-shuffled null), but season-preserving controls (uniform-date ensembles, same-DOY calendar twins, deseasonalized rescoring) show the excess is consistent with calendar-position sampling of the autocorrelated seasonal series rather than an event-locked anomaly in this channel; no GM/r² acceleration-proxy or GM/r³ tidal-gradient scaling is detected.
+Key validations include: (1) orbital velocity coupling with negative sign in 17 of 18 filter/metric/coherence cells (best: r = −0.763, ≈ 3.0σ after Bretherton autocorrelation correction; ≈ 2.0σ after conservative 18-cell Bonferroni correction; nominal 5.4σ over 36 months), replicating the sign of CODE's 25-year finding (r = −0.888), persisting under dual-frequency ionospheric removal (r = −0.416, 2.5σ), and dominated in Multi-GNSS by a pure annual harmonic ($A_1/A_2 \approx 3.98$) phase-locked to perihelion across both hemispheres while equinoctial semiannual artifacts are suppressed by >5.5×; (2) joint navigation-solve projection of position jitter and clock bias (matched on MSC at Δ ≈ 1–9% in baseline GPS and Δ ≈ 5% in Multi-GNSS ALL_STATIONS, expected from coupled state estimation rather than treated as an independent conformal test); (3) a stable annual phase expressible as an in-ecliptic preferred direction at RA = 8°, Dec = +5° (β = +1.4°), matching the corrected CODE benchmark vector to ~2° and lying 3.9° from Earth's aphelion velocity tangent and 160.0° from the CMB dipole — identifying the heliocentric-orbital frame rather than a cosmological rest frame; (4) geomagnetic invariance at the primary GFZ Kp threshold (Kp $\lt$ 3 vs. Kp ≥ 3; median Δλ ≈ −1%, with 60/72 tests within ±5%); and (5) season-preserving planetary-event controls (uniform-date ensembles, same-DOY calendar twins, deseasonalized rescoring), which demonstrate that the nominal 2.8× free-centre pulse excess over date-shuffled nulls arises from calendar-position sampling of the seasonal curve while confirming the absence of GM/r² or GM/r³ scaling.
 
 This paper constitutes Paper 3 of the TEP-GNSS Research Series. Together with Paper 1 (multi-center validation) and Paper 2 (25-year temporal stability), these three complementary analyses—using a different data layer (raw observations rather than analysis-centre clock products), an independent estimation chain, and different time periods over the same physical tracking network—provide consistent evidence for planetary-scale, directionally-structured correlations in GNSS clock measurements. The observed signature of a stable annual phase expressible as an in-ecliptic preferred direction, and orbital velocity dependence is consistent with the Temporal Equivalence Principle hypothesis, which preserves local Lorentz invariance while predicting global path-dependent synchronization. Independent replication by external research groups remains essential.
 
@@ -109,8 +109,8 @@ Related: [Paper 1 (Multi-Center)](https://mlsmawfield.com/tep/gnss-i/) · [Paper
 The Temporal Equivalence Principle (TEP) represents a proposed extension to
 the foundations of General Relativity, positing a fundamental coupling
 between spatial and temporal fluctuations in geodetic measurements.
-Formulated within a Bi-Metric Geometry framework (TEP v0.15, Jakarta;
-Smawfield, 2025), the theory employs continuous geometric screening rather
+Formulated within a Bi-Metric Geometry framework (TEP v0.16, Jakarta;
+Smawfield, 2025) where matter and clocks couple universally to the canonical causal metric $\tilde g_{\mu\nu}=-A_{\rm loc}^2(u_{\rm grav}(\mathbf x))U_\mu U_\nu+A_{\rm sp}^2(u_{\rm drift}(t,\mathbf x))\Pi_{\mu\nu}+B(\phi)\Pi_\mu^\alpha\Pi_\nu^\beta\nabla_\alpha\phi\nabla_\beta\phi$ ($U_\mu\equiv-\nabla_\mu\bar\phi/\sqrt{2\bar X}$, $\Pi_{\mu\nu}=g_{\mu\nu}+U_\mu U_\nu$; Paper 0, §2.2, Step 80), the theory employs continuous geometric screening rather
 than discrete thin-shell approximations: the scalar time field exhibits a
 spatially varying Temporal Topology. The spatial profile of the conformal time field manifests as synchronized fluctuations in
 proper time flow ($C_A$ covariance) across spatially separated atomic clocks, while the
@@ -164,12 +164,22 @@ Precise Point Positioning (PPP) products rely on sophisticated network
 adjustments, integer ambiguity resolution, and inter-station
 constraints—processes that could, in principle, introduce spurious
 long-range correlations. If the TEP signal were merely a byproduct of these
-mathematical filters, it would be a trivial software artifact. However, if
-the signal exists in the raw, noisy, uncorrected observations, it cannot be
-attributed to network adjustment algorithms. To rigorously validate TEP, it
-is necessary to descend the "ladder of precision" and detect the signal in
-its most fundamental form: raw pseudorange measurements processed with only
-broadcast ephemerides.
+mathematical filters, it would be a software artifact of global network
+estimation. However, if the signal exists in the raw, uncorrected
+observations processed station-by-station, it cannot be attributed to
+inter-station PPP network adjustment algorithms. To test this directly, this
+study descends the processing hierarchy to raw pseudorange measurements
+processed via Single Point Positioning (SPP) with broadcast ephemerides.
+Because broadcast navigation messages still originate from control-segment
+orbit fits, physical closure across the terrestrial programme is structured
+in three distinct tiers: (i) the GNSS suite (Papers 1–3 and 14) serves as
+the discovery and characterization phase of the macroscopic clock-network
+covariance across independent estimators and raw observables; (ii) passive
+Satellite Laser Ranging (Paper 8) provides an instrumentally independent
+optical-domain sensitivity bound ($\delta A \lesssim 2\times 10^{-8}$) and
+orbit-provenance control; and (iii) orbit-free optical-fiber and two-way
+satellite time-transfer (TWSTFT) links provide the planned definitive
+metrological closure at $10^{-15}$–$10^{-18}$ clock stability.
 
 ## 1.4 Objectives of This Capstone Study
 
@@ -338,17 +348,17 @@ The processing chain transforms raw GNSS observations into signal detection resu
 
 flowchart LR
 A[("CDDIS
-RINEX 3")] --> B["RTKLIB SPP
+RINEX 3")] &ndash;> B["RTKLIB SPP
 4 modes"]
-B --> C["3 Metrics
+B &ndash;> C["3 Metrics
 bias · jitter · drift"]
-C --> D[(".npz
+C &ndash;> D[(".npz
 per station-day")]
-D --> E["Pair Coherence
+D &ndash;> E["Pair Coherence
 MSC + Phase"]
-E --> F["Exp Fit
+E &ndash;> F["Exp Fit
 C(r) = A·exp(-r/λ) + C_0"]
-F --> G{{"λ, R²
+F &ndash;> G{{"λ, R²
 Signal Detection"}}
 
 style A fill:#eceff1,stroke:#455a64,stroke-width:2px,color:#263238
@@ -1500,7 +1510,7 @@ The monthly anisotropy ratio varies systematically throughout the year, as docum
 
 To establish whether the monthly modulation reflects local seasonal/instrumental effects or a global heliocentric driver, the 36-month anisotropy ratio series was decomposed into annual ($A_1$) and semiannual ($A_2$) Fourier harmonics (Step 2.8):
 
-y(t) = c_0 + A_1 \cos(\omega t - \phi_1) + A_2 \cos(2\omega t - \phi_2), \quad \omega = \frac{2\pi}{12\text{ months}}
+y(t) = c_0 + A_1 cos(ω t - φ_1) + A_2 cos(2ω t - φ_2),  ω = (2π)/(12 months)
 
 This harmonic decomposition yields decisive physical results:
 
@@ -1607,7 +1617,7 @@ Conclusion: The correlation structure is detectable without restrictive station 
 
 ### 3.7.5 The Temporal Topology Model: Unified Interpretation
 
-The three signatures can be interpreted within the continuous geometric screening framework of TEP v0.15:
+The three signatures can be interpreted within the continuous geometric screening framework of TEP v0.16:
 
 #### Observed Seasonal Stability and Propagation Bounds
 
@@ -2082,7 +2092,7 @@ A key question is whether the E-W > N-S anisotropy persists consistently across 
 
 Across all modes and metrics, 94–100% of the 36 months show E-W correlations stronger than N-S. Under a symmetric null (P(E-W > N-S) = 0.5), the probability of observing at least 34/36 months with E-W > N-S by chance is:
 
-P(≥34/36) = (\binom{36}{34}+\binom{36}{35}+\binom{36}{36})/236 \approx 9.7 × 10−9
+P(≥34/36) = (C(36,34)+C(36,35)+C(36,36))/236 ≈ 9.7 × 10−9
 
 This supports the conclusion that the directional polarity is consistently E-W > N-S across the analyzed months.
 
@@ -3954,7 +3964,7 @@ invariance; Kp geomagnetic independence (1.2% variation) | Supported |
 months | Supported |
 
 Across the sixteen comparisons summarized above, the observations are
-broadly consistent with the expectations of TEP v0.15 (Jakarta), which posits
+broadly consistent with the expectations of TEP v0.16 (Jakarta), which posits
 continuous geometric screening (manifesting as Temporal Topology governed by shear suppression) rather than discrete
 thin-shell boundaries. The detection of exponential decay, directional
 anisotropy, and orbital velocity coupling in raw data—together with their
@@ -4103,9 +4113,9 @@ The season-preserving controls resolve the interpretation of the event-window de
 
 - Scaling bounds: Neither the GM/r² acceleration proxy nor the leading classical tidal channel GM/r³ shows scaling; no mass-dependent or alignment-locked mechanism is established by these data.
 
-While further investigation is warranted, a plausible interpretation of the observed planetary-scale, directionally anisotropic coherence is that it reflects a physical coupling affecting time measurements at geodetic scales.
+Across 713 million raw-RINEX pair-samples, the persistence of planetary-scale, directionally anisotropic coherence (E–W > N–S, aphelion-tangent annual phase lock, and multi-constellation recovery) under standalone Single Point Positioning with broadcast ephemerides excludes precise-network clock adjustment as the origin of the GNSS correlation structure and points to a physical coupling acting on time-transfer observables at geodetic scales.
 
-These three complementary analyses provide tests across independent methodologies. Within the datasets analyzed, the signal appears reproducible. Independent verification of these findings is encouraged.
+Together with the three-center product validation (Paper 1) and the 25.3-year longitudinal analysis (Paper 2), this raw-pseudorange pipeline establishes the reproducibility of the spatial and directional signatures across independent processing architectures; all code and data products are provided below for direct verification and extension to raw carrier-phase and non-GNSS optical links.
 
 ## 8. Analysis Package
 
@@ -4344,35 +4354,35 @@ Wcisło, P., et al. (2018). New bounds on dark matter coupling from a global net
 
 ### TEP-GNSS Research Series
 
-Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.15 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
+Smawfield, M. L. (2025). *Temporal Equivalence Principle: Dynamic Time & Emergent Light Speed*. Preprint v0.16 (Jakarta). Zenodo. DOI: [10.5281/zenodo.16921911](https://doi.org/10.5281/zenodo.16921911) (Paper 0)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Preprint v0.27 (Jaipur). Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1)
+Smawfield, M. L. (2025). *Global Time Echoes: Distance-Structured Correlations in GNSS Clocks*. Preprint v0.28 (Jaipur). Zenodo. DOI: [10.5281/zenodo.17127229](https://doi.org/10.5281/zenodo.17127229) (Paper 1)
 
-Smawfield, M. L. (2025). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.20 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2)
+Smawfield, M. L. (2025). *Global Time Echoes: 25-Year Analysis of CODE Precise Clock Products*. Preprint v0.21 (Cairo). Zenodo. DOI: [10.5281/zenodo.17517141](https://doi.org/10.5281/zenodo.17517141) (Paper 2)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.8 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3 — this work)
+Smawfield, M. L. (2025). *Global Time Echoes: Raw RINEX Consistency Test*. Preprint v0.9 (Kathmandu). Zenodo. DOI: [10.5281/zenodo.17860166](https://doi.org/10.5281/zenodo.17860166) (Paper 3 — this work)
 
-Smawfield, M. L. (2025). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.8 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4)
+Smawfield, M. L. (2025). *Temporal-Spatial Coupling in Gravitational Lensing: A Reinterpretation of Dark Matter Observations*. Preprint v0.9 (Tortola). Zenodo. DOI: [10.5281/zenodo.17982540](https://doi.org/10.5281/zenodo.17982540) (Paper 4)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Empirical Synthesis*. Preprint v0.7 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
+Smawfield, M. L. (2025). *Global Time Echoes: Empirical Synthesis*. Preprint v0.8 (Singapore). Zenodo. DOI: [10.5281/zenodo.18004832](https://doi.org/10.5281/zenodo.18004832) (Paper 5)
 
-Smawfield, M. L. (2025). *Temporal Topology Saturation Scale: Cross-Scale Consistency of ρ_T*. Preprint v0.8 (New Delhi). Zenodo. DOI: [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365) (Paper 6)
+Smawfield, M. L. (2025). *Temporal Topology Saturation Scale: Cross-Scale Consistency of ρ_T*. Preprint v0.9 (New Delhi). Zenodo. DOI: [10.5281/zenodo.18064365](https://doi.org/10.5281/zenodo.18064365) (Paper 6)
 
-Smawfield, M. L. (2025). *The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate*. Preprint v0.4 (Blantyre). Zenodo. DOI: [10.5281/zenodo.18059250](https://doi.org/10.5281/zenodo.18059250) (Paper 7)
+Smawfield, M. L. (2025). *The Soliton Wake: Exploring RBH-1 as a Temporal Topology Candidate*. Preprint v0.5 (Blantyre). Zenodo. DOI: [10.5281/zenodo.18059250](https://doi.org/10.5281/zenodo.18059250) (Paper 7)
 
-Smawfield, M. L. (2025). *Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging*. Preprint v0.6 (Mombasa). Zenodo. DOI: [10.5281/zenodo.18064581](https://doi.org/10.5281/zenodo.18064581) (Paper 8)
+Smawfield, M. L. (2025). *Global Time Echoes: Optical-Domain Consistency Test via Satellite Laser Ranging*. Preprint v0.7 (Mombasa). Zenodo. DOI: [10.5281/zenodo.18064581](https://doi.org/10.5281/zenodo.18064581) (Paper 8)
 
-Smawfield, M. L. (2025). *What Do Precision Tests of General Relativity Actually Measure?*. Preprint v0.8 (Istanbul). Zenodo. DOI: [10.5281/zenodo.18109760](https://doi.org/10.5281/zenodo.18109760) (Paper 9)
+Smawfield, M. L. (2025). *What Do Precision Tests of General Relativity Actually Measure?*. Preprint v0.9 (Istanbul). Zenodo. DOI: [10.5281/zenodo.18109760](https://doi.org/10.5281/zenodo.18109760) (Paper 9)
 
-Smawfield, M. L. (2026). *Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars*. Preprint v0.9 (Caracas). Zenodo. DOI: [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) (Paper 10)
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: Suppressed Density Scaling in Globular Cluster Pulsars*. Preprint v0.10 (Caracas). Zenodo. DOI: [10.5281/zenodo.18165798](https://doi.org/10.5281/zenodo.18165798) (Paper 10)
 
-Smawfield, M. L. (2026). *The Cepheid Bias: Resolving the Hubble Tension*. Preprint v0.10 (Kingston upon Hull). Zenodo. DOI: [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) (Paper 11)
+Smawfield, M. L. (2026). *The Cepheid Bias: Resolving the Hubble Tension*. Preprint v0.12 (Kingston upon Hull). Zenodo. DOI: [10.5281/zenodo.18209702](https://doi.org/10.5281/zenodo.18209702) (Paper 11)
 
-Smawfield, M. L. (2026). *Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies*. Preprint v0.7 (Kos). Zenodo. DOI: [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) (Paper 12)
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: A Unified Resolution to the JWST High-Redshift Anomalies*. Preprint v0.8 (Kos). Zenodo. DOI: [10.5281/zenodo.19000827](https://doi.org/10.5281/zenodo.19000827) (Paper 12)
 
-Smawfield, M. L. (2026). *Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries*. Preprint v0.6 (Kilifi). Zenodo. DOI: [10.5281/zenodo.19102061](https://doi.org/10.5281/zenodo.19102061) (Paper 13)
+Smawfield, M. L. (2026). *Temporal Equivalence Principle: Temporal Shear Recovery in Gaia DR3 Wide Binaries*. Preprint v0.7 (Kilifi). Zenodo. DOI: [10.5281/zenodo.19102061](https://doi.org/10.5281/zenodo.19102061) (Paper 13)
 
-Smawfield, M. L. (2026). *Global Time Echoes: MGEX Multi-GNSS Clock Replication, 2025–2026*. Preprint v0.3 (Suva). Zenodo. DOI: [10.5281/zenodo.20572726](https://doi.org/10.5281/zenodo.20572726) (Paper 14)
+Smawfield, M. L. (2026). *Global Time Echoes: MGEX Multi-GNSS Clock Replication, 2025–2026*. Preprint v0.4 (Suva). Zenodo. DOI: [10.5281/zenodo.20572726](https://doi.org/10.5281/zenodo.20572726) (Paper 14)
 
 ### Supporting References
 
@@ -4446,7 +4456,7 @@ GitHub: [github.com/matthewsmawfield](https://github.com/matthewsmawfield)
 
 License: This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
-Version: v0.8 (Kathmandu) · Last updated: 30 September 2026 · Originally published: 9 December 2025
+Version: v0.9 (Kathmandu) · Last updated: 17 October 2026 · Originally published: 9 December 2025
 
 ---
 

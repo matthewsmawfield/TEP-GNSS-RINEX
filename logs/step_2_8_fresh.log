@@ -1,0 +1,30 @@
+=== Hemisphere Phase Test ===
+clock_bias/msc: N amp=0.241 ph=166deg | S amp=0.337 ph=114deg | dphi=+52deg corr=+0.23 IN-PHASE
+clock_bias/phase_alignment: N amp=0.074 ph=180deg | S amp=0.199 ph=261deg | dphi=-81deg corr=-0.15 IN-PHASE
+pos_jitter/msc: N amp=0.255 ph=161deg | S amp=0.236 ph=175deg | dphi=-14deg corr=+0.25 IN-PHASE
+pos_jitter/phase_alignment: N amp=0.120 ph=159deg | S amp=0.324 ph=151deg | dphi=+9deg corr=+0.13 IN-PHASE
+
+=== Harmonic Decomposition (Annual vs Semiannual) ===
+ALL_STATIONS_multi_gnss_pos_jitter_phase_alignment:
+  A1=0.159, A2=0.040, A1/A2=3.98, R2_ann=0.61, R2_full=0.65
+  Trough DOY=344.3 (offset Perihelion: +24.9d, offset Solstice: +10.7d)
+  Semiannual peaks: DOY 45.7, 228.3 (Vernal d=34.3d, Autumn d=36.7d)
+DYNAMIC_50_multi_gnss_pos_jitter_phase_alignment:
+  A1=0.161, A2=0.041, A1/A2=3.96, R2_ann=0.55, R2_full=0.59
+  Trough DOY=346.8 (offset Perihelion: +22.4d, offset Solstice: +8.2d)
+  Semiannual peaks: DOY 41.4, 224.0 (Vernal d=38.6d, Autumn d=41.0d)
+DYNAMIC_50_multi_gnss_clock_bias_msc:
+  A1=0.197, A2=0.297, A1/A2=0.66, R2_ann=0.16, R2_full=0.53
+  Trough DOY=338.1 (offset Perihelion: +31.2d, offset Solstice: +16.9d)
+  Semiannual peaks: DOY 86.4, 269.0 (Vernal d=6.4d, Autumn d=4.0d)
+DYNAMIC_50_baseline_clock_bias_msc:
+  A1=0.122, A2=0.226, A1/A2=0.54, R2_ann=0.15, R2_full=0.69
+  Trough DOY=356.2 (offset Perihelion: +13.1d, offset Solstice: -1.2d)
+  Semiannual peaks: DOY 78.7, 261.4 (Vernal d=1.3d, Autumn d=3.6d)
+DYNAMIC_50_ionofree_clock_bias_msc:
+  A1=0.160, A2=0.203, A1/A2=0.79, R2_ann=0.14, R2_full=0.36
+  Trough DOY=315.1 (offset Perihelion: +54.1d, offset Solstice: +39.9d)
+  Semiannual peaks: DOY 85.0, 267.6 (Vernal d=5.0d, Autumn d=2.6d)
+
+4/4 channels have full-sample annual phase differences below 90 degrees; the Multi-GNSS position-phase series has a strong annual component, while clock MSC retains semiannual power. These are descriptive full-sample results, not a source identification: shared seasonal and processing effects can remain in phase across hemispheres. The separately reported fixed 2022 orbital-speed regression must pass the 2023 and 2024 constant, calendar-twin and phase-shift controls before predictive orbital support is claimed.
+wrote /Users/matthewsmawfield/www/Temporal Equivalence Principle/TEP-GNSS-RINEX/results/outputs/step_2_8_hemisphere_phase_test.json

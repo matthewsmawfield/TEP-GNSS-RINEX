@@ -3,10 +3,12 @@
 TEP Scalar Field
 ================
 
-Version: TEP v0.15 (Jakarta)
+Version: TEP v0.16 (Jakarta)
 
-Canonical scalar-sector implementation (Paper 0, master-action closure;
-verified by scripts/steps/step_27, step_30, step_50 and tep_model.py).
+Shared scalar-sector implementations. The original screening/profile APIs
+retain the unit-term kinetic benchmark used by steps 27/30/50; they are
+not the selected two-branch low-gradient sector. screening_y_two_branch
+implements the selected isolated spherical flux law of step 57 explicitly.
 
 All field values are dimensionless u = phi/M_Pl (reduced Planck
 convention).  The scalar sector is:
@@ -17,7 +19,8 @@ convention).  The scalar sector is:
     quartic V = lambda u^4 / 4 with matter-sourced equilibrium
         lambda u^3 e^u = rho / M_Pl^4
     (quartic approximation u_min ~ (rho/(lambda M_Pl^4))^{1/3}).
-  * Kinetic: P(X, phi) = X - V + X|X|/Lambda^4, Lambda^4 = M_Pl^2 H0^2,
+  * Unit-term kinetic benchmark (original APIs):
+    P(X, phi) = X - V + X|X|/Lambda^4, Lambda^4 = M_Pl^2 H0^2,
     giving the screening operators
         S_Sigma(g) = [1 + (g/g_t)^2]^-1 ,  g_t = c H0 / (2 |beta_A|)
         S_eff(s)   = [1 + (R_s/s)^4]^-1 ,  R_s = sqrt(G M / g_t)
@@ -57,7 +60,7 @@ RHO_T = tep_const.RHO_T
 # ============================================================================
 
 def screening_y(g, g_t=None):
-    """Flux-conserving screening factor: real root of y(1+y^2(g/g_t)^2)=1.
+    """Unit-term benchmark: real root of y(1+y^2(g/g_t)^2)=1.
 
     Cardano solution of the depressed cubic y^3 + y/q^2 - 1/q^2 = 0 with
     q = g/g_t.  At g >> g_t, y ~ q^{-2/3} (strong suppression); at
@@ -76,6 +79,38 @@ def screening_y(g, g_t=None):
     s = np.sqrt(np.maximum(disc, 0.0))
     y[~small] = np.cbrt(0.5 / q + s) + np.cbrt(0.5 / q - s)
     return y
+
+
+def screening_y_two_branch(g, g_t=None, k=None):
+    """Selected isolated spherical flux response y=phi'/phi'_linear.
+
+    For beta_A=-1 and negligible potential/external gradient, the action
+    invariant is xi=0.5*(g_Newton*y/g_t)^2, NOT the unsolved g proxy.
+    Flux conservation gives (k/sqrt(2))*q*y^2 + q^2*y^3 = 1,
+    q=g_Newton/g_t. This is Paper 0 step 57's selected branch.
+    The coefficient k is derived from the adopted a0=1.2e-10 m/s^2.
+    This does not solve the embedded, time-dependent solar configuration.
+    At g=0 the response ratio is undefined; no regulator is supplied here.
+    """
+    if g_t is None:
+        g_t = tep_const.G_T_TRANSITION
+    if k is None:
+        k = 4 * np.sqrt(2.0) * abs(tep_const.BETA_A) * g_t / 1.2e-10
+    values = np.asarray(g, dtype=float)
+    if not (np.isfinite(g_t) and g_t > 0 and np.isfinite(k) and k > 0):
+        raise ValueError('Positive finite kinetic scales required')
+    if np.any(~np.isfinite(values)) or np.any(values <= 0):
+        raise ValueError('Positive finite Newtonian acceleration required; zero-source ratio is undefined')
+    output = np.empty_like(values)
+    for index in np.ndindex(values.shape):
+        log_q = np.log(values[index]) - np.log(g_t)
+        log_coefficient = np.log(k / np.sqrt(2.0)) + log_q
+        # Log-domain residual avoids loss of precision in Cardano subtraction
+        # and resolves both the galactic tail and high-gradient solar branch.
+        root = brentq(lambda t: np.logaddexp(log_coefficient + 2*t,
+                                            2*log_q + 3*t), -800., 800., xtol=1e-13)
+        output[index] = np.exp(root)
+    return output
 
 
 def S_sigma(g, g_t=None):

@@ -204,7 +204,7 @@ class HTMLToMarkdownConverter {
         const version = versionMatch ? versionMatch[1]
             .replace(/<[^>]+>/g, '')
             .replace(/^Version:\s*/i, '')
-            .trim() : 'v0.8 (Kathmandu)';
+            .trim() : 'v0.9 (Kathmandu)';
         
         const dateMatch = html.match(/<div[^>]*class=["'][^"']*date[^"']*["'][^>]*>(.*?)<\/div>/i);
         const date = dateMatch ? dateMatch[1].replace(/<[^>]+>/g, '').trim() : 'First published: 29 November 2025';
@@ -287,11 +287,11 @@ class HTMLToMarkdownConverter {
                 }
             }
             
-            // Build output filename: 3-TEP-GNSS-RINEX-v{version}-{codename}.md
+            // Build output filename: B3-TEP-GNSS-RINEX-v{version}-{codename}.md
             // Extract version number (e.g., "0.4" from "v0.4 (Kathmandu)")
             const versionMatch = versionStr.match(/v?([0-9]+\.[0-9]+)/);
             const cleanVersion = versionMatch ? versionMatch[1] : versionStr.replace(/^v/, '').split(' ')[0];
-            const outputFilename = `3-TEP-GNSS-RINEX-v${cleanVersion}-${codename}.md`;
+            const outputFilename = `B3-TEP-GNSS-RINEX-v${cleanVersion}-${codename}.md`;
             const outputPath = path.join(__dirname, '..', outputFilename);
             fs.writeFileSync(outputPath, markdown, 'utf8');
 

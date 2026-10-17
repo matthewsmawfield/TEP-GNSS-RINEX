@@ -543,7 +543,7 @@
     "days": "15th of every month in 2022\u20132024",
     "processing": "baseline SPP clock_bias_ns, unchanged step_2_0 phase-alignment estimator",
     "field_kernel_source": "../TEP/results/step_04_gamma_derivation.json",
-    "field_kernel_sha256": "392da8aec4b7217559b18555a694b365c8b9c144fa892cb47b8bebbf69275ee6",
+    "field_kernel_sha256": "d6c0f18d0895567d17ea101454919b9d9e06e3a910a796ee7dbec8256ed96fb6",
     "training_2022": {
       "n_bins": 7,
       "n_pair_days": 3364,
@@ -557,30 +557,30 @@
         8700.78179047902,
         11405.09170078739
       ],
-      "offset": 0.009297180583587842,
-      "amplitude": 0.14140056165134085,
+      "offset": 0.00929718057361049,
+      "amplitude": 0.14140056165814383,
       "generic_exponential_fitted_length_km": 917.452271239758
     },
     "source_family_training_2022": {
       "volume_white": {
-        "offset": 0.009297180583587842,
-        "amplitude": 0.14140056165134085,
-        "training_rmse": 0.05567439972036699
+        "offset": 0.00929718057361049,
+        "amplitude": 0.14140056165814383,
+        "training_rmse": 0.05567439972442138
       },
       "core_only": {
-        "offset": 0.010344175382061529,
-        "amplitude": 0.09902283447447696,
-        "training_rmse": 0.05908469957382023
+        "offset": 0.010344175387751432,
+        "amplitude": 0.09902283418150883,
+        "training_rmse": 0.05908469962569673
       },
       "mantle_only": {
-        "offset": 0.009322824952503899,
-        "amplitude": 0.14583365648616678,
-        "training_rmse": 0.0553207266663673
+        "offset": 0.009322824944302331,
+        "amplitude": 0.14583365643245255,
+        "training_rmse": 0.05532072667260615
       },
       "surface_concentrated": {
-        "offset": 0.009290091088199413,
-        "amplitude": 0.1712832945198106,
-        "training_rmse": 0.05441204395043097
+        "offset": 0.00929009108031558,
+        "amplitude": 0.17128329461150008,
+        "training_rmse": 0.05441204394299531
       }
     },
     "angular_source_identifiability": {
@@ -594,64 +594,64 @@
       "2023": {
         "n_bins": 7,
         "month_delete_improvement_linear_minus_kinetic": [
-          0.003451420003189848,
-          0.0038199298110604962,
-          0.0034524295328977744,
-          0.003678749149304106,
-          0.0037231433791398427,
-          0.0033017942300833936,
-          0.0033362814958584758,
-          0.00364411276702567,
-          0.003538159881887104,
-          0.0040434576266860645,
-          0.003708048761930677,
-          0.0036279501432753825
+          0.0034514199986997174,
+          0.003819929806009606,
+          0.00345242952823456,
+          0.0036787491445677695,
+          0.003723143374169874,
+          0.003301794225760893,
+          0.0033362814916700068,
+          0.003644112762263896,
+          0.003538159877367386,
+          0.004043457621292129,
+          0.0037080487572195148,
+          0.003627950138541766
         ],
         "n_pair_days": 3145,
         "n_sample_days": 12,
-        "rmse_kinetic_shape": 0.10191547215628607,
+        "rmse_kinetic_shape": 0.10191547216100659,
         "source_family_rmse": {
-          "volume_white": 0.10191547215628607,
-          "core_only": 0.10634934254786796,
-          "mantle_only": 0.10145031377227723,
-          "surface_concentrated": 0.10022585906051881
+          "volume_white": 0.10191547216100659,
+          "core_only": 0.10634934261236487,
+          "mantle_only": 0.10145031378007482,
+          "surface_concentrated": 0.10022585905003446
         },
         "rmse_constant": 0.11886838920274843,
         "rmse_linear_distance": 0.10553573502801779,
         "rmse_fixed_4200km_exponential": 0.09412217793310342,
         "rmse_train_fitted_exponential": 0.07556505009008077,
-        "fitted_on_2022_amplitude": 0.14140056165134085
+        "fitted_on_2022_amplitude": 0.14140056165814383
       },
       "2024": {
         "n_bins": 7,
         "month_delete_improvement_linear_minus_kinetic": [
-          0.0032788640182316448,
-          0.0031979178942692366,
-          0.004010585590058999,
-          0.0031946291388350867,
-          0.0031981367764891133,
-          0.0030472853913074416,
-          0.003135836970615688,
-          0.003131275603537917,
-          0.004058530540184624,
-          0.003415680635125068,
-          0.0030616049540733437,
-          0.003076989140661998
+          0.003278864013914612,
+          0.0031979178903364103,
+          0.0040105855848667216,
+          0.00319462913494728,
+          0.0031981367723072085,
+          0.003047285387677706,
+          0.0031358369667149333,
+          0.0031312755996194402,
+          0.004058530535023072,
+          0.003415680630940429,
+          0.003061604950373095,
+          0.0030769891370351077
         ],
         "n_pair_days": 3524,
         "n_sample_days": 12,
-        "rmse_kinetic_shape": 0.092949571572636,
+        "rmse_kinetic_shape": 0.09294957157679187,
         "source_family_rmse": {
-          "volume_white": 0.092949571572636,
-          "core_only": 0.09703762395045828,
-          "mantle_only": 0.09254207648328995,
-          "surface_concentrated": 0.09147408776966637
+          "volume_white": 0.09294957157679187,
+          "core_only": 0.09703762401274266,
+          "mantle_only": 0.09254207649010954,
+          "surface_concentrated": 0.0914740877606822
         },
         "rmse_constant": 0.11445081856750669,
         "rmse_linear_distance": 0.09628567190189609,
         "rmse_fixed_4200km_exponential": 0.0866232708043358,
         "rmse_train_fitted_exponential": 0.07535250931708487,
-        "fitted_on_2022_amplitude": 0.14140056165134085
+        "fitted_on_2022_amplitude": 0.14140056165814383
       }
     },
     "exploratory_controls": "The four radial source families were declared in TEP step_04; each offset and amplitude is trained only on 2022. Generic exponential length is trained only on 2022; fixed 4200 km is an existing GNSS calibration, not independent physical input.",

@@ -189,12 +189,12 @@ for each RINEX file:
 
 <div class="mermaid" style="text-align: center;">
 flowchart LR
-    A[("CDDIS<br/>RINEX 3")] --> B["RTKLIB SPP<br/>4 modes"]
-    B --> C["3 Metrics<br/>bias · jitter · drift"]
-    C --> D[(".npz<br/>per station-day")]
-    D --> E["Pair Coherence<br/>MSC + Phase"]
-    E --> F["Exp Fit<br/>C(r) = A·exp(-r/λ) + C_0"]
-    F --> G{{"λ, R²<br/>Signal Detection"}}
+    A[("CDDIS<br/>RINEX 3")] &ndash;> B["RTKLIB SPP<br/>4 modes"]
+    B &ndash;> C["3 Metrics<br/>bias · jitter · drift"]
+    C &ndash;> D[(".npz<br/>per station-day")]
+    D &ndash;> E["Pair Coherence<br/>MSC + Phase"]
+    E &ndash;> F["Exp Fit<br/>C(r) = A·exp(-r/λ) + C_0"]
+    F &ndash;> G{{"λ, R²<br/>Signal Detection"}}
     
     style A fill:#eceff1,stroke:#455a64,stroke-width:2px,color:#263238
     style B fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1

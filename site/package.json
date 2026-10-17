@@ -1,8 +1,8 @@
 {
   "name": "tep-gnss-rinex-site",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Global Time Echoes: Raw RINEX Consistency Test",
-  "_comment": "Package version matches manuscript version v0.8 (Kathmandu)",
+  "_comment": "Package version matches manuscript version v0.9 (Kathmandu)",
   "main": "index.html",
   "scripts": {
     "dev": "node dev-server.js",

@@ -6,8 +6,8 @@
     The Temporal Equivalence Principle (TEP) represents a proposed extension to
     the foundations of General Relativity, positing a fundamental coupling
     between spatial and temporal fluctuations in geodetic measurements.
-    Formulated within a Bi-Metric Geometry framework (TEP v0.15, Jakarta;
-    Smawfield, 2025), the theory employs continuous geometric screening rather
+    Formulated within a Bi-Metric Geometry framework (TEP v0.16, Jakarta;
+    Smawfield, 2025) where matter and clocks couple universally to the canonical causal metric $\tilde g_{\mu\nu}=-A_{\rm loc}^2(u_{\rm grav}(\mathbf x))U_\mu U_\nu+A_{\rm sp}^2(u_{\rm drift}(t,\mathbf x))\Pi_{\mu\nu}+B(\phi)\Pi_\mu^\alpha\Pi_\nu^\beta\nabla_\alpha\phi\nabla_\beta\phi$ ($U_\mu\equiv-\nabla_\mu\bar\phi/\sqrt{2\bar X}$, $\Pi_{\mu\nu}=g_{\mu\nu}+U_\mu U_\nu$; Paper 0, §2.2, Step 80), the theory employs continuous geometric screening rather
     than discrete thin-shell approximations: the scalar time field exhibits a
     spatially varying Temporal Topology. The spatial profile of the conformal time field manifests as synchronized fluctuations in
     proper time flow ($C_A$ covariance) across spatially separated atomic clocks, while the
@@ -80,12 +80,22 @@
     adjustments, integer ambiguity resolution, and inter-station
     constraints—processes that could, in principle, introduce spurious
     long-range correlations. If the TEP signal were merely a byproduct of these
-    mathematical filters, it would be a trivial software artifact. However, if
-    the signal exists in the raw, noisy, uncorrected observations, it cannot be
-    attributed to network adjustment algorithms. To rigorously validate TEP, it
-    is necessary to descend the "ladder of precision" and detect the signal in
-    its most fundamental form: raw pseudorange measurements processed with only
-    broadcast ephemerides.
+    mathematical filters, it would be a software artifact of global network
+    estimation. However, if the signal exists in the raw, uncorrected
+    observations processed station-by-station, it cannot be attributed to
+    inter-station PPP network adjustment algorithms. To test this directly, this
+    study descends the processing hierarchy to raw pseudorange measurements
+    processed via Single Point Positioning (SPP) with broadcast ephemerides.
+    Because broadcast navigation messages still originate from control-segment
+    orbit fits, physical closure across the terrestrial programme is structured
+    in three distinct tiers: (i) the GNSS suite (Papers 1–3 and 14) serves as
+    the discovery and characterization phase of the macroscopic clock-network
+    covariance across independent estimators and raw observables; (ii) passive
+    Satellite Laser Ranging (Paper 8) provides an instrumentally independent
+    optical-domain sensitivity bound ($\delta A \lesssim 2\times 10^{-8}$) and
+    orbit-provenance control; and (iii) orbit-free optical-fiber and two-way
+    satellite time-transfer (TWSTFT) links provide the planned definitive
+    metrological closure at $10^{-15}$–$10^{-18}$ clock stability.
 </p>
 
 <h2>1.4 Objectives of This Capstone Study</h2>

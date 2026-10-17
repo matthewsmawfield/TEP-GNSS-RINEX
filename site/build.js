@@ -160,7 +160,7 @@ async function buildStaticSite() {
         
         console.log('✅ Static site built successfully!');
         console.log(`📁 Output: ${outputPath}`);
-        console.log('📄 Markdown: 3-TEP-GNSS-RINEX-v0.8-Kathmandu.md (in root)');
+        console.log('📄 Markdown: B3-TEP-GNSS-RINEX-v0.9-Kathmandu.md (in root)');
         console.log(`📊 Generated ${manifest.sections.length} sections`);
         console.log('🚀 Ready for deployment');
         

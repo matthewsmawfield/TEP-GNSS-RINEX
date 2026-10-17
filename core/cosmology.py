@@ -33,6 +33,7 @@ Functions ``f_T_suppression``, ``f_T``, ``conformal_factor_native``,
 
 import numpy as np
 from scipy.integrate import cumulative_trapezoid, quad
+from scipy.interpolate import CubicSpline
 from . import constants as tep_const
 
 C_KM_S = 299792.458  # speed of light, km/s
@@ -74,7 +75,8 @@ def f_T_suppression(z, z_T, n_T):
     """
     _validate_tep_params(z_T, n_T)
     z_arr = _as_array(z)
-    out = np.zeros_like(z_arr, dtype=float)
+    # z <= 0 returns the continuous z -> 0+ limit S(0) = 1, as in hi_class.
+    out = np.ones_like(z_arr, dtype=float)
     mask = z_arr > 0.0
     if np.any(mask):
         z_pos = z_arr[mask]
@@ -136,9 +138,11 @@ def alpha_A_native(z, epsilon_T, z_T, n_T):
     out = np.zeros_like(z_arr, dtype=float)
     if epsilon_T == 0.0:
         return _scalar_result(z, out)
-    mask = z_arr > 0.0
+    # Clamp z <= 0 to the z -> 0+ limit (alpha_A(0) = -epsilon_T), matching
+    # hi_class tep_alpha_A; returning 0 there made M(z) discontinuous at z = 0.
+    mask = np.ones_like(z_arr, dtype=bool)
     if np.any(mask):
-        z_pos = z_arr[mask]
+        z_pos = np.maximum(z_arr[mask], 0.0)
         S = f_T_suppression(z_pos, z_T, n_T)
         dS = np.zeros_like(S)
         deriv_mask = z_pos > 1e-10
@@ -167,9 +171,11 @@ def jordan_frame_M(z, epsilon_T, z_T, n_T):
         return _scalar_result(z, np.ones_like(z_arr, dtype=float))
     z_arr = _as_array(z)
     out = np.ones_like(z_arr, dtype=float)
-    mask = z_arr > 0.0
+    # Clamp z <= 0 to the z -> 0+ limit so M(0) = 1/(1 + epsilon_T) is
+    # continuous with interior values, matching hi_class tep_M_factor.
+    mask = np.ones_like(z_arr, dtype=bool)
     if np.any(mask):
-        z_pos = z_arr[mask]
+        z_pos = np.maximum(z_arr[mask], 0.0)
         A = conformal_factor_native(z_pos, epsilon_T, z_T, n_T)
         alpha = alpha_A_native(z_pos, epsilon_T, z_T, n_T)
         denom = 1.0 - alpha
@@ -359,6 +365,30 @@ def redshift_at_distance(dl_target, H0, Om=0.315, z_max=3.0):
     return brentq(f, 1e-4, z_max)
 
 
+def _integrated_distance(z, integrand):
+    """Integrate a smooth distance kernel without low-z linear interpolation bias.
+
+    A cubic interpolant of the kernel in log(1+z) is integrated analytically.
+    In contrast to interpolating a cumulative integral, this resolves the
+    origin even when low- and high-redshift objects share an evaluation batch.
+    """
+    z_arr = np.atleast_1d(np.asarray(z, dtype=float))
+    if not np.all(np.isfinite(z_arr)) or np.any(z_arr < 0):
+        raise ValueError("Distance redshifts must be finite and nonnegative")
+    if z_arr.size == 0:
+        return np.array([], dtype=float)
+    max_z = float(np.max(z_arr))
+    if max_z == 0:
+        distances = np.zeros_like(z_arr)
+    else:
+        u = np.linspace(0., np.log1p(max_z), 2049)
+        grid = np.expm1(u)
+        kernel = np.asarray(integrand(grid)) * np.exp(u)
+        primitive = CubicSpline(u, kernel).antiderivative()
+        distances = primitive(np.log1p(z_arr))-primitive(0.)
+    return float(distances[0]) if np.isscalar(z) else distances
+
+
 class TEPCosmology:
     """TEP cosmology with temporal shear effects."""
 
@@ -372,7 +402,7 @@ class TEPCosmology:
         Omega_m: float = 0.3,
         epsilon_T: float = 0.0,
         z_T: float = 5.0,
-        n_T: float = 1.0,
+        n_T: float = 2.0,
     ):
         self.H0 = H0
         self.Omega_m = Omega_m
@@ -433,19 +463,8 @@ class TEPCosmology:
 
     def comoving_distance(self, z: float | np.ndarray) -> float | np.ndarray:
         """TEP comoving distance in Mpc."""
-        z_arr = np.atleast_1d(np.asarray(z, dtype=float))
-        c = 299792.458  # km/s
-
-        max_z = float(np.max(z_arr))
-        if max_z <= 0:
-            distances = np.zeros_like(z_arr)
-            return float(distances[0]) if np.isscalar(z) else distances
-
-        grid = np.linspace(0.0, max_z, 1000)
-        integrand = c / (self.H0 * self.e_func(grid)) * self.tep_gamma(grid)
-        cumulative = cumulative_trapezoid(integrand, grid, initial=0.0)
-        distances = np.interp(z_arr, grid, cumulative)
-        return float(distances[0]) if np.isscalar(z) else distances
+        return _integrated_distance(
+            z, lambda grid: C_KM_S / (self.H0 * self.e_func(grid)) * self.tep_gamma(grid))
 
     def angular_diameter_distance(self, z: float | np.ndarray) -> float | np.ndarray:
         """TEP angular diameter distance in Mpc."""
@@ -478,25 +497,8 @@ class CosmologyFLRW:
         return np.sqrt(self.Om0 * zp1**3 + self.Ode0 + self.Ok0 * zp1**2)
 
     def comoving_distance(self, z: float | np.ndarray) -> float | np.ndarray:
-        """Comoving distance in Mpc.
-
-        Uses vectorised trapezoidal integration on a fine redshift grid,
-        which is ~100x faster than calling quad() for each redshift
-        individually and has negligible accuracy loss (<0.001%).
-        """
-        z_arr = np.atleast_1d(np.asarray(z, dtype=float))
-        c = 299792.458  # km/s
-
-        max_z = float(np.max(z_arr)) if z_arr.size > 0 else 0.0
-        if max_z <= 0.0:
-            distances = np.zeros_like(z_arr)
-            return float(distances[0]) if np.isscalar(z) else distances
-
-        grid = np.linspace(0.0, max_z, 2000)
-        integrand = c / (self.H0 * self.e_func(grid))
-        cumulative = cumulative_trapezoid(integrand, grid, initial=0.0)
-        distances = np.interp(z_arr, grid, cumulative)
-        return float(distances[0]) if np.isscalar(z) else distances
+        """Comoving distance in Mpc, with an integrated smooth kernel."""
+        return _integrated_distance(z, lambda grid: C_KM_S / (self.H0 * self.e_func(grid)))
 
     def angular_diameter_distance(self, z: np.ndarray) -> np.ndarray:
         """Angular diameter distance in Mpc."""
@@ -824,7 +826,7 @@ def evaluate_tep_eft_sector(alpha_A):
     }
 
 
-def tep_alpha_M(z, epsilon_T=0.1, z_T=3.0, n_T=1.0):
+def tep_alpha_M(z, epsilon_T=0.1, z_T=3.0, n_T=2.0):
     """
     Planck-mass running alpha_M = d ln M_*^2 / d ln a = -2 alpha_A.
     Uses the exact native TEP conformal-factor derivative.
@@ -833,14 +835,14 @@ def tep_alpha_M(z, epsilon_T=0.1, z_T=3.0, n_T=1.0):
     return -2.0 * alpha_A
 
 
-def tep_alpha_B(z, epsilon_T=0.1, z_T=3.0, n_T=1.0):
+def tep_alpha_B(z, epsilon_T=0.1, z_T=3.0, n_T=2.0):
     """
     Kinetic braiding alpha_B = -alpha_M = 2 alpha_A.
     """
     return -tep_alpha_M(z, epsilon_T, z_T, n_T)
 
 
-def tep_alpha_K(z, epsilon_T=0.1, z_T=3.0, n_T=1.0):
+def tep_alpha_K(z, epsilon_T=0.1, z_T=3.0, n_T=2.0):
     """
     Kineticity alpha_K = (1 - 6 beta_A^2)/beta_A^2 * alpha_A^2 = -5 alpha_A^2
     (beta_A = -1), from the canonical Jordan-frame Weyl derivation in
@@ -853,7 +855,7 @@ def tep_alpha_K(z, epsilon_T=0.1, z_T=3.0, n_T=1.0):
     return -5.0 * (alpha_A ** 2)
 
 
-def get_hiclass_perturbation_params(epsilon_T, z_T=3.0, n_T=1.0, tep_perturbations='minimal_conformal'):
+def get_hiclass_perturbation_params(epsilon_T, z_T=3.0, n_T=2.0, tep_perturbations='minimal_conformal'):
     """
     Configures hi_class for the active scalar perturbation closure.
     """
@@ -871,7 +873,7 @@ def get_hiclass_perturbation_params(epsilon_T, z_T=3.0, n_T=1.0, tep_perturbatio
     return params
 
 
-def check_stability(z, epsilon_T=0.1, z_T=3.0, n_T=1.0):
+def check_stability(z, epsilon_T=0.1, z_T=3.0, n_T=2.0):
     """
     Checks no-ghost (D > 0) and gradient (c_s^2 > 0) stability.
     For the pure conformal limit, D = alpha_A^2 and c_s^2 = 1 exactly.

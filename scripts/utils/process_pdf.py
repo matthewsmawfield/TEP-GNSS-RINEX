@@ -10,7 +10,7 @@ Usage:
     python process_pdf.py <input_pdf> [--quality ebook|printer|prepress|default]
 
 Example:
-    python process_pdf.py site/public/docs/26-TEP-C0-v0.1-Athens.pdf --quality ebook
+    python process_pdf.py site/public/docs/F26-TEP-C0-v0.4-Athens.pdf --quality ebook
 """
 
 import subprocess

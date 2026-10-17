@@ -8,7 +8,7 @@ Principle (TEP) framework.  All TEP papers should import from this module to ens
 consistency across the corpus.  Human-readable registry: parameter_registry.yaml
 in this directory.  Do not duplicate these values in project scripts.
 
-Version: TEP v0.15 (Jakarta)
+Version: TEP v0.16 (Jakarta)
 """
 
 import numpy as np
@@ -178,7 +178,7 @@ G_CM3_TO_GEV4 = 1000.0 * KG_TO_GEV * HBAR_C_GEV_M**3
 
 # Observed cosmic drift rate used to set the kinetic screening scale. This is
 # the *measured* Hubble drift (the shear floor of the landscape), distinct from
-# the TEP-corrected ladder output H0 = 66.65 reported in parameter_registry.
+# the TEP-corrected ladder output H0 = 67.83 reported in parameter_registry.
 H0_DRIFT_KM_S_MPC = 70.0
 # Transition shear/acceleration scale of the screening operator, derived from
 # the kinetic completion P(X) = X - V + X|X|/Lambda^4 with Lambda^4 = M_Pl^2 H0^2
@@ -236,3 +236,9 @@ LAMBDA_QUARTIC_NS_BOUND = (
 # GW170817 path bound on the galactic profile gives B0 <~ 77.7 (step_50).
 B0_DISFORMAL_CANONICAL = 1.0
 B0_DISFORMAL_GW170817_MAX = 77.7
+
+# Standard-siren distance error-budget parameters (Paper 22 / TEP-LVK):
+SIGMA_V_PEC_KM_S = 300.0         # host peculiar-velocity RMS, km/s
+LENSING_DL_FRAC_PER_Z = 0.066    # weak-lensing fractional d_L scatter per unit z
+PEC_Z_FLOOR = 0.002              # redshift floor for peculiar-velocity fractional error
+
